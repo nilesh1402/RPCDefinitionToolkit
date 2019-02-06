@@ -1,0 +1,13 @@
+{
+
+    "XUS AV CODE": "Currently Partly Processed in Router (kicks off session creation to the VICS Server) but mainly for VISTA which does Access, Verify checks.",
+
+    "XUS INTRO MSG": "__This may come back to VICS__: text for this is kept in Kernel System Parameters. The RPC is sent in the CPRS connect step and before user login. VICS Server could perform is it allowed pre-login requests. Otherwise may be sourced directly in the Router", 
+
+    "XWB IM HERE": "CPRS connection 'keep alive' RPC. This isn't used between the Router and the emulating VICS Server. It will always be VISTA only",
+
+    "XWB CREATE CONTEXT": "__This may come back to VICS__: this checks a broad option or context for a user but also sets up globals (XQY0, XQY). These MAY be used in later RPC interactions.", 
+
+    "XWB DEFERRED CLEARALL": "Part of 'Deferred RPC Handling' - in theory, VICS may need to do deferred handling (in the future) so this notion may come into play but for now, will just examine this as part of Coversheet RPC testing and Patient handling."
+
+}

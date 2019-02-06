@@ -1,0 +1,1199 @@
+{
+    "files": [
+        "8989.5",
+        "8989.3",
+        "8989.51",
+        "8989.518",
+        "811.7",
+        "811.9",
+        "801.41",
+        "8930",
+        "8930.3",
+        "68",
+        "69.2",
+        "60",
+        "9.4",
+        "8926",
+        "120.51",
+        "120.52",
+        "120.53",
+        "120.57",
+        "100.98",
+        "101.41",
+        "51.2",
+        "44",
+        "101.43",
+        "100.7",
+        "9999999.09",
+        "9999999.15",
+        "9999999.64",
+        "9999999.14",
+        "9999999.28",
+        "40.7",
+        "150.1",
+        "200",
+        "19",
+        "101.44",
+        "8925.1",
+        "8930.1",
+        "8927",
+        "4",
+        "20",
+        "123.5",
+        "125.1",
+        "120.82",
+        "50.6",
+        "50.67",
+        "50.416",
+        "50.605",
+        "50.68",
+        "120.83",
+        "120.84",
+        "9.2",
+        "50",
+        "50.7",
+        "50.606",
+        "4.05",
+        "100.02",
+        "100.03",
+        "4.2",
+        "101.13",
+        "389.9",
+        "125.99",
+        "49",
+        "101.24",
+        "9.7",
+        "409.95",
+        "357.1",
+        "357.2",
+        "357.3",
+        "357.4",
+        "357.6",
+        "80",
+        "3.1",
+        "8932.1",
+        "80.1",
+        "80.4",
+        "9999999.27",
+        "9000010.11",
+        "9000010.12",
+        "9000010.16",
+        "9000010.23",
+        "9000010.13",
+        "811.1",
+        "801.5"
+    ],
+    "rpcs": [
+        "GMV DLL VERSION",
+        "GMV PARAMETER",
+        "GMV USER",
+        "ORB SORT METHOD",
+        "ORDEA DEATEXT",
+        "ORWTPD1 GETEAFL",
+        "ORWTPD1 GETEDATS",
+        "ORWTPO CSARNGD",
+        "ORWTPO GETIMGD",
+        "ORWU PARAM",
+        "ORWU TOOLMENU",
+        "TIU TEMPLATE ACCESS LEVEL",
+        "TIU TEMPLATE GET DEFAULTS",
+        "TIU TEMPLATE SET DEFAULTS",
+        "ORQORB SORT",
+        "ORQPT DEFAULT LIST SOURCE",
+        "ORQQCN2 GET CONTEXT",
+        "ORQQPX NEW REMINDERS ACTIVE",
+        "ORQQPXRM REMINDER CATEGORIES",
+        "ORWCH LDFONT",
+        "ORWCH LOADALL",
+        "ORWCH LOADSIZ",
+        "ORWCH SAVEALL",
+        "ORWCH SAVFONT",
+        "ORWCIRN AUTORDV",
+        "ORWCOM ORDEROBJ",
+        "ORWCOM PTOBJ",
+        "ORWDAL32 CLINUSER",
+        "ORWDXC ON",
+        "ORWDXM MSTYLE",
+        "ORWDXVB3 COLLTIM",
+        "ORWDXVB3 SWPANEL",
+        "ORWGRPC ALLVIEWS",
+        "ORWGRPC GETPREF",
+        "ORWORB GETSORT",
+        "ORWORB SETSORT",
+        "ORWPCE ALWAYS CHECKOUT",
+        "ORWPCE ANYTIME",
+        "ORWPCE ASKPCE",
+        "ORWPCE AUTO VISIT TYPE SELECT",
+        "ORWPCE GET EXCLUDED",
+        "ORWPS REASON",
+        "ORWSR SHOW SURG TAB",
+        "ORWTIU GET TIU CONTEXT",
+        "GMV GET VITAL TYPE IEN",
+        "GMV VITALS/CAT/QUAL",
+        "ORWDPS2 QOGRP",
+        "OREVNTX1 DLGIEN",
+        "ORWDPS32 VALROUTE",
+        "ORWDPS5 LESGRP",
+        "ORWDRA32 LOCTYPE",
+        "ORWDX AGAIN",
+        "ORWDX DGNM",
+        "ORWDX DLGDEF",
+        "ORWDXA ISACTOI",
+        "ORWDXM FORMID",
+        "ORWDXM3 ISUDQO",
+        "ORWDXR01 ISSPLY",
+        "ORWGRPC TESTSPEC",
+        "ORWOR PKISITE",
+        "ORWORDG IEN",
+        "ORWPCE GET EDUCATION TOPICS",
+        "ORWPCE GET EXAM TYPE",
+        "ORWPCE GET HEALTH FACTORS TY",
+        "ORWPCE GET IMMUNIZATION TYPE",
+        "ORWPCE GET SKIN TEST TYPE",
+        "ORWPCE GETSVC",
+        "ORWPCE1 NONCOUNT",
+        "ORWU CLINLOC",
+        "ORWU EXTNAME",
+        "ORIMO ISCLOC",
+        "ORWU PATCH",
+        "ORWU VALIDSIG",
+        "ORWU VERSRV",
+        "ORWU1 NEWLOC",
+        "ORIMO ISIVQO",
+        "ORWUL FVSUB",
+        "TIU ISPRF",
+        "TIU LONG LIST OF TITLES",
+        "TIU TEMPLATE GETLINK",
+        "XUS GET USER INFO",
+        "XUS INTRO MSG",
+        "XUS PKI GET UPN",
+        "XWB GET BROKER INFO",
+        "ORQQCN SVC W/SYNONYMS",
+        "ORQQPL USER PROB CATS",
+        "ORWDAL32 ALLERGY MATCH",
+        "ORWDAL32 DEF",
+        "ORWDAL32 SITE PARAMS",
+        "ORWDAL32 SYMPTOMS",
+        "ORWDBA3 HINTS",
+        "ORWDPS1 FAILDEA",
+        "ORWDX WRLST",
+        "ORWDX2 DCREASON",
+        "ORWOR VWGET",
+        "ORWORDG MAPSEQ",
+        "ORWU USERINFO",
+        "ORWUL QV4DG",
+        "ORQQPL INIT USER",
+        "ORWCV1 COVERSHEET LIST",
+        "ORWDBA1 BASTATUS",
+        "ORWPCE HF",
+        "ORWPCE IMM",
+        "ORWPCE PED",
+        "ORWPCE SK",
+        "ORWPCE VISIT",
+        "ORWPCE XAM",
+        "ORWPCE PROC",
+        "ORWPCE DIAG",
+        "ORWU HASKEY",
+        "ORWU NEWPERS",
+        "ORQQPL4 LEX",
+        "TIU GET PERSONAL PREFERENCES",
+        "TIU GET PRINT NAME",
+        "TIU IS THIS A CONSULT?",
+        "TIU IS USER A PROVIDER?",
+        "ORWDPS32 VALQTY",
+        "ORWLEX GETFREQ",
+        "GMV MANAGER",
+        "ORWPCE ACTIVE PROV",
+        "ORWPCE GET DX TEXT",
+        "ORWPCE GET SET OF CODES",
+        "ORWPCE HASCPT",
+        "ORWPCE MHCLINIC",
+        "ORWU VALDT",
+        "ORWU DT",
+        "GMV CONVERT DATE",
+        "GMV GET CURRENT TIME",
+        "ORWPT CLINRNG",
+        "ORQ NULL LIST",
+        "ORWPT16 PSCNVT",
+        "XWB IM HERE",
+        "ORWCH SAVESIZ",
+        "ORWPCE I10IMPDT",
+        "ORWRP GET DEFAULT PRINTER",
+        "ORWU NPHASKEY",
+        "ORWU OVERDL",
+        "XUS DIVISION GET",
+        "XUS DIVISION SET",
+        "XUS AV CODE",
+        "XWB CREATE CONTEXT",
+        "XWB DEFERRED CLEARALL",
+        "ORWPCE ACTIVE CODE",
+        "TIU TEMPLATE GETROOTS",
+        "ORQPT DEFAULT LIST SORT",
+        "ORWPT DFLTSRC"
+    ],
+    "params": [
+        "GMV DLL VERSION",
+        "GMV GUI VERSION",
+        "GMV WEBLINK",
+        "GMV ALLOW USER TEMPLATES",
+        "GMV DEFAULT VALUES",
+        "GMV TEMPLATE",
+        "GMV TEMPLATE DEFAULT",
+        "GMV USER DEFAULTS",
+        "ORB SORT METHOD",
+        "OR DEA TEXT",
+        "ORQQEAFL ENC APPT FUTURE LIMIT",
+        "ORQQEAPT ENC APPT START",
+        "ORQQEAPT ENC APPT STOP",
+        "ORQQCSDR CS RANGE START",
+        "ORQQCSDR CS RANGE STOP",
+        "ORCH CONTEXT REPORTS",
+        "ORWT TOOLS MENU",
+        "TIU PERSONAL TEMPLATE ACCESS",
+        "TIU TEMPLATE ACCESS BY CLASS",
+        "TIU DEFAULT TEMPLATES",
+        "ORLP DEFAULT LIST SOURCE",
+        "ORLP DEFAULT TEAM",
+        "ORLP DEFAULT WARD",
+        "ORLP DEFAULT PROVIDER",
+        "ORLP DEFAULT SPECIALTY",
+        "ORLP DEFAULT CLINIC MONDAY",
+        "ORLP DEFAULT CLINIC TUESDAY",
+        "ORLP DEFAULT CLINIC WEDNESDAY",
+        "ORLP DEFAULT CLINIC THURSDAY",
+        "ORLP DEFAULT CLINIC FRIDAY",
+        "ORLP DEFAULT CLINIC SATURDAY",
+        "ORLP DEFAULT CLINIC SUNDAY",
+        "ORCH CONTEXT CONSULTS",
+        "PXRM GUI REMINDERS ACTIVE",
+        "PXRM CPRS LOOKUP CATEGORIES",
+        "ORWCH FONT SIZE",
+        "ORWCH BOUNDS",
+        "ORWCH WIDTH",
+        "ORWCH COLUMNS",
+        "ORWRP CIRN AUTOMATIC",
+        "ORWCOM ORDER ACCEPTED",
+        "ORWCOM PATIENT SELECTED",
+        "OR ALLERGY ENTERED IN ERROR",
+        "ORK SYSTEM ENABLE/DISABLE",
+        "ORWDXM ORDER MENU STYLE",
+        "OR VBECS REMOVE COLL TIME",
+        "OR VBECS DIAGNOSTIC PANEL 1ST",
+        "ORWG GRAPH VIEW",
+        "ORWG GRAPH SETTING",
+        "ORB SORT DIRECTION",
+        "ORWPCE DISABLE AUTO CHECKOUT",
+        "ORWPCE ANYTIME ENCOUNTERS",
+        "ORWPCE ASK ENCOUNTER UPDATE",
+        "ORWPCE DISABLE AUTO VISIT TYPE",
+        "ORWD NONVA REASON",
+        "ORWOR SHOW SURGERY TAB",
+        "ORCH CONTEXT NOTES",
+        "ORWOR WRITE ORDERS LIST",
+        "ORWDX WRITE ORDERS LIST",
+        "OR DC REASON LIST",
+        "ORCH CONTEXT ORDERS",
+        "ORWOR CATEGORY SEQUENCE",
+        "ORCH INITIAL TAB",
+        "ORCH USE LAST TAB",
+        "ORWOR AUTO CLOSE PT MSG",
+        "ORWOR AUTOSAVE NOTE",
+        "ORWOR BROADCAST MESSAGES",
+        "ORWOR DISABLE HOLD ORDERS",
+        "ORWOR DISABLE ORDERING",
+        "ORWOR DISABLE WEB ACCESS",
+        "ORWOR ENABLE VERIFY",
+        "ORWOR TIMEOUT CHART",
+        "ORWOR TIMEOUT COUNTDOWN",
+        "PXRM GEC STATUS CHECK",
+        "ORWDQ QUICK VIEW",
+        "ORCH CONTEXT PROBLEMS",
+        "ORQQPL SUPPRESS CODES",
+        "ORWCV1 COVERSHEET LIST",
+        "OR BILLING AWARENESS STATUS",
+        "ORWDP WINPRINT DEFAULT",
+        "ORWDP DEFAULT PRINTER",
+        "ORPARAM OVER DATELINE",
+        "ORLP DEFAULT LIST ORDER"
+    ],
+    "filesByRPC": {
+        "GMV PARAMETER": [
+            "8989.5",
+            "8989.3",
+            "8989.51",
+            "8989.518"
+        ],
+        "ORQQPXRM REMINDER CATEGORIES": [
+            "811.7",
+            "811.9",
+            "801.41"
+        ],
+        "ORWDAL32 CLINUSER": [
+            "8930",
+            "8930.3"
+        ],
+        "ORWGRPC ALLVIEWS": [
+            "68",
+            "69.2",
+            "60"
+        ],
+        "ORWSR SHOW SURG TAB": [
+            "9.4"
+        ],
+        "ORWTIU GET TIU CONTEXT": [
+            "8926"
+        ],
+        "GMV GET VITAL TYPE IEN": [
+            "120.51"
+        ],
+        "GMV VITALS/CAT/QUAL": [
+            "120.51",
+            "120.52",
+            "120.53",
+            "120.57"
+        ],
+        "ORWDPS2 QOGRP": [
+            "100.98",
+            "101.41"
+        ],
+        "OREVNTX1 DLGIEN": [
+            "101.41"
+        ],
+        "ORWDPS32 VALROUTE": [
+            "51.2"
+        ],
+        "ORWDPS5 LESGRP": [
+            "100.98"
+        ],
+        "ORWDRA32 LOCTYPE": [
+            "44"
+        ],
+        "ORWDX AGAIN": [
+            "101.41"
+        ],
+        "ORWDX DGNM": [
+            "100.98"
+        ],
+        "ORWDX DLGDEF": [
+            "101.41"
+        ],
+        "ORWDXA ISACTOI": [
+            "101.43"
+        ],
+        "ORWDXM FORMID": [
+            "101.41",
+            "100.98",
+            "9.4"
+        ],
+        "ORWDXM3 ISUDQO": [
+            "101.41",
+            "100.98"
+        ],
+        "ORWDXR01 ISSPLY": [
+            "101.43",
+            "100.98"
+        ],
+        "ORWGRPC TESTSPEC": [
+            "60"
+        ],
+        "ORWOR PKISITE": [
+            "100.7"
+        ],
+        "ORWORDG IEN": [
+            "100.98"
+        ],
+        "ORWPCE GET EDUCATION TOPICS": [
+            "9999999.09"
+        ],
+        "ORWPCE GET EXAM TYPE": [
+            "9999999.15"
+        ],
+        "ORWPCE GET HEALTH FACTORS TY": [
+            "9999999.64"
+        ],
+        "ORWPCE GET IMMUNIZATION TYPE": [
+            "9999999.14"
+        ],
+        "ORWPCE GET SKIN TEST TYPE": [
+            "9999999.28"
+        ],
+        "ORWPCE GETSVC": [
+            "40.7",
+            "44",
+            "150.1"
+        ],
+        "ORWPCE1 NONCOUNT": [
+            "44"
+        ],
+        "ORWU CLINLOC": [
+            "44"
+        ],
+        "ORIMO ISCLOC": [
+            "44"
+        ],
+        "ORWU PATCH": [
+            "9.4"
+        ],
+        "ORWU VALIDSIG": [
+            "200"
+        ],
+        "ORWU VERSRV": [
+            "19"
+        ],
+        "ORWU1 NEWLOC": [
+            "44"
+        ],
+        "ORIMO ISIVQO": [
+            "101.41",
+            "100.98"
+        ],
+        "ORWUL FVSUB": [
+            "101.44"
+        ],
+        "TIU ISPRF": [
+            "8925.1"
+        ],
+        "TIU LONG LIST OF TITLES": [
+            "8925.1",
+            "8930.1"
+        ],
+        "TIU TEMPLATE GETLINK": [
+            "801.41",
+            "8925.1",
+            "8927"
+        ],
+        "XUS GET USER INFO": [
+            "200",
+            "4",
+            "20",
+            "8989.3"
+        ],
+        "XUS INTRO MSG": [
+            "8989.3"
+        ],
+        "XUS PKI GET UPN": [
+            "200"
+        ],
+        "XWB GET BROKER INFO": [
+            "8989.3"
+        ],
+        "ORQQCN SVC W/SYNONYMS": [
+            "123.5",
+            "101.43"
+        ],
+        "ORQQPL USER PROB CATS": [
+            "125.1"
+        ],
+        "ORWDAL32 ALLERGY MATCH": [
+            "120.82",
+            "50.6",
+            "50.67",
+            "50.416",
+            "50.605",
+            "50.68"
+        ],
+        "ORWDAL32 DEF": [
+            "120.83",
+            "120.84"
+        ],
+        "ORWDAL32 SITE PARAMS": [
+            "120.84"
+        ],
+        "ORWDAL32 SYMPTOMS": [
+            "120.83"
+        ],
+        "ORWDBA3 HINTS": [
+            "9.2"
+        ],
+        "ORWDPS1 FAILDEA": [
+            "50",
+            "50.68",
+            "50.7",
+            "50.606",
+            "101.43",
+            "200",
+            "4",
+            "4.05"
+        ],
+        "ORWDX WRLST": [
+            "101.41",
+            "200"
+        ],
+        "ORWDX2 DCREASON": [
+            "9.4",
+            "100.02",
+            "100.03"
+        ],
+        "ORWOR VWGET": [
+            "100.98"
+        ],
+        "ORWORDG MAPSEQ": [
+            "100.98"
+        ],
+        "ORWU USERINFO": [
+            "4.2",
+            "101.13",
+            "389.9",
+            "8989.3"
+        ],
+        "ORWUL QV4DG": [
+            "100.98",
+            "101.41",
+            "101.44"
+        ],
+        "ORQQPL INIT USER": [
+            "125.99",
+            "49",
+            "200"
+        ],
+        "ORWCV1 COVERSHEET LIST": [
+            "101.24"
+        ],
+        "ORWDBA1 BASTATUS": [
+            "9.7"
+        ],
+        "ORWPCE HF": [
+            "409.95",
+            "357.1",
+            "357.2",
+            "357.3",
+            "357.4",
+            "357.6",
+            "80"
+        ],
+        "ORWPCE IMM": [
+            "409.95",
+            "357.1",
+            "357.2",
+            "357.3",
+            "357.4",
+            "357.6",
+            "80"
+        ],
+        "ORWPCE PED": [
+            "409.95",
+            "357.1",
+            "357.2",
+            "357.3",
+            "357.4",
+            "357.6",
+            "80"
+        ],
+        "ORWPCE SK": [
+            "409.95",
+            "357.1",
+            "357.2",
+            "357.3",
+            "357.4",
+            "357.6",
+            "80"
+        ],
+        "ORWPCE VISIT": [
+            "409.95",
+            "357.1",
+            "357.2",
+            "357.3",
+            "357.4",
+            "357.6",
+            "80"
+        ],
+        "ORWPCE XAM": [
+            "409.95",
+            "357.1",
+            "357.2",
+            "357.3",
+            "357.4",
+            "357.6",
+            "80"
+        ],
+        "ORWPCE PROC": [
+            "409.95",
+            "357.1",
+            "357.2",
+            "357.3",
+            "357.4",
+            "357.6",
+            "80"
+        ],
+        "ORWPCE DIAG": [
+            "409.95",
+            "357.1",
+            "357.2",
+            "357.3",
+            "357.4",
+            "357.6",
+            "80"
+        ],
+        "ORWU NEWPERS": [
+            "3.1",
+            "20",
+            "49",
+            "389.9",
+            "200",
+            "8932.1"
+        ],
+        "TIU GET PERSONAL PREFERENCES": [
+            "8926"
+        ],
+        "TIU GET PRINT NAME": [
+            "8925.1"
+        ],
+        "TIU IS THIS A CONSULT?": [
+            "8925.1"
+        ],
+        "TIU IS USER A PROVIDER?": [
+            "200",
+            "8930",
+            "8930.3",
+            "8932.1"
+        ],
+        "GMV MANAGER": [
+            "120.51",
+            "120.52",
+            "120.53",
+            "4.2",
+            "4",
+            "44",
+            "200"
+        ],
+        "ORWPCE ACTIVE PROV": [
+            "200",
+            "8932.1"
+        ],
+        "ORWPCE GET DX TEXT": [
+            "80",
+            "80.1",
+            "80.4",
+            "9999999.27"
+        ],
+        "ORWPCE GET SET OF CODES": [
+            "9000010.11",
+            "9000010.12",
+            "9000010.16",
+            "9000010.23",
+            "9000010.13"
+        ],
+        "ORWPCE HASCPT": [
+            "811.1"
+        ],
+        "ORWPCE MHCLINIC": [
+            "40.7",
+            "44"
+        ],
+        "XUS DIVISION GET": [
+            "200",
+            "4"
+        ],
+        "XUS DIVISION SET": [
+            "200",
+            "4"
+        ],
+        "XUS AV CODE": [
+            "200"
+        ],
+        "XWB CREATE CONTEXT": [
+            "19"
+        ],
+        "TIU TEMPLATE GETROOTS": [
+            "8927"
+        ]
+    },
+    "paramsByRPC": {
+        "GMV DLL VERSION": [
+            "GMV DLL VERSION"
+        ],
+        "GMV PARAMETER": [
+            "GMV DLL VERSION",
+            "GMV GUI VERSION",
+            "GMV WEBLINK",
+            "GMV ALLOW USER TEMPLATES",
+            "GMV DEFAULT VALUES",
+            "GMV TEMPLATE",
+            "GMV TEMPLATE DEFAULT",
+            "GMV USER DEFAULTS"
+        ],
+        "GMV USER": [
+            "GMV USER DEFAULTS"
+        ],
+        "ORB SORT METHOD": [
+            "ORB SORT METHOD"
+        ],
+        "ORDEA DEATEXT": [
+            "OR DEA TEXT"
+        ],
+        "ORWTPD1 GETEAFL": [
+            "ORQQEAFL ENC APPT FUTURE LIMIT"
+        ],
+        "ORWTPD1 GETEDATS": [
+            "ORQQEAPT ENC APPT START",
+            "ORQQEAPT ENC APPT STOP"
+        ],
+        "ORWTPO CSARNGD": [
+            "ORQQCSDR CS RANGE START",
+            "ORQQCSDR CS RANGE STOP"
+        ],
+        "ORWTPO GETIMGD": [
+            "ORCH CONTEXT REPORTS"
+        ],
+        "ORWU TOOLMENU": [
+            "ORWT TOOLS MENU"
+        ],
+        "TIU TEMPLATE ACCESS LEVEL": [
+            "TIU PERSONAL TEMPLATE ACCESS",
+            "TIU TEMPLATE ACCESS BY CLASS"
+        ],
+        "TIU TEMPLATE GET DEFAULTS": [
+            "TIU DEFAULT TEMPLATES"
+        ],
+        "TIU TEMPLATE SET DEFAULTS": [
+            "TIU DEFAULT TEMPLATES"
+        ],
+        "ORQORB SORT": [
+            "ORB SORT METHOD"
+        ],
+        "ORQPT DEFAULT LIST SOURCE": [
+            "ORLP DEFAULT LIST SOURCE",
+            "ORLP DEFAULT TEAM",
+            "ORLP DEFAULT WARD",
+            "ORLP DEFAULT PROVIDER",
+            "ORLP DEFAULT SPECIALTY",
+            "ORLP DEFAULT CLINIC MONDAY",
+            "ORLP DEFAULT CLINIC TUESDAY",
+            "ORLP DEFAULT CLINIC WEDNESDAY",
+            "ORLP DEFAULT CLINIC THURSDAY",
+            "ORLP DEFAULT CLINIC FRIDAY",
+            "ORLP DEFAULT CLINIC SATURDAY",
+            "ORLP DEFAULT CLINIC SUNDAY"
+        ],
+        "ORQQCN2 GET CONTEXT": [
+            "ORCH CONTEXT CONSULTS"
+        ],
+        "ORQQPX NEW REMINDERS ACTIVE": [
+            "PXRM GUI REMINDERS ACTIVE"
+        ],
+        "ORQQPXRM REMINDER CATEGORIES": [
+            "PXRM CPRS LOOKUP CATEGORIES"
+        ],
+        "ORWCH LDFONT": [
+            "ORWCH FONT SIZE"
+        ],
+        "ORWCH LOADALL": [
+            "ORWCH BOUNDS",
+            "ORWCH WIDTH",
+            "ORWCH COLUMNS"
+        ],
+        "ORWCH LOADSIZ": [
+            "ORWCH BOUNDS"
+        ],
+        "ORWCH SAVEALL": [
+            "ORWCH BOUNDS",
+            "ORWCH WIDTH",
+            "ORWCH COLUMNS"
+        ],
+        "ORWCH SAVFONT": [
+            "ORWCH FONT SIZE"
+        ],
+        "ORWCIRN AUTORDV": [
+            "ORWRP CIRN AUTOMATIC"
+        ],
+        "ORWCOM ORDEROBJ": [
+            "ORWCOM ORDER ACCEPTED"
+        ],
+        "ORWCOM PTOBJ": [
+            "ORWCOM PATIENT SELECTED"
+        ],
+        "ORWDAL32 CLINUSER": [
+            "OR ALLERGY ENTERED IN ERROR"
+        ],
+        "ORWDXC ON": [
+            "ORK SYSTEM ENABLE/DISABLE"
+        ],
+        "ORWDXM MSTYLE": [
+            "ORWDXM ORDER MENU STYLE"
+        ],
+        "ORWDXVB3 COLLTIM": [
+            "OR VBECS REMOVE COLL TIME"
+        ],
+        "ORWDXVB3 SWPANEL": [
+            "OR VBECS DIAGNOSTIC PANEL 1ST"
+        ],
+        "ORWGRPC ALLVIEWS": [
+            "ORWG GRAPH VIEW"
+        ],
+        "ORWGRPC GETPREF": [
+            "ORWG GRAPH SETTING"
+        ],
+        "ORWORB GETSORT": [
+            "ORB SORT METHOD",
+            "ORB SORT DIRECTION"
+        ],
+        "ORWORB SETSORT": [
+            "ORB SORT METHOD",
+            "ORB SORT DIRECTION"
+        ],
+        "ORWPCE ALWAYS CHECKOUT": [
+            "ORWPCE DISABLE AUTO CHECKOUT"
+        ],
+        "ORWPCE ANYTIME": [
+            "ORWPCE ANYTIME ENCOUNTERS"
+        ],
+        "ORWPCE ASKPCE": [
+            "ORWPCE ASK ENCOUNTER UPDATE"
+        ],
+        "ORWPCE AUTO VISIT TYPE SELECT": [
+            "ORWPCE DISABLE AUTO VISIT TYPE"
+        ],
+        "ORWPS REASON": [
+            "ORWD NONVA REASON"
+        ],
+        "ORWSR SHOW SURG TAB": [
+            "ORWOR SHOW SURGERY TAB"
+        ],
+        "ORWTIU GET TIU CONTEXT": [
+            "ORCH CONTEXT NOTES"
+        ],
+        "ORWDX WRLST": [
+            "ORWOR WRITE ORDERS LIST",
+            "ORWDX WRITE ORDERS LIST"
+        ],
+        "ORWDX2 DCREASON": [
+            "OR DC REASON LIST"
+        ],
+        "ORWOR VWGET": [
+            "ORCH CONTEXT ORDERS"
+        ],
+        "ORWORDG MAPSEQ": [
+            "ORWOR CATEGORY SEQUENCE"
+        ],
+        "ORWU USERINFO": [
+            "ORCH INITIAL TAB",
+            "ORCH USE LAST TAB",
+            "ORWOR AUTO CLOSE PT MSG",
+            "ORWOR AUTOSAVE NOTE",
+            "ORWOR BROADCAST MESSAGES",
+            "ORWOR DISABLE HOLD ORDERS",
+            "ORWOR DISABLE ORDERING",
+            "ORWOR DISABLE WEB ACCESS",
+            "ORWOR ENABLE VERIFY",
+            "ORWOR TIMEOUT CHART",
+            "ORWOR TIMEOUT COUNTDOWN",
+            "PXRM GEC STATUS CHECK"
+        ],
+        "ORWUL QV4DG": [
+            "ORWDQ QUICK VIEW"
+        ],
+        "ORQQPL INIT USER": [
+            "ORCH CONTEXT PROBLEMS",
+            "ORQQPL SUPPRESS CODES"
+        ],
+        "ORWCV1 COVERSHEET LIST": [
+            "ORWCV1 COVERSHEET LIST"
+        ],
+        "ORWDBA1 BASTATUS": [
+            "OR BILLING AWARENESS STATUS"
+        ],
+        "GMV MANAGER": [
+            "GMV TEMPLATE DEFAULT",
+            "GMV TEMPLATE",
+            "GMV ALLOW USER TEMPLATES"
+        ],
+        "ORWCH SAVESIZ": [
+            "ORWCH BOUNDS"
+        ],
+        "ORWRP GET DEFAULT PRINTER": [
+            "ORWDP WINPRINT DEFAULT",
+            "ORWDP DEFAULT PRINTER"
+        ],
+        "ORWU OVERDL": [
+            "ORPARAM OVER DATELINE"
+        ],
+        "ORQPT DEFAULT LIST SORT": [
+            "ORLP DEFAULT LIST ORDER"
+        ],
+        "ORWPT DFLTSRC": [
+            "ORLP DEFAULT LIST SOURCE"
+        ]
+    },
+    "rpcProps": {
+        "GMV DLL VERSION": {
+            "complexity": "LOW",
+            "rpcType": "READ",
+            "domain": "CPRS"
+        },
+        "GMV PARAMETER": {
+            "complexity": "MODERATE",
+            "rpcType": "CHANGE",
+            "domain": "CPRS"
+        },
+        "GMV USER": {
+            "complexity": "MODERATE",
+            "rpcType": "CHANGE",
+            "domain": "CPRS"
+        },
+        "ORB SORT METHOD": {
+            "complexity": "LOW",
+            "rpcType": "READ",
+            "domain": "CPRS"
+        },
+        "ORDEA DEATEXT": {
+            "complexity": "MEDIUM",
+            "rpcType": "READ",
+            "domain": "ORDER"
+        },
+        "ORWTPD1 GETEAFL": {
+            "complexity": "LOW",
+            "rpcType": "READ",
+            "domain": "ORDER"
+        },
+        "ORWTPD1 GETEDATS": {
+            "complexity": "MEDIUM",
+            "rpcType": "READ",
+            "domain": "ORDER"
+        },
+        "ORWTPO CSARNGD": {
+            "complexity": "LOW",
+            "rpcType": "READ",
+            "domain": "ORDER"
+        },
+        "ORWTPO GETIMGD": {
+            "complexity": "LOW",
+            "rpcType": "READ",
+            "domain": "ORDER"
+        },
+        "ORWU TOOLMENU": {
+            "complexity": "LOW",
+            "rpcType": "READ",
+            "domain": "CPRS"
+        },
+        "TIU TEMPLATE ACCESS LEVEL": {
+            "complexity": "DIFFICULT",
+            "rpcType": "READ",
+            "domain": "DOCUMENT"
+        },
+        "TIU TEMPLATE GET DEFAULTS": {
+            "complexity": "LOW",
+            "rpcType": "READ",
+            "domain": "DOCUMENT"
+        },
+        "TIU TEMPLATE SET DEFAULTS": {
+            "complexity": "LOW",
+            "rpcType": "CHANGE",
+            "domain": "DOCUMENT"
+        },
+        "ORQORB SORT": {
+            "complexity": "LOW",
+            "rpcType": "READ",
+            "domain": "CPRS"
+        },
+        "ORQPT DEFAULT LIST SOURCE": {
+            "complexity": "LOW",
+            "rpcType": "READ",
+            "domain": "CPRS"
+        },
+        "ORQQCN2 GET CONTEXT": {
+            "complexity": "LOW",
+            "rpcType": "READ",
+            "domain": "CPRS"
+        },
+        "ORQQPX NEW REMINDERS ACTIVE": {
+            "complexity": "MEDIUM",
+            "rpcType": "READ",
+            "domain": "ORDER"
+        },
+        "ORQQPXRM REMINDER CATEGORIES": {
+            "complexity": "MODERATE",
+            "rpcType": "READ",
+            "domain": "CPRS"
+        },
+        "ORWCH LDFONT": {
+            "complexity": "LOW",
+            "rpcType": "READ",
+            "domain": "CPRS"
+        },
+        "ORWCH LOADALL": {
+            "complexity": "LOW",
+            "rpcType": "READ",
+            "domain": "ORDER"
+        },
+        "ORWCH LOADSIZ": {
+            "complexity": "LOW",
+            "rpcType": "READ",
+            "domain": "ORDER"
+        },
+        "ORWCH SAVEALL": {
+            "complexity": "MEDIUM",
+            "rpcType": "CHANGE",
+            "domain": "CPRS"
+        },
+        "ORWCH SAVFONT": {
+            "complexity": "LOW",
+            "rpcType": "CHANGE",
+            "domain": "CPRS"
+        },
+        "ORWCIRN AUTORDV": {
+            "complexity": "LOW",
+            "rpcType": "READ",
+            "domain": "ORDER"
+        },
+        "ORWCOM ORDEROBJ": {
+            "complexity": "LOW",
+            "rpcType": "READ",
+            "domain": "CPRS"
+        },
+        "ORWCOM PTOBJ": {
+            "complexity": "LOW",
+            "rpcType": "READ",
+            "domain": "CPRS"
+        },
+        "ORWDAL32 CLINUSER": {
+            "complexity": "MODERATE",
+            "rpcType": "READ",
+            "domain": "ALLERGY"
+        },
+        "ORWDXC ON": {
+            "complexity": "LOW",
+            "rpcType": "READ",
+            "domain": "CPRS"
+        },
+        "ORWDXM MSTYLE": {
+            "complexity": "LOW",
+            "rpcType": "READ",
+            "domain": "CPRS"
+        },
+        "ORWDXVB3 COLLTIM": {
+            "complexity": "LOW",
+            "rpcType": "READ",
+            "domain": "ORDER"
+        },
+        "ORWDXVB3 SWPANEL": {
+            "complexity": "LOW",
+            "rpcType": "READ",
+            "domain": "ORDER"
+        },
+        "ORWGRPC ALLVIEWS": {
+            "complexity": "MODERATE",
+            "rpcType": "READ",
+            "domain": "ORDER"
+        },
+        "ORWGRPC GETPREF": {
+            "complexity": "MODERATE",
+            "rpcType": "READ",
+            "domain": "CPRS"
+        },
+        "ORWORB GETSORT": {
+            "complexity": "LOW",
+            "rpcType": "READ",
+            "domain": "ORDER"
+        },
+        "ORWORB SETSORT": {
+            "complexity": "LOW",
+            "rpcType": "CHANGE",
+            "domain": "ORDER"
+        },
+        "ORWPCE ALWAYS CHECKOUT": {
+            "complexity": "EASY",
+            "rpcType": "READ",
+            "domain": "PCE"
+        },
+        "ORWPCE ANYTIME": {
+            "complexity": "EASY",
+            "rpcType": "READ",
+            "domain": "PCE"
+        },
+        "ORWPCE ASKPCE": {
+            "complexity": "EASY",
+            "rpcType": "READ",
+            "domain": "PCE"
+        },
+        "ORWPCE AUTO VISIT TYPE SELECT": {
+            "complexity": "EASY",
+            "rpcType": "READ",
+            "domain": "PCE"
+        },
+        "ORWPS REASON": {
+            "complexity": "LOW",
+            "rpcType": "READ",
+            "domain": "MED"
+        },
+        "ORWSR SHOW SURG TAB": {
+            "complexity": "MODERATE",
+            "rpcType": "READ",
+            "domain": "CPRS"
+        },
+        "ORWTIU GET TIU CONTEXT": {
+            "complexity": "MODERATE",
+            "rpcType": "READ",
+            "domain": "DOCUMENT"
+        },
+        "ORWDX WRLST": {
+            "complexity": "MODERATE",
+            "rpcType": "READ",
+            "domain": "ORDER"
+        },
+        "ORWDX2 DCREASON": {
+            "complexity": "MODERATE",
+            "rpcType": "READ",
+            "domain": "ORDER"
+        },
+        "ORWOR VWGET": {
+            "complexity": "MODERATE/DIFFICULT",
+            "rpcType": "READ",
+            "domain": "CPRS"
+        },
+        "ORWORDG MAPSEQ": {
+            "complexity": "Moderate",
+            "rpcType": "READ",
+            "domain": "ORDER"
+        },
+        "ORWU USERINFO": {
+            "complexity": "MODERATE",
+            "rpcType": "CHANGE",
+            "domain": "CPRS"
+        },
+        "ORWUL QV4DG": {
+            "complexity": "MODERATE",
+            "rpcType": "READ",
+            "domain": "ORDER"
+        },
+        "ORQQPL INIT USER": {
+            "complexity": "MODERATE/DIFFICULT",
+            "rpcType": "READ",
+            "domain": "PROBLEM"
+        },
+        "ORWCV1 COVERSHEET LIST": {
+            "complexity": "MODERATE",
+            "rpcType": "READ",
+            "domain": "ORDER"
+        },
+        "ORWDBA1 BASTATUS": {
+            "complexity": "MODERATE",
+            "rpcType": "READ",
+            "domain": "CPRS"
+        },
+        "GMV MANAGER": {
+            "complexity": "DIFFICULT",
+            "rpcType": "UTILITY",
+            "domain": "VITAL"
+        },
+        "ORWCH SAVESIZ": {
+            "complexity": "LOW",
+            "rpcType": "CHANGE"
+        },
+        "ORWRP GET DEFAULT PRINTER": {
+            "complexity": "LOW",
+            "rpcType": "READ"
+        },
+        "ORWU OVERDL": {
+            "complexity": "LOW",
+            "rpcType": "READ"
+        },
+        "ORQPT DEFAULT LIST SORT": {
+            "complexity": "LOW",
+            "rpcType": "READ"
+        },
+        "ORWPT DFLTSRC": {
+            "complexity": "LOW",
+            "rpcType": "READ"
+        }
+    }
+}
