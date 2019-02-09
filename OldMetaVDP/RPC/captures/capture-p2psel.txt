@@ -1,0 +1,809 @@
+[
+{
+  "name": "ORQPT DEFAULT LIST SOURCE",
+  "version": "0",
+  "args": [],
+  "to": "rpcEmulated",
+  "emulatorName": "Non-Clinical Emulator",
+  "rpc": "[XWB]11302\u00010\u0019ORQPT DEFAULT LIST SOURCE54f\u0004",
+  "response": "\u0000\u0000^Tuesday Clinic\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:13:44.289Z"
+},
+{
+  "name": "ORQPT DEFAULT LIST SORT",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0017ORQPT DEFAULT LIST SORT54f\u0004",
+  "response": "\u0000\u0000A\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:13:44.300Z"
+},
+{
+  "name": "ORQPT DEFAULT PATIENT LIST",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u001aORQPT DEFAULT PATIENT LIST54f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:13:44.303Z"
+},
+{
+  "name": "ORWPT DFLTSRC",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWPT DFLTSRC54f\u0004",
+  "response": "\u0000\u0000C\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:13:44.306Z"
+},
+{
+  "name": "ORWPT LIST ALL",
+  "version": "0",
+  "args": [
+    "",
+    "1"
+  ],
+  "to": "rpcEmulated",
+  "emulatorName": "Clinical Emulator",
+  "rpc": "[XWB]11302\u00010\u000eORWPT LIST ALL50000f00011f\u0004",
+  "response": "\u0000\u000025^CARTER,DAVID^^^^CARTER,DAVID\r\n17^EIGHT,PATIENT H^^^^EIGHT,PATIENT H\r\n22^EIGHTEEN,PATIENT R^^^^EIGHTEEN,PATIENT R\r\n5^ELEVEN,PATIENT K^^^^ELEVEN,PATIENT K\r\n18^FIFTEEN,PATIENT O^^^^FIFTEEN,PATIENT O\r\n20^FIVE,PATIENT E^^^^FIVE,PATIENT E\r\n24^FOUR,PATIENT D^^^^FOUR,PATIENT D\r\n1^FOURTEEN,PATIENT N^^^^FOURTEEN,PATIENT N\r\n4^NINE,PATIENT I^^^^NINE,PATIENT I\r\n14^NINETEEN,PATIENT S^^^^NINETEEN,PATIENT S\r\n3^ONE,PATIENT A^^^^ONE,PATIENT A\r\n2^SEVEN,PATIENT G^^^^SEVEN,PATIENT G\r\n15^SEVENTEEN,PATIENT Q^^^^SEVENTEEN,PATIENT Q\r\n6^SIX,PATIENT F^^^^SIX,PATIENT F\r\n16^SIXTEEN,PATIENT P^^^^SIXTEEN,PATIENT P\r\n8^TEN,PATIENT J^^^^TEN,PATIENT J\r\n23^THIRTEEN,PATIENT M^^^^THIRTEEN,PATIENT M\r\n9^THREE,PATIENT C^^^^THREE,PATIENT C\r\n19^TWELVE,PATIENT L^^^^TWELVE,PATIENT L\r\n11^TWENTY,PATIENT T^^^^TWENTY,PATIENT T\r\n12^TWENTYFOUR,PATIENT X^^^^TWENTYFOUR,PATIENT X\r\n21^TWENTYONE,PATIENT U^^^^TWENTYONE,PATIENT U\r\n13^TWENTYTHREE,PATIENT W^^^^TWENTYTHREE,PATIENT W\r\n7^TWENTYTWO,PATIENT V^^^^TWENTYTWO,PATIENT V\r\n10^TWO,PATIENT B^^^^TWO,PATIENT B\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:13:44.601Z"
+},
+{
+  "name": "ORWORB FASTUSER",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000fORWORB FASTUSER54f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:13:44.609Z"
+},
+{
+  "name": "ORWORB GETSORT",
+  "version": "0",
+  "args": [],
+  "to": "rpcEmulated",
+  "emulatorName": "Non-Clinical Emulator",
+  "rpc": "[XWB]11302\u00010\u000eORWORB GETSORT54f\u0004",
+  "response": "\u0000\u0000D^R\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:13:44.672Z"
+},
+{
+  "name": "ORWORB SETSORT",
+  "version": "0",
+  "args": [
+    "D",
+    "R"
+  ],
+  "to": "rpcEmulated",
+  "emulatorName": "Non-Clinical Emulator",
+  "rpc": "[XWB]11302\u00010\u000eORWORB SETSORT50001Df0001Rf\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:13:44.713Z"
+},
+{
+  "name": "ORWPT ID INFO",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcEmulated",
+  "emulatorName": "Clinical Emulator",
+  "rpc": "[XWB]11302\u00010\rORWPT ID INFO5000225f\u0004",
+  "response": "\u0000\u0000000000113^2810302^M^Y^^^^CARTER,DAVID\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:07.713Z"
+},
+{
+  "name": "OR GET COMBAT VET",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcEmulated",
+  "emulatorName": "Clinical Emulator",
+  "rpc": "[XWB]11302\u00010\u0011OR GET COMBAT VET5000225f\u0004",
+  "response": "\u0000\u0000NOTCV\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:07.796Z"
+},
+{
+  "name": "ORPRF HASFLG",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcEmulated",
+  "emulatorName": "Clinical Emulator",
+  "rpc": "[XWB]11302\u00010\fORPRF HASFLG5000225f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:07.840Z"
+},
+{
+  "name": "DG CHK BS5 XREF ARRAY",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcEmulated",
+  "emulatorName": "Clinical Emulator",
+  "rpc": "[XWB]11302\u00010\u0015DG CHK BS5 XREF ARRAY5000225f\u0004",
+  "response": "\u0000\u00000\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:09.392Z"
+},
+{
+  "name": "DG SENSITIVE RECORD ACCESS",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcEmulated",
+  "emulatorName": "Clinical Emulator",
+  "rpc": "[XWB]11302\u00010\u001aDG SENSITIVE RECORD ACCESS5000225f\u0004",
+  "response": "\u0000\u00000\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:09.492Z"
+},
+{
+  "name": "ORWPT DIEDON",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcEmulated",
+  "emulatorName": "Clinical Emulator",
+  "rpc": "[XWB]11302\u00010\fORWPT DIEDON5000225f\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:09.564Z"
+},
+{
+  "name": "ORWPT SELECT",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcEmulated",
+  "emulatorName": "Clinical Emulator",
+  "rpc": "[XWB]11302\u00010\fORWPT SELECT5000225f\u0004",
+  "response": "\u0000\u0000CARTER,DAVID^M^2810302^000000113^^^^^0^^0^0^^^36^0\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:09.668Z"
+},
+{
+  "name": "ORWPT1 PRCARE",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcEmulated",
+  "emulatorName": "Clinical Emulator",
+  "rpc": "[XWB]11302\u00010\rORWPT1 PRCARE5000225f\u0004",
+  "response": "\u0000\u0000^^^^^\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:09.740Z"
+},
+{
+  "name": "ORWPT DFLTSRC",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWPT DFLTSRC54f\u0004",
+  "response": "\u0000\u0000C\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:09.745Z"
+},
+{
+  "name": "ORWU NPHASKEY",
+  "version": "0",
+  "args": [
+    "63",
+    "PROVIDER"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWU NPHASKEY5000263f0008PROVIDERf\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:09.750Z"
+},
+{
+  "name": "ORWDBA1 BASTATUS",
+  "version": "0",
+  "args": [],
+  "to": "rpcEmulated",
+  "emulatorName": "Non-Clinical Emulator",
+  "rpc": "[XWB]11302\u00010\u0010ORWDBA1 BASTATUS54f\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:09.802Z"
+},
+{
+  "name": "ORWPT ENCTITL",
+  "version": "0",
+  "args": [
+    "25",
+    "0",
+    "63"
+  ],
+  "to": "rpcEmulated",
+  "emulatorName": "Clinical Emulator",
+  "rpc": "[XWB]11302\u00010\rORWPT ENCTITL5000225f00010f000263f\u0004",
+  "response": "\u0000\u0000^^^ALEXANDER,ROBERT\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:09.903Z"
+},
+{
+  "name": "ORCNOTE GET TOTAL",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcEmulated",
+  "emulatorName": "Non-Clinical Emulator",
+  "rpc": "[XWB]11302\u00010\u0011ORCNOTE GET TOTAL5000225f\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:09.972Z"
+},
+{
+  "name": "ORPRF CLEAR",
+  "version": "0",
+  "args": [],
+  "to": "rpcEmulated",
+  "emulatorName": "Non-Clinical Emulator",
+  "rpc": "[XWB]11302\u00010\u000bORPRF CLEAR54f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:10.036Z"
+},
+{
+  "name": "OR GET COMBAT VET",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcEmulated",
+  "emulatorName": "Clinical Emulator",
+  "rpc": "[XWB]11302\u00010\u0011OR GET COMBAT VET5000225f\u0004",
+  "response": "\u0000\u0000NOTCV\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:10.108Z"
+},
+{
+  "name": "ORWCIRN FACLIST",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcEmulated",
+  "emulatorName": "Out-Of-Scope Emulator",
+  "rpc": "[XWB]11302\u00010\u000fORWCIRN FACLIST5000225f\u0004",
+  "response": "\u0000\u0000-1^Remote access not allowed\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:10.169Z"
+},
+{
+  "name": "ORWCIRN AUTORDV",
+  "version": "0",
+  "args": [],
+  "to": "rpcEmulated",
+  "emulatorName": "Non-Clinical Emulator",
+  "rpc": "[XWB]11302\u00010\u000fORWCIRN AUTORDV54f\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:10.215Z"
+},
+{
+  "name": "ORWPT SHARE",
+  "version": "0",
+  "args": [
+    "10.211.55.21",
+    "001402CA",
+    "25"
+  ],
+  "to": "rpcEmulated",
+  "emulatorName": "Non-Clinical Emulator",
+  "rpc": "[XWB]11302\u00010\u000bORWPT SHARE5001210.211.55.21f0008001402CAf000225f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:10.263Z"
+},
+{
+  "name": "DG CHK PAT/DIV MEANS TEST",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0019DG CHK PAT/DIV MEANS TEST5000225f\u0004",
+  "response": "\u0000\u00000\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:10.269Z"
+},
+{
+  "name": "ORWPT LEGACY",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcEmulated",
+  "emulatorName": "Out-Of-Scope Emulator",
+  "rpc": "[XWB]11302\u00010\fORWPT LEGACY5000225f\u0004",
+  "response": "\u0000\u00000\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:10.309Z"
+},
+{
+  "name": "ORPRF HASFLG",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcEmulated",
+  "emulatorName": "Clinical Emulator",
+  "rpc": "[XWB]11302\u00010\fORPRF HASFLG5000225f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:10.350Z"
+},
+{
+  "name": "ORVAA VAA",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\tORVAA VAA5000225f\u0004",
+  "response": "\u0000\u00000\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:10.356Z"
+},
+{
+  "name": "ORWMHV MHV",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcEmulated",
+  "emulatorName": "Out-Of-Scope Emulator",
+  "rpc": "[XWB]11302\u00010\nORWMHV MHV5000225f\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:10.398Z"
+},
+{
+  "name": "ORWCOM PTOBJ",
+  "version": "0",
+  "args": [],
+  "to": "rpcEmulated",
+  "emulatorName": "Non-Clinical Emulator",
+  "rpc": "[XWB]11302\u00010\fORWCOM PTOBJ54f\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:10.466Z"
+},
+{
+  "name": "ORWCV START",
+  "version": "0",
+  "args": [
+    "25",
+    "10.211.55.21",
+    "001402CA",
+    "0",
+    "",
+    "1"
+  ],
+  "to": "rpcEmulated",
+  "emulatorName": "Non-Clinical Emulator",
+  "rpc": "[XWB]11302\u00010\u000bORWCV START5000225f001210.211.55.21f0008001402CAf00010f0000f00011f\u0004",
+  "response": "\u0000\u000010;20;30;40;70;80;\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:10.567Z"
+},
+{
+  "name": "ORWCV1 COVERSHEET LIST",
+  "version": "0",
+  "args": [],
+  "to": "rpcEmulated",
+  "emulatorName": "Non-Clinical Emulator",
+  "rpc": "[XWB]11302\u00010\u0016ORWCV1 COVERSHEET LIST54f\u0004",
+  "response": "\u0000\u000010^Active Problems^^S^^ORQQPL LIST^1^^^^^A^^2,3^9,10,2^ORQQPL DETAIL^1^28\r\n20^Allergies / Adverse Reactions^^S^^ORQQAL LIST^1^^^^^^^^2^ORQQAL DETAIL^2^29\r\n30^Postings^^S^^ORQQPP LIST^1^^Maroon^D^3^^^20^2,3^^3^30\r\n40^Active Medications^^S^^ORWPS COVER^1^1^^^^1^^35^2,4^ORWPS DETAIL^4^31\r\n50^Clinical Reminders                                        Due Date^^S^^ORQQPX REMINDERS LIST^^^^D^3^^^34,44^2,3^^5^32\r\n60^Recent Lab Results^^S^^ORWCV LAB^1^^^D^3^^^34^2,3^ORWOR RESULT^6^33\r\n70^Vitals^^S^^ORQQVI VITALS^^^^T^4^^^5,17,19,27^2,5,4,6,7,8^^7^34\r\n80^Appointments/Visits/Admissions^^S^^ORWCV VST^1^1^^T^2^^^16,27^2,3,4^ORWCV DTLVST^8^35\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:10.655Z"
+},
+{
+  "name": "ORQQPL LIST",
+  "version": "0",
+  "args": [
+    "25",
+    "A"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000bORQQPL LIST5000225f0001Af\u0004",
+  "response": "\u0000\u0000^No problems found.\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:10.662Z"
+},
+{
+  "name": "ORQQAL LIST",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcEmulated",
+  "emulatorName": "Clinical Emulator",
+  "rpc": "[XWB]11302\u00010\u000bORQQAL LIST5000225f\u0004",
+  "response": "\u0000\u0000^No Allergy Assessment\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:10.738Z"
+},
+{
+  "name": "ORWU PATCH",
+  "version": "0",
+  "args": [
+    "GMRA*4.0*21"
+  ],
+  "to": "rpcEmulated",
+  "emulatorName": "Non-Clinical Emulator",
+  "rpc": "[XWB]11302\u00010\nORWU PATCH50011GMRA*4.0*21f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:10.860Z"
+},
+{
+  "name": "ORQQPP LIST",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000bORQQPP LIST5000225f\u0004",
+  "response": "\u0000\u0000^No patient postings found.\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:10.872Z"
+},
+{
+  "name": "ORWPS COVER",
+  "version": "0",
+  "args": [
+    "25",
+    "1"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000bORWPS COVER5000225f00011f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:10.886Z"
+},
+{
+  "name": "ORQQPXRM REMINDERS UNEVALUATED",
+  "version": "0",
+  "args": [
+    "25",
+    "0"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u001eORQQPXRM REMINDERS UNEVALUATED5000225f00010f\u0004",
+  "response": "\u0000\u0000793\r\n51\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:10.899Z"
+},
+{
+  "name": "ORQQPXRM REMINDER CATEGORIES",
+  "version": "0",
+  "args": [
+    "25",
+    "0"
+  ],
+  "to": "rpcEmulated",
+  "emulatorName": "Non-Clinical Emulator",
+  "rpc": "[XWB]11302\u00010\u001cORQQPXRM REMINDER CATEGORIES5000225f00010f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:10.961Z"
+},
+{
+  "name": "ORQQVI VITALS",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcEmulated",
+  "emulatorName": "Clinical Emulator",
+  "rpc": "[XWB]11302\u00010\rORQQVI VITALS5000225f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:11.042Z"
+},
+{
+  "name": "ORWCV VST",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\tORWCV VST5000225f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:11.051Z"
+},
+{
+  "name": "ORWPT PTINQ",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000bORWPT PTINQ5000225f\u0004",
+  "response": "\u0000\u0000\r\n\r\nCARTER,DAVID                            000-00-0113              MAR 2,1981\r\n=============================================================================\r\n Address: 251 W 3RD ST                  Temporary: NO TEMPORARY ADDRESS\r\n         SANTA MONICA,CA 90291\r\n         UNITED STATES\r\n  County: DEL NORTE (015)                 From/To: NOT APPLICABLE\r\n   Phone: (000) 000-0000                    Phone: NOT APPLICABLE\r\n  Office: NONE\r\n    Cell: (000) 000-0000\r\n  E-mail: CARTERDAVID@VISTADATAPROJECT.INFO\r\nBad Addr: \r\n\r\n Confidential Address:                      Confidential Address Categories:\r\n         NO CONFIDENTIAL ADDRESS\r\n From/To: NOT APPLICABLE\r\n\r\n    POS: PERSIAN GULF WAR                 Claim #: 211670124\r\n  Relig: UNKNOWN/NO PREFERENCE                Sex: MALE\r\n   Race: WHITE                          Ethnicity: NOT HISPANIC OR LATINO \r\n\r\n  Combat Vet Status: EXPIRED                 End Date: 10/15/2009\r\nPrimary Eligibility: UNSPECIFIED\r\nOther Eligibilities: NSC, \r\n      Unemployable: NO\r\n\r\nStatus      : PATIENT HAS NO INPATIENT OR LODGER ACTIVITY IN THE COMPUTER\r\n\r\nFuture Appointments: NONE\r\n\r\nRemarks: \r\n\r\nDate of Death Information\r\n     Date of Death: \r\n     Source of Notification: \r\n     Updated Date/Time: \r\n     Last Edited By: \r\n\r\nEmergency Contact Information:\r\n     E-Cont.: JONES,PATRICIA\r\nRelationship: \r\n       Phone: (000) 000-0000\r\n  Work Phone: UNSPECIFIED\r\n\r\nHealth Insurance Information:\r\n   Insurance   COB Subscriber ID     Group       Holder  Effective  Expires\r\n   ===========================================================================\r\n    No Insurance Information\r\n\r\n\r\nService Connection/Rated Disabilities:\r\n\r\n  Service Connected: NO\r\n Rated Disabilities: NONE STATED\r\n\r\nNext of Kin Information:\r\nName:  JONES,PATRICIA\r\n\r\n       Phone number:  (000) 000-0000\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:13.492Z"
+},
+{
+  "name": "ORWCV POLL",
+  "version": "0",
+  "args": [
+    "25",
+    "10.211.55.21",
+    "001402CA"
+  ],
+  "to": "rpcEmulated",
+  "emulatorName": "Non-Clinical Emulator",
+  "rpc": "[XWB]11302\u00010\nORWCV POLL5000225f001210.211.55.21f0008001402CAf\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:13.545Z"
+},
+{
+  "name": "ORWCV POLL",
+  "version": "0",
+  "args": [
+    "25",
+    "10.211.55.21",
+    "001402CA"
+  ],
+  "to": "rpcEmulated",
+  "emulatorName": "Non-Clinical Emulator",
+  "rpc": "[XWB]11302\u00010\nORWCV POLL5000225f001210.211.55.21f0008001402CAf\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:16.144Z"
+},
+{
+  "name": "ORWCV POLL",
+  "version": "0",
+  "args": [
+    "25",
+    "10.211.55.21",
+    "001402CA"
+  ],
+  "to": "rpcEmulated",
+  "emulatorName": "Non-Clinical Emulator",
+  "rpc": "[XWB]11302\u00010\nORWCV POLL5000225f001210.211.55.21f0008001402CAf\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:18.756Z"
+},
+{
+  "name": "ORWCV POLL",
+  "version": "0",
+  "args": [
+    "25",
+    "10.211.55.21",
+    "001402CA"
+  ],
+  "to": "rpcEmulated",
+  "emulatorName": "Non-Clinical Emulator",
+  "rpc": "[XWB]11302\u00010\nORWCV POLL5000225f001210.211.55.21f0008001402CAf\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:21.385Z"
+},
+{
+  "name": "ORWCV POLL",
+  "version": "0",
+  "args": [
+    "25",
+    "10.211.55.21",
+    "001402CA"
+  ],
+  "to": "rpcEmulated",
+  "emulatorName": "Non-Clinical Emulator",
+  "rpc": "[XWB]11302\u00010\nORWCV POLL5000225f001210.211.55.21f0008001402CAf\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:24.002Z"
+},
+{
+  "name": "ORWCV POLL",
+  "version": "0",
+  "args": [
+    "25",
+    "10.211.55.21",
+    "001402CA"
+  ],
+  "to": "rpcEmulated",
+  "emulatorName": "Non-Clinical Emulator",
+  "rpc": "[XWB]11302\u00010\nORWCV POLL5000225f001210.211.55.21f0008001402CAf\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:26.617Z"
+},
+{
+  "name": "ORWCV POLL",
+  "version": "0",
+  "args": [
+    "25",
+    "10.211.55.21",
+    "001402CA"
+  ],
+  "to": "rpcEmulated",
+  "emulatorName": "Non-Clinical Emulator",
+  "rpc": "[XWB]11302\u00010\nORWCV POLL5000225f001210.211.55.21f0008001402CAf\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:29.248Z"
+},
+{
+  "name": "ORWCV POLL",
+  "version": "0",
+  "args": [
+    "25",
+    "10.211.55.21",
+    "001402CA"
+  ],
+  "to": "rpcEmulated",
+  "emulatorName": "Non-Clinical Emulator",
+  "rpc": "[XWB]11302\u00010\nORWCV POLL5000225f001210.211.55.21f0008001402CAf\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:31.861Z"
+},
+{
+  "name": "ORWOR UNSIGN",
+  "version": "0",
+  "args": [
+    "25",
+    {
+      "0": ""
+    }
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWOR UNSIGN5000225f20010001\u0001f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:32.604Z"
+},
+{
+  "name": "ORPRF CLEAR",
+  "version": "0",
+  "args": [],
+  "to": "rpcEmulated",
+  "emulatorName": "Non-Clinical Emulator",
+  "rpc": "[XWB]11302\u00010\u000bORPRF CLEAR54f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:32.698Z"
+},
+{
+  "name": "ORWCH SAVFONT",
+  "version": "0",
+  "args": [
+    "8"
+  ],
+  "to": "rpcEmulated",
+  "emulatorName": "Non-Clinical Emulator",
+  "rpc": "[XWB]11302\u00010\rORWCH SAVFONT500018f\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:32.742Z"
+},
+{
+  "name": "ORWCH SAVEALL",
+  "version": "0",
+  "args": [
+    {
+      "1": "B^frmFrame^26,26,819,732",
+      "2": "W^frmProblems.pnlLeft^159",
+      "3": "W^frmOrders.pnlLeft^117",
+      "4": "W^frmNotes.pnlLeft^161",
+      "5": "W^frmConsults.pnlLeft^83",
+      "6": "W^frmDCSumm.pnlLeft^186",
+      "7": "W^frmLabs.pnlLeft^97",
+      "8": "W^frmReports.pnlLeft^119",
+      "9": "C^frmOrders.hdrOrders^0,42,255,84,84,42,42,42,42,42",
+      "10": "C^frmMeds.hdrMedsIn^48,384,96,96,96",
+      "11": "C^frmMeds.hdrMedsOut^48,384,96,96,96,48",
+      "12": "C^SpellCheckerSettings^",
+      "13": "B^frmTempEditSplitters^0,0,0,0",
+      "14": "B^frmTempEditSplitters2^0,0,0,0",
+      "15": "B^frmReminderTree^0,0,0,0",
+      "16": "B^frmRemDlg^0,0,0,0",
+      "17": "B^frmRemDlgSplitters^0,0,0,0",
+      "18": "B^frmDrawersSplitters^0,0,0,85",
+      "19": "B^frmLabsSplitters^361,97,72,314",
+      "20": "B^frmCoverSplitters1^211,211,120,318",
+      "21": "B^frmCoverSplitters2^114,255,255,0",
+      "22": "B^frmMedsSplit^223,100,0,0",
+      "23": "C^frmMeds.hdrMedsNonVA^48,384,96,96",
+      "24": "C^frmOrders.hdrOrders^0,42,255,84,84,42,42,42,42,42",
+      "25": "B^frmPtSel.sptVert^290,0,0,0",
+      "26": "C^frmPtSel.lstvAlerts^40,195,75,95,150,310,290",
+      "27": "B^frmPtSel^35,93,801,594"
+    }
+  ],
+  "to": "rpcEmulated",
+  "emulatorName": "Non-Clinical Emulator",
+  "rpc": "[XWB]11302\u00010\rORWCH SAVEALL520011024B^frmFrame^26,26,819,732t0012025W^frmProblems.pnlLeft^159t0013023W^frmOrders.pnlLeft^117t0014022W^frmNotes.pnlLeft^161t0015024W^frmConsults.pnlLeft^83t0016023W^frmDCSumm.pnlLeft^186t0017020W^frmLabs.pnlLeft^97t0018024W^frmReports.pnlLeft^119t0019051C^frmOrders.hdrOrders^0,42,255,84,84,42,42,42,42,42t00210035C^frmMeds.hdrMedsIn^48,384,96,96,96t00211039C^frmMeds.hdrMedsOut^48,384,96,96,96,48t00212023C^SpellCheckerSettings^t00213030B^frmTempEditSplitters^0,0,0,0t00214031B^frmTempEditSplitters2^0,0,0,0t00215025B^frmReminderTree^0,0,0,0t00216019B^frmRemDlg^0,0,0,0t00217028B^frmRemDlgSplitters^0,0,0,0t00218030B^frmDrawersSplitters^0,0,0,85t00219032B^frmLabsSplitters^361,97,72,314t00220036B^frmCoverSplitters1^211,211,120,318t00221034B^frmCoverSplitters2^114,255,255,0t00222026B^frmMedsSplit^223,100,0,0t00223035C^frmMeds.hdrMedsNonVA^48,384,96,96t00224051C^frmOrders.hdrOrders^0,42,255,84,84,42,42,42,42,42t00225028B^frmPtSel.sptVert^290,0,0,0t00226046C^frmPtSel.lstvAlerts^40,195,75,95,150,310,290t00227024B^frmPtSel^35,93,801,594f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:32.782Z"
+},
+{
+  "name": "TIU TEMPLATE SET DEFAULTS",
+  "version": "0",
+  "args": [
+    ""
+  ],
+  "to": "rpcEmulated",
+  "emulatorName": "Non-Clinical Emulator",
+  "rpc": "[XWB]11302\u00010\u0019TIU TEMPLATE SET DEFAULTS50000f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:32.826Z"
+},
+{
+  "name": "ORWCV STOP",
+  "version": "0",
+  "args": [
+    "25",
+    "10.211.55.21",
+    "001402CA"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\nORWCV STOP5000225f001210.211.55.21f0008001402CAf\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:32.832Z"
+},
+{
+  "name": "XWB DEFERRED CLEARALL",
+  "version": "0",
+  "args": [],
+  "to": "rpcEmulated",
+  "emulatorName": "Out-Of-Scope Emulator",
+  "rpc": "[XWB]11302\u00010\u0015XWB DEFERRED CLEARALL54f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:32.896Z"
+},
+{
+  "name": "XWB DEFERRED CLEARALL",
+  "version": "0",
+  "args": [],
+  "to": "rpcEmulated",
+  "emulatorName": "Out-Of-Scope Emulator",
+  "rpc": "[XWB]11302\u00010\u0015XWB DEFERRED CLEARALL54f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:32.942Z"
+},
+{
+  "name": "#BYE#",
+  "to": "server",
+  "rpc": "[XWB]10304\u0005#BYE#\u0004",
+  "response": "\u0000\u0000#BYE#\u0004",
+  "from": "CPRS",
+  "timeStamp": "2018-01-23T01:14:32.952Z"
+}
+]

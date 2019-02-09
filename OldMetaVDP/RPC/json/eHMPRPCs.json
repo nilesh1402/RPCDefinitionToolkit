@@ -1,0 +1,280 @@
+[
+  {
+    "rpc": "GMV ADD VM", 
+    "file": [
+      "vitals/writebackvitalssaveResource.js"
+    ]
+  }, 
+  {
+    "rpc": "GMV CLOSEST READING", 
+    "file": [
+      "vitals/vitals-resource.js"
+    ]
+  }, 
+  {
+    "rpc": "GMV MARK ERROR", 
+    "file": [
+      "vitals/entered-in-error-resource.js"
+    ]
+  }, 
+  {
+    "rpc": "GMV V/M ALLDATA", 
+    "file": [
+      "vitals/vitals-resource.js"
+    ]
+  }, 
+  {
+    "rpc": "GMV VITALS/CAT/QUAL", 
+    "file": [
+      "vitals/vitals-resource.js"
+    ]
+  }, 
+  {
+    "rpc": "HMPCRPC RPC", 
+    "file": [
+      "patient-search/default-search.js"
+    ]
+  }, 
+  {
+    "rpc": "ORQOR DETAIL", 
+    "file": [
+      "order-detail-resource.js"
+    ]
+  }, 
+  {
+    "rpc": "ORQQPL ADD SAVE", 
+    "file": [
+      "problems-resource.js"
+    ]
+  }, 
+  {
+    "rpc": "ORQQPL DELETE", 
+    "file": [
+      "problems-resource.js"
+    ]
+  }, 
+  {
+    "rpc": "ORQQPL EDIT SAVE", 
+    "file": [
+      "problems-resource.js"
+    ]
+  }, 
+  {
+    "rpc": "ORQQPL4 LEX", 
+    "file": [
+      "problems-resource.js"
+    ]
+  }, 
+  {
+    "rpc": "ORQQPX REMINDER DETAIL", 
+    "file": [
+      "cdsadvice/get-cds-advice-detail.js", 
+      "clinical-reminders/get-clinical-reminder-detail.js"
+    ]
+  }, 
+  {
+    "rpc": "ORQQPX REMINDERS LIST", 
+    "file": [
+      "cdsadvice/get-cds-advice-list.js", 
+      "clinical-reminders/get-clinical-reminder-list.js"
+    ]
+  }, 
+  {
+    "rpc": "ORWDAL32 ALLERGY MATCH", 
+    "file": [
+      "writebackallergy/operationaldataResource.js"
+    ]
+  }, 
+  {
+    "rpc": "ORWDAL32 CLINUSER", 
+    "file": [
+      "writebackallergy/enteredinerrorResource.js"
+    ]
+  }, 
+  {
+    "rpc": "ORWDAL32 SAVE ALLERGY", 
+    "file": [
+      "writebackallergy/enteredinerrorResource.js", 
+      "writebackallergy/writebackallergysaveResource.js"
+    ]
+  }, 
+  {
+    "rpc": "ORWDAL32 SYMPTOMS", 
+    "file": [
+      "writebackallergy/operationaldataResource.js"
+    ]
+  }, 
+  {
+    "rpc": "ORWDPS1 DFLTSPLY", 
+    "file": [
+      "writebackmed/operationaldataResource.js"
+    ]
+  }, 
+  {
+    "rpc": "ORWDPS2 DAY2QTY", 
+    "file": [
+      "writebackmed/operationaldataResource.js"
+    ]
+  }, 
+  {
+    "rpc": "ORWDPS2 OISLCT", 
+    "file": [
+      "writebackmed/operationaldataResource.js"
+    ]
+  }, 
+  {
+    "rpc": "ORWDX DLGDEF", 
+    "file": [
+      "writebackmed/operationaldataResource.js"
+    ]
+  }, 
+  {
+    "rpc": "ORWDX LOADRSP", 
+    "file": [
+      "writebackmed/operationaldataResource.js"
+    ]
+  }, 
+  {
+    "rpc": "ORWDX LOCK ORDER", 
+    "file": [
+      "writebackorder/signorderResource.js"
+    ]
+  }, 
+  {
+    "rpc": "ORWDX SAVE", 
+    "file": [
+      "writebackmed/writebackmedicationsaveResource.js", 
+      "writebackmed/writebackopmedorderResource.js"
+    ]
+  }, 
+  {
+    "rpc": "ORWDX SEND", 
+    "file": [
+      "writebackmed/writebackmedicationsaveResource.js", 
+      "writebackmed/writebackopmedorderResource.js", 
+      "writebackorder/signorderResource.js"
+    ]
+  }, 
+  {
+    "rpc": "ORWDX UNLOCK ORDER", 
+    "file": [
+      "writebackorder/signorderResource.js"
+    ]
+  }, 
+  {
+    "rpc": "ORWDX2 DCREASON", 
+    "file": [
+      "writebackmed/operationaldataResource.js"
+    ]
+  }, 
+  {
+    "rpc": "ORWDXA DC", 
+    "file": [
+      "writebackmed/writebackmedicationsaveResource.js"
+    ]
+  }, 
+  {
+    "rpc": "ORWDXA VALID", 
+    "file": [
+      "writebackorder/signorderResource.js"
+    ]
+  }, 
+  {
+    "rpc": "ORWPCE GETSVC", 
+    "file": [
+      "visits/visit-service-category-resource.js"
+    ]
+  }, 
+  {
+    "rpc": "ORWPT CWAD", 
+    "file": [
+      "_example/example-vista-resource.js"
+    ]
+  }, 
+  {
+    "rpc": "ORWRP REPORT LISTS", 
+    "file": [
+      "health-summaries-resource.js"
+    ]
+  }, 
+  {
+    "rpc": "ORWRP REPORT TEXT", 
+    "file": [
+      "health-summaries-resource.js"
+    ]
+  }, 
+  {
+    "rpc": "ORWU NPHASKEY", 
+    "file": [
+      "writebackorder/signorderResource.js"
+    ]
+  }, 
+  {
+    "rpc": "ORWU VALIDSIG", 
+    "file": [
+      "writebacknote/signnoteResource.js", 
+      "writebackorder/signorderResource.js"
+    ]
+  }, 
+  {
+    "rpc": "ORWUL FV4DG", 
+    "file": [
+      "writebackmed/writebackopmedorderResource.js"
+    ]
+  }, 
+  {
+    "rpc": "ORWUL FVIDX", 
+    "file": [
+      "writebackmed/operationaldataResource.js", 
+      "writebackmed/writebackopmedorderResource.js"
+    ]
+  }, 
+  {
+    "rpc": "ORWUL FVSUB", 
+    "file": [
+      "writebackmed/writebackopmedorderResource.js"
+    ]
+  }, 
+  {
+    "rpc": "TIU AUTHORIZATION", 
+    "file": [
+      "writebacknote/signnoteResource.js"
+    ]
+  }, 
+  {
+    "rpc": "TIU CREATE RECORD", 
+    "file": [
+      "writebacknote/createnoteResource.js"
+    ]
+  }, 
+  {
+    "rpc": "TIU LOCK RECORD", 
+    "file": [
+      "writebacknote/signnoteResource.js"
+    ]
+  }, 
+  {
+    "rpc": "TIU SIGN RECORD", 
+    "file": [
+      "writebacknote/signnoteResource.js"
+    ]
+  }, 
+  {
+    "rpc": "TIU UNLOCK RECORD", 
+    "file": [
+      "writebacknote/signnoteResource.js"
+    ]
+  }, 
+  {
+    "rpc": "TIU UPDATE RECORD", 
+    "file": [
+      "writebacknote/signnoteResource.js"
+    ]
+  }, 
+  {
+    "rpc": "TIU WHICH SIGNATURE ACTION", 
+    "file": [
+      "writebacknote/signnoteResource.js"
+    ]
+  }
+]

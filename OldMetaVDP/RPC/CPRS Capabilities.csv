@@ -1,0 +1,243 @@
+Category,Capability,CCHIT Capability Identifier
+,,
+Patient Selection,Patient Access Warnings / Flags,"IP 01.03, AM 36.05"
+Patient Selection,- Warn of restricted/sensitive record & log access,
+Patient Selection,"- Suppress SSN, DOB for sensitive patients",
+Patient Selection,- Display currently active patient flags,
+Patient Selection,"- Display warnings - deceased, eligibility",
+Patient Selection,View Selection Lists,AM 28.01
+Patient Selection,- Provider / Specialty / Ward selection lists,
+Patient Selection,- Clinic Appointment list,
+Patient Selection,- Personal / Team lists filtered by user,
+Patient Selection,Create Custom Selection Lists,
+Patient Selection,"Search by multiple identifiers (SSN, X9999, 9999)",FN 02.01
+Patient Selection,Build personal/team patient lists and set default patient selection sources,
+Demographics,Show current room/bed assignment or visit,IP 01.01
+Demographics,"Name, ID#, DOB, Age visible overall","IP 08.01, FN 01.01"
+Demographics,Demographic Details,"IP 1.01.01, AM 02.02.01"
+Demographics,"- Insurance, language, race, ethnicity",
+Demographics,"- Service connection (SC), SC%, and disabilities",
+Demographics,"- Address, Next of Kin, etc.",
+Demographics,Print Demographics,
+Flags/Postings,"Display special indicators (CWAD, Flags)",AM 16.01
+Flags/Postings,Display patient flag details,
+Flags/Postings,Details for crisis notes / warning notes / advanced directives,"AM 15.04, AM 16.02"
+Patient Record Summary (Cover Sheet),"Active problems, current meds, allergies",AM 07.01
+Patient Record Summary (Cover Sheet),"Appointments, visits, and admissions",
+Patient Record Summary (Cover Sheet),Postings / reminders,
+Patient Record Summary (Cover Sheet),Observations: recent labs and vitals,
+Patient Record Summary (Cover Sheet),Display summary details & print,
+Care Team,Show care team assignments,
+Care Team,Show admitting physician,IP 02.04
+Care Team,Identify clinician and location for provision of current care,IP 02.01
+Care Team,- Appointment View,
+Care Team,- Admissions View,
+Care Team,- New Visit View,
+Allergies / Adverse Reactions,Show list of allergies,"FN 05.12, FN 05.13"
+Allergies / Adverse Reactions,Search for causitive agent,FN 05.10
+Allergies / Adverse Reactions,"Enter new allergy (reaction, signs, date, ...)","IP 05.02, IP 05.10, IP 05.11, FN 05.04, FN 05.05"
+Allergies / Adverse Reactions,"Update allergy fields (symptoms, severity, ...)",FN 05.05
+Allergies / Adverse Reactions,Remove an allergy entered in error,"FN 05.01, FN 05.02"
+Allergies / Adverse Reactions,Print the allergy list,IP 05.09
+Allergies / Adverse Reactions,Capture no known allergies,FN 05.09
+Allergies / Adverse Reactions,Allergy list available from all views,IP 08.04
+Clinical Observations,"Ability to record vital signs, display BMI","IP 20.01, IP 20.02, AM 08.13, AM 08.14"
+Clinical Observations,"- Enter qualifiers (location, method, position, cuff, ...)",
+Clinical Observations,- Indicate vital sign outside of expected range,AM 08.15
+Clinical Observations,"- Handle patients on pass, unavailable, refused, ...",
+Clinical Observations,- Mark observation as entered in error,
+Clinical Observations,"Graph observations over time (time scale, zoom, value display)",AM 08.24
+Problem List,Views based on status of the problem,"FN 04.06, FN 04.02"
+Problem List,"Views based on filters (clinic, provider, patient status)",
+Problem List,Ability to set default view,
+Problem List,Show history of problem,IP 04.02
+Problem List,Enter a new problem,"IP 04.03, IP 04.09.01, IP 04.05, AM 03.09.01"
+Problem List,"Manage onset, resolution, chronicity of problem","AM 03.03, AM 03.04, AM 03.05"
+Problem List,Customized pick list for common problems by context,
+Problem List,Removal / Inactivation of a problem,IP 04.06
+Problem List,Add comments to a problem,FN 04.01
+Problem List,Print the problem list,FN 04.04
+Medications,"Show med list (order, start/stop, status)","IP 06.02, AM 04.06"
+Medications,Show non-VA medications,"IP 06.03, FN 06.06"
+Medications,"Add medication orders, prescriptions","IP 06.04, AM 04.02, AM 04.07"
+Medications,Update medication order,"FN 06.01, IP 06.08"
+Medications,Renew medication order,
+Medications,Request refill of medication,
+Medications,Hold medication,
+Medications,"Sort med list (IMO, status, location, alphabetic, ...)",IP 06.11
+Medications,Print medication list,"FN 06.02, FN 06.04"
+Medications,Show medication details / history / administrations,AM 04.05
+Medications,Transfer outpatient medication to inpatient medication (admit),
+Medications,Transfer inpatient medication to outpatient medication (discharge),
+General Ordering,"Order views (discontinued, expiring, active, ...)","IP 08.27, AM 12.06"
+General Ordering,"- Display orders by status (discontinued, expiring, active, ...)",
+General Ordering,"- Display orders by groups (infusions, meds, labs, ...)","IP 14.06, AM 12.07"
+General Ordering,"- Display orders by events (admit, transfer, discharge, post-op)",
+General Ordering,- Display orders by time frame,
+General Ordering,Display order details,"IP 08.14, FN 09.02"
+General Ordering,- Display order history,
+General Ordering,- Display order results,IP 14.02
+General Ordering,- Display result history,IP 14.03
+General Ordering,All orders may be written electronically,IP 08.10
+General Ordering,- Urgency available for all order types,IP 08.09
+General Ordering,- Document a verbal order,IP 08.05
+General Ordering,- Free text orders,IP 09.16
+General Ordering,"- New orders have special indication (top of list, blue)",
+General Ordering,"Renew, modify, discontinue and hold orders","IP 08.11, IP 10.08, IP 10.12, AM 11.07"
+General Ordering,Manage signatures for orders,IP 08.13
+General Ordering,Set order result alerts,
+General Ordering,Flag/Unflag orders for clarification,
+General Ordering,"Associate orders with diagnoses, indications (limited)",AM 03.08.01
+General Ordering,Set orders to be activated at a future time (event-delayed),IP 08.20
+General Ordering,Print order list,IP 08.22
+Order Sets / Order Menus / Quick Orders,Save frequently used orders as personal favorites,IP 08.26
+Order Sets / Order Menus / Quick Orders,Order lists and menus appear based on current user,AM 11.19
+Order Sets / Order Menus / Quick Orders,Navigable order menus and order sets,"IP 09.05, IP 09.28"
+Order Sets / Order Menus / Quick Orders,All order types and order checks available within order set,"FN 11.03, FN 10.03"
+Order Sets / Order Menus / Quick Orders,Execution of the order set may be interrupted and canceled,
+Order Medications,Display relevant lab results such as creatinine,"IP 07.01, IP 13.01"
+Order Medications,Enter non-VA medications,IP 10.09
+Order Medications,Search by generic name or brand name,FN 07.04
+Order Medications,Enter VA medication,"AM 11.01, AM 11.13"
+Order Medications,"- Dose, route, schedule maintained as discrete fields","FN 07.06, AM 11.04"
+Order Medications,- Enter additional details of order via free text if necessary,IP 10.11
+Order Medications,- Display routes specific to selected medication,IP 12.30
+Order Medications,"- Indicate first dose, days supply, etc.",
+Order Medications,Indicate non-formulary medication and formulary alternatives,"IP 10.01, FN 07.02, IP 12.31"
+Order Medications,"Support complex dosing (tapers, etc.)","IP 10.10, IP 10.16"
+Order Medications,Schedule builder for entering non-standard schedules,
+Order Infusions,"Enter solutions, volumes, and rate",
+Order Infusions,Enter additives and strengths,
+Order Infusions,Support schedules for particular IV types (intermittent vs continuous),
+Order Infusions,Support limits such as duration or total volume,
+Order Infusions,Display expanded med route list as needed,
+Order Labs,Enter lab order,AM 12.01
+Order Labs,Display lab informational messages,
+Order Labs,Indicate maximum order frequency if test ordered too soon,IP 13.08
+Order Imaging,"Support imaging types (radiology, MRI, CT, ...)",AM 12.01
+Order Imaging,Display modifiers (based on selected procedure),
+Order Imaging,Obtain required fields for the imaging type,
+Order Diets,Enter diet components (current and future),
+Order Diets,Enter tubefeeding products and strengths,
+Order Diets,Order early and/or late trays,
+Order Diets,Document isolations and precautions,
+Order Diets,Free text additional diet requests,
+Order Nursing Care,Vital measurement order,
+Order Nursing Care,Patient care orders (instructions plus schedule),
+Order Nursing Care,Dynamic order dialog (CAC specifies fields to prompt),
+Order Blood Products,Show patient information relevant to blood products,
+Order Blood Products,"Specify blood components (modifiers, quantity, when)",
+Order Blood Products,Specify associated diagnostic tests,
+Order Blood Products,Show relevant lab results,
+Order Checking,Show when order checks cannot be performed,FN 07.01
+Order Checking,"Show drug-drug, drug-allergy, drug class interactions","FN 12.01, FN 12.04, FN 12.10, IP 12.14"
+Order Checking,Show duplicate order checks,
+Order Checking,Capture reason for override of order check,"FN 12.06, FN 12.08, IP 12.33"
+Order Checking,Indicate tests that must be done to monitor certain medications,IP 12.11
+Order Checking,Inform clinician about drug/food interactions,IP 12.26
+Order Checking,Enable / disable various order checks,
+Consult Requests,Enter referral order,AM 21.01
+Consult Requests,Display prerequisites for consult,
+Consult Requests,Support templates / data objects for reason for request (based on service),
+Consult Requests,Search lexicon for provisional diagnosis,
+Consult Management,Receive / deny / discontinue / resubmit a consult request,
+Consult Management,Schedule a consult,
+Consult Management,Forward a consult to another service,
+Consult Management,Complete a consult,
+Consult Management,- Create consult report (similar to progress note),
+Consult Management,- Identify significant findings,
+Consult Management,- Add relevant comments to the consult request,
+Consult Management,- Attach results from the medicine package,
+Consult Management,"Display consult details, results, and Standard Form 513",
+Encounter Management,Track all providers who participate in encounter,FN 03.01
+Encounter Management,- Maintain primary provider for provision of care,FN 03.02
+Encounter Management,- Record telephone/verbal encounter,AM 25.01
+Encounter Management,"Document diagnoses, procedures, exposures (minimum data set)","AM 31.02, AM 31.03"
+Encounter Management,Document instructions given to the patient,AM 10.05
+Encounter Management,"Document immunizations with series, reaction, comment",IP 15.05
+Encounter Management,Document skin tests and their results,
+Encounter Management,"Ability to indicate refusal, contraindication",IP 15.12
+Encounter Management,"Document exams and other health factors (smoking, history, ...)",
+Clinical Documentation,List progress notes,AM 08.02
+Clinical Documentation,Review progress note including addenda & discrete fields,AM 08.08
+Clinical Documentation,"Display associated encounter information (diagnoses, procedures, etc.)",
+Clinical Documentation,"Filter notes by provider, location, title",AM 08.11
+Clinical Documentation,Create progress note,"AM 08.01, AM 08.10"
+Clinical Documentation,- Associate note with consult if applicable,
+Clinical Documentation,- Identify primary provider and prompt for encounter information,
+Clinical Documentation,"- Collect time of note, author, subject (based on parameters)",
+Clinical Documentation,Attach and detach notes to form interdisciplinary note,
+Clinical Documentation,Addend document,"AM 08.07, AM 08.09"
+Clinical Documentation,Apply templates to document,AM 08.19
+Clinical Documentation,Create and customize note templates,AM 08.20
+Clinical Documentation,Manage template fields (data objects within templates),
+Clinical Documentation,Search templates,
+Clinical Documentation,Import and export templates,
+Clinical Documentation,Check spelling and grammar for templates and notes,
+Clinical Documentation,"Sign clinical document (note, discharge summary, consult report)","AM 08.04, AM 08.05"
+Clinical Documentation,Identify additional signers and obtain co-signatures,AM 08.06
+Clinical Documentation,"Print a clinical document (consult, discharge summary, progress note, ...)",
+Clinical Documentation,Configure defaults for editing and viewing progress notes,
+Clinical Documentation,Create discharge summary (similar to create progress note),
+Clinical Reminders,Display reminders per configuration for user,"AM 22.02, AM 23.02, AM 23.06, AM 23.07, IP 14.35"
+Clinical Reminders,- Due reminders,
+Clinical Reminders,- Applicable reminders,
+Clinical Reminders,"- Not applicable, evaluated, and other reminders",
+Clinical Reminders,Dynamically build reminder dialog based on definition,
+Clinical Reminders,- Capture variation from reminder (patient refused),FN 18.02
+Clinical Reminders,Display clinical maintenance information,
+Clinical Reminders,Reminder processing wizard to iterate through reminders,
+Clinical Reminders,Results of reminder processing displayed in active progress note,
+Clinical Reminders,Subscribe to clinical reminders and notifications,
+Notifications and Alerts,View Notifications,"AM 14.04, IP 17.04, IP 17.05"
+Notifications and Alerts,Process Notification (navigate to chart location)  (Some examples below...),IP 17.08
+Notifications and Alerts,- Abnormal test,
+Notifications and Alerts,- Signature required,
+Notifications and Alerts,- Results available,
+Notifications and Alerts,- Expiring order,
+Notifications and Alerts,- Request rejected,
+Notifications and Alerts,- New event .....,
+Notifications and Alerts,Forward Notification,
+Notifications and Alerts,Remove Notification,
+Surgical Procedures,List surgery cases,
+Surgical Procedures,"Create custom view of cases by date, surgeon, procedure, ...",
+Surgical Procedures,"Edit, addend, and sign a surgery report",
+Results Review,Show lab results chronologically or by test,"IP 07.00, AM 14.05"
+Results Review,Identify / filter abnormal results,AM 14.01
+Results Review,Custom flow sheets / graph over time,AM 14.02
+Results Review,Display non-numeric annotations,AM 14.03
+Results Review,"Show special lab reports (microbiology, anatomic path, ...)",
+Results Review,Navigate lab cumulative report,
+Results Review,View lab test descriptions,
+Results Review,Complete graphing,
+Results Review,"- Graph from all domains (medications, labs, visits, allergies, radiology, ...)",
+Results Review,- Display multiple graphs,
+Results Review,- Split display and synchronize graphs,
+Results Review,- Define new graphing views,
+Results Review,- Save personal graphing views,
+Results Review,"- Customize graph appearance settings (lines, legends, default date ranges, etc.)",
+Results Review,"- Display details from graph at multiple levels (specific item, all items, ...)",
+Results Review,- Display view definition,
+Results Review,- Print graph and export data,
+Reports,Clinical reports (tables with data integrated across sites),
+Reports,"- Allergies, problems, visits, progress notes, orders",
+Reports,"- Dietetics, laboratory, pharmacy, radiology, vitals",
+Reports,"- Patient information, comp and pen, surgery",
+Reports,Health Summaries,AM 29.02
+Reports,- Common health summaries (across sites),
+Reports,- Customized health summaries,
+Reports,- Define ad hoc health summary,
+Reports,HDR Reports,
+Reports,"- Allergies, Chemistry & Hematology, Vital Signs",
+Reports,- Outpatient Pharmacy,
+Reports,Department of Defense Reports,
+Reports,"- Allergies, Laboratory, Radiology, Vitals",
+Reports,"- ADT, Encounters, Consults, Discharge Summary",
+Reports,"- Pharmacy, Progress Notes, Problem List",
+Reports,Legacy Reports,
+Reports,"- Blood Bank, Lab Status, Imaging, Vitals, Anatomic Path",
+Reports,"- Dietetics, Nutritional Assessment, Progress Notes, Surgery ",
+Reports,"- Orders Summary, RX Profile, BCMA, Event Capture",
+Other,"Set up personal preferences, default date ranges",
+Other,CCOW synchronization,
+Other,VistA Imaging synchronization,

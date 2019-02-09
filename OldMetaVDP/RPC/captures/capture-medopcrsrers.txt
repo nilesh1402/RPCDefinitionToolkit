@@ -1,0 +1,4705 @@
+[
+{
+  "name": "TCPConnect",
+  "args": [
+    "10.211.55.21",
+    "0",
+    "CONOR61BF"
+  ],
+  "to": "server",
+  "rpc": "[XWB]10304\nTCPConnect5001210.211.55.21f00010f0009CONOR61BFf\u0004",
+  "response": "\u0000\u0000accept\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:30.655Z"
+},
+{
+  "name": "XUS SIGNON SETUP",
+  "version": "0",
+  "args": [
+    "1??????????????????????0#"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0010XUS SIGNON SETUP500251??????????????????????0#f\u0004",
+  "response": "\u0000\u0000addgene-ubuntu-1604-vbox\r\nPLA\r\nPLA\r\n0\r\n5\r\n0\r\nDEMO.NODEVISTA.ORG\r\n0\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:30.704Z"
+},
+{
+  "name": "XUS INTRO MSG",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rXUS INTRO MSG54f\u0004",
+  "response": "\u0000\u0000NEW SYSTEM 304-262-7078\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:30.721Z"
+},
+{
+  "name": "XUS AV CODE",
+  "version": "0",
+  "args": [
+    ")vKuCkF@<J<kF@wgqy("
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000bXUS AV CODE50019)vKuCkF@<J<kF@wgqy(f\u0004",
+  "response": "\u0000\u000062\r\n0\r\n0\r\n\r\n0\r\n0\r\n\r\nGood morning ALEXANDER,ROBERT\r\n     You last signed on today at 00:30\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:50.196Z"
+},
+{
+  "name": "XUS GET USER INFO",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0011XUS GET USER INFO54f\u0004",
+  "response": "\u0000\u000062\r\nALEXANDER,ROBERT\r\nRobert Alexander\r\n1^SOFTWARE SERVICE^050\r\n\r\nIRM\r\n\r\n300\r\n\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:50.207Z"
+},
+{
+  "name": "XWB GET BROKER INFO",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0013XWB GET BROKER INFO54f\u0004",
+  "response": "\u0000\u0000180\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:50.217Z"
+},
+{
+  "name": "XUS DIVISION GET",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0010XUS DIVISION GET54f\u0004",
+  "response": "\u0000\u00000\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:50.225Z"
+},
+{
+  "name": "XWB CREATE CONTEXT",
+  "version": "0",
+  "args": [
+    "%*"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0012XWB CREATE CONTEXT50002%*f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:50.236Z"
+},
+{
+  "name": "XWB CREATE CONTEXT",
+  "version": "0",
+  "args": [
+    ")tw{:,w5{v8M{:$0wC1"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0012XWB CREATE CONTEXT50019)tw{:,w5{v8M{:$0wC1f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:50.248Z"
+},
+{
+  "name": "XWB CREATE CONTEXT",
+  "version": "0",
+  "args": [
+    "%=v~uCq~vx/H=aH&"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0012XWB CREATE CONTEXT50016%=v~uCq~vx/H=aH&f\u0004",
+  "response": "\u0000\u0000User ALEXANDER,ROBERT does not have access to option EC GUI CONTEXT\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:50.256Z"
+},
+{
+  "name": "XWB CREATE CONTEXT",
+  "version": "0",
+  "args": [
+    "#g#{wc#~{3H`{w9D#l'"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0012XWB CREATE CONTEXT50019#g#{wc#~{3H`{w9D#l'f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:50.268Z"
+},
+{
+  "name": "ORWU USERINFO",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWU USERINFO54f\u0004",
+  "response": "\u0000\u000062^ALEXANDER,ROBERT^3^1^1^3^0^300^20^1^1^5^DEMO.NODEVISTA.ORG^1^180^^^^0^0^^1^0^050^^0\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:50.278Z"
+},
+{
+  "name": "ORWRP GET DEFAULT PRINTER",
+  "version": "0",
+  "args": [
+    "62",
+    "0"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0019ORWRP GET DEFAULT PRINTER5000262f00010f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:50.293Z"
+},
+{
+  "name": "ORWU VERSRV",
+  "version": "0",
+  "args": [
+    "OR CPRS GUI CHART",
+    "1.0.30.75"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000bORWU VERSRV50017OR CPRS GUI CHARTf00091.0.30.75f\u0004",
+  "response": "\u0000\u00001.0.30.75\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:50.306Z"
+},
+{
+  "name": "XUS PKI GET UPN",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000fXUS PKI GET UPN54f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:50.314Z"
+},
+{
+  "name": "ORWU PATCH",
+  "version": "0",
+  "args": [
+    "OR*3.0*407"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\nORWU PATCH50010OR*3.0*407f\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:50.323Z"
+},
+{
+  "name": "ORWU OVERDL",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000bORWU OVERDL54f\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:50.331Z"
+},
+{
+  "name": "ORWPCE I10IMPDT",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000fORWPCE I10IMPDT54f\u0004",
+  "response": "\u0000\u00003151001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:50.340Z"
+},
+{
+  "name": "ORWU DT",
+  "version": "0",
+  "args": [
+    "3151001"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0007ORWU DT500073151001f\u0004",
+  "response": "\u0000\u00003151001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:50.347Z"
+},
+{
+  "name": "ORWU HASKEY",
+  "version": "0",
+  "args": [
+    "XUPROGMODE"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000bORWU HASKEY50010XUPROGMODEf\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:50.358Z"
+},
+{
+  "name": "ORQQPX NEW REMINDERS ACTIVE",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u001bORQQPX NEW REMINDERS ACTIVE54f\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:50.365Z"
+},
+{
+  "name": "ORWU DT",
+  "version": "0",
+  "args": [
+    "NOW"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0007ORWU DT50003NOWf\u0004",
+  "response": "\u0000\u00003170318.00405\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:50.396Z"
+},
+{
+  "name": "ORWORDG IEN",
+  "version": "0",
+  "args": [
+    "O RX"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000bORWORDG IEN50004O RXf\u0004",
+  "response": "\u0000\u00004\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:50.425Z"
+},
+{
+  "name": "ORWORDG IEN",
+  "version": "0",
+  "args": [
+    "I RX"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000bORWORDG IEN50004I RXf\u0004",
+  "response": "\u0000\u00003\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:50.431Z"
+},
+{
+  "name": "ORWORDG IEN",
+  "version": "0",
+  "args": [
+    "UD RX"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000bORWORDG IEN50005UD RXf\u0004",
+  "response": "\u0000\u000021\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:50.442Z"
+},
+{
+  "name": "ORWORDG IEN",
+  "version": "0",
+  "args": [
+    "IV RX"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000bORWORDG IEN50005IV RXf\u0004",
+  "response": "\u0000\u000022\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:50.447Z"
+},
+{
+  "name": "ORWORDG IEN",
+  "version": "0",
+  "args": [
+    "TPN"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000bORWORDG IEN50003TPNf\u0004",
+  "response": "\u0000\u000061\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:50.454Z"
+},
+{
+  "name": "ORWORDG IEN",
+  "version": "0",
+  "args": [
+    "NV RX"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000bORWORDG IEN50005NV RXf\u0004",
+  "response": "\u0000\u000048\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:50.462Z"
+},
+{
+  "name": "ORWORDG IEN",
+  "version": "0",
+  "args": [
+    "C RX"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000bORWORDG IEN50004C RXf\u0004",
+  "response": "\u0000\u000051\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:50.468Z"
+},
+{
+  "name": "ORWCH LOADALL",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWCH LOADALL54f\u0004",
+  "response": "\u0000\u0000~Bounds\r\nifrmCoverSplitters1^211,211,120,318\r\nifrmCoverSplitters2^114,255,255,0\r\nifrmDCOrders^331,200,441,328\r\nifrmDrawersSplitters^0,0,0,85\r\nifrmEncounterFrame^234,163,648,524\r\nifrmFrame^211,33,819,732\r\nifrmLabsSplitters^361,97,72,314\r\nifrmMedsSplit^365,182,0,0\r\nifrmODMedNVA^273,173,643,555\r\nifrmODMeds^261,0,551,728\r\nifrmPtSel^220,100,801,594\r\nifrmPtSel.sptVert^290,0,0,0\r\nifrmRemDlg^0,0,0,0\r\nifrmRemDlgSplitters^0,0,0,0\r\nifrmReminderTree^0,0,0,0\r\nifrmRenewOrders^248,136,608,455\r\nifrmTempEditSplitters^0,0,0,0\r\nifrmTempEditSplitters2^0,0,0,0\r\n~Widths\r\nifrmConsults.pnlLeft^83\r\nifrmDCSumm.pnlLeft^186\r\nifrmLabs.pnlLeft^97\r\nifrmNotes.pnlLeft^161\r\nifrmOrders.pnlLeft^117\r\nifrmProblems.pnlLeft^159\r\nifrmReports.pnlLeft^119\r\n~Columns\r\niSpellCheckerSettings^\r\nifrmMeds.hdrMedsIn^48,384,96,96,96\r\nifrmMeds.hdrMedsNonVA^48,384,96,96\r\nifrmMeds.hdrMedsOut^48,384,96,96,96,48\r\nifrmOrders.hdrOrders^0,42,255,84,84,42,42,42,42,42\r\nifrmPtSel.lstvAlerts^40,195,75,95,150,310,290\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:50.482Z"
+},
+{
+  "name": "ORWSR SHOW SURG TAB",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0013ORWSR SHOW SURG TAB54f\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:50.602Z"
+},
+{
+  "name": "ORWU DT",
+  "version": "0",
+  "args": [
+    "NOW"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0007ORWU DT50003NOWf\u0004",
+  "response": "\u0000\u00003170318.00405\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:50.633Z"
+},
+{
+  "name": "ORWGRPC GETPREF",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000fORWGRPC GETPREF54f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:50.711Z"
+},
+{
+  "name": "ORWU HASKEY",
+  "version": "0",
+  "args": [
+    "XUPROGMODE"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000bORWU HASKEY50010XUPROGMODEf\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:50.723Z"
+},
+{
+  "name": "ORWU HASKEY",
+  "version": "0",
+  "args": [
+    "XUPROGMODE"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000bORWU HASKEY50010XUPROGMODEf\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:50.764Z"
+},
+{
+  "name": "ORWGRPC GETPREF",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000fORWGRPC GETPREF54f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:50.803Z"
+},
+{
+  "name": "ORWGRPC TYPES",
+  "version": "0",
+  "args": [
+    "0",
+    "0"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWGRPC TYPES500010f00010f\u0004",
+  "response": "\u0000\u000063^LAB TESTS^1^60^LAB(60,^B^^CH^~  ~units~flag~|\r\n120.5^VITALS^1^120.51^GMRD(120.51,^B^^VSD^~  ~\r\n52^MEDICATION,OUTPATIENT^3^50^PSDRUG(^B^^RXOP^~  ~\r\n55^MEDICATION,INPATIENT^3^50^PSDRUG(^B^^RXUD^~  ~\r\n70^RADIOLOGY EXAMS^2^71^RAMIS(71,^B^rad^II^~  ~\r\n9000010.11^IMMUNIZATIONS^2^9999999.14^AUTTIMM(^B^imm^IM^~  ~\r\n9000010.12^SKIN TESTS^2^9999999.28^AUTTSK(^B^skin^ST^~  ~\r\n9000010.13^EXAMS^2^9999999.15,^AUTTEXAM(^B^exam^EXAM^~  ~\r\n9000010.18^PROCEDURES^2^81^ICPT(^C^proc^CPT^~  ~\r\n9000011^PROBLEMS^2^80^ICD9(^B^prob^PLL^~  ~\r\n9000010.23^HEALTH FACTORS^2^9999999.64^AUTTHF(,^B^hf^HF^~  ~\r\n9000010.07^PURPOSE OF VISIT^2^80^ICD9(^B^pov^OD^\r\n9000010.16^PATIENT EDUCATION^2^9999999.09^AUTTEDT(^B^edu^ED^~  ~\r\n601.2^MENTAL HEALTH^2^601^YTT(601,^B^mh^MHPE^~  ~\r\n100^ORDERS^2^101.43^ORD(101.43,^B^order^ORC^~  ~\r\n45OP^REGISTRATION OP/PROC^2^*^^^op^PRC^~  ~\r\n45DX^REGISTRATION DX^2^*^^^dx^DD^~  ~\r\n63AP^ANATOMIC PATHOLOGY^2^*^^^ap^SP^~  ~\r\n63MI^MICROBIOLOGY^2^*^^^micro^MIC^~  ~\r\n9000010^VISITS^3^44^SC(^B^^CVP^~  ~\r\n405^ADMISSIONS^3^*^^^^ADC^~  ~\r\n53.79^MEDICATION,BCMA^2^50.7^PS(50.7,^B^^BCMA^~  ~\r\n130^SURGERY^2^81^ICPT(^C^surg^SR^~  ~\r\n8925^NOTES^2^*^^^note^CNB^~  ~\r\n120.8^ALLERGIES^2^*^^^allg^ADR^~  ~\r\n63BB^BLOOD BANK^2^66^LAB(66,^B^bb^BT^~  ~\r\n55NVA^MEDICATION,NON-VA^3^50.7^PS(50.7,^B^^RXNV^~  ~\r\n690^MEDICINE^2^*^^^med^MEDF^~  ~\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:50.816Z"
+},
+{
+  "name": "ORWGRPC TESTSPEC",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0010ORWGRPC TESTSPEC54f\u0004",
+  "response": "\u0000\u00001^70^3.4^8.3^2.9^25.1^^K/cmm^2^5^\r\n1^74^^^^^^#/cmm\r\n1^76^^^^^^#/cmm\r\n1^77^0^^^^^#/cmm\r\n1^78^^^^^^#/cmm\r\n2^70^$S(SEX=\"M\":\"5.00\",1:4.2)^$S(SEX=\"M\":6.00,1:5.4)^2.4^6.1^^M/cmm^^.5\r\n2^74^^^^^^#/cmm\r\n2^76^^^^^^#/cmm\r\n2^77^^^^^^#/cmm\r\n2^78^^^^^^#/cmm\r\n3^70^14.0^$S(SEX=\"M\":18,1:16)^\"6.0\"^$S(SEX=\"M\":12,1:11)^^g/dL^1^3^\r\n3^72^0^8^^^^MG%\r\n3^73^0^8^^^^MG%\r\n4^70^$S(SEX=\"M\":42,1:37)^$S(SEX=\"M\":52,1:47)^26.9^56.1^^% ^1^5^\r\n5^70^$S(SEX=\"M\":80,1:81)^$S(SEX=\"M\":94,1:99)^78.9^106^^cmu^41^3^\r\n6^70^27^35^25.9^35.1^^uug^^2\r\n7^70^33^36^30.9^36.1^^gm/dL^^3\r\n9^70^140^420^49^601^^K/cmm^^100^\r\n10^70^7.4^10.4^^^^mu3\r\n11^70^34^74^^^^% ^24^^\r\n12^70^0^9^^^^% ^25^5^\r\n13^70^10^49^^^^% ^25^^\r\n14^70^2^14^^^^% ^25^5\r\n15^70^0^8^^^^% ^25\r\n16^70^0^2^^^^% ^25\r\n17^70^0^0^^^^% ^25\r\n18^70^0^0^^^^% ^25\r\n19^70^0^0^^^^% ^25\r\n22^70^Adq^^^^^^27^^A\r\n23^70^^^^^^^21^^Y\r\n24^70^^^^^^^22^^Yes\r\n25^70^0^1+^^^^0-4+\r\n26^70^0^1+^^^^0-4+^36\r\n27^70\r\n28^70\r\n29^70^^^^^^^^^\r\n30^70\r\n31^70\r\n32^73\r\n35^73^150^350^150^400^^mg/dL\r\n36^73^^^^^^ug/mL\r\n37^70^2^6^^^^Minutes^1^3\r\n38^73^9^11^^^^Sec\r\n40^70^3.5^5.4\r\n40^72^1.4^1.8\r\n40^79\r\n41^79^^^^^^Minutes\r\n42^79^70^80^^^^% \r\n43^79^50^150^^^^M/cmm\r\n45^70\r\n46^71\r\n47^70^^^^^^% \r\n47^8728\r\n48^80^92^95\r\n48^8728^92^95\r\n49^80^.4^1.0\r\n49^8728^1.0^.4\r\n50^8728\r\n51^80^16.6^23.6\r\n51^8728^23.6^16.6\r\n52^70^7.33^7.43^^^^* \r\n52^72\r\n52^74\r\n52^76\r\n52^77\r\n52^91\r\n52^8728^7.35^7.45\r\n53^80^34^40\r\n53^8728^34^40\r\n54^80^-2.5^2.5\r\n55^80^19^25\r\n56^8728\r\n57^8728\r\n58^8728\r\n61^70^0^12\r\n94^73\r\n97^70^3.5^6^^^^% ^29\r\n98^70\r\n99^70\r\n100^70^.1^2.4^^5^^% ^47^2\r\n101^70\r\n102^70\r\n103^70\r\n103^72^200^800^^^^uug/mL\r\n104^72^34^186^^^^ug/dl\r\n105^72^254^466^^^^ug/dl\r\n106^72^9^25^^35^^ng/ml^^^^10^32\r\n107^72^^^^2.5^^ng/ml^^^^0.5^2.0\r\n108^72^5^12^^^^ug/dl\r\n109^70^2^20^^^^ng/mL\r\n109^72^2^20^^^^ng/mL\r\n110^72^0^9^^^^MCIU/ML\r\n111^72^4.3^19.9^^^^uug/mL\r\n112^71^NEG^<150^^^^MIU/ML\r\n112^72^0^9.9^^^^NG/ML\r\n113^72^25^237^^^^ng/mL\r\n114^72^7^25^^^^ug/dl\r\n115^72^0^15^^^^ng/dl\r\n116^72^15^^^^^% \r\n117^70\r\n118^72^100^200^^^^NG/DL\r\n119^72^85^215^^^^mg/dl\r\n120^72^0^1:10\r\n121^70^<1:10\r\n122^70\r\n123^72^18^45^^^^MG/DL\r\n124^72^<32\r\n125^72^83^177^^^^mg/dl\r\n126^72^15^45^^^^mg/dl\r\n127^72\r\n128^72\r\n129^72^^NR\r\n130^72^27^139^^^^mg/dl\r\n131^72\r\n132^72\r\n133^72\r\n134^72^Neg\r\n135^72^<1:8\r\n136^72^1:20\r\n137^72\r\n138^72\r\n139^72\r\n139^74^NON REACTIVE^^^^^DILS^^^N-REAC\r\n141^71^^^^^^^^^YELLOW\r\n142^71^^^^^^^^^CLEAR\r\n143^71\r\n144^71^.1^1^^^^EU/dL^^^Neg.\r\n146^71^Neg.^^^^^^^^Neg.\r\n147^71^Neg.^^^^^^^^Neg.\r\n148^71^Neg.^^^^^^^^Neg.\r\n149^71^Neg.^^^^^^^^Neg.\r\n150^71^5^9\r\n151^71^^^^^^/HPF\r\n152^71^^^^^^^40^^NoneObs\r\n153^71^^^^^^^^^NoneObs\r\n155^71^^^^^^/LPF\r\n156^71^^^^^^/LPF\r\n157^71^^^^^^/LPF\r\n158^71^^^^^^/LPF\r\n159^71^^^^^^/LPF\r\n160^71^^^^^^/LPF\r\n161^71^^^^^^^^^NoneObs\r\n162^71\r\n170^71\r\n173^70^.7^1.4^.5^2.0^^MG/DL^1^1\r\n173^71^1^1.9^^^^mg/dL\r\n173^72^.9^1.4^^^^mg/dL^1^3\r\n173^73^.7^1.5^^^^mg/dl\r\n174^71^10^15^^^^MG/DL\r\n174^72^6^26^^^^mg/dL^^20\r\n174^73^6^26^^^^mg/dl\r\n175^72^70^125^40^300^^mg/dL^1^50\r\n175^73^70^125^40^300^^mg/dL\r\n175^74^75^250\r\n176^70^135^175^120^150^^Meq/L\r\n176^71^130^260^^^^meq/L\r\n176^72^135^145^120^150^^meq/L^\r\n176^73^13^144^120^150^^mE/L\r\n176^77^^^^^^mEq/L\r\n177^72^3.0^5.3^2.5^6.5^^meq/L^1^2\r\n177^71^25^100^^^^meq/L\r\n177^72^3.8^5.3^2.5^6.5^^meq/L^1^2\r\n177^73^3.5^5.5^^^^mEq/L\r\n177^76\r\n178^71^110^250^^^^meq/L\r\n178^72^100^108^90^150^^meq/L^\r\n178^73^96^108^^^^mEq/L\r\n178^74^100^110^^^^meq/L\r\n179^72^24^32^10^50^^mEq/L^45\r\n179^73^24^32^^^^mEq/L\r\n180^71^30^250^^^^mg/dl\r\n180^72^9^11^6.5^14^^mg/dL^1^3\r\n180^73^8.5^10.5^^^^mg/dl\r\n181^71^.9^1.3^^^^mg/dl\r\n181^72^2.2^3.9^1^40^^mg/dL^1^2\r\n181^73^2.3^4.7^^^^mg/dlg\r\n182^71^700^850^^^^mg/24 hr^23\r\n182^72^4.2^8.5^^^^mg/dL\r\n182^73^^^^^^mg/dl\r\n182^76^^^^^^mg/dl\r\n183^72^$S(AGE<50:135,1:120)^288^^^^mg/dL\r\n183^73^130^270^^^^mg/dl\r\n184^71^10^100^^^^mg/dL\r\n184^72^6.2^7.7^^^^g/dL^46^3\r\n184^74^15^45^^^^mg/dL\r\n184^76\r\n184^77\r\n184^78\r\n184^91\r\n185^72^3.9^4.9^^^^g/dL^46^3\r\n185^74^^^^^^CSF\r\n186^71\r\n186^72^.3^1.7^^^^mg/dL\r\n186^74\r\n186^76\r\n186^77\r\n187^72^0^.3^^^^mg/dL\r\n188^70^22^124^^^^U/L\r\n188^72^$S('$D(LRMETH):42,LRMETH[\"ACA\":56,1:48)^$S('$D(LRMETH):128,LRMETH[\"ACA\":156,1:136)^^^^U/L\r\n188^77\r\n189^71\r\n189^72^128^227^^^^U/L\r\n189^73^60^250^^^^U/L\r\n189^74\r\n189^76\r\n189^77\r\n189^78\r\n189^91^^^^^^U/L\r\n190^72^11^32^^^^U/L\r\n190^73^0^41^^^^U/LN\r\n191^72^12^66^^^^U/L\r\n191^73^0^45^^^^U/LT\r\n192^72^0^65^^^^U/L\r\n193^71\r\n193^72^NEGATIVE^NEGATIVE\r\n194^72^0^.8^^^^U/L\r\n194^73^0^.8^^^^IU/L\r\n195^72^^^^^^mg/dL\r\n196^70^^^^^^mg/dl\r\n196^71^1^17^^^^U/L\r\n196^72^14^110^^^^IU/L\r\n196^73^14^110^^^^U/L^1\r\n196^76\r\n196^77\r\n197^72^21^232^0^500^^U/L\r\n198^72^.5^1.5^^2.0^^mEq/L^1^.3^^0.5^1.6\r\n199^72^.5^2.2^^^^IU/dL\r\n199^73^.5^2.2^^^^MMOLE/L\r\n199^74^.6^2.2^^^^MMOLE/L\r\n199^76\r\n199^77\r\n200^71\r\n200^72^4^24^^^^U/L\r\n200^73^^^0^300\r\n201^72^2^2.6^^^^mg/dL\r\n201^73^1.5^2.3^^^^mg/dl\r\n202^72^0^15^^^^MU/ML\r\n203^71^500^800^^^^mOsm/L\r\n203^72^275^300^^^^mOsm/L^2^20\r\n203^139\r\n204^72^2^29^^30^^mg/dL^^^^20^25\r\n205^72^36^165^^^^mg/dL\r\n206^73^11^35^^70^^umol/L\r\n207^72^^^^60^^ug/ml^^^^15^30\r\n208^72^0^100^^^^PG/ML\r\n209^72^2^5^^10^^ug/ml^^^^2.3^5.0\r\n209^73^2^5^^10^^ug/ml^^^^2.3^5.0\r\n210^72^^^^40^^ug/ml^1^^^10^20\r\n211^72^^^^25^^ug/ml^^^^10^20\r\n212^71\r\n213^71\r\n215^72^44^125^^^^UNITS\r\n216^72\r\n217^72^0^100^^^^pg/ml\r\n218^71^5^25^^^^MCG/24HRS\r\n218^72\r\n219^72^^^^12^^ug/ml^^^^4^10\r\n221^70\r\n222^72^^^^7^^ug/ml^^^^2^5\r\n224^73^^^^^^NG/ML/HR.\r\n225^71^26^64^^100^^mcg/24hr\r\n225^72^43^151^10^200^^MCG/DL^1^50\r\n227^72^1.5^8.1^^^^MU/ML\r\n228^71^3.0^19.0^^^^MEQ/24HRS\r\n228^72\r\n229^72^^^^400^^ng/ml^^^^120^250\r\n230^72^100^123^40^300^^mg/dL^1^20\r\n230^73^60^123^40^300^^mg/dL\r\n230^74^75^250\r\n231^72\r\n232^72\r\n233^72^0^5.4^^^^NG/ML\r\n235^72^18^45^^^^mg/dl\r\n237^72^^^^^^NG/ML\r\n238^72^150^375^^^^PG EQ/ML\r\n239^72^0^96^^^^PG/ML\r\n240^71^0^1000^^^^UG/24HR^^^\r\n241^72^5^25^^^^MIU/ML\r\n242^72^0^100^^^^PG/ML\r\n244^72^32^72^^^^MG/DL\r\n245^72^5^30^^^^MIU/ML\r\n246^72^^^^24^^ug/ml^^^^8^12\r\n247^72^^^^12^^ug/ml^^^^4^8\r\n248^72^0^20^^^^NG/ML\r\n249^72^270^2000^^^^NG/DL\r\n250^72^4^12^^12^^ug/ml\r\n252^72^75^291^^^^MCG/DL\r\n252^73^60^120^^^^ug/ml\r\n253^71^0^275^^^^MCG/24HR\r\n253^73^120^465^^^^PG/ML\r\n254^71^0^34^^^^mcg/24hrs\r\n254^73^0^55^^^^pg/ml\r\n255^71\r\n255^73^65^320^^^^pg/ml\r\n256^71^0^6^^^^mg/24 hr\r\n258^72^^^^^^ug/mL\r\n260^70^0^7^^10^^MCG/DL\r\n260^71^0^100^^180^^MCG/L^^\r\n260^72^3^7^^^^ug/l\r\n261^70^0^.005^^.010^^MCG/DL\r\n261^71^0^20^^50^^MCG/L^^\r\n261^72^.2^4.8^^^^ug/l\r\n262^70^0^20^^80^^MCG/DL^1^30\r\n262^71^0^80^^125^^MCG/L^^\r\n262^72^^^^200^^ug/l\r\n264^72^.38^1.54^^^^pH units\r\n269^71^^^^^^^30^^NoneObs\r\n270^71^^^^^^^32^^NoneObs\r\n272^71^^^^^^/HPF\r\n276^70\r\n278^5864\r\n280^8728^45^^20^120^^mEQ/mL\r\n287^70^0^20\r\n288^70^0^2.4^^^^ng/ml\r\n288^73^.0^3.0^^^^NG/DL\r\n288^78\r\n297^72^25^35^^^^% uptake\r\n300^71^800^2000^^^^MG/24H^17^1\r\n303^72^0^30^^150^^ug/ml^^^^5^20\r\n304^71\r\n305^72\r\n306^72^^^^^^UNITS/ML\r\n307^72\r\n308^72\r\n309^72\r\n310^71\r\n314^71\r\n314^72\r\n315^71\r\n315^72\r\n316^71\r\n316^72\r\n317^72^60^200^^^^MCG/DL\r\n318^72\r\n319^72\r\n322^72^4.4^15.7\r\n324^72\r\n326^72\r\n327^71\r\n327^72\r\n328^71^2^11^^^^MCG/DL\r\n328^72^1.3^5.5^^^^MCG/DL\r\n331^72^6000^14000^^^^UNITS\r\n332^72\r\n335^71\r\n336^71\r\n336^72\r\n337^73\r\n339^73^130^600^^^^MCG/DL\r\n346^72\r\n347^72^15^59^^^^MIU/ML\r\n348^72^8^38^^^^PG/ML\r\n351^70^0^0^^^^% ^25\r\n367^72^^^^400^^ng/ml^^^^150^300\r\n368^72^^^^400^^ng/ml^^^^150^300\r\n369^72^^^^200^^ng/ml^^^^50^150\r\n370^72^^^^12^^ug/ml^^^^4^10\r\n371^70^^^^^^\"%\"^25\r\n373^72^^^^^^ug/mL^^^^4^8\r\n374^72^^^^^^MCG/ML\r\n378^73^^^^^^^^^\r\n379^73^^^^^^^^^\r\n385^72^^^^^^MCG/ML\r\n391^70^.45^1.75^^^^MCG/DL\r\n392^72^10^55^^^^ng/ml\r\n393^72^20^80^^^^MCG/DL\r\n396^72^238^416^^^^MG/DL\r\n397^70^0^0^^^^%/WBC\r\n406^71^^^^^^ML\r\n408^73^50^200^^^^ %\r\n409^70^50^150^^^^% \r\n410^70\r\n412^72\r\n416^70^11^14^^^^% \r\n418^72^180^320^^^^PG/DL\r\n419^73\r\n420^73\r\n421^73^50^150^^^^% \r\n422^72^0^8^^^^NG/ML\r\n423^72^0^20^^^^MCG/ML\r\n424^72^0^5^^^^MCG/ML\r\n428^72\r\n429^72\r\n430^72\r\n431^72^20^76^^^^PG/ML\r\n432^71^10^100^^^^MG/24HRS\r\n433^70^0^0^^^^% ^26\r\n435^72^3^6^^^^MG/DL\r\n436^72^10^40^^^^MG/DL\r\n439^72^0^1^^^^nmol/l\r\n440^72^0^10^^^^U/L\r\n441^72^^^^^^U/L\r\n442^72^^38^^^^% \r\n443^72^^^^^^% \r\n445^68\r\n445^71\r\n445^72\r\n445^74\r\n446^68\r\n446^71\r\n446^72\r\n446^74\r\n447^68\r\n447^71\r\n447^72\r\n447^74\r\n450^72^15^9999^^^^mg/dl\r\n451^72^^^^400^^ng/ml^^^^150^300\r\n452^72^^^^^^ng/ml\r\n455^72\r\n456^72\r\n464^72^450^1000^^^^mg/dl\r\n464^77^^^^^^mg/dl\r\n464^139\r\n465^92^0^2^^^^gm/24 hrs.\r\n466^71^25^77^^^^MG/24 HRS\r\n467^73^9.3^12.3^8^25^^Seconds^44\r\n468^73^10^35^10^45^^Seconds\r\n469^72^^^^^^mg/dl\r\n470^72^^^^^^mg/dl\r\n471^72^^^^^^mg/dl\r\n472^72^^^^^^mg/dl\r\n473^72^^^^^^mg/dl\r\n474^72^^^^^^mg/dl\r\n475^72^^^^^^mg/dl\r\n477^71^^^^^^^^^N\r\n478^71^^^^^^^^^N\r\n479^71^^^^^^^^^N\r\n480^71^^^^^^^^^N\r\n481^71^^^^^^^^^N\r\n482^71^^^^^^^^^N\r\n483^71^^^^^^^^^N\r\n484^70\r\n485^70\r\n486^72^50^150^^1001^^NG/ML\r\n487^73^.2^2^^^^mg/dl\r\n489^71^^^^^^^^^CLEAR\r\n489^72\r\n489^77\r\n490^72\r\n490^77\r\n491^72\r\n491^77\r\n492^72\r\n492^77\r\n493^72\r\n493^77\r\n496^73^0^90^^^^pg/ml\r\n503^70^^^^^^^^^NO MALARIAL FORMS PRESENT\r\n505^72\r\n506^72\r\n507^72\r\n508^72\r\n509^72\r\n510^72\r\n511^72^^^^^^UNITS/ML\r\n512^72^^^^9^^ug/ml^^^^1.6^5.0\r\n512^73^^^^9^^ug/ml^^^^1.6^5.0\r\n513^72^0^13^^^^% \r\n515^72^0^5^^^^MIU/ML\r\n517^72^100^500^^^^NG/ML\r\n518^72^12^30^^^^UG/ML\r\n522^72^^^^^^ng/ml\r\n523^68\r\n523^71\r\n523^72\r\n523^92\r\n524^68\r\n524^70\r\n524^71\r\n524^72\r\n525^71^0^9^^^^mg/24 Hrs.\r\n526^72\r\n527^74\r\n529^70\r\n530^72^400^600^^^^U/ML\r\n532^73\r\n533^73\r\n534^73\r\n536^73\r\n538^72^4.52^5.30^^^^MG/DL\r\n545^71\r\n545^72\r\n555^139\r\n556^72^^^^^^meq/L\r\n556^73^^^^^^meq/L\r\n556^139\r\n558^70\r\n559^72^50^300^^^^PG/ML\r\n563^72^42^128^^^^U/L\r\n579^70\r\n614^72^^^^^^U/L\r\n615^71^2^12^^^^MG/24 HRS\r\n665^72\r\n670^70\r\n670^71\r\n690^72\r\n739^72^^^^60^^ug/ml^^^^15^25\r\n835^72^2.6^3.4^^^^G/DL\r\n1012^72\r\n1012^74\r\n1021^72\r\n1021^74\r\n1096^71\r\n1100^72^.1^2\r\n1125^8728^13^17\r\n1126^71^^^^^^^^^NoneObs\r\n1134^71\r\n1135^71\r\n1136^71\r\n1143^70\r\n1144^70\r\n1145^70\r\n1146^70\r\n1147^70\r\n1149^70\r\n1150^70^^^^^^^\r\n1151^70\r\n1153^70\r\n1154^70\r\n1155^70\r\n1156^70^^^^^^^\r\n1158^71^^^^^^^^^Neg.\r\n1160^72^10^14^5^20^^meq/L^^\r\n1161^72^275^300^^^^mOsm/L\r\n1194^71^^^^^^^^^Neg\r\n1195^71^^^^^^^^^Neg\r\n1197^72\r\n1198^72\r\n1199^72\r\n1200^72\r\n1201^72\r\n1241^71^^^^^^HR\r\n1245^72\r\n1247^70\r\n1248^70\r\n1249^70\r\n1250^70\r\n1251^70\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:50.939Z"
+},
+{
+  "name": "ORWGRPC ALLVIEWS",
+  "version": "0",
+  "args": [
+    "-2",
+    "0"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0010ORWGRPC ALLVIEWS50002-2f00010f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:50.959Z"
+},
+{
+  "name": "ORWGRPC ALLVIEWS",
+  "version": "0",
+  "args": [
+    "-1",
+    "62"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0010ORWGRPC ALLVIEWS50002-1f000262f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:50.971Z"
+},
+{
+  "name": "ORWGRPC ALLVIEWS",
+  "version": "0",
+  "args": [
+    "-3",
+    "62"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0010ORWGRPC ALLVIEWS50002-3f000262f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:50.985Z"
+},
+{
+  "name": "ORWU TOOLMENU",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWU TOOLMENU54f\u0004",
+  "response": "\u0000\u0000&Time=Clock.exe^&Time=Clock.exe\r\n&Calculator=Calc.exe^&Calculator=Calc.exe\r\n&Windows Introduction=WinHlp32 Windows.hlp^&Windows Introduction=WinHlp32 Windows.hlp\r\n&Notepad=Notepad.exe^&Notepad=Notepad.exe\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:51.003Z"
+},
+{
+  "name": "ORWDX DGNM",
+  "version": "0",
+  "args": [
+    "UD RX"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\nORWDX DGNM50005UD RXf\u0004",
+  "response": "\u0000\u000021\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:51.012Z"
+},
+{
+  "name": "ORWDX DGNM",
+  "version": "0",
+  "args": [
+    "O RX"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\nORWDX DGNM50004O RXf\u0004",
+  "response": "\u0000\u00004\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:51.022Z"
+},
+{
+  "name": "ORWDX DGNM",
+  "version": "0",
+  "args": [
+    "RX"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\nORWDX DGNM50002RXf\u0004",
+  "response": "\u0000\u00002\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:51.029Z"
+},
+{
+  "name": "ORWDX DGNM",
+  "version": "0",
+  "args": [
+    "IV RX"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\nORWDX DGNM50005IV RXf\u0004",
+  "response": "\u0000\u000022\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:51.039Z"
+},
+{
+  "name": "ORWDX DGNM",
+  "version": "0",
+  "args": [
+    "C RX"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\nORWDX DGNM50004C RXf\u0004",
+  "response": "\u0000\u000051\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:51.046Z"
+},
+{
+  "name": "ORWDX DGNM",
+  "version": "0",
+  "args": [
+    "CLINIC ORDERS"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\nORWDX DGNM50013CLINIC ORDERSf\u0004",
+  "response": "\u0000\u000062\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:51.052Z"
+},
+{
+  "name": "ORWDX DGNM",
+  "version": "0",
+  "args": [
+    "CI RX"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\nORWDX DGNM50005CI RXf\u0004",
+  "response": "\u0000\u000067\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:51.059Z"
+},
+{
+  "name": "ORWDX DGNM",
+  "version": "0",
+  "args": [
+    "NURS"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\nORWDX DGNM50004NURSf\u0004",
+  "response": "\u0000\u000013\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:51.066Z"
+},
+{
+  "name": "ORWDX DGNM",
+  "version": "0",
+  "args": [
+    "CSLT"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\nORWDX DGNM50004CSLTf\u0004",
+  "response": "\u0000\u000011\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:51.072Z"
+},
+{
+  "name": "ORWDX DGNM",
+  "version": "0",
+  "args": [
+    "PROC"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\nORWDX DGNM50004PROCf\u0004",
+  "response": "\u0000\u000042\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:51.080Z"
+},
+{
+  "name": "ORWDX DGNM",
+  "version": "0",
+  "args": [
+    "XRAY"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\nORWDX DGNM50004XRAYf\u0004",
+  "response": "\u0000\u000029\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:51.087Z"
+},
+{
+  "name": "ORWDX DGNM",
+  "version": "0",
+  "args": [
+    "DO"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\nORWDX DGNM50002DOf\u0004",
+  "response": "\u0000\u000038\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:51.093Z"
+},
+{
+  "name": "ORWDX DGNM",
+  "version": "0",
+  "args": [
+    "NV RX"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\nORWDX DGNM50005NV RXf\u0004",
+  "response": "\u0000\u000048\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:51.100Z"
+},
+{
+  "name": "OREVNTX1 DLGIEN",
+  "version": "0",
+  "args": [
+    "PSJ OR CLINIC OE"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000fOREVNTX1 DLGIEN50016PSJ OR CLINIC OEf\u0004",
+  "response": "\u0000\u000015992\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:51.106Z"
+},
+{
+  "name": "OREVNTX1 DLGIEN",
+  "version": "0",
+  "args": [
+    "CLINIC OR PAT FLUID OE"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000fOREVNTX1 DLGIEN50022CLINIC OR PAT FLUID OEf\u0004",
+  "response": "\u0000\u000015993\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:51.112Z"
+},
+{
+  "name": "OREVNTX1 DLGIEN",
+  "version": "0",
+  "args": [
+    "PSJ OR PAT OE"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000fOREVNTX1 DLGIEN50013PSJ OR PAT OEf\u0004",
+  "response": "\u0000\u0000129\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:51.119Z"
+},
+{
+  "name": "OREVNTX1 DLGIEN",
+  "version": "0",
+  "args": [
+    "PSO OERR"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000fOREVNTX1 DLGIEN50008PSO OERRf\u0004",
+  "response": "\u0000\u0000147\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:51.125Z"
+},
+{
+  "name": "OREVNTX1 DLGIEN",
+  "version": "0",
+  "args": [
+    "PSH OERR"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000fOREVNTX1 DLGIEN50008PSH OERRf\u0004",
+  "response": "\u0000\u0000173\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:51.131Z"
+},
+{
+  "name": "OREVNTX1 DLGIEN",
+  "version": "0",
+  "args": [
+    "PSJI OR PAT FLUID OE"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000fOREVNTX1 DLGIEN50020PSJI OR PAT FLUID OEf\u0004",
+  "response": "\u0000\u0000130\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:51.137Z"
+},
+{
+  "name": "ORWDXM FORMID",
+  "version": "0",
+  "args": [
+    "129"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWDXM FORMID50003129f\u0004",
+  "response": "\u0000\u0000130\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:51.143Z"
+},
+{
+  "name": "ORWDXM FORMID",
+  "version": "0",
+  "args": [
+    "147"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWDXM FORMID50003147f\u0004",
+  "response": "\u0000\u0000140\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:51.149Z"
+},
+{
+  "name": "ORWDXM FORMID",
+  "version": "0",
+  "args": [
+    "173"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWDXM FORMID50003173f\u0004",
+  "response": "\u0000\u0000145\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:51.156Z"
+},
+{
+  "name": "ORWDXM FORMID",
+  "version": "0",
+  "args": [
+    "130"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWDXM FORMID50003130f\u0004",
+  "response": "\u0000\u0000180\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:51.165Z"
+},
+{
+  "name": "ORWDXM FORMID",
+  "version": "0",
+  "args": [
+    "15993"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWDXM FORMID5000515993f\u0004",
+  "response": "\u0000\u00001555\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:51.172Z"
+},
+{
+  "name": "ORWCH LDFONT",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWCH LDFONT54f\u0004",
+  "response": "\u0000\u00008\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:51.261Z"
+},
+{
+  "name": "ORWCH LOADALL",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWCH LOADALL54f\u0004",
+  "response": "\u0000\u0000~Bounds\r\nifrmCoverSplitters1^211,211,120,318\r\nifrmCoverSplitters2^114,255,255,0\r\nifrmDCOrders^331,200,441,328\r\nifrmDrawersSplitters^0,0,0,85\r\nifrmEncounterFrame^234,163,648,524\r\nifrmFrame^211,33,819,732\r\nifrmLabsSplitters^361,97,72,314\r\nifrmMedsSplit^365,182,0,0\r\nifrmODMedNVA^273,173,643,555\r\nifrmODMeds^261,0,551,728\r\nifrmPtSel^220,100,801,594\r\nifrmPtSel.sptVert^290,0,0,0\r\nifrmRemDlg^0,0,0,0\r\nifrmRemDlgSplitters^0,0,0,0\r\nifrmReminderTree^0,0,0,0\r\nifrmRenewOrders^248,136,608,455\r\nifrmTempEditSplitters^0,0,0,0\r\nifrmTempEditSplitters2^0,0,0,0\r\n~Widths\r\nifrmConsults.pnlLeft^83\r\nifrmDCSumm.pnlLeft^186\r\nifrmLabs.pnlLeft^97\r\nifrmNotes.pnlLeft^161\r\nifrmOrders.pnlLeft^117\r\nifrmProblems.pnlLeft^159\r\nifrmReports.pnlLeft^119\r\n~Columns\r\niSpellCheckerSettings^\r\nifrmMeds.hdrMedsIn^48,384,96,96,96\r\nifrmMeds.hdrMedsNonVA^48,384,96,96\r\nifrmMeds.hdrMedsOut^48,384,96,96,96,48\r\nifrmOrders.hdrOrders^0,42,255,84,84,42,42,42,42,42\r\nifrmPtSel.lstvAlerts^40,195,75,95,150,310,290\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:51.463Z"
+},
+{
+  "name": "TIU TEMPLATE GET DEFAULTS",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0019TIU TEMPLATE GET DEFAULTS54f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:51.485Z"
+},
+{
+  "name": "ORWU NPHASKEY",
+  "version": "0",
+  "args": [
+    "62",
+    "PROVIDER"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWU NPHASKEY5000262f0008PROVIDERf\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:51.495Z"
+},
+{
+  "name": "ORWDBA1 BASTATUS",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0010ORWDBA1 BASTATUS54f\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:51.503Z"
+},
+{
+  "name": "ORWDBA3 HINTS",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWDBA3 HINTS54f\u0004",
+  "response": "\u0000\u0000SC^1^Service-Connected (SC):\r\nSC^2^Veterans are eligible for medical care for treatment\r\nSC^3^of service-connected (SC) conditions without\r\nSC^4^incurring copayment charges or claims against their\r\nSC^5^insurance.  See 'Help' for additional information.\r\nMST^1^Military Sexual Trauma (MST):\r\nMST^2^Veterans who experienced sexual trauma while serving\r\nMST^3^on active duty in the military are eligible to\r\nMST^4^receive treatment and counseling services for the\r\nMST^5^sexual trauma without incurring copayment charges or\r\nMST^6^claims against their insurance.  See 'Help' for\r\nMST^7^additional information.\r\nAO^1^Agent Orange (AO): herbicide used in Vietnam.\r\nAO^2^Veterans who were present within the borders of the\r\nAO^3^Republic of Vietnam from January 1962 through May\r\nAO^4^1975 are presumed to have been exposed to Agent\r\nAO^5^Orange and are eligible to receive care of conditions\r\nAO^6^possibly for AO exposure without incurring copayment\r\nAO^7^charges or claims against their insurance. Some\r\nAO^8^conditions associated with AO exposure: diabetes\r\nAO^9^(type 2), chloracne, porphyria cutanea tarda,\r\nAO^10^peripheral neuropathy and some cancers.  See 'Help'\r\nAO^11^for additional information.\r\nIR^1^Ionizing Radiation (IR):\r\nIR^2^Veterans exposed to ionizing radiation (IR) as a\r\nIR^3^POW or while on active duty in Hiroshima and/or\r\nIR^4^Nagasaki, Japan, or who served at a nuclear device\r\nIR^5^atmospheric testing site are eligible to receive\r\nIR^6^care of any malignant condition and certain other\r\nIR^7^non-malignant conditions for IR exposure without\r\nIR^8^incurring copayment charges or claims against\r\nIR^9^their insurance.  See 'Help' for additional\r\nIR^10^information.\r\nEC^1^Southwest Asia Conditions (SWAC):\r\nEC^2^Veterans who served in Southwest Asia during the\r\nEC^3^Gulf War are eligible to receive treatment for\r\nEC^4^conditions relating to this service, including\r\nEC^5^exposure to depleted uranium, pesticides, anti-\r\nEC^6^nerve gas pill, pyridostigmine bromide, infectious\r\nEC^7^diseases, chemical and biological warfare agents,\r\nEC^8^etc. without incurring copayment charges or claims\r\nEC^9^against their insurance.  See 'Help' for additional\r\nEC^10^information.\r\nHNC^1^Head and Neck Cancer (HNC):\r\nHNC^2^Veterans with cancer of the head or neck and a\r\nHNC^3^history of receipt of Nasopharyngeal (NP) radium\r\nHNC^4^therapy while in the military are eligible to\r\nHNC^5^receive treatment for the head or neck cancer\r\nHNC^6^without incurring copayment charges or claims\r\nHNC^7^against their insurance.  See 'Help' for additional\r\nHNC^8^information.\r\nCV^1^Combat Veteran (CV): to receive CV exemption the veteran\r\nCV^2^must have served in combat operations after the Gulf\r\nCV^3^War or in combat against a hostile force after\r\nCV^4^November 11, 1998.  In addition, the condition for which\r\nCV^5^the veteran is treated must be related to that combat,\r\nCV^6^the veteran must have registered as a combat veteran,\r\nCV^7^and be within two years of separation from active\r\nCV^8^military service.  Finally, the condition must not be\r\nCV^9^already considered to be service related or that\r\nCV^10^exemption should apply.  See 'Help' for additional\r\nCV^11^information.\r\nSHD^1^Shipboard Hazard and Defense (SHD):\r\nSHD^2^Veterans with conditions\r\nSHD^3^recognized by VA as associated with Project 112/\r\nSHD^4^SHAD, shipboard and land-based biological and\r\nSHD^5^chemical testing conducted by the United States\r\nSHD^6^(U.S.) military between 1962 and 1973 are\r\nSHD^7^eligible for enrollment in priority group 6,\r\nSHD^8^unless eligible for enrollment in a higher\r\nSHD^9^priority. In addition, veterans receive care at\r\nSHD^10^no charge for care and medications provided for\r\nSHD^11^treatment of conditions related to exposure.\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:51.529Z"
+},
+{
+  "name": "ORWCH LOADSIZ",
+  "version": "0",
+  "args": [
+    "frmPtSel"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWCH LOADSIZ50008frmPtSelf\u0004",
+  "response": "\u0000\u0000220,100,801,594\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:51.600Z"
+},
+{
+  "name": "ORQPT DEFAULT LIST SOURCE",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0019ORQPT DEFAULT LIST SOURCE54f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:51.610Z"
+},
+{
+  "name": "ORWPT TOP",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\tORWPT TOP54f\u0004",
+  "response": "\u0000\u000025^CARTER,DAVID\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:51.628Z"
+},
+{
+  "name": "ORWPT LIST ALL",
+  "version": "0",
+  "args": [
+    "",
+    "1"
+  ],
+  "to": "mvdmEmulated",
+  "rpc": "[XWB]11302\u00010\u000eORWPT LIST ALL50000f00011f\u0004",
+  "response": "\u0000\u000025^CARTER,DAVID^^^^CARTER,DAVID\r\n26^CASEY,JONES L^^^^CASEY,JONES L\r\n17^EIGHT,PATIENT H^^^^EIGHT,PATIENT H\r\n22^EIGHTEEN,PATIENT R^^^^EIGHTEEN,PATIENT R\r\n5^ELEVEN,PATIENT K^^^^ELEVEN,PATIENT K\r\n18^FIFTEEN,PATIENT O^^^^FIFTEEN,PATIENT O\r\n20^FIVE,PATIENT E^^^^FIVE,PATIENT E\r\n24^FOUR,PATIENT D^^^^FOUR,PATIENT D\r\n1^FOURTEEN,PATIENT N^^^^FOURTEEN,PATIENT N\r\n4^NINE,PATIENT I^^^^NINE,PATIENT I\r\n14^NINETEEN,PATIENT S^^^^NINETEEN,PATIENT S\r\n3^ONE,PATIENT A^^^^ONE,PATIENT A\r\n2^SEVEN,PATIENT G^^^^SEVEN,PATIENT G\r\n15^SEVENTEEN,PATIENT Q^^^^SEVENTEEN,PATIENT Q\r\n6^SIX,PATIENT F^^^^SIX,PATIENT F\r\n16^SIXTEEN,PATIENT P^^^^SIXTEEN,PATIENT P\r\n8^TEN,PATIENT J^^^^TEN,PATIENT J\r\n23^THIRTEEN,PATIENT M^^^^THIRTEEN,PATIENT M\r\n9^THREE,PATIENT C^^^^THREE,PATIENT C\r\n19^TWELVE,PATIENT L^^^^TWELVE,PATIENT L\r\n11^TWENTY,PATIENT T^^^^TWENTY,PATIENT T\r\n12^TWENTYFOUR,PATIENT X^^^^TWENTYFOUR,PATIENT X\r\n21^TWENTYONE,PATIENT U^^^^TWENTYONE,PATIENT U\r\n13^TWENTYTHREE,PATIENT W^^^^TWENTYTHREE,PATIENT W\r\n7^TWENTYTWO,PATIENT V^^^^TWENTYTWO,PATIENT V\r\n10^TWO,PATIENT B^^^^TWO,PATIENT B\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:52.068Z"
+},
+{
+  "name": "ORWORB FASTUSER",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000fORWORB FASTUSER54f\u0004",
+  "response": "\u0000\u0000^no patient^^n/a^02/22/2017@04:12^Your task #2377 stopped because of an error^^NO-ID;62;3170222.041252^^\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:52.082Z"
+},
+{
+  "name": "ORWORB GETSORT",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000eORWORB GETSORT54f\u0004",
+  "response": "\u0000\u0000D^R\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:52.112Z"
+},
+{
+  "name": "ORWORB SETSORT",
+  "version": "0",
+  "args": [
+    "D",
+    "R"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000eORWORB SETSORT50001Df0001Rf\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:52.124Z"
+},
+{
+  "name": "ORWPT ID INFO",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "mvdmEmulated",
+  "rpc": "[XWB]11302\u00010\rORWPT ID INFO5000225f\u0004",
+  "response": "\u0000\u0000000000113^2810302^M^Y^^^^CARTER,DAVID\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:53.822Z"
+},
+{
+  "name": "OR GET COMBAT VET",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "mvdmEmulated",
+  "rpc": "[XWB]11302\u00010\u0011OR GET COMBAT VET5000225f\u0004",
+  "response": "\u0000\u0000NOTCV\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:53.891Z"
+},
+{
+  "name": "ORPRF HASFLG",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORPRF HASFLG5000225f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:53.899Z"
+},
+{
+  "name": "DG CHK BS5 XREF ARRAY",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0015DG CHK BS5 XREF ARRAY5000225f\u0004",
+  "response": "\u0000\u00000\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:55.232Z"
+},
+{
+  "name": "DG SENSITIVE RECORD ACCESS",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u001aDG SENSITIVE RECORD ACCESS5000225f\u0004",
+  "response": "\u0000\u00000\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:55.239Z"
+},
+{
+  "name": "ORWPT DIEDON",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "mvdmEmulated",
+  "rpc": "[XWB]11302\u00010\fORWPT DIEDON5000225f\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:55.300Z"
+},
+{
+  "name": "ORWPT SELECT",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWPT SELECT5000225f\u0004",
+  "response": "\u0000\u0000CARTER,DAVID^M^2810302^000000113^^^^^0^^0^0^^^36^0\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:55.311Z"
+},
+{
+  "name": "ORWPT1 PRCARE",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "mvdmEmulated",
+  "rpc": "[XWB]11302\u00010\rORWPT1 PRCARE5000225f\u0004",
+  "response": "\u0000\u0000^^^^^\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:55.376Z"
+},
+{
+  "name": "ORWU NPHASKEY",
+  "version": "0",
+  "args": [
+    "62",
+    "PROVIDER"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWU NPHASKEY5000262f0008PROVIDERf\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:55.384Z"
+},
+{
+  "name": "ORWDBA1 BASTATUS",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0010ORWDBA1 BASTATUS54f\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:55.393Z"
+},
+{
+  "name": "ORWPT ENCTITL",
+  "version": "0",
+  "args": [
+    "25",
+    "0",
+    "62"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWPT ENCTITL5000225f00010f000262f\u0004",
+  "response": "\u0000\u0000^^^ALEXANDER,ROBERT\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:55.406Z"
+},
+{
+  "name": "ORCNOTE GET TOTAL",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0011ORCNOTE GET TOTAL5000225f\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:55.454Z"
+},
+{
+  "name": "ORPRF CLEAR",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000bORPRF CLEAR54f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:55.496Z"
+},
+{
+  "name": "OR GET COMBAT VET",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "mvdmEmulated",
+  "rpc": "[XWB]11302\u00010\u0011OR GET COMBAT VET5000225f\u0004",
+  "response": "\u0000\u0000NOTCV\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:55.566Z"
+},
+{
+  "name": "ORWCIRN FACLIST",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000fORWCIRN FACLIST5000225f\u0004",
+  "response": "\u0000\u0000-1^Remote access not allowed\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:55.596Z"
+},
+{
+  "name": "ORWCIRN AUTORDV",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000fORWCIRN AUTORDV54f\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:55.603Z"
+},
+{
+  "name": "ORWPT SHARE",
+  "version": "0",
+  "args": [
+    "10.211.55.21",
+    "00120358",
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000bORWPT SHARE5001210.211.55.21f000800120358f000225f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:55.623Z"
+},
+{
+  "name": "DG CHK PAT/DIV MEANS TEST",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0019DG CHK PAT/DIV MEANS TEST5000225f\u0004",
+  "response": "\u0000\u00000\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:55.635Z"
+},
+{
+  "name": "ORWPT LEGACY",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWPT LEGACY5000225f\u0004",
+  "response": "\u0000\u00000\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:55.644Z"
+},
+{
+  "name": "ORPRF HASFLG",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORPRF HASFLG5000225f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:55.653Z"
+},
+{
+  "name": "ORVAA VAA",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\tORVAA VAA5000225f\u0004",
+  "response": "\u0000\u00000\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:55.663Z"
+},
+{
+  "name": "ORWMHV MHV",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\nORWMHV MHV5000225f\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:55.671Z"
+},
+{
+  "name": "ORWCOM PTOBJ",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWCOM PTOBJ54f\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:55.681Z"
+},
+{
+  "name": "ORWCV START",
+  "version": "0",
+  "args": [
+    "25",
+    "10.211.55.21",
+    "00120358",
+    "0",
+    "",
+    "0"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000bORWCV START5000225f001210.211.55.21f000800120358f00010f0000f00010f\u0004",
+  "response": "\u0000\u000010;20;30;40;70;80;\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:55.709Z"
+},
+{
+  "name": "ORWCV1 COVERSHEET LIST",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0016ORWCV1 COVERSHEET LIST54f\u0004",
+  "response": "\u0000\u000010^Active Problems^^S^^ORQQPL LIST^1^^^^^A^^2,3^9,10,2^ORQQPL DETAIL^1^28\r\n20^Allergies / Adverse Reactions^^S^^ORQQAL LIST^1^^^^^^^^2^ORQQAL DETAIL^2^29\r\n30^Postings^^S^^ORQQPP LIST^1^^Maroon^D^3^^^20^2,3^^3^30\r\n40^Active Medications^^S^^ORWPS COVER^1^1^^^^1^^35^2,4^ORWPS DETAIL^4^31\r\n50^Clinical Reminders                                        Due Date^^S^^ORQQPX REMINDERS LIST^^^^D^3^^^34,44^2,3^^5^32\r\n60^Recent Lab Results^^S^^ORWCV LAB^1^^^D^3^^^34^2,3^ORWOR RESULT^6^33\r\n70^Vitals^^S^^ORQQVI VITALS^^^^T^4^^^5,17,19,27^2,5,4,6,7,8^^7^34\r\n80^Appointments/Visits/Admissions^^S^^ORWCV VST^1^1^^T^2^^^16,27^2,3,4^ORWCV DTLVST^8^35\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:55.718Z"
+},
+{
+  "name": "ORQQPL LIST",
+  "version": "0",
+  "args": [
+    "25",
+    "A"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000bORQQPL LIST5000225f0001Af\u0004",
+  "response": "\u0000\u000014^Stomach ulcer (SCT 397825006)^A^R69.^^3170317^^^^^^ORQQPL DETAIL^^397825006^1785985013^10D^\r\n15^Stomach ulcer (SCT 397825006)^A^R69.^^3170317^^^^^^ORQQPL DETAIL^^397825006^1785985013^10D^\r\n1^Stomach ulcer (SCT 397825006)^A^R69.^^3170317^^^^^^ORQQPL DETAIL^^397825006^1785985013^10D^\r\n2^Arthritis (SCT 3723001)^A^R69.^NaN_ONS^3170317^^^^^^ORQQPL DETAIL^^3723001^7278014^10D^\r\n3^Heart murmur (SCT 88610006)^A^R69.^^3170317^^^^^^ORQQPL DETAIL^^88610006^146919019^10D^\r\n4^Heart murmur (SCT 88610006)^A^R69.^^3170317^^^^^^ORQQPL DETAIL^^88610006^146919019^10D^\r\n6^My unique problem (ICD-10-CM R69.)^A^R69.^^3170317^^^^^^ORQQPL DETAIL^^^^10D^\r\n7^A unique problem (AO) (ICD-10-CM R69.)^A^R69.^3160303^3170317^^A^^^^ORQQPL DETAIL^^^^10D^\r\n8^Heart murmur (SCT 88610006)^A^R69.^^3170317^^^^^^ORQQPL DETAIL^^88610006^146919019^10D^\r\n11^Diabetes mellitus (SCT 73211009)^A^E11.9^^3170317^^^^^^ORQQPL DETAIL^^73211009^121589010^10D^\r\n12^Hay fever with asthma (SCT 233683003)^A^R69.^^3170317^^^^^^ORQQPL DETAIL^^233683003^350153016^10D^\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:55.771Z"
+},
+{
+  "name": "ORQQAL LIST",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "mvdmEmulated",
+  "rpc": "[XWB]11302\u00010\u000bORQQAL LIST5000225f\u0004",
+  "response": "\u0000\u0000^No Allergy Assessment\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:55.840Z"
+},
+{
+  "name": "ORWU PATCH",
+  "version": "0",
+  "args": [
+    "GMRA*4.0*21"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\nORWU PATCH50011GMRA*4.0*21f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:55.848Z"
+},
+{
+  "name": "ORQQPP LIST",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000bORQQPP LIST5000225f\u0004",
+  "response": "\u0000\u0000^No patient postings found.\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:55.859Z"
+},
+{
+  "name": "ORWPS COVER",
+  "version": "0",
+  "args": [
+    "25",
+    "1"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000bORWPS COVER5000225f00011f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:55.876Z"
+},
+{
+  "name": "ORQQVI VITALS",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "mvdmEmulated",
+  "rpc": "[XWB]11302\u00010\rORQQVI VITALS5000225f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:55.951Z"
+},
+{
+  "name": "ORWCV VST",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\tORWCV VST5000225f\u0004",
+  "response": "\u0000\u0000V;3170317.192349;3^3170317.192349^VISTA HEALTH CARE^ACTION REQUIRED\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:55.965Z"
+},
+{
+  "name": "ORWTPD1 GETEAFL",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000fORWTPD1 GETEAFL54f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:57.834Z"
+},
+{
+  "name": "ORWTPD1 GETEDATS",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0010ORWTPD1 GETEDATS54f\u0004",
+  "response": "\u0000\u0000365^\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:57.841Z"
+},
+{
+  "name": "ORWU DT",
+  "version": "0",
+  "args": [
+    "NOW"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0007ORWU DT50003NOWf\u0004",
+  "response": "\u0000\u00003170318.004057\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:57.849Z"
+},
+{
+  "name": "ORWU DT",
+  "version": "0",
+  "args": [
+    "NOW"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0007ORWU DT50003NOWf\u0004",
+  "response": "\u0000\u00003170318.004057\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:57.856Z"
+},
+{
+  "name": "ORWCV VST",
+  "version": "0",
+  "args": [
+    "25",
+    "3160318",
+    "3170318.2359",
+    "1"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\tORWCV VST5000225f00073160318f00123170318.2359f00011f\u0004",
+  "response": "\u0000\u0000V;3170317.192349;3^3170317.192349^VISTA HEALTH CARE^ACTION REQUIRED\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:57.866Z"
+},
+{
+  "name": "ORWU NEWPERS",
+  "version": "0",
+  "args": [
+    "ALEXANDER,ROBERS~",
+    "1"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWU NEWPERS50017ALEXANDER,ROBERS~f00011f\u0004",
+  "response": "\u0000\u000062^Alexander,Robert\r\n64^Clerk,Joe\r\n61^Manager,System\r\n.5^Postmaster\r\n63^Smith,Mary\r\n17^User,Seventeen\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:57.881Z"
+},
+{
+  "name": "ORWCV POLL",
+  "version": "0",
+  "args": [
+    "25",
+    "10.211.55.21",
+    "00120358"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\nORWCV POLL5000225f001210.211.55.21f000800120358f\u0004",
+  "response": "\u0000\u0000~DONE=1\r\n~RMND\r\n~LABS\r\ni^No orders found.^^^^^^^^^^ORWOR RESULT\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:40:58.494Z"
+},
+{
+  "name": "ORWU1 NEWLOC",
+  "version": "0",
+  "args": [
+    "",
+    "1"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWU1 NEWLOC50000f00011f\u0004",
+  "response": "\u0000\u00006^CLINICX\r\n7^CLInicA\r\n8^CLInicB\r\n9^CLInicC\r\n10^CLInicD\r\n4^Clinic1\r\n5^Clinic2\r\n3^VISTA HEALTH CARE\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:00.530Z"
+},
+{
+  "name": "ORWU DT",
+  "version": "0",
+  "args": [
+    "NOW",
+    "TSX"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0007ORWU DT50003NOWf0003TSXf\u0004",
+  "response": "\u0000\u00003170318.004102\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:02.851Z"
+},
+{
+  "name": "ORWPCE GETSVC",
+  "version": "0",
+  "args": [
+    "A",
+    "3",
+    "0"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWPCE GETSVC50001Af00013f00010f\u0004",
+  "response": "\u0000\u0000A\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:02.858Z"
+},
+{
+  "name": "ORWU DT",
+  "version": "0",
+  "args": [
+    "NOW"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0007ORWU DT50003NOWf\u0004",
+  "response": "\u0000\u00003170318.004105\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:05.185Z"
+},
+{
+  "name": "TIU TEMPLATE GETROOTS",
+  "version": "0",
+  "args": [
+    "62"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0015TIU TEMPLATE GETROOTS5000262f\u0004",
+  "response": "\u0000\u00001^R^A^Shared Templates^^^^3^^^^^^^^^^\r\n1952^TF^A^Document Titles^^^^0^^^^^^^^^^\r\n53^CF^A^Consult Reasons for Request^^^^0^^^^^^^^^^\r\n1960^OF^A^Procedure Reasons for Request^^^^0^^^^^^^^^^\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:05.203Z"
+},
+{
+  "name": "TIU TEMPLATE ACCESS LEVEL",
+  "version": "0",
+  "args": [
+    "1",
+    "62",
+    "3"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0019TIU TEMPLATE ACCESS LEVEL500011f000262f00013f\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:05.211Z"
+},
+{
+  "name": "ORWPT ENCTITL",
+  "version": "0",
+  "args": [
+    "25",
+    "3",
+    "62"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWPT ENCTITL5000225f00013f000262f\u0004",
+  "response": "\u0000\u0000VISTA HEALTH CARE^VHC^^ALEXANDER,ROBERT\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:05.221Z"
+},
+{
+  "name": "ORWDX WRLST",
+  "version": "0",
+  "args": [
+    "3"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000bORWDX WRLST500013f\u0004",
+  "response": "\u0000\u00003;1001;0;M^Add New Orders\r\n159;1105;43;A^Allergy/Adverse Reaction\r\n23;117;38;D^Diet Order\r\n129;130;21;D^Inpatient Medications\r\n173;145;48;D^Non VA Medications\r\n147;140;4;D^Outpatient Medications\r\n130;180;22;D^Infusion\r\n2;120;5;D^Laboratory\r\n1;160;29;D^Imaging\r\n51;110;11;D^Consult\r\n52;112;42;D^Procedure\r\n48;171;12;D^VITAL SIGNS\r\n49;999;13;D^Word Processing Order\r\n15994;0;6;Q^STREP TEST\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:09.237Z"
+},
+{
+  "name": "OREVNTX PAT",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000bOREVNTX PAT5000225f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:09.248Z"
+},
+{
+  "name": "ORWORDG IEN",
+  "version": "0",
+  "args": [
+    "ALL"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000bORWORDG IEN50003ALLf\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:09.256Z"
+},
+{
+  "name": "ORWOR VWGET",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000bORWOR VWGET54f\u0004",
+  "response": "\u0000\u00000;0;2;1;L;R;1;Active Orders (includes Pending & Recent Activity) - ALL SERVICES\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:09.264Z"
+},
+{
+  "name": "ORWORDG MAPSEQ",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000eORWORDG MAPSEQ54f\u0004",
+  "response": "\u0000\u00003=70^Inpt. Meds^Inpt. Meds\r\n4=65^Out. Meds^Out. Meds\r\n5=75^Lab^Lab\r\n6=75^Lab^Chemistry\r\n7=75^Lab^Hematology\r\n8=75^Lab^Microbiology\r\n9=80^Imaging^Radiology\r\n10=50^Diet^Diet\r\n11=90^Consults^Consults\r\n12=30^Vitals^Vitals\r\n13=40^Nursing^Nursing\r\n14=35^Activity^Activity\r\n15=110^Surgery^Surgery\r\n17=10^A/D/T^A/D/T\r\n18=120^Other^Other\r\n20=130^Supplies^Supplies\r\n21=70^Inpt. Meds^Inpt. Meds\r\n22=60^Infusion^Infusion\r\n23=75^Lab^Blood Bank\r\n24=75^Lab^Anat. Path.\r\n25=75^Lab^Electron Microscopy\r\n26=75^Lab^Surg. Path.\r\n27=75^Lab^Autopsy\r\n28=75^Lab^Cytology\r\n29=80^Imaging^Imaging\r\n30=80^Imaging^CT Scan\r\n31=80^Imaging^MRI\r\n32=80^Imaging^Angio/Neuro\r\n33=80^Imaging^Cardiology\r\n34=80^Imaging^Nuclear Med\r\n35=80^Imaging^Ultrasound\r\n36=80^Imaging^Vascular Lab\r\n37=80^Imaging^Mammography\r\n38=50^Diet^Diet\r\n39=50^Diet^Tubefeeding\r\n40=50^Diet^Diet Add'l\r\n41=50^Diet^Early/Late Trays\r\n42=100^Procedures^Procedures\r\n43=20^Allergy^Allergy\r\n44=10^A/D/T^Diagnosis\r\n45=10^A/D/T^Condition\r\n46=50^Diet^Precautions\r\n48=68^Non-VA Meds^Non-VA Meds\r\n49=50^Diet^Outpt Meal\r\n50=75^Lab^Blood Components\r\n51=69^Clinic Medications^Clinic Medications\r\n61=60^Infusion^TPN\r\n65=75^Lab^Diagnostic Tests\r\n66=75^Lab^Blood Bank\r\n67=59^Clinic Infusions^Clinic Infusions\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:09.284Z"
+},
+{
+  "name": "ORWORR AGET",
+  "version": "0",
+  "args": [
+    "25",
+    "2^0",
+    "1",
+    "0",
+    "0",
+    "",
+    "0"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000bORWORR AGET5000225f00032^0f00011f00010f00010f0000f00010f\u0004",
+  "response": "\u0000\u00000^2^\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:09.297Z"
+},
+{
+  "name": "ORWU NPHASKEY",
+  "version": "0",
+  "args": [
+    "62",
+    "PROVIDER"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWU NPHASKEY5000262f0008PROVIDERf\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:11.672Z"
+},
+{
+  "name": "ORWU NPHASKEY",
+  "version": "0",
+  "args": [
+    "62",
+    "PROVIDER"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWU NPHASKEY5000262f0008PROVIDERf\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:11.680Z"
+},
+{
+  "name": "ORWU NPHASKEY",
+  "version": "0",
+  "args": [
+    "62",
+    "PROVIDER"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWU NPHASKEY5000262f0008PROVIDERf\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:11.686Z"
+},
+{
+  "name": "ORWDX LOCK",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\nORWDX LOCK5000225f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:11.694Z"
+},
+{
+  "name": "ORWU DT",
+  "version": "0",
+  "args": [
+    "NOW"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0007ORWU DT50003NOWf\u0004",
+  "response": "\u0000\u00003170318.004111\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:11.701Z"
+},
+{
+  "name": "ORWDXM3 ISUDQO",
+  "version": "0",
+  "args": [
+    "147"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000eORWDXM3 ISUDQO50003147f\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:11.707Z"
+},
+{
+  "name": "ORIMO ISIVQO",
+  "version": "0",
+  "args": [
+    "147"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORIMO ISIVQO50003147f\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:11.716Z"
+},
+{
+  "name": "ORIMO IMOLOC",
+  "version": "0",
+  "args": [
+    "3",
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORIMO IMOLOC500013f000225f\u0004",
+  "response": "\u0000\u0000-1\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:11.726Z"
+},
+{
+  "name": "ORWDXM3 ISUDQO",
+  "version": "0",
+  "args": [
+    "147"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000eORWDXM3 ISUDQO50003147f\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:11.735Z"
+},
+{
+  "name": "OREVNTX1 ODPTEVID",
+  "version": "0",
+  "args": [
+    "47"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0011OREVNTX1 ODPTEVID5000247f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:11.744Z"
+},
+{
+  "name": "OREVNTX1 GTEVT",
+  "version": "0",
+  "args": [
+    ""
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000eOREVNTX1 GTEVT50000f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:11.750Z"
+},
+{
+  "name": "ORWDPS2 QOGRP",
+  "version": "0",
+  "args": [
+    "147"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWDPS2 QOGRP50003147f\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:11.761Z"
+},
+{
+  "name": "ORWDXM1 BLDQRSP",
+  "version": "0",
+  "args": [
+    "147",
+    "25^3^62^0^M^36^0;C;0;0^0^^^",
+    "0",
+    "3"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000fORWDXM1 BLDQRSP50003147f002725^3^62^0^M^36^0;C;0;0^0^^^f00010f00013f\u0004",
+  "response": "\u0000\u00000^0^147^D^140^4\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:11.768Z"
+},
+{
+  "name": "ORWDRA32 LOCTYPE",
+  "version": "0",
+  "args": [
+    "3"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0010ORWDRA32 LOCTYPE500013f\u0004",
+  "response": "\u0000\u0000C\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:11.777Z"
+},
+{
+  "name": "ORIMO IMOLOC",
+  "version": "0",
+  "args": [
+    "3",
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORIMO IMOLOC500013f000225f\u0004",
+  "response": "\u0000\u0000-1\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:11.784Z"
+},
+{
+  "name": "ORWDPS1 CHK94",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWDPS1 CHK9454f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:11.793Z"
+},
+{
+  "name": "ORWU DT",
+  "version": "0",
+  "args": [
+    "NOW"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0007ORWU DT50003NOWf\u0004",
+  "response": "\u0000\u00003170318.004111\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:11.862Z"
+},
+{
+  "name": "ORWDPS32 AUTH",
+  "version": "0",
+  "args": [
+    "62",
+    "147"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWDPS32 AUTH5000262f0003147f\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:11.883Z"
+},
+{
+  "name": "ORWDXC ON",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\tORWDXC ON54f\u0004",
+  "response": "\u0000\u0000D\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:11.892Z"
+},
+{
+  "name": "ORWDX DLGDEF",
+  "version": "0",
+  "args": [
+    "PSO OERR"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWDX DLGDEF50008PSO OERRf\u0004",
+  "response": "\u0000\u0000ORDERABLE^4^1^@1350^^^^^^384~\r\nINSTR^136^^^^^^^^137~170~153~388~386~\r\nROUTE^137^^1~3^^^^^^^1\r\nSCHEDULE^170^^^^^^^^^1\r\nURGENCY^7^6^^ROUTINE\r\nCOMMENT^15^7\r\nSTRENGTH^384^^@1350^^^^^^^1\r\nQTY^149^8^^^Quantity:^^1\r\nPICKUP^148^\r\nREFILLS^150^9^^^Refills:\r\nSC^151^\r\nDAYS^153^^^^FOR^^^^^1\r\nSTART^6^\r\nSIG^385^2^^^^^1^0\r\nDOSE^386^^@^^^^^^^1\r\nDRUG^138^\r\nSUPPLY^387^\r\nNAME^1350^1.5\r\nCONJ^388^^^^^^^^^1\r\nPI^1358^3\r\nNOW^1359^10^^^First Dose^^1\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:11.905Z"
+},
+{
+  "name": "ORWDPS1 SCHALL",
+  "version": "0",
+  "args": [
+    "25",
+    "0"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000eORWDPS1 SCHALL5000225f00010f\u0004",
+  "response": "\u0000\u0000BID^TWICE A DAY^C^09-17\r\nMO-WE-FR^^C^09\r\nNOW^^O^\r\nQ12H^EVERY 12 HOURS^C^09-21\r\nQ24H^EVERY 24 HOURS^C^09\r\nQ2H^EVERY 2 HOURS^C^04-06-08-10-12-14-16-18-20-22-24\r\nQ3H^EVERY 3 HOURS^C^01-04-07-10-13-16-19-22\r\nQ4H^EVERY 4 HOURS^C^01-05-09-13-17-21\r\nQ6H^EVERY 6 HOURS^C^06-12-18-24\r\nQ8H^EVERY 8 HOURS^C^05-13-21\r\nQAM^EVERY MORNING^C^09\r\nQD^EVERY DAY^C^09\r\nQHS^AT BEDTIME^C^\r\nQID^FOUR TIMES A DAY^C^09-13-17-21\r\nQOD^EVERY OTHER DAY^C^09\r\nSTAT^^O^\r\nTID^THREE TIMES A DAY^C^09-13-17\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:11.919Z"
+},
+{
+  "name": "ORWDPS1 ODSLCT",
+  "version": "0",
+  "args": [
+    "O",
+    "25",
+    "3"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000eORWDPS1 ODSLCT50001Of000225f00013f\u0004",
+  "response": "\u0000\u0000~Priority\r\ni2^ASAP\r\ni9^ROUTINE\r\ni1^STAT\r\nd9^ROUTINE\r\n~DispMsg\r\nd0\r\n~Refills\r\nd0^0\r\n~Pickup\r\ndW^at Window\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:11.934Z"
+},
+{
+  "name": "ORWU DT",
+  "version": "0",
+  "args": [
+    "NOW"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0007ORWU DT50003NOWf\u0004",
+  "response": "\u0000\u00003170318.004111\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:11.965Z"
+},
+{
+  "name": "ORIMO IMOLOC",
+  "version": "0",
+  "args": [
+    "3",
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORIMO IMOLOC500013f000225f\u0004",
+  "response": "\u0000\u0000-1\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:11.975Z"
+},
+{
+  "name": "ORWDXR01 ISSPLY",
+  "version": "0",
+  "args": [
+    "147",
+    "1"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000fORWDXR01 ISSPLY50003147f00011f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:11.983Z"
+},
+{
+  "name": "ORWDXR01 ISSPLY",
+  "version": "0",
+  "args": [
+    "147",
+    "1"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000fORWDXR01 ISSPLY50003147f00011f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:11.992Z"
+},
+{
+  "name": "ORWUL FV4DG",
+  "version": "0",
+  "args": [
+    "O RX"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000bORWUL FV4DG50004O RXf\u0004",
+  "response": "\u0000\u00002^2\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:12.000Z"
+},
+{
+  "name": "ORWUL QV4DG",
+  "version": "0",
+  "args": [
+    "O RX"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000bORWUL QV4DG50004O RXf\u0004",
+  "response": "\u0000\u00000^0\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:12.009Z"
+},
+{
+  "name": "ORWCH LOADSIZ",
+  "version": "0",
+  "args": [
+    "frmODMeds"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWCH LOADSIZ50009frmODMedsf\u0004",
+  "response": "\u0000\u0000261,0,551,728\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:12.022Z"
+},
+{
+  "name": "ORWUL FVSUB",
+  "version": "0",
+  "args": [
+    "2",
+    "1",
+    "2"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000bORWUL FVSUB500012f00011f00012f\u0004",
+  "response": "\u0000\u00001690^ATORVASTATIN\r\n1689^ATORVASTATIN TAB \r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:12.065Z"
+},
+{
+  "name": "ORALWORD ALLWORD",
+  "version": "0",
+  "args": [
+    "25",
+    "1689",
+    "N",
+    "62"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0010ORALWORD ALLWORD5000225f00041689f0001Nf000262f\u0004",
+  "response": "\u0000\u0000^0\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:13.599Z"
+},
+{
+  "name": "ORWDXA ISACTOI",
+  "version": "0",
+  "args": [
+    "1689"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000eORWDXA ISACTOI500041689f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:13.612Z"
+},
+{
+  "name": "ORWDPS1 FAILDEA",
+  "version": "0",
+  "args": [
+    "1689",
+    "62",
+    "O"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000fORWDPS1 FAILDEA500041689f000262f0001Of\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:13.622Z"
+},
+{
+  "name": "ORWOR PKISITE",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWOR PKISITE54f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:13.634Z"
+},
+{
+  "name": "ORWDPS2 OISLCT",
+  "version": "0",
+  "args": [
+    "1689",
+    "O",
+    "25",
+    "Y",
+    "Y"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000eORWDPS2 OISLCT500041689f0001Of000225f0001Yf0001Yf\u0004",
+  "response": "\u0000\u0000~Medication\r\nd1689^ATORVASTATIN TAB \r\n~Verb\r\ndTAKE\r\n~Preposition\r\ndBY\r\n~PtInstr\r\n~AllDoses\r\n~Dosage\r\n~Dispense\r\ni1^20^MG^ATORVASTATIN^0\r\n~Route\r\n~Schedule\r\n~Guideline\r\n~Message\r\n~DEASchedule\r\nd\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:13.652Z"
+},
+{
+  "name": "ORWOR PKISITE",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWOR PKISITE54f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:13.666Z"
+},
+{
+  "name": "ORWDPS2 MAXREF",
+  "version": "0",
+  "args": [
+    "25",
+    "^",
+    "1",
+    "1689",
+    "0"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000eORWDPS2 MAXREF5000225f0001^f00011f00041689f00010f\u0004",
+  "response": "\u0000\u000011\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:32.776Z"
+},
+{
+  "name": "ORWDPS2 MAXREF",
+  "version": "0",
+  "args": [
+    "25",
+    "^",
+    "2",
+    "1689",
+    "0"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000eORWDPS2 MAXREF5000225f0001^f00012f00041689f00010f\u0004",
+  "response": "\u0000\u000011\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:33.402Z"
+},
+{
+  "name": "ORWDPS2 MAXREF",
+  "version": "0",
+  "args": [
+    "25",
+    "^",
+    "3",
+    "1689",
+    "0"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000eORWDPS2 MAXREF5000225f0001^f00013f00041689f00010f\u0004",
+  "response": "\u0000\u000011\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:37.120Z"
+},
+{
+  "name": "ORWDXR01 ISSPLY",
+  "version": "0",
+  "args": [
+    "147",
+    "1"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000fORWDXR01 ISSPLY50003147f00011f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:43.426Z"
+},
+{
+  "name": "ORWDX DGNM",
+  "version": "0",
+  "args": [
+    "O RX"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\nORWDX DGNM50004O RXf\u0004",
+  "response": "\u0000\u00004\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:43.435Z"
+},
+{
+  "name": "ORWU DT",
+  "version": "0",
+  "args": [
+    ""
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0007ORWU DT50000f\u0004",
+  "response": "\u0000\u0000-1\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:43.442Z"
+},
+{
+  "name": "ORWU NPHASKEY",
+  "version": "0",
+  "args": [
+    "62",
+    "PROVIDER"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWU NPHASKEY5000262f0008PROVIDERf\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:43.449Z"
+},
+{
+  "name": "ORWPFSS IS PFSS ACTIVE?",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0017ORWPFSS IS PFSS ACTIVE?54f\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:43.456Z"
+},
+{
+  "name": "ORWDPS32 VALROUTE",
+  "version": "0",
+  "args": [
+    "ORAL"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0011ORWDPS32 VALROUTE50004ORALf\u0004",
+  "response": "\u0000\u00001^PO\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:43.466Z"
+},
+{
+  "name": "ORWDPS32 VALSCH",
+  "version": "0",
+  "args": [
+    "BID",
+    "O"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000fORWDPS32 VALSCH50003BIDf0001Of\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:43.476Z"
+},
+{
+  "name": "ORWDPS32 VALQTY",
+  "version": "0",
+  "args": [
+    "6"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000fORWDPS32 VALQTY500016f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:43.483Z"
+},
+{
+  "name": "ORIMO IMOLOC",
+  "version": "0",
+  "args": [
+    "3",
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORIMO IMOLOC500013f000225f\u0004",
+  "response": "\u0000\u0000-1\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:43.494Z"
+},
+{
+  "name": "ORWDX SAVE",
+  "version": "0",
+  "args": [
+    "25",
+    "62",
+    "3",
+    "PSO OERR",
+    "4",
+    "147",
+    "",
+    {
+      "4": {
+        "1": "1689"
+      },
+      "7": {
+        "1": "9"
+      },
+      "15": {
+        "1": "ORDIALOG(\"WP\",15,1)"
+      },
+      "136": {
+        "1": "SOMEDOSE"
+      },
+      "137": {
+        "1": "1"
+      },
+      "138": {
+        "1": ""
+      },
+      "148": {
+        "1": "W"
+      },
+      "149": {
+        "1": "6"
+      },
+      "150": {
+        "1": "0"
+      },
+      "151": {
+        "1": ""
+      },
+      "170": {
+        "1": "BID"
+      },
+      "384": {
+        "1": ""
+      },
+      "385": {
+        "1": "ORDIALOG(\"WP\",385,1)"
+      },
+      "386": {
+        "1": ""
+      },
+      "387": {
+        "1": "3"
+      },
+      "1358": {
+        "1": "ORDIALOG(\"WP\",1358,1)"
+      },
+      "WP": {
+        "15": {
+          "1": {
+            "1": {
+              "0": "take it plz"
+            }
+          }
+        },
+        "385": {
+          "1": {
+            "1": {
+              "0": "TAKE SOMEDOSE ORAL TWICE A DAY"
+            }
+          }
+        },
+        "1358": {
+          "1": {
+            "1": {
+              "0": " "
+            }
+          }
+        }
+      },
+      "ORCHECK": "0",
+      "ORTS": "0"
+    },
+    "",
+    "",
+    "",
+    "0"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\nORWDX SAVE5000225f000262f00013f0008PSO OERRf00014f0003147f0000f20034,10041689t005136,1008SOMEDOSEt005138,1001\u0001t005386,1001\u0001t005384,1001\u0001t005137,10011t005170,1003BIDt0037,10019t00415,1019ORDIALOG(\"WP\",15,1)t013\"WP\",15,1,1,0011take it plzt005387,10013t005149,10016t005150,10010t005151,1001\u0001t005148,1001Wt0061358,1021ORDIALOG(\"WP\",1358,1)t015\"WP\",1358,1,1,0001 t005385,1020ORDIALOG(\"WP\",385,1)t014\"WP\",385,1,1,0030TAKE SOMEDOSE ORAL TWICE A DAYt009\"ORCHECK\"0010t006\"ORTS\"0010f0000f0000f0000f00010f\u0004",
+  "response": "\u0000\u0000~1;1^4^3170318.0041^^^11^2^^^62^ALEXANDER,ROBERT^^0^^^^^^VISTA HEALTH CARE:3^^0^0^0^0\r\ntATORVASTATIN TAB \r\ntTAKE SOMEDOSE ORAL TWICE A DAY take it plz\r\ntQuantity: 6 Refills: 0 *UNSIGNED*\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:43.512Z"
+},
+{
+  "name": "ORWDBA1 BASTATUS",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0010ORWDBA1 BASTATUS54f\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:43.524Z"
+},
+{
+  "name": "ORWCOM ORDEROBJ",
+  "version": "0",
+  "args": [
+    "4"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000fORWCOM ORDEROBJ500014f\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:43.530Z"
+},
+{
+  "name": "ORWPT CWAD",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\nORWPT CWAD5000225f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:43.543Z"
+},
+{
+  "name": "ORWDX AGAIN",
+  "version": "0",
+  "args": [
+    "147"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000bORWDX AGAIN50003147f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:43.549Z"
+},
+{
+  "name": "ORWDXM2 CLRRCL",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000eORWDXM2 CLRRCL54f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:45.493Z"
+},
+{
+  "name": "ORWU NPHASKEY",
+  "version": "0",
+  "args": [
+    "62",
+    "PROVIDER"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWU NPHASKEY5000262f0008PROVIDERf\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:51.058Z"
+},
+{
+  "name": "ORWU NPHASKEY",
+  "version": "0",
+  "args": [
+    "62",
+    "PROVIDER"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWU NPHASKEY5000262f0008PROVIDERf\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:51.064Z"
+},
+{
+  "name": "ORWU NPHASKEY",
+  "version": "0",
+  "args": [
+    "62",
+    "PROVIDER"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWU NPHASKEY5000262f0008PROVIDERf\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:51.073Z"
+},
+{
+  "name": "ORWDXA VALID",
+  "version": "0",
+  "args": [
+    "1;1",
+    "ES",
+    "62"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWDXA VALID500031;1f0002ESf000262f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:51.083Z"
+},
+{
+  "name": "ORWDXA OFCPLX",
+  "version": "0",
+  "args": [
+    "1;1"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWDXA OFCPLX500031;1f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:51.091Z"
+},
+{
+  "name": "ORWDX LOCK ORDER",
+  "version": "0",
+  "args": [
+    "1;1"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0010ORWDX LOCK ORDER500031;1f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:51.099Z"
+},
+{
+  "name": "ORWDXC SESSION",
+  "version": "0",
+  "args": [
+    "25",
+    {
+      "1": "1;1^^1"
+    }
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000eORWDXC SESSION5000225f200110061;1^^1f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:51.108Z"
+},
+{
+  "name": "ORWPCE SCDIS",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWPCE SCDIS5000225f\u0004",
+  "response": "\u0000\u0000Service Connected: NO\r\nRated Disabilities: NONE STATED\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:51.169Z"
+},
+{
+  "name": "ORDEA DEATEXT",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORDEA DEATEXT54f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:51.197Z"
+},
+{
+  "name": "ORDEA SIGINFO",
+  "version": "0",
+  "args": [
+    "25",
+    "62"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORDEA SIGINFO5000225f000262f\u0004",
+  "response": "\u0000\u0000CARTER,DAVID\r\nDate of Issuance: Mar 18, 2017\r\nProvider: ALEXANDER,ROBERT\r\nNo Address on record\r\nfor VISTA HEALTH CARE\r\nDEA: \r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:51.207Z"
+},
+{
+  "name": "ORWDBA1 SCLST",
+  "version": "0",
+  "args": [
+    "25",
+    {
+      "1": "1;1"
+    }
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWDBA1 SCLST5000225f200110031;1f\u0004",
+  "response": "\u0000\u00001;1\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:51.223Z"
+},
+{
+  "name": "ORWU VALIDSIG",
+  "version": "0",
+  "args": [
+    "*&beY#'W/"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWU VALIDSIG50009*&beY#'W/f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:57.192Z"
+},
+{
+  "name": "ORWPT SELECT",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWPT SELECT5000225f\u0004",
+  "response": "\u0000\u0000CARTER,DAVID^M^2810302^000000113^^^^^0^^0^0^^^36^0\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:57.206Z"
+},
+{
+  "name": "ORWPT1 PRCARE",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "mvdmEmulated",
+  "rpc": "[XWB]11302\u00010\rORWPT1 PRCARE5000225f\u0004",
+  "response": "\u0000\u0000^^^^^\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:57.287Z"
+},
+{
+  "name": "ORWDPS4 IPOD4OP",
+  "version": "0",
+  "args": [
+    "1;1"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000fORWDPS4 IPOD4OP500031;1f\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:57.299Z"
+},
+{
+  "name": "ORWDPS4 CPINFO",
+  "version": "0",
+  "args": [
+    {
+      "1": "1;1^NNNNNNNNN"
+    }
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000eORWDPS4 CPINFO5200110131;1^NNNNNNNNNf\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:57.307Z"
+},
+{
+  "name": "ORWDX SEND",
+  "version": "0",
+  "args": [
+    "25",
+    "62",
+    "3",
+    " $>}/y<,B%",
+    {
+      "1": "1;1^1^1^E"
+    }
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\nORWDX SEND5000225f000262f00013f0010 $>}/y<,B%f200110091;1^1^1^Ef\u0004",
+  "response": "\u0000\u00001;1^RS\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:57.356Z"
+},
+{
+  "name": "OREVNTX1 GETSTS",
+  "version": "0",
+  "args": [
+    "1;1"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000fOREVNTX1 GETSTS500031;1f\u0004",
+  "response": "\u0000\u00005\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:57.364Z"
+},
+{
+  "name": "ORCDLR2 CHECK ALL LC TO WC",
+  "version": "0",
+  "args": [
+    "3",
+    {
+      "1": "1;1^RS"
+    }
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u001aORCDLR2 CHECK ALL LC TO WC500013f200110061;1^RSf\u0004",
+  "response": "\u0000\u0000~COUNT\r\nd0\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:57.374Z"
+},
+{
+  "name": "ORWPT INPLOC",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "mvdmEmulated",
+  "rpc": "[XWB]11302\u00010\fORWPT INPLOC5000225f\u0004",
+  "response": "\u0000\u00000^^\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:57.439Z"
+},
+{
+  "name": "ORWD2 DEVINFO",
+  "version": "0",
+  "args": [
+    "3",
+    "E",
+    {
+      "1": "1;1^RS"
+    }
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWD2 DEVINFO500013f0001Ef200110061;1^RSf\u0004",
+  "response": "\u0000\u0000*^*^*^*\r\n1;1^^^^1\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:57.465Z"
+},
+{
+  "name": "ORWD1 SVONLY",
+  "version": "0",
+  "args": [
+    "3",
+    {
+      "1": "1;1^^^^1"
+    }
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWD1 SVONLY500013f200110081;1^^^^1f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:57.472Z"
+},
+{
+  "name": "ORWOR UNSIGN",
+  "version": "0",
+  "args": [
+    "25",
+    {
+      "0": ""
+    }
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWOR UNSIGN5000225f20010001\u0001f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:57.486Z"
+},
+{
+  "name": "ORWDX UNLOCK ORDER",
+  "version": "0",
+  "args": [
+    "1;1"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0012ORWDX UNLOCK ORDER500031;1f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:57.499Z"
+},
+{
+  "name": "ORWDX UNLOCK ORDER",
+  "version": "0",
+  "args": [
+    "1;1"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0012ORWDX UNLOCK ORDER500031;1f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:57.506Z"
+},
+{
+  "name": "ORWORB KILL UNSIG ORDERS ALERT",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u001eORWORB KILL UNSIG ORDERS ALERT5000225f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:57.516Z"
+},
+{
+  "name": "ORQQPP LIST",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000bORQQPP LIST5000225f\u0004",
+  "response": "\u0000\u0000^No patient postings found.\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:57.524Z"
+},
+{
+  "name": "ORQQAL LIST",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "mvdmEmulated",
+  "rpc": "[XWB]11302\u00010\u000bORQQAL LIST5000225f\u0004",
+  "response": "\u0000\u0000^No Allergy Assessment\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:57.638Z"
+},
+{
+  "name": "ORWPT CWAD",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\nORWPT CWAD5000225f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:57.647Z"
+},
+{
+  "name": "ORWPS ACTIVE",
+  "version": "0",
+  "args": [
+    "25",
+    "62",
+    "0",
+    "1"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWPS ACTIVE5000225f000262f00010f00011f\u0004",
+  "response": "\u0000\u00001^\r\n~OP^1P;O^ATORVASTATIN TAB^^^^^^1^PENDING^^^6^^0\r\n ATORVASTATIN TAB  Qty: 6\r\n\\ Sig: TAKE SOMEDOSE BY MOUTH TWICE A DAY\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:57.659Z"
+},
+{
+  "name": "ORWORR AGET",
+  "version": "0",
+  "args": [
+    "25",
+    "2^0",
+    "1",
+    "0",
+    "0",
+    "",
+    "0"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000bORWORR AGET5000225f00032^0f00011f00010f00010f0000f00010f\u0004",
+  "response": "\u0000\u00001^2^\r\n1;1^4^3170318.0041^^\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:57.673Z"
+},
+{
+  "name": "ORWORR GET4LST",
+  "version": "0",
+  "args": [
+    "2",
+    "-1",
+    {
+      "1": "1;1"
+    }
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000eORWORR GET4LST500012f0002-1f200110031;1f\u0004",
+  "response": "\u0000\u0000~1;1^4^3170318.0041^^^5^1^^^62^ALEXANDER,ROBERT^^0^^^^^^VISTA HEALTH CARE:3^^0^0^0^0\r\ntATORVASTATIN TAB \r\ntTAKE SOMEDOSE ORAL TWICE A DAY take it plz\r\ntQuantity: 6 Refills: 0\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:57.688Z"
+},
+{
+  "name": "ORWPT CWAD",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\nORWPT CWAD5000225f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:57.699Z"
+},
+{
+  "name": "ORWDX UNLOCK",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWDX UNLOCK5000225f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:57.706Z"
+},
+{
+  "name": "ORWPT SELECT",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWPT SELECT5000225f\u0004",
+  "response": "\u0000\u0000CARTER,DAVID^M^2810302^000000113^^^^^0^^0^0^^^36^0\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:57.714Z"
+},
+{
+  "name": "ORWPT1 PRCARE",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "mvdmEmulated",
+  "rpc": "[XWB]11302\u00010\rORWPT1 PRCARE5000225f\u0004",
+  "response": "\u0000\u0000^^^^^\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:41:57.777Z"
+},
+{
+  "name": "ORWPS ACTIVE",
+  "version": "0",
+  "args": [
+    "25",
+    "62",
+    "1",
+    "1"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWPS ACTIVE5000225f000262f00011f00011f\u0004",
+  "response": "\u0000\u00001^\r\n~OP^1R;O^ATORVASTATIN^^3170417^0^^^1^ACTIVE^3170318^3^6^^^3170318^^3\r\n *ATORVASTATIN  Qty: 6 for 3 days\r\n\\ Sig: TAKE SOMEDOSE BY MOUTH TWICE A DAY\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:08.091Z"
+},
+{
+  "name": "ORWU NPHASKEY",
+  "version": "0",
+  "args": [
+    "62",
+    "PROVIDER"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWU NPHASKEY5000262f0008PROVIDERf\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:21.022Z"
+},
+{
+  "name": "ORWU NPHASKEY",
+  "version": "0",
+  "args": [
+    "62",
+    "PROVIDER"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWU NPHASKEY5000262f0008PROVIDERf\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:21.029Z"
+},
+{
+  "name": "ORWU NPHASKEY",
+  "version": "0",
+  "args": [
+    "62",
+    "PROVIDER"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWU NPHASKEY5000262f0008PROVIDERf\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:21.035Z"
+},
+{
+  "name": "ORWDX1 STCHANGE",
+  "version": "0",
+  "args": [
+    "25",
+    {
+      "1": "1R;O^Active"
+    }
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000fORWDX1 STCHANGE5000225f200110111R;O^Activef\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:21.047Z"
+},
+{
+  "name": "ORWDXA VALID",
+  "version": "0",
+  "args": [
+    "1",
+    "XX",
+    "62"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWDXA VALID500011f0002XXf000262f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:21.056Z"
+},
+{
+  "name": "ORWDXA OFCPLX",
+  "version": "0",
+  "args": [
+    "1"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWDXA OFCPLX500011f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:21.063Z"
+},
+{
+  "name": "ORWDX LOCK ORDER",
+  "version": "0",
+  "args": [
+    "1"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0010ORWDX LOCK ORDER500011f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:21.071Z"
+},
+{
+  "name": "ORWORR GETBYIFN",
+  "version": "0",
+  "args": [
+    "1"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000fORWORR GETBYIFN500011f\u0004",
+  "response": "\u0000\u0000~1;2^4^3170318.0042^3170318^3170417^6^6^^^62^ALEXANDER,ROBERT^^0^^^^^^VISTA HEALTH CARE:3^^0^0^0^0\r\nt*ATORVASTATIN TAB  20MG\r\ntTAKE SOMEDOSE BY MOUTH TWICE A DAY\r\ntQuantity: 6 Refills: 0\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:21.082Z"
+},
+{
+  "name": "ORWU NPHASKEY",
+  "version": "0",
+  "args": [
+    "62",
+    "PROVIDER"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWU NPHASKEY5000262f0008PROVIDERf\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:21.092Z"
+},
+{
+  "name": "ORWU NPHASKEY",
+  "version": "0",
+  "args": [
+    "62",
+    "PROVIDER"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWU NPHASKEY5000262f0008PROVIDERf\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:21.098Z"
+},
+{
+  "name": "ORWU NPHASKEY",
+  "version": "0",
+  "args": [
+    "62",
+    "PROVIDER"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWU NPHASKEY5000262f0008PROVIDERf\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:21.108Z"
+},
+{
+  "name": "ORWDX LOCK",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\nORWDX LOCK5000225f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:21.115Z"
+},
+{
+  "name": "ORWDXR RNWFLDS",
+  "version": "0",
+  "args": [
+    "1;2"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000eORWDXR RNWFLDS500031;2f\u0004",
+  "response": "\u0000\u0000140^^^0^W^at Window^^^0\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:21.126Z"
+},
+{
+  "name": "ORWDXR01 CANCHG",
+  "version": "0",
+  "args": [
+    "1;2",
+    "0"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000fORWDXR01 CANCHG500031;2f00010f\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:21.134Z"
+},
+{
+  "name": "OREVNTX1 GETSTS",
+  "version": "0",
+  "args": [
+    "1;2"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000fOREVNTX1 GETSTS500031;2f\u0004",
+  "response": "\u0000\u00006\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:21.143Z"
+},
+{
+  "name": "ORWDXA VALID",
+  "version": "0",
+  "args": [
+    "1;2",
+    "XX",
+    "62"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWDXA VALID500031;2f0002XXf000262f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:21.150Z"
+},
+{
+  "name": "ORWDXA OFCPLX",
+  "version": "0",
+  "args": [
+    "1;2"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWDXA OFCPLX500031;2f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:21.160Z"
+},
+{
+  "name": "ORIMO IMOOD",
+  "version": "0",
+  "args": [
+    "1;2"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000bORIMO IMOOD500031;2f\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:21.167Z"
+},
+{
+  "name": "OREVNTX1 ODPTEVID",
+  "version": "0",
+  "args": [
+    "1;2"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0011OREVNTX1 ODPTEVID500031;2f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:21.175Z"
+},
+{
+  "name": "OREVNTX1 GTEVT",
+  "version": "0",
+  "args": [
+    ""
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000eOREVNTX1 GTEVT50000f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:21.182Z"
+},
+{
+  "name": "ORWDPS2 QOGRP",
+  "version": "0",
+  "args": [
+    "X1;2"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWDPS2 QOGRP50004X1;2f\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:21.192Z"
+},
+{
+  "name": "ORWDXM1 BLDQRSP",
+  "version": "0",
+  "args": [
+    "X1;2",
+    "25^3^62^0^M^36^0;C;0;0^0^^^",
+    "0",
+    "3"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000fORWDXM1 BLDQRSP50004X1;2f002725^3^62^0^M^36^0;C;0;0^0^^^f00010f00013f\u0004",
+  "response": "\u0000\u00000^X1;2^147^X^140^4\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:21.200Z"
+},
+{
+  "name": "ORALWORD ALLWORD",
+  "version": "0",
+  "args": [
+    "25",
+    "1",
+    "E",
+    "62"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0010ORALWORD ALLWORD5000225f00011f0001Ef000262f\u0004",
+  "response": "\u0000\u0000^0\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:21.211Z"
+},
+{
+  "name": "ORWDRA32 LOCTYPE",
+  "version": "0",
+  "args": [
+    "3"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0010ORWDRA32 LOCTYPE500013f\u0004",
+  "response": "\u0000\u0000C\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:21.219Z"
+},
+{
+  "name": "ORIMO IMOLOC",
+  "version": "0",
+  "args": [
+    "3",
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORIMO IMOLOC500013f000225f\u0004",
+  "response": "\u0000\u0000-1\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:21.227Z"
+},
+{
+  "name": "ORWDPS32 AUTH",
+  "version": "0",
+  "args": [
+    "62",
+    "X1;2"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWDPS32 AUTH5000262f0004X1;2f\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:21.310Z"
+},
+{
+  "name": "ORWDX DLGDEF",
+  "version": "0",
+  "args": [
+    "PSO OERR"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWDX DLGDEF50008PSO OERRf\u0004",
+  "response": "\u0000\u0000ORDERABLE^4^1^@1350^^^^^^384~\r\nINSTR^136^^^^^^^^137~170~153~388~386~\r\nROUTE^137^^1~3^^^^^^^1\r\nSCHEDULE^170^^^^^^^^^1\r\nURGENCY^7^6^^ROUTINE\r\nCOMMENT^15^7\r\nSTRENGTH^384^^@1350^^^^^^^1\r\nQTY^149^8^^^Quantity:^^1\r\nPICKUP^148^\r\nREFILLS^150^9^^^Refills:\r\nSC^151^\r\nDAYS^153^^^^FOR^^^^^1\r\nSTART^6^\r\nSIG^385^2^^^^^1^0\r\nDOSE^386^^@^^^^^^^1\r\nDRUG^138^\r\nSUPPLY^387^\r\nNAME^1350^1.5\r\nCONJ^388^^^^^^^^^1\r\nPI^1358^3\r\nNOW^1359^10^^^First Dose^^1\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:21.322Z"
+},
+{
+  "name": "ORWDPS1 SCHALL",
+  "version": "0",
+  "args": [
+    "25",
+    "0"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000eORWDPS1 SCHALL5000225f00010f\u0004",
+  "response": "\u0000\u0000BID^TWICE A DAY^C^09-17\r\nMO-WE-FR^^C^09\r\nNOW^^O^\r\nQ12H^EVERY 12 HOURS^C^09-21\r\nQ24H^EVERY 24 HOURS^C^09\r\nQ2H^EVERY 2 HOURS^C^04-06-08-10-12-14-16-18-20-22-24\r\nQ3H^EVERY 3 HOURS^C^01-04-07-10-13-16-19-22\r\nQ4H^EVERY 4 HOURS^C^01-05-09-13-17-21\r\nQ6H^EVERY 6 HOURS^C^06-12-18-24\r\nQ8H^EVERY 8 HOURS^C^05-13-21\r\nQAM^EVERY MORNING^C^09\r\nQD^EVERY DAY^C^09\r\nQHS^AT BEDTIME^C^\r\nQID^FOUR TIMES A DAY^C^09-13-17-21\r\nQOD^EVERY OTHER DAY^C^09\r\nSTAT^^O^\r\nTID^THREE TIMES A DAY^C^09-13-17\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:21.336Z"
+},
+{
+  "name": "ORWDPS1 ODSLCT",
+  "version": "0",
+  "args": [
+    "O",
+    "25",
+    "3"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000eORWDPS1 ODSLCT50001Of000225f00013f\u0004",
+  "response": "\u0000\u0000~Priority\r\ni2^ASAP\r\ni9^ROUTINE\r\ni1^STAT\r\nd9^ROUTINE\r\n~DispMsg\r\nd0\r\n~Refills\r\nd0^0\r\n~Pickup\r\ndW^at Window\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:21.352Z"
+},
+{
+  "name": "ORWU DT",
+  "version": "0",
+  "args": [
+    "NOW"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0007ORWU DT50003NOWf\u0004",
+  "response": "\u0000\u00003170318.004321\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:21.376Z"
+},
+{
+  "name": "ORIMO IMOLOC",
+  "version": "0",
+  "args": [
+    "3",
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORIMO IMOLOC500013f000225f\u0004",
+  "response": "\u0000\u0000-1\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:21.384Z"
+},
+{
+  "name": "ORWDXR01 ISSPLY",
+  "version": "0",
+  "args": [
+    "0",
+    "1"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000fORWDXR01 ISSPLY500010f00011f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:21.392Z"
+},
+{
+  "name": "ORWDXR01 ISSPLY",
+  "version": "0",
+  "args": [
+    "0",
+    "1"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000fORWDXR01 ISSPLY500010f00011f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:21.400Z"
+},
+{
+  "name": "ORWUL FV4DG",
+  "version": "0",
+  "args": [
+    "O RX"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000bORWUL FV4DG50004O RXf\u0004",
+  "response": "\u0000\u00002^2\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:21.410Z"
+},
+{
+  "name": "ORWUL QV4DG",
+  "version": "0",
+  "args": [
+    "O RX"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000bORWUL QV4DG50004O RXf\u0004",
+  "response": "\u0000\u00000^0\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:21.426Z"
+},
+{
+  "name": "ORWDX LOADRSP",
+  "version": "0",
+  "args": [
+    "X1;2",
+    "0"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWDX LOADRSP50004X1;2f00010f\u0004",
+  "response": "\u0000\u0000~4^1^ORDERABLE\r\ni1689\r\neATORVASTATIN TAB \r\n~15^1^COMMENT\r\n~136^1^INSTR\r\niSOMEDOSE\r\neSOMEDOSE\r\n~137^1^ROUTE\r\ni1\r\neORAL\r\n~138^1^DRUG\r\ni1\r\neATORVASTATIN\r\n~148^1^PICKUP\r\niW\r\neWINDOW\r\n~149^1^QTY\r\ni6\r\ne6\r\n~150^1^REFILLS\r\ni0\r\ne0\r\n~170^1^SCHEDULE\r\niBID\r\neBID\r\n~384^1^STRENGTH\r\ni20MG\r\ne20MG\r\n~385^1^SIG\r\ntTAKE SOMEDOSE BY MOUTH TWICE A DAY\r\n~387^1^SUPPLY\r\ni3\r\ne3\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:21.446Z"
+},
+{
+  "name": "ORWDPS2 CHKPI",
+  "version": "0",
+  "args": [
+    "1"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWDPS2 CHKPI500011f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:21.457Z"
+},
+{
+  "name": "ORWOR PKISITE",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWOR PKISITE54f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:21.466Z"
+},
+{
+  "name": "ORWDPS2 OISLCT",
+  "version": "0",
+  "args": [
+    "1689",
+    "O",
+    "25",
+    "Y",
+    "Y"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000eORWDPS2 OISLCT500041689f0001Of000225f0001Yf0001Yf\u0004",
+  "response": "\u0000\u0000~Medication\r\nd1689^ATORVASTATIN TAB \r\n~Verb\r\ndTAKE\r\n~Preposition\r\ndBY\r\n~PtInstr\r\n~AllDoses\r\n~Dosage\r\n~Dispense\r\ni1^20^MG^ATORVASTATIN^0\r\n~Route\r\n~Schedule\r\n~Guideline\r\n~Message\r\n~DEASchedule\r\nd\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:21.479Z"
+},
+{
+  "name": "ORWOR PKISITE",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWOR PKISITE54f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:21.488Z"
+},
+{
+  "name": "ORWDX DGNM",
+  "version": "0",
+  "args": [
+    "CONSULTS"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\nORWDX DGNM50008CONSULTSf\u0004",
+  "response": "\u0000\u000011\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:21.506Z"
+},
+{
+  "name": "ORWDX DGNM",
+  "version": "0",
+  "args": [
+    "PROCEDURES"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\nORWDX DGNM50010PROCEDURESf\u0004",
+  "response": "\u0000\u000042\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:21.514Z"
+},
+{
+  "name": "ORWDXR ISREL",
+  "version": "0",
+  "args": [
+    "1;2"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWDXR ISREL500031;2f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:21.525Z"
+},
+{
+  "name": "ORWDPS2 DAY2QTY",
+  "version": "0",
+  "args": [
+    "3",
+    "",
+    "",
+    "",
+    "25",
+    ""
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000fORWDPS2 DAY2QTY500013f0000f0000f0000f000225f0000f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:21.533Z"
+},
+{
+  "name": "ORWDXR GETPKG",
+  "version": "0",
+  "args": [
+    "1;2"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWDXR GETPKG500031;2f\u0004",
+  "response": "\u0000\u0000PSO\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:21.542Z"
+},
+{
+  "name": "ORWDPS1 FAILDEA",
+  "version": "0",
+  "args": [
+    "1689",
+    "62",
+    "O"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000fORWDPS1 FAILDEA500041689f000262f0001Of\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:21.549Z"
+},
+{
+  "name": "ORWDPS2 DAY2QTY",
+  "version": "0",
+  "args": [
+    "4",
+    "^",
+    "BID^",
+    "~^",
+    "25",
+    ""
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000fORWDPS2 DAY2QTY500014f0001^f0004BID^f0002~^f000225f0000f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:28.218Z"
+},
+{
+  "name": "ORWDPS2 MAXREF",
+  "version": "0",
+  "args": [
+    "25",
+    "^",
+    "4",
+    "1689",
+    "0"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000eORWDPS2 MAXREF5000225f0001^f00014f00041689f00010f\u0004",
+  "response": "\u0000\u000011\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:28.225Z"
+},
+{
+  "name": "ORWDXR01 ISSPLY",
+  "version": "0",
+  "args": [
+    "0",
+    "1"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000fORWDXR01 ISSPLY500010f00011f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:40.609Z"
+},
+{
+  "name": "ORWDX DGNM",
+  "version": "0",
+  "args": [
+    "O RX"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\nORWDX DGNM50004O RXf\u0004",
+  "response": "\u0000\u00004\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:40.616Z"
+},
+{
+  "name": "ORWU DT",
+  "version": "0",
+  "args": [
+    ""
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0007ORWU DT50000f\u0004",
+  "response": "\u0000\u0000-1\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:40.624Z"
+},
+{
+  "name": "ORWU NPHASKEY",
+  "version": "0",
+  "args": [
+    "62",
+    "PROVIDER"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWU NPHASKEY5000262f0008PROVIDERf\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:40.632Z"
+},
+{
+  "name": "ORWDPS32 VALROUTE",
+  "version": "0",
+  "args": [
+    "ORAL"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0011ORWDPS32 VALROUTE50004ORALf\u0004",
+  "response": "\u0000\u00001^PO\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:40.642Z"
+},
+{
+  "name": "ORWDPS32 VALSCH",
+  "version": "0",
+  "args": [
+    "BID",
+    "O"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000fORWDPS32 VALSCH50003BIDf0001Of\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:40.650Z"
+},
+{
+  "name": "ORWDPS32 VALQTY",
+  "version": "0",
+  "args": [
+    "8"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000fORWDPS32 VALQTY500018f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:40.659Z"
+},
+{
+  "name": "ORWDPS5 LESGRP",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000eORWDPS5 LESGRP54f\u0004",
+  "response": "\u0000\u00005^23^6\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:40.667Z"
+},
+{
+  "name": "ORIMO IMOLOC",
+  "version": "0",
+  "args": [
+    "3",
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORIMO IMOLOC500013f000225f\u0004",
+  "response": "\u0000\u0000-1\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:40.676Z"
+},
+{
+  "name": "ORWDX SAVE",
+  "version": "0",
+  "args": [
+    "25",
+    "62",
+    "3",
+    "PSO OERR",
+    "4",
+    "147",
+    "1;2",
+    {
+      "4": {
+        "1": "1689"
+      },
+      "7": {
+        "1": "9"
+      },
+      "15": {
+        "1": "ORDIALOG(\"WP\",15,1)"
+      },
+      "136": {
+        "1": "SOMEDOSE"
+      },
+      "137": {
+        "1": "1"
+      },
+      "138": {
+        "1": ""
+      },
+      "148": {
+        "1": "W"
+      },
+      "149": {
+        "1": "8"
+      },
+      "150": {
+        "1": "0"
+      },
+      "151": {
+        "1": ""
+      },
+      "170": {
+        "1": "BID"
+      },
+      "384": {
+        "1": ""
+      },
+      "385": {
+        "1": "ORDIALOG(\"WP\",385,1)"
+      },
+      "386": {
+        "1": ""
+      },
+      "387": {
+        "1": "4"
+      },
+      "1358": {
+        "1": "ORDIALOG(\"WP\",1358,1)"
+      },
+      "WP": {
+        "385": {
+          "1": {
+            "1": {
+              "0": "TAKE SOMEDOSE ORAL TWICE A DAY"
+            }
+          }
+        },
+        "1358": {
+          "1": {
+            "1": {
+              "0": " "
+            }
+          }
+        }
+      },
+      "ORCHECK": "0",
+      "ORTS": "0"
+    },
+    "",
+    "",
+    "",
+    "0"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\nORWDX SAVE5000225f000262f00013f0008PSO OERRf00014f0003147f00031;2f20034,10041689t005136,1008SOMEDOSEt005138,1001\u0001t005386,1001\u0001t005384,1001\u0001t005137,10011t005170,1003BIDt0037,10019t00415,1019ORDIALOG(\"WP\",15,1)t005387,10014t005149,10018t005150,10010t005151,1001\u0001t005148,1001Wt0061358,1021ORDIALOG(\"WP\",1358,1)t015\"WP\",1358,1,1,0001 t005385,1020ORDIALOG(\"WP\",385,1)t014\"WP\",385,1,1,0030TAKE SOMEDOSE ORAL TWICE A DAYt009\"ORCHECK\"0010t006\"ORTS\"0010f0000f0000f0000f00010f\u0004",
+  "response": "\u0000\u0000~2;1^4^3170318.0043^^^11^2^^^62^ALEXANDER,ROBERT^^0^^^^^^VISTA HEALTH CARE:3^^0^0^0^0\r\ntATORVASTATIN TAB \r\ntTAKE SOMEDOSE ORAL TWICE A DAY\r\ntQuantity: 8 Refills: 0 *UNSIGNED*\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:40.693Z"
+},
+{
+  "name": "ORWDBA1 BASTATUS",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0010ORWDBA1 BASTATUS54f\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:40.701Z"
+},
+{
+  "name": "ORWCOM ORDEROBJ",
+  "version": "0",
+  "args": [
+    "4"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000fORWCOM ORDEROBJ500014f\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:40.710Z"
+},
+{
+  "name": "ORWPT CWAD",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\nORWPT CWAD5000225f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:40.723Z"
+},
+{
+  "name": "ORWDX UNLOCK ORDER",
+  "version": "0",
+  "args": [
+    "1;2"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0012ORWDX UNLOCK ORDER500031;2f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:40.746Z"
+},
+{
+  "name": "ORWDXM2 CLRRCL",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000eORWDXM2 CLRRCL54f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:43:40.756Z"
+},
+{
+  "name": "ORWU NPHASKEY",
+  "version": "0",
+  "args": [
+    "62",
+    "PROVIDER"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWU NPHASKEY5000262f0008PROVIDERf\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:44:49.785Z"
+},
+{
+  "name": "ORWU NPHASKEY",
+  "version": "0",
+  "args": [
+    "62",
+    "PROVIDER"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWU NPHASKEY5000262f0008PROVIDERf\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:44:49.793Z"
+},
+{
+  "name": "ORWU NPHASKEY",
+  "version": "0",
+  "args": [
+    "62",
+    "PROVIDER"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWU NPHASKEY5000262f0008PROVIDERf\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:44:49.799Z"
+},
+{
+  "name": "ORWU DT",
+  "version": "0",
+  "args": [
+    "NOW"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0007ORWU DT50003NOWf\u0004",
+  "response": "\u0000\u00003170318.004449\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:44:49.809Z"
+},
+{
+  "name": "ORWDXM3 ISUDQO",
+  "version": "0",
+  "args": [
+    "51"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000eORWDXM3 ISUDQO5000251f\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:44:49.818Z"
+},
+{
+  "name": "ORIMO ISIVQO",
+  "version": "0",
+  "args": [
+    "51"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORIMO ISIVQO5000251f\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:44:49.827Z"
+},
+{
+  "name": "ORIMO IMOLOC",
+  "version": "0",
+  "args": [
+    "3",
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORIMO IMOLOC500013f000225f\u0004",
+  "response": "\u0000\u0000-1\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:44:49.835Z"
+},
+{
+  "name": "ORWDXM3 ISUDQO",
+  "version": "0",
+  "args": [
+    "51"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000eORWDXM3 ISUDQO5000251f\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:44:49.844Z"
+},
+{
+  "name": "OREVNTX1 ODPTEVID",
+  "version": "0",
+  "args": [
+    "1"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0011OREVNTX1 ODPTEVID500011f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:44:49.853Z"
+},
+{
+  "name": "OREVNTX1 GTEVT",
+  "version": "0",
+  "args": [
+    ""
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000eOREVNTX1 GTEVT50000f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:44:49.863Z"
+},
+{
+  "name": "ORWDPS2 QOGRP",
+  "version": "0",
+  "args": [
+    "51"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWDPS2 QOGRP5000251f\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:44:49.870Z"
+},
+{
+  "name": "ORWDXM1 BLDQRSP",
+  "version": "0",
+  "args": [
+    "51",
+    "25^3^62^0^M^36^0;C;0;0^0^^^",
+    "0",
+    "3"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000fORWDXM1 BLDQRSP5000251f002725^3^62^0^M^36^0;C;0;0^0^^^f00010f00013f\u0004",
+  "response": "\u0000\u00000^0^51^D^110^11\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:44:49.879Z"
+},
+{
+  "name": "ORWDRA32 LOCTYPE",
+  "version": "0",
+  "args": [
+    "3"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0010ORWDRA32 LOCTYPE500013f\u0004",
+  "response": "\u0000\u0000C\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:44:49.887Z"
+},
+{
+  "name": "ORIMO IMOLOC",
+  "version": "0",
+  "args": [
+    "3",
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORIMO IMOLOC500013f000225f\u0004",
+  "response": "\u0000\u0000-1\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:44:49.896Z"
+},
+{
+  "name": "OR GET COMBAT VET",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "mvdmEmulated",
+  "rpc": "[XWB]11302\u00010\u0011OR GET COMBAT VET5000225f\u0004",
+  "response": "\u0000\u0000NOTCV\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:44:50.019Z"
+},
+{
+  "name": "ORWDX DLGDEF",
+  "version": "0",
+  "args": [
+    "GMRCOR CONSULT"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWDX DLGDEF50014GMRCOR CONSULTf\u0004",
+  "response": "\u0000\u0000ORDERABLE^4^2^^^^Cons\r\nCOMMENT^15^\r\nCLASS^10^\r\nURGENCY^7^4^^ROUTINE\r\nPLACE^140^3\r\nPROVIDER^17^\r\nMISC^20^^^^^^^^166~\r\nITEM^178^1\r\nCODE^166^^^^^^^^^1\r\nCLINICALLY^15820^\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:44:50.039Z"
+},
+{
+  "name": "ORWDCN32 DEF",
+  "version": "0",
+  "args": [
+    "C"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWDCN32 DEF50001Cf\u0004",
+  "response": "\u0000\u0000~ShortList\r\n~Inpt Cslt Urgencies\r\ni17^EMERGENCY^506\r\ni9^ROUTINE^505\r\ni1^STAT^512\r\ni13^WITHIN 48 HOURS^494\r\ni14^WITHIN 72 HOURS^495\r\nd9^ROUTINE^505\r\n~Outpt Urgencies\r\ni10^NEXT AVAILABLE^496\r\ni9^ROUTINE^505\r\ni1^STAT^512\r\ni11^TODAY^492\r\ni16^WITHIN 1 MONTH^499\r\ni15^WITHIN 1 WEEK^498\r\ni12^WITHIN 24 HOURS^493\r\ni14^WITHIN 72 HOURS^495\r\nd9^ROUTINE^505\r\n~Inpt Place\r\niB^BEDSIDE^B\r\niC^CONSULTANT'S CHOICE^C\r\ndB^BEDSIDE^B\r\n~Outpt Place\r\niC^CONSULTANT'S CHOICE^C\r\niE^EMERGENCY ROOM^E\r\ndC^CONSULTANT'S CHOICE^C\r\n~Clin Ind Date\r\nd^\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:44:50.053Z"
+},
+{
+  "name": "ORWU NEWPERS",
+  "version": "0",
+  "args": [
+    "",
+    "1"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWU NEWPERS50000f00011f\u0004",
+  "response": "\u0000\u000062^Alexander,Robert\r\n64^Clerk,Joe\r\n61^Manager,System\r\n.5^Postmaster\r\n63^Smith,Mary\r\n17^User,Seventeen\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:44:50.063Z"
+},
+{
+  "name": "ORQQCN SVC W/SYNONYMS",
+  "version": "0",
+  "args": [
+    "1",
+    "1",
+    "1"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0015ORQQCN SVC W/SYNONYMS500011f00011f00011f\u0004",
+  "response": "\u0000\u00001^ALL SERVICES^0^+^1^84\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:44:50.094Z"
+},
+{
+  "name": "ORWCH LOADSIZ",
+  "version": "0",
+  "args": [
+    "frmODCslt"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWCH LOADSIZ50009frmODCsltf\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:44:50.104Z"
+},
+{
+  "name": "ORWDXM2 CLRRCL",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000eORWDXM2 CLRRCL54f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:44:52.632Z"
+},
+{
+  "name": "ORWPS ACTIVE",
+  "version": "0",
+  "args": [
+    "25",
+    "62",
+    "1",
+    "1"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWPS ACTIVE5000225f000262f00011f00011f\u0004",
+  "response": "\u0000\u00001^\r\n~OP^1R;O^ATORVASTATIN^^3170417^0^^^1^ACTIVE^3170318^3^6^^^3170318^^3\r\n *ATORVASTATIN  Qty: 6 for 3 days\r\n\\ Sig: TAKE SOMEDOSE BY MOUTH TWICE A DAY\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:44:55.275Z"
+},
+{
+  "name": "ORWPCE SCDIS",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWPCE SCDIS5000225f\u0004",
+  "response": "\u0000\u0000Service Connected: NO\r\nRated Disabilities: NONE STATED\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:45:00.798Z"
+},
+{
+  "name": "ORDEA DEATEXT",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORDEA DEATEXT54f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:45:00.825Z"
+},
+{
+  "name": "ORDEA SIGINFO",
+  "version": "0",
+  "args": [
+    "25",
+    "62"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORDEA SIGINFO5000225f000262f\u0004",
+  "response": "\u0000\u0000CARTER,DAVID\r\nDate of Issuance: Mar 18, 2017\r\nProvider: ALEXANDER,ROBERT\r\nNo Address on record\r\nfor VISTA HEALTH CARE\r\nDEA: \r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:45:00.836Z"
+},
+{
+  "name": "ORDEA CSVALUE",
+  "version": "0",
+  "args": [
+    "2;1"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORDEA CSVALUE500032;1f\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:45:00.848Z"
+},
+{
+  "name": "ORWDBA1 SCLST",
+  "version": "0",
+  "args": [
+    "25",
+    {
+      "1": "2;1"
+    }
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWDBA1 SCLST5000225f200110032;1f\u0004",
+  "response": "\u0000\u00002;1\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:45:00.862Z"
+},
+{
+  "name": "ORWU VALIDSIG",
+  "version": "0",
+  "args": [
+    "$c{)(Rw~!"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWU VALIDSIG50009$c{)(Rw~!f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:45:12.185Z"
+},
+{
+  "name": "ORWDXC SESSION",
+  "version": "0",
+  "args": [
+    "25",
+    {
+      "1": "2;1^1^1^E"
+    }
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000eORWDXC SESSION5000225f200110092;1^1^1^Ef\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:45:12.192Z"
+},
+{
+  "name": "ORWDX1 PATWARD",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000eORWDX1 PATWARD5000225f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:45:12.201Z"
+},
+{
+  "name": "ORWDPS4 CPINFO",
+  "version": "0",
+  "args": [
+    {
+      "1": "2;1^NNNNNNNNN"
+    }
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000eORWDPS4 CPINFO5200110132;1^NNNNNNNNNf\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:45:12.209Z"
+},
+{
+  "name": "ORWDX SEND",
+  "version": "0",
+  "args": [
+    "25",
+    "62",
+    "3",
+    "  4N.z RX+",
+    {
+      "1": "2;1^1^1^E"
+    }
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\nORWDX SEND5000225f000262f00013f0010  4N.z RX+f200110092;1^1^1^Ef\u0004",
+  "response": "\u0000\u00002;1^RS\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:45:12.264Z"
+},
+{
+  "name": "OREVNTX1 GETSTS",
+  "version": "0",
+  "args": [
+    "2;1"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000fOREVNTX1 GETSTS500032;1f\u0004",
+  "response": "\u0000\u00005\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:45:12.271Z"
+},
+{
+  "name": "ORCDLR2 CHECK ALL LC TO WC",
+  "version": "0",
+  "args": [
+    "3",
+    {
+      "1": "2;1^RS"
+    }
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u001aORCDLR2 CHECK ALL LC TO WC500013f200110062;1^RSf\u0004",
+  "response": "\u0000\u0000~COUNT\r\nd0\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:45:12.278Z"
+},
+{
+  "name": "ORWPT INPLOC",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "mvdmEmulated",
+  "rpc": "[XWB]11302\u00010\fORWPT INPLOC5000225f\u0004",
+  "response": "\u0000\u00000^^\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:45:12.350Z"
+},
+{
+  "name": "ORWD2 DEVINFO",
+  "version": "0",
+  "args": [
+    "3",
+    "E",
+    {
+      "1": "2;1^RS"
+    }
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWD2 DEVINFO500013f0001Ef200110062;1^RSf\u0004",
+  "response": "\u0000\u0000*^*^*^*\r\n2;1^^^^1\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:45:12.373Z"
+},
+{
+  "name": "ORWD1 SVONLY",
+  "version": "0",
+  "args": [
+    "3",
+    {
+      "1": "2;1^^^^1"
+    }
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWD1 SVONLY500013f200110082;1^^^^1f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:45:12.383Z"
+},
+{
+  "name": "ORWORB KILL UNSIG ORDERS ALERT",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u001eORWORB KILL UNSIG ORDERS ALERT5000225f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:45:12.391Z"
+},
+{
+  "name": "ORWORB KILL EXPIR MED ALERT",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u001bORWORB KILL EXPIR MED ALERT5000225f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:45:12.401Z"
+},
+{
+  "name": "ORWORB KILL UNVER MEDS ALERT",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u001cORWORB KILL UNVER MEDS ALERT5000225f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:45:12.411Z"
+},
+{
+  "name": "ORWORB KILL UNVER ORDERS ALERT",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u001eORWORB KILL UNVER ORDERS ALERT5000225f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:45:12.420Z"
+},
+{
+  "name": "ORQQPP LIST",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000bORQQPP LIST5000225f\u0004",
+  "response": "\u0000\u0000^No patient postings found.\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:45:12.428Z"
+},
+{
+  "name": "ORQQAL LIST",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "mvdmEmulated",
+  "rpc": "[XWB]11302\u00010\u000bORQQAL LIST5000225f\u0004",
+  "response": "\u0000\u0000^No Allergy Assessment\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:45:12.495Z"
+},
+{
+  "name": "ORWPT CWAD",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\nORWPT CWAD5000225f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:45:12.503Z"
+},
+{
+  "name": "ORWPS ACTIVE",
+  "version": "0",
+  "args": [
+    "25",
+    "62",
+    "1",
+    "1"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWPS ACTIVE5000225f000262f00011f00011f\u0004",
+  "response": "\u0000\u00001^\r\n~OP^1P;O^ATORVASTATIN TAB^^^^^^2^PENDING^^^8^^0\r\n ATORVASTATIN TAB  Qty: 8\r\n\\ Sig: TAKE SOMEDOSE BY MOUTH TWICE A DAY\r\n~OP^1R;O^ATORVASTATIN^^3170417^0^^^1^DISCONTINUED (EDIT)^3170318^3^6^^^3170318^^3\r\n *ATORVASTATIN  Qty: 6 for 3 days\r\n\\ Sig: TAKE SOMEDOSE BY MOUTH TWICE A DAY\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:45:12.513Z"
+},
+{
+  "name": "ORWORR AGET",
+  "version": "0",
+  "args": [
+    "25",
+    "2^0",
+    "1",
+    "0",
+    "0",
+    "",
+    "0"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000bORWORR AGET5000225f00032^0f00011f00010f00010f0000f00010f\u0004",
+  "response": "\u0000\u00001^2^\r\n2;1^4^3170318.0043^^\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:45:12.524Z"
+},
+{
+  "name": "ORWORR GET4LST",
+  "version": "0",
+  "args": [
+    "2",
+    "-1",
+    {
+      "1": "2;1"
+    }
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000eORWORR GET4LST500012f0002-1f200110032;1f\u0004",
+  "response": "\u0000\u0000~2;1^4^3170318.0043^^^5^1^^^62^ALEXANDER,ROBERT^^0^^^^^^VISTA HEALTH CARE:3^^0^0^0^0\r\ntATORVASTATIN TAB \r\ntTAKE SOMEDOSE ORAL TWICE A DAY\r\ntQuantity: 8 Refills: 0\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:45:12.533Z"
+},
+{
+  "name": "ORWPT CWAD",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\nORWPT CWAD5000225f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:45:12.544Z"
+},
+{
+  "name": "ORWDX UNLOCK ORDER",
+  "version": "0",
+  "args": [
+    "2;1"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0012ORWDX UNLOCK ORDER500032;1f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:45:12.553Z"
+},
+{
+  "name": "ORWDX UNLOCK",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWDX UNLOCK5000225f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:45:12.561Z"
+},
+{
+  "name": "ORWDBA1 BASTATUS",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0010ORWDBA1 BASTATUS54f\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:45:12.568Z"
+},
+{
+  "name": "ORWOR UNSIGN",
+  "version": "0",
+  "args": [
+    "25",
+    {
+      "0": ""
+    }
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWOR UNSIGN5000225f20010001\u0001f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:45:12.591Z"
+},
+{
+  "name": "OREVNTX PAT",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000bOREVNTX PAT5000225f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:45:12.602Z"
+},
+{
+  "name": "ORWOR VWGET",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000bORWOR VWGET54f\u0004",
+  "response": "\u0000\u00000;0;2;1;L;R;1;Active Orders (includes Pending & Recent Activity) - ALL SERVICES\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:45:12.612Z"
+},
+{
+  "name": "ORWPT SELECT",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWPT SELECT5000225f\u0004",
+  "response": "\u0000\u0000CARTER,DAVID^M^2810302^000000113^^^^^0^^0^0^^^36^0\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:45:12.620Z"
+},
+{
+  "name": "ORWPT1 PRCARE",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "mvdmEmulated",
+  "rpc": "[XWB]11302\u00010\rORWPT1 PRCARE5000225f\u0004",
+  "response": "\u0000\u0000^^^^^\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:45:12.691Z"
+},
+{
+  "name": "XWB IM HERE",
+  "version": "1.106",
+  "args": [],
+  "to": "mvdmEmulated",
+  "rpc": "[XWB]11302\u00051.106\u000bXWB IM HERE54f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:46:33.751Z"
+},
+{
+  "name": "XWB IM HERE",
+  "version": "1.106",
+  "args": [],
+  "to": "mvdmEmulated",
+  "rpc": "[XWB]11302\u00051.106\u000bXWB IM HERE54f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:47:54.804Z"
+},
+{
+  "name": "XWB IM HERE",
+  "version": "1.106",
+  "args": [],
+  "to": "mvdmEmulated",
+  "rpc": "[XWB]11302\u00051.106\u000bXWB IM HERE54f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:49:15.869Z"
+},
+{
+  "name": "XWB IM HERE",
+  "version": "1.106",
+  "args": [],
+  "to": "mvdmEmulated",
+  "rpc": "[XWB]11302\u00051.106\u000bXWB IM HERE54f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:50:36.917Z"
+},
+{
+  "name": "XWB IM HERE",
+  "version": "1.106",
+  "args": [],
+  "to": "mvdmEmulated",
+  "rpc": "[XWB]11302\u00051.106\u000bXWB IM HERE54f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:51:57.990Z"
+},
+{
+  "name": "XWB IM HERE",
+  "version": "1.106",
+  "args": [],
+  "to": "mvdmEmulated",
+  "rpc": "[XWB]11302\u00051.106\u000bXWB IM HERE54f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:53:19.033Z"
+},
+{
+  "name": "ORQQPL INIT USER",
+  "version": "0",
+  "args": [
+    "62"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0010ORQQPL INIT USER5000262f\u0004",
+  "response": "\u0000\u00001\r\n\r\n1\r\n1\r\n1\r\n0\r\nA\r\n0^All\r\n\r\n\r\n\r\n\r\n1\r\n0\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:53:47.136Z"
+},
+{
+  "name": "ORQQPL INIT PT",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000eORQQPL INIT PT5000225f\u0004",
+  "response": "\u0000\u00002957\r\n\r\n0\r\n0\r\n0\r\n\r\n0113\r\n\r\n\r\n0\r\n0\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:53:47.159Z"
+},
+{
+  "name": "ORQQPL PROBLEM LIST",
+  "version": "0",
+  "args": [
+    "25",
+    "A",
+    "3170318.004102"
+  ],
+  "to": "mvdmEmulated",
+  "rpc": "[XWB]11302\u00010\u0013ORQQPL PROBLEM LIST5000225f0001Af00143170318.004102f\u0004",
+  "response": "\u0000\u000011\r\n1^A^Stomach ulcer (SCT 397825006)^R69.^^3170317^^^P^10;CLInicD^C^62;ALEXANDER,ROBERT^^^0^3170317^^^^10D\r\n2^A^Arthritis (SCT 3723001)^R69.^0_ONS^3170317^^^P^7;CLInicA^C^62;ALEXANDER,ROBERT^^C^1^3170317^^^^10D\r\n3^A^Heart murmur (SCT 88610006)^R69.^^3170317^^^P^8;CLInicB^C^62;ALEXANDER,ROBERT^^^0^3170317^^^^10D\r\n4^A^Heart murmur (SCT 88610006)^R69.^^3170317^^^P^8;CLInicB^C^62;ALEXANDER,ROBERT^^^0^3170317^^^^10D\r\n6^A^My unique problem (ICD-10-CM R69.)^R69.^^3170317^^^P^4;Clinic1^C^62;ALEXANDER,ROBERT^^^0^3170317^^^^10D\r\n7^A^A unique problem (AO) (ICD-10-CM R69.)^R69.^3160303^3170317^^A^P^4;Clinic1^C^63;SMITH,MARY^^C^0^3170317^/AO^^^10D\r\n8^A^Heart murmur (SCT 88610006)^R69.^^3170317^^^P^8;CLInicB^C^62;ALEXANDER,ROBERT^^^0^3170317^^^^10D\r\n11^A^Diabetes mellitus (SCT 73211009)^E11.9^^3170317^^^P^10;CLInicD^C^62;ALEXANDER,ROBERT^^^0^3170317^^^^10D\r\n12^A^Hay fever with asthma (SCT 233683003)^R69.^^3170317^^^P^9;CLInicC^C^62;ALEXANDER,ROBERT^^^1^3170317^^^^10D\r\n14^A^Stomach ulcer (SCT 397825006)^R69.^^3170317^^^P^10;CLInicD^C^62;ALEXANDER,ROBERT^^^0^3170316^^^^10D\r\n15^A^Stomach ulcer (SCT 397825006)^R69.^^3170317^^^P^10;CLInicD^C^62;ALEXANDER,ROBERT^^^0^3170316^^^^10D\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:53:48.590Z"
+},
+{
+  "name": "ORQQPL PROB COMMENTS",
+  "version": "0",
+  "args": [
+    "12"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0014ORQQPL PROB COMMENTS5000212f\u0004",
+  "response": "\u0000\u0000Hay fever problem comment 1 - EDIT\r\nAdding an additional comment\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:53:48.606Z"
+},
+{
+  "name": "ORQQPL PROB COMMENTS",
+  "version": "0",
+  "args": [
+    "2"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0014ORQQPL PROB COMMENTS500012f\u0004",
+  "response": "\u0000\u0000Test comment\r\nAnother test comment\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:53:48.613Z"
+},
+{
+  "name": "ORQQPL USER PROB CATS",
+  "version": "0",
+  "args": [
+    "62",
+    "3"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0015ORQQPL USER PROB CATS5000262f00013f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:53:48.633Z"
+},
+{
+  "name": "ORWPS ACTIVE",
+  "version": "0",
+  "args": [
+    "25",
+    "62",
+    "1",
+    "1"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWPS ACTIVE5000225f000262f00011f00011f\u0004",
+  "response": "\u0000\u00001^\r\n~OP^2R;O^ATORVASTATIN^^3170417^0^^^2^ACTIVE^3170318^4^8^^^3170318^^4\r\n *ATORVASTATIN  Qty: 8 for 4 days\r\n\\ Sig: TAKE SOMEDOSE BY MOUTH TWICE A DAY\r\n~OP^1R;O^ATORVASTATIN^^3170417^0^^^1^DISCONTINUED (EDIT)^3170318^3^6^^^3170318^^3\r\n *ATORVASTATIN  Qty: 6 for 3 days\r\n\\ Sig: TAKE SOMEDOSE BY MOUTH TWICE A DAY\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:53:56.812Z"
+},
+{
+  "name": "ORWPS DETAIL",
+  "version": "0",
+  "args": [
+    "25",
+    "2R;O"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWPS DETAIL5000225f00042R;Of\u0004",
+  "response": "\u0000\u0000\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:54:02.941Z"
+},
+{
+  "name": "ORWPS MEDHIST",
+  "version": "0",
+  "args": [
+    "25",
+    "2"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWPS MEDHIST5000225f00012f\u0004",
+  "response": "\u0000\u0000\r====================================================================================================================================\r\n\r\nMEDICATION HISTORY for FEB 16,2017  to  MAR 18,2017                                                      Run Date: MAR 18,2017@00:54\r\nInclude Inpatient and Clinic Orders\r\n                                                                                                                             Page: 1\r\nMEDICATIONS SEARCH LIST: ATORVASTATIN\r\n\r\nPatient:  CARTER,DAVID                    :          000-00-0113            DOB:   MAR 2,1981 (36)\r\nSex:      MALE                            Ht/Wt:     */*                    Ward:   Rm: \r\nDx:                                       Last Mvmt:                        Type:  \r\n\r\nADRs:       No ADRs on file.\r\n\r\nAllergies:  No Allergy Assessment\r\n====================================================================================================================================\r\nLocation             St Sch Administration Date   By         Injection Site                     Units           Units of\r\n                                                       Medication & Dosage                      GIVEN           Administration\r\n------------------------------------------------------------------------------------------------------------------------------------\r\n<<<< NO HISTORY FOUND FOR THIS TIME FRAME >>>>\r\n====================================================================================================================================\r\nCARTER,DAVID                                                000-00-0113                                           Ward:   Room-Bed: \r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:54:02.961Z"
+},
+{
+  "name": "ORWDPS2 CHKGRP",
+  "version": "0",
+  "args": [
+    "2"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000eORWDPS2 CHKGRP500012f\u0004",
+  "response": "\u0000\u00002\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:54:02.971Z"
+},
+{
+  "name": "ORWOR UNSIGN",
+  "version": "0",
+  "args": [
+    "25",
+    {
+      "0": ""
+    }
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWOR UNSIGN5000225f20010001\u0001f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:55:08.270Z"
+},
+{
+  "name": "ORPRF CLEAR",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000bORPRF CLEAR54f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:55:08.304Z"
+},
+{
+  "name": "ORWCH SAVFONT",
+  "version": "0",
+  "args": [
+    "8"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWCH SAVFONT500018f\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:55:08.312Z"
+},
+{
+  "name": "ORWCH SAVEALL",
+  "version": "0",
+  "args": [
+    {
+      "1": "B^frmFrame^211,33,819,732",
+      "2": "W^frmProblems.pnlLeft^159",
+      "3": "W^frmOrders.pnlLeft^117",
+      "4": "W^frmNotes.pnlLeft^161",
+      "5": "W^frmConsults.pnlLeft^83",
+      "6": "W^frmDCSumm.pnlLeft^186",
+      "7": "W^frmLabs.pnlLeft^97",
+      "8": "W^frmReports.pnlLeft^119",
+      "9": "C^frmOrders.hdrOrders^0,42,255,84,84,42,42,42,42,42",
+      "10": "C^frmMeds.hdrMedsIn^48,384,96,96,96",
+      "11": "C^frmMeds.hdrMedsOut^48,384,96,96,96,48",
+      "12": "C^SpellCheckerSettings^",
+      "13": "B^frmTempEditSplitters^0,0,0,0",
+      "14": "B^frmTempEditSplitters2^0,0,0,0",
+      "15": "B^frmReminderTree^0,0,0,0",
+      "16": "B^frmRemDlg^0,0,0,0",
+      "17": "B^frmRemDlgSplitters^0,0,0,0",
+      "18": "B^frmDrawersSplitters^0,0,0,85",
+      "19": "B^frmLabsSplitters^361,97,72,314",
+      "20": "B^frmCoverSplitters1^211,211,120,318",
+      "21": "B^frmCoverSplitters2^114,255,255,0",
+      "22": "B^frmMedsSplit^365,176,0,0",
+      "23": "C^frmMeds.hdrMedsNonVA^48,384,96,96",
+      "24": "C^frmOrders.hdrOrders^0,42,255,84,84,42,42,42,42,42",
+      "25": "B^frmPtSel.sptVert^290,0,0,0",
+      "26": "C^frmPtSel.lstvAlerts^40,195,75,95,150,310,290",
+      "27": "B^frmPtSel^220,100,801,594",
+      "28": "B^frmODMeds^276,0,551,724",
+      "29": "B^frmODCslt^323,301,614,464"
+    }
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWCH SAVEALL520011025B^frmFrame^211,33,819,732t0012025W^frmProblems.pnlLeft^159t0013023W^frmOrders.pnlLeft^117t0014022W^frmNotes.pnlLeft^161t0015024W^frmConsults.pnlLeft^83t0016023W^frmDCSumm.pnlLeft^186t0017020W^frmLabs.pnlLeft^97t0018024W^frmReports.pnlLeft^119t0019051C^frmOrders.hdrOrders^0,42,255,84,84,42,42,42,42,42t00210035C^frmMeds.hdrMedsIn^48,384,96,96,96t00211039C^frmMeds.hdrMedsOut^48,384,96,96,96,48t00212023C^SpellCheckerSettings^t00213030B^frmTempEditSplitters^0,0,0,0t00214031B^frmTempEditSplitters2^0,0,0,0t00215025B^frmReminderTree^0,0,0,0t00216019B^frmRemDlg^0,0,0,0t00217028B^frmRemDlgSplitters^0,0,0,0t00218030B^frmDrawersSplitters^0,0,0,85t00219032B^frmLabsSplitters^361,97,72,314t00220036B^frmCoverSplitters1^211,211,120,318t00221034B^frmCoverSplitters2^114,255,255,0t00222026B^frmMedsSplit^365,176,0,0t00223035C^frmMeds.hdrMedsNonVA^48,384,96,96t00224051C^frmOrders.hdrOrders^0,42,255,84,84,42,42,42,42,42t00225028B^frmPtSel.sptVert^290,0,0,0t00226046C^frmPtSel.lstvAlerts^40,195,75,95,150,310,290t00227026B^frmPtSel^220,100,801,594t00228025B^frmODMeds^276,0,551,724t00229027B^frmODCslt^323,301,614,464f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:55:08.341Z"
+},
+{
+  "name": "TIU TEMPLATE SET DEFAULTS",
+  "version": "0",
+  "args": [
+    ""
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0019TIU TEMPLATE SET DEFAULTS50000f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:55:08.350Z"
+},
+{
+  "name": "XWB DEFERRED CLEARALL",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0015XWB DEFERRED CLEARALL54f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:55:08.381Z"
+},
+{
+  "name": "XWB DEFERRED CLEARALL",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0015XWB DEFERRED CLEARALL54f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:55:08.395Z"
+},
+{
+  "name": "#BYE#",
+  "to": "server",
+  "rpc": "[XWB]10304\u0005#BYE#\u0004",
+  "response": "\u0000\u0000#BYE#\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-03-18T00:55:08.409Z"
+}
+]

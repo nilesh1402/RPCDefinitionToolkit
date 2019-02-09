@@ -1,0 +1,1413 @@
+[ {
+        "name": "ORQQPL INIT USER",
+        "input": ["62"],
+        "runner": "rpcRunner",
+        "result": [1, "", 1, 1, 1, 0, "A", "0^All", "", "", "", "", 1, 0],
+        "from": "CPRS",
+        "transactionId": "f5a914b9-381c-4741-a05b-dc50919b6058",
+        "timestamp": "2017-02-07T20:06:58.654Z"
+    }, {
+        "name": "ORQQPL INIT PT",
+        "input": ["25"],
+        "runner": "rpcRunner",
+        "result": [2957, "", 0, 0, 0, "", "0113", "", "", 0, 0],
+        "from": "CPRS",
+        "transactionId": "fc119721-0332-43bc-8b4b-c940d1c07cf5",
+        "timestamp": "2017-02-07T20:06:58.668Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["NOW"],
+        "runner": "rpcRunner",
+        "result": 3170207.200658,
+        "from": "CPRS",
+        "transactionId": "adc5396f-4838-4171-a819-66b50c40c69e",
+        "timestamp": "2017-02-07T20:06:58.674Z"
+    }, {
+        "name": "ORQQPL PROBLEM LIST",
+        "input": ["25", "A", "0"],
+        "runner": "mvdmEmulated",
+        "result": [0],
+        "from": "CPRS",
+        "transactionId": "885ad25d-3339-49eb-ab82-c01e04c53281",
+        "timestamp": "2017-02-07T20:06:58.725Z"
+    }, {
+        "name": "ORQQPL USER PROB CATS",
+        "input": ["62", "0"],
+        "runner": "rpcRunner",
+        "result": [],
+        "from": "CPRS",
+        "transactionId": "b52e6b50-820e-4a71-b9ba-b6acda37c126",
+        "timestamp": "2017-02-07T20:06:58.738Z"
+    }, {
+        "name": "ORWTPD1 GETEAFL",
+        "input": [],
+        "runner": "rpcRunner",
+        "result": "",
+        "from": "CPRS",
+        "transactionId": "81e020cf-8165-44dd-af20-9f6be4fbdea2",
+        "timestamp": "2017-02-07T20:06:59.807Z"
+    }, {
+        "name": "ORWTPD1 GETEDATS",
+        "input": [],
+        "runner": "rpcRunner",
+        "result": "365^",
+        "from": "CPRS",
+        "transactionId": "87e67409-16ef-41a9-b984-ea2dd6127a57",
+        "timestamp": "2017-02-07T20:06:59.812Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["NOW"],
+        "runner": "rpcRunner",
+        "result": 3170207.200659,
+        "from": "CPRS",
+        "transactionId": "6ca9b781-afdb-4912-b0db-48273041c51a",
+        "timestamp": "2017-02-07T20:06:59.818Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["NOW"],
+        "runner": "rpcRunner",
+        "result": 3170207.200659,
+        "from": "CPRS",
+        "transactionId": "0beb9a8b-3745-4868-9f5e-72bb4ec07e41",
+        "timestamp": "2017-02-07T20:06:59.824Z"
+    }, {
+        "name": "ORWCV VST",
+        "input": ["25", "3160208", "3170207.2359", "1"],
+        "runner": "rpcRunner",
+        "result": [],
+        "from": "CPRS",
+        "transactionId": "85fe0eb8-64da-40ba-b01a-20f2fc4d6aaa",
+        "timestamp": "2017-02-07T20:06:59.832Z"
+    }, {
+        "name": "ORWU1 NEWLOC",
+        "input": ["", "1"],
+        "runner": "rpcRunner",
+        "result": ["6^CLINICX", "7^CLInicA", "8^CLInicB", "9^CLInicC", "10^CLInicD", "4^Clinic1", "5^Clinic2", "3^VISTA HEALTH CARE"],
+        "from": "CPRS",
+        "transactionId": "2590e2d2-ba5b-4a5b-b8dd-d02135b224c1",
+        "timestamp": "2017-02-07T20:06:59.839Z"
+    }, {
+        "name": "ORWU NEWPERS",
+        "input": ["ALEXANDER,ROBERS~", "1"],
+        "runner": "rpcRunner",
+        "result": ["62^Alexander,Robert", "64^Clerk,Joe", "61^Manager,System", ".5^Postmaster", "63^Smith,Mary", "17^User,Seventeen"],
+        "from": "CPRS",
+        "transactionId": "919c9bc6-be88-41fc-81cc-b918f1d2c3af",
+        "timestamp": "2017-02-07T20:06:59.851Z"
+    }, {
+        "name": "ORWCV POLL",
+        "input": ["25", "192.168.56.1", "000D03E4"],
+        "runner": "rpcRunner",
+        "result": [],
+        "from": "CPRS",
+        "transactionId": "19334dfc-098b-4350-b20c-f14a7e06fa8f",
+        "timestamp": "2017-02-07T20:07:00.067Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["NOW", "TSX"],
+        "runner": "rpcRunner",
+        "result": 3170207.200701,
+        "from": "CPRS",
+        "transactionId": "5c807bcc-2910-4cc3-b9be-d0f30673ea61",
+        "timestamp": "2017-02-07T20:07:01.400Z"
+    }, {
+        "name": "ORWPCE GETSVC",
+        "input": ["A", "10", "0"],
+        "runner": "rpcRunner",
+        "result": "A",
+        "from": "CPRS",
+        "transactionId": "ec22bd10-17cd-4a35-aad4-19028f0ebdf4",
+        "timestamp": "2017-02-07T20:07:01.408Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["NOW"],
+        "runner": "rpcRunner",
+        "result": 3170207.200702,
+        "from": "CPRS",
+        "transactionId": "cbea85f6-c662-45da-a6f6-75af38825efd",
+        "timestamp": "2017-02-07T20:07:02.189Z"
+    }, {
+        "name": "TIU TEMPLATE GETROOTS",
+        "input": ["62"],
+        "runner": "rpcRunner",
+        "result": ["1^R^A^Shared Templates^^^^3^^^^^^^^^^", "1952^TF^A^Document Titles^^^^0^^^^^^^^^^", "53^CF^A^Consult Reasons for Request^^^^0^^^^^^^^^^", "1960^OF^A^Procedure Reasons for Request^^^^0^^^^^^^^^^"],
+        "from": "CPRS",
+        "transactionId": "6a906cf6-d106-4eef-ad13-8fbf9c205c23",
+        "timestamp": "2017-02-07T20:07:02.200Z"
+    }, {
+        "name": "TIU TEMPLATE ACCESS LEVEL",
+        "input": ["1", "62", "10"],
+        "runner": "rpcRunner",
+        "result": 0,
+        "from": "CPRS",
+        "transactionId": "2b11c5e8-2a8c-4d87-a578-c85959328afe",
+        "timestamp": "2017-02-07T20:07:02.206Z"
+    }, {
+        "name": "ORWPT ENCTITL",
+        "input": ["25", "10", "62"],
+        "runner": "rpcRunner",
+        "result": "CLInicD^CD^^ALEXANDER,ROBERT",
+        "from": "CPRS",
+        "transactionId": "b9fe1b05-2bc8-4df7-9056-2a87045d8ffe",
+        "timestamp": "2017-02-07T20:07:02.217Z"
+    }, {
+        "name": "ORQQPL USER PROB CATS",
+        "input": ["62", "10"],
+        "runner": "rpcRunner",
+        "result": [],
+        "from": "CPRS",
+        "transactionId": "1f560302-88a2-4a8e-bed5-72b90d094755",
+        "timestamp": "2017-02-07T20:07:02.234Z"
+    }, {
+        "name": "ORWCV POLL",
+        "input": ["25", "192.168.56.1", "000D03E4"],
+        "runner": "rpcRunner",
+        "result": [],
+        "from": "CPRS",
+        "transactionId": "a7d6de89-f3f3-4186-a150-4350b32b206f",
+        "timestamp": "2017-02-07T20:07:02.679Z"
+    }, {
+        "name": "ORWCV POLL",
+        "input": ["25", "192.168.56.1", "000D03E4"],
+        "runner": "rpcRunner",
+        "result": [],
+        "from": "CPRS",
+        "transactionId": "15f47ec8-4551-4760-85c2-90bc52d401bb",
+        "timestamp": "2017-02-07T20:07:05.289Z"
+    }, {
+        "name": "ORWLEX GETFREQ",
+        "input": ["HYPERTENSION"],
+        "runner": "rpcRunner",
+        "result": 638,
+        "from": "CPRS",
+        "transactionId": "994939d7-3d53-46d0-8239-ba7118dcbd7b",
+        "timestamp": "2017-02-07T20:07:06.276Z"
+    }, {
+        "name": "ORQQPL4 LEX",
+        "input": ["HYPERTENSION", "PLS", "3170207.200701", "1"],
+        "runner": "rpcRunner",
+        "result": ["7234857^FH: Hypertension^R69.^521774^SNOMED CT^160357008^249943016^ICD-10-CM", "7726438^Family history of hypertension^R69.^521774^SNOMED CT^160357008^249942014^ICD-10-CM^1", "8172586^Family history: Hypertension^R69.^521774^SNOMED CT^160357008^2666924010^ICD-10-CM^1", "7236241^H/O: hypertension^R69.^521774^SNOMED CT^161501007^251674014^ICD-10-CM", "8231676^History of hypertension^R69.^521774^SNOMED CT^161501007^2987063016^ICD-10-CM^4", "7049915^Renal hypertension^R69.^521774^SNOMED CT^28119000^47076011^ICD-10-CM", "7007277^Ocular hypertension^R69.^521774^SNOMED CT^4210003^8093016^ICD-10-CM", "7612986^OH - Ocular hypertension^R69.^521774^SNOMED CT^4210003^1229826019^ICD-10-CM^7", "7612987^OHT - Ocular hypertension^R69.^521774^SNOMED CT^4210003^1229827011^ICD-10-CM^7", "7018873^Benign hypertension^R69.^521774^SNOMED CT^10725009^18632012^ICD-10-CM", "7061809^Portal hypertension^R69.^521774^SNOMED CT^34742003^57989014^ICD-10-CM", "7643758^PHT - Portal hypertension^R69.^521774^SNOMED CT^34742003^1228208015^ICD-10-CM^11", "7354539^Venous hypertension^R69.^521774^SNOMED CT^234072000^350703015^ICD-10-CM", "7100415^Systolic hypertension^R69.^521774^SNOMED CT^56218007^93494011^ICD-10-CM", "7451473^Maternal hypertension^R69.^521774^SNOMED CT^288250001^427854011^ICD-10-CM", "7056887^Secondary hypertension^R69.^521774^SNOMED CT^31992008^53452019^ICD-10-CM", "7085907^Diastolic hypertension^R69.^521774^SNOMED CT^48146000^80224019^ICD-10-CM", "7106455^Essential hypertension^R69.^521774^SNOMED CT^59621000^99042012^ICD-10-CM", "7669932^Idiopathic hypertension^R69.^521774^SNOMED CT^59621000^99044013^ICD-10-CM^18", "7669933^Primary hypertension^R69.^521774^SNOMED CT^59621000^99047018^ICD-10-CM^18", "7669935^Systemic primary arterial hypertension^R69.^521774^SNOMED CT^59621000^99046010^ICD-10-CM^18", "7125511^Malignant hypertension^R69.^521774^SNOMED CT^70272006^116721012^ICD-10-CM", "7126803^Pulmonary hypertension^R69.^521774^SNOMED CT^70995007^117919017^ICD-10-CM", "7681718^PHT - Pulmonary hypertension^R69.^521774^SNOMED CT^70995007^1233340012^ICD-10-CM^23", "8102810^Exertional hypertension^R69.^521774^SNOMED CT^429198000^2694336018^ICD-10-CM", "7213533^Renovascular hypertension^R69.^521774^SNOMED CT^123799005^192288012^ICD-10-CM", "7721251^Hypertension due to renovascular disease^R69.^521774^SNOMED CT^123799005^1220673019^ICD-10-CM^26", "7249197^Poor hypertension control^R69.^521774^SNOMED CT^170578008^264472017^ICD-10-CM", "7001949^Benign essential hypertension^R69.^521774^SNOMED CT^1201005^3135013^ICD-10-CM", "7286013^Benign secondary hypertension^R69.^521774^SNOMED CT^194785008^2470031013^ICD-10-CM", "7734722^Secondary benign hypertension^R69.^521774^SNOMED CT^194785008^299678018^ICD-10-CM^30", "7490183^Hypertension screening status^R69.^521774^SNOMED CT^308429009^451753017^ICD-10-CM", "7541729^Labile essential hypertension^R69.^521774^SNOMED CT^371125006^1209829017^ICD-10-CM", "7576481^Moderate hypertension control^R69.^521774^SNOMED CT^401117004^1780318013^ICD-10-CM", "7085991^Pregnancy-induced hypertension^R69.^521774^SNOMED CT^48194001^80299016^ICD-10-CM", "7657879^Gestational hypertension^R69.^521774^SNOMED CT^48194001^495022012^ICD-10-CM^35", "7657880^GH - Gestational hypertension^R69.^521774^SNOMED CT^48194001^495018019^ICD-10-CM^35", "7657882^Hypertension complicating pregnancy^R69.^521774^SNOMED CT^48194001^495025014^ICD-10-CM^35", "7657885^Hypertension induced by pregnancy^R69.^521774^SNOMED CT^48194001^495023019^ICD-10-CM^35", "7657886^PIH - Pregnancy-induced hypertension^R69.^521774^SNOMED CT^48194001^495026010^ICD-10-CM^35", "8103328^Systolic essential hypertension^R69.^521774^SNOMED CT^429457004^2695883018^ICD-10-CM", "8269779^Pulmonary arterial hypertension^R69.^521774^SNOMED CT^11399002^2968228010^ICD-10-CM", "7020057^Pulmonary hypertensive arterial disease^R69.^521774^SNOMED CT^11399002^19722017^ICD-10-CM^42", "7620113^Hypertensive pulmonary arterial disease^R69.^521774^SNOMED CT^11399002^19723010^ICD-10-CM^42", "7121927^Benign intracranial hypertension^R69.^521774^SNOMED CT^68267002^113392018^ICD-10-CM", "7678922^BIH - Benign intracranial hypertension^R69.^521774^SNOMED CT^68267002^1233029012^ICD-10-CM^45", "7678923^Idiopathic intracranial hypertension^R69.^521774^SNOMED CT^68267002^1233031015^ICD-10-CM^45", "7678924^IIH - Idiopathic intracranial hypertension^R69.^521774^SNOMED CT^68267002^1233030019^ICD-10-CM^45", "7678925^Noninfective serous meningitis^R69.^521774^SNOMED CT^68267002^113396015^ICD-10-CM^45", "7678926^Nonne's syndrome^R69.^521774^SNOMED CT^68267002^113394017^ICD-10-CM^45", "7678927^Otitic hydrocephalus syndrome^R69.^521774^SNOMED CT^68267002^113395016^ICD-10-CM^45", "7678928^Pseudotumor cerebri^R69.^521774^SNOMED CT^68267002^113393011^ICD-10-CM^45", "7141107^Malignant essential hypertension^R69.^521774^SNOMED CT^78975002^131046010^ICD-10-CM", "7689928^Accelerated essential hypertension^R69.^521774^SNOMED CT^78975002^503982017^ICD-10-CM^53", "7157613^Secondary pulmonary hypertension^R69.^521774^SNOMED CT^88223008^146259010^ICD-10-CM", "7159467^Malignant secondary hypertension^R69.^521774^SNOMED CT^89242004^147988014^ICD-10-CM", "7700467^Accelerated secondary hypertension^R69.^521774^SNOMED CT^89242004^508416019^ICD-10-CM^56", "7026399^Renal sclerosis with hypertension^R69.^521774^SNOMED CT^14973001^25417010^ICD-10-CM", "7034969^High-renin essential hypertension^R69.^521774^SNOMED CT^19769006^33294011^ICD-10-CM", "7360523^Transient hypertension of pregnancy^R69.^521774^SNOMED CT^237279007^355621014^ICD-10-CM", "8271741^Hypertension in the obstetric context^R69.^521774^SNOMED CT^367390009^2764569012^ICD-10-CM", "8082801^Chronic peripheral venous hypertension^R69.^521774^SNOMED CT^423674003^2645973019^ICD-10-CM", "7354299^Sporadic primary pulmonary hypertension^R69.^521774^SNOMED CT^233943009^350512016^ICD-10-CM", "7015417^Chronic hypertension in obstetric context^R69.^521774^SNOMED CT^8762007^15454017^ICD-10-CM", "7131129^Benign secondary renovascular hypertension^R69.^521774^SNOMED CT^73410007^121910014^ICD-10-CM", "7684188^Secondary benign renovascular hypertension^R69.^521774^SNOMED CT^73410007^2478822013^ICD-10-CM^65", "8101564^Hypertension secondary to kidney transplant^R69.^521774^SNOMED CT^428575007^2692589017^ICD-10-CM", "7124867^Eclampsia added to pre-existing hypertension^R69.^521774^SNOMED CT^69909000^116108011^ICD-10-CM", "8100192^Hypertension associated with transplantation^R69.^521774^SNOMED CT^427889009^2691963011^ICD-10-CM", "7286009^Malignant secondary renovascular hypertension^R69.^521774^SNOMED CT^194783001^2470030014^ICD-10-CM", "7734721^Secondary malignant renovascular hypertension^R69.^521774^SNOMED CT^194783001^299676019^ICD-10-CM^70", "7153737^Pre-existing hypertension in obstetric context^R69.^521774^SNOMED CT^86041002^142647015^ICD-10-CM", "7697162^Pre-existing hypertension complicating pregnancy^R69.^521774^SNOMED CT^86041002^506901015^ICD-10-CM^72", "7292015^Transient hypertension of pregnancy - delivered^R69.^521774^SNOMED CT^198965005^305774018^ICD-10-CM", "7354063^Persistent pulmonary hypertension of the newborn^R69.^521774^SNOMED CT^233815004^350342017^ICD-10-CM", "7744799^PFC - Persistent fetal circulation^R69.^521774^SNOMED CT^233815004^350343010^ICD-10-CM^75", "7744800^PPHN - Persistent pulmonary hypertension in newborn^R69.^521774^SNOMED CT^233815004^350344016^ICD-10-CM^75", "8274098^PFC - Persistent foetal circulation^R69.^521774^SNOMED CT^233815004^3012205012^ICD-10-CM^75", "8272369^Pulmonary hypertension due to left heart disease^R69.^521774^SNOMED CT^472790001^2968344016^ICD-10-CM", "8203207^Pulmonary venous hypertension due to disorder of left heart^R69.^521774^SNOMED CT^472790001^2951588016^ICD-10-CM^79", "8091717^Right heart failure due to pulmonary hypertension^R69.^521774^SNOMED CT^426012001^2674125010^ICD-10-CM", "8224547^Chronic kidney disease stage 4 due to hypertension^R69.^521774^SNOMED CT^129151000119102^2968350014^ICD-10-CM", "8224549^Chronic kidney disease stage 5 due to hypertension^R69.^521774^SNOMED CT^129161000119100^2968176018^ICD-10-CM", "7292019^Transient hypertension of pregnancy - not delivered^R69.^521774^SNOMED CT^198967002^305776016^ICD-10-CM", "7292061^Pre-eclampsia or eclampsia with pre-existing hypertension^R69.^521774^SNOMED CT^198997005^305818015^ICD-10-CM", "8214611^Labile hypertension due to being in a clinical environment^R69.^521774^SNOMED CT^697930002^2968361018^ICD-10-CM", "8237194^White coat hypertension^R69.^521774^SNOMED CT^697930002^2968360017^ICD-10-CM^86", "7193353^Hypertension secondary to renal disease in obstetric context^R69.^521774^SNOMED CT^111438007^178680012^ICD-10-CM", "7292317^Pregnancy-induced edema and proteinuria without hypertension^R69.^521774^SNOMED CT^199139003^306009011^ICD-10-CM", "7134233^Renal disease in pregnancy AND/OR puerperium without hypertension^R69.^521774^SNOMED CT^75150001^124817012^ICD-10-CM", "7686040^Nephropathy in pregnancy AND/OR puerperium without hypertension^R69.^521774^SNOMED CT^75150001^124820016^ICD-10-CM^90", "7542591^Elevated blood-pressure reading without diagnosis of hypertension^R69.^521774^SNOMED CT^371622005^1210245011^ICD-10-CM", "8185060^Elevated blood pressure reading without diagnosis of hypertension^R69.^521774^SNOMED CT^371622005^2820233013^ICD-10-CM^92", "7291969^Hypertension complicating pregnancy, childbirth and the puerperium^R69.^521774^SNOMED CT^198941007^305749016^ICD-10-CM", "8214573^Pulmonary hypertension due to chronic obstructive pulmonary disease^R69.^521774^SNOMED CT^697911002^2968282014^ICD-10-CM", "8272286^Pulmonary arterial hypertension associated with portal hypertension^R69.^521774^SNOMED CT^445237003^2968175019^ICD-10-CM", "8145975^Portopulmonary hypertension^R69.^521774^SNOMED CT^445237003^2872644015^ICD-10-CM^96", "7292065^Pre-eclampsia or eclampsia with pre-existing hypertension - delivered^R69.^521774^SNOMED CT^198999008^305820017^ICD-10-CM", "7291985^Renal hypertension complicating pregnancy, childbirth and the puerperium^R69.^521774^SNOMED CT^198949009^305757018^ICD-10-CM", "8224845^Chronic peripheral venous hypertension with lower extremity complication^R69.^521774^SNOMED CT^153811000119105^2985160017^ICD-10-CM", "7292071^Pre-eclampsia or eclampsia with pre-existing hypertension - not delivered^R69.^521774^SNOMED CT^199002002^305823015^ICD-10-CM", "7140813^Essential hypertension complicating AND/OR reason for care during pregnancy^R69.^521774^SNOMED CT^78808002^130761010^ICD-10-CM", "7292017^Transient hypertension of pregnancy - delivered with postnatal complication^R69.^521774^SNOMED CT^198966006^305775017^ICD-10-CM", "7292077^Pre-existing hypertension complicating pregnancy, childbirth and puerperium^R69.^521774^SNOMED CT^199005000^305826011^ICD-10-CM", "8224847^Venous ulcer of lower extremity due to chronic peripheral venous hypertension^R69.^521774^SNOMED CT^153831000119100^2984538017^ICD-10-CM", "8265781^Hypertension in chronic kidney disease stage 3 due to type 2 diabetes mellitus^R69.^521774^SNOMED CT^140121000119100^3013055019^ICD-10-CM", "8276844^Hypertension in chronic kidney disease stage 3 due to type II diabetes mellitus^R69.^521774^SNOMED CT^140121000119100^3035146014^ICD-10-CM^106", "8265783^Hypertension in chronic kidney disease stage 2 due to type 2 diabetes mellitus^R69.^521774^SNOMED CT^140131000119102^3013117010^ICD-10-CM", "8276845^Hypertension in chronic kidney disease stage 2 due to type II diabetes mellitus^R69.^521774^SNOMED CT^140131000119102^3035152010^ICD-10-CM^108", "7042023^Benign essential hypertension complicating AND/OR reason for care during pregnancy^R69.^521774^SNOMED CT^23717007^39825015^ICD-10-CM", "7291971^Benign essential hypertension complicating pregnancy, childbirth and the puerperium^R69.^521774^SNOMED CT^198942000^305750016^ICD-10-CM", "7291989^Renal hypertension complicating pregnancy, childbirth and the puerperium - delivered^R69.^521774^SNOMED CT^198951008^305759015^ICD-10-CM", "7292073^Pre-eclampsia or eclampsia with pre-existing hypertension with postnatal complication^R69.^521774^SNOMED CT^199003007^305824014^ICD-10-CM", "7291975^Benign essential hypertension complicating pregnancy, childbirth and the puerperium - delivered^R69.^521774^SNOMED CT^198944004^305752012^ICD-10-CM", "7291979^Benign essential hypertension complicating pregnancy, childbirth and the puerperium - not delivered^R69.^521774^SNOMED CT^198946002^305754013^ICD-10-CM", "7570979^Pre-eclampsia^R69.^521774^SNOMED CT^398254007^1777802017^ICD-10-CM", "7805734^EPH - Edema, proteinuria and hypertension of pregnancy^R69.^521774^SNOMED CT^398254007^1784021012^ICD-10-CM^116", "7805736^PE - Pre-eclampsia^R69.^521774^SNOMED CT^398254007^1786187012^ICD-10-CM^116", "7805738^PET - Pre-eclamptic toxemia^R69.^521774^SNOMED CT^398254007^1784022017^ICD-10-CM^116", "7805740^Pre-eclamptic toxemia^R69.^521774^SNOMED CT^398254007^1784023010^ICD-10-CM^116", "7805741^Proteinuric hypertension of pregnancy^R69.^521774^SNOMED CT^398254007^1786188019^ICD-10-CM^116", "8234562^Preeclampsia^R69.^521774^SNOMED CT^398254007^2921085014^ICD-10-CM^116", "7073285^Mild pre-eclampsia^R69.^521774^SNOMED CT^41114007^68583017^ICD-10-CM", "7650436^Mild pre-eclamptic toxemia^R69.^521774^SNOMED CT^41114007^68584011^ICD-10-CM^123", "7650437^Mild proteinuric hypertension of pregnancy^R69.^521774^SNOMED CT^41114007^1229720018^ICD-10-CM^123", "7650439^PET - Mild pre-eclamptic toxemia^R69.^521774^SNOMED CT^41114007^1218096015^ICD-10-CM^123", "7083393^Severe pre-eclampsia^R69.^521774^SNOMED CT^46764007^77942011^ICD-10-CM", "7656385^PET - Severe pre-eclamptic toxemia^R69.^521774^SNOMED CT^46764007^1218141012^ICD-10-CM^127", "7656393^Severe pre-eclamptic toxemia^R69.^521774^SNOMED CT^46764007^77945013^ICD-10-CM^127", "7656394^Severe proteinuric hypertension of pregnancy^R69.^521774^SNOMED CT^46764007^1494752012^ICD-10-CM^127", "7068343^Hypertensive disorder^R69.^521774^SNOMED CT^38341003^1215744012^ICD-10-CM", "7647478^BP - High blood pressure^R69.^521774^SNOMED CT^38341003^490277011^ICD-10-CM^131", "7647479^BP+ - Hypertension^R69.^521774^SNOMED CT^38341003^490283014^ICD-10-CM^131", "7647481^HBP - High blood pressure^R69.^521774^SNOMED CT^38341003^490280012^ICD-10-CM^131", "7647482^High blood pressure^R69.^521774^SNOMED CT^38341003^64172013^ICD-10-CM^131", "7647483^High blood pressure disorder^R69.^521774^SNOMED CT^38341003^490282016^ICD-10-CM^131", "7647484^HT - Hypertension^R69.^521774^SNOMED CT^38341003^490281011^ICD-10-CM^131", "7647485^HTN - Hypertension^R69.^521774^SNOMED CT^38341003^2164904016^ICD-10-CM^131", "7647488^Hypertension^R69.^521774^SNOMED CT^38341003^64176011^ICD-10-CM^131", "7647492^Hypertensive vascular degeneration^R69.^521774^SNOMED CT^38341003^64174014^ICD-10-CM^131", "7647493^Hypertensive vascular disease^R69.^521774^SNOMED CT^38341003^64173015^ICD-10-CM^131", "7647496^Systemic arterial hypertension^R69.^521774^SNOMED CT^38341003^490278018^ICD-10-CM^131", "8160396^Hypertensive disorder, systemic arterial^R69.^521774^SNOMED CT^38341003^2671386015^ICD-10-CM^131", "7079807^Maternal obesity syndrome^R69.^521774^SNOMED CT^44772007^74689019^ICD-10-CM", "7654198^Excessive weight gain in pregnancy^R69.^521774^SNOMED CT^44772007^494017018^ICD-10-CM^144", "7654199^Maternal obesity without hypertension^R69.^521774^SNOMED CT^44772007^74690011^ICD-10-CM^144", "7115559^Hypertensive heart disease^R69.^521774^SNOMED CT^64715009^107545013^ICD-10-CM", "7675273^HHD - Hypertensive heart disease^R69.^521774^SNOMED CT^64715009^499930018^ICD-10-CM^147", "7675274^Hypertensive cardiomegaly^R69.^521774^SNOMED CT^64715009^107548010^ICD-10-CM^147", "7675275^Hypertensive cardiopathy^R69.^521774^SNOMED CT^64715009^107547017^ICD-10-CM^147", "7675276^Hypertensive cardiovascular disease^R69.^521774^SNOMED CT^64715009^107549019^ICD-10-CM^147", "8110641^Chronic kidney disease stage 1^R69.^521774^SNOMED CT^431855005^2767383018^ICD-10-CM", "8193910^CKD stage 1^R69.^521774^SNOMED CT^431855005^2871055019^ICD-10-CM^152", "8110643^Chronic kidney disease stage 2^R69.^521774^SNOMED CT^431856006^2767384012^ICD-10-CM", "8193911^CKD stage 2^R69.^521774^SNOMED CT^431856006^2870828017^ICD-10-CM^154", "8110645^Chronic kidney disease stage 4^R69.^521774^SNOMED CT^431857002^2767385013^ICD-10-CM", "8193912^CKD stage 4^R69.^521774^SNOMED CT^431857002^2872614018^ICD-10-CM^156", "8113219^Chronic kidney disease stage 3^R69.^521774^SNOMED CT^433144002^2773184015^ICD-10-CM", "8194517^CKD stage 3^R69.^521774^SNOMED CT^433144002^2873059015^ICD-10-CM^158", "8113223^Chronic kidney disease stage 5^R69.^521774^SNOMED CT^433146000^2767154014^ICD-10-CM", "8194519^CKD stage 5^R69.^521774^SNOMED CT^433146000^2870834012^ICD-10-CM^160", "8219189^Chronic kidney disease stage 3A^R69.^521774^SNOMED CT^700378005^2990386017^ICD-10-CM", "8219191^Chronic kidney disease stage 3B^R69.^521774^SNOMED CT^700379002^2990361014^ICD-10-CM", "8262721^Anemia in chronic kidney disease^R69.^521774^SNOMED CT^707323002^3029850016^ICD-10-CM", "8275835^Anemia co-occurrent and due to chronic kidney disease^R69.^521774^SNOMED CT^707323002^3029706012^ICD-10-CM^164", "8223515^Hypertensive heart and chronic kidney disease^R69.^521774^SNOMED CT^8501000119104^2981284012^ICD-10-CM", "8204689^Hypertensive heart AND chronic kidney disease stage 3^R69.^521774^SNOMED CT^96731000119100^2922231016^ICD-10-CM", "8204821^Malignant hypertensive chronic kidney disease stage 4^R69.^521774^SNOMED CT^285881000119109^2922631010^ICD-10-CM", "8224133^Hypertensive heart AND chronic kidney disease stage 5^R69.^521774^SNOMED CT^96711000119105^2968323016^ICD-10-CM", "8224135^Hypertensive heart AND chronic kidney disease stage 4^R69.^521774^SNOMED CT^96721000119103^2968177010^ICD-10-CM", "8272504^Chronic kidney disease due to type 2 diabetes mellitus^R69.^521774^SNOMED CT^771000119108^3013487011^ICD-10-CM", "8276675^Chronic renal impairment due to type 2 diabetes mellitus^R69.^521774^SNOMED CT^771000119108^3013552014^ICD-10-CM^171", "8276676^Chronic renal impairment due to type II diabetes mellitus^R69.^521774^SNOMED CT^771000119108^3013064012^ICD-10-CM^171", "8276677^Diabetic chronic renal impairment due to type 2 diabetes mellitus^R69.^521774^SNOMED CT^771000119108^3013087016^ICD-10-CM^171", "7008989^Hypertensive heart disease with congestive heart failure^R69.^521774^SNOMED CT^5148006^9634016^ICD-10-CM", "8224131^Hypertensive heart AND chronic kidney disease on dialysis^R69.^521774^SNOMED CT^96701000119107^2985615019^ICD-10-CM", "7108713^Hypertensive heart disease without congestive heart failure^R69.^521774^SNOMED CT^60899001^101181010^ICD-10-CM", "8133800^Erythropoietin resistance in anemia of chronic kidney disease^R69.^521774^SNOMED CT^444271000^2841618012^ICD-10-CM", "8265533^Chronic kidney disease stage 1 due to type 1 diabetes mellitus^R69.^521774^SNOMED CT^90721000119101^3010567012^ICD-10-CM", "8276826^Chronic kidney disease stage 1 due to type I diabetes mellitus^R69.^521774^SNOMED CT^90721000119101^3035122019^ICD-10-CM^179", "8272500^Chronic kidney disease stage 4 due to type 2 diabetes mellitus^R69.^521774^SNOMED CT^721000119107^3013100015^ICD-10-CM", "8276667^Chronic kidney disease stage 4 due to type II diabetes mellitus^R69.^521774^SNOMED CT^721000119107^3035100014^ICD-10-CM^181", "8276668^Diabetic stage 4 chronic renal impairment due to type 2 diabetes mellitus^R69.^521774^SNOMED CT^721000119107^3013038018^ICD-10-CM^181", "8272501^Chronic kidney disease stage 3 due to type 2 diabetes mellitus^R69.^521774^SNOMED CT^731000119105^3013103018^ICD-10-CM", "8276669^Chronic kidney disease stage 3 due to type II diabetes mellitus^R69.^521774^SNOMED CT^731000119105^3035131019^ICD-10-CM^184", "8276670^Diabetic stage 3 chronic renal impairment due to type 2 diabetes mellitus^R69.^521774^SNOMED CT^731000119105^3013036019^ICD-10-CM^184", "8272502^Chronic kidney disease stage 2 due to type 2 diabetes mellitus^R69.^521774^SNOMED CT^741000119101^3013063018^ICD-10-CM", "8276671^Chronic kidney disease stage 2 due to type II diabetes mellitus^R69.^521774^SNOMED CT^741000119101^3035128015^ICD-10-CM^187", "8276672^Diabetic stage 2 chronic renal impairment due to type 2 diabetes mellitus^R69.^521774^SNOMED CT^741000119101^3013120019^ICD-10-CM^187", "8272503^Chronic kidney disease stage 1 due to type 2 diabetes mellitus^R69.^521774^SNOMED CT^751000119104^3013056018^ICD-10-CM", "8276673^Chronic kidney disease stage 1 due to type II diabetes mellitus^R69.^521774^SNOMED CT^751000119104^3035118012^ICD-10-CM^190", "8276674^Diabetic stage 1 chronic renal impairment due to type 2 diabetes mellitus^R69.^521774^SNOMED CT^751000119104^3013102011^ICD-10-CM^190", "7138877^Benign hypertensive heart disease with congestive heart failure^R69.^521774^SNOMED CT^77737007^129025010^ICD-10-CM", "7285991^Benign hypertensive heart disease with congestive cardiac failure^R69.^521774^SNOMED CT^194767001^299653017^ICD-10-CM", "7139287^Benign hypertensive heart disease without congestive heart failure^R69.^521774^SNOMED CT^77970009^129404019^ICD-10-CM", "7148495^Malignant hypertensive heart disease with congestive heart failure^R69.^521774^SNOMED CT^83105008^137848017^ICD-10-CM", "7694277^Malignant hypertensive heart disease with congestive cardiac failure^R69.^521774^SNOMED CT^83105008^1236017010^ICD-10-CM^196", "7285989^Benign hypertensive heart disease without congestive cardiac failure^R69.^521774^SNOMED CT^194766005^299652010^ICD-10-CM", "7064679^Malignant hypertensive heart disease without congestive heart failure^R69.^521774^SNOMED CT^36315003^60617018^ICD-10-CM", "8223583^Hypertensive heart AND chronic kidney disease with congestive heart failure^R69.^521774^SNOMED CT^15781000119107^2985876012^ICD-10-CM", "200 matches found"],
+        "from": "CPRS",
+        "transactionId": "369695d6-0977-450c-925b-2b05155b388b",
+        "timestamp": "2017-02-07T20:07:06.701Z"
+    }, {
+        "name": "ORWCV POLL",
+        "input": ["25", "192.168.56.1", "000D03E4"],
+        "runner": "rpcRunner",
+        "result": [],
+        "from": "CPRS",
+        "transactionId": "923f9613-b5d0-4f60-8d45-005673f9e8e8",
+        "timestamp": "2017-02-07T20:07:07.899Z"
+    }, {
+        "name": "ORQQPL CHECK DUP",
+        "input": ["25", "7647488", "Hypertension"],
+        "runner": "rpcRunner",
+        "result": 0,
+        "from": "CPRS",
+        "transactionId": "76802f8f-3e7b-4339-8a44-0474d9736314",
+        "timestamp": "2017-02-07T20:07:08.466Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["NOW"],
+        "runner": "rpcRunner",
+        "result": 3170207.200708,
+        "from": "CPRS",
+        "transactionId": "25aa569f-a4ed-45e1-a079-e531f8477ae5",
+        "timestamp": "2017-02-07T20:07:08.528Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["NOW"],
+        "runner": "rpcRunner",
+        "result": 3170207.200708,
+        "from": "CPRS",
+        "transactionId": "95e9706f-afc1-4444-9bf1-df946aff78e0",
+        "timestamp": "2017-02-07T20:07:08.534Z"
+    }, {
+        "name": "ORWU NPHASKEY",
+        "input": ["62", "PROVIDER"],
+        "runner": "rpcRunner",
+        "result": 1,
+        "from": "CPRS",
+        "transactionId": "715177ff-2505-41da-9651-0acd46d96a7f",
+        "timestamp": "2017-02-07T20:07:08.540Z"
+    }, {
+        "name": "ORWU NEWPERS",
+        "input": ["ALEXANDER,ROBERS~", "1", "PROVIDER"],
+        "runner": "rpcRunner",
+        "result": ["62^Alexander,Robert", "63^Smith,Mary"],
+        "from": "CPRS",
+        "transactionId": "d6502338-50bc-491a-bdd2-88e704b4c048",
+        "timestamp": "2017-02-07T20:07:08.548Z"
+    }, {
+        "name": "ORWU CLINLOC",
+        "input": ["CLINICC~", "1"],
+        "runner": "rpcRunner",
+        "result": ["6^CLINICX", "7^CLInicA", "8^CLInicB", "9^CLInicC", "10^CLInicD", "4^Clinic1", "5^Clinic2", "3^VISTA HEALTH CARE"],
+        "from": "CPRS",
+        "transactionId": "fddb62c6-1d8a-4bc1-aa97-5174d9f63673",
+        "timestamp": "2017-02-07T20:07:08.558Z"
+    }, {
+        "name": "ORWCV POLL",
+        "input": ["25", "192.168.56.1", "000D03E4"],
+        "runner": "rpcRunner",
+        "result": [],
+        "from": "CPRS",
+        "transactionId": "60beee7d-788e-40c0-956e-c7f49592c52d",
+        "timestamp": "2017-02-07T20:07:10.509Z"
+    }, {
+        "name": "ORWCV POLL",
+        "input": ["25", "192.168.56.1", "000D03E4"],
+        "runner": "rpcRunner",
+        "result": [],
+        "from": "CPRS",
+        "transactionId": "88ab8664-d8c0-48aa-9f70-739950c6035a",
+        "timestamp": "2017-02-07T20:07:13.119Z"
+    }, {
+        "name": "ORWCV POLL",
+        "input": ["25", "192.168.56.1", "000D03E4"],
+        "runner": "rpcRunner",
+        "result": [],
+        "from": "CPRS",
+        "transactionId": "b3a1997b-1be7-4a03-b8cf-fb2a2fe663eb",
+        "timestamp": "2017-02-07T20:07:15.728Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["NOW"],
+        "runner": "rpcRunner",
+        "result": 3170207.200716,
+        "from": "CPRS",
+        "transactionId": "ffcacf0d-fc9b-4384-9afe-f1e188c42f38",
+        "timestamp": "2017-02-07T20:07:16.070Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["Feb 07 2017"],
+        "runner": "rpcRunner",
+        "result": 3170207,
+        "from": "CPRS",
+        "transactionId": "4d58b9be-138e-41d5-b769-9fefa988b147",
+        "timestamp": "2017-02-07T20:07:17.320Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["Feb 07 2017"],
+        "runner": "rpcRunner",
+        "result": 3170207,
+        "from": "CPRS",
+        "transactionId": "a3fe5a1a-f8cf-46d0-afdb-89221181bce4",
+        "timestamp": "2017-02-07T20:07:17.327Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["Feb 07 2017"],
+        "runner": "rpcRunner",
+        "result": 3170207,
+        "from": "CPRS",
+        "transactionId": "0b1b523e-54ee-4356-8466-8275ba4255b1",
+        "timestamp": "2017-02-07T20:07:17.333Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["NOW"],
+        "runner": "rpcRunner",
+        "result": 3170207.200717,
+        "from": "CPRS",
+        "transactionId": "d3f96a43-cf26-4676-8c54-b09b61235816",
+        "timestamp": "2017-02-07T20:07:17.341Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["3170207"],
+        "runner": "rpcRunner",
+        "result": 3170207,
+        "from": "CPRS",
+        "transactionId": "3b76aace-197a-47bb-91a2-f4b229b32d87",
+        "timestamp": "2017-02-07T20:07:17.346Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["NOW"],
+        "runner": "rpcRunner",
+        "result": 3170207.200717,
+        "from": "CPRS",
+        "transactionId": "5dd0cb52-24ac-471b-8cc9-7adf194fbe32",
+        "timestamp": "2017-02-07T20:07:17.356Z"
+    }, {
+        "name": "ORQQPL ADD SAVE",
+        "input": ["25^CARTER,DAVID^0113^", "62", "2957", {
+            "1": "GMPFLD(.01)=\"521774^R69.\"",
+            "2": "GMPFLD(.03)=\"3170207^Feb 07 2017\"",
+            "3": "GMPFLD(.05)=\"^Hypertension\"",
+            "4": "GMPFLD(.08)=\"3170207^Feb 07 2017\"",
+            "5": "GMPFLD(.12)=\"A^ACTIVE\"",
+            "6": "GMPFLD(.13)=\"^\"",
+            "7": "GMPFLD(1.01)=\"7647488^Hypertension\"",
+            "8": "GMPFLD(1.02)=\"P\"",
+            "9": "GMPFLD(1.03)=\"62^ALEXANDER,ROBERT\"",
+            "10": "GMPFLD(1.04)=\"62^ALEXANDER,ROBERT\"",
+            "11": "GMPFLD(1.05)=\"62^Alexander,Robert\"",
+            "12": "GMPFLD(1.06)=\"^\"",
+            "13": "GMPFLD(1.07)=\"^\"",
+            "14": "GMPFLD(1.08)=\"10^Clinicd\"",
+            "15": "GMPFLD(1.09)=\"3170207^Feb 07 2017\"",
+            "16": "GMPFLD(1.1)=\"^Unknown\"",
+            "17": "GMPFLD(1.11)=\"0^NO\"",
+            "18": "GMPFLD(1.12)=\"0^NO\"",
+            "19": "GMPFLD(1.13)=\"0^NO\"",
+            "20": "GMPFLD(1.14)=\"@^\"",
+            "21": "GMPFLD(1.15)=\"0^NO\"",
+            "22": "GMPFLD(1.16)=\"0^NO\"",
+            "23": "GMPFLD(1.17)=\"0^NO\"",
+            "24": "GMPFLD(1.18)=\"0^NO\"",
+            "25": "GMPFLD(1.19)=\"^\"",
+            "26": "GMPFLD(80001)=\"38341003^38341003\"",
+            "27": "GMPFLD(80002)=\"64176011^64176011\"",
+            "28": "GMPFLD(80101)=\"^\"",
+            "29": "GMPFLD(80102)=\"^\"",
+            "30": "GMPFLD(80201)=\"3170207^Feb 07 2017\"",
+            "31": "GMPFLD(80202)=\"10D^ICD-10-CM\"",
+            "32": "GMPFLD(10,\"NEW\",1)=\"a comment\"",
+            "33": "GMPFLD(10,0)=\"1\""
+        }, "hypertension"],
+        "runner": "mvdmEmulated",
+        "result": 1,
+        "from": "CPRS",
+        "transactionId": "ccc1d942-422e-487c-8acf-d6105f7b48f6",
+        "timestamp": "2017-02-07T20:07:17.541Z"
+    }, {
+        "name": "ORQQPL PROBLEM LIST",
+        "input": ["25", "A", "3170207.200701"],
+        "runner": "mvdmEmulated",
+        "result": [1, "1^A^Hypertension (SCT 38341003)^R69.^^3170207^^^P^10;CLInicD^C^62;ALEXANDER,ROBERT^^^1^3170207^^^^10D"],
+        "from": "CPRS",
+        "transactionId": "3d48b7b4-36ae-4015-8922-42f591a3b417",
+        "timestamp": "2017-02-07T20:07:17.676Z"
+    }, {
+        "name": "ORQQPL PROB COMMENTS",
+        "input": ["1"],
+        "runner": "rpcRunner",
+        "result": ["a comment"],
+        "from": "CPRS",
+        "transactionId": "50f30af7-a914-4a41-b577-277e8731393d",
+        "timestamp": "2017-02-07T20:07:17.684Z"
+    }, {
+        "name": "ORWCV POLL",
+        "input": ["25", "192.168.56.1", "000D03E4"],
+        "runner": "rpcRunner",
+        "result": [],
+        "from": "CPRS",
+        "transactionId": "0c5eeeaf-578b-49f1-b5ef-0b8277e0a73b",
+        "timestamp": "2017-02-07T20:07:18.338Z"
+    }, {
+        "name": "ORWCV POLL",
+        "input": ["25", "192.168.56.1", "000D03E4"],
+        "runner": "rpcRunner",
+        "result": [],
+        "from": "CPRS",
+        "transactionId": "6c595503-7d08-4fa1-8fd2-14ed09d055e8",
+        "timestamp": "2017-02-07T20:07:20.948Z"
+    }, {
+        "name": "ORQQPL EDIT LOAD",
+        "input": ["1"],
+        "runner": "rpcRunner",
+        "result": ["NEWþ.01þ521774^R69.", "NEWþ.03þ3170207^2/7/17", "NEWþ.05þ1^Hypertension", "NEWþ.08þ3170207^2/7/17", "NEWþ.12þA^ACTIVE", "NEWþ.13þ", "NEWþ1.01þ7647488^Hypertension", "NEWþ1.02þP", "NEWþ1.05þ62^ALEXANDER,ROBERT", "NEWþ1.06þ", "NEWþ1.07þ", "NEWþ1.08þ10^CLInicD", "NEWþ1.09þ3170207^2/7/17", "NEWþ1.1þ", "NEWþ1.11þ0^AGENT ORANGE", "NEWþ1.12þ", "NEWþ1.13þ0^ENV CONTAMINANTS", "NEWþ1.14þ", "NEWþ1.15þ0^HEAD/NECK CANCER", "NEWþ1.16þ0^MIL SEXUAL TRAUMA", "NEWþ1.17þ0^COMBAT VET", "NEWþ1.18þ0^SHAD", "NEWþ10,0þ1^", "NEWþ10,1þ1^1^a comment^A^3170207.200717^62^ALEXANDER,ROBERT", "NEWþ80001þ38341003^38341003", "NEWþ80002þ64176011^64176011", "NEWþ80003þ", "NEWþ80004þ", "NEWþ80005þ", "NEWþ80201þ3170207^2/7/17", "NEWþ80202þ10D^ICD-10-CM", "ORGþ.01þ521774^R69.", "ORGþ.03þ3170207^2/7/17", "ORGþ.05þ1^Hypertension", "ORGþ.08þ3170207^2/7/17", "ORGþ.12þA^ACTIVE", "ORGþ.13þ", "ORGþ1.01þ7647488^Hypertension", "ORGþ1.02þP", "ORGþ1.05þ62^ALEXANDER,ROBERT", "ORGþ1.06þ", "ORGþ1.07þ", "ORGþ1.08þ10^CLInicD", "ORGþ1.09þ3170207^2/7/17", "ORGþ1.1þ", "ORGþ1.11þ0^AGENT ORANGE", "ORGþ1.12þ", "ORGþ1.13þ0^ENV CONTAMINANTS", "ORGþ1.14þ", "ORGþ1.15þ0^HEAD/NECK CANCER", "ORGþ1.16þ0^MIL SEXUAL TRAUMA", "ORGþ1.17þ0^COMBAT VET", "ORGþ1.18þ0^SHAD", "ORGþ10,0þ1^", "ORGþ10,1þ1^1^a comment^A^3170207.200717^62^ALEXANDER,ROBERT", "ORGþ80001þ38341003^38341003", "ORGþ80002þ64176011^64176011", "ORGþ80003þ", "ORGþ80004þ", "ORGþ80005þ", "ORGþ80201þ3170207^2/7/17", "ORGþ80202þ10D^ICD-10-CM"],
+        "from": "CPRS",
+        "transactionId": "76062324-653a-4dd6-a275-bedbe4893c5b",
+        "timestamp": "2017-02-07T20:07:21.092Z"
+    }, {
+        "name": "ORWU NPHASKEY",
+        "input": ["62", "PROVIDER"],
+        "runner": "rpcRunner",
+        "result": 1,
+        "from": "CPRS",
+        "transactionId": "a1f91ee4-036e-425e-9d1b-84c28962ff39",
+        "timestamp": "2017-02-07T20:07:21.101Z"
+    }, {
+        "name": "ORWU NEWPERS",
+        "input": ["ALEXANDER,ROBERS~", "1", "PROVIDER"],
+        "runner": "rpcRunner",
+        "result": ["62^Alexander,Robert", "63^Smith,Mary"],
+        "from": "CPRS",
+        "transactionId": "850ab096-1f0b-4eee-9d34-1183fbb25e35",
+        "timestamp": "2017-02-07T20:07:21.109Z"
+    }, {
+        "name": "ORIMO ISCLOC",
+        "input": ["10"],
+        "runner": "rpcRunner",
+        "result": 1,
+        "from": "CPRS",
+        "transactionId": "73fa6db3-9b3a-47e0-8f8b-4827f6c90f99",
+        "timestamp": "2017-02-07T20:07:21.115Z"
+    }, {
+        "name": "ORWU CLINLOC",
+        "input": ["CLINICC~", "1"],
+        "runner": "rpcRunner",
+        "result": ["6^CLINICX", "7^CLInicA", "8^CLInicB", "9^CLInicC", "10^CLInicD", "4^Clinic1", "5^Clinic2", "3^VISTA HEALTH CARE"],
+        "from": "CPRS",
+        "transactionId": "73fd2acb-97c4-46de-9cc7-5637a7bfc598",
+        "timestamp": "2017-02-07T20:07:21.124Z"
+    }, {
+        "name": "ORWCV POLL",
+        "input": ["25", "192.168.56.1", "000D03E4"],
+        "runner": "rpcRunner",
+        "result": [],
+        "from": "CPRS",
+        "transactionId": "b271f9e4-25a3-4aa6-823f-3bf68568cd6b",
+        "timestamp": "2017-02-07T20:07:23.561Z"
+    }, {
+        "name": "ORWCV POLL",
+        "input": ["25", "192.168.56.1", "000D03E4"],
+        "runner": "rpcRunner",
+        "result": [],
+        "from": "CPRS",
+        "transactionId": "79a6a5ab-e907-4052-aa8e-6887b1134319",
+        "timestamp": "2017-02-07T20:07:26.174Z"
+    }, {
+        "name": "ORWCV POLL",
+        "input": ["25", "192.168.56.1", "000D03E4"],
+        "runner": "rpcRunner",
+        "result": [],
+        "from": "CPRS",
+        "transactionId": "5281593a-d1aa-41f1-854d-c3691700c7f3",
+        "timestamp": "2017-02-07T20:07:28.787Z"
+    }, {
+        "name": "ORWCV POLL",
+        "input": ["25", "192.168.56.1", "000D03E4"],
+        "runner": "rpcRunner",
+        "result": [],
+        "from": "CPRS",
+        "transactionId": "8656c37f-6e4a-46db-894c-0bae3b11dca6",
+        "timestamp": "2017-02-07T20:07:31.397Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["NOW"],
+        "runner": "rpcRunner",
+        "result": 3170207.200732,
+        "from": "CPRS",
+        "transactionId": "ae1cd101-a1ca-4591-a229-0db723053b3a",
+        "timestamp": "2017-02-07T20:07:32.968Z"
+    }, {
+        "name": "ORWPCE ACTIVE CODE",
+        "input": ["R69.", "ICD", "3170207.200701"],
+        "runner": "rpcRunner",
+        "result": 1,
+        "from": "CPRS",
+        "transactionId": "da85fa33-df49-4f35-b717-507bbc19b6f8",
+        "timestamp": "2017-02-07T20:07:34.004Z"
+    }, {
+        "name": "ORWPCE ACTIVE CODE",
+        "input": ["38341003", "GMPX", "3170207.200701"],
+        "runner": "rpcRunner",
+        "result": 1,
+        "from": "CPRS",
+        "transactionId": "a393597a-b6bb-4022-819c-1c2ca26bd229",
+        "timestamp": "2017-02-07T20:07:34.013Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["2/7/17"],
+        "runner": "rpcRunner",
+        "result": 3170207,
+        "from": "CPRS",
+        "transactionId": "117114cd-fe07-4ac9-a3e8-6a5f85563512",
+        "timestamp": "2017-02-07T20:07:34.019Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["03/03/2016"],
+        "runner": "rpcRunner",
+        "result": 3160303,
+        "from": "CPRS",
+        "transactionId": "672ba433-4411-46a1-a140-a2ee1d3f486f",
+        "timestamp": "2017-02-07T20:07:34.025Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["03/03/2016"],
+        "runner": "rpcRunner",
+        "result": 3160303,
+        "from": "CPRS",
+        "transactionId": "5d7c6a74-ac6b-48c9-98ee-9e5477293414",
+        "timestamp": "2017-02-07T20:07:34.031Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["NOW"],
+        "runner": "rpcRunner",
+        "result": 3170207.200734,
+        "from": "CPRS",
+        "transactionId": "47f2f5b7-cba7-4718-8803-fcb3aa009343",
+        "timestamp": "2017-02-07T20:07:34.037Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["Feb 07 2017"],
+        "runner": "rpcRunner",
+        "result": 3170207,
+        "from": "CPRS",
+        "transactionId": "3e3a2371-3261-4f1f-b167-114f136a7cbf",
+        "timestamp": "2017-02-07T20:07:34.044Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["Feb 07 2017"],
+        "runner": "rpcRunner",
+        "result": 3170207,
+        "from": "CPRS",
+        "transactionId": "09557538-3f76-4ed3-bfba-f5bda0f09468",
+        "timestamp": "2017-02-07T20:07:34.049Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["03/03/2016"],
+        "runner": "rpcRunner",
+        "result": 3160303,
+        "from": "CPRS",
+        "transactionId": "a061195f-a19d-4706-a4ef-012c38284586",
+        "timestamp": "2017-02-07T20:07:34.056Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["2/7/17"],
+        "runner": "rpcRunner",
+        "result": 3170207,
+        "from": "CPRS",
+        "transactionId": "a14c0be2-7f5e-43c7-a37d-a66ffc09e845",
+        "timestamp": "2017-02-07T20:07:34.061Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["NOW"],
+        "runner": "rpcRunner",
+        "result": 3170207.200734,
+        "from": "CPRS",
+        "transactionId": "cfaf9630-e3a0-4c0d-ac28-3263cd38a354",
+        "timestamp": "2017-02-07T20:07:34.066Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["3170207"],
+        "runner": "rpcRunner",
+        "result": 3170207,
+        "from": "CPRS",
+        "transactionId": "abcccfa7-aaba-4a15-8eef-404a470351dd",
+        "timestamp": "2017-02-07T20:07:34.074Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["NOW"],
+        "runner": "rpcRunner",
+        "result": 3170207.200734,
+        "from": "CPRS",
+        "transactionId": "1e2b4005-1943-4cd8-a47f-540a470a5a4e",
+        "timestamp": "2017-02-07T20:07:34.081Z"
+    }, {
+        "name": "ORQQPL EDIT SAVE",
+        "input": ["1", "62", "2957", "1", {
+            "1": "GMPFLD(.01)=\"521774^R69.\"",
+            "2": "GMPFLD(.03)=\"3170207^Feb 07 2017\"",
+            "3": "GMPFLD(.05)=\"1^Hypertension\"",
+            "4": "GMPFLD(.08)=\"3170207^2/7/17\"",
+            "5": "GMPFLD(.12)=\"A^ACTIVE\"",
+            "6": "GMPFLD(.13)=\"3160303^Mar 03 2016\"",
+            "7": "GMPFLD(1.01)=\"7647488^Hypertension\"",
+            "8": "GMPFLD(1.02)=\"P\"",
+            "9": "GMPFLD(1.03)=\"62^ALEXANDER,ROBERT\"",
+            "10": "GMPFLD(1.04)=\"62^ALEXANDER,ROBERT\"",
+            "11": "GMPFLD(1.05)=\"62^Alexander,Robert\"",
+            "12": "GMPFLD(1.06)=\"^\"",
+            "13": "GMPFLD(1.07)=\"^\"",
+            "14": "GMPFLD(1.08)=\"10^Clinicd\"",
+            "15": "GMPFLD(1.09)=\"3170207^Feb 07 2017\"",
+            "16": "GMPFLD(1.1)=\"^Unknown\"",
+            "17": "GMPFLD(1.11)=\"0^AGENT ORANGE\"",
+            "18": "GMPFLD(1.12)=\"^\"",
+            "19": "GMPFLD(1.13)=\"0^ENV CONTAMINANTS\"",
+            "20": "GMPFLD(1.14)=\"C^CHRONIC\"",
+            "21": "GMPFLD(1.15)=\"0^HEAD/NECK CANCER\"",
+            "22": "GMPFLD(1.16)=\"0^MIL SEXUAL TRAUMA\"",
+            "23": "GMPFLD(1.17)=\"0^COMBAT VET\"",
+            "24": "GMPFLD(1.18)=\"0^SHAD\"",
+            "25": "GMPFLD(1.19)=\"^\"",
+            "26": "GMPFLD(80001)=\"38341003^38341003\"",
+            "27": "GMPFLD(80002)=\"64176011^64176011\"",
+            "28": "GMPFLD(80101)=\"^\"",
+            "29": "GMPFLD(80102)=\"^\"",
+            "30": "GMPFLD(80201)=\"3170207^2/7/17\"",
+            "31": "GMPFLD(80202)=\"10D^ICD-10-CM\"",
+            "32": "GMPFLD(10,1)=\"1^1^a comment^A^Feb 07 2017^62\"",
+            "33": "GMPFLD(10,\"NEW\",2)=\"an additional comment\"",
+            "34": "GMPFLD(10,0)=\"2\"",
+            "35": "GMPORIG(.01)=\"521774^R69.\"",
+            "36": "GMPORIG(.03)=\"3170207^2/7/17\"",
+            "37": "GMPORIG(.05)=\"1^Hypertension\"",
+            "38": "GMPORIG(.08)=\"3170207^2/7/17\"",
+            "39": "GMPORIG(.12)=\"A^ACTIVE\"",
+            "40": "GMPORIG(.13)=\"\"",
+            "41": "GMPORIG(1.01)=\"7647488^Hypertension\"",
+            "42": "GMPORIG(1.02)=\"P\"",
+            "43": "GMPORIG(1.05)=\"62^ALEXANDER,ROBERT\"",
+            "44": "GMPORIG(1.06)=\"\"",
+            "45": "GMPORIG(1.07)=\"\"",
+            "46": "GMPORIG(1.08)=\"10^CLInicD\"",
+            "47": "GMPORIG(1.09)=\"3170207^2/7/17\"",
+            "48": "GMPORIG(1.1)=\"\"",
+            "49": "GMPORIG(1.11)=\"0^AGENT ORANGE\"",
+            "50": "GMPORIG(1.12)=\"\"",
+            "51": "GMPORIG(1.13)=\"0^ENV CONTAMINANTS\"",
+            "52": "GMPORIG(1.14)=\"\"",
+            "53": "GMPORIG(1.15)=\"0^HEAD/NECK CANCER\"",
+            "54": "GMPORIG(1.16)=\"0^MIL SEXUAL TRAUMA\"",
+            "55": "GMPORIG(1.17)=\"0^COMBAT VET\"",
+            "56": "GMPORIG(1.18)=\"0^SHAD\"",
+            "57": "GMPORIG(10,0)=\"1^\"",
+            "58": "GMPORIG(10,1)=\"1^1^a comment^A^3170207.200717^62^ALEXANDER,ROBERT\"",
+            "59": "GMPORIG(80001)=\"38341003^38341003\"",
+            "60": "GMPORIG(80002)=\"64176011^64176011\"",
+            "61": "GMPORIG(80003)=\"\"",
+            "62": "GMPORIG(80004)=\"\"",
+            "63": "GMPORIG(80005)=\"\"",
+            "64": "GMPORIG(80201)=\"3170207^2/7/17\"",
+            "65": "GMPORIG(80202)=\"10D^ICD-10-CM\""
+        }, ""],
+        "runner": "mvdmEmulated",
+        "result": 1,
+        "from": "CPRS",
+        "transactionId": "527905df-b8d5-499e-9254-855263032490",
+        "timestamp": "2017-02-07T20:07:34.336Z"
+    }, {
+        "name": "ORQQPL PROBLEM LIST",
+        "input": ["25", "A", "3170207.200701"],
+        "runner": "mvdmEmulated",
+        "result": [1, "1^A^Hypertension (SCT 38341003)^R69.^3160303^3170207^^^P^10;CLInicD^C^62;ALEXANDER,ROBERT^^C^1^3170207^^^^10D"],
+        "from": "CPRS",
+        "transactionId": "a0442c39-2771-475f-bf5f-be431c09444a",
+        "timestamp": "2017-02-07T20:07:34.474Z"
+    }, {
+        "name": "ORQQPL PROB COMMENTS",
+        "input": ["1"],
+        "runner": "rpcRunner",
+        "result": ["a comment", "an additional comment"],
+        "from": "CPRS",
+        "transactionId": "c4de8ff6-153a-464e-b525-a33f29adb5ec",
+        "timestamp": "2017-02-07T20:07:34.481Z"
+    }, {
+        "name": "ORWCV POLL",
+        "input": ["25", "192.168.56.1", "000D03E4"],
+        "runner": "rpcRunner",
+        "result": [],
+        "from": "CPRS",
+        "transactionId": "d35a8c74-b567-4678-bb0e-272d1bdec15a",
+        "timestamp": "2017-02-07T20:07:34.489Z"
+    }, {
+        "name": "ORWCV POLL",
+        "input": ["25", "192.168.56.1", "000D03E4"],
+        "runner": "rpcRunner",
+        "result": [],
+        "from": "CPRS",
+        "transactionId": "55798ed7-e21e-4be1-a615-e4d75de1b9a9",
+        "timestamp": "2017-02-07T20:07:36.618Z"
+    }, {
+        "name": "ORQQPL EDIT LOAD",
+        "input": ["1"],
+        "runner": "rpcRunner",
+        "result": ["NEWþ.01þ521774^R69.", "NEWþ.03þ3170207^2/7/17", "NEWþ.05þ1^Hypertension", "NEWþ.08þ3170207^2/7/17", "NEWþ.12þA^ACTIVE", "NEWþ.13þ3160303^3/3/16", "NEWþ1.01þ7647488^Hypertension", "NEWþ1.02þP", "NEWþ1.05þ62^ALEXANDER,ROBERT", "NEWþ1.06þ", "NEWþ1.07þ", "NEWþ1.08þ10^CLInicD", "NEWþ1.09þ3170207^2/7/17", "NEWþ1.1þ", "NEWþ1.11þ0^AGENT ORANGE", "NEWþ1.12þ", "NEWþ1.13þ0^ENV CONTAMINANTS", "NEWþ1.14þC^CHRONIC", "NEWþ1.15þ0^HEAD/NECK CANCER", "NEWþ1.16þ0^MIL SEXUAL TRAUMA", "NEWþ1.17þ0^COMBAT VET", "NEWþ1.18þ0^SHAD", "NEWþ10,0þ2^", "NEWþ10,1þ1^1^a comment^A^3170207.200717^62^ALEXANDER,ROBERT", "NEWþ10,2þ2^1^an additional comment^A^3170207.200734^62^ALEXANDER,ROBERT", "NEWþ80001þ38341003^38341003", "NEWþ80002þ64176011^64176011", "NEWþ80003þ", "NEWþ80004þ", "NEWþ80005þ", "NEWþ80201þ3170207^2/7/17", "NEWþ80202þ10D^ICD-10-CM", "ORGþ.01þ521774^R69.", "ORGþ.03þ3170207^2/7/17", "ORGþ.05þ1^Hypertension", "ORGþ.08þ3170207^2/7/17", "ORGþ.12þA^ACTIVE", "ORGþ.13þ3160303^3/3/16", "ORGþ1.01þ7647488^Hypertension", "ORGþ1.02þP", "ORGþ1.05þ62^ALEXANDER,ROBERT", "ORGþ1.06þ", "ORGþ1.07þ", "ORGþ1.08þ10^CLInicD", "ORGþ1.09þ3170207^2/7/17", "ORGþ1.1þ", "ORGþ1.11þ0^AGENT ORANGE", "ORGþ1.12þ", "ORGþ1.13þ0^ENV CONTAMINANTS", "ORGþ1.14þC^CHRONIC", "ORGþ1.15þ0^HEAD/NECK CANCER", "ORGþ1.16þ0^MIL SEXUAL TRAUMA", "ORGþ1.17þ0^COMBAT VET", "ORGþ1.18þ0^SHAD", "ORGþ10,0þ2^", "ORGþ10,1þ1^1^a comment^A^3170207.200717^62^ALEXANDER,ROBERT", "ORGþ10,2þ2^1^an additional comment^A^3170207.200734^62^ALEXANDER,ROBERT", "ORGþ80001þ38341003^38341003", "ORGþ80002þ64176011^64176011", "ORGþ80003þ", "ORGþ80004þ", "ORGþ80005þ", "ORGþ80201þ3170207^2/7/17", "ORGþ80202þ10D^ICD-10-CM"],
+        "from": "CPRS",
+        "transactionId": "2a142a0d-252d-4889-8490-56d04e205690",
+        "timestamp": "2017-02-07T20:07:36.982Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["T"],
+        "runner": "rpcRunner",
+        "result": 3170207,
+        "from": "CPRS",
+        "transactionId": "c1b43f68-8fdb-41fd-947a-61ddbcb12680",
+        "timestamp": "2017-02-07T20:07:36.990Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["T"],
+        "runner": "rpcRunner",
+        "result": 3170207,
+        "from": "CPRS",
+        "transactionId": "ff5777bf-e907-4533-9179-d97ebe0794bb",
+        "timestamp": "2017-02-07T20:07:36.998Z"
+    }, {
+        "name": "ORQQPL UPDATE",
+        "input": [{
+            "1": "ORARRAY(\"DIAGNOSIS\")=\"521774\"",
+            "2": "ORARRAY(\"STATUS\")=\"I\"",
+            "3": "ORARRAY(\"ONSET\")=\"3160303\"",
+            "4": "ORARRAY(\"LEXICON\")=\"7647488\"",
+            "5": "ORARRAY(\"PROVIDER\")=\"62\"",
+            "6": "ORARRAY(\"RESOLVED\")=\"3170207\"",
+            "7": "ORARRAY(\"LOCATION\")=\"10\"",
+            "8": "ORARRAY(\"SC\")=\"\"",
+            "9": "ORARRAY(\"AO\")=\"0\"",
+            "10": "ORARRAY(\"IR\")=\"\"",
+            "11": "ORARRAY(\"EC\")=\"0\"",
+            "12": "ORARRAY(\"HNC\")=\"0\"",
+            "13": "ORARRAY(\"MST\")=\"0\"",
+            "14": "ORARRAY(\"SHD\")=\"0\"",
+            "15": "ORARRAY(\"SCTC\")=\"38341003\"",
+            "16": "ORARRAY(\"SCTD\")=\"64176011\"",
+            "17": "ORARRAY(\"CODEDT\")=\"3170207\"",
+            "18": "ORARRAY(\"CODESYS\")=\"10D\"",
+            "19": "ORARRAY(\"PROBLEM\")=\"1\""
+        }],
+        "runner": "mvdmEmulated",
+        "result": [1, ""],
+        "from": "CPRS",
+        "transactionId": "1067d305-ddce-4d79-9497-b27ab09a2669",
+        "timestamp": "2017-02-07T20:07:37.259Z"
+    }, {
+        "name": "ORQQPL PROBLEM LIST",
+        "input": ["25", "A", "3170207.200701"],
+        "runner": "mvdmEmulated",
+        "result": [0],
+        "from": "CPRS",
+        "transactionId": "9736c82e-2394-4a88-9d88-a802b5fccf5f",
+        "timestamp": "2017-02-07T20:07:37.333Z"
+    }, {
+        "name": "ORQQPL PROBLEM LIST",
+        "input": ["25", "I", "3170207.200701"],
+        "runner": "mvdmEmulated",
+        "result": [1, "1^I^Hypertension (SCT 38341003)^R69.^3160303^3170207^^^P^10;CLInicD^C^62;ALEXANDER,ROBERT^^C^1^3170207^^^^10D"],
+        "from": "CPRS",
+        "transactionId": "9683b1f3-6456-4456-95cf-c5e3de18ded2",
+        "timestamp": "2017-02-07T20:07:38.777Z"
+    }, {
+        "name": "ORQQPL PROB COMMENTS",
+        "input": ["1"],
+        "runner": "rpcRunner",
+        "result": ["a comment", "an additional comment"],
+        "from": "CPRS",
+        "transactionId": "167f25e8-0cc8-4265-b7e9-dd0c901b81be",
+        "timestamp": "2017-02-07T20:07:38.785Z"
+    }, {
+        "name": "ORWCV POLL",
+        "input": ["25", "192.168.56.1", "000D03E4"],
+        "runner": "rpcRunner",
+        "result": [],
+        "from": "CPRS",
+        "transactionId": "813325ba-7795-4795-acfd-1e990fe8befb",
+        "timestamp": "2017-02-07T20:07:39.246Z"
+    }, {
+        "name": "ORWCV POLL",
+        "input": ["25", "192.168.56.1", "000D03E4"],
+        "runner": "rpcRunner",
+        "result": [],
+        "from": "CPRS",
+        "transactionId": "4230cf54-61cd-441a-9ba1-19fd0cb81f39",
+        "timestamp": "2017-02-07T20:07:41.855Z"
+    }, {
+        "name": "ORQQPL PROBLEM LIST",
+        "input": ["25", "B", "3170207.200701"],
+        "runner": "mvdmEmulated",
+        "result": [1, "1^I^Hypertension (SCT 38341003)^R69.^3160303^3170207^^^P^10;CLInicD^C^62;ALEXANDER,ROBERT^^C^1^3170207^^^^10D"],
+        "from": "CPRS",
+        "transactionId": "aca7183e-c596-4f58-9dc7-f0f868347344",
+        "timestamp": "2017-02-07T20:07:42.629Z"
+    }, {
+        "name": "ORQQPL PROB COMMENTS",
+        "input": ["1"],
+        "runner": "rpcRunner",
+        "result": ["a comment", "an additional comment"],
+        "from": "CPRS",
+        "transactionId": "b3a2bd80-06bb-41b9-91f6-c9f21de98064",
+        "timestamp": "2017-02-07T20:07:42.637Z"
+    }, {
+        "name": "ORWCV POLL",
+        "input": ["25", "192.168.56.1", "000D03E4"],
+        "runner": "rpcRunner",
+        "result": [],
+        "from": "CPRS",
+        "transactionId": "e6596ce7-7db8-41e3-b22d-0ee1f1f7a710",
+        "timestamp": "2017-02-07T20:07:44.465Z"
+    }, {
+        "name": "ORWCV POLL",
+        "input": ["25", "192.168.56.1", "000D03E4"],
+        "runner": "rpcRunner",
+        "result": [],
+        "from": "CPRS",
+        "transactionId": "3a11206e-94a9-4ed1-8d03-b981c13b15c5",
+        "timestamp": "2017-02-07T20:07:47.091Z"
+    }, {
+        "name": "ORQQPL EDIT LOAD",
+        "input": ["1"],
+        "runner": "rpcRunner",
+        "result": ["NEWþ.01þ521774^R69.", "NEWþ.03þ3170207^2/7/17", "NEWþ.05þ1^Hypertension", "NEWþ.08þ3170207^2/7/17", "NEWþ.12þI^INACTIVE", "NEWþ.13þ3160303^3/3/16", "NEWþ1.01þ7647488^Hypertension", "NEWþ1.02þP", "NEWþ1.05þ62^ALEXANDER,ROBERT", "NEWþ1.06þ", "NEWþ1.07þ3170207^2/7/17", "NEWþ1.08þ10^CLInicD", "NEWþ1.09þ3170207^2/7/17", "NEWþ1.1þ", "NEWþ1.11þ0^AGENT ORANGE", "NEWþ1.12þ", "NEWþ1.13þ0^ENV CONTAMINANTS", "NEWþ1.14þC^CHRONIC", "NEWþ1.15þ0^HEAD/NECK CANCER", "NEWþ1.16þ0^MIL SEXUAL TRAUMA", "NEWþ1.17þ0^COMBAT VET", "NEWþ1.18þ0^SHAD", "NEWþ10,0þ2^", "NEWþ10,1þ1^1^a comment^A^3170207.200717^62^ALEXANDER,ROBERT", "NEWþ10,2þ2^1^an additional comment^A^3170207.200734^62^ALEXANDER,ROBERT", "NEWþ80001þ38341003^38341003", "NEWþ80002þ64176011^64176011", "NEWþ80003þ", "NEWþ80004þ", "NEWþ80005þ", "NEWþ80201þ3170207^2/7/17", "NEWþ80202þ10D^ICD-10-CM", "ORGþ.01þ521774^R69.", "ORGþ.03þ3170207^2/7/17", "ORGþ.05þ1^Hypertension", "ORGþ.08þ3170207^2/7/17", "ORGþ.12þI^INACTIVE", "ORGþ.13þ3160303^3/3/16", "ORGþ1.01þ7647488^Hypertension", "ORGþ1.02þP", "ORGþ1.05þ62^ALEXANDER,ROBERT", "ORGþ1.06þ", "ORGþ1.07þ3170207^2/7/17", "ORGþ1.08þ10^CLInicD", "ORGþ1.09þ3170207^2/7/17", "ORGþ1.1þ", "ORGþ1.11þ0^AGENT ORANGE", "ORGþ1.12þ", "ORGþ1.13þ0^ENV CONTAMINANTS", "ORGþ1.14þC^CHRONIC", "ORGþ1.15þ0^HEAD/NECK CANCER", "ORGþ1.16þ0^MIL SEXUAL TRAUMA", "ORGþ1.17þ0^COMBAT VET", "ORGþ1.18þ0^SHAD", "ORGþ10,0þ2^", "ORGþ10,1þ1^1^a comment^A^3170207.200717^62^ALEXANDER,ROBERT", "ORGþ10,2þ2^1^an additional comment^A^3170207.200734^62^ALEXANDER,ROBERT", "ORGþ80001þ38341003^38341003", "ORGþ80002þ64176011^64176011", "ORGþ80003þ", "ORGþ80004þ", "ORGþ80005þ", "ORGþ80201þ3170207^2/7/17", "ORGþ80202þ10D^ICD-10-CM"],
+        "from": "CPRS",
+        "transactionId": "27e03123-4160-43af-9ceb-4301e15d7024",
+        "timestamp": "2017-02-07T20:07:47.659Z"
+    }, {
+        "name": "ORWU NPHASKEY",
+        "input": ["62", "PROVIDER"],
+        "runner": "rpcRunner",
+        "result": 1,
+        "from": "CPRS",
+        "transactionId": "95d599b7-dfa9-4b45-bb3f-cc5ad56a578d",
+        "timestamp": "2017-02-07T20:07:47.668Z"
+    }, {
+        "name": "ORWU NEWPERS",
+        "input": ["ALEXANDER,ROBERS~", "1", "PROVIDER"],
+        "runner": "rpcRunner",
+        "result": ["62^Alexander,Robert", "63^Smith,Mary"],
+        "from": "CPRS",
+        "transactionId": "751dfb6b-347c-4ecd-b39b-c88c40cab0ef",
+        "timestamp": "2017-02-07T20:07:47.675Z"
+    }, {
+        "name": "ORIMO ISCLOC",
+        "input": ["10"],
+        "runner": "rpcRunner",
+        "result": 1,
+        "from": "CPRS",
+        "transactionId": "9e33f171-8024-4642-9e51-e522ecf6779e",
+        "timestamp": "2017-02-07T20:07:47.682Z"
+    }, {
+        "name": "ORWU CLINLOC",
+        "input": ["CLINICC~", "1"],
+        "runner": "rpcRunner",
+        "result": ["6^CLINICX", "7^CLInicA", "8^CLInicB", "9^CLInicC", "10^CLInicD", "4^Clinic1", "5^Clinic2", "3^VISTA HEALTH CARE"],
+        "from": "CPRS",
+        "transactionId": "59f6012c-d704-464c-848a-0dbbe8b9450e",
+        "timestamp": "2017-02-07T20:07:47.690Z"
+    }, {
+        "name": "ORWCV POLL",
+        "input": ["25", "192.168.56.1", "000D03E4"],
+        "runner": "rpcRunner",
+        "result": [],
+        "from": "CPRS",
+        "transactionId": "5ad0afbb-a9cc-454f-9d9e-ef542eb06f72",
+        "timestamp": "2017-02-07T20:07:49.701Z"
+    }, {
+        "name": "ORWPCE ACTIVE CODE",
+        "input": ["R69.", "ICD", "3170207.200701"],
+        "runner": "rpcRunner",
+        "result": 1,
+        "from": "CPRS",
+        "transactionId": "dfe26cb3-265e-44b3-b028-919727dfabf6",
+        "timestamp": "2017-02-07T20:07:49.822Z"
+    }, {
+        "name": "ORWPCE ACTIVE CODE",
+        "input": ["38341003", "GMPX", "3170207.200701"],
+        "runner": "rpcRunner",
+        "result": 1,
+        "from": "CPRS",
+        "transactionId": "b35eb7f4-37d2-4747-ab6f-f28a41c78414",
+        "timestamp": "2017-02-07T20:07:49.830Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["2/7/17"],
+        "runner": "rpcRunner",
+        "result": 3170207,
+        "from": "CPRS",
+        "transactionId": "8a82f6a2-78af-4033-9435-4d11f0fb5979",
+        "timestamp": "2017-02-07T20:07:49.837Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["3/3/16"],
+        "runner": "rpcRunner",
+        "result": 3160303,
+        "from": "CPRS",
+        "transactionId": "44a275b3-960a-4248-a6bb-a55792e8de12",
+        "timestamp": "2017-02-07T20:07:49.843Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["3/3/16"],
+        "runner": "rpcRunner",
+        "result": 3160303,
+        "from": "CPRS",
+        "transactionId": "43ec0446-faae-4827-9e88-8406abf2e878",
+        "timestamp": "2017-02-07T20:07:49.849Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["NOW"],
+        "runner": "rpcRunner",
+        "result": 3170207.200749,
+        "from": "CPRS",
+        "transactionId": "a36354cc-e2a4-4347-b007-1f6c514b55ea",
+        "timestamp": "2017-02-07T20:07:49.856Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["Feb 07 2017"],
+        "runner": "rpcRunner",
+        "result": 3170207,
+        "from": "CPRS",
+        "transactionId": "70507362-5460-40d7-a906-19ddb62e7d0d",
+        "timestamp": "2017-02-07T20:07:49.863Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["Feb 07 2017"],
+        "runner": "rpcRunner",
+        "result": 3170207,
+        "from": "CPRS",
+        "transactionId": "60eb8b37-b0a7-4c12-87e9-cf79b1040750",
+        "timestamp": "2017-02-07T20:07:49.869Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["3/3/16"],
+        "runner": "rpcRunner",
+        "result": 3160303,
+        "from": "CPRS",
+        "transactionId": "0f7ff80f-ffc8-4d16-9d97-4a6b2c4aa6dc",
+        "timestamp": "2017-02-07T20:07:49.874Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["2/7/17"],
+        "runner": "rpcRunner",
+        "result": 3170207,
+        "from": "CPRS",
+        "transactionId": "a6cb87c9-68b1-4ce1-83fc-0257d481725f",
+        "timestamp": "2017-02-07T20:07:49.881Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["NOW"],
+        "runner": "rpcRunner",
+        "result": 3170207.200749,
+        "from": "CPRS",
+        "transactionId": "520fa1b0-a41a-4547-8fa7-6ce3e99d16ad",
+        "timestamp": "2017-02-07T20:07:49.887Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["3170207"],
+        "runner": "rpcRunner",
+        "result": 3170207,
+        "from": "CPRS",
+        "transactionId": "2059c606-3cb5-4fc3-ba70-59bcc2ac3fd4",
+        "timestamp": "2017-02-07T20:07:49.892Z"
+    }, {
+        "name": "ORQQPL EDIT SAVE",
+        "input": ["1", "62", "2957", "1", {
+            "1": "GMPFLD(.01)=\"521774^R69.\"",
+            "2": "GMPFLD(.03)=\"3170207^Feb 07 2017\"",
+            "3": "GMPFLD(.05)=\"1^Hypertension\"",
+            "4": "GMPFLD(.08)=\"3170207^2/7/17\"",
+            "5": "GMPFLD(.12)=\"A^ACTIVE\"",
+            "6": "GMPFLD(.13)=\"3160303^Mar 03 2016\"",
+            "7": "GMPFLD(1.01)=\"7647488^Hypertension\"",
+            "8": "GMPFLD(1.02)=\"P\"",
+            "9": "GMPFLD(1.03)=\"62^ALEXANDER,ROBERT\"",
+            "10": "GMPFLD(1.04)=\"62^ALEXANDER,ROBERT\"",
+            "11": "GMPFLD(1.05)=\"62^Alexander,Robert\"",
+            "12": "GMPFLD(1.06)=\"^\"",
+            "13": "GMPFLD(1.07)=\"^\"",
+            "14": "GMPFLD(1.08)=\"10^Clinicd\"",
+            "15": "GMPFLD(1.09)=\"3170207^Feb 07 2017\"",
+            "16": "GMPFLD(1.1)=\"^Unknown\"",
+            "17": "GMPFLD(1.11)=\"0^AGENT ORANGE\"",
+            "18": "GMPFLD(1.12)=\"^\"",
+            "19": "GMPFLD(1.13)=\"0^ENV CONTAMINANTS\"",
+            "20": "GMPFLD(1.14)=\"C^CHRONIC\"",
+            "21": "GMPFLD(1.15)=\"0^HEAD/NECK CANCER\"",
+            "22": "GMPFLD(1.16)=\"0^MIL SEXUAL TRAUMA\"",
+            "23": "GMPFLD(1.17)=\"0^COMBAT VET\"",
+            "24": "GMPFLD(1.18)=\"0^SHAD\"",
+            "25": "GMPFLD(1.19)=\"^\"",
+            "26": "GMPFLD(80001)=\"38341003^38341003\"",
+            "27": "GMPFLD(80002)=\"64176011^64176011\"",
+            "28": "GMPFLD(80101)=\"^\"",
+            "29": "GMPFLD(80102)=\"^\"",
+            "30": "GMPFLD(80201)=\"3170207^2/7/17\"",
+            "31": "GMPFLD(80202)=\"10D^ICD-10-CM\"",
+            "32": "GMPFLD(10,1)=\"1^1^a comment^A^Feb 07 2017^62\"",
+            "33": "GMPFLD(10,2)=\"2^1^an additional comment^A^Feb 07 2017^62\"",
+            "34": "GMPFLD(10,0)=\"2\"",
+            "35": "GMPORIG(.01)=\"521774^R69.\"",
+            "36": "GMPORIG(.03)=\"3170207^2/7/17\"",
+            "37": "GMPORIG(.05)=\"1^Hypertension\"",
+            "38": "GMPORIG(.08)=\"3170207^2/7/17\"",
+            "39": "GMPORIG(.12)=\"I^INACTIVE\"",
+            "40": "GMPORIG(.13)=\"3160303^3/3/16\"",
+            "41": "GMPORIG(1.01)=\"7647488^Hypertension\"",
+            "42": "GMPORIG(1.02)=\"P\"",
+            "43": "GMPORIG(1.05)=\"62^ALEXANDER,ROBERT\"",
+            "44": "GMPORIG(1.06)=\"\"",
+            "45": "GMPORIG(1.07)=\"3170207^2/7/17\"",
+            "46": "GMPORIG(1.08)=\"10^CLInicD\"",
+            "47": "GMPORIG(1.09)=\"3170207^2/7/17\"",
+            "48": "GMPORIG(1.1)=\"\"",
+            "49": "GMPORIG(1.11)=\"0^AGENT ORANGE\"",
+            "50": "GMPORIG(1.12)=\"\"",
+            "51": "GMPORIG(1.13)=\"0^ENV CONTAMINANTS\"",
+            "52": "GMPORIG(1.14)=\"C^CHRONIC\"",
+            "53": "GMPORIG(1.15)=\"0^HEAD/NECK CANCER\"",
+            "54": "GMPORIG(1.16)=\"0^MIL SEXUAL TRAUMA\"",
+            "55": "GMPORIG(1.17)=\"0^COMBAT VET\"",
+            "56": "GMPORIG(1.18)=\"0^SHAD\"",
+            "57": "GMPORIG(10,0)=\"2^\"",
+            "58": "GMPORIG(10,1)=\"1^1^a comment^A^3170207.200717^62^ALEXANDER,ROBERT\"",
+            "59": "GMPORIG(10,2)=\"2^1^an additional comment^A^3170207.200734^62^ALEXANDER,ROBERT\"",
+            "60": "GMPORIG(80001)=\"38341003^38341003\"",
+            "61": "GMPORIG(80002)=\"64176011^64176011\"",
+            "62": "GMPORIG(80003)=\"\"",
+            "63": "GMPORIG(80004)=\"\"",
+            "64": "GMPORIG(80005)=\"\"",
+            "65": "GMPORIG(80201)=\"3170207^2/7/17\"",
+            "66": "GMPORIG(80202)=\"10D^ICD-10-CM\""
+        }, ""],
+        "runner": "mvdmEmulated",
+        "result": 1,
+        "from": "CPRS",
+        "transactionId": "e191f0f1-f726-4d5e-97e3-6fe24da841ec",
+        "timestamp": "2017-02-07T20:07:50.052Z"
+    }, {
+        "name": "ORQQPL PROBLEM LIST",
+        "input": ["25", "B", "3170207.200701"],
+        "runner": "mvdmEmulated",
+        "result": [1, "1^A^Hypertension (SCT 38341003)^R69.^3160303^3170207^^^P^10;CLInicD^C^62;ALEXANDER,ROBERT^^C^1^3170207^^^^10D"],
+        "from": "CPRS",
+        "transactionId": "71448199-bbba-4ea8-89d9-6e1f1c1effd0",
+        "timestamp": "2017-02-07T20:07:50.193Z"
+    }, {
+        "name": "ORQQPL PROB COMMENTS",
+        "input": ["1"],
+        "runner": "rpcRunner",
+        "result": ["a comment", "an additional comment"],
+        "from": "CPRS",
+        "transactionId": "a1ace139-e2ca-422a-8cca-f396397111c2",
+        "timestamp": "2017-02-07T20:07:50.201Z"
+    }, {
+        "name": "ORQQPL PROBLEM LIST",
+        "input": ["25", "A", "3170207.200701"],
+        "runner": "mvdmEmulated",
+        "result": [1, "1^A^Hypertension (SCT 38341003)^R69.^3160303^3170207^^^P^10;CLInicD^C^62;ALEXANDER,ROBERT^^C^1^3170207^^^^10D"],
+        "from": "CPRS",
+        "transactionId": "623a9d12-140d-40ba-91b4-4f1a47d6f1af",
+        "timestamp": "2017-02-07T20:07:51.774Z"
+    }, {
+        "name": "ORQQPL PROB COMMENTS",
+        "input": ["1"],
+        "runner": "rpcRunner",
+        "result": ["a comment", "an additional comment"],
+        "from": "CPRS",
+        "transactionId": "56000fd1-c86a-4c3f-aff4-b4da42ee7710",
+        "timestamp": "2017-02-07T20:07:51.781Z"
+    }, {
+        "name": "ORWCV POLL",
+        "input": ["25", "192.168.56.1", "000D03E4"],
+        "runner": "rpcRunner",
+        "result": [],
+        "from": "CPRS",
+        "transactionId": "d25c36b0-93c1-4936-a707-f222155b62e4",
+        "timestamp": "2017-02-07T20:07:52.305Z"
+    }, {
+        "name": "ORWCV POLL",
+        "input": ["25", "192.168.56.1", "000D03E4"],
+        "runner": "rpcRunner",
+        "result": [],
+        "from": "CPRS",
+        "transactionId": "bc21c76f-aa8e-4fd0-858d-3389859696f4",
+        "timestamp": "2017-02-07T20:07:54.918Z"
+    }, {
+        "name": "ORQQPL EDIT LOAD",
+        "input": ["1"],
+        "runner": "rpcRunner",
+        "result": ["NEWþ.01þ521774^R69.", "NEWþ.03þ3170207^2/7/17", "NEWþ.05þ1^Hypertension", "NEWþ.08þ3170207^2/7/17", "NEWþ.12þA^ACTIVE", "NEWþ.13þ3160303^3/3/16", "NEWþ1.01þ7647488^Hypertension", "NEWþ1.02þP", "NEWþ1.05þ62^ALEXANDER,ROBERT", "NEWþ1.06þ", "NEWþ1.07þ3170207^2/7/17", "NEWþ1.08þ10^CLInicD", "NEWþ1.09þ3170207^2/7/17", "NEWþ1.1þ", "NEWþ1.11þ0^AGENT ORANGE", "NEWþ1.12þ", "NEWþ1.13þ0^ENV CONTAMINANTS", "NEWþ1.14þC^CHRONIC", "NEWþ1.15þ0^HEAD/NECK CANCER", "NEWþ1.16þ0^MIL SEXUAL TRAUMA", "NEWþ1.17þ0^COMBAT VET", "NEWþ1.18þ0^SHAD", "NEWþ10,0þ2^", "NEWþ10,1þ1^1^a comment^A^3170207.200717^62^ALEXANDER,ROBERT", "NEWþ10,2þ2^1^an additional comment^A^3170207.200734^62^ALEXANDER,ROBERT", "NEWþ80001þ38341003^38341003", "NEWþ80002þ64176011^64176011", "NEWþ80003þ", "NEWþ80004þ", "NEWþ80005þ", "NEWþ80201þ3170207^2/7/17", "NEWþ80202þ10D^ICD-10-CM", "ORGþ.01þ521774^R69.", "ORGþ.03þ3170207^2/7/17", "ORGþ.05þ1^Hypertension", "ORGþ.08þ3170207^2/7/17", "ORGþ.12þA^ACTIVE", "ORGþ.13þ3160303^3/3/16", "ORGþ1.01þ7647488^Hypertension", "ORGþ1.02þP", "ORGþ1.05þ62^ALEXANDER,ROBERT", "ORGþ1.06þ", "ORGþ1.07þ3170207^2/7/17", "ORGþ1.08þ10^CLInicD", "ORGþ1.09þ3170207^2/7/17", "ORGþ1.1þ", "ORGþ1.11þ0^AGENT ORANGE", "ORGþ1.12þ", "ORGþ1.13þ0^ENV CONTAMINANTS", "ORGþ1.14þC^CHRONIC", "ORGþ1.15þ0^HEAD/NECK CANCER", "ORGþ1.16þ0^MIL SEXUAL TRAUMA", "ORGþ1.17þ0^COMBAT VET", "ORGþ1.18þ0^SHAD", "ORGþ10,0þ2^", "ORGþ10,1þ1^1^a comment^A^3170207.200717^62^ALEXANDER,ROBERT", "ORGþ10,2þ2^1^an additional comment^A^3170207.200734^62^ALEXANDER,ROBERT", "ORGþ80001þ38341003^38341003", "ORGþ80002þ64176011^64176011", "ORGþ80003þ", "ORGþ80004þ", "ORGþ80005þ", "ORGþ80201þ3170207^2/7/17", "ORGþ80202þ10D^ICD-10-CM"],
+        "from": "CPRS",
+        "transactionId": "56d34373-d974-461f-b5b3-f40c6f7dbd04",
+        "timestamp": "2017-02-07T20:07:56.025Z"
+    }, {
+        "name": "ORWU NPHASKEY",
+        "input": ["62", "PROVIDER"],
+        "runner": "rpcRunner",
+        "result": 1,
+        "from": "CPRS",
+        "transactionId": "9f79e8f4-f2dd-4bfd-bcc0-7eb94df63fe7",
+        "timestamp": "2017-02-07T20:07:56.034Z"
+    }, {
+        "name": "ORWU NEWPERS",
+        "input": ["ALEXANDER,ROBERS~", "1", "PROVIDER"],
+        "runner": "rpcRunner",
+        "result": ["62^Alexander,Robert", "63^Smith,Mary"],
+        "from": "CPRS",
+        "transactionId": "78da7f7e-e036-47ce-a69a-6fb0a46f8a71",
+        "timestamp": "2017-02-07T20:07:56.041Z"
+    }, {
+        "name": "ORIMO ISCLOC",
+        "input": ["10"],
+        "runner": "rpcRunner",
+        "result": 1,
+        "from": "CPRS",
+        "transactionId": "0997643c-e1d2-4811-920c-cdbac3e263c0",
+        "timestamp": "2017-02-07T20:07:56.048Z"
+    }, {
+        "name": "ORWU CLINLOC",
+        "input": ["CLINICC~", "1"],
+        "runner": "rpcRunner",
+        "result": ["6^CLINICX", "7^CLInicA", "8^CLInicB", "9^CLInicC", "10^CLInicD", "4^Clinic1", "5^Clinic2", "3^VISTA HEALTH CARE"],
+        "from": "CPRS",
+        "transactionId": "f58cf5db-1643-47b2-a7ac-c87ad1b3f9ee",
+        "timestamp": "2017-02-07T20:07:56.056Z"
+    }, {
+        "name": "ORWCV POLL",
+        "input": ["25", "192.168.56.1", "000D03E4"],
+        "runner": "rpcRunner",
+        "result": [],
+        "from": "CPRS",
+        "transactionId": "86201dd1-c4ca-413e-9d80-60fbe703b79f",
+        "timestamp": "2017-02-07T20:07:57.529Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["2/7/17"],
+        "runner": "rpcRunner",
+        "result": 3170207,
+        "from": "CPRS",
+        "transactionId": "83202225-1ce7-4ef9-9a7b-2d52a12e9d5a",
+        "timestamp": "2017-02-07T20:07:58.022Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["2/7/17"],
+        "runner": "rpcRunner",
+        "result": 3170207,
+        "from": "CPRS",
+        "transactionId": "0f1c44e1-382a-423b-9abf-75dce5ad9897",
+        "timestamp": "2017-02-07T20:07:58.027Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["3/3/16"],
+        "runner": "rpcRunner",
+        "result": 3160303,
+        "from": "CPRS",
+        "transactionId": "7319b377-726e-419e-8641-87479f5348c9",
+        "timestamp": "2017-02-07T20:07:58.033Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["3/3/16"],
+        "runner": "rpcRunner",
+        "result": 3160303,
+        "from": "CPRS",
+        "transactionId": "e9522424-be4d-4e58-b566-cc5347e3d3f8",
+        "timestamp": "2017-02-07T20:07:58.038Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["NOW"],
+        "runner": "rpcRunner",
+        "result": 3170207.200758,
+        "from": "CPRS",
+        "transactionId": "158b06e1-78ff-461f-97a8-083268e63592",
+        "timestamp": "2017-02-07T20:07:58.046Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["Feb 07 2017"],
+        "runner": "rpcRunner",
+        "result": 3170207,
+        "from": "CPRS",
+        "transactionId": "695467be-d6f5-4a60-a47f-27316603e598",
+        "timestamp": "2017-02-07T20:07:58.052Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["Feb 07 2017"],
+        "runner": "rpcRunner",
+        "result": 3170207,
+        "from": "CPRS",
+        "transactionId": "77ecf26a-fc50-4346-8896-b8b0d63bcebb",
+        "timestamp": "2017-02-07T20:07:58.058Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["3/3/16"],
+        "runner": "rpcRunner",
+        "result": 3160303,
+        "from": "CPRS",
+        "transactionId": "d8ea2824-e99f-48c4-84f7-42d8d23c700b",
+        "timestamp": "2017-02-07T20:07:58.064Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["2/7/17"],
+        "runner": "rpcRunner",
+        "result": 3170207,
+        "from": "CPRS",
+        "transactionId": "c6a63d26-5beb-46f7-a5fe-a989d19c30f7",
+        "timestamp": "2017-02-07T20:07:58.069Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["2/7/17"],
+        "runner": "rpcRunner",
+        "result": 3170207,
+        "from": "CPRS",
+        "transactionId": "25385fcb-9c1e-40dc-b107-2aeb50140d8b",
+        "timestamp": "2017-02-07T20:07:58.075Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["2/7/17"],
+        "runner": "rpcRunner",
+        "result": 3170207,
+        "from": "CPRS",
+        "transactionId": "9c46e280-0eca-471e-b280-045da461f77e",
+        "timestamp": "2017-02-07T20:07:58.080Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["NOW"],
+        "runner": "rpcRunner",
+        "result": 3170207.200758,
+        "from": "CPRS",
+        "transactionId": "a3240986-3a0c-4dd1-86a1-14d3a6b98916",
+        "timestamp": "2017-02-07T20:07:58.088Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["NOW"],
+        "runner": "rpcRunner",
+        "result": 3170207.200758,
+        "from": "CPRS",
+        "transactionId": "921dc899-a54e-47e6-9228-0808bb2e2910",
+        "timestamp": "2017-02-07T20:07:58.093Z"
+    }, {
+        "name": "ORQQPL DELETE",
+        "input": ["1", "62", "2957", "an additional comment"],
+        "runner": "mvdmEmulated",
+        "result": 1,
+        "from": "CPRS",
+        "transactionId": "403ed938-b1dc-436e-a5a2-ceef83f5dec3",
+        "timestamp": "2017-02-07T20:07:58.300Z"
+    }, {
+        "name": "ORQQPL PROBLEM LIST",
+        "input": ["25", "A", "3170207.200701"],
+        "runner": "mvdmEmulated",
+        "result": [0],
+        "from": "CPRS",
+        "transactionId": "e5fd5016-e529-4821-b3be-3b267c5e124d",
+        "timestamp": "2017-02-07T20:07:58.362Z"
+    }, {
+        "name": "ORQQPL PROBLEM LIST",
+        "input": ["25", "R", "3170207.200701"],
+        "runner": "mvdmEmulated",
+        "result": [1, "1^A^Hypertension (SCT 38341003)^R69.^3160303^3170207^^^H^10;CLInicD^C^62;ALEXANDER,ROBERT^^C^1^3170207^^^^10D"],
+        "from": "CPRS",
+        "transactionId": "360425f3-d5a3-4a21-98a6-caec71ab0f82",
+        "timestamp": "2017-02-07T20:07:59.571Z"
+    }, {
+        "name": "ORQQPL PROB COMMENTS",
+        "input": ["1"],
+        "runner": "rpcRunner",
+        "result": ["a comment", "an additional comment"],
+        "from": "CPRS",
+        "transactionId": "a584fd51-e1f9-439a-803b-8d3b59f9a039",
+        "timestamp": "2017-02-07T20:07:59.580Z"
+    }, {
+        "name": "ORWCV POLL",
+        "input": ["25", "192.168.56.1", "000D03E4"],
+        "runner": "rpcRunner",
+        "result": [],
+        "from": "CPRS",
+        "transactionId": "8ac8db87-1248-4646-8fb9-7a0c844e57cd",
+        "timestamp": "2017-02-07T20:08:00.139Z"
+    }, {
+        "name": "ORQQPL EDIT LOAD",
+        "input": ["1"],
+        "runner": "rpcRunner",
+        "result": ["NEWþ.01þ521774^R69.", "NEWþ.03þ3170207^2/7/17", "NEWþ.05þ1^Hypertension", "NEWþ.08þ3170207^2/7/17", "NEWþ.12þA^ACTIVE", "NEWþ.13þ3160303^3/3/16", "NEWþ1.01þ7647488^Hypertension", "NEWþ1.02þH", "NEWþ1.05þ62^ALEXANDER,ROBERT", "NEWþ1.06þ", "NEWþ1.07þ3170207^2/7/17", "NEWþ1.08þ10^CLInicD", "NEWþ1.09þ3170207^2/7/17", "NEWþ1.1þ", "NEWþ1.11þ0^AGENT ORANGE", "NEWþ1.12þ", "NEWþ1.13þ0^ENV CONTAMINANTS", "NEWþ1.14þC^CHRONIC", "NEWþ1.15þ0^HEAD/NECK CANCER", "NEWþ1.16þ0^MIL SEXUAL TRAUMA", "NEWþ1.17þ0^COMBAT VET", "NEWþ1.18þ0^SHAD", "NEWþ10,0þ2^", "NEWþ10,1þ1^1^a comment^A^3170207.200717^62^ALEXANDER,ROBERT", "NEWþ10,2þ2^1^an additional comment^A^3170207.200734^62^ALEXANDER,ROBERT", "NEWþ80001þ38341003^38341003", "NEWþ80002þ64176011^64176011", "NEWþ80003þ", "NEWþ80004þ", "NEWþ80005þ", "NEWþ80201þ3170207^2/7/17", "NEWþ80202þ10D^ICD-10-CM", "ORGþ.01þ521774^R69.", "ORGþ.03þ3170207^2/7/17", "ORGþ.05þ1^Hypertension", "ORGþ.08þ3170207^2/7/17", "ORGþ.12þA^ACTIVE", "ORGþ.13þ3160303^3/3/16", "ORGþ1.01þ7647488^Hypertension", "ORGþ1.02þH", "ORGþ1.05þ62^ALEXANDER,ROBERT", "ORGþ1.06þ", "ORGþ1.07þ3170207^2/7/17", "ORGþ1.08þ10^CLInicD", "ORGþ1.09þ3170207^2/7/17", "ORGþ1.1þ", "ORGþ1.11þ0^AGENT ORANGE", "ORGþ1.12þ", "ORGþ1.13þ0^ENV CONTAMINANTS", "ORGþ1.14þC^CHRONIC", "ORGþ1.15þ0^HEAD/NECK CANCER", "ORGþ1.16þ0^MIL SEXUAL TRAUMA", "ORGþ1.17þ0^COMBAT VET", "ORGþ1.18þ0^SHAD", "ORGþ10,0þ2^", "ORGþ10,1þ1^1^a comment^A^3170207.200717^62^ALEXANDER,ROBERT", "ORGþ10,2þ2^1^an additional comment^A^3170207.200734^62^ALEXANDER,ROBERT", "ORGþ80001þ38341003^38341003", "ORGþ80002þ64176011^64176011", "ORGþ80003þ", "ORGþ80004þ", "ORGþ80005þ", "ORGþ80201þ3170207^2/7/17", "ORGþ80202þ10D^ICD-10-CM"],
+        "from": "CPRS",
+        "transactionId": "90904e73-8220-4338-9c8c-8607da41c56c",
+        "timestamp": "2017-02-07T20:08:02.410Z"
+    }, {
+        "name": "ORWPCE ACTIVE CODE",
+        "input": ["R69.", "ICD", "3170207.200701"],
+        "runner": "rpcRunner",
+        "result": 1,
+        "from": "CPRS",
+        "transactionId": "d5ccf374-ecda-4073-8eee-cac6326e08bf",
+        "timestamp": "2017-02-07T20:08:02.419Z"
+    }, {
+        "name": "ORQQPL REPLACE",
+        "input": ["1"],
+        "runner": "mvdmEmulated",
+        "result": 1,
+        "from": "CPRS",
+        "transactionId": "5201e99c-a72f-4881-95a5-a321c4933876",
+        "timestamp": "2017-02-07T20:08:02.577Z"
+    }, {
+        "name": "ORQQPL PROBLEM LIST",
+        "input": ["25", "R", "3170207.200701"],
+        "runner": "mvdmEmulated",
+        "result": [0],
+        "from": "CPRS",
+        "transactionId": "84c83431-eacd-4c9c-bb43-ff31601a65a7",
+        "timestamp": "2017-02-07T20:08:02.647Z"
+    }, {
+        "name": "ORWCV POLL",
+        "input": ["25", "192.168.56.1", "000D03E4"],
+        "runner": "rpcRunner",
+        "result": [],
+        "from": "CPRS",
+        "transactionId": "bda9e845-7e8e-4b22-9066-2dd1ed0a2d10",
+        "timestamp": "2017-02-07T20:08:02.747Z"
+    }, {
+        "name": "ORQQPL PROBLEM LIST",
+        "input": ["25", "I", "3170207.200701"],
+        "runner": "mvdmEmulated",
+        "result": [0],
+        "from": "CPRS",
+        "transactionId": "402384e8-3294-4bb2-bc61-cdbf360bff58",
+        "timestamp": "2017-02-07T20:08:04.005Z"
+    }, {
+        "name": "ORQQPL PROBLEM LIST",
+        "input": ["25", "A", "3170207.200701"],
+        "runner": "mvdmEmulated",
+        "result": [1, "1^A^Hypertension (SCT 38341003)^R69.^3160303^3170207^^^P^10;CLInicD^C^62;ALEXANDER,ROBERT^^C^1^3170207^^^^10D"],
+        "from": "CPRS",
+        "transactionId": "aafe6a01-3567-4487-ad06-702e0bdb8e2f",
+        "timestamp": "2017-02-07T20:08:04.815Z"
+    }, {
+        "name": "ORQQPL PROB COMMENTS",
+        "input": ["1"],
+        "runner": "rpcRunner",
+        "result": ["a comment", "an additional comment"],
+        "from": "CPRS",
+        "transactionId": "227f4829-91e4-4dc9-a8fb-4f9f461614f1",
+        "timestamp": "2017-02-07T20:08:04.822Z"
+    }, {
+        "name": "ORWCV POLL",
+        "input": ["25", "192.168.56.1", "000D03E4"],
+        "runner": "rpcRunner",
+        "result": [],
+        "from": "CPRS",
+        "transactionId": "7bf8d1a2-d2ae-483d-ab58-fb6d71858724",
+        "timestamp": "2017-02-07T20:08:05.342Z"
+    }, {
+        "name": "ORQQPL DETAIL",
+        "input": ["25^3170207.200701", "1", ""],
+        "runner": "mvdmEmulated",
+        "result": ["Hypertension (SCT 38341003)", "         SNOMED-CT: Hypertensive disorder", " Primary ICD-10-CM: R69.   [ILLNESS, UNSPECIFIED]", " ", "        Onset: 2/7/17", "       Status: ACTIVE/CHRONIC", "      SC Cond: UNKNOWN", "     Exposure: None", " ", "     Provider: ALEXANDER,ROBERT", "       Clinic: CLInicD", " ", "     Recorded: 2/7/17, by ALEXANDER,ROBERT", "      Entered: 2/7/17, by ALEXANDER,ROBERT", "      Updated: 2/7/17", "----------- Comments -----------", "2/7/17 by ALEXANDER,ROBERT: an additional comment", "2/7/17 by ALEXANDER,ROBERT: a comment", "----------- Audit History -----------", "2/7/17: PROBLEM placed back on list by ALEXANDER,ROBERT", "2/7/17: PROBLEM removed by ALEXANDER,ROBERT", "2/7/17: STATUS changed by ALEXANDER,ROBERT from INACTIVE to ACTIVE", "2/7/17: DATE RESOLVED added by ALEXANDER,ROBERT from  to 2/7/17", "2/7/17: STATUS changed by ALEXANDER,ROBERT from ACTIVE to INACTIVE", "2/7/17: IMMEDIACY added by ALEXANDER,ROBERT from UNSPECIFIED to CHRONIC", "2/7/17: DATE OF ONSET added by ALEXANDER,ROBERT from  to 3/3/16"],
+        "from": "CPRS",
+        "transactionId": "fb3af5e3-4bb1-45ee-b76c-a271710f2259",
+        "timestamp": "2017-02-07T20:08:06.489Z"
+    }, {
+        "name": "ORWCV POLL",
+        "input": ["25", "192.168.56.1", "000D03E4"],
+        "runner": "rpcRunner",
+        "result": [],
+        "from": "CPRS",
+        "transactionId": "6d953dfa-e562-4c40-869e-7617c31e5115",
+        "timestamp": "2017-02-07T20:08:07.953Z"
+    }, {
+        "name": "ORWCV POLL",
+        "input": ["25", "192.168.56.1", "000D03E4"],
+        "runner": "rpcRunner",
+        "result": [],
+        "from": "CPRS",
+        "transactionId": "725c55ab-ae5e-4573-845a-54b6d47541a1",
+        "timestamp": "2017-02-07T20:08:10.564Z"
+    }, {
+        "name": "ORWCV POLL",
+        "input": ["25", "192.168.56.1", "000D03E4"],
+        "runner": "rpcRunner",
+        "result": [],
+        "from": "CPRS",
+        "transactionId": "fafc333e-7f58-48d9-a300-d7f36715496f",
+        "timestamp": "2017-02-07T20:08:13.173Z"
+    }, {
+        "name": "ORQQPL LIST",
+        "input": ["25^3170207.200701", "A"],
+        "runner": "rpcRunner",
+        "result": ["1^Hypertension (SCT 38341003)^A^R69.^3160303^3170207^^^^^^ORQQPL DETAIL^^38341003^64176011^10D^"],
+        "from": "CPRS",
+        "transactionId": "1482052e-c05f-40b9-b784-10b19b419fa3",
+        "timestamp": "2017-02-07T20:08:14.536Z"
+    }, {
+        "name": "ORWCV POLL",
+        "input": ["25", "192.168.56.1", "000D03E4"],
+        "runner": "rpcRunner",
+        "result": [],
+        "from": "CPRS",
+        "transactionId": "dbccf455-a0ad-4e04-82e1-8b4c580548d8",
+        "timestamp": "2017-02-07T20:08:15.790Z"
+    }, {
+        "name": "ORWCV POLL",
+        "input": ["25", "192.168.56.1", "000D03E4"],
+        "runner": "rpcRunner",
+        "result": [],
+        "from": "CPRS",
+        "transactionId": "e07daede-a650-4b1e-99d3-694e4eceb678",
+        "timestamp": "2017-02-07T20:08:18.401Z"
+    }, {
+        "name": "ORWCV POLL",
+        "input": ["25", "192.168.56.1", "000D03E4"],
+        "runner": "rpcRunner",
+        "result": [],
+        "from": "CPRS",
+        "transactionId": "6deab68e-255a-4c98-8203-71322ceec3a3",
+        "timestamp": "2017-02-07T20:08:21.012Z"
+    }
+]

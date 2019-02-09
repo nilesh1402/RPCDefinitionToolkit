@@ -1,0 +1,9 @@
+{
+    "ORIMO": "ORDER",
+    "ORK": "ORDER",
+    "ORPRF": "PATIENT",
+    "ORQPT": "PATIENT",
+    "ORQQCN": "CONSULT",
+    "ORQQCN2": "CONSULT",
+    "ORQQVS": "VISIT"
+}

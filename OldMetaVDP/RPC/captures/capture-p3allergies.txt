@@ -1,0 +1,1018 @@
+[
+{
+  "name": "ORWDX LOCK",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\nORWDX LOCK5000225f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:00:07.290Z"
+},
+{
+  "name": "ORWDAL32 DEF",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWDAL32 DEF54f\u0004",
+  "response": "\u0000\u0000~Allergy Types\r\niD^Drug\r\niF^Food\r\niO^Other\r\niDF^Drug,Food\r\niDO^Drug,Other\r\niFO^Food,Other\r\niDFO^Drug,Food,Other\r\n~Reactions\r\niD^Drug\r\niF^Food\r\niO^Other\r\niDF^Drug,Food\r\niDO^Drug,Other\r\niFO^Food,Other\r\niDFO^Drug,Food,Other\r\n~Nature of Reaction\r\niA^Allergy\r\niP^Pharmacological\r\niU^Unknown\r\n~Top Ten\r\ni15^CONFUSION\r\ni2^ITCHING,WATERING EYES\r\ni99^HYPOTENSION\r\ni66^DROWSINESS\r\ni51^CHEST PAIN\r\ni9^DIARRHEA\r\ni1^HIVES\r\ni67^DRY MOUTH\r\ni52^CHILLS\r\ni133^RASH\r\n~Observ/Hist\r\nio^Observed\r\nih^Historical\r\n~Severity\r\ni3^Severe\r\ni2^Moderate\r\ni1^Mild\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:00:07.405Z"
+},
+{
+  "name": "ORWDAL32 SYMPTOMS",
+  "version": "0",
+  "args": [
+    "",
+    "1"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0011ORWDAL32 SYMPTOMS50000f00011f\u0004",
+  "response": "\u0000\u0000470^A FIB-FLUTTER\t<ATRIAL FIBRILLATION-FLUTTER>^ATRIAL FIBRILLATION-FLUTTER\r\n164^ABDOMINAL BLOATING\r\n165^ABDOMINAL CRAMPS\r\n166^ABDOMINAL DISCOMFORT\r\n167^ABDOMINAL PAIN\r\n168^ABNORMAL ECG\r\n471^ABNORMAL ECG\t<ECG ABNORMALITY>^ECG ABNORMALITY\r\n471^ABNORMAL EKG\t<ECG ABNORMALITY>^ECG ABNORMALITY\r\n574^ABNORMAL MENTAL STATE\t<MENTAL HEALTH IMPAIRMENT>^MENTAL HEALTH IMPAIRMENT\r\n169^ABNORMAL SEXUAL FUNCTION\r\n528^ABNORMAL VISION\r\n170^ABSCESS\r\n171^ACIDOSIS\r\n172^ACNE\r\n173^ACUTE INTERSTITIAL NEPHRITIS\r\n174^ACUTE RENAL FAILURE SYNDROME\r\n175^ACUTE RENAL IMPAIRMENT\r\n175^ACUTE RENAL INSUFFICIENCY\t<ACUTE RENAL IMPAIRMENT>^ACUTE RENAL IMPAIRMENT\r\n176^ACUTE RESPIRATORY DISTRESS\r\n177^ACUTE TUBULAR NECROSIS\r\n425^ACUTE UPPER AIRWAY OBSTRUCTION\t<UPPER AIRWAY OBSTRUCTION>^UPPER AIRWAY OBSTRUCTION\r\n569^ADRENAL INSUFFICIENCY\r\n470^AFIB-FLUTTER\t<ATRIAL FIBRILLATION-FLUTTER>^ATRIAL FIBRILLATION-FLUTTER\r\n178^AGGRESSION\t<AGGRESSIVE BEHAVIOR>^AGGRESSIVE BEHAVIOR\r\n178^AGGRESSIVE BEHAVIOR\r\n36^AGITATION\r\n265^AGITATION\t<FEELING AGITATED>^FEELING AGITATED\r\n37^AGRANULOCYTOSIS\r\n173^AIN\t<ACUTE INTERSTITIAL NEPHRITIS>^ACUTE INTERSTITIAL NEPHRITIS\r\n498^AION\t<ISCHEMIC OPTIC NEUROPATHY>^ISCHEMIC OPTIC NEUROPATHY\r\n529^AIRWAY CONSTRICTION\r\n425^AIRWAY OBSTRUCTION\t<UPPER AIRWAY OBSTRUCTION>^UPPER AIRWAY OBSTRUCTION\r\n179^AKATHISIA\r\n180^AKINESIA\r\n473^ALK PHOS ELEVATED\t<INCREASED ALKALINE PHOSPHATASE>^INCREASED ALKALINE PHOSPHATASE\r\n473^ALK PHOS INCREASED\t<INCREASED ALKALINE PHOSPHATASE>^INCREASED ALKALINE PHOSPHATASE\r\n473^ALK, ELEVATED\t<INCREASED ALKALINE PHOSPHATASE>^INCREASED ALKALINE PHOSPHATASE\r\n181^ALKALINE PHOSPHATASE RAISED\r\n473^ALKALINE PHOSPHATASE RAISED\t<INCREASED ALKALINE PHOSPHATASE>^INCREASED ALKALINE PHOSPHATASE\r\n547^ALLERGIC PNEUMONITIS\r\n455^ALLERGIC RHINITIS\r\n7^ALOPECIA\r\n474^ALT (SGPT) ELEVATED\t<INCREASED SERUM ALT (SGPT)>^INCREASED SERUM ALT (SGPT)\r\n182^ALT (SGPT) LEVEL ABNORMAL\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:00:07.546Z"
+},
+{
+  "name": "ORWU NEWPERS",
+  "version": "0",
+  "args": [
+    "ALEXANDER,ROBERS~",
+    "1"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWU NEWPERS50017ALEXANDER,ROBERS~f00011f\u0004",
+  "response": "\u0000\u000062^Alexander,Robert\r\n64^Clerk,Joe\r\n61^Manager,System\r\n.5^Postmaster\r\n63^Smith,Mary\r\n17^User,Seventeen\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:00:07.559Z"
+},
+{
+  "name": "ORQQAL LIST",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "mvdmEmulated",
+  "rpc": "[XWB]11302\u00010\u000bORQQAL LIST5000225f\u0004",
+  "response": "\u0000\u0000^No Allergy Assessment\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:00:07.627Z"
+},
+{
+  "name": "ORWU DT",
+  "version": "0",
+  "args": [
+    "NOW"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0007ORWU DT50003NOWf\u0004",
+  "response": "\u0000\u00003170208.050007\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:00:07.635Z"
+},
+{
+  "name": "ORWU DT",
+  "version": "0",
+  "args": [
+    "NOW"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0007ORWU DT50003NOWf\u0004",
+  "response": "\u0000\u00003170208.050007\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:00:07.645Z"
+},
+{
+  "name": "ORWDAL32 ALLERGY MATCH",
+  "version": "0",
+  "args": [
+    "CHOCOLATE"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0016ORWDAL32 ALLERGY MATCH50009CHOCOLATEf\u0004",
+  "response": "\u0000\u00001^VA Allergies File^^^TOP^+\r\n3^CHOCOLATE^GMRD(120.82,\"B\")^DF^1\r\n3^CHOCOLATE <CHOCOLATES>^GMRD(120.82,\"D\")^DF^1\r\n3^National Drug File - Generic Drug Name^^^TOP^+\r\n4^National Drug file - Trade Name^^^TOP^+\r\n3811^CHOCOLATE LAXATIVE^PSNDF(50.67,\"T\")^D^4\r\n5^Local Drug File^^^TOP^+\r\n7^Drug Ingredients File^^^TOP^+\r\n2014^CHOCOLATE FLAVORING^PS(50.416,\"P\")^D^7\r\n8^VA Drug Class File^^^TOP^+\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:00:15.388Z"
+},
+{
+  "name": "ORWU DT",
+  "version": "0",
+  "args": [
+    "NOW"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0007ORWU DT50003NOWf\u0004",
+  "response": "\u0000\u00003170208.05002\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:00:20.300Z"
+},
+{
+  "name": "ORWU DT",
+  "version": "0",
+  "args": [
+    "NOW"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0007ORWU DT50003NOWf\u0004",
+  "response": "\u0000\u00003170208.05002\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:00:20.309Z"
+},
+{
+  "name": "ORWU DT",
+  "version": "0",
+  "args": [
+    "NOW"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0007ORWU DT50003NOWf\u0004",
+  "response": "\u0000\u00003170208.05002\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:00:20.316Z"
+},
+{
+  "name": "ORWDX UNLOCK",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWDX UNLOCK5000225f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:00:20.356Z"
+},
+{
+  "name": "ORWU DT",
+  "version": "0",
+  "args": [
+    "NOW"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0007ORWU DT50003NOWf\u0004",
+  "response": "\u0000\u00003170208.050027\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:00:27.103Z"
+},
+{
+  "name": "ORWU DT",
+  "version": "0",
+  "args": [
+    "NOW"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0007ORWU DT50003NOWf\u0004",
+  "response": "\u0000\u00003170208.050031\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:00:31.924Z"
+},
+{
+  "name": "ORWU DT",
+  "version": "0",
+  "args": [
+    "NOW"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0007ORWU DT50003NOWf\u0004",
+  "response": "\u0000\u00003170208.050035\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:00:35.593Z"
+},
+{
+  "name": "ORWU VALDT",
+  "version": "0",
+  "args": [
+    "Feb 8,2017@05:00",
+    "TS"
+  ],
+  "to": "mvdmEmulated",
+  "rpc": "[XWB]11302\u00010\nORWU VALDT50016Feb 8,2017@05:00f0002TSf\u0004",
+  "response": "\u0000\u00003170208.050000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:00:40.550Z"
+},
+{
+  "name": "ORWU DT",
+  "version": "0",
+  "args": [
+    "NOW"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0007ORWU DT50003NOWf\u0004",
+  "response": "\u0000\u00003170208.05004\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:00:40.557Z"
+},
+{
+  "name": "ORWDAL32 SAVE ALLERGY",
+  "version": "0",
+  "args": [
+    "0",
+    "25",
+    {
+      "GMRAGNT": "CHOCOLATE^3;GMRD(120.82,",
+      "GMRATYPE": "DF^Drug,Food",
+      "GMRANATR": "A^Allergy",
+      "GMRAORIG": "62",
+      "GMRAORDT": "3170208.05",
+      "GMRASYMP": [
+        "66^DROWSINESS^^^"
+      ],
+      "GMRACHT": [
+        "3170208.050035"
+      ],
+      "GMRAOBHX": "h^HISTORICAL"
+    }
+  ],
+  "to": "mvdmEmulated",
+  "rpc": "[XWB]11302\u00010\u0015ORWDAL32 SAVE ALLERGY500010f000225f2009\"GMRAGNT\"024CHOCOLATE^3;GMRD(120.82,t010\"GMRATYPE\"012DF^Drug,Foodt010\"GMRANATR\"009A^Allergyt010\"GMRAORIG\"00262t010\"GMRAORDT\"0103170208.05t012\"GMRASYMP\",00011t012\"GMRASYMP\",101666^DROWSINESS^^^t011\"GMRACHT\",00011t011\"GMRACHT\",10143170208.050035t010\"GMRAOBHX\"012h^HISTORICALf\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:00:40.773Z"
+},
+{
+  "name": "ORQQPP LIST",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000bORQQPP LIST5000225f\u0004",
+  "response": "\u0000\u0000^ALLERGIES^\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:00:40.782Z"
+},
+{
+  "name": "ORQQAL LIST",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "mvdmEmulated",
+  "rpc": "[XWB]11302\u00010\u000bORQQAL LIST5000225f\u0004",
+  "response": "\u0000\u00001^CHOCOLATE^^DROWSINESS\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:00:40.847Z"
+},
+{
+  "name": "ORWPT CWAD",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\nORWPT CWAD5000225f\u0004",
+  "response": "\u0000\u0000A\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:00:40.855Z"
+},
+{
+  "name": "ORWPS ACTIVE",
+  "version": "0",
+  "args": [
+    "25",
+    "62",
+    "0",
+    "1"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWPS ACTIVE5000225f000262f00010f00011f\u0004",
+  "response": "\u0000\u00001^\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:00:40.864Z"
+},
+{
+  "name": "ORWPT CWAD",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\nORWPT CWAD5000225f\u0004",
+  "response": "\u0000\u0000A\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:00:40.871Z"
+},
+{
+  "name": "ORWDX UNLOCK",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWDX UNLOCK5000225f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:00:40.880Z"
+},
+{
+  "name": "ORQQAL LIST",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "mvdmEmulated",
+  "rpc": "[XWB]11302\u00010\u000bORQQAL LIST5000225f\u0004",
+  "response": "\u0000\u00001^CHOCOLATE^^DROWSINESS\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:00:40.949Z"
+},
+{
+  "name": "ORWPT CWAD",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\nORWPT CWAD5000225f\u0004",
+  "response": "\u0000\u0000A\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:00:40.956Z"
+},
+{
+  "name": "ORQQAL DETAIL",
+  "version": "0",
+  "args": [
+    "25",
+    "1",
+    "1"
+  ],
+  "to": "mvdmEmulated",
+  "rpc": "[XWB]11302\u00010\rORQQAL DETAIL5000225f00011f00011f\u0004",
+  "response": "\u0000\u0000    Causative agent: CHOCOLATE\r\n Nature of Reaction: Allergy\r\n \r\n     Signs/symptoms: DROWSINESS\r\n \r\n         Originator: ALEXANDER,ROBERT\r\n         Originated: Invalid date\r\n           Verified: <auto-verified>\r\nObserved/Historical: Historical\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:00:57.646Z"
+},
+{
+  "name": "ORWDAL32 CLINUSER",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0011ORWDAL32 CLINUSER54f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:00:57.681Z"
+},
+{
+  "name": "ORQQAL DETAIL",
+  "version": "0",
+  "args": [
+    "25",
+    "1",
+    "1"
+  ],
+  "to": "mvdmEmulated",
+  "rpc": "[XWB]11302\u00010\rORQQAL DETAIL5000225f00011f00011f\u0004",
+  "response": "\u0000\u0000    Causative agent: CHOCOLATE\r\n Nature of Reaction: Allergy\r\n \r\n     Signs/symptoms: DROWSINESS\r\n \r\n         Originator: ALEXANDER,ROBERT\r\n         Originated: Invalid date\r\n           Verified: <auto-verified>\r\nObserved/Historical: Historical\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:01:21.801Z"
+},
+{
+  "name": "ORWDX LOCK",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\nORWDX LOCK5000225f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:01:23.461Z"
+},
+{
+  "name": "ORWDAL32 DEF",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWDAL32 DEF54f\u0004",
+  "response": "\u0000\u0000~Allergy Types\r\niD^Drug\r\niF^Food\r\niO^Other\r\niDF^Drug,Food\r\niDO^Drug,Other\r\niFO^Food,Other\r\niDFO^Drug,Food,Other\r\n~Reactions\r\niD^Drug\r\niF^Food\r\niO^Other\r\niDF^Drug,Food\r\niDO^Drug,Other\r\niFO^Food,Other\r\niDFO^Drug,Food,Other\r\n~Nature of Reaction\r\niA^Allergy\r\niP^Pharmacological\r\niU^Unknown\r\n~Top Ten\r\ni15^CONFUSION\r\ni2^ITCHING,WATERING EYES\r\ni99^HYPOTENSION\r\ni66^DROWSINESS\r\ni51^CHEST PAIN\r\ni9^DIARRHEA\r\ni1^HIVES\r\ni67^DRY MOUTH\r\ni52^CHILLS\r\ni133^RASH\r\n~Observ/Hist\r\nio^Observed\r\nih^Historical\r\n~Severity\r\ni3^Severe\r\ni2^Moderate\r\ni1^Mild\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:01:23.554Z"
+},
+{
+  "name": "ORWDAL32 SYMPTOMS",
+  "version": "0",
+  "args": [
+    "",
+    "1"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0011ORWDAL32 SYMPTOMS50000f00011f\u0004",
+  "response": "\u0000\u0000470^A FIB-FLUTTER\t<ATRIAL FIBRILLATION-FLUTTER>^ATRIAL FIBRILLATION-FLUTTER\r\n164^ABDOMINAL BLOATING\r\n165^ABDOMINAL CRAMPS\r\n166^ABDOMINAL DISCOMFORT\r\n167^ABDOMINAL PAIN\r\n168^ABNORMAL ECG\r\n471^ABNORMAL ECG\t<ECG ABNORMALITY>^ECG ABNORMALITY\r\n471^ABNORMAL EKG\t<ECG ABNORMALITY>^ECG ABNORMALITY\r\n574^ABNORMAL MENTAL STATE\t<MENTAL HEALTH IMPAIRMENT>^MENTAL HEALTH IMPAIRMENT\r\n169^ABNORMAL SEXUAL FUNCTION\r\n528^ABNORMAL VISION\r\n170^ABSCESS\r\n171^ACIDOSIS\r\n172^ACNE\r\n173^ACUTE INTERSTITIAL NEPHRITIS\r\n174^ACUTE RENAL FAILURE SYNDROME\r\n175^ACUTE RENAL IMPAIRMENT\r\n175^ACUTE RENAL INSUFFICIENCY\t<ACUTE RENAL IMPAIRMENT>^ACUTE RENAL IMPAIRMENT\r\n176^ACUTE RESPIRATORY DISTRESS\r\n177^ACUTE TUBULAR NECROSIS\r\n425^ACUTE UPPER AIRWAY OBSTRUCTION\t<UPPER AIRWAY OBSTRUCTION>^UPPER AIRWAY OBSTRUCTION\r\n569^ADRENAL INSUFFICIENCY\r\n470^AFIB-FLUTTER\t<ATRIAL FIBRILLATION-FLUTTER>^ATRIAL FIBRILLATION-FLUTTER\r\n178^AGGRESSION\t<AGGRESSIVE BEHAVIOR>^AGGRESSIVE BEHAVIOR\r\n178^AGGRESSIVE BEHAVIOR\r\n36^AGITATION\r\n265^AGITATION\t<FEELING AGITATED>^FEELING AGITATED\r\n37^AGRANULOCYTOSIS\r\n173^AIN\t<ACUTE INTERSTITIAL NEPHRITIS>^ACUTE INTERSTITIAL NEPHRITIS\r\n498^AION\t<ISCHEMIC OPTIC NEUROPATHY>^ISCHEMIC OPTIC NEUROPATHY\r\n529^AIRWAY CONSTRICTION\r\n425^AIRWAY OBSTRUCTION\t<UPPER AIRWAY OBSTRUCTION>^UPPER AIRWAY OBSTRUCTION\r\n179^AKATHISIA\r\n180^AKINESIA\r\n473^ALK PHOS ELEVATED\t<INCREASED ALKALINE PHOSPHATASE>^INCREASED ALKALINE PHOSPHATASE\r\n473^ALK PHOS INCREASED\t<INCREASED ALKALINE PHOSPHATASE>^INCREASED ALKALINE PHOSPHATASE\r\n473^ALK, ELEVATED\t<INCREASED ALKALINE PHOSPHATASE>^INCREASED ALKALINE PHOSPHATASE\r\n181^ALKALINE PHOSPHATASE RAISED\r\n473^ALKALINE PHOSPHATASE RAISED\t<INCREASED ALKALINE PHOSPHATASE>^INCREASED ALKALINE PHOSPHATASE\r\n547^ALLERGIC PNEUMONITIS\r\n455^ALLERGIC RHINITIS\r\n7^ALOPECIA\r\n474^ALT (SGPT) ELEVATED\t<INCREASED SERUM ALT (SGPT)>^INCREASED SERUM ALT (SGPT)\r\n182^ALT (SGPT) LEVEL ABNORMAL\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:01:23.701Z"
+},
+{
+  "name": "ORWU NEWPERS",
+  "version": "0",
+  "args": [
+    "ALEXANDER,ROBERS~",
+    "1"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWU NEWPERS50017ALEXANDER,ROBERS~f00011f\u0004",
+  "response": "\u0000\u000062^Alexander,Robert\r\n64^Clerk,Joe\r\n61^Manager,System\r\n.5^Postmaster\r\n63^Smith,Mary\r\n17^User,Seventeen\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:01:23.713Z"
+},
+{
+  "name": "ORQQAL LIST",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "mvdmEmulated",
+  "rpc": "[XWB]11302\u00010\u000bORQQAL LIST5000225f\u0004",
+  "response": "\u0000\u00001^CHOCOLATE^^DROWSINESS\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:01:23.783Z"
+},
+{
+  "name": "ORWU DT",
+  "version": "0",
+  "args": [
+    "NOW"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0007ORWU DT50003NOWf\u0004",
+  "response": "\u0000\u00003170208.050123\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:01:23.790Z"
+},
+{
+  "name": "ORWDAL32 LOAD FOR EDIT",
+  "version": "0",
+  "args": [
+    "1"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0016ORWDAL32 LOAD FOR EDIT500011f\u0004",
+  "response": "\u0000\u0000~CAUSATIVE AGENT\r\ndCHOCOLATE\r\n~ALLERGY TYPE\r\ndDF^DRUG,FOOD\r\n~NATURE OF REACTION\r\ndA^ALLERGY\r\n~SIGN/SYMPTOMS\r\ni66^DROWSINESS^^  \r\n~ORIGINATOR\r\nd62^ALEXANDER,ROBERT\r\n~ORIGINATED\r\nd3170208.0500Z\r\n~COMMENTS\r\n~ID BAND MARKED\r\n~CHART MARKED\r\ni3170208.0500Z\r\n~VERIFIER\r\n~VERIFIED\r\ndYES^3170208.0500Z\r\n~ENTERED IN ERROR\r\ndNO\r\n~OBS/HIST\r\ndh^HISTORICAL\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:01:23.814Z"
+},
+{
+  "name": "ORWU DT",
+  "version": "0",
+  "args": [
+    "3170208.0500Z"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0007ORWU DT500133170208.0500Zf\u0004",
+  "response": "\u0000\u00003170208.05\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:01:23.823Z"
+},
+{
+  "name": "ORWDAL32 SITE PARAMS",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0014ORWDAL32 SITE PARAMS54f\u0004",
+  "response": "\u0000\u0000HOSPITAL^6^1^1^1^!^y^0^1^1^1\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:01:23.830Z"
+},
+{
+  "name": "ORWU DT",
+  "version": "0",
+  "args": [
+    "NOW"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0007ORWU DT50003NOWf\u0004",
+  "response": "\u0000\u00003170208.050123\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:01:23.837Z"
+},
+{
+  "name": "ORWDX UNLOCK",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWDX UNLOCK5000225f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:01:23.853Z"
+},
+{
+  "name": "ORWU DT",
+  "version": "0",
+  "args": [
+    "NOW"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0007ORWU DT50003NOWf\u0004",
+  "response": "\u0000\u00003170208.050132\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:01:32.822Z"
+},
+{
+  "name": "ORWDAL32 SAVE ALLERGY",
+  "version": "0",
+  "args": [
+    "1",
+    "25",
+    {
+      "GMRAERR": "YES",
+      "GMRAERRBY": "62",
+      "GMRAERRDT": "3170208.050132",
+      "GMRAERRCMTS": [
+        "I made a mistake!"
+      ]
+    }
+  ],
+  "to": "mvdmEmulated",
+  "rpc": "[XWB]11302\u00010\u0015ORWDAL32 SAVE ALLERGY500011f000225f2009\"GMRAERR\"003YESt011\"GMRAERRBY\"00262t011\"GMRAERRDT\"0143170208.050132t015\"GMRAERRCMTS\",00011t015\"GMRAERRCMTS\",1017I made a mistake!f\u0004",
+  "response": "\u0000\u00000^1\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:01:35.067Z"
+},
+{
+  "name": "ORWU DT",
+  "version": "0",
+  "args": [
+    "NOW"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0007ORWU DT50003NOWf\u0004",
+  "response": "\u0000\u00003170208.050135\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:01:35.080Z"
+},
+{
+  "name": "ORQQPP LIST",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000bORQQPP LIST5000225f\u0004",
+  "response": "\u0000\u0000^No patient postings found.\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:01:35.087Z"
+},
+{
+  "name": "ORQQAL LIST",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "mvdmEmulated",
+  "rpc": "[XWB]11302\u00010\u000bORQQAL LIST5000225f\u0004",
+  "response": "\u0000\u0000^No Allergy Assessment\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:01:35.152Z"
+},
+{
+  "name": "ORWPT CWAD",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\nORWPT CWAD5000225f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:01:35.159Z"
+},
+{
+  "name": "ORWPS ACTIVE",
+  "version": "0",
+  "args": [
+    "25",
+    "62",
+    "1",
+    "1"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWPS ACTIVE5000225f000262f00011f00011f\u0004",
+  "response": "\u0000\u00001^\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:01:35.168Z"
+},
+{
+  "name": "ORWPT CWAD",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\nORWPT CWAD5000225f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:01:35.176Z"
+},
+{
+  "name": "ORWDX UNLOCK",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWDX UNLOCK5000225f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:01:35.184Z"
+},
+{
+  "name": "ORQQAL LIST",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "mvdmEmulated",
+  "rpc": "[XWB]11302\u00010\u000bORQQAL LIST5000225f\u0004",
+  "response": "\u0000\u0000^No Allergy Assessment\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:01:35.261Z"
+},
+{
+  "name": "ORWPT CWAD",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\nORWPT CWAD5000225f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:01:35.270Z"
+},
+{
+  "name": "ORWDX LOCK",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\nORWDX LOCK5000225f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:01:57.313Z"
+},
+{
+  "name": "ORWDAL32 DEF",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWDAL32 DEF54f\u0004",
+  "response": "\u0000\u0000~Allergy Types\r\niD^Drug\r\niF^Food\r\niO^Other\r\niDF^Drug,Food\r\niDO^Drug,Other\r\niFO^Food,Other\r\niDFO^Drug,Food,Other\r\n~Reactions\r\niD^Drug\r\niF^Food\r\niO^Other\r\niDF^Drug,Food\r\niDO^Drug,Other\r\niFO^Food,Other\r\niDFO^Drug,Food,Other\r\n~Nature of Reaction\r\niA^Allergy\r\niP^Pharmacological\r\niU^Unknown\r\n~Top Ten\r\ni15^CONFUSION\r\ni2^ITCHING,WATERING EYES\r\ni99^HYPOTENSION\r\ni66^DROWSINESS\r\ni51^CHEST PAIN\r\ni9^DIARRHEA\r\ni1^HIVES\r\ni67^DRY MOUTH\r\ni52^CHILLS\r\ni133^RASH\r\n~Observ/Hist\r\nio^Observed\r\nih^Historical\r\n~Severity\r\ni3^Severe\r\ni2^Moderate\r\ni1^Mild\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:01:57.405Z"
+},
+{
+  "name": "ORWDAL32 SYMPTOMS",
+  "version": "0",
+  "args": [
+    "",
+    "1"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0011ORWDAL32 SYMPTOMS50000f00011f\u0004",
+  "response": "\u0000\u0000470^A FIB-FLUTTER\t<ATRIAL FIBRILLATION-FLUTTER>^ATRIAL FIBRILLATION-FLUTTER\r\n164^ABDOMINAL BLOATING\r\n165^ABDOMINAL CRAMPS\r\n166^ABDOMINAL DISCOMFORT\r\n167^ABDOMINAL PAIN\r\n168^ABNORMAL ECG\r\n471^ABNORMAL ECG\t<ECG ABNORMALITY>^ECG ABNORMALITY\r\n471^ABNORMAL EKG\t<ECG ABNORMALITY>^ECG ABNORMALITY\r\n574^ABNORMAL MENTAL STATE\t<MENTAL HEALTH IMPAIRMENT>^MENTAL HEALTH IMPAIRMENT\r\n169^ABNORMAL SEXUAL FUNCTION\r\n528^ABNORMAL VISION\r\n170^ABSCESS\r\n171^ACIDOSIS\r\n172^ACNE\r\n173^ACUTE INTERSTITIAL NEPHRITIS\r\n174^ACUTE RENAL FAILURE SYNDROME\r\n175^ACUTE RENAL IMPAIRMENT\r\n175^ACUTE RENAL INSUFFICIENCY\t<ACUTE RENAL IMPAIRMENT>^ACUTE RENAL IMPAIRMENT\r\n176^ACUTE RESPIRATORY DISTRESS\r\n177^ACUTE TUBULAR NECROSIS\r\n425^ACUTE UPPER AIRWAY OBSTRUCTION\t<UPPER AIRWAY OBSTRUCTION>^UPPER AIRWAY OBSTRUCTION\r\n569^ADRENAL INSUFFICIENCY\r\n470^AFIB-FLUTTER\t<ATRIAL FIBRILLATION-FLUTTER>^ATRIAL FIBRILLATION-FLUTTER\r\n178^AGGRESSION\t<AGGRESSIVE BEHAVIOR>^AGGRESSIVE BEHAVIOR\r\n178^AGGRESSIVE BEHAVIOR\r\n36^AGITATION\r\n265^AGITATION\t<FEELING AGITATED>^FEELING AGITATED\r\n37^AGRANULOCYTOSIS\r\n173^AIN\t<ACUTE INTERSTITIAL NEPHRITIS>^ACUTE INTERSTITIAL NEPHRITIS\r\n498^AION\t<ISCHEMIC OPTIC NEUROPATHY>^ISCHEMIC OPTIC NEUROPATHY\r\n529^AIRWAY CONSTRICTION\r\n425^AIRWAY OBSTRUCTION\t<UPPER AIRWAY OBSTRUCTION>^UPPER AIRWAY OBSTRUCTION\r\n179^AKATHISIA\r\n180^AKINESIA\r\n473^ALK PHOS ELEVATED\t<INCREASED ALKALINE PHOSPHATASE>^INCREASED ALKALINE PHOSPHATASE\r\n473^ALK PHOS INCREASED\t<INCREASED ALKALINE PHOSPHATASE>^INCREASED ALKALINE PHOSPHATASE\r\n473^ALK, ELEVATED\t<INCREASED ALKALINE PHOSPHATASE>^INCREASED ALKALINE PHOSPHATASE\r\n181^ALKALINE PHOSPHATASE RAISED\r\n473^ALKALINE PHOSPHATASE RAISED\t<INCREASED ALKALINE PHOSPHATASE>^INCREASED ALKALINE PHOSPHATASE\r\n547^ALLERGIC PNEUMONITIS\r\n455^ALLERGIC RHINITIS\r\n7^ALOPECIA\r\n474^ALT (SGPT) ELEVATED\t<INCREASED SERUM ALT (SGPT)>^INCREASED SERUM ALT (SGPT)\r\n182^ALT (SGPT) LEVEL ABNORMAL\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:01:57.542Z"
+},
+{
+  "name": "ORWU NEWPERS",
+  "version": "0",
+  "args": [
+    "ALEXANDER,ROBERS~",
+    "1"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWU NEWPERS50017ALEXANDER,ROBERS~f00011f\u0004",
+  "response": "\u0000\u000062^Alexander,Robert\r\n64^Clerk,Joe\r\n61^Manager,System\r\n.5^Postmaster\r\n63^Smith,Mary\r\n17^User,Seventeen\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:01:57.554Z"
+},
+{
+  "name": "ORQQAL LIST",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "mvdmEmulated",
+  "rpc": "[XWB]11302\u00010\u000bORQQAL LIST5000225f\u0004",
+  "response": "\u0000\u0000^No Allergy Assessment\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:01:57.627Z"
+},
+{
+  "name": "ORWU DT",
+  "version": "0",
+  "args": [
+    "NOW"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0007ORWU DT50003NOWf\u0004",
+  "response": "\u0000\u00003170208.050157\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:01:57.635Z"
+},
+{
+  "name": "ORWU DT",
+  "version": "0",
+  "args": [
+    "NOW"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0007ORWU DT50003NOWf\u0004",
+  "response": "\u0000\u00003170208.050157\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:01:57.646Z"
+},
+{
+  "name": "ORWU DT",
+  "version": "0",
+  "args": [
+    "NOW"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0007ORWU DT50003NOWf\u0004",
+  "response": "\u0000\u00003170208.050213\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:02:13.047Z"
+},
+{
+  "name": "ORWDAL32 SAVE ALLERGY",
+  "version": "0",
+  "args": [
+    "0",
+    "25",
+    {
+      "GMRANKA": "YES"
+    }
+  ],
+  "to": "mvdmEmulated",
+  "rpc": "[XWB]11302\u00010\u0015ORWDAL32 SAVE ALLERGY500010f000225f2009\"GMRANKA\"003YESf\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:02:13.152Z"
+},
+{
+  "name": "ORWDX UNLOCK",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWDX UNLOCK5000225f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:02:16.152Z"
+},
+{
+  "name": "ORWDX UNLOCK",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWDX UNLOCK5000225f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:02:16.160Z"
+},
+{
+  "name": "ORQQAL LIST",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "mvdmEmulated",
+  "rpc": "[XWB]11302\u00010\u000bORQQAL LIST5000225f\u0004",
+  "response": "\u0000\u0000^No Known Allergies\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:02:16.229Z"
+},
+{
+  "name": "ORWPT CWAD",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\nORWPT CWAD5000225f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:02:16.238Z"
+},
+{
+  "name": "ORWOR UNSIGN",
+  "version": "0",
+  "args": [
+    "25",
+    {
+      "0": ""
+    }
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWOR UNSIGN5000225f20010001\u0001f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:02:28.931Z"
+},
+{
+  "name": "ORWPCE SCDIS",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWPCE SCDIS5000225f\u0004",
+  "response": "\u0000\u0000Service Connected: NO\r\nRated Disabilities: NONE STATED\r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:02:28.985Z"
+},
+{
+  "name": "ORDEA DEATEXT",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORDEA DEATEXT54f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:02:29.008Z"
+},
+{
+  "name": "ORDEA SIGINFO",
+  "version": "0",
+  "args": [
+    "25",
+    "62"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORDEA SIGINFO5000225f000262f\u0004",
+  "response": "\u0000\u0000CARTER,DAVID\r\nDate of Issuance: Feb 08, 2017\r\nProvider: ALEXANDER,ROBERT\r\nNo Address on record\r\nfor VISTA HEALTH CARE\r\nDEA: \r\n\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:02:29.017Z"
+},
+{
+  "name": "TIU GET REQUEST",
+  "version": "0",
+  "args": [
+    "1"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000fTIU GET REQUEST500011f\u0004",
+  "response": "\u0000\u0000-1^No Request found for this document\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:02:42.180Z"
+},
+{
+  "name": "TIU UNLOCK RECORD",
+  "version": "0",
+  "args": [
+    "1"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0011TIU UNLOCK RECORD500011f\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:02:42.188Z"
+},
+{
+  "name": "ORWDX UNLOCK",
+  "version": "0",
+  "args": [
+    "25"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWDX UNLOCK5000225f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:02:42.195Z"
+},
+{
+  "name": "ORWDBA1 BASTATUS",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0010ORWDBA1 BASTATUS54f\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:02:42.203Z"
+},
+{
+  "name": "ORWOR UNSIGN",
+  "version": "0",
+  "args": [
+    "25",
+    {
+      "0": ""
+    }
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\fORWOR UNSIGN5000225f20010001\u0001f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:02:42.222Z"
+},
+{
+  "name": "ORPRF CLEAR",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u000bORPRF CLEAR54f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:02:42.251Z"
+},
+{
+  "name": "ORWCH SAVFONT",
+  "version": "0",
+  "args": [
+    "8"
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWCH SAVFONT500018f\u0004",
+  "response": "\u0000\u00000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:02:42.260Z"
+},
+{
+  "name": "ORWCH SAVEALL",
+  "version": "0",
+  "args": [
+    {
+      "1": "B^frmFrame^149,31,819,732",
+      "2": "W^frmProblems.pnlLeft^159",
+      "3": "W^frmOrders.pnlLeft^117",
+      "4": "W^frmNotes.pnlLeft^161",
+      "5": "W^frmConsults.pnlLeft^83",
+      "6": "W^frmDCSumm.pnlLeft^186",
+      "7": "W^frmLabs.pnlLeft^97",
+      "8": "W^frmReports.pnlLeft^119",
+      "9": "C^frmOrders.hdrOrders^0,42,255,84,84,42,42,42,42,42",
+      "10": "C^frmMeds.hdrMedsIn^48,384,96,96,96",
+      "11": "C^frmMeds.hdrMedsOut^48,384,96,96,96,48",
+      "12": "C^SpellCheckerSettings^",
+      "13": "B^frmTempEditSplitters^0,0,0,0",
+      "14": "B^frmTempEditSplitters2^0,0,0,0",
+      "15": "B^frmReminderTree^0,0,0,0",
+      "16": "B^frmRemDlg^0,0,0,0",
+      "17": "B^frmRemDlgSplitters^0,0,0,0",
+      "18": "B^frmDrawersSplitters^0,0,0,85",
+      "19": "B^frmLabsSplitters^361,97,72,314",
+      "20": "B^frmCoverSplitters1^211,211,120,318",
+      "21": "B^frmCoverSplitters2^114,255,255,0",
+      "22": "B^frmMedsSplit^365,182,0,0",
+      "23": "C^frmMeds.hdrMedsNonVA^48,384,96,96",
+      "24": "C^frmOrders.hdrOrders^0,42,255,84,84,42,42,42,42,42",
+      "25": "B^frmPtSel.sptVert^290,0,0,0",
+      "26": "C^frmPtSel.lstvAlerts^40,195,75,95,150,310,290",
+      "27": "B^frmPtSel^158,98,801,594"
+    }
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\rORWCH SAVEALL520011025B^frmFrame^149,31,819,732t0012025W^frmProblems.pnlLeft^159t0013023W^frmOrders.pnlLeft^117t0014022W^frmNotes.pnlLeft^161t0015024W^frmConsults.pnlLeft^83t0016023W^frmDCSumm.pnlLeft^186t0017020W^frmLabs.pnlLeft^97t0018024W^frmReports.pnlLeft^119t0019051C^frmOrders.hdrOrders^0,42,255,84,84,42,42,42,42,42t00210035C^frmMeds.hdrMedsIn^48,384,96,96,96t00211039C^frmMeds.hdrMedsOut^48,384,96,96,96,48t00212023C^SpellCheckerSettings^t00213030B^frmTempEditSplitters^0,0,0,0t00214031B^frmTempEditSplitters2^0,0,0,0t00215025B^frmReminderTree^0,0,0,0t00216019B^frmRemDlg^0,0,0,0t00217028B^frmRemDlgSplitters^0,0,0,0t00218030B^frmDrawersSplitters^0,0,0,85t00219032B^frmLabsSplitters^361,97,72,314t00220036B^frmCoverSplitters1^211,211,120,318t00221034B^frmCoverSplitters2^114,255,255,0t00222026B^frmMedsSplit^365,182,0,0t00223035C^frmMeds.hdrMedsNonVA^48,384,96,96t00224051C^frmOrders.hdrOrders^0,42,255,84,84,42,42,42,42,42t00225028B^frmPtSel.sptVert^290,0,0,0t00226046C^frmPtSel.lstvAlerts^40,195,75,95,150,310,290t00227025B^frmPtSel^158,98,801,594f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:02:42.278Z"
+},
+{
+  "name": "TIU TEMPLATE SET DEFAULTS",
+  "version": "0",
+  "args": [
+    ""
+  ],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0019TIU TEMPLATE SET DEFAULTS50000f\u0004",
+  "response": "\u0000\u00001\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:02:42.285Z"
+},
+{
+  "name": "XWB DEFERRED CLEARALL",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0015XWB DEFERRED CLEARALL54f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:02:42.310Z"
+},
+{
+  "name": "XWB DEFERRED CLEARALL",
+  "version": "0",
+  "args": [],
+  "to": "rpcRunner",
+  "rpc": "[XWB]11302\u00010\u0015XWB DEFERRED CLEARALL54f\u0004",
+  "response": "\u0000\u0000\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:02:42.320Z"
+},
+{
+  "name": "#BYE#",
+  "to": "server",
+  "rpc": "[XWB]10304\u0005#BYE#\u0004",
+  "response": "\u0000\u0000#BYE#\u0004",
+  "from": "CPRS",
+  "timeStamp": "2017-02-08T05:02:42.333Z"
+}
+]

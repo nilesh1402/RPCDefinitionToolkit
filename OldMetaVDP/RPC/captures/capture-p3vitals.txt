@@ -1,0 +1,1107 @@
+[
+ {
+        "name": "ORWTPD1 GETEAFL",
+        "input": [],
+        "runner": "rpcRunner",
+        "result": "",
+        "from": "CPRS",
+        "transactionId": "b968183f-c408-4f5b-92a9-5c011504402c",
+        "timestamp": "2017-02-07T20:09:13.581Z"
+    }, {
+        "name": "ORWTPD1 GETEDATS",
+        "input": [],
+        "runner": "rpcRunner",
+        "result": "365^",
+        "from": "CPRS",
+        "transactionId": "04edc581-73c1-432d-a86c-0ab841d731b8",
+        "timestamp": "2017-02-07T20:09:13.587Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["NOW"],
+        "runner": "rpcRunner",
+        "result": 3170207.200913,
+        "from": "CPRS",
+        "transactionId": "6e6da59b-4225-4a64-8905-3dc9570e3351",
+        "timestamp": "2017-02-07T20:09:13.593Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["NOW"],
+        "runner": "rpcRunner",
+        "result": 3170207.200913,
+        "from": "CPRS",
+        "transactionId": "2f534194-d9f7-479d-a5a0-8e4d65ee51f2",
+        "timestamp": "2017-02-07T20:09:13.599Z"
+    }, {
+        "name": "ORWCV VST",
+        "input": ["25", "3160208", "3170207.2359", "1"],
+        "runner": "rpcRunner",
+        "result": [],
+        "from": "CPRS",
+        "transactionId": "1bcf2eb8-c02d-45f1-8cc8-50513ecddac3",
+        "timestamp": "2017-02-07T20:09:13.605Z"
+    }, {
+        "name": "ORWU1 NEWLOC",
+        "input": ["", "1"],
+        "runner": "rpcRunner",
+        "result": ["6^CLINICX", "7^CLInicA", "8^CLInicB", "9^CLInicC", "10^CLInicD", "4^Clinic1", "5^Clinic2", "3^VISTA HEALTH CARE"],
+        "from": "CPRS",
+        "transactionId": "11f91ec4-0e4f-4fd7-a2f3-4588135307b6",
+        "timestamp": "2017-02-07T20:09:13.612Z"
+    }, {
+        "name": "ORWU NEWPERS",
+        "input": ["ALEXANDER,ROBERS~", "1"],
+        "runner": "rpcRunner",
+        "result": ["62^Alexander,Robert", "64^Clerk,Joe", "61^Manager,System", ".5^Postmaster", "63^Smith,Mary", "17^User,Seventeen"],
+        "from": "CPRS",
+        "transactionId": "aeb37877-6003-4afe-b1c1-49e27eadf186",
+        "timestamp": "2017-02-07T20:09:13.623Z"
+    }, {
+        "name": "ORWCV POLL",
+        "input": ["25", "192.168.56.1", "000800C4"],
+        "runner": "rpcRunner",
+        "result": [],
+        "from": "CPRS",
+        "transactionId": "071e916f-96bd-47e4-9e3a-4f5f5b82a48d",
+        "timestamp": "2017-02-07T20:09:14.678Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["NOW", "TSX"],
+        "runner": "rpcRunner",
+        "result": 3170207.200915,
+        "from": "CPRS",
+        "transactionId": "c08b63a0-45de-486a-bf4f-30b77a683469",
+        "timestamp": "2017-02-07T20:09:15.370Z"
+    }, {
+        "name": "ORWPCE GETSVC",
+        "input": ["A", "10", "0"],
+        "runner": "rpcRunner",
+        "result": "A",
+        "from": "CPRS",
+        "transactionId": "0054208f-5001-4197-8302-897b5b621417",
+        "timestamp": "2017-02-07T20:09:15.375Z"
+    }, {
+        "name": "ORWU DT",
+        "input": ["NOW"],
+        "runner": "rpcRunner",
+        "result": 3170207.200916,
+        "from": "CPRS",
+        "transactionId": "8f934948-a063-4494-a829-23209237a4df",
+        "timestamp": "2017-02-07T20:09:16.234Z"
+    }, {
+        "name": "TIU TEMPLATE GETROOTS",
+        "input": ["62"],
+        "runner": "rpcRunner",
+        "result": ["1^R^A^Shared Templates^^^^3^^^^^^^^^^", "1952^TF^A^Document Titles^^^^0^^^^^^^^^^", "53^CF^A^Consult Reasons for Request^^^^0^^^^^^^^^^", "1960^OF^A^Procedure Reasons for Request^^^^0^^^^^^^^^^"],
+        "from": "CPRS",
+        "transactionId": "0632b0ae-6a1c-4d2f-bdcf-7ceaa5a74aef",
+        "timestamp": "2017-02-07T20:09:16.243Z"
+    }, {
+        "name": "TIU TEMPLATE ACCESS LEVEL",
+        "input": ["1", "62", "10"],
+        "runner": "rpcRunner",
+        "result": 0,
+        "from": "CPRS",
+        "transactionId": "ca0986ac-be46-47c5-909f-900f018b5015",
+        "timestamp": "2017-02-07T20:09:16.249Z"
+    }, {
+        "name": "ORWPT ENCTITL",
+        "input": ["25", "10", "62"],
+        "runner": "rpcRunner",
+        "result": "CLInicD^CD^^ALEXANDER,ROBERT",
+        "from": "CPRS",
+        "transactionId": "db467aa9-8479-42af-9f30-8cc3ec3afdf9",
+        "timestamp": "2017-02-07T20:09:16.261Z"
+    }, {
+        "name": "ORWCV POLL",
+        "input": ["25", "192.168.56.1", "000800C4"],
+        "runner": "rpcRunner",
+        "result": [],
+        "from": "CPRS",
+        "transactionId": "19e8ce9f-8ac7-4ebb-8a35-ca263abd4a71",
+        "timestamp": "2017-02-07T20:09:17.305Z"
+    }, {
+        "name": "GMV DLL VERSION",
+        "input": ["5.0.28.5"],
+        "runner": "rpcRunner",
+        "result": "NO",
+        "from": "CPRS",
+        "transactionId": "7293bfc3-2b12-4339-8de4-716aa3d7476d",
+        "timestamp": "2017-02-07T20:09:17.660Z"
+    }, {
+        "name": "GMV DLL VERSION",
+        "input": ["GMV_VITALSVIEWENTER.DLL:v. 01/21/11 12:52"],
+        "runner": "rpcRunner",
+        "result": "YES",
+        "from": "CPRS",
+        "transactionId": "b11a0702-89bb-4ca1-a215-79c4caabbaff",
+        "timestamp": "2017-02-07T20:09:17.664Z"
+    }, {
+        "name": "GMV PARAMETER",
+        "input": ["GETPAR", "SYS", "CHECKBROKERSTATUS"],
+        "runner": "rpcRunner",
+        "result": ["-1^Non Vitals Measurements Parameter", ""],
+        "from": "CPRS",
+        "transactionId": "9c9315e9-72a1-4143-b353-c0b5799783b3",
+        "timestamp": "2017-02-07T20:09:17.673Z"
+    }, {
+        "name": "XWB CREATE CONTEXT",
+        "input": [".AkT,*kiTlJvT,4zkQ)"],
+        "runner": "rpcRunner",
+        "result": 1,
+        "from": "CPRS",
+        "transactionId": "95df1b41-ae63-4193-ac5f-69b1ed1a5a18",
+        "timestamp": "2017-02-07T20:09:17.682Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["GETPAR", "GRAPH OPTIONS VISIBLE"],
+        "runner": "rpcRunner",
+        "result": [""],
+        "from": "CPRS",
+        "transactionId": "96b24e46-9bce-4f21-8a1a-e80775eefe0a",
+        "timestamp": "2017-02-07T20:09:17.745Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["GETPAR", "GRIDSIZE"],
+        "runner": "rpcRunner",
+        "result": [""],
+        "from": "CPRS",
+        "transactionId": "8cae45cd-6647-4203-854b-939cd253c68d",
+        "timestamp": "2017-02-07T20:09:17.761Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["GETPAR", "GRAPHCOLOR"],
+        "runner": "rpcRunner",
+        "result": [""],
+        "from": "CPRS",
+        "transactionId": "f827e330-d760-43da-855b-8dbdc0c8480f",
+        "timestamp": "2017-02-07T20:09:17.765Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["GETPAR", "GRAPHOPTIONS"],
+        "runner": "rpcRunner",
+        "result": [""],
+        "from": "CPRS",
+        "transactionId": "c6df054f-e26b-4d9d-a3bd-367df3dec228",
+        "timestamp": "2017-02-07T20:09:17.771Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["GETPAR", "GRAPHOPTIONS-1"],
+        "runner": "rpcRunner",
+        "result": [""],
+        "from": "CPRS",
+        "transactionId": "6978564b-b2f3-4cb5-b23b-24c869a7d76e",
+        "timestamp": "2017-02-07T20:09:17.777Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["GETPAR", "GRAPHOPTIONS-4"],
+        "runner": "rpcRunner",
+        "result": [""],
+        "from": "CPRS",
+        "transactionId": "231d655b-c604-496d-9dfc-4a5f807fb035",
+        "timestamp": "2017-02-07T20:09:17.782Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["GETPAR", "GRAPHOPTIONS-3"],
+        "runner": "rpcRunner",
+        "result": [""],
+        "from": "CPRS",
+        "transactionId": "317f8843-98da-456c-bbbd-55d833eb9516",
+        "timestamp": "2017-02-07T20:09:17.788Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["GETPAR", "GRAPHOPTIONS-2"],
+        "runner": "rpcRunner",
+        "result": [""],
+        "from": "CPRS",
+        "transactionId": "249f9d42-c66b-484c-98ff-8afd29c34dcb",
+        "timestamp": "2017-02-07T20:09:17.795Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["GETPAR", "ABNORMALTEXTCOLOR"],
+        "runner": "rpcRunner",
+        "result": [""],
+        "from": "CPRS",
+        "transactionId": "91cade75-15ed-470e-b366-8fbea74b4442",
+        "timestamp": "2017-02-07T20:09:17.799Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["GETPAR", "ABNORMALBGCOLOR"],
+        "runner": "rpcRunner",
+        "result": [""],
+        "from": "CPRS",
+        "transactionId": "1c11a1af-8374-4063-9690-565387f1e236",
+        "timestamp": "2017-02-07T20:09:17.807Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["GETPAR", "ABNORMALBOLD"],
+        "runner": "rpcRunner",
+        "result": [""],
+        "from": "CPRS",
+        "transactionId": "19971c08-e573-4113-a478-5368e7bb5928",
+        "timestamp": "2017-02-07T20:09:17.812Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["GETPAR", "ABNORMALQUALIFIERS"],
+        "runner": "rpcRunner",
+        "result": [""],
+        "from": "CPRS",
+        "transactionId": "017576e6-c767-48ff-aa5a-60e09bbb5a1d",
+        "timestamp": "2017-02-07T20:09:17.817Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["GETPAR", "NORMALTEXTCOLOR"],
+        "runner": "rpcRunner",
+        "result": [""],
+        "from": "CPRS",
+        "transactionId": "1e36b614-2676-44df-a305-2dc3a07a1085",
+        "timestamp": "2017-02-07T20:09:17.822Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["GETPAR", "NORMALBGCOLOR"],
+        "runner": "rpcRunner",
+        "result": [""],
+        "from": "CPRS",
+        "transactionId": "8928545e-e1cc-4585-9851-c2877bbb7ca4",
+        "timestamp": "2017-02-07T20:09:17.827Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["GETPAR", "NORMALBOLD"],
+        "runner": "rpcRunner",
+        "result": [""],
+        "from": "CPRS",
+        "transactionId": "235768bb-7c3d-4527-9fd2-4c6cd637e0fc",
+        "timestamp": "2017-02-07T20:09:17.831Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["GETPAR", "NORMALQUALIFIERS"],
+        "runner": "rpcRunner",
+        "result": [""],
+        "from": "CPRS",
+        "transactionId": "6e697ac8-8d68-467b-a0c9-14de0b91e723",
+        "timestamp": "2017-02-07T20:09:17.838Z"
+    }, {
+        "name": "GMV V/M ALLDATA",
+        "input": ["25^3160807^3170207.235955^0"],
+        "runner": "rpcRunner",
+        "result": ["CARTER,DAVID  0113  MAR 2,1981  35 (Yrs)  MALE", "Unit:    Room: ", "Division: ", "AUG 7,2016 - FEB 7,2017@23:59:55", "NO DATA", ""],
+        "from": "CPRS",
+        "transactionId": "a29a886d-a219-4ae8-b879-b9c0a0ede389",
+        "timestamp": "2017-02-07T20:09:17.891Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["GETPAR", "VIEW-HEIGHT"],
+        "runner": "rpcRunner",
+        "result": [""],
+        "from": "CPRS",
+        "transactionId": "7ffadd34-4478-4461-92fc-02d58937e697",
+        "timestamp": "2017-02-07T20:09:17.897Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["GETPAR", "VIEW-WIDTH"],
+        "runner": "rpcRunner",
+        "result": [""],
+        "from": "CPRS",
+        "transactionId": "f589474c-0d0a-4002-b774-4a7cf89f3896",
+        "timestamp": "2017-02-07T20:09:17.904Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["GETPAR", "VIEW-LEFT"],
+        "runner": "rpcRunner",
+        "result": [""],
+        "from": "CPRS",
+        "transactionId": "a73e6778-910f-4464-9171-0efc3a08d8ee",
+        "timestamp": "2017-02-07T20:09:17.910Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["GETPAR", "VIEW-TOP"],
+        "runner": "rpcRunner",
+        "result": [""],
+        "from": "CPRS",
+        "transactionId": "ba14b573-6d5a-41ef-9435-218e81f803bb",
+        "timestamp": "2017-02-07T20:09:17.917Z"
+    }, {
+        "name": "GMV V/M ALLDATA",
+        "input": ["25^3160807^3170207.235955^0"],
+        "runner": "rpcRunner",
+        "result": ["CARTER,DAVID  0113  MAR 2,1981  35 (Yrs)  MALE", "Unit:    Room: ", "Division: ", "AUG 7,2016 - FEB 7,2017@23:59:55", "NO DATA", ""],
+        "from": "CPRS",
+        "transactionId": "bff54a02-c2c3-4c43-86f4-3c4ef8ca3218",
+        "timestamp": "2017-02-07T20:09:17.923Z"
+    }, {
+        "name": "GMV GET CURRENT TIME",
+        "input": ["1"],
+        "runner": "mvdmEmulated",
+        "result": "3170207.200921",
+        "from": "CPRS",
+        "transactionId": "5699ab96-4e9f-4fab-815d-40ae3ac7bc33",
+        "timestamp": "2017-02-07T20:09:21.010Z"
+    }, {
+        "name": "GMV MANAGER",
+        "input": ["GETLIST", "120.51"],
+        "runner": "rpcRunner",
+        "result": ["10^GMRV VITAL TYPE", "120.51;1^BLOOD PRESSURE", "120.51;19^CENTRAL VENOUS PRESSURE", "120.51;20^CIRCUMFERENCE/GIRTH", "120.51;8^HEIGHT", "120.51;22^PAIN", "120.51;5^PULSE", "120.51;21^PULSE OXIMETRY", "120.51;3^RESPIRATION", "120.51;2^TEMPERATURE", "120.51;9^WEIGHT"],
+        "from": "CPRS",
+        "transactionId": "743771fe-51f8-47dc-acdb-363a6dd1cbf9",
+        "timestamp": "2017-02-07T20:09:21.047Z"
+    }, {
+        "name": "GMV MANAGER",
+        "input": ["VT", ""],
+        "runner": "rpcRunner",
+        "result": [-1, 2, 5, 3, 1, 8, 9, 22, 21, 19, 20],
+        "from": "CPRS",
+        "transactionId": "030a8d97-feac-4fd8-a0d5-66354d28ce8b",
+        "timestamp": "2017-02-07T20:09:21.053Z"
+    }, {
+        "name": "GMV MANAGER",
+        "input": ["GETLIST", "120.52"],
+        "runner": "rpcRunner",
+        "result": ["119^GMRV VITAL QUALIFIER", "120.52;75^ABDOMINAL", "120.52;42^ACTUAL", "120.52;67^ADULT", "120.52;109^ADULT CUFF", "120.52;84^AEROSOL/HUMIDIFIED MASK", "120.52;110^AFTER EXERCISE", "120.52;111^AMBU BAG", "120.52;80^ANKLE", "120.52;22^APICAL", "120.52;112^ARTERIAL LINE", "120.52;49^ASSISTED VENTILATOR", "120.52;97^AT REST", "120.52;62^AUSCULTATE", "120.52;113^AV FISTULA", "120.52;5^AXILLARY", "120.52;98^Ambulating 100 Feet", "120.52;100^At Rest", "120.52;103^At Rest", "120.52;104^At Rest", "120.52;106^At Rest", "120.52;107^At Rest", "120.52;108^At Rest", "120.52;73^BED", "120.52;25^BILATERAL PERIPHERALS", "120.52;114^BIPAP", "120.52;115^BIPAP-CPAP", "120.52;146^BLADDER", "120.52;58^BRACHIAL", "120.52;145^CALCULATED", "120.52;76^CALF", "120.52;38^CAROTID", "120.52;72^CHAIR", "120.52;48^CONTROLLED VENTILATOR", "120.52;40^CORE", "120.52;116^CPAP", "120.52;65^CUFF", "120.52;117^CUFF-AUTOMATED", "120.52;118^CUFF-MANUAL", "120.52;94^Cardiac Monitor", "120.52;92^Colin Machine", "120.52;61^DOPPLER", "120.52;57^DORSALIS PEDIS", "120.52;44^DRY", "120.52;43^ESTIMATED", "120.52;140^ESTIMATED BY ARM SPAN", "120.52;83^FACE TENT", "120.52;54^FEMORAL", "120.52;91^FINGER", "120.52;74^HEAD", "120.52;144^HIP", "120.52;119^INVASIVE", "120.52;120^KNEE", "120.52;2^L ARM", "120.52;4^L LEG", "120.52;141^LARYNGEAL MASK AIRWAY", "120.52;121^LEAD", "120.52;64^LEFT", "120.52;69^LG ADULT", "120.52;122^LG ADULT CUFF", "120.52;123^LIFT SCALE", "120.52;77^LOWER ARM", "120.52;53^LYING", "120.52;81^MASK", "120.52;124^MONITOR", "120.52;125^MUSTACHE CANNULA", "120.52;85^NASAL CANNULA", "120.52;126^NECK", "120.52;86^NON RE-BREATHER", "120.52;66^NON-INVASIVE", "120.52;50^O2 SATS", "120.52;6^ORAL", "120.52;39^OTHER", "120.52;60^PALPATED", "120.52;87^PARTIAL RE-BREATHER", "120.52;71^PEDIATRIC", "120.52;127^PEDIATRIC CUFF", "120.52;128^PENDANT CANNULA", "120.52;24^PERIPHERAL", "120.52;55^POPLITEAL", "120.52;56^POSTERIOR TIBIAL", "120.52;1^R ARM", "120.52;3^R LEG", "120.52;23^RADIAL", "120.52;7^RECTAL", "120.52;142^RESERVOIR CANNULA", "120.52;96^RHYTHM", "120.52;63^RIGHT", "120.52;95^ROOM AIR", "120.52;129^SEMIFOWLERS", "120.52;51^SITTING", "120.52;46^SKIN", "120.52;68^SM ADULT", "120.52;130^SM ADULT CUFF", "120.52;47^SPONTANEOUS", "120.52;52^STANDING", "120.52;131^STANDING WEIGHT", "120.52;132^STATED", "120.52;82^T-PIECE", "120.52;143^TEMPORAL", "120.52;70^THIGH", "120.52;133^THIGH CUFF", "120.52;88^TRACHEOSTOMY COLLAR", "120.52;134^TRANSTRACHEAL", "120.52;135^TRENDELENBURG", "120.52;45^TYMPANIC", "120.52;93^Telemetry", "120.52;59^ULNAR", "120.52;78^UPPER ARM", "120.52;89^VENTILATOR", "120.52;90^VENTURI MASK", "120.52;136^WHEELCHAIR SCALE", "120.52;99^WITH ACTIVITY", "120.52;102^WITH AMBULATION", "120.52;137^WITH CAST OR BRACE", "120.52;138^WITH PROSTHESIS", "120.52;139^WITHOUT PROSTHESIS", "120.52;79^WRIST", "120.52;101^With Activity", "120.52;105^With Ambulation"],
+        "from": "CPRS",
+        "transactionId": "25256cb0-aacb-4d3a-a126-bc09fcde2bc0",
+        "timestamp": "2017-02-07T20:09:21.393Z"
+    }, {
+        "name": "GMV MANAGER",
+        "input": ["GETLIST", "120.53"],
+        "runner": "rpcRunner",
+        "result": ["6^GMRV VITAL CATEGORY", "120.53;6^CUFF SIZE", "120.53;1^LOCATION", "120.53;2^METHOD", "120.53;3^POSITION", "120.53;4^QUALITY", "120.53;5^SITE"],
+        "from": "CPRS",
+        "transactionId": "9585aca7-d9bd-48ea-a0af-49b9631997e8",
+        "timestamp": "2017-02-07T20:09:21.402Z"
+    }, {
+        "name": "GMV MANAGER",
+        "input": ["GETDEF"],
+        "runner": "rpcRunner",
+        "result": [0],
+        "from": "CPRS",
+        "transactionId": "f264f011-a8d8-40ff-bc5f-711b767f10e5",
+        "timestamp": "2017-02-07T20:09:21.407Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["SIGNON", ""],
+        "runner": "rpcRunner",
+        "result": [62, "ALEXANDER,ROBERT", 90, "DEMO.NODEVISTA.ORG", 2957, "VISTA HEALTH CARE", 1, "", "", 300, "1^SOFTWARE SERVICE^050"],
+        "from": "CPRS",
+        "transactionId": "ddd503cf-5273-4528-b866-6a8243102578",
+        "timestamp": "2017-02-07T20:09:21.413Z"
+    }, {
+        "name": "GMV GET CURRENT TIME",
+        "input": ["1"],
+        "runner": "mvdmEmulated",
+        "result": "3170207.200921",
+        "from": "CPRS",
+        "transactionId": "eaa9ede8-0071-4623-9c2c-1dcddd3b4acf",
+        "timestamp": "2017-02-07T20:09:21.450Z"
+    }, {
+        "name": "GMV PARAMETER",
+        "input": ["GETPAR", "SYS", "GMV ALLOW USER TEMPLATES"],
+        "runner": "rpcRunner",
+        "result": ["", ""],
+        "from": "CPRS",
+        "transactionId": "0bb054b7-a6d1-4a4d-8f96-c7b916154f20",
+        "timestamp": "2017-02-07T20:09:21.457Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["GETPAR", "CanvasNormal"],
+        "runner": "rpcRunner",
+        "result": [""],
+        "from": "CPRS",
+        "transactionId": "34686ffc-4997-482d-921c-ebd74fcdb6c1",
+        "timestamp": "2017-02-07T20:09:21.462Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["GETPAR", "CanvasAbnormal"],
+        "runner": "rpcRunner",
+        "result": [""],
+        "from": "CPRS",
+        "transactionId": "f7780153-1cf7-496d-a91e-66e39df1b64a",
+        "timestamp": "2017-02-07T20:09:21.467Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["GETPAR", "SearchDelay"],
+        "runner": "rpcRunner",
+        "result": [""],
+        "from": "CPRS",
+        "transactionId": "4d860222-9fc6-431f-977e-6b27825ffc57",
+        "timestamp": "2017-02-07T20:09:21.471Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["SETPAR", "SearchDelay^1.0"],
+        "runner": "rpcRunner",
+        "result": ["1^Parameter set."],
+        "from": "CPRS",
+        "transactionId": "86efa839-3793-478e-9c14-71ac2d21a8c0",
+        "timestamp": "2017-02-07T20:09:21.480Z"
+    }, {
+        "name": "GMV MANAGER",
+        "input": ["GETDATA", "44^10^2"],
+        "runner": "rpcRunner",
+        "result": ["CLINIC"],
+        "from": "CPRS",
+        "transactionId": "1f2d912a-63f8-4b9a-92eb-048da2d249df",
+        "timestamp": "2017-02-07T20:09:21.521Z"
+    }, {
+        "name": "GMV MANAGER",
+        "input": ["GETDATA", "44^10^.01"],
+        "runner": "rpcRunner",
+        "result": ["CLInicD"],
+        "from": "CPRS",
+        "transactionId": "a727f9fc-1a06-4067-a27f-0ebbcf137c01",
+        "timestamp": "2017-02-07T20:09:21.527Z"
+    }, {
+        "name": "GMV MANAGER",
+        "input": ["GETDATA", "44^10^.01"],
+        "runner": "rpcRunner",
+        "result": ["CLInicD"],
+        "from": "CPRS",
+        "transactionId": "d9b83267-d7c1-4fcb-a518-44fdf2fc7151",
+        "timestamp": "2017-02-07T20:09:21.532Z"
+    }, {
+        "name": "GMV GET CURRENT TIME",
+        "input": ["1"],
+        "runner": "mvdmEmulated",
+        "result": "3170207.200921",
+        "from": "CPRS",
+        "transactionId": "80ccaa92-1f40-44dd-9250-144c159ef911",
+        "timestamp": "2017-02-07T20:09:21.569Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["GETPAR", "DefaultTemplate"],
+        "runner": "rpcRunner",
+        "result": ["00;DIC(4.2,|DAILY VITALS"],
+        "from": "CPRS",
+        "transactionId": "ffb7c0f7-7bbf-47f1-aeba-078dc944fc96",
+        "timestamp": "2017-02-07T20:09:21.575Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["GETPAR", "ShowLastVitals"],
+        "runner": "rpcRunner",
+        "result": [""],
+        "from": "CPRS",
+        "transactionId": "a82cbc87-f150-480f-af9f-3e49008b91ec",
+        "timestamp": "2017-02-07T20:09:21.580Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["GETPAR", "LastVitalsListHeight"],
+        "runner": "rpcRunner",
+        "result": [""],
+        "from": "CPRS",
+        "transactionId": "d33a16ac-62dc-4858-9fbf-914ce7dd0548",
+        "timestamp": "2017-02-07T20:09:21.586Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["GETPAR", "ShowTemplates"],
+        "runner": "rpcRunner",
+        "result": [""],
+        "from": "CPRS",
+        "transactionId": "11e362e5-0576-489d-a92d-1478eecfcc0d",
+        "timestamp": "2017-02-07T20:09:21.595Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["GETPAR", "ParamTreeWidth"],
+        "runner": "rpcRunner",
+        "result": [""],
+        "from": "CPRS",
+        "transactionId": "2982bec9-09d7-4738-b667-99e320253e77",
+        "timestamp": "2017-02-07T20:09:21.600Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["GETPAR", "CPRSMetricStyle"],
+        "runner": "rpcRunner",
+        "result": [""],
+        "from": "CPRS",
+        "transactionId": "cca8e7aa-de4a-4617-80e3-89fff7b1f937",
+        "timestamp": "2017-02-07T20:09:21.605Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["GETPAR", "RefuseStatus"],
+        "runner": "rpcRunner",
+        "result": [""],
+        "from": "CPRS",
+        "transactionId": "c5645ec5-40af-460b-96a0-941bcc79745c",
+        "timestamp": "2017-02-07T20:09:21.611Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["GETPAR", "UnavailableStatus"],
+        "runner": "rpcRunner",
+        "result": [""],
+        "from": "CPRS",
+        "transactionId": "7c78ad3d-cac9-4d51-863c-6a54810d2461",
+        "timestamp": "2017-02-07T20:09:21.616Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["GETPAR", "VitalsLite"],
+        "runner": "rpcRunner",
+        "result": [""],
+        "from": "CPRS",
+        "transactionId": "840485b1-9bca-4dd1-862e-824011294c84",
+        "timestamp": "2017-02-07T20:09:21.621Z"
+    }, {
+        "name": "GMV MANAGER",
+        "input": ["GETTEMP"],
+        "runner": "rpcRunner",
+        "result": [1, "1^90;DIC(4.2,^DEMO.NODEVISTA.ORG^DAILY VITALS^TPR, BP|1:0;5:0;3:0;2:0;21:0;8:0;22:0;9:0"],
+        "from": "CPRS",
+        "transactionId": "22c623ff-62e8-4e07-803e-15098d5cbfd0",
+        "timestamp": "2017-02-07T20:09:21.626Z"
+    }, {
+        "name": "GMV MANAGER",
+        "input": ["GETTEMP", "90;DIC(4.2,^DAILY VITALS"],
+        "runner": "rpcRunner",
+        "result": [1, "1^90;DIC(4.2,^DEMO.NODEVISTA.ORG^DAILY VITALS^TPR, BP|1:0;5:0;3:0;2:0;21:0;8:0;22:0;9:0"],
+        "from": "CPRS",
+        "transactionId": "736de90c-b4d4-411c-839c-558ce63fde1f",
+        "timestamp": "2017-02-07T20:09:21.634Z"
+    }, {
+        "name": "GMV MANAGER",
+        "input": ["GETTEMP", "90;DIC(4.2,^DAILY VITALS^TPR, BP"],
+        "runner": "rpcRunner",
+        "result": [1, "1^90;DIC(4.2,^DEMO.NODEVISTA.ORG^DAILY VITALS^TPR, BP|1:0;5:0;3:0;2:0;21:0;8:0;22:0;9:0"],
+        "from": "CPRS",
+        "transactionId": "365c130a-5702-495b-9888-16838796b3f1",
+        "timestamp": "2017-02-07T20:09:21.639Z"
+    }, {
+        "name": "GMV MANAGER",
+        "input": ["GETTEMP", "90;DIC(4.2,^DAILY VITALS"],
+        "runner": "rpcRunner",
+        "result": [1, "1^90;DIC(4.2,^DEMO.NODEVISTA.ORG^DAILY VITALS^TPR, BP|1:0;5:0;3:0;2:0;21:0;8:0;22:0;9:0"],
+        "from": "CPRS",
+        "transactionId": "b1d083d4-1b9f-432c-a8c9-0ba2fae132c8",
+        "timestamp": "2017-02-07T20:09:21.644Z"
+    }, {
+        "name": "GMV MANAGER",
+        "input": ["GETTEMP", "90;DIC(4.2,^DAILY VITALS"],
+        "runner": "rpcRunner",
+        "result": [1, "1^90;DIC(4.2,^DEMO.NODEVISTA.ORG^DAILY VITALS^TPR, BP|1:0;5:0;3:0;2:0;21:0;8:0;22:0;9:0"],
+        "from": "CPRS",
+        "transactionId": "69916265-ff5a-40da-b71e-ec912ccc7ee9",
+        "timestamp": "2017-02-07T20:09:21.675Z"
+    }, {
+        "name": "GMV LATEST VM",
+        "input": ["25"],
+        "runner": "rpcRunner",
+        "result": ["There are no results to report "],
+        "from": "CPRS",
+        "transactionId": "ee31de00-c9b7-4811-853d-6ecba37f3258",
+        "timestamp": "2017-02-07T20:09:21.700Z"
+    }, {
+        "name": "GMV VITALS/CAT/QUAL",
+        "input": ["BP"],
+        "runner": "rpcRunner",
+        "result": ["V^1^BLOOD PRESSURE^BP^BP^210^110^100^60", "C^1^LOCATION", "Q^1^R ARM^RA", "Q^2^L ARM^LA", "Q^3^R LEG^RL", "Q^4^L LEG^LL", "Q^23^RADIAL^Rad", "Q^54^FEMORAL^Fem", "Q^58^BRACHIAL^Bra", "C^2^METHOD", "Q^60^PALPATED^Pal", "Q^61^DOPPLER^Dop", "Q^66^NON-INVASIVE^N-I", "Q^97^AT REST^AR", "Q^99^WITH ACTIVITY^Act", "Q^110^AFTER EXERCISE^AE", "Q^112^ARTERIAL LINE^AL", "Q^117^CUFF-AUTOMATED^CA", "Q^118^CUFF-MANUAL^CM", "Q^119^INVASIVE^I", "Q^124^MONITOR^Mo", "C^3^POSITION", "Q^51^SITTING^Sit", "Q^52^STANDING^St", "Q^53^LYING^Ly", "Q^129^SEMIFOWLERS^Sfl", "Q^135^TRENDELENBURG^Tr", "C^6^CUFF SIZE", "Q^109^ADULT CUFF^AC", "Q^122^LG ADULT CUFF^LAC", "Q^127^PEDIATRIC CUFF^PdC", "Q^130^SM ADULT CUFF^SAC", "Q^133^THIGH CUFF^ThC"],
+        "from": "CPRS",
+        "transactionId": "d4ba84f6-be5f-479c-80c1-a6aed99fdc00",
+        "timestamp": "2017-02-07T20:09:46.176Z"
+    }, {
+        "name": "GMV MANAGER",
+        "input": ["GETQUAL", "1;1"],
+        "runner": "rpcRunner",
+        "result": ["7^LOCATION", "58^BRACHIAL", "54^FEMORAL", "2^L ARM", "4^L LEG", "1^R ARM", "3^R LEG", "23^RADIAL"],
+        "from": "CPRS",
+        "transactionId": "154ee52f-0963-46fb-812b-9cf9db407b38",
+        "timestamp": "2017-02-07T20:09:46.204Z"
+    }, {
+        "name": "GMV MANAGER",
+        "input": ["GETQUAL", "1;2"],
+        "runner": "rpcRunner",
+        "result": ["11^METHOD", "110^AFTER EXERCISE", "112^ARTERIAL LINE", "97^AT REST", "117^CUFF-AUTOMATED", "118^CUFF-MANUAL", "61^DOPPLER", "119^INVASIVE", "124^MONITOR", "66^NON-INVASIVE", "60^PALPATED", "99^WITH ACTIVITY"],
+        "from": "CPRS",
+        "transactionId": "c60b0779-b9ac-4973-b1ae-9f678c990d4d",
+        "timestamp": "2017-02-07T20:09:46.246Z"
+    }, {
+        "name": "GMV MANAGER",
+        "input": ["GETQUAL", "1;3"],
+        "runner": "rpcRunner",
+        "result": ["5^POSITION", "53^LYING", "129^SEMIFOWLERS", "51^SITTING", "52^STANDING", "135^TRENDELENBURG"],
+        "from": "CPRS",
+        "transactionId": "a5575223-adb5-414d-b923-da4be2d451ea",
+        "timestamp": "2017-02-07T20:09:46.275Z"
+    }, {
+        "name": "GMV MANAGER",
+        "input": ["GETQUAL", "1;6"],
+        "runner": "rpcRunner",
+        "result": ["5^CUFF SIZE", "109^ADULT CUFF", "122^LG ADULT CUFF", "127^PEDIATRIC CUFF", "130^SM ADULT CUFF", "133^THIGH CUFF"],
+        "from": "CPRS",
+        "transactionId": "e588ea5d-1e72-4a6b-9572-63a686a4be0c",
+        "timestamp": "2017-02-07T20:09:46.300Z"
+    }, {
+        "name": "GMV VITALS/CAT/QUAL",
+        "input": ["P"],
+        "runner": "rpcRunner",
+        "result": ["V^5^PULSE^P^PU^120^60", "C^1^LOCATION", "Q^22^APICAL^Ap", "Q^23^RADIAL^Rad", "Q^24^PERIPHERAL^Per", "Q^25^BILATERAL PERIPHERALS^BiP", "Q^38^CAROTID^Car", "Q^54^FEMORAL^Fem", "Q^55^POPLITEAL^Pop", "Q^56^POSTERIOR TIBIAL^PT", "Q^57^DORSALIS PEDIS^DP", "Q^58^BRACHIAL^Bra", "Q^59^ULNAR^Uln", "Q^113^AV FISTULA^AVF", "C^2^METHOD", "Q^60^PALPATED^Pal", "Q^61^DOPPLER^Dop", "Q^62^AUSCULTATE^Aus", "Q^66^NON-INVASIVE^N-I", "Q^97^AT REST^AR", "Q^99^WITH ACTIVITY^Act", "Q^110^AFTER EXERCISE^AE", "Q^119^INVASIVE^I", "Q^121^LEAD^L", "Q^124^MONITOR^Mo", "C^3^POSITION", "Q^51^SITTING^Sit", "Q^52^STANDING^St", "Q^53^LYING^Ly", "Q^129^SEMIFOWLERS^Sfl", "Q^135^TRENDELENBURG^Tr", "C^5^SITE", "Q^63^RIGHT^Rt", "Q^64^LEFT^Lt"],
+        "from": "CPRS",
+        "transactionId": "cf5e693c-5dd0-46f9-b3a7-af30fe1e3124",
+        "timestamp": "2017-02-07T20:09:55.862Z"
+    }, {
+        "name": "GMV MANAGER",
+        "input": ["GETQUAL", "5;1"],
+        "runner": "rpcRunner",
+        "result": ["12^LOCATION", "22^APICAL", "113^AV FISTULA", "25^BILATERAL PERIPHERALS", "58^BRACHIAL", "38^CAROTID", "57^DORSALIS PEDIS", "54^FEMORAL", "24^PERIPHERAL", "55^POPLITEAL", "56^POSTERIOR TIBIAL", "23^RADIAL", "59^ULNAR"],
+        "from": "CPRS",
+        "transactionId": "b19a6015-5e86-462a-b2ca-66a2ccfc0064",
+        "timestamp": "2017-02-07T20:09:55.902Z"
+    }, {
+        "name": "GMV MANAGER",
+        "input": ["GETQUAL", "5;2"],
+        "runner": "rpcRunner",
+        "result": ["10^METHOD", "110^AFTER EXERCISE", "97^AT REST", "62^AUSCULTATE", "61^DOPPLER", "119^INVASIVE", "121^LEAD", "124^MONITOR", "66^NON-INVASIVE", "60^PALPATED", "99^WITH ACTIVITY"],
+        "from": "CPRS",
+        "transactionId": "b5766217-cda7-48ba-967e-4e3093126028",
+        "timestamp": "2017-02-07T20:09:55.943Z"
+    }, {
+        "name": "GMV MANAGER",
+        "input": ["GETQUAL", "5;3"],
+        "runner": "rpcRunner",
+        "result": ["5^POSITION", "53^LYING", "129^SEMIFOWLERS", "51^SITTING", "52^STANDING", "135^TRENDELENBURG"],
+        "from": "CPRS",
+        "transactionId": "58793538-9746-4234-a765-73107fa9b7f9",
+        "timestamp": "2017-02-07T20:09:55.970Z"
+    }, {
+        "name": "GMV MANAGER",
+        "input": ["GETQUAL", "5;5"],
+        "runner": "rpcRunner",
+        "result": ["2^SITE", "64^LEFT", "63^RIGHT"],
+        "from": "CPRS",
+        "transactionId": "387a4871-58be-4c72-acdd-1f8c1e616846",
+        "timestamp": "2017-02-07T20:09:55.993Z"
+    }, {
+        "name": "GMV VITALS/CAT/QUAL",
+        "input": ["WT"],
+        "runner": "rpcRunner",
+        "result": ["V^9^WEIGHT^WT^WT^", "C^2^METHOD", "Q^72^CHAIR^Ch", "Q^73^BED^B", "Q^123^LIFT SCALE^LS", "Q^131^STANDING WEIGHT^SW", "Q^136^WHEELCHAIR SCALE^WcS", "Q^137^WITH CAST OR BRACE^WCB", "Q^138^WITH PROSTHESIS^WP", "Q^139^WITHOUT PROSTHESIS^WOP", "C^4^QUALITY", "Q^42^ACTUAL^A", "Q^43^ESTIMATED^E", "Q^44^DRY^D", "Q^132^STATED^Sta", "Q^145^CALCULATED^Cal"],
+        "from": "CPRS",
+        "transactionId": "f0ec38ee-605a-4fa9-bd88-b17ae9558559",
+        "timestamp": "2017-02-07T20:10:21.331Z"
+    }, {
+        "name": "GMV MANAGER",
+        "input": ["GETQUAL", "9;2"],
+        "runner": "rpcRunner",
+        "result": ["8^METHOD", "73^BED", "72^CHAIR", "123^LIFT SCALE", "131^STANDING WEIGHT", "136^WHEELCHAIR SCALE", "137^WITH CAST OR BRACE", "138^WITH PROSTHESIS", "139^WITHOUT PROSTHESIS"],
+        "from": "CPRS",
+        "transactionId": "ac8fddef-2194-40e5-a7cd-ec94efab8bd2",
+        "timestamp": "2017-02-07T20:10:21.361Z"
+    }, {
+        "name": "GMV MANAGER",
+        "input": ["GETQUAL", "9;4"],
+        "runner": "rpcRunner",
+        "result": ["5^QUALITY", "42^ACTUAL", "145^CALCULATED", "44^DRY", "43^ESTIMATED", "132^STATED"],
+        "from": "CPRS",
+        "transactionId": "b1615d7d-fed5-4f0c-abb5-5fe087442f45",
+        "timestamp": "2017-02-07T20:10:21.390Z"
+    }, {
+        "name": "GMV CLOSEST READING",
+        "input": ["25", "88790923.044919", "HT", "0"],
+        "runner": "rpcRunner",
+        "result": "-2^Patient has no Vitals data on file",
+        "from": "CPRS",
+        "transactionId": "504fb832-60b3-4eb0-8b9d-76366741e8cf",
+        "timestamp": "2017-02-07T20:10:41.893Z"
+    }, {
+        "name": "GMV CLOSEST READING",
+        "input": ["25", "88790923.044919", "WT", "0"],
+        "runner": "rpcRunner",
+        "result": "-2^Patient has no Vitals data on file",
+        "from": "CPRS",
+        "transactionId": "5b5c1a4b-8391-4731-9dea-a3dbc393139d",
+        "timestamp": "2017-02-07T20:10:44.722Z"
+    }, {
+        "name": "GMV GET VITAL TYPE IEN",
+        "input": ["PULSE OXIMETRY"],
+        "runner": "rpcRunner",
+        "result": 21,
+        "from": "CPRS",
+        "transactionId": "b3390e74-f0dd-4e56-b611-593ea71e20de",
+        "timestamp": "2017-02-07T20:10:46.014Z"
+    }, {
+        "name": "GMV ADD VM",
+        "input": ["3170207.200921^25^1;120/90^10^62*51:109"],
+        "runner": "mvdmEmulated",
+        "result": "",
+        "from": "CPRS",
+        "transactionId": "ad649a16-76c6-4d7b-b696-3c17408fa7a6",
+        "timestamp": "2017-02-07T20:10:46.197Z"
+    }, {
+        "name": "GMV ADD VM",
+        "input": ["3170207.200921^25^5;89^10^62*97:63"],
+        "runner": "mvdmEmulated",
+        "result": "",
+        "from": "CPRS",
+        "transactionId": "2248d76f-b48e-4281-ba8a-ac19d5c188a7",
+        "timestamp": "2017-02-07T20:10:46.375Z"
+    }, {
+        "name": "GMV ADD VM",
+        "input": ["3170207.200921^25^2;98.6^10^62*"],
+        "runner": "mvdmEmulated",
+        "result": "",
+        "from": "CPRS",
+        "transactionId": "14da0e74-a830-4654-b7b4-27cefabe7aa6",
+        "timestamp": "2017-02-07T20:10:46.553Z"
+    }, {
+        "name": "GMV ADD VM",
+        "input": ["3170207.200921^25^8;64^10^62*"],
+        "runner": "mvdmEmulated",
+        "result": "",
+        "from": "CPRS",
+        "transactionId": "c648ef15-e05d-4859-a716-83d77d4657dd",
+        "timestamp": "2017-02-07T20:10:46.720Z"
+    }, {
+        "name": "GMV ADD VM",
+        "input": ["3170207.200921^25^9;175^10^62*42"],
+        "runner": "mvdmEmulated",
+        "result": "",
+        "from": "CPRS",
+        "transactionId": "88eab85b-a5ff-426f-9159-feec02e57cd1",
+        "timestamp": "2017-02-07T20:10:46.890Z"
+    }, {
+        "name": "GMV LATEST VM",
+        "input": ["25"],
+        "runner": "rpcRunner",
+        "result": ["Temp.:       (02/07/17@20:09)  98.6 F  (37.0 C)  _ALEXANDER,ROBERT_Vitals", "Pulse:       (02/07/17@20:09)  89 (RIGHT,AT REST)  _ALEXANDER,ROBERT_Vitals", "B/P:         (02/07/17@20:09)  120/90 (SITTING,ADULT CUFF)  _ALEXANDER,ROBERT_Vitals", "Ht.:         (02/07/17@20:09)  5 ft 4 in (162.56 cm)  _ALEXANDER,ROBERT_Vitals", "Wt.:         (02/07/17@20:09)  175 lb  (79.38 kg) (ACTUAL)  _ALEXANDER,ROBERT", "Body Mass Index:             30.10*  _Vitals"],
+        "from": "CPRS",
+        "transactionId": "552c5b05-197d-4eea-ac82-f1e825f6d519",
+        "timestamp": "2017-02-07T20:10:46.923Z"
+    }, {
+        "name": "GMV V/M ALLDATA",
+        "input": ["25^3160807^3170207.235955^0"],
+        "runner": "rpcRunner",
+        "result": ["CARTER,DAVID  0113  MAR 2,1981  35 (Yrs)  MALE", "Unit:    Room: ", "Division: ", "AUG 7,2016 - FEB 7,2017@23:59:55", "02-07-17^20:09:21^98.6- ^89- Rt AR^^^120/90- Sit AC^175- A^79.38^30.10*^64- ^162.56^^^^^^^^^^CLInicD^ALEXANDER,ROBERT^Vitals", ""],
+        "from": "CPRS",
+        "transactionId": "c8411552-0833-4cc5-a6a8-b9467c83d873",
+        "timestamp": "2017-02-07T20:10:46.957Z"
+    }, {
+        "name": "GMV GET CURRENT TIME",
+        "input": ["1"],
+        "runner": "mvdmEmulated",
+        "result": "3170207.201051",
+        "from": "CPRS",
+        "transactionId": "b60ff329-ff76-470c-9087-95d379029e90",
+        "timestamp": "2017-02-07T20:10:51.891Z"
+    }, {
+        "name": "GMV GET CURRENT TIME",
+        "input": ["1"],
+        "runner": "mvdmEmulated",
+        "result": "3170207.201051",
+        "from": "CPRS",
+        "transactionId": "0936a753-4a90-4355-8037-3c8ed7a21adc",
+        "timestamp": "2017-02-07T20:10:51.984Z"
+    }, {
+        "name": "GMV EXTRACT REC",
+        "input": ["25^3170207^^3170207"],
+        "runner": "rpcRunner",
+        "result": ["3^02/07/17@20:09   T:   98.6 F (37.0 C)  _ALEXANDER,ROBERT", "2^02/07/17@20:09   P:   89  (RIGHT, AT REST) _ALEXANDER,ROBERT", "1^02/07/17@20:09   B/P:   120/90  (SITTING, ADULT CUFF) _ALEXANDER,ROBERT", "4^02/07/17@20:09   Ht:   64.00 in (162.56 cm)  _ALEXANDER,ROBERT", "5^02/07/17@20:09   Wt:   175.00 lb (79.55 kg)  (ACTUAL) _ALEXANDER,ROBERT", "       @20:09   Body Mass Index:   30.10*"],
+        "from": "CPRS",
+        "transactionId": "14777a6c-213b-463a-868e-733ed38ceede",
+        "timestamp": "2017-02-07T20:10:52.007Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["SIGNON", ""],
+        "runner": "rpcRunner",
+        "result": [62, "ALEXANDER,ROBERT", 90, "DEMO.NODEVISTA.ORG", 2957, "VISTA HEALTH CARE", 1, "", "", 300, "1^SOFTWARE SERVICE^050"],
+        "from": "CPRS",
+        "transactionId": "3d8bdcc2-8821-4e6a-a696-dc0a58a7f2fc",
+        "timestamp": "2017-02-07T20:11:05.328Z"
+    }, {
+        "name": "GMV MARK ERROR",
+        "input": ["2^62^2"],
+        "runner": "mvdmEmulated",
+        "result": "OK",
+        "from": "CPRS",
+        "transactionId": "046ecd31-69f6-4f20-9ab6-5f8b67aead5e",
+        "timestamp": "2017-02-07T20:11:05.568Z"
+    }, {
+        "name": "GMV V/M ALLDATA",
+        "input": ["25^3160807^3170207.235955^0"],
+        "runner": "rpcRunner",
+        "result": ["CARTER,DAVID  0113  MAR 2,1981  35 (Yrs)  MALE", "Unit:    Room: ", "Division: ", "AUG 7,2016 - FEB 7,2017@23:59:55", "02-07-17^20:09:21^98.6- ^^^^120/90- Sit AC^175- A^79.38^30.10*^64- ^162.56^^^^^^^^^^CLInicD^ALEXANDER,ROBERT^Vitals", ""],
+        "from": "CPRS",
+        "transactionId": "319fd9c8-72aa-4e01-af25-0a41058125c0",
+        "timestamp": "2017-02-07T20:11:05.602Z"
+    }, {
+        "name": "GMV V/M ALLDATA",
+        "input": ["25^3170201^3170207.235955^0"],
+        "runner": "rpcRunner",
+        "result": ["CARTER,DAVID  0113  MAR 2,1981  35 (Yrs)  MALE", "Unit:    Room: ", "Division: ", "FEB 1,2017 - FEB 7,2017@23:59:55", "02-07-17^20:09:21^98.6- ^^^^120/90- Sit AC^175- A^79.38^30.10*^64- ^162.56^^^^^^^^^^CLInicD^ALEXANDER,ROBERT^Vitals", ""],
+        "from": "CPRS",
+        "transactionId": "629bc36c-79fe-43f8-9156-74694f0d21c9",
+        "timestamp": "2017-02-07T20:11:23.542Z"
+    }, {
+        "name": "GMV V/M ALLDATA",
+        "input": ["25^3170203^3170207.235955^0"],
+        "runner": "rpcRunner",
+        "result": ["CARTER,DAVID  0113  MAR 2,1981  35 (Yrs)  MALE", "Unit:    Room: ", "Division: ", "FEB 3,2017 - FEB 7,2017@23:59:55", "02-07-17^20:09:21^98.6- ^^^^120/90- Sit AC^175- A^79.38^30.10*^64- ^162.56^^^^^^^^^^CLInicD^ALEXANDER,ROBERT^Vitals", ""],
+        "from": "CPRS",
+        "transactionId": "36e64029-56dc-453d-96d9-3264d1e6bb15",
+        "timestamp": "2017-02-07T20:11:24.994Z"
+    }, {
+        "name": "GMV V/M ALLDATA",
+        "input": ["25^3170131^3170207.235955^0"],
+        "runner": "rpcRunner",
+        "result": ["CARTER,DAVID  0113  MAR 2,1981  35 (Yrs)  MALE", "Unit:    Room: ", "Division: ", "JAN 31,2017 - FEB 7,2017@23:59:55", "02-07-17^20:09:21^98.6- ^^^^120/90- Sit AC^175- A^79.38^30.10*^64- ^162.56^^^^^^^^^^CLInicD^ALEXANDER,ROBERT^Vitals", ""],
+        "from": "CPRS",
+        "transactionId": "2ad440bc-bbb1-40ee-a575-f91324d3f2a8",
+        "timestamp": "2017-02-07T20:11:26.670Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["SETPAR", "GRAPH OPTIONS VISIBLE^1"],
+        "runner": "rpcRunner",
+        "result": ["1^Parameter set."],
+        "from": "CPRS",
+        "transactionId": "f56e7105-e212-4b43-bf00-2e952602bbe7",
+        "timestamp": "2017-02-07T20:11:31.881Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["SETPAR", "VIEW-HEIGHT^600"],
+        "runner": "rpcRunner",
+        "result": ["1^Parameter set."],
+        "from": "CPRS",
+        "transactionId": "6fd2b2c7-8e52-4718-b5a6-66a862c3315a",
+        "timestamp": "2017-02-07T20:11:31.892Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["SETPAR", "VIEW-WIDTH^640"],
+        "runner": "rpcRunner",
+        "result": ["1^Parameter set."],
+        "from": "CPRS",
+        "transactionId": "01748fd4-95e8-49e6-8943-6d9be7bf9873",
+        "timestamp": "2017-02-07T20:11:31.901Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["SETPAR", "VIEW-LEFT^353"],
+        "runner": "rpcRunner",
+        "result": ["1^Parameter set."],
+        "from": "CPRS",
+        "transactionId": "bdb22c30-56e9-4bd9-bb02-15cae5ff285b",
+        "timestamp": "2017-02-07T20:11:31.911Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["SETPAR", "VIEW-TOP^172"],
+        "runner": "rpcRunner",
+        "result": ["1^Parameter set."],
+        "from": "CPRS",
+        "transactionId": "69aad0e4-9a72-449c-854d-7296b0ce24f3",
+        "timestamp": "2017-02-07T20:11:31.933Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["SETPAR", "GridDateRange^7"],
+        "runner": "rpcRunner",
+        "result": ["1^Parameter set."],
+        "from": "CPRS",
+        "transactionId": "4983ded5-43c9-49ea-93f6-b47808b864ba",
+        "timestamp": "2017-02-07T20:11:31.940Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["SETPAR", "GRIDSIZE^317"],
+        "runner": "rpcRunner",
+        "result": ["1^Parameter set."],
+        "from": "CPRS",
+        "transactionId": "09dd9777-dab1-43a5-9e11-542bf96249c4",
+        "timestamp": "2017-02-07T20:11:31.947Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["SETPAR", "GRAPHCOLOR^-16777211"],
+        "runner": "rpcRunner",
+        "result": ["1^Parameter set."],
+        "from": "CPRS",
+        "transactionId": "7be2f5b7-8417-4853-830c-319c07942de6",
+        "timestamp": "2017-02-07T20:11:31.954Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["SETPAR", "GRAPHOPTIONS^ON"],
+        "runner": "rpcRunner",
+        "result": ["1^Parameter set."],
+        "from": "CPRS",
+        "transactionId": "9b4eb62f-8d0f-4bb2-87bd-1e473a1ba4dd",
+        "timestamp": "2017-02-07T20:11:31.962Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["SETPAR", "GRAPHOPTIONS-1^ON"],
+        "runner": "rpcRunner",
+        "result": ["1^Parameter set."],
+        "from": "CPRS",
+        "transactionId": "8c5c92d4-3c7f-4eea-a4f3-6fa9eb9b85ae",
+        "timestamp": "2017-02-07T20:11:31.969Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["SETPAR", "GRAPHOPTIONS-2^OFF"],
+        "runner": "rpcRunner",
+        "result": ["1^Parameter set."],
+        "from": "CPRS",
+        "transactionId": "24311583-dcd8-4ca6-8da5-68036a4bc778",
+        "timestamp": "2017-02-07T20:11:31.977Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["SETPAR", "GRAPHOPTIONS-3^OFF"],
+        "runner": "rpcRunner",
+        "result": ["1^Parameter set."],
+        "from": "CPRS",
+        "transactionId": "55925589-4451-4304-848f-58b09ef678d4",
+        "timestamp": "2017-02-07T20:11:31.984Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["SETPAR", "GRAPHOPTIONS-4^ON"],
+        "runner": "rpcRunner",
+        "result": ["1^Parameter set."],
+        "from": "CPRS",
+        "transactionId": "b7614aa0-9367-4674-ad14-7a6471d56ab4",
+        "timestamp": "2017-02-07T20:11:31.991Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["SETPAR", "GRAPH_INDEX^0"],
+        "runner": "rpcRunner",
+        "result": ["1^Parameter set."],
+        "from": "CPRS",
+        "transactionId": "614c1ed1-cc29-4d1d-9405-9d39f13fca18",
+        "timestamp": "2017-02-07T20:11:32.001Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["SETPAR", "ABNORMALTEXTCOLOR^9"],
+        "runner": "rpcRunner",
+        "result": ["1^Parameter set."],
+        "from": "CPRS",
+        "transactionId": "6fddda7a-de71-4858-8217-87ac8a8d993a",
+        "timestamp": "2017-02-07T20:11:32.007Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["SETPAR", "ABNORMALBGCOLOR^15"],
+        "runner": "rpcRunner",
+        "result": ["1^Parameter set."],
+        "from": "CPRS",
+        "transactionId": "85861284-9e0c-4934-bfa6-267df8c45d1a",
+        "timestamp": "2017-02-07T20:11:32.015Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["SETPAR", "ABNORMALBOLD^OFF"],
+        "runner": "rpcRunner",
+        "result": ["1^Parameter set."],
+        "from": "CPRS",
+        "transactionId": "dfad455f-8d74-45c6-9771-b790b60dc1cc",
+        "timestamp": "2017-02-07T20:11:32.025Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["SETPAR", "ABNORMALQUALIFIERS^ON"],
+        "runner": "rpcRunner",
+        "result": ["1^Parameter set."],
+        "from": "CPRS",
+        "transactionId": "90530566-d7dc-43ba-a00e-6150bdb2aff5",
+        "timestamp": "2017-02-07T20:11:32.032Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["SETPAR", "NORMALTEXTCOLOR^0"],
+        "runner": "rpcRunner",
+        "result": ["1^Parameter set."],
+        "from": "CPRS",
+        "transactionId": "9a7ea394-6d3b-4373-83f3-3972678d278a",
+        "timestamp": "2017-02-07T20:11:32.040Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["SETPAR", "NORMALBGCOLOR^15"],
+        "runner": "rpcRunner",
+        "result": ["1^Parameter set."],
+        "from": "CPRS",
+        "transactionId": "f7fb0c5a-f426-4adf-b87f-d20cf1121026",
+        "timestamp": "2017-02-07T20:11:32.050Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["SETPAR", "NORMALBOLD^OFF"],
+        "runner": "rpcRunner",
+        "result": ["1^Parameter set."],
+        "from": "CPRS",
+        "transactionId": "22a11758-5ea9-4d07-aa9d-e6e460a0c4d8",
+        "timestamp": "2017-02-07T20:11:32.057Z"
+    }, {
+        "name": "GMV USER",
+        "input": ["SETPAR", "NORMALQUALIFIERS^ON"],
+        "runner": "rpcRunner",
+        "result": ["1^Parameter set."],
+        "from": "CPRS",
+        "transactionId": "9463f0b8-ac8d-4c10-872a-147d2425c9c6",
+        "timestamp": "2017-02-07T20:11:32.067Z"
+    }, {
+        "name": "XWB CREATE CONTEXT",
+        "input": ["*b&d*<&vd.cNd*HY&@/"],
+        "runner": "rpcRunner",
+        "result": 1,
+        "from": "CPRS",
+        "transactionId": "969d1216-8d71-4913-89fd-1bb8bd46c35b",
+        "timestamp": "2017-02-07T20:11:32.092Z"
+    }, {
+        "name": "ORWCV STOP",
+        "input": ["25", "192.168.56.1", "000800C4"],
+        "runner": "rpcRunner",
+        "result": 1,
+        "from": "CPRS",
+        "transactionId": "8c79c321-72d9-4c62-929e-cb62eed8f804",
+        "timestamp": "2017-02-07T20:11:32.128Z"
+    }, {
+        "name": "ORWCV START",
+        "input": ["25", "192.168.56.1", "000800C4", "10", "", "0"],
+        "runner": "rpcRunner",
+        "result": "10;20;30;40;70;80;",
+        "from": "CPRS",
+        "transactionId": "a9c3bcc2-0b3a-4f47-80e2-eb74b87a8e59",
+        "timestamp": "2017-02-07T20:11:32.150Z"
+    }, {
+        "name": "ORWCV1 COVERSHEET LIST",
+        "input": [],
+        "runner": "rpcRunner",
+        "result": ["10^Active Problems^^S^^ORQQPL LIST^1^^^^^A^^2,3^9,10,2^ORQQPL DETAIL^1^28", "20^Allergies / Adverse Reactions^^S^^ORQQAL LIST^1^^^^^^^^2^ORQQAL DETAIL^2^29", "30^Postings^^S^^ORQQPP LIST^1^^Maroon^D^3^^^20^2,3^^3^30", "40^Active Medications^^S^^ORWPS COVER^1^1^^^^1^^35^2,4^ORWPS DETAIL^4^31", "50^Clinical Reminders                                        Due Date^^S^^ORQQPX REMINDERS LIST^^^^D^3^^^34,44^2,3^^5^32", "60^Recent Lab Results^^S^^ORWCV LAB^1^^^D^3^^^34^2,3^ORWOR RESULT^6^33", "70^Vitals^^S^^ORQQVI VITALS^^^^T^4^^^5,17,19,27^2,5,4,6,7,8^^7^34", "80^Appointments/Visits/Admissions^^S^^ORWCV VST^1^1^^T^2^^^16,27^2,3,4^ORWCV DTLVST^8^35"],
+        "from": "CPRS",
+        "transactionId": "7e90ece7-8d00-4026-ae53-962fa9c10a2d",
+        "timestamp": "2017-02-07T20:11:32.159Z"
+    }, {
+        "name": "ORQQPL LIST",
+        "input": ["25^3170207.200915", "A"],
+        "runner": "rpcRunner",
+        "result": ["^No problems found."],
+        "from": "CPRS",
+        "transactionId": "d6a2a7af-9906-4480-a1c7-dfb1f7cb8303",
+        "timestamp": "2017-02-07T20:11:32.170Z"
+    }, {
+        "name": "ORQQAL LIST",
+        "input": ["25"],
+        "runner": "mvdmEmulated",
+        "result": ["^No Allergy Assessment"],
+        "from": "CPRS",
+        "transactionId": "5a001b80-359d-4c69-9b5b-889582b343a3",
+        "timestamp": "2017-02-07T20:11:32.230Z"
+    }, {
+        "name": "ORQQPP LIST",
+        "input": ["25"],
+        "runner": "rpcRunner",
+        "result": ["^No patient postings found."],
+        "from": "CPRS",
+        "transactionId": "ca468dba-afcd-4257-ba00-e867dc8543dd",
+        "timestamp": "2017-02-07T20:11:32.241Z"
+    }, {
+        "name": "ORWPS COVER",
+        "input": ["25", "1"],
+        "runner": "rpcRunner",
+        "result": [],
+        "from": "CPRS",
+        "transactionId": "361bf940-4553-4d80-82ee-8123eecc9e4a",
+        "timestamp": "2017-02-07T20:11:32.270Z"
+    }, {
+        "name": "ORQQVI VITALS",
+        "input": ["25"],
+        "runner": "mvdmEmulated",
+        "result": ["1^BP^120/90^3170207.200921^120/90^^SITTING,ADULT CUFF", "3^T^98.6^3170207.200921^98.6^^", "4^HT^64^3170207.200921^64^^", "5^WT^175^3170207.200921^175^^ACTUAL"],
+        "from": "CPRS",
+        "transactionId": "e6715182-08f9-4242-b005-3698697f0d2f",
+        "timestamp": "2017-02-07T20:11:32.617Z"
+    }, {
+        "name": "ORWCV VST",
+        "input": ["25"],
+        "runner": "rpcRunner",
+        "result": [],
+        "from": "CPRS",
+        "transactionId": "cb8afa36-fecc-4bca-8700-0ec1b8008b18",
+        "timestamp": "2017-02-07T20:11:32.630Z"
+    }, {
+        "name": "ORWCV POLL",
+        "input": ["25", "192.168.56.1", "000800C4"],
+        "runner": "rpcRunner",
+        "result": [],
+        "from": "CPRS",
+        "transactionId": "b308117e-74bb-4d76-9c65-26f4c126ad26",
+        "timestamp": "2017-02-07T20:11:34.876Z"
+    }
+]

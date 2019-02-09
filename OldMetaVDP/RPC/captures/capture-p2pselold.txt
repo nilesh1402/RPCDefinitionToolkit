@@ -1,0 +1,565 @@
+[
+  {
+    "from": "CPRS", 
+    "name": "ORWPT TOP", 
+    "timeStamp": "2017-01-24T05:35:02.010Z", 
+    "args": [], 
+    "to": "rpcRunner", 
+    "rpc": "[XWB]11302\u00010\tORWPT TOP54f\u0004", 
+    "version": "0", 
+    "response": "\u0000\u000025^CARTER,DAVID\r\n\u0004"
+  }, 
+  {
+    "from": "CPRS", 
+    "name": "ORWPT LIST ALL", 
+    "timeStamp": "2017-01-24T05:35:03.251Z", 
+    "args": [
+      "", 
+      "1"
+    ], 
+    "to": "mvdmEmulated", 
+    "rpc": "[XWB]11302\u00010\u000eORWPT LIST ALL50000f00011f\u0004", 
+    "version": "0", 
+    "response": "\u0000\u000025^CARTER,DAVID^^^^CARTER,DAVID\r\n17^EIGHT,PATIENT H^^^^EIGHT,PATIENT H\r\n22^EIGHTEEN,PATIENT R^^^^EIGHTEEN,PATIENT R\r\n5^ELEVEN,PATIENT K^^^^ELEVEN,PATIENT K\r\n18^FIFTEEN,PATIENT O^^^^FIFTEEN,PATIENT O\r\n20^FIVE,PATIENT E^^^^FIVE,PATIENT E\r\n24^FOUR,PATIENT D^^^^FOUR,PATIENT D\r\n1^FOURTEEN,PATIENT N^^^^FOURTEEN,PATIENT N\r\n4^NINE,PATIENT I^^^^NINE,PATIENT I\r\n14^NINETEEN,PATIENT S^^^^NINETEEN,PATIENT S\r\n3^ONE,PATIENT A^^^^ONE,PATIENT A\r\n2^SEVEN,PATIENT G^^^^SEVEN,PATIENT G\r\n15^SEVENTEEN,PATIENT Q^^^^SEVENTEEN,PATIENT Q\r\n6^SIX,PATIENT F^^^^SIX,PATIENT F\r\n16^SIXTEEN,PATIENT P^^^^SIXTEEN,PATIENT P\r\n8^TEN,PATIENT J^^^^TEN,PATIENT J\r\n23^THIRTEEN,PATIENT M^^^^THIRTEEN,PATIENT M\r\n9^THREE,PATIENT C^^^^THREE,PATIENT C\r\n19^TWELVE,PATIENT L^^^^TWELVE,PATIENT L\r\n11^TWENTY,PATIENT T^^^^TWENTY,PATIENT T\r\n12^TWENTYFOUR,PATIENT X^^^^TWENTYFOUR,PATIENT X\r\n21^TWENTYONE,PATIENT U^^^^TWENTYONE,PATIENT U\r\n13^TWENTYTHREE,PATIENT W^^^^TWENTYTHREE,PATIENT W\r\n7^TWENTYTWO,PATIENT V^^^^TWENTYTWO,PATIENT V\r\n10^TWO,PATIENT B^^^^TWO,PATIENT B\r\n\u0004"
+  }, 
+  {
+    "from": "CPRS", 
+    "name": "ORWORB FASTUSER", 
+    "timeStamp": "2017-01-24T05:35:03.319Z", 
+    "args": [], 
+    "to": "rpcRunner", 
+    "rpc": "[XWB]11302\u00010\u000fORWORB FASTUSER54f\u0004", 
+    "version": "0", 
+    "response": "\u0000\u0000\u0004"
+  }, 
+  {
+    "from": "CPRS", 
+    "name": "ORWORB GETSORT", 
+    "timeStamp": "2017-01-24T05:35:03.384Z", 
+    "args": [], 
+    "to": "rpcRunner", 
+    "rpc": "[XWB]11302\u00010\u000eORWORB GETSORT54f\u0004", 
+    "version": "0", 
+    "response": "\u0000\u0000D^R\u0004"
+  }, 
+  {
+    "from": "CPRS", 
+    "name": "ORWORB SETSORT", 
+    "timeStamp": "2017-01-24T05:35:03.425Z", 
+    "args": [
+      "D", 
+      "R"
+    ], 
+    "to": "rpcRunner", 
+    "rpc": "[XWB]11302\u00010\u000eORWORB SETSORT50001Df0001Rf\u0004", 
+    "version": "0", 
+    "response": "\u0000\u00000\u0004"
+  }, 
+  {
+    "from": "CPRS", 
+    "name": "ORWPT ID INFO", 
+    "timeStamp": "2017-01-24T05:35:05.984Z", 
+    "args": [
+      "25"
+    ], 
+    "to": "mvdmEmulated", 
+    "rpc": "[XWB]11302\u00010\rORWPT ID INFO5000225f\u0004", 
+    "version": "0", 
+    "response": "\u0000\u0000000000113^2810302^M^Y^^^^CARTER,DAVID\u0004"
+  }, 
+  {
+    "from": "CPRS", 
+    "name": "OR GET COMBAT VET", 
+    "timeStamp": "2017-01-24T05:35:06.201Z", 
+    "args": [
+      "25"
+    ], 
+    "to": "mvdmEmulated", 
+    "rpc": "[XWB]11302\u00010\u0011OR GET COMBAT VET5000225f\u0004", 
+    "version": "0", 
+    "response": "\u0000\u0000NOTCV\r\n\u0004"
+  }, 
+  {
+    "from": "CPRS", 
+    "name": "ORPRF HASFLG", 
+    "timeStamp": "2017-01-24T05:35:06.246Z", 
+    "args": [
+      "25"
+    ], 
+    "to": "rpcRunner", 
+    "rpc": "[XWB]11302\u00010\fORPRF HASFLG5000225f\u0004", 
+    "version": "0", 
+    "response": "\u0000\u0000\u0004"
+  }, 
+  {
+    "from": "CPRS", 
+    "name": "DG CHK BS5 XREF ARRAY", 
+    "timeStamp": "2017-01-24T05:35:08.331Z", 
+    "args": [
+      "25"
+    ], 
+    "to": "rpcRunner", 
+    "rpc": "[XWB]11302\u00010\u0015DG CHK BS5 XREF ARRAY5000225f\u0004", 
+    "version": "0", 
+    "response": "\u0000\u00000\r\n\u0004"
+  }, 
+  {
+    "from": "CPRS", 
+    "name": "DG SENSITIVE RECORD ACCESS", 
+    "timeStamp": "2017-01-24T05:35:08.346Z", 
+    "args": [
+      "25"
+    ], 
+    "to": "rpcRunner", 
+    "rpc": "[XWB]11302\u00010\u001aDG SENSITIVE RECORD ACCESS5000225f\u0004", 
+    "version": "0", 
+    "response": "\u0000\u00000\r\n\u0004"
+  }, 
+  {
+    "from": "CPRS", 
+    "name": "ORWPT DIEDON", 
+    "timeStamp": "2017-01-24T05:35:08.515Z", 
+    "args": [
+      "25"
+    ], 
+    "to": "mvdmEmulated", 
+    "rpc": "[XWB]11302\u00010\fORWPT DIEDON5000225f\u0004", 
+    "version": "0", 
+    "response": "\u0000\u00000\u0004"
+  }, 
+  {
+    "from": "CPRS", 
+    "name": "ORWPT SELECT", 
+    "timeStamp": "2017-01-24T05:35:08.558Z", 
+    "args": [
+      "25"
+    ], 
+    "to": "rpcRunner", 
+    "rpc": "[XWB]11302\u00010\fORWPT SELECT5000225f\u0004", 
+    "version": "0", 
+    "response": "\u0000\u0000CARTER,DAVID^M^2810302^000000113^^^^^0^^0^0^^^35^0\u0004"
+  }, 
+  {
+    "from": "CPRS", 
+    "name": "ORWPT1 PRCARE", 
+    "timeStamp": "2017-01-24T05:35:08.825Z", 
+    "args": [
+      "25"
+    ], 
+    "to": "mvdmEmulated", 
+    "rpc": "[XWB]11302\u00010\rORWPT1 PRCARE5000225f\u0004", 
+    "version": "0", 
+    "response": "\u0000\u0000^^^^^\u0004"
+  }, 
+  {
+    "from": "CPRS", 
+    "name": "ORWU NPHASKEY", 
+    "timeStamp": "2017-01-24T05:35:08.850Z", 
+    "args": [
+      "61", 
+      "PROVIDER"
+    ], 
+    "to": "rpcRunner", 
+    "rpc": "[XWB]11302\u00010\rORWU NPHASKEY5000261f0008PROVIDERf\u0004", 
+    "version": "0", 
+    "response": "\u0000\u00001\u0004"
+  }, 
+  {
+    "from": "CPRS", 
+    "name": "ORWDBA1 BASTATUS", 
+    "timeStamp": "2017-01-24T05:35:08.888Z", 
+    "args": [], 
+    "to": "rpcRunner", 
+    "rpc": "[XWB]11302\u00010\u0010ORWDBA1 BASTATUS54f\u0004", 
+    "version": "0", 
+    "response": "\u0000\u00000\u0004"
+  }, 
+  {
+    "from": "CPRS", 
+    "name": "ORWPT ENCTITL", 
+    "timeStamp": "2017-01-24T05:35:08.919Z", 
+    "args": [
+      "25", 
+      "0", 
+      "61"
+    ], 
+    "to": "rpcRunner", 
+    "rpc": "[XWB]11302\u00010\rORWPT ENCTITL5000225f00010f000261f\u0004", 
+    "version": "0", 
+    "response": "\u0000\u0000^^^ALEXANDER,ROBERT\u0004"
+  }, 
+  {
+    "from": "CPRS", 
+    "name": "ORCNOTE GET TOTAL", 
+    "timeStamp": "2017-01-24T05:35:09.004Z", 
+    "args": [
+      "25"
+    ], 
+    "to": "rpcRunner", 
+    "rpc": "[XWB]11302\u00010\u0011ORCNOTE GET TOTAL5000225f\u0004", 
+    "version": "0", 
+    "response": "\u0000\u00000\u0004"
+  }, 
+  {
+    "from": "CPRS", 
+    "name": "ORPRF CLEAR", 
+    "timeStamp": "2017-01-24T05:35:09.091Z", 
+    "args": [], 
+    "to": "rpcRunner", 
+    "rpc": "[XWB]11302\u00010\u000bORPRF CLEAR54f\u0004", 
+    "version": "0", 
+    "response": "\u0000\u0000\u0004"
+  }, 
+  {
+    "from": "CPRS", 
+    "name": "OR GET COMBAT VET", 
+    "timeStamp": "2017-01-24T05:35:09.253Z", 
+    "args": [
+      "25"
+    ], 
+    "to": "mvdmEmulated", 
+    "rpc": "[XWB]11302\u00010\u0011OR GET COMBAT VET5000225f\u0004", 
+    "version": "0", 
+    "response": "\u0000\u0000NOTCV\r\n\u0004"
+  }, 
+  {
+    "from": "CPRS", 
+    "name": "ORWCIRN FACLIST", 
+    "timeStamp": "2017-01-24T05:35:09.325Z", 
+    "args": [
+      "25"
+    ], 
+    "to": "rpcRunner", 
+    "rpc": "[XWB]11302\u00010\u000fORWCIRN FACLIST5000225f\u0004", 
+    "version": "0", 
+    "response": "\u0000\u0000-1^Remote access not allowed\r\n\u0004"
+  }, 
+  {
+    "from": "CPRS", 
+    "name": "ORWCIRN AUTORDV", 
+    "timeStamp": "2017-01-24T05:35:09.348Z", 
+    "args": [], 
+    "to": "rpcRunner", 
+    "rpc": "[XWB]11302\u00010\u000fORWCIRN AUTORDV54f\u0004", 
+    "version": "0", 
+    "response": "\u0000\u00000\u0004"
+  }, 
+  {
+    "from": "CPRS", 
+    "name": "ORWPT SHARE", 
+    "timeStamp": "2017-01-24T05:35:09.416Z", 
+    "args": [
+      "10.211.55.21", 
+      "000202A4", 
+      "25"
+    ], 
+    "to": "rpcRunner", 
+    "rpc": "[XWB]11302\u00010\u000bORWPT SHARE5001210.211.55.21f0008000202A4f000225f\u0004", 
+    "version": "0", 
+    "response": "\u0000\u0000\u0004"
+  }, 
+  {
+    "from": "CPRS", 
+    "name": "DG CHK PAT/DIV MEANS TEST", 
+    "timeStamp": "2017-01-24T05:35:09.443Z", 
+    "args": [
+      "25"
+    ], 
+    "to": "rpcRunner", 
+    "rpc": "[XWB]11302\u00010\u0019DG CHK PAT/DIV MEANS TEST5000225f\u0004", 
+    "version": "0", 
+    "response": "\u0000\u00000\r\n\u0004"
+  }, 
+  {
+    "from": "CPRS", 
+    "name": "ORWPT LEGACY", 
+    "timeStamp": "2017-01-24T05:35:09.486Z", 
+    "args": [
+      "25"
+    ], 
+    "to": "rpcRunner", 
+    "rpc": "[XWB]11302\u00010\fORWPT LEGACY5000225f\u0004", 
+    "version": "0", 
+    "response": "\u0000\u00000\r\n\u0004"
+  }, 
+  {
+    "from": "CPRS", 
+    "name": "ORPRF HASFLG", 
+    "timeStamp": "2017-01-24T05:35:09.493Z", 
+    "args": [
+      "25"
+    ], 
+    "to": "rpcRunner", 
+    "rpc": "[XWB]11302\u00010\fORPRF HASFLG5000225f\u0004", 
+    "version": "0", 
+    "response": "\u0000\u0000\u0004"
+  }, 
+  {
+    "from": "CPRS", 
+    "name": "ORVAA VAA", 
+    "timeStamp": "2017-01-24T05:35:09.523Z", 
+    "args": [
+      "25"
+    ], 
+    "to": "rpcRunner", 
+    "rpc": "[XWB]11302\u00010\tORVAA VAA5000225f\u0004", 
+    "version": "0", 
+    "response": "\u0000\u00000\r\n\u0004"
+  }, 
+  {
+    "from": "CPRS", 
+    "name": "ORWMHV MHV", 
+    "timeStamp": "2017-01-24T05:35:09.546Z", 
+    "args": [
+      "25"
+    ], 
+    "to": "rpcRunner", 
+    "rpc": "[XWB]11302\u00010\nORWMHV MHV5000225f\u0004", 
+    "version": "0", 
+    "response": "\u0000\u00000\u0004"
+  }, 
+  {
+    "from": "CPRS", 
+    "name": "ORWCOM PTOBJ", 
+    "timeStamp": "2017-01-24T05:35:09.560Z", 
+    "args": [], 
+    "to": "rpcRunner", 
+    "rpc": "[XWB]11302\u00010\fORWCOM PTOBJ54f\u0004", 
+    "version": "0", 
+    "response": "\u0000\u00000\u0004"
+  }, 
+  {
+    "from": "CPRS", 
+    "name": "ORWCV START", 
+    "timeStamp": "2017-01-24T05:35:09.624Z", 
+    "args": [
+      "25", 
+      "10.211.55.21", 
+      "000202A4", 
+      "0", 
+      "", 
+      "0"
+    ], 
+    "to": "rpcRunner", 
+    "rpc": "[XWB]11302\u00010\u000bORWCV START5000225f001210.211.55.21f0008000202A4f00010f0000f00010f\u0004", 
+    "version": "0", 
+    "response": "\u0000\u000010;20;30;40;70;80;\u0004"
+  }, 
+  {
+    "from": "CPRS", 
+    "name": "ORWCV1 COVERSHEET LIST", 
+    "timeStamp": "2017-01-24T05:35:09.654Z", 
+    "args": [], 
+    "to": "rpcRunner", 
+    "rpc": "[XWB]11302\u00010\u0016ORWCV1 COVERSHEET LIST54f\u0004", 
+    "version": "0", 
+    "response": "\u0000\u000010^Active Problems^^S^^ORQQPL LIST^1^^^^^A^^2,3^9,10,2^ORQQPL DETAIL^1^28\r\n20^Allergies / Adverse Reactions^^S^^ORQQAL LIST^1^^^^^^^^2^ORQQAL DETAIL^2^29\r\n30^Postings^^S^^ORQQPP LIST^1^^Maroon^D^3^^^20^2,3^^3^30\r\n40^Active Medications^^S^^ORWPS COVER^1^1^^^^^^35^2,4^ORWPS DETAIL^4^31\r\n50^Clinical Reminders                                        Due Date^^S^^ORQQPX REMINDERS LIST^^^^D^3^^^34,44^2,3^^5^32\r\n60^Recent Lab Results^^S^^ORWCV LAB^1^^^D^3^^^34^2,3^ORWOR RESULT^6^33\r\n70^Vitals^^S^^ORQQVI VITALS^^^^T^4^^^5,17,19,27^2,5,4,6,7,8^^7^34\r\n80^Appointments/Visits/Admissions^^S^^ORWCV VST^1^1^^T^2^^^16,27^2,3,4^ORWCV DTLVST^8^35\r\n\u0004"
+  }, 
+  {
+    "from": "CPRS", 
+    "name": "ORQQPL LIST", 
+    "timeStamp": "2017-01-24T05:35:09.692Z", 
+    "args": [
+      "25", 
+      "A"
+    ], 
+    "to": "rpcRunner", 
+    "rpc": "[XWB]11302\u00010\u000bORQQPL LIST5000225f0001Af\u0004", 
+    "version": "0", 
+    "response": "\u0000\u0000^No problems found.\r\n\u0004"
+  }, 
+  {
+    "from": "CPRS", 
+    "name": "ORQQAL LIST", 
+    "timeStamp": "2017-01-24T05:35:09.855Z", 
+    "args": [
+      "25"
+    ], 
+    "to": "mvdmEmulated", 
+    "rpc": "[XWB]11302\u00010\u000bORQQAL LIST5000225f\u0004", 
+    "version": "0", 
+    "response": "\u0000\u0000^No Allergy Assessment\r\n\u0004"
+  }, 
+  {
+    "from": "CPRS", 
+    "name": "ORWU PATCH", 
+    "timeStamp": "2017-01-24T05:35:09.876Z", 
+    "args": [
+      "GMRA*4.0*21"
+    ], 
+    "to": "rpcRunner", 
+    "rpc": "[XWB]11302\u00010\nORWU PATCH50011GMRA*4.0*21f\u0004", 
+    "version": "0", 
+    "response": "\u0000\u00001\u0004"
+  }, 
+  {
+    "from": "CPRS", 
+    "name": "ORQQPP LIST", 
+    "timeStamp": "2017-01-24T05:35:09.907Z", 
+    "args": [
+      "25"
+    ], 
+    "to": "rpcRunner", 
+    "rpc": "[XWB]11302\u00010\u000bORQQPP LIST5000225f\u0004", 
+    "version": "0", 
+    "response": "\u0000\u0000^No patient postings found.\r\n\u0004"
+  }, 
+  {
+    "from": "CPRS", 
+    "name": "ORWPS COVER", 
+    "timeStamp": "2017-01-24T05:35:09.979Z", 
+    "args": [
+      "25"
+    ], 
+    "to": "rpcRunner", 
+    "rpc": "[XWB]11302\u00010\u000bORWPS COVER5000225f\u0004", 
+    "version": "0", 
+    "response": "\u0000\u00001N;O^ATORVASTATIN TAB^1^DISCONTINUED\r\n\u0004"
+  }, 
+  {
+    "from": "CPRS", 
+    "name": "ORQQVI VITALS", 
+    "timeStamp": "2017-01-24T05:35:10.354Z", 
+    "args": [
+      "25"
+    ], 
+    "to": "mvdmEmulated", 
+    "rpc": "[XWB]11302\u00010\rORQQVI VITALS5000225f\u0004", 
+    "version": "0", 
+    "response": "\u0000\u0000\u0004"
+  }, 
+  {
+    "from": "CPRS", 
+    "name": "ORWCV VST", 
+    "timeStamp": "2017-01-24T05:35:10.463Z", 
+    "args": [
+      "25"
+    ], 
+    "to": "rpcRunner", 
+    "rpc": "[XWB]11302\u00010\tORWCV VST5000225f\u0004", 
+    "version": "0", 
+    "response": "\u0000\u0000\u0004"
+  }, 
+  {
+    "from": "CPRS", 
+    "name": "ORWOR UNSIGN", 
+    "timeStamp": "2017-01-24T05:35:15.294Z", 
+    "args": [
+      "25", 
+      {
+        "0": ""
+      }
+    ], 
+    "to": "rpcRunner", 
+    "rpc": "[XWB]11302\u00010\fORWOR UNSIGN5000225f20010001\u0001f\u0004", 
+    "version": "0", 
+    "response": "\u0000\u0000\u0004"
+  }, 
+  {
+    "from": "CPRS", 
+    "name": "ORPRF CLEAR", 
+    "timeStamp": "2017-01-24T05:35:40.349Z", 
+    "args": [], 
+    "to": "rpcRunner", 
+    "rpc": "[XWB]11302\u00010\u000bORPRF CLEAR54f\u0004", 
+    "version": "0", 
+    "response": "\u0000\u0000\u0004"
+  }, 
+  {
+    "from": "CPRS", 
+    "name": "ORWCH SAVFONT", 
+    "timeStamp": "2017-01-24T05:35:40.391Z", 
+    "args": [
+      "8"
+    ], 
+    "to": "rpcRunner", 
+    "rpc": "[XWB]11302\u00010\rORWCH SAVFONT500018f\u0004", 
+    "version": "0", 
+    "response": "\u0000\u00000\u0004"
+  }, 
+  {
+    "from": "CPRS", 
+    "name": "ORWCH SAVEALL", 
+    "timeStamp": "2017-01-24T05:35:40.462Z", 
+    "args": [
+      {
+        "24": "B^frmPtSel.sptVert^290,0,0,0", 
+        "25": "C^frmPtSel.lstvAlerts^40,195,75,95,150,310,290", 
+        "26": "B^frmPtSel^102,107,801,594", 
+        "20": "B^frmCoverSplitters2^114,255,255,0", 
+        "21": "B^frmMedsSplit^365,182,0,0", 
+        "22": "C^frmMeds.hdrMedsNonVA^48,384,96,96", 
+        "23": "C^frmOrders.hdrOrders^0,42,245,84,84,42,42,42,42,42", 
+        "1": "B^frmFrame^98,106,809,601", 
+        "3": "W^frmOrders.pnlLeft^117", 
+        "2": "W^frmProblems.pnlLeft^159", 
+        "5": "W^frmConsults.pnlLeft^83", 
+        "4": "W^frmNotes.pnlLeft^176", 
+        "7": "W^frmLabs.pnlLeft^97", 
+        "6": "W^frmDCSumm.pnlLeft^176", 
+        "9": "C^frmOrders.hdrOrders^0,42,245,84,84,42,42,42,42,42", 
+        "8": "W^frmReports.pnlLeft^119", 
+        "11": "C^frmMeds.hdrMedsOut^48,384,96,96,96,48", 
+        "10": "C^frmMeds.hdrMedsIn^48,384,96,96,96", 
+        "13": "B^frmTempEditSplitters^0,0,0,0", 
+        "12": "C^SpellCheckerSettings^", 
+        "15": "B^frmReminderTree^0,0,0,0", 
+        "14": "B^frmTempEditSplitters2^0,0,0,0", 
+        "17": "B^frmRemDlgSplitters^0,0,0,0", 
+        "16": "B^frmRemDlg^0,0,0,0", 
+        "19": "B^frmCoverSplitters1^211,211,120,318", 
+        "18": "B^frmDrawersSplitters^0,0,0,85"
+      }
+    ], 
+    "to": "rpcRunner", 
+    "rpc": "[XWB]11302\u00010\rORWCH SAVEALL520011025B^frmFrame^98,106,809,601t0012025W^frmProblems.pnlLeft^159t0013023W^frmOrders.pnlLeft^117t0014022W^frmNotes.pnlLeft^176t0015024W^frmConsults.pnlLeft^83t0016023W^frmDCSumm.pnlLeft^176t0017020W^frmLabs.pnlLeft^97t0018024W^frmReports.pnlLeft^119t0019051C^frmOrders.hdrOrders^0,42,245,84,84,42,42,42,42,42t00210035C^frmMeds.hdrMedsIn^48,384,96,96,96t00211039C^frmMeds.hdrMedsOut^48,384,96,96,96,48t00212023C^SpellCheckerSettings^t00213030B^frmTempEditSplitters^0,0,0,0t00214031B^frmTempEditSplitters2^0,0,0,0t00215025B^frmReminderTree^0,0,0,0t00216019B^frmRemDlg^0,0,0,0t00217028B^frmRemDlgSplitters^0,0,0,0t00218030B^frmDrawersSplitters^0,0,0,85t00219036B^frmCoverSplitters1^211,211,120,318t00220034B^frmCoverSplitters2^114,255,255,0t00221026B^frmMedsSplit^365,182,0,0t00222035C^frmMeds.hdrMedsNonVA^48,384,96,96t00223051C^frmOrders.hdrOrders^0,42,245,84,84,42,42,42,42,42t00224028B^frmPtSel.sptVert^290,0,0,0t00225046C^frmPtSel.lstvAlerts^40,195,75,95,150,310,290t00226026B^frmPtSel^102,107,801,594f\u0004", 
+    "version": "0", 
+    "response": "\u0000\u0000\u0004"
+  }, 
+  {
+    "from": "CPRS", 
+    "name": "TIU TEMPLATE SET DEFAULTS", 
+    "timeStamp": "2017-01-24T05:35:40.477Z", 
+    "args": [
+      ""
+    ], 
+    "to": "rpcRunner", 
+    "rpc": "[XWB]11302\u00010\u0019TIU TEMPLATE SET DEFAULTS50000f\u0004", 
+    "version": "0", 
+    "response": "\u0000\u00001\u0004"
+  }, 
+  {
+    "from": "CPRS", 
+    "name": "ORWCV STOP", 
+    "timeStamp": "2017-01-24T05:35:40.494Z", 
+    "args": [
+      "25", 
+      "10.211.55.21", 
+      "000202A4"
+    ], 
+    "to": "rpcRunner", 
+    "rpc": "[XWB]11302\u00010\nORWCV STOP5000225f001210.211.55.21f0008000202A4f\u0004", 
+    "version": "0", 
+    "response": "\u0000\u00001\u0004"
+  }, 
+  {
+    "from": "CPRS", 
+    "name": "XWB DEFERRED CLEARALL", 
+    "timeStamp": "2017-01-24T05:35:40.551Z", 
+    "args": [], 
+    "to": "rpcRunner", 
+    "rpc": "[XWB]11302\u00010\u0015XWB DEFERRED CLEARALL54f\u0004", 
+    "version": "0", 
+    "response": "\u0000\u0000\u0004"
+  }, 
+  {
+    "from": "CPRS", 
+    "name": "XWB DEFERRED CLEARALL", 
+    "timeStamp": "2017-01-24T05:35:40.598Z", 
+    "args": [], 
+    "to": "rpcRunner", 
+    "rpc": "[XWB]11302\u00010\u0015XWB DEFERRED CLEARALL54f\u0004", 
+    "version": "0", 
+    "response": "\u0000\u0000\u0004"
+  } 
+]

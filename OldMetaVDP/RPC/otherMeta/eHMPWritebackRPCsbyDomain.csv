@@ -1,0 +1,69 @@
+Domain,RPC,Description
+Allergy,ORWDAL32 SAVE ALLERGY,Create Allergy
+Allergy,ORWDAL32 SAVE ALLERGY,Mark Allergy EIE
+Allergy,ORWDAL32 ALLERGY MATCH,Retrieves matching allergies based on the given search term.
+Allergy,ORWDAL32 DEF, Top 10 Symptoms for Allergies
+Allergy,ORWDAL32 SYMPTOMS,Retrieves data for symptoms pick list
+,,
+Encounter,ORWPCE DIAG,Retrieve list of Diagnostic Codes for a clinic location.
+Encounter,ORQQPL4 LEX,Returns array of problem items that match submitted search term
+Encounter,ORWPCE PROC,Retrieve Procedure Types and Associated CPTCodes w/names
+Encounter,ORWPCE4 LEX,Diagnosis Lexicon Lookup
+Encounter,ORWPCE4 LEX,Procedures Lexicon Lookup
+Encounter,ORWPCE CPTMODS,Retrieves CPT Modifiers for a CPTCode.
+Encounter,ORWPCE SCDIS,Populates Service Connection & Rated Disabilities
+Encounter,ORWPCE SCSEL,Returns indicator to allow button selection of Service Connected Related to Items
+Encounter,ORWPCE VISIT,Retrieves Visit Category (Type) and associated CPT (procedure) Codes
+Encounter,ORWU NEWPERS,Populates Available Providers pick list and default.
+Encounter,ORWPCE SAVE,Save the Encounter Form
+,,
+Immunization,PXVIMM ADMIN ROUTE,Returns entries from the IMM ADMINISTRATION ROUTE file (920.2)
+Immunization,PXVIMM ADMIN SITE,Returns entries from the IMM ADMINISTRATION SITE (BODY) file (920.3)
+Immunization,PXVIMM IMM LOT,Returns information from the IMMUNIZATION LOT file (#9999999.41)
+Immunization,PXVIMM IMM MAN,Returns information from the IMM MANUFACTURER file (#9999999.04)
+Immunization,PXVIMM IMMDATA,Return an array of the entries from the IMMUNIZATION file (9999999.14)
+Immunization,PXVIMM INFO SOURCE,Returns entries from the IMMUNIZATION INFO SOURCE file (920.1).
+Immunization,ORWPCE GET IMMUNIZATION TYPE,Returns a list of active immunizations.
+Immunization,PXVIMM VIS,This RPC returns information from the VACCINE INFORMATION STATEMENT file (#920).
+Immunization,PX SAVE DATA,Save the immunization
+,,
+Lab Order,ORWDLR32 ALLSAMP,Returns all collection samples.
+Lab Order,ORWDLR32 ALLSPEC,Returns a list of specimens from the TOPOGRAPHY FIELD file (#61).
+Lab Order,ORWDLR32 DEF,Gets Lab Order Dialog Definition
+Lab Order,ORWDLR32 IC VALID,Determines whether the supplied time is a valid lab immediate collect time.
+Lab Order,ORWDLR32 IMMED COLLECT,Returns help text showing lab immediate collect times for the user's division.
+Lab Order,ORWDLR32 GET LAB TIMES,a list of date/time available from the lab schedule
+Lab Order,ORWDLR32 LOAD,"lab sample, specimen, urgency."
+Lab Order,ORWDLR32 MAXDAYS,Returns the maximum number of days for a continuous lab order.
+Lab Order,ORWDX ORDITM,Get list of orderable Lab Orders
+Lab Order,ORWDLR33 FUTURE LAB COLLECT,validate Lab collection for future
+Lab Order,ORWDX LOCK,lock(patient)
+Lab Order,ORWDX UNLOCK,unlock(patient)
+Lab Order,ORWDX LOCK ORDER,lock (order)
+Lab Order,ORWDX UNLOCK ORDER,unlock (order)
+Lab Order,ORWDXC ACCEPT,run order checks
+Lab Order,ORWDXC SAVE,save order
+Lab Order,ORWDXA VALID,validate order is signable/discontinueable
+Lab Order,ORQOR DETAIL,read order details
+Lab Order,ORDWU VALIDSIG,validate user eSignature
+Lab Order,ORDWXC SESSION,read order checks
+Lab Order,ORWDXC SAVECHK,save order checks
+Lab Order,ORWDX SEND,sign order
+Lab Order,ORWDXA DC,discontinue order
+Lab Order,ORWDX2 DCREASON,list of discontinue reasons
+,,
+Notes,TIU IS THIS A SURGERY?,Returns the flags for a Progress Note Title
+Notes,TIU ONE VISIT NOTE?,Returns the flags for a Progress Note Title
+Notes,TIU ISPRF,Returns the flags for a Progress Note Title
+Notes,TIU IS THIS A CONSULT?,Returns the flags for a Progress Note Title
+Notes,TIU LONG LIST OF TITLES,Returns a list of Note Titles
+Notes,TIU CREATE RECORD,create the Note
+Notes,TIU SIGN RECORD,sign the Note
+Notes,TIU DELETE RECORD,delete the Note
+,,
+Radiology,ORWDRA32 DEF,Loads dialog data (lists & defaults) for a radiology order.
+Radiology,ORWDRA32 IMTYPSEL,Radiology Imaging Types
+,,
+Vitals,GMV ADD VM,Create Vital
+Vitals,GMV MARK ERROR,Mark Vital EIE
+Vitals ,GMV VITALS/CAT/QUAL,Get list of vitals qualifiers/categories
