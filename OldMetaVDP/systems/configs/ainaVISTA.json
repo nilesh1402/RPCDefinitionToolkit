@@ -1,0 +1,11 @@
+{
+    "name": "ainaVISTA",
+    "description": "AINA VISTA - JLV Test image with 1000+ patients and up to date eHMP KIDS",
+    "fmqlEP": "https://vista-aina/fmqlEP",
+    "fmqlQuery": "fmql",
+    "fmType": "VISTA",
+    "systemBase": "http://ainavista.vistadataproject.info/",
+    "included": ["2", "405", "405_4", "120_8", "120_85", "120_86", "8925", "9000010", "9000010_06", "200", "_11", "8994"],
+    "baseLocation": "/data",
+    "jsonForm": "NEW"
+}
