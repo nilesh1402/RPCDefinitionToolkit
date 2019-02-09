@@ -25,7 +25,7 @@ def assemble():
     
     for sno in SNOS:
         
-        _8994Reductions = json.load(open(VISTA_RPCD_LOCN_TEMPL.format(sno) + "_8994Reduction.json"))
+        _8994Reductions = json.load(open(VISTA_RPCD_LOCN_TEMPL.format(sno) + "_8994Reduction.json"), object_pairs_hook=OrderedDict)
         
         for red in _8994Reductions:
             
