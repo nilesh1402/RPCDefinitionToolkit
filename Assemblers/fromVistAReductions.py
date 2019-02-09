@@ -38,26 +38,36 @@ def assemble():
             rpc = red["label"]
             del red["label"]
             definitionsByRPC[rpc] = red
+            
+    json.dump(definitionsByRPC, open("../Definitions/rpcInterfaceDefinition.json", "w"), indent=4)
+            
+"""
+Others to report:
+- emulated in VAM 1 (fixed defn) ... rem move to breath first
+- reference param use #'s 
+ie/ broad metrics for planning 
+"""
+def reportAssembly():
+
+    definitionsByRPC = json.load(open("../Definitions/rpcInterfaceDefinition.json"), object_pairs_hook=OrderedDict)
         
     """
     \# | Metric | Count
     --- | --- | ---
     1 | Total RPCs | 5,475
     2 | In all 3 | 3,669
-    3 | In all 442/640 but not FOIA | 1,481
+    3 | In both 442/640 but not FOIA | 1,481
     4 | Exclusive 442 | 87
     5 | Exclusive 640 | 231
     6 | Exclusive 999 | 5
     """
     tbl = MarkdownTable(["Metric", "Count"])
-    tbl.addRow(["Total RPCs", len(definitionsByRPC)])
+    tbl.addRow(["__Total RPCs__", "__{:,}__".format(len(definitionsByRPC))])
     tbl.addRow(["In all 3", sum(1 for rpc in definitionsByRPC if len(definitionsByRPC[rpc]["_vistas"]) == 3)])
-    tbl.addRow(["In all 442/640 but not FOIA", sum(1 for rpc in definitionsByRPC if set(definitionsByRPC[rpc]["_vistas"]) == set(["442", "640"]))])
+    tbl.addRow(["In both 442/640 but not FOIA", sum(1 for rpc in definitionsByRPC if set(definitionsByRPC[rpc]["_vistas"]) == set(["442", "640"]))])
     for sno in SNOS:
         tbl.addRow(["Exclusive {}".format(sno), sum(1 for rpc in definitionsByRPC if len(definitionsByRPC[rpc]["_vistas"]) == 1 and sno in definitionsByRPC[rpc]["_vistas"])])
     print tbl.md()
-        
-    json.dump(definitionsByRPC, open("../Definitions/rpcInterfaceDefinition.json", "w"), indent=4)
 
 # ################################# DRIVER #######################
                
@@ -66,6 +76,7 @@ def main():
     assert(sys.version_info >= (2,7))
 
     assemble()
+    reportAssembly()
 
 if __name__ == "__main__":
     main()
