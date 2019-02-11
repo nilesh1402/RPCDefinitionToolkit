@@ -18,9 +18,13 @@ VISTA_RPCD_LOCN_TEMPL = "/data/vista/{}/RPCDefinitions/"
 """
 Each VistA has information about its RPC interface, mainly in FileMan files.
 
-TODO: 
-- 19
-- basic assembler using both
+... start with type report and reduce from there.
+
+TODO: (rem: 
+- 19 (clean out older webReport/ type report)
+... links in 8994
+... feed assembler
+... fix metaVDP in and go from there for base level
 """
 
 def reduceFMData(stationNo):
@@ -212,9 +216,59 @@ def reduce8994(stationNo, redResults):
     
 """
 Just for RPC options
+
+A:action <----- trigger too
+E:edit
+I:inquire
+M:menu
+P:print
+R:run routine
+O:protocol
+Q:protocol menu
+X:extended action <------- here's the extended actions that trigger protocols
+S:server
+L:limited
+C:ScreenMan
+W:Window
+Z:Window Suite
+B:Broker (Client/Server) <-------- this one is of interest
+
+TODO: see https://github.com/vistadataproject/metaVDP/blob/master/definitions/ProtocolsXRefsParams/reportBOption.py
 """
 def reduce19(stationNo, redResults):
-    pass
+
+    resourceIter = FilteredResultIterator(DATA_LOCN_TEMPL.format(stationNo), "19")
+
+    ## TODO - clean this out with a REDUCER
+    for resource in resourceIter:
+        total += 1
+        if "type_4" not in resource or resource["type_4"] != "B:Broker (Client/Server)":
+            continue
+        cnt += 1
+        if "package" in resource:
+            wPackage.append(resource["label"])
+            if re.search(r'MAG', resource["label"]):
+                raise Exception("Expects MAG 'Apps' NOT to have Package")
+            if re.search(r'CPRS', resource["label"]):
+                raise Exception("Expects CPRS 'App' NOT to have Package")
+        else:
+            woPackage.append(resource["label"])
+        if "rpc" not in resource:
+            woRPC.append(resource["label"])
+        else:
+            byRPCCount[len(resource["rpc"])].append(resource["label"])
+            rpcLabels = set(rpcInfo["rpc"]["label"] for rpcInfo in resource["rpc"])
+            for rpcInfo in resource["rpc"]:
+                optionsPerRPC[rpcInfo["rpc"]["label"]].append(resource["label"])
+                if len(rpcInfo) > 2:
+                    optionsWithKeysForRPCs.add(resource["label"])
+                    if "rules" in rpcInfo:
+                        raise Exception("At most expect key setting for option use of RPC")
+            rpcsByOption[resource["label"]] = rpcLabels
+            if re.search(r'CPRS', resource["label"]):
+                cprsRPCs = rpcLabels
+            if sum(1 for rpcLabel in rpcLabels if re.search(r'DDR ', rpcLabel)):
+                ddrRPCUsingOptions.add(resource["label"])
     
 # ################################# DRIVER #######################
                
