@@ -46,6 +46,9 @@ Others to report:
 - emulated in VAM 1 (fixed defn) ... rem move to breath first
 - reference param use #'s 
 ie/ broad metrics for planning 
+
+... TODO: move to separate reporter as a manifest / progress report
+... will go along with RPC i/f improved docs
 """
 def reportAssembly():
 
