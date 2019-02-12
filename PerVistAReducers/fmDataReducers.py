@@ -33,6 +33,8 @@ def reduceFMData(stationNo):
 
     reduce8994(stationNo, redResults)
     
+    reduce19(stationNo, redResults)
+    
     json.dump(redResults, open("redResults.json", "w"), indent=4)
     
     print "# VistA Reductions (so far)\n"
@@ -42,7 +44,6 @@ def reduceFMData(stationNo):
         mu = ", ".join(["{} ({:,}/{:,})".format(sNo if sNo != "999" else "FOIA", typeInfo[sNo]["total"], typeInfo[sNo]["reduced"]) for sNo in sorted(typeInfo)])
         tbl.addRow([typeId, mu])
     print tbl.md() + "\n"
-    
 
 """
 REMOTE PROCEDURE (8994)
@@ -215,60 +216,135 @@ def reduce8994(stationNo, redResults):
     redResults["8994"][stationNo] = {"total": reducer.totalReduced(), "reduced": reducer.totalReduced()}
     
 """
-Just for RPC options
+Just for RPC options ie/ type_4 == B:Broker (Client/Server)
 
-A:action <----- trigger too
-E:edit
-I:inquire
-M:menu
-P:print
-R:run routine
-O:protocol
-Q:protocol menu
-X:extended action <------- here's the extended actions that trigger protocols
-S:server
-L:limited
-C:ScreenMan
-W:Window
-Z:Window Suite
-B:Broker (Client/Server) <-------- this one is of interest
-
-TODO: see https://github.com/vistadataproject/metaVDP/blob/master/definitions/ProtocolsXRefsParams/reportBOption.py
+TODO: may extend to
+- A:action
+- X:extended action <------- here's the extended actions that trigger protocols
 """
 def reduce19(stationNo, redResults):
 
     resourceIter = FilteredResultIterator(DATA_LOCN_TEMPL.format(stationNo), "19")
+    
+    class Reducer(object):
+    
+        def __init__(self):
+            self.__noSeen = 0
+            self.__noReduced = 0
+    
+        def reduce(self, resource):
+            self.__noSeen += 1
+            if not ("type_4" in resource and resource["type_4"] == "B:Broker (Client/Server)"):
+                return None
+            self.__reduction = OrderedDict()
+            SUPPRESS_PROPS = ["menu_text", "timestamp_of_primary_menu", "timestamp", "display_option", "delegable", "short_menu_text", "entry_action", "e_action_present", "xquit_message", "keep_from_deleting"]
+            for prop in resource:
+                if prop in SUPPRESS_PROPS:
+                    continue
+                if prop in ["label", "type"]:
+                    continue
+                # if not hasattr(self, prop):
+                #    raise Exception("Unexpected 19 property {}".format(prop))
+                if not hasattr(self, prop):
+                    continue
+                getattr(self, prop)(resource[prop])
+            self.__noReduced += 1
+            return self.__reduction
+            
+        def totalSeen(self):
+            return self.__noSeen
+            
+        def totalReduced(self):
+            return self.__noReduced
 
-    ## TODO - clean this out with a REDUCER
-    for resource in resourceIter:
-        total += 1
-        if "type_4" not in resource or resource["type_4"] != "B:Broker (Client/Server)":
-            continue
-        cnt += 1
-        if "package" in resource:
-            wPackage.append(resource["label"])
-            if re.search(r'MAG', resource["label"]):
-                raise Exception("Expects MAG 'Apps' NOT to have Package")
-            if re.search(r'CPRS', resource["label"]):
-                raise Exception("Expects CPRS 'App' NOT to have Package")
-        else:
-            woPackage.append(resource["label"])
-        if "rpc" not in resource:
-            woRPC.append(resource["label"])
-        else:
-            byRPCCount[len(resource["rpc"])].append(resource["label"])
-            rpcLabels = set(rpcInfo["rpc"]["label"] for rpcInfo in resource["rpc"])
+        # ################## Mandatory or Close to It ###############
+      
+        # not doing id for now (ie/ IEN not needed)
+        def _id(self, value):
+            return
+            
+        # type_4 - LITERAL - 151 (100%)
+        # ... used for filter so fixed
+        def type_4(self, value):
+            return
+        
+        """
+        > The formal name of an option, prefaced with the package name. Each option must 
+        > be preceded by its package prefix (a 2-4 character) code specified in the 
+        > PACKAGE file, or the letter "Z" or "A".
+        """
+        # name - LITERAL - 151 (100%)              
+        def name(self, value): 
+            self.__reduction["label"] = value
+                        
+        # uppercase_menu_text - LITERAL - 151 (100%)
+        # ... instead of 'menu_text'
+        def uppercase_menu_text(self, value):
+            self.__reduction["menuText"] = value
+            
+        # rpc - LIST - 143 (95%) (or 1% of full list)
+        def rpc(self, values):
+            try:
+                self.__ensureRPCLabelUnique
+            except:
+                self.__ensureRPCLabelUnique = defaultdict(set)
+            rpcLabels = set()
             for rpcInfo in resource["rpc"]:
-                optionsPerRPC[rpcInfo["rpc"]["label"]].append(resource["label"])
-                if len(rpcInfo) > 2:
-                    optionsWithKeysForRPCs.add(resource["label"])
-                    if "rules" in rpcInfo:
-                        raise Exception("At most expect key setting for option use of RPC")
-            rpcsByOption[resource["label"]] = rpcLabels
-            if re.search(r'CPRS', resource["label"]):
-                cprsRPCs = rpcLabels
-            if sum(1 for rpcLabel in rpcLabels if re.search(r'DDR ', rpcLabel)):
-                ddrRPCUsingOptions.add(resource["label"])
+                self.__ensureRPCLabelUnique[
+                rpcInfo["rpc"]["label"]].add(rpcInfo["rpc"]["id"])
+                rpcLabels.add(re.sub(r'\_', '/', rpcInfo["rpc"]["label"]))
+                # for now just note: may include properly later
+                if "rules" in rpcInfo:
+                    self.__reduction["isRPCsRuled"] = True
+                if "rpckey" in rpcInfo:
+                    self.__reduction["isRPCsKeyed"] = True
+            if sum(1 for rpcLabel in self.__ensureRPCLabelUnique if len(self.__ensureRPCLabelUnique[rpcLabel]) > 1):
+                raise Exception("Assumption that RPC label is unique for an RPC is false")
+            self.__reduction["rpcs"] = sorted(list(rpcLabels))
+                        
+        # description - LITERAL - 109 (72%)
+        def description(self, value):
+            self.__reduction["description"] = value
+
+        # package - POINTER - 65 (43%) - 9_4
+        # ... note: may get from name itself (compare)
+        def package(self, value):
+            self.__reduction["package"] = resource["package"]["label"]
+                        
+        # routine - LITERAL - 8 (5%)
+        def routine(self, value):
+            self.__reduction["routine"] = value
+            
+        # lock - LITERAL - 3 (2%)
+        def lock(self, value):
+            self.__reduction["keyRequired"] = value
+            
+        # out_of_order_message - LITERAL - 3 (2%)
+        def out_of_order_message(self, value):
+            self.__reduction["removedReason"] = value
+            self.__reduction["isRemoved"] = True
+            
+        # menu - LIST - 2 (1%)
+        def menu(self, values):
+            subOptions = sorted(list(set(val["item"]["label"] for val in values)))
+            self.__reduction["subOptions"] = subOptions
+            
+    reducer = Reducer()
+    reductions = []
+    print "Reducing 19 for {}".format(stationNo)
+    for i, resource in enumerate(resourceIter, 1):
+        if (i % 1000) == 0:
+            print "\tprocessing another 1000 19's"
+        reduction = reducer.reduce(resource)
+        if reduction:
+            reductions.append(reduction)
+    print "\t... done after {:,}, {:,} reduced".format(reducer.totalSeen(), reducer.totalReduced())
+        
+    json.dump(reductions, open(VISTA_RPCD_LOCN_TEMPL.format(stationNo) + "_19Reduction.json", "w"), indent=4)
+        
+    if "19" not in redResults:
+        redResults["19"] = {}
+    redResults["19"][stationNo] = {"total": reducer.totalSeen(), "reduced": reducer.totalReduced()}
     
 # ################################# DRIVER #######################
                
