@@ -16,18 +16,11 @@ from fmqlutils.schema.reduceReportTypes import DATA_LOCN_TEMPL, TMPWORKING_LOCN_
 VISTA_RPCD_LOCN_TEMPL = "/data/vista/{}/RPCDefinitions/"
 
 """
-Each VistA has information about its RPC interface, mainly in FileMan files.
-
-... start with type report and reduce from there.
-
-TODO: (rem: 
-- 19 (clean out older webReport/ type report)
-... links in 8994
-... feed assembler
-... fix metaVDP in and go from there for base level
+Each VistA has information about its RPC interface, mainly in FileMan files. One key
+subset is VistA's own RPC i/f defn file 8994 and all files that refer to it.
 """
 
-def reduceFMData(stationNo):
+def reduce8994PlusReferrers(stationNo):
 
     redResults = json.load(open("redResults.json"))
 
@@ -216,6 +209,8 @@ def reduce8994(stationNo, redResults):
     redResults["8994"][stationNo] = {"total": reducer.totalReduced(), "reduced": reducer.totalReduced()}
     
 """
+{'qprop': 'rpc:rpc', 'fileName': u'RPC', 'topFileName': u'OPTION', 'topFileId': u'19', 'prop': u'rpc', 'fileId': u'19.05'}
+
 Just for RPC options ie/ type_4 == B:Broker (Client/Server)
 
 TODO: may extend to
@@ -346,6 +341,12 @@ def reduce19(stationNo, redResults):
         redResults["19"] = {}
     redResults["19"][stationNo] = {"total": reducer.totalSeen(), "reduced": reducer.totalReduced()}
     
+"""
+{'fileName': u'OE/RR REPORT', 'fileId': u'101.24', 'prop': u'rpc'}
+"""
+def reduce101_24(stationNo, redResults):
+    pass
+    
 # ################################# DRIVER #######################
                
 def main():
@@ -358,7 +359,7 @@ def main():
         
     stationNo = sys.argv[1]
     
-    reduceFMData(stationNo)
+    reduce8994PlusReferrers(stationNo)
 
 if __name__ == "__main__":
     main()
