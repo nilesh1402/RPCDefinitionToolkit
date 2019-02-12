@@ -8,10 +8,9 @@ import json
 from collections import defaultdict, OrderedDict
 from datetime import datetime
 
-from fmqlutils.cacher.cacherUtils import FMQLReplyStore, FilteredResultIterator
-from fmqlutils.reporter.reportUtils import MarkdownTable, reportPercent, reportAbsAndPercent
-
-from fmqlutils.schema.reduceReportTypes import DATA_LOCN_TEMPL, TMPWORKING_LOCN_TEMPL
+from fmqlutils.cacher.cacherUtils import FilteredResultIterator
+from fmqlutils.reporter.reportUtils import MarkdownTable, reportAbsAndPercent
+from fmqlutils.schema.reduceReportTypes import DATA_LOCN_TEMPL
 
 VISTA_RPCD_LOCN_TEMPL = "/data/vista/{}/RPCDefinitions/"
 
@@ -27,6 +26,8 @@ def reduce8994PlusReferrers(stationNo):
     reduce8994(stationNo, redResults)
     
     reduce19(stationNo, redResults)
+    
+    reduce101_24(stationNo, redResults)
     
     json.dump(redResults, open("redResults.json", "w"), indent=4)
     
