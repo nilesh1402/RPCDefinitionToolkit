@@ -2,6 +2,8 @@
 
 A toolkit for defining VistAs RPC interface including client and user types
 
+Interplay of Data Analysis and MUMPS Analysis with as much automation as possible.
+
 ## Planned Rollout of RPC Interface Definition
 
 Stage | Area | VistAs | Weeks | Due Date | Description
