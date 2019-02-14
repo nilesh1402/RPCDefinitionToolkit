@@ -13,3 +13,4 @@ Stage | Area | VistAs | Weeks | Due Date | Description
 2 | System User and Application Definitions | Clones | 2 | March 15th | Basic User and Application Definitions
 1 | System RPC definitions - 8994, 101.24, 19 ... | ALL | 4 | March 1 | Basic 5500 RPC Definitions + VAM-1
 
+![Gantt TK](Images/vam2TKGantt.png)
