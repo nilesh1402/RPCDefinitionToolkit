@@ -4,17 +4,25 @@ _Toolkit/Definition_ is one of three development areas for VAM-II. The other two
 
 > for producing a __machine-readable definition__ of VA VistA's RPC interface covering individual RPCs, Application and User types (__"RPC Interface Definition"__) to __enable intelligent Auditing and Alerting__ of any and all VA VistAs by a Cloud-based interface monitor.
 
-Prior to IOC, the _RPC Interface Definition_ will be produced in seven stages by processing a variety of VistA Artifacts. Artifacts are either __VistA-resident Data__ including definitions and logs or __VistA MUMPS code__.
+The definition and toolkit address four of the five deliverables called out in PWS 5.2 _Adaptive Maintainence Services_:
+  1. __Comprehensive RPC Interface Audit Report__
+  2. __MUMPS RPC to JSON Model Data Definition__ 
+  3. __Version Description Document (VDD)__
+  4. Automated CloudWatch Configuration 
+  5. __Security Vulnerability Report__
+as well as providing significant input for Testing (PWS 5.3), IOC (PWS 5.5) and Deployment and Release (PWS 5.6) including the latter's _Capacity, Performance and Scalability Assessment_ report.
+
+The _RPC Interface Definition_ will be produced in seven stages by processing a variety of VistA Artifacts. Artifacts are either __VistA-resident Data__ including definitions and logs or __VistA MUMPS code__.
 
 Version | Area | VistAs | Weeks | Due Date | Description
 --- | --- | --- | --- | --- | ---
 __D1__ | System RPC definitions - 8994, 101.24, 19 ... | ALL | 4 | __March 1__ | __Basic Definition of ALL 5500__ and incorporate nuance from VAM-1 for a subset
 __D2__ | System User and Application Definitions | Clones | 2 | __March 15th__ | Basic Definition of User and Application (Client) Types
 __D3__ | __MUMPS Code I__ (RPC Broker fixed behaviors) | FOIA | 6 | __April 26th__ | Examine and test RPC Broker code to scope [a] RPC Parsing requirements, [b] session recognition and stateful behavior required of the RPC Monitor and [c] vulnerabilities in the existing broker
-__D4__ | System Logs (sign ons, usage) | Clones | 6 | __June 7th__ | Use the piecemeal logs now in VistA to [a] enhance definitions and [b] ensure definitions support at least the scope of these logs 
+__D4__ | System Logs (sign ons, usage) | Clones | 6 | __June 7th__ | Analyze the piecemeal logs now in VistA to enhance definitions. This feeds into the _Security Vulnerability Report_, a key deliverable 
 __D5__ | __MUMPS Code II__ (Package RPC effects) | FOIA | 9 | __August 9th__ | Enhance individual RPC definitions and develop new test scenarios based on their MUMPS implementations
-__D6__ | "Change Crumbs" | 1 Clone | 9 | __October 11th__ | Enhance _CHANGE RPC_ definitions based on their trails in FileMan data. Caching of Clone data will start early in the project.
-__D7__ | _IOC Preparation and Results_ | IOC | - | __January 17__ | during and after IOC, update definitions based on IOC results
+__D6__ | "Change Crumbs" | 1 Clone | 9 | __October 11th__ | Enhance _CHANGE RPC_ and User definitions based on "crumbs" (who created, when changed) left in FileMan data. Caching of representative Clone data will start early in the project.
+__D7__ | _IOC Preparation and Results_ | IOC | - | __January 17__ | during and after IOC, update definitions and reports based on IOC results
 
 ![Gantt TK](Images/vam2TKGantt.png)
 
@@ -25,4 +33,5 @@ __D7__ | _IOC Preparation and Results_ | IOC | - | __January 17__ | during and a
 VistA-derived information from manual additions and overrides
   * Initially artifacts will come from FOIA VistA and two VAM-1 Clones, 442 and 640. Later refreshed versions (2019 cuts) of the same clones and a clone of the IOC target VistA will be processed.
     * expect refreshed 442 and 640 by end of VAM-2 Q1 (April 25th). Expect IOC Target Clone one month later?
-  * The Interface Definition will have extensive, generated, human-readable documentation and a series of custom reports will capture major functionality and patterns. A quarterly _Version Description Document (VDD)_ tracking the progress and maturity of the Interface Definition will be one of these reports. All documentation and reports will be in the Markdown format.
+  * The toolkit will generate human-readable, markdown-formatted documentation of RPC, Application and User types. It will also generate a series of custom reports to summarize major functionality and patterns of the interface and its users.
+    * many of the generated summaries will make PWS deliverables including all or portions of the _Comprehensive RPC Interface Audit Report_, the _Version Description Document (VDD) Definition_, the _Security Vulnerability Report_ and the _Capacity, Performance and Scalability Assessment_.
