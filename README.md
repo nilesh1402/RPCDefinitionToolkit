@@ -15,8 +15,9 @@ __D6__ | "Change Crumbs" | 1 Clone | 9 | October 11th | Enhance _CHANGE RPC_ def
 
 ![Gantt TK](Images/vam2TKGantt.png)
 
-  * Staging is based on __breath first__ (all 5500) and then __depth__ so that increasingly nuanced definitions enable incremental development of the _RPC Monitor_. Generally the Monitor will support new Interface Definition nuance within 2 to 4 weeks.
-    * Note that this differs from the initial plan of doing definition in three stages of 1850 RPCs each. 
+  * Staging is based on __breath first__ (all 5500) with increasingly nuanced definitions enabling __incremental development, deployment and testing of the RPC Monitor__. Generally the Monitor will support new Interface Definition nuance within 2 to 4 weeks.
+    * Note that this differs from the initial tentative plan of definition development in three stages of 1850 RPCs each. 
+  * Definition should be complete by October 11th giving time for RPC Monitor completion before the IOC which is scheduled for the fourth quarter of VAM-II.
   * Manual enhancement based on analysis that can't be automated will be captured in a distinct machine-readable definition in order to distinguish the re-generatable
 VistA-derived information from manual additions and overrides
   * Initially artifacts will come from FOIA VistA and two VAM-1 Clones, 442 and 640. Later refreshed versions (2019 cuts) of the same clones and a clone of the IOC target VistA will be processed.
