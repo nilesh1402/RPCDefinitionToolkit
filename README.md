@@ -22,3 +22,4 @@ __D6__ | "Change Crumbs" | 1 Clone | 9 | __October 11th__ | Enhance _CHANGE RPC_
 VistA-derived information from manual additions and overrides
   * Initially artifacts will come from FOIA VistA and two VAM-1 Clones, 442 and 640. Later refreshed versions (2019 cuts) of the same clones and a clone of the IOC target VistA will be processed.
     * expect refreshed 442 and 640 by end of VAM-2 Q1 (April 25th). Expect IOC Target Clone one month later?
+  * The Interface Definition will have extensive, generated, human-readable documentation and a series of custom reports will capture major functionality and patterns. All documentation and reports will be in the Markdown format.
