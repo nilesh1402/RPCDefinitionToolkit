@@ -5,11 +5,11 @@ _Toolkit/Definition_ is one of three development areas for VAM-II. The other two
 > for producing a __machine-readable definition__ of VA VistA's RPC interface covering individual RPCs, Application and User types (__"RPC Interface Definition"__) to __enable intelligent Auditing and Alerting__ of any and all VA VistAs by a Cloud-based interface monitor.
 
 The definition and toolkit address four of the five deliverables called out in PWS 5.2 _Adaptive Maintainence Services_:
-  1. __Comprehensive RPC Interface Audit Report__
-  2. __MUMPS RPC to JSON Model Data Definition__ 
-  3. __Version Description Document (VDD)__
-  4. Automated CloudWatch Configuration 
-  5. __Security Vulnerability Report__
+  * __Comprehensive RPC Interface Audit Report__
+  * __MUMPS RPC to JSON Model Data Definition__ (the _RPC Interface Definition_)
+  * __Version Description Document (VDD)__
+  * __Security Vulnerability Report__
+
 as well as providing significant input for Testing (PWS 5.3), IOC (PWS 5.5) and Deployment and Release (PWS 5.6) including the latter's _Capacity, Performance and Scalability Assessment_ report.
 
 The _RPC Interface Definition_ will be produced in seven stages by processing a variety of VistA Artifacts. Artifacts are either __VistA-resident Data__ including definitions and logs or __VistA MUMPS code__.
