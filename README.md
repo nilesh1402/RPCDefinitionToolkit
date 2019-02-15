@@ -1,10 +1,8 @@
 # RPCDefinitionToolkit
 
-A toolkit for defining VistAs RPC interface including client and user types
+> A toolkit to enable the production of a __machine-readable definition__ of VistA's RPC interface covering individual RPCs, Application and User types (__"RPC Interface Definition"__) to __enable intelligent Auditing and Alerting__ of any and all VA VistAs by a Cloud-based interface monitor.
 
-Interplay of Data Analysis and MUMPS Analysis with as much automation as possible.
-
-## Planned Rollout of RPC Interface Definition
+The _RPC Interface Definition_ will be produced in six stages, each focused on processing and analyzing different artifacts. Artifacts are either __VistA-resident Data Definitions__ or __VistA MUMPS code__.
 
 Version | Area | VistAs | Weeks | Due Date | Description
 --- | --- | --- | --- | --- | ---
@@ -16,3 +14,10 @@ __D5__ | __MUMPS Code II__ (Package RPC effects) | FOIA | 9 | __August 9th__ | E
 __D6__ | "Change Crumbs" | 1 Clone | 9 | October 11th | Enhance _CHANGE RPC_ definitions based on their trails in FileMan data. Caching of Clone data will start early in the project.
 
 ![Gantt TK](Images/vam2TKGantt.png)
+
+  * Staging is based on __breath first__ (all 5500) and then __depth__ so that increasingly nuanced definitions enable incremental development of the _RPC Monitor_. Generally the Monitor will support new Interface Definition nuance within 2 to 4 weeks.
+    * Note that this differs from the initial plan of doing definition in three stages of 1850 RPCs each. 
+  * Manual enhancement based on analysis that can't be automated will be captured in a distinct machine-readable definition in order to distinguish the re-generatable
+VistA-derived information from manual additions and overrides
+  * Initially artifacts will come from FOIA VistA and two VAM-1 Clones, 442 and 640. Later refreshed versions (2019 cuts) of the same clones and a clone of the IOC target VistA will be processed.
+    * expect refreshed 442 and 640 by end of VAM-2 Q1 (April 25th). Expect IOC Target Clone one month later?
