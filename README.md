@@ -26,7 +26,7 @@ __D7__ | _IOC Preparation and Results_ | IOC | - | __January 17__ | during and a
 
 ![Gantt TK](Images/vam2TKGantt.png)
 
-  * Staging is based on __breath first__ (all 5500) with increasingly nuanced definitions enabling __incremental development, deployment and testing of the RPC Monitor__. Generally the Monitor will support new Interface Definition nuance within 2 to 4 weeks.
+  * All 5500 RPCs will be defined by _D1_ and the definitions will gain nuance with each stage. This approach will enable __incremental enhancement, deployment and testing of the RPC Monitor__. Generally the Monitor will support new Interface Definition nuance within 2 to 4 weeks.
     * Note that this differs from the initial tentative plan of definition development in three stages of 1850 RPCs each. 
   * Pre-IOC Definition must be complete by October 11th to give time for RPC Monitor completion before the IOC, scheduled for the fourth quarter of VAM-II.
   * Manual enhancement based on analysis that can't be automated will be captured in a distinct machine-readable definition in order to distinguish the re-generatable
