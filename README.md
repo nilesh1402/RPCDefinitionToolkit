@@ -1,6 +1,6 @@
 # RPCDefinitionToolkit
 
-> A toolkit to enable the production of a __machine-readable definition__ of VistA's RPC interface covering individual RPCs, Application and User types (__"RPC Interface Definition"__) to __enable intelligent Auditing and Alerting__ of any and all VA VistAs by a Cloud-based interface monitor.
+> A toolkit for producing a __machine-readable definition__ of VistA's RPC interface covering individual RPCs, Application and User types (__"RPC Interface Definition"__) to __enable intelligent Auditing and Alerting__ of any and all VA VistAs by a Cloud-based interface monitor.
 
 The _RPC Interface Definition_ will be produced in six stages, each focused on processing and analyzing different artifacts. Artifacts are either __VistA-resident Data Definitions__ or __VistA MUMPS code__.
 
