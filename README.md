@@ -12,7 +12,11 @@ The Toolkit's outputs will address four of the five deliverables called out in P
 
 as well as providing significant input for the _RPC Interface Test Suite_ (PWS 5.3), IOC (PWS 5.5) and Deployment and Release (PWS 5.6) including the latter's _Capacity, Performance and Scalability Assessment_ report.
 
-The Toolkit will produce the _RPC Interface Definition_ and appropriate reports in seven stages by processing a series of VistA Artifacts. The Artifacts are either __VistA-resident Data__ including definitions and logs or __VistA MUMPS code__.
+The Toolkit will produce the _RPC Interface Definition_ and appropriate reports, either completely or in part, from three types of Artifact, _VistA resident data_, _VistA MUMPS code_ or machine definitions of _SME observations_ ...
+
+![ToolkitInOut](Images/vam2ToolkitInputOutput.png)
+
+Work will proceed in seven stages using one or many VistAs ...
 
 Version | Area | VistAs | Weeks | Due Date | Description
 --- | --- | --- | --- | --- | ---
