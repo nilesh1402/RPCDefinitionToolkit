@@ -16,7 +16,7 @@ The Toolkit will produce the _RPC Interface Definition_ and appropriate reports,
 
 ![ToolkitInOut](Images/vam2ToolkitInputOutput.png)
 
-<img src="Images/vam2ToolkitInputOutput.png" width="500"/>
+<img src="Images/vam2ToolkitInputOutput.png" width="600" style="padding-left: 400px"/>
 
 Work will proceed in seven stages using one or many VistAs ...
 
