@@ -2,9 +2,9 @@
 
 _Toolkit/Definition_ is one of three development areas for VAM-II. The other two are _RPC Classifier/Monitor_ and _VAEC Deploy/CloudWatch_. Specifically, the Toolkit is ...
 
-> for producing a __machine-readable definition__ of VA VistA's RPC interface covering individual RPCs, Application and User types (__"RPC Interface Definition"__) to __enable intelligent Auditing and Alerting__ of any and all VA VistAs by a Cloud-based interface monitor.
+> for producing a machine-readable definition (__"RPC Interface Definition"__) and human-readable reports of VA VistA's RPC interface covering individual RPCs, Application and User types (__"RPC Interface Definition"__) to __enable intelligent Auditing and Alerting__ of any and all VA VistAs by a Cloud-based interface monitor.
 
-The definition and toolkit address four of the five deliverables called out in PWS 5.2 _Adaptive Maintainence Services_:
+The Toolkit and its outputs will address four of the five deliverables called out in PWS 5.2 _Adaptive Maintainence Services_:
   * _Comprehensive RPC Interface Audit Report_
   * _MUMPS RPC to JSON Model Data Definition_ (the _RPC Interface Definition_)
   * _Version Description Document (VDD)_
@@ -12,7 +12,7 @@ The definition and toolkit address four of the five deliverables called out in P
 
 as well as providing significant input for the _RPC Interface Test Suite_ (PWS 5.3), IOC (PWS 5.5) and Deployment and Release (PWS 5.6) including the latter's _Capacity, Performance and Scalability Assessment_ report.
 
-The _RPC Interface Definition_ will be produced in seven stages by processing a variety of VistA Artifacts. Artifacts are either __VistA-resident Data__ including definitions and logs or __VistA MUMPS code__.
+The Toolkit will produce the _RPC Interface Definition_ and appropriate reports in seven stages by processing a series of VistA Artifacts. The Artifacts are either __VistA-resident Data__ including definitions and logs or __VistA MUMPS code__.
 
 Version | Area | VistAs | Weeks | Due Date | Description
 --- | --- | --- | --- | --- | ---
