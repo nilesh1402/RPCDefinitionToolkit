@@ -4,7 +4,7 @@ _Toolkit/Definition_ is one of three development areas for VAM-II. The other two
 
 > for producing a machine-readable definition (__"RPC Interface Definition"__) and human-readable reports of VA VistA's RPC interface covering individual RPCs, Application and User types (__"RPC Interface Definition"__) to __enable intelligent Auditing and Alerting__ of any and all VA VistAs by a Cloud-based interface monitor.
 
-The Toolkit and its outputs will address four of the five deliverables called out in PWS 5.2 _Adaptive Maintainence Services_:
+The Toolkit's outputs will address four of the five deliverables called out in PWS 5.2 _Adaptive Maintainence Services_:
   * _Comprehensive RPC Interface Audit Report_
   * _MUMPS RPC to JSON Model Data Definition_ (the _RPC Interface Definition_)
   * _Version Description Document (VDD)_
