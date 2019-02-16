@@ -14,9 +14,7 @@ as well as providing significant input for the _RPC Interface Test Suite_ (PWS 5
 
 The Toolkit will produce the _RPC Interface Definition_ and appropriate reports, either completely or in part, from three types of Artifact, _VistA resident data_, _VistA MUMPS code_ or machine readable _SME observations_ ...
 
-![ToolkitInOut](Images/vam2ToolkitInputOutput.png)
-
-<img src="Images/vam2ToolkitInputOutput.png" width="600" style="padding-left: 400px"/>
+<img src="Images/vam2ToolkitInputOutput.png" width="600" />
 
 Work will proceed in seven stages using one or many VistAs ...
 
