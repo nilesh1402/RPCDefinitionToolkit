@@ -12,7 +12,7 @@ from fmqlutils.reporter.reportUtils import MarkdownTable, reportPercent, reportA
 
 VISTA_RPCD_LOCN_TEMPL = "/data/vista/{}/RPCDefinitions/"
 
-SNOS = ["442", "640", "999"] # SHOULD PUT DATE ON THESE
+SNOS = ["442", "640", "999"] # SHOULD PUT DATE ON THESE in config
 
 """
 First just keep first copy of RPC and tag others have it. 
