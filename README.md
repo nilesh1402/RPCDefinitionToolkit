@@ -20,7 +20,7 @@ Work will proceed in seven stages using one or many VistAs ...
 
 Version | Area | VistAs | Weeks | Due Date | Description
 --- | --- | --- | --- | --- | ---
-__D1__ | System RPC definitions - 8994, 101.24, 19 ... | ALL | 4 | __March 1__ | __Basic Definition of ALL 5500__ and incorporate nuance from VAM-1 for a subset
+__D1__ | System RPC definitions - 8994, 101.24, 19 ... | ALL | 4 | __March 1__ | __Basic Definition of ALL 5500__ and incorporate nuance from VAM-1 for a subset - [so far](https://github.com/vistadataproject/RPCDefinitionToolkit/tree/master/Reporters)
 __D2__ | System User and Application Definitions | Clones | 2 | __March 15th__ | Basic Definition of User and Application (Client) Types
 __D3__ | __MUMPS Code I__ (RPC Broker fixed behaviors) | FOIA | 6 | __April 26th__ | Examine and test RPC Broker code to scope [a] RPC Parsing requirements, [b] session recognition and stateful behavior required of the RPC Monitor and [c] vulnerabilities in the existing broker
 __D4__ | System Logs (sign ons, usage) | Clones | 6 | __June 7th__ | Analyze the piecemeal logs now in VistA to enhance definitions. This feeds into the _Security Vulnerability Report_, a key deliverable 
