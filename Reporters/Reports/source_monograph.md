@@ -1,13 +1,15 @@
 
 ## Monograph
     
-Total Apps: 184
-No Namespace: 11
-decommissioned: 16 - DGBT, HMP, LBR, MWSV, OOPS, ORRC, PCMM, PRC, PRS, QACV (QAC for patch designation), QAN, SOW, SPN, WEBV, ZSL
-active NOT DSS: 148
-DSS: 12 - DENT, DSIF, DSIHH, DSIP, DSIQ, DSIR, DSIT, DSIU, DSIV, DSIVA, DSIY
-Many Namespaces: 3
-Groups: 7
+Category | Count (Details)
+--- | ---
+Total Apps | 184
+No Namespace | 11
+decommissioned | 16 - DGBT, HMP, LBR, MWSV, OOPS, ORRC, PCMM, PRC, PRS, QACV (QAC for patch designation), QAN, SOW, SPN, WEBV, ZSL
+active NOT DSS | 148
+DSS | 12 - DENT, DSIF, DSIHH, DSIP, DSIQ, DSIR, DSIT, DSIU, DSIV, DSIVA, DSIY
+Many Namespaces | 3
+Groups | 7
 
 
 No Namespace ...
