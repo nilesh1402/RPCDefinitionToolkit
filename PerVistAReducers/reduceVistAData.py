@@ -17,6 +17,9 @@ VISTA_RPCD_LOCN_TEMPL = "/data/vista/{}/RPCDefinitions/"
 """
 Each VistA has information about its RPC interface in FileMan files. Here we reduce
 all available data per VistA before assembling into a basic, cross-VistA, data-based RPC Interface definition.
+  * 8994
+  * references to 8994
+  * build/install data about RPCs, Options, ...
 
 TODO: finish 9_4 (for vista app id with monograph), 9_7 for install dates per vista
 and report red file ... before doing assembly
