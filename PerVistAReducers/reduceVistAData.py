@@ -15,13 +15,23 @@ from fmqlutils.schema.reduceReportTypes import DATA_LOCN_TEMPL
 VISTA_RPCD_LOCN_TEMPL = "/data/vista/{}/RPCDefinitions/"
 
 """
-Each VistA has information about its RPC interface, mainly in FileMan files. One key
-subset is VistA's own RPC i/f defn file 8994 and all files that refer to it.
+Each VistA has information about its RPC interface in FileMan files. Here we reduce
+all available data per VistA before assembling into a basic, cross-VistA, data-based RPC Interface definition.
+
+TODO: finish 9_4 (for vista app id with monograph), 9_7 for install dates per vista
+and report red file ... before doing assembly
 """
 
 def reduce8994PlusReferrers(stationNo):
 
     redResults = json.load(open("redResults.json"))
+    
+    """
+    reduce9_7(stationNo, redResults)
+    print x
+    reduce9_4(stationNo, redResults)
+    print x
+    """
 
     reduce8994(stationNo, redResults)
     
@@ -29,9 +39,11 @@ def reduce8994PlusReferrers(stationNo):
     
     reduce101_24(stationNo, redResults)
     
+    reduce9_6(stationNo, redResults)
+    
     json.dump(redResults, open("redResults.json", "w"), indent=4)
     
-    print "# VistA Reductions (so far)\n"
+    print "\n# VistA Reductions (so far)\n"
     tbl = MarkdownTable(["Type", "Station No (Total/Reduction)"])
     for typeId in sorted(redResults):
         typeInfo = redResults[typeId]
@@ -235,6 +247,8 @@ def reduce19(stationNo, redResults):
             self.__reduction = OrderedDict()
             SUPPRESS_PROPS = ["menu_text", "timestamp_of_primary_menu", "timestamp", "display_option", "delegable", "short_menu_text", "entry_action", "e_action_present", "xquit_message", "keep_from_deleting"]
             for prop in resource:
+                if prop == "fmqlHasStops":
+                    continue
                 if prop in SUPPRESS_PROPS:
                     continue
                 if prop in ["label", "type"]:
@@ -341,13 +355,314 @@ def reduce19(stationNo, redResults):
     if "19" not in redResults:
         redResults["19"] = {}
     redResults["19"][stationNo] = {"total": reducer.totalSeen(), "reduced": reducer.totalReduced()}
+               
+"""
+Initially only doing if REMOTE PROCEDURE BUILD COMPONENT there but will expand ...
+- Build Component REMOTE PROCEDURE and OPTION (focus on RPC Option) and ROUTINE (focus
+  on entry routines for RPCs)
+- files (for later)
+
+Has HL7, Protocols etc etc too but of less interest for now
+
+Note gives date of distribution. 9_7 gives install. Expect same 9_6's across
+VistAs. 9_7's to vary.
+""" 
+def reduce9_6(stationNo, redResults):
+
+    resourceIter = FilteredResultIterator(DATA_LOCN_TEMPL.format(stationNo), "9_6")
+    
+    class Reducer(object):
+    
+        def __init__(self):
+            self.__noSeen = 0
+            self.__noReduced = 0
+    
+        def reduce(self, resource):
+            self.__noSeen += 1
+            # may return None if no REMOTE PROCEDURE in entries
+            if not ("build_components" in resource and sum(1 for entry in resource["build_components"] if entry["build_component"]["label"] == "REMOTE PROCEDURE" and "entries" in entry)):
+                return None
+            self.__reduction = OrderedDict()
+            SUPPRESS_PROPS = ["alpha_beta_testing", "transport_build_number", "postinstall_routine", "delete_postinit_routine", "xpz1", "xpi1", "environment_check_routine", "xpo1", "preinstall_routine", "delete_env_routine", "delete_preinit_routine", "installation_message", "pretransportation_routine", "install_questions", "test", "global"] 
+            for prop in resource:
+                if prop == "fmqlHasStops":
+                    continue
+                if prop in SUPPRESS_PROPS:
+                    continue
+                if prop in ["label", "type"]:
+                    continue
+                # if not hasattr(self, prop):
+                #    raise Exception("Unexpected 19 property {}".format(prop))
+                if not hasattr(self, prop):
+                    continue
+                getattr(self, prop)(resource[prop])
+            self.__noReduced += 1
+            return self.__reduction
+            
+        def totalSeen(self):
+            return self.__noSeen
+            
+        def totalReduced(self):
+            return self.__noReduced
+
+        # ################## Mandatory or Close to It ###############
+      
+        # not doing id for now (ie/ IEN not needed)
+        def _id(self, value):
+            return
+            
+        # name - LITERAL - 10,774 (100%)        
+        def name(self, value): 
+            self.__reduction["label"] = value
+            
+        # type_2 - LITERAL - 10,772 (100%)
+        # ... 0:SINGLE PACKAGE - 10,681 (99.2%)
+        # ... only 1 GLOBAL PACKAGE (from imaging) with no date, few fields
+        # ... 90 MULTI-PACKAGE all with multiple_build and few with package links
+        def type_2(self, value):
+            if value == '0:SINGLE PACKAGE':
+                return
+            if value == "1:MULTI-PACKAGE":
+                self.__reduction["isMultiPackage"] = True
+            elif value == "2:GLOBAL PACKAGE":
+                self.__reduction["isGlobalPackage"] = True
+            raise Exception("Invalid value {} for type_2".format(value))
+            
+        # track_package_nationally - BOOLEAN - 10,769 (100%)
+        # ... False - 10,769 (100.0%)
+        def track_package_nationally(self, value):
+            if value != False:
+                raise Exception("Expected track_package_nationally to always be False")
+                
+        # build_components - LIST - 10,698 (99%)
+        # ... many entries are empty, ignoring those and ignoring checksum for others
+        def build_components(self, values):
+            componentsByTypeByAction = defaultdict(lambda: defaultdict(list))
+            for bcInfo in values:
+                if "entries" not in bcInfo: # empty
+                    continue
+                # ignoring 'file': REMOTE PROCEDURE, file = {"id": "1-8994" etc
+                # ... sometimes there for REMOTE PROCEDURE etc but sometimes not
+                componentType = bcInfo["build_component"]["label"]
+                for entry in bcInfo["entries"]:
+                    if "action" not in entry:
+                        actionType = "**UNSET**" # defaulting : TODO - check
+                    else:
+                        actionType = entry["action"].split(":")[1]
+                    componentsByTypeByAction[
+                    componentType][actionType].append(entry["entries"])
+            self.__reduction["buildComponentsByTypeByAction"] = componentsByTypeByAction
+            
+        # date_distributed - DATE - 10,159 (94%)
+        def date_distributed(self, value):
+            self.__reduction["dateDistributed"] = value["value"]
+            
+        # package_file_link - POINTER - 10,152 (94%) - 9_4
+        def package_file_link(self, value):
+            self.__reduction["package"] = value["label"]
+                        
+        # description_of_enhancements - LITERAL - 9,224 (86%)
+        def description_of_enhancements(self, value):
+            self.__reduction["description"] = value
+            
+        # required_build - LIST - 7,560 (70%)
+        def required_build(self, values):
+            return
+            
+        # seq - LITERAL - 3,245 (30%)
+        def seq(self, value):
+            return
+            
+        # file - LIST - 3,188 (30%)
+        # ... partially done. Revisit and handle other fields like 'sites_data'
+        def file(self, values):
+            fInfos = []
+            for fInfo in values:
+                entry = {"number": fInfo["file"]["id"].split("-")[1]}
+                if "data_comes_with_file" in fInfo and fInfo["data_comes_with_file"]:
+                    entry["isDataWithFile"] = True
+                if "update_the_data_dictionary" in fInfo and fInfo["update_the_data_dictionary"]:
+                    entry["isUpdateDD"] = True
+                # TODO: turn boolean
+                if "send_full_or_partial_dd" in fInfo:
+                    if fInfo["send_full_or_partial_dd"] == "f:FULL":
+                        entry["isFullDD"] = True
+                    elif fInfo["send_full_or_partial_dd"] == "p:PARTIAL":
+                        entry["isFullDD"] = False
+                fInfos.append(entry)
+            self.__reduction["files"] = fInfos
+            
+        # address_for_usage_reporting - LITERAL - 279 (3%)
+        # ... may feed in later
+        # ... mainly G.IMAGING DEVELOPMENT TEAM@FORUM.VA.GOV - 108 (38.7%)
+        def address_for_usage_reporting(self, value):
+            self.__reduction["email_to_track_use"] = value
+            
+        # package_namespace_or_prefix - LIST - 138 (1%)
+        def package_namespace_or_prefix(self, values):
+            return
+            
+        # multiple_build - LIST - 92 (1%)
+        # - 100% is type_2 is MULTI-PACKAGE: multiple_build - LIST - 90 (100%)
+        def multiple_build(self, values):
+            return
+
+    reducer = Reducer()
+    reductions = []
+    print "Reducing 9_6 for {}".format(stationNo)
+    for i, resource in enumerate(resourceIter, 1):
+        if (i % 1000) == 0:
+            print "\tprocessing another 1000 9_6's"
+        reduction = reducer.reduce(resource)
+        if reduction:
+            reductions.append(reduction)
+    print "\t... done after {:,}".format(reducer.totalReduced())
+        
+    json.dump(reductions, open(VISTA_RPCD_LOCN_TEMPL.format(stationNo) + "_9_6Reduction.json", "w"), indent=4)
+        
+    if "9_6" not in redResults:
+        redResults["9_6"] = {}
+    redResults["9_6"][stationNo] = {"total": reducer.totalSeen(), "reduced": reducer.totalReduced()}
+    
+"""
+442: 310 ...
+
+    prefix - LITERAL - 310 (100%)
+    version - LIST - 274 (88%)
+    current_version - LITERAL - 269 (87%)
+    class - LITERAL - 197 (64%)
+        I:National - 147 (74.6%)
+        III:Local - 49 (24.9%)
+        II:Inactive - 1 (0.5%)
+    file - LIST - 176 (57%)
+
+and 640: 343 ...
+
+    prefix - LITERAL - 342 (100%)
+    version - LIST - 296 (86%)
+    current_version - LITERAL - 278 (81%)
+    file - LIST - 181 (53%)
+    class - LITERAL - 156 (45%)
+        I:National - 112 (71.8%)
+        III:Local - 43 (27.6%)
+        II:Inactive - 1 (0.6%)
+        
+------------------------------------
+        
+DSIC VA CERTIFIED COMPONENTS - DSSI ... common elements for others
+DSIR RELEASE OF INFORMATION - DSSI
+DSIF FEE BASIS CLAIMS SYSTEM
+DSIT DSIT TELECARE RECORD MANAGER | YEP!
+DSIV INSURANCE CAPTURE BUFFER <------------ don't see RPCs but let's see
+DSIU MENTAL HEALTH SUITE, DSS INC. | YEP!
+DSIH DATA BRIDGE <------------- DSIHH in Mono?
+DSIQ DSIQ - VCM ie/ VistA Chemotherapy Manager | Yep!
+DSII DSII - RX-FRAMEWORK
+DSIG DSIG <------------ second unmatched in Mono
+DSIY DSIY APAR | YEP!
+DSIB DSIB Caribou CLC Suite <------- wow!! Caribou ... supposed to be DSIHH in mono!
+
+No DSIP: Encoder Product Suite/EPS
+No APAT / DSIVA
+
+> The DSIG namespace and number-space resides within the VEJD namespace and
+number-space assigned by the VA DBA.
+                and
+> V1.0 Initial build containing Routines and RPCs converted from the VEJD
+namespace to the DSIG namespace.
+"""
+def reduce9_4(stationNo, redResults):
+
+    resourceIter = FilteredResultIterator(DATA_LOCN_TEMPL.format(stationNo), "9_4")
+
+    # reducer = Reducer()
+    reductions = []
+    print "Reducing 9_4 for {}".format(stationNo)
+    for i, resource in enumerate(resourceIter, 1):
+        if (i % 1000) == 0:
+            print "\tprocessing another 1000 9_4's"
+        if "prefix" in resource:
+            if re.match(r'DSI', resource["prefix"]):
+                print "====================================="
+                print resource["prefix"] , resource["name"]
+                print resource["short_description"]
+                if "description" in resource:
+                    print resource["description"]
+                if "class" in resource:
+                    print resource["class"]
+                if "version" in resource:
+                    print "Last version:", resource["version"][-1]["date_distributed"]["value"]
+                print sorted(resource.keys())
+                print
+                print
+                
+"""
+Really status and see there are param, rpc ... but not the particulars of those.
+
+442: 
+    name - LITERAL - 11,462 (100%)
+    date_loaded - DATE - 11,461 (100%)
+    routines - LIST - 11,060 (96%) [gives names]
+    package_file_link - POINTER - 10,786 (94%) - 9_4
+    file - LIST - 3,448 (30%)
+    build_components - LIST - 3,400 (30%) [says param, rpc but not which ones]
+    
+DSIQ - VCM 2016-12-08T09:54:41Z <------ chemo
+DSIY APAR 2016-11-21T09:10:47Z
+DSIT TELECARE RECORD MANAGER 2017-11-22T06:12:41Z
+DSIG 2017-11-28T06:11:32Z <------- not in Monograph
+DSII - RX-FRAMEWORK 2016-01-05T11:35:21Z
+DSIB Caribou CLC Suite 2017-10-11T14:40:45Z <---- key as NOT in Monograph as Caribou. It has DSIHH
+
+Mistake as DSIHH is DATABRIDGE?
+"""
+def reduce9_7(stationNo, redResults):
+
+    resourceIter = FilteredResultIterator(DATA_LOCN_TEMPL.format(stationNo), "9_7")
+
+    # reducer = Reducer()
+    reductions = []
+    dsigs = []
+    dateLastLoadedPerPackage = {}
+    print "Reducing 9_7 for {}".format(stationNo)
+    for i, resource in enumerate(resourceIter, 1):
+        if (i % 1000) == 0:
+            print "\tprocessing another 1000 9_6's"
+        if "package_file_link" not in resource:
+            continue
+        if "date_loaded" not in resource:
+            continue
+        dateLastLoadedPerPackage[resource["package_file_link"]["label"]] = resource["date_loaded"]["value"]
+    for pkgLabel in dateLastLoadedPerPackage:
+        if re.search(r'DSI', pkgLabel):
+            print pkgLabel, dateLastLoadedPerPackage[pkgLabel]
+    print t
     
 """
 {'fileName': u'OE/RR REPORT', 'fileId': u'101.24', 'prop': u'rpc'}
+... only have for 442 now (catch exception)
 """
 def reduce101_24(stationNo, redResults):
     pass
     
+"""
+{'fileName': u'ARHCWEB1 EVENT LOG', 'fileId': u'662931', 'prop': u'rpc'}
+                        
+640 only BUT empty - placeholder for now.
+"""
+def reduce662931(stationNo, redResults):
+    pass
+    
+"""
+TEXT NAME (not 8994 proper)
+
+19685.6 detail_rpc, remote_procedure | definitely take ie/ add in reduction
+
+Only have type for 442 and need data (236)
+"""
+def reduce19685_6(stationNo, redResults):
+    pass
+   
 # ################################# DRIVER #######################
                
 def main():
