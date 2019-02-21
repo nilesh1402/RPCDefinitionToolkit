@@ -10,81 +10,112 @@ from datetime import datetime
 
 from fmqlutils.reporter.reportUtils import MarkdownTable, reportPercent, reportAbsAndPercent
 
-SNOS = ["442", "640", "999"] # SHOULD PUT DATE ON THESE
-
-"""
-Others to report:
-- emulated in VAM 1 (fixed defn) ... rem move to breath first
-- reference param use #'s 
-ie/ broad metrics for planning 
-
-... TODO: move to separate reporter as a manifest / progress report
-... will go along with RPC i/f improved docs
-"""
-def reportAssembly():
-
-    definitionsByRPC = json.load(open("../Definitions/rpcInterfaceDefinition.bjsn"), object_pairs_hook=OrderedDict)
-        
-    """
-    \# | Metric | Count
-    --- | --- | ---
-    1 | Total RPCs | 5,475
-    2 | In all 3 | 3,669
-    3 | In both 442/640 but not FOIA | 1,481
-    4 | Exclusive 442 | 87
-    5 | Exclusive 640 | 231
-    6 | Exclusive 999 | 5
-    """
-    tbl = MarkdownTable(["Metric", "Count"])
-    tbl.addRow(["__Total RPCs__", "__{:,}__".format(len(definitionsByRPC))])
-    tbl.addRow(["In all 3", sum(1 for rpc in definitionsByRPC if len(definitionsByRPC[rpc]["_vistas"]) == 3)])
-    tbl.addRow(["In both 442/640 but not FOIA", sum(1 for rpc in definitionsByRPC if set(definitionsByRPC[rpc]["_vistas"]) == set(["442", "640"]))])
-    for sno in SNOS:
-        tbl.addRow(["Exclusive {}".format(sno), sum(1 for rpc in definitionsByRPC if len(definitionsByRPC[rpc]["_vistas"]) == 1 and sno in definitionsByRPC[rpc]["_vistas"])])
-    print tbl.md()
-    print
+# ########################### Monograph #######################
     
-    """
-    Break this down ...
-    """
-    byOptionCount = defaultdict(set)
-    rpcsByOption = defaultdict(set)
-    for rpc in definitionsByRPC:
-        if "options" not in definitionsByRPC[rpc]:
-            byOptionCount[0].add(rpc)
+"""
+For VistA-side app breakdown
+
+Note: will go with Package (9_4) source from actual VistAs
+
+Some Questions/Observations to use:
+- if in Decommissioning, any still active? ie/ done or pending?
+- some names in > 1 ns (many namespaces)
+- COTS/DSS set
+- some have no namespaces => NOT VISTA?
+- groups sometimes mean shared NSs, sometimes not
+"""
+DECOMMISSION_GROUP = "Ongoing/Completed Application Decommissioning"
+DSS_GROUP = "DSS Inc, Commercial-off-the-Shelf (COTS) VistA Integrations"
+
+def reduceMonograph():
+
+    monograph = json.load(open("../SourceArtifacts/monograph.bjsn"))
+    
+    bd = {"total": len(monograph["entries"]), "decommissionedByNamespace": defaultdict(list), "noNamespace": [], "activeNotDSSByNamespace": defaultdict(list), "dssByNamespace": defaultdict(list), "haveManyNamespaces": {}, "byGroup": defaultdict(list)}
+    
+    for entry in monograph["entries"]:
+        if not ("Namespace" in entry or "Namespaces" in entry):
+            bd["noNamespace"].append(entry["Name"])
             continue
-        byOptionCount[len(definitionsByRPC[rpc]["options"])].add(rpc)
-        if len(definitionsByRPC[rpc]["options"]) > 10:
-            continue
-        for opt in definitionsByRPC[rpc]["options"]:
-            rpcsByOption[opt].add(rpc)
-    print "## Menu options\n" 
-    print "{} RPCs don't appear in any option, {} have only one option, {} have 2, {} 3, {} between 4 and 9, {} more. The biggest number for any RPC is {}, the RPC {}.".format(
-        reportAbsAndPercent(len(byOptionCount[0]), len(definitionsByRPC)), 
-        reportAbsAndPercent(len(byOptionCount[1]), len(definitionsByRPC)),
-        reportAbsAndPercent(len(byOptionCount[2]), len(definitionsByRPC)),
-        reportAbsAndPercent(len(byOptionCount[3]), len(definitionsByRPC)),
-        reportAbsAndPercent(sum(len(byOptionCount[x]) for x in byOptionCount if x > 3 and x < 10), len(definitionsByRPC)),
-        reportAbsAndPercent(sum(len(byOptionCount[x]) for x in byOptionCount if x >= 10), len(definitionsByRPC)),
-        max(byOptionCount.keys()),
-        list(byOptionCount[max(byOptionCount.keys())])[0]
+        nss = [entry["Namespace"]] if "Namespace" in entry else entry["Namespaces"]
+        if "Namespaces" in entry:
+            nss = entry["Namespaces"]
+            bd["haveManyNamespaces"][entry["Name"]] = nss
+        else:
+            nss = [entry["Namespace"]]
+        for ns in nss:
+            if "Group" in entry: 
+                if entry["Group"] == DECOMMISSION_GROUP:
+                    bd["decommissionedByNamespace"][ns].append(entry["Name"])
+                    continue
+                if entry["Group"] == DSS_GROUP:
+                    bd["dssByNamespace"][ns].append(entry["Name"])
+                    continue
+                if entry["Name"] not in bd["byGroup"][entry["Group"]]:
+                    bd["byGroup"][entry["Group"]].append(entry["Name"])
+            bd["activeNotDSSByNamespace"][ns].append(entry["Name"])    
+    
+    return bd
+
+def reportMonograph():
+
+    mred = reduceMonograph()
+    
+    mu = """
+## Monograph
+    
+Category | Count (Details)
+--- | ---
+Total Apps | {:,}
+No Namespace | {:,}
+decommissioned | {:,} - {}
+active NOT COTS | {:,}
+COTS | {:,} - {}
+Many Namespaces | {:,}
+Groups | {:,}
+
+""".format(
+        mred["total"], 
+        len(mred["noNamespace"]), 
+        sum(len(mred["decommissionedByNamespace"][ns]) for ns in mred["decommissionedByNamespace"]), 
+        ", ".join(sorted(mred["decommissionedByNamespace"].keys())), 
+        sum(len(mred["activeNotDSSByNamespace"][ns]) for ns in mred["activeNotDSSByNamespace"]), 
+        sum(len(mred["dssByNamespace"][ns]) for ns in mred["dssByNamespace"]),
+        ", ".join(sorted(mred["dssByNamespace"].keys())),
+        len(mred["haveManyNamespaces"]),
+        len(mred["byGroup"])
     )
-    print
-    print "Top Options - number of RPCs:"
-    for i, opt in enumerate(sorted(rpcsByOption, key=lambda x: len(rpcsByOption[x]), reverse=True), 1):
-        if i > 15:
-            break
-        print "\t{}. {} - {}".format(i, opt, len(rpcsByOption[opt]))
-        
-    print 
+
+    mu += """
+No Namespace ...
+
+"""
+    for i, entryName in enumerate(sorted(mred["noNamespace"]), 1):
+        mu += "{}. {}\n".format(i, entryName)
+
+    mu += """    
+    
+Active with 'X*' NS ...
+
+"""
+    i = 0
+    for ns in sorted(mred["activeNotDSSByNamespace"]):
+        if not re.match(r'X', ns):
+            continue
+        i += 1
+        mu += "{}. {} - {}\n".format(i, ns, ", ".join(mred["activeNotDSSByNamespace"][ns]))
+    
+    mu += "\n\n"
+    
+    open("Reports/source_monograph.md", "w").write(mu)
     
 # ################################# DRIVER #######################
                
 def main():
 
     assert(sys.version_info >= (2,7))
-
-    reportAssembly()
+    
+    reportMonograph()
 
 if __name__ == "__main__":
     main()
