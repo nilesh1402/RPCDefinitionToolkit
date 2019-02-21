@@ -4,6 +4,8 @@ Basic per VistA definition from FileMan-resident data and MUMPS Code
 
 \# | Type | Station No (Total/Reduction)
 --- | --- | ---
-1 | 8994 | 442 (5,239/5,239), 640 (5,381/5,381), FOIA (3,676/3,676)
+1 | 19 | 442 (14,324/151), 640 (16,097/161)
+2 | 8994 | 442 (5,239/5,239), 640 (5,381/5,381), FOIA (3,676/3,676)
+3 | 9_6 | 442 (10,774/692)
 
 
