@@ -7,119 +7,132 @@ import re
 import json
 from collections import defaultdict, OrderedDict, Counter
 from datetime import datetime
+import numpy
 
 from fmqlutils.reporter.reportUtils import MarkdownTable, reportPercent, reportAbsAndPercent
 
-# ########################### Monograph #######################
-    
+VISTA_RED_LOCN_TEMPL = "/data/vista/{}/RPCDefinitions/"
+VISTA_REP_LOCN_TEMPL = "../Reports/PerVistA/{}/"
+
 """
-For VistA-side app breakdown
-
-Note: will go with Package (9_4) source from actual VistAs
-
-Some Questions/Observations to use:
-- if in Decommissioning, any still active? ie/ done or pending?
-- some names in > 1 ns (many namespaces)
-- COTS/DSS set
-- some have no namespaces => NOT VISTA?
-- groups sometimes mean shared NSs, sometimes not
+Reports for Per VistA Reductions, the initial sources of an integrated
+RPC Interface Definition.
 """
-DECOMMISSION_GROUP = "Ongoing/Completed Application Decommissioning"
-# Note: DSS has 35 products on TRM (https://www.oit.va.gov/Services/TRM/ReportToolVendor.aspx) but not all in Monograph
-DSS_GROUP = "DSS Inc, Commercial-off-the-Shelf (COTS) VistA Integrations"
+def reportBuilds(stationNo):
 
-def reduceMonograph():
-
-    monograph = json.load(open("../SourceArtifacts/monograph.bjsn"))
-    
-    bd = {"total": len(monograph["entries"]), "allNamespaces": set(), "decommissionedByNamespace": defaultdict(list), "noNamespace": [], "activeNotDSSByNamespace": defaultdict(list), "dssByNamespace": defaultdict(list), "haveManyNamespaces": {}, "byGroup": defaultdict(list)}
-    
-    for entry in monograph["entries"]:
-        if not ("Namespace" in entry or "Namespaces" in entry):
-            bd["noNamespace"].append(entry["Name"])
+    buildsReduction = json.load(open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_9_6Reduction.json"))
+        
+    buildsByRPC = {}
+    countBuildsWithRPCs = 0
+    rpcsByTypeName = defaultdict(set)
+    dateDistributeds = []
+    countBuildsByYr = Counter()
+    for buildInfo in buildsReduction:
+        if "rpcs" not in buildInfo:
             continue
-        nss = [entry["Namespace"]] if "Namespace" in entry else entry["Namespaces"]
-        if "Namespaces" in entry:
-            nss = entry["Namespaces"]
-            bd["haveManyNamespaces"][entry["Name"]] = nss
+        countBuildsWithRPCs += 1
+        versionMatch = re.search(r'(\d.+)$', buildInfo["label"])
+        if versionMatch:
+            version = versionMatch.group(1)
+            typeName = re.sub(r' +$', '', re.match(r'([^\*^\d]+)', buildInfo["label"]).group(1)) # trailing out
         else:
-            nss = [entry["Namespace"]]
-        for ns in nss:
-            bd["allNamespaces"].add(ns)
-            if "Group" in entry: 
-                if entry["Group"] == DECOMMISSION_GROUP:
-                    bd["decommissionedByNamespace"][ns].append(entry["Name"])
-                    continue
-                if entry["Group"] == DSS_GROUP:
-                    bd["dssByNamespace"][ns].append(entry["Name"])
-                    continue
-                if entry["Name"] not in bd["byGroup"][entry["Group"]]:
-                    bd["byGroup"][entry["Group"]].append(entry["Name"])
-            bd["activeNotDSSByNamespace"][ns].append(entry["Name"])    
+            raise Exception("Expect to find version in Build Name: {}".format(buildInfo["label"]))
+        for actionType in buildInfo["rpcs"]:
+            for rpc in buildInfo["rpcs"][actionType]:
+                if rpc not in buildsByRPC:
+                    buildsByRPC[rpc] = []
+                info = {"build": buildInfo["label"], "typeName": typeName, "version": version, "action": actionType}
+                if "dateDistributed" in buildInfo:
+                    info["distributed"] = buildInfo["dateDistributed"]
+                    if not re.search(r'FMQL', typeName):
+                        dateDistributeds.append(buildInfo["dateDistributed"])
+                        countBuildsByYr[buildInfo["dateDistributed"].split("-")[0]] += 1
+                if "package" in buildInfo:
+                    info["package"] = buildInfo["package"]
+                buildsByRPC[rpc].append(info)
+                rpcsByTypeName[typeName].add(rpc)
+    dateDistributeds = sorted(dateDistributeds)
+    rpcWithMost = sorted(buildsByRPC, key=lambda x: len(buildsByRPC[x]), reverse=True)[0]
+    typeNameWithMost = sorted(rpcsByTypeName, key=lambda x: len(rpcsByTypeName[x]), reverse=True)[0]
+    deletedRPCs = set(rpc for rpc in buildsByRPC if buildsByRPC[rpc][-1]["action"] == "DELETE AT SITE")
+          
+    mu = """## RPC Builds of {}
     
-    return bd
-
-"""
-Key to note missing:
-- https://www.oit.va.gov/Services/TRM/ToolPage.aspx?tid=8969 DSIHH, Databridge
-- DSIG could be: https://www.oit.va.gov/Services/TRM/ToolPage.aspx?tid=6756 (grade of membership)
-"""
-def reportMonograph():
-
-    mred = reduceMonograph()
+There are {:,} builds defining {:,} RPCs starting in {} and going to {}. There are {:,} types, the most popular of which is __{}__ with {:,} RPCs. The RPC __{}__ appears in the most builds, {:,}. Note that Builds can delete as well as add RPCs - {:,} of the RPCs were deleted by the final Build they appeared in. 
     
-    mu = """
-## Monograph
-    
-Category | Count (Details)
---- | ---
-Total Apps | {:,}
-No Namespace | {:,}
-decommissioned | {:,} - {}
-active NOT COTS | {:,}
-COTS | {:,} - {}
-Many Namespaces | {:,}
-Groups | {:,}
-
 """.format(
-        mred["total"], 
-        len(mred["noNamespace"]), 
-        sum(len(mred["decommissionedByNamespace"][ns]) for ns in mred["decommissionedByNamespace"]), 
-        ", ".join(sorted(mred["decommissionedByNamespace"].keys())), 
-        sum(len(mred["activeNotDSSByNamespace"][ns]) for ns in mred["activeNotDSSByNamespace"]), 
-        sum(len(mred["dssByNamespace"][ns]) for ns in mred["dssByNamespace"]),
-        ", ".join(sorted(mred["dssByNamespace"].keys())),
-        len(mred["haveManyNamespaces"]),
-        len(mred["byGroup"])
+        stationNo, 
+        countBuildsWithRPCs, 
+        len(buildsByRPC),
+        dateDistributeds[0], 
+        dateDistributeds[-1],
+        len(rpcsByTypeName), 
+        typeNameWithMost, 
+        len(rpcsByTypeName[typeNameWithMost]),
+        rpcWithMost, 
+        len(buildsByRPC[rpcWithMost]),
+        len(deletedRPCs)
     )
-
-    mu += """
-No Namespace ...
-
+            
+    tbl = MarkdownTable(["Year", "Builds"])
+    total = sum(countBuildsByYr[yr] for yr in countBuildsByYr)
+    for yr in sorted(countBuildsByYr, key=lambda x: int(x), reverse=True):
+        tbl.addRow([yr, reportAbsAndPercent(countBuildsByYr[yr], total)])
+    mu += """RPC Builds by year ...
+     
 """
-    for i, entryName in enumerate(sorted(mred["noNamespace"]), 1):
-        mu += "{}. {}\n".format(i, entryName)
+    mu += tbl.md() + "\n\n"
 
-    mu += """    
+                    
+    def calcDistrib(buildInfos, first=False):
+        distrib = ""
+        for buildInfo in buildInfos:
+            if "distributed" in buildInfo:
+                distrib = buildInfo["distributed"]
+                if first:
+                    break
+        return distrib
+    tbl = MarkdownTable(["RPC", "Builds", "Type(s)", "[First Distributed]/Last Distributed", "Version(s)"])
+    lastTypeNameMU = ""
+    for i, rpc in enumerate(sorted(buildsByRPC, key=lambda x: x), 1):
+
+        lastDistrib = calcDistrib(buildsByRPC[rpc], False)
+        distribMU = lastDistrib
+        firstDistrib = calcDistrib(buildsByRPC[rpc], True)
+        if firstDistrib != lastDistrib:
+            distribMU = "{} - {}".format(firstDistrib, distribMU)
+
+        typeNames = list(set(bi["typeName"] for bi in buildsByRPC[rpc]))
+        if len(typeNames) > 1:
+            versionMU = ", ".join("{} ({})".format(bi["typeName"], bi["version"]) for bi in buildsByRPC[rpc])
+        else:
+            versionMU = ", ".join(bi["version"] for bi in buildsByRPC[rpc])
+        typeNameMU = ", ".join(sorted(typeNames)) if len(typeNames) > 1 else typeNames[0]
+        
+        isLastActionDelete = True if buildsByRPC[rpc][-1]["action"] == "DELETE AT SITE" else False
+        
+        rpcMU = "{} (__DELETED__)".format(rpc) if isLastActionDelete else rpc
+                
+        tbl.addRow([rpcMU, len(buildsByRPC[rpc]), typeNameMU, distribMU, versionMU])
+        
+    mu += tbl.md() + "\n\n"
     
-Active with 'X*' NS ...
-
+    mu += """__Notes:__
+    
+  * the list here (active and deleted) need to be compared to the 8994 list of the same system (preliminary check shows few 8994 for deleted or non build-defined RPCs and nearly all deleted RPCs don't appear in 8994)
+  * greater than 1 type for an RPC (based on builds they appear in) seems to reflect mistakes or a change in a package/build designation name ('TEXT INTEGRATION UTILITIES' became 'TIU')
+  * the "type" needs to be aligned with Package (9_4) prefixes to tie RPCs to VistA 'applications'. 
+   
 """
-    i = 0
-    for ns in sorted(mred["activeNotDSSByNamespace"]):
-        if not re.match(r'X', ns):
-            continue
-        i += 1
-        mu += "{}. {} - {}\n".format(i, ns, ", ".join(mred["activeNotDSSByNamespace"][ns]))
     
-    mu += "\n\n"
-    
-    open("Reports/source_monograph.md", "w").write(mu)
+    open(VISTA_REP_LOCN_TEMPL.format(stationNo) + "rpcBuilds.md", "w").write(mu)
     
 """
 Packages
 
+COMPARE: 
 https://github.com/OSEHRA/VistA/blob/master/Packages.csv
+... add to sources
 
 Also tie to TRM for any packages. List is https://www.oit.va.gov/Services/TRM/ReportVACategoryMapping.aspx
 """
@@ -131,7 +144,13 @@ def main():
 
     assert(sys.version_info >= (2,7))
     
-    reportMonograph()
+    if len(sys.argv) < 2:
+        print "need to specify station # ex/ 442 - exiting"
+        return
+        
+    stationNo = sys.argv[1]
+    
+    reportBuilds(stationNo)
 
 if __name__ == "__main__":
     main()
