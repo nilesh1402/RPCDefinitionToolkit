@@ -2,7 +2,7 @@
     
 There are 692 builds defining 5,393 RPCs with 103 types, the most popular of which is __OR__ with 1,037 RPCs. The RPC __VEJDPTF VALIDATE RECORD__ appears in the most builds, 45.
     
-\# | RPC | Build \# | Type(s) | [First Distributed]/Last Distributed | Version(s)
+\# | RPC | Builds | Type(s) | [First Distributed]/Last Distributed | Version(s)
 --- | --- | --- | --- | --- | ---
 1 | ACKQAUD1 | 3 | ACKQ | 2003-10-27 - 2007-05-09 | 3.0*3, 3.0*12, 3.0*13
 2 | ACKQAUD2 | 2 | ACKQ | 2003-10-27 - 2005-11-03 | 3.0*3, 3.0*12
