@@ -9,10 +9,10 @@ from collections import defaultdict, OrderedDict
 from datetime import datetime
 
 from fmqlutils.cacher.cacherUtils import FilteredResultIterator
-from fmqlutils.reporter.reportUtils import MarkdownTable, reportAbsAndPercent
+from fmqlutils.reporter.reportUtils import MarkdownTable
 from fmqlutils.schema.reduceReportTypes import DATA_LOCN_TEMPL
 
-VISTA_RPCD_LOCN_TEMPL = "/data/vista/{}/RPCDefinitions/"
+VISTA_RED_LOCN_TEMPL = "/data/vista/{}/RPCDefinitions/"
 
 """
 Each VistA has information about its RPC interface in FileMan files. Here we reduce
@@ -21,11 +21,18 @@ all available data per VistA before assembling into a basic, cross-VistA, data-b
   * references to 8994
   * build/install data about RPCs, Options, ...
 
-TODO: finish 9_4 (for vista app id with monograph), 9_7 for install dates per vista
+TODO: 
+- finish 9_4 (for vista app id with monograph), 9_7 for install dates per vista
 and report red file ... before doing assembly
+- finish others
+- split out to module with reduce8994 etc with one main caller
+- EXPECT on raw data in /data => force full cache
+
+Longer:
+- will reduce User (200), Apps, Sign ons etc in here too
 """
 
-def reduce8994PlusReferrers(stationNo):
+def reduceVistAData(stationNo):
 
     redResults = json.load(open("redResults.json"))
     
@@ -218,7 +225,7 @@ def reduce8994(stationNo, redResults):
         reductions.append(reduction)
     print "\t... done after {:,}".format(reducer.totalReduced())
         
-    json.dump(reductions, open(VISTA_RPCD_LOCN_TEMPL.format(stationNo) + "_8994Reduction.json", "w"), indent=4)
+    json.dump(reductions, open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_8994Reduction.json", "w"), indent=4)
         
     if "8994" not in redResults:
         redResults["8994"] = {}
@@ -353,7 +360,7 @@ def reduce19(stationNo, redResults):
             reductions.append(reduction)
     print "\t... done after {:,}, {:,} reduced".format(reducer.totalSeen(), reducer.totalReduced())
         
-    json.dump(reductions, open(VISTA_RPCD_LOCN_TEMPL.format(stationNo) + "_19Reduction.json", "w"), indent=4)
+    json.dump(reductions, open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_19Reduction.json", "w"), indent=4)
         
     if "19" not in redResults:
         redResults["19"] = {}
@@ -376,14 +383,16 @@ def reduce9_6(stationNo, redResults):
     
     class Reducer(object):
     
+        BUILD_COMPONENTS_TO_REDUCE = {"REMOTE PROCEDURE": "rpcs", "OPTION": "options", "ROUTINE": "routines"}
+    
         def __init__(self):
             self.__noSeen = 0
             self.__noReduced = 0
     
         def reduce(self, resource):
             self.__noSeen += 1
-            # may return None if no REMOTE PROCEDURE in entries
-            if not ("build_components" in resource and sum(1 for entry in resource["build_components"] if entry["build_component"]["label"] == "REMOTE PROCEDURE" and "entries" in entry)):
+            # only want if options, routines and remote procedures added
+            if not ("build_components" in resource and sum(1 for entry in resource["build_components"] if entry["build_component"]["label"] in Reducer.BUILD_COMPONENTS_TO_REDUCE and "entries" in entry)):
                 return None
             self.__reduction = OrderedDict()
             SUPPRESS_PROPS = ["alpha_beta_testing", "transport_build_number", "postinstall_routine", "delete_postinit_routine", "xpz1", "xpi1", "environment_check_routine", "xpo1", "preinstall_routine", "delete_env_routine", "delete_preinit_routine", "installation_message", "pretransportation_routine", "install_questions", "test", "global"] 
@@ -447,14 +456,18 @@ def reduce9_6(stationNo, redResults):
                 # ignoring 'file': REMOTE PROCEDURE, file = {"id": "1-8994" etc
                 # ... sometimes there for REMOTE PROCEDURE etc but sometimes not
                 componentType = bcInfo["build_component"]["label"]
+                if componentType not in Reducer.BUILD_COMPONENTS_TO_REDUCE:
+                    continue
+                prop = Reducer.BUILD_COMPONENTS_TO_REDUCE[componentType]
+                if prop in self.__reduction:
+                    raise Exception("Only expect one Build Component with a type in a particular build")
+                self.__reduction[prop] = defaultdict(list)
                 for entry in bcInfo["entries"]:
                     if "action" not in entry:
                         actionType = "**UNSET**" # defaulting : TODO - check
                     else:
                         actionType = entry["action"].split(":")[1]
-                    componentsByTypeByAction[
-                    componentType][actionType].append(entry["entries"])
-            self.__reduction["buildComponentsByTypeByAction"] = componentsByTypeByAction
+                    self.__reduction[prop][actionType].append(entry["entries"])
             
         # date_distributed - DATE - 10,159 (94%)
         def date_distributed(self, value):
@@ -477,23 +490,12 @@ def reduce9_6(stationNo, redResults):
             return
             
         # file - LIST - 3,188 (30%)
-        # ... partially done. Revisit and handle other fields like 'sites_data'
+        # ... TODO: revisit and do more than just list files
         def file(self, values):
-            fInfos = []
+            fls = []
             for fInfo in values:
-                entry = {"number": fInfo["file"]["id"].split("-")[1]}
-                if "data_comes_with_file" in fInfo and fInfo["data_comes_with_file"]:
-                    entry["isDataWithFile"] = True
-                if "update_the_data_dictionary" in fInfo and fInfo["update_the_data_dictionary"]:
-                    entry["isUpdateDD"] = True
-                # TODO: turn boolean
-                if "send_full_or_partial_dd" in fInfo:
-                    if fInfo["send_full_or_partial_dd"] == "f:FULL":
-                        entry["isFullDD"] = True
-                    elif fInfo["send_full_or_partial_dd"] == "p:PARTIAL":
-                        entry["isFullDD"] = False
-                fInfos.append(entry)
-            self.__reduction["files"] = fInfos
+                fls.append(fInfo["file"]["id"].split("-")[1])
+            self.__reduction["files"] = fls
             
         # address_for_usage_reporting - LITERAL - 279 (3%)
         # ... may feed in later
@@ -519,9 +521,9 @@ def reduce9_6(stationNo, redResults):
         reduction = reducer.reduce(resource)
         if reduction:
             reductions.append(reduction)
-    print "\t... done after {:,}".format(reducer.totalReduced())
+    print "\t... done after {:,}, {:,} reduced".format(reducer.totalSeen(), reducer.totalReduced())
         
-    json.dump(reductions, open(VISTA_RPCD_LOCN_TEMPL.format(stationNo) + "_9_6Reduction.json", "w"), indent=4)
+    json.dump(reductions, open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_9_6Reduction.json", "w"), indent=4)
         
     if "9_6" not in redResults:
         redResults["9_6"] = {}
@@ -678,7 +680,7 @@ def main():
         
     stationNo = sys.argv[1]
     
-    reduce8994PlusReferrers(stationNo)
+    reduceVistAData(stationNo)
 
 if __name__ == "__main__":
     main()
