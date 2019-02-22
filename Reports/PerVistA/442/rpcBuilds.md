@@ -1,6 +1,6 @@
 ## RPC Builds of 442
     
-There are 692 builds defining 5,393 RPCs with 103 types, the most popular of which is __OR__ with 1,037 RPCs. The RPC __VEJDPTF VALIDATE RECORD__ appears in the most builds, 45.
+There are 692 builds defining 5,393 RPCs with 103 types, the most popular of which is __OR__ with 1,037 RPCs. The RPC __VEJDPTF VALIDATE RECORD__ appears in the most builds, 45. Note that Builds can delete as well as add RPCs - 162 RPCs are deleted by the final Build they appear in. 
     
 \# | RPC | Builds | Type(s) | [First Distributed]/Last Distributed | Version(s)
 --- | --- | --- | --- | --- | ---
