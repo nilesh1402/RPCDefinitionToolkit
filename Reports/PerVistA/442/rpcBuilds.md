@@ -5406,8 +5406,8 @@ __Notes:__
   * the "type" needs to be aligned with Package (9_4) prefixes to tie RPCs to VistA 'applications'. 
    
 RPC Builds by year ...
-    
-    \# | Year | Builds
+     
+\# | Year | Builds
 --- | --- | ---
 1 | 2017 | 898 (4.04%)
 2 | 2016 | 2,379 (10.69%)
@@ -5432,5 +5432,4 @@ RPC Builds by year ...
 21 | 1997 | 281 (1.26%)
 22 | 1996 | 70 (0.31%)
 
-    
-    
+
