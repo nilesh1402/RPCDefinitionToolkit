@@ -2,6 +2,34 @@
     
 There are 692 builds defining 5,393 RPCs starting in 1996-05-24 and going to 2017-12-13. There are 103 types, the most popular of which is __OR__ with 1,037 RPCs. The RPC __VEJDPTF VALIDATE RECORD__ appears in the most builds, 45. Note that Builds can delete as well as add RPCs - 162 of the RPCs were deleted by the final Build they appeared in. 
     
+RPC Builds by year ...
+     
+\# | Year | Builds
+--- | --- | ---
+1 | 2017 | 898 (4.04%)
+2 | 2016 | 2,379 (10.69%)
+3 | 2015 | 1,204 (5.41%)
+4 | 2014 | 1,394 (6.27%)
+5 | 2013 | 1,460 (6.56%)
+6 | 2012 | 1,482 (6.66%)
+7 | 2011 | 1,558 (7.0%)
+8 | 2010 | 1,357 (6.1%)
+9 | 2009 | 1,392 (6.26%)
+10 | 2008 | 1,571 (7.06%)
+11 | 2007 | 1,619 (7.28%)
+12 | 2006 | 1,618 (7.27%)
+13 | 2005 | 1,120 (5.03%)
+14 | 2004 | 577 (2.59%)
+15 | 2003 | 762 (3.42%)
+16 | 2002 | 467 (2.1%)
+17 | 2001 | 391 (1.76%)
+18 | 2000 | 559 (2.51%)
+19 | 1999 | 59 (0.27%)
+20 | 1998 | 31 (0.14%)
+21 | 1997 | 281 (1.26%)
+22 | 1996 | 70 (0.31%)
+
+
 \# | RPC | Builds | Type(s) | [First Distributed]/Last Distributed | Version(s)
 --- | --- | --- | --- | --- | ---
 1 | ACKQAUD1 | 3 | ACKQ | 2003-10-27 - 2007-05-09 | 3.0*3, 3.0*12, 3.0*13
@@ -5405,31 +5433,3 @@ __Notes:__
   * greater than 1 type for an RPC (based on builds they appear in) seems to reflect mistakes or a change in a package/build designation name ('TEXT INTEGRATION UTILITIES' became 'TIU')
   * the "type" needs to be aligned with Package (9_4) prefixes to tie RPCs to VistA 'applications'. 
    
-RPC Builds by year ...
-     
-\# | Year | Builds
---- | --- | ---
-1 | 2017 | 898 (4.04%)
-2 | 2016 | 2,379 (10.69%)
-3 | 2015 | 1,204 (5.41%)
-4 | 2014 | 1,394 (6.27%)
-5 | 2013 | 1,460 (6.56%)
-6 | 2012 | 1,482 (6.66%)
-7 | 2011 | 1,558 (7.0%)
-8 | 2010 | 1,357 (6.1%)
-9 | 2009 | 1,392 (6.26%)
-10 | 2008 | 1,571 (7.06%)
-11 | 2007 | 1,619 (7.28%)
-12 | 2006 | 1,618 (7.27%)
-13 | 2005 | 1,120 (5.03%)
-14 | 2004 | 577 (2.59%)
-15 | 2003 | 762 (3.42%)
-16 | 2002 | 467 (2.1%)
-17 | 2001 | 391 (1.76%)
-18 | 2000 | 559 (2.51%)
-19 | 1999 | 59 (0.27%)
-20 | 1998 | 31 (0.14%)
-21 | 1997 | 281 (1.26%)
-22 | 1996 | 70 (0.31%)
-
-
