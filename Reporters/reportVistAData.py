@@ -17,6 +17,11 @@ VISTA_REP_LOCN_TEMPL = "../Reports/PerVistA/{}/"
 """
 Reports for Per VistA Reductions, the initial sources of an integrated
 RPC Interface Definition.
+
+TODO: may combine with Installs (and even packages) - reportBuildInstallPackage
+- order of install and if install vs distribution
+- want to see if multi-build install is issue
+- tie to pkgs not types ie/ conical app 
 """
 def reportBuilds(stationNo):
 
@@ -120,6 +125,7 @@ There are {:,} builds defining {:,} RPCs starting in {} and going to {}. There a
     mu += """__Notes:__
     
   * the list here (active and deleted) need to be compared to the 8994 list of the same system (preliminary check shows few 8994 for deleted or non build-defined RPCs and nearly all deleted RPCs don't appear in 8994)
+  * the Install (9.7) SHOULD (?) fix any lack of correlation between the builds and 8994. A build may not have been installed or installed in a different order from distribution order. A combined report will be needed.
   * greater than 1 type for an RPC (based on builds they appear in) seems to reflect mistakes or a change in a package/build designation name ('TEXT INTEGRATION UTILITIES' became 'TIU')
   * the "type" needs to be aligned with Package (9_4) prefixes to tie RPCs to VistA 'applications'. 
    
