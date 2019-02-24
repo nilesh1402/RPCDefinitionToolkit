@@ -5,7 +5,7 @@ import sys
 import os
 import re
 import json
-from collections import defaultdict, OrderedDict
+from collections import defaultdict, OrderedDict, Counter
 from datetime import datetime
 
 from fmqlutils.cacher.cacherUtils import FilteredResultIterator
@@ -28,20 +28,13 @@ and report red file ... before doing assembly
 - split out to module with reduce8994 etc with one main caller
 - EXPECT on raw data in /data => force full cache
 
-Longer:
-- will reduce User (200), Apps, Sign ons etc in here too
+From 442 Follow on: in builds but not 8994
+> 	set([u'ORQTL EXISTING TEAM AUTOLINKS', u'MAG GET SOP CLASS METHOD', u'WWW WEBTOP', u'ORQTL USER TEAMS', u'PSA UPLOAD', u'ORQTL TEAM LIST INFO', u'ORQTL TEAM LIST PATIENTS', u'ORQTL ALL USER TEAMS PATIENTS', u'ORQQPX OTHERS REMINDERS', u'ORQQVI2 VITALS STORE', u'ORQTL TEAM LIST USERS'])
 """
 
 def reduceVistAData(stationNo):
 
     redResults = json.load(open("redResults.json"))
-    
-    """
-    reduce9_7(stationNo, redResults)
-    print x
-    reduce9_4(stationNo, redResults)
-    print x
-    """
 
     reduce8994(stationNo, redResults)
     
@@ -50,6 +43,8 @@ def reduceVistAData(stationNo):
     reduce101_24(stationNo, redResults)
     
     reduce9_6(stationNo, redResults)
+    
+    reduce9_4(stationNo, redResults)
     
     json.dump(redResults, open("redResults.json", "w"), indent=4)
     
@@ -374,8 +369,7 @@ Initially only doing if REMOTE PROCEDURE BUILD COMPONENT there but will expand .
 
 Has HL7, Protocols etc etc too but of less interest for now
 
-Note gives date of distribution. 9_7 gives install. Expect same 9_6's across
-VistAs. 9_7's to vary.
+Note gives date of distribution. 9_7 gives installed or not and when.
 """ 
 def reduce9_6(stationNo, redResults):
 
@@ -385,7 +379,8 @@ def reduce9_6(stationNo, redResults):
     
         BUILD_COMPONENTS_TO_REDUCE = {"REMOTE PROCEDURE": "rpcs", "OPTION": "options", "ROUTINE": "routines"}
     
-        def __init__(self):
+        def __init__(self, installInfoByName):
+            self.__installInfoByName = installInfoByName
             self.__noSeen = 0
             self.__noReduced = 0
     
@@ -425,7 +420,46 @@ def reduce9_6(stationNo, redResults):
             
         # name - LITERAL - 10,774 (100%)        
         def name(self, value): 
+            try:    
+                self.__namesSeen
+            except:
+                self.__namesSeen = set()
+            if value in self.__namesSeen:
+                raise Exception("Expected builds to be unique by name")
+            self.__namesSeen.add(value)
             self.__reduction["label"] = value
+            self.__processInstallInfo(value)
+            
+        """
+        Add 9_7 install info inside 9_6
+        - looking for 3:Install Completed and an install_complete_time
+                and
+        - no subsequent 4:De-Installed
+        """
+        def __processInstallInfo(self, name):
+                    
+            if name not in self.__installInfoByName:
+                self.__reduction["isInstalled"] = False
+                self.__reduction["countInstalls"] = 0
+                return
+                
+            installInfos = self.__installInfoByName[name]
+            self.__reduction["installs"] = installInfos
+            deInstallIndexes = [i for i, iinfo in enumerate(installInfos) if iinfo["status"] == "4:De-Installed"]
+            frmIndex = 0
+            if len(deInstallIndexes):
+                if deInstallIndexes[-1] == len(installInfos) - 1:
+                    self.__reduction["isInstalled"] = False
+                    return
+                frmIndex = deInstallIndexes[-1]+1
+            installInfos = [ii for ii in installInfos[frmIndex:] if ii["status"] == "3:Install Completed" and "install_complete_time" in ii]
+            if len(installInfos) == 0:
+                self.__reduction["isInstalled"] = False
+                return
+            self.__reduction["isInstalled"] = True
+            # post the last de install
+            self.__reduction["dateInstalledFirst"] = installInfos[0]["install_complete_time"]
+            self.__reduction["dateInstalledLast"] = installInfos[-1]["install_complete_time"]
             
         # type_2 - LITERAL - 10,772 (100%)
         # ... 0:SINGLE PACKAGE - 10,681 (99.2%)
@@ -511,8 +545,39 @@ def reduce9_6(stationNo, redResults):
         # - 100% is type_2 is MULTI-PACKAGE: multiple_build - LIST - 90 (100%)
         def multiple_build(self, values):
             return
+            
+    """
+    9_7 install is reduced for its install times/completeness
+    """
+    def reduce9_7(stationNo, redResults):
+        resourceIter = FilteredResultIterator(DATA_LOCN_TEMPL.format(stationNo), "9_7")
+        reductions = []
+        redByName = defaultdict(list)
+        print "Reducing 9_7 for {} - inside 9_6 reduction".format(stationNo)
+        for i, resource in enumerate(resourceIter, 1):
+            if (i % 1000) == 0:
+                print "\tprocessing another 1000 9_7's"
+            red = {
+                "name": resource["name"],
+                "status": resource["status"]
+            }
+            for prop in ["install_start_time", "install_complete_time"]:
+                if prop in resource:
+                    red[prop] = resource[prop]["value"]
+            if "starting_package" in resource and resource["starting_package"]["id"] != resource["_id"]:
+                red["isPartOf"] = True
+            if "package_file_link" in resource:
+                red["package"] = resource["package_file_link"]["label"]
+            reductions.append(red)
+        if "9_7" not in redResults:
+            redResults["9_7"] = {}
+        redResults["9_7"][stationNo] = {"total": i, "reduced": i}
+        return reductions
 
-    reducer = Reducer()
+    installInfoByName = defaultdict(list)
+    for installInfo in reduce9_7(stationNo, redResults):
+        installInfoByName[installInfo["name"]].append(installInfo)
+    reducer = Reducer(installInfoByName)
     reductions = []
     print "Reducing 9_6 for {}".format(stationNo)
     for i, resource in enumerate(resourceIter, 1):
@@ -528,6 +593,8 @@ def reduce9_6(stationNo, redResults):
     if "9_6" not in redResults:
         redResults["9_6"] = {}
     redResults["9_6"][stationNo] = {"total": reducer.totalSeen(), "reduced": reducer.totalReduced()}
+    
+    return reductions
     
 """
 442: 310 ...
@@ -551,30 +618,6 @@ and 640: 343 ...
         I:National - 112 (71.8%)
         III:Local - 43 (27.6%)
         II:Inactive - 1 (0.6%)
-        
-------------------------------------
-        
-DSIC VA CERTIFIED COMPONENTS - DSSI ... common elements for others
-DSIR RELEASE OF INFORMATION - DSSI
-DSIF FEE BASIS CLAIMS SYSTEM
-DSIT DSIT TELECARE RECORD MANAGER | YEP!
-DSIV INSURANCE CAPTURE BUFFER <------------ don't see RPCs but let's see
-DSIU MENTAL HEALTH SUITE, DSS INC. | YEP!
-DSIH DATA BRIDGE <------------- DSIHH in Mono?
-DSIQ DSIQ - VCM ie/ VistA Chemotherapy Manager | Yep!
-DSII DSII - RX-FRAMEWORK
-DSIG DSIG <------------ second unmatched in Mono
-DSIY DSIY APAR | YEP!
-DSIB DSIB Caribou CLC Suite <------- wow!! Caribou ... supposed to be DSIHH in mono!
-
-No DSIP: Encoder Product Suite/EPS
-No APAT / DSIVA
-
-> The DSIG namespace and number-space resides within the VEJD namespace and
-number-space assigned by the VA DBA.
-                and
-> V1.0 Initial build containing Routines and RPCs converted from the VEJD
-namespace to the DSIG namespace.
 """
 def reduce9_4(stationNo, redResults):
 
@@ -587,61 +630,18 @@ def reduce9_4(stationNo, redResults):
         if (i % 1000) == 0:
             print "\tprocessing another 1000 9_4's"
         if "prefix" in resource:
-            if re.match(r'DSI', resource["prefix"]):
-                print "====================================="
-                print resource["prefix"] , resource["name"]
-                print resource["short_description"]
-                if "description" in resource:
-                    print resource["description"]
-                if "class" in resource:
-                    print resource["class"]
-                if "version" in resource:
-                    print "Last version:", resource["version"][-1]["date_distributed"]["value"]
-                print sorted(resource.keys())
-                print
-                print
-                
-"""
-Really status and see there are param, rpc ... but not the particulars of those.
-
-442: 
-    name - LITERAL - 11,462 (100%)
-    date_loaded - DATE - 11,461 (100%)
-    routines - LIST - 11,060 (96%) [gives names]
-    package_file_link - POINTER - 10,786 (94%) - 9_4
-    file - LIST - 3,448 (30%)
-    build_components - LIST - 3,400 (30%) [says param, rpc but not which ones]
+            info = {"label": resource["name"], "prefix": resource["prefix"]}
+        else:
+            info = {"label": resource["name"]}
+        reductions.append(info)
     
-DSIQ - VCM 2016-12-08T09:54:41Z <------ chemo
-DSIY APAR 2016-11-21T09:10:47Z
-DSIT TELECARE RECORD MANAGER 2017-11-22T06:12:41Z
-DSIG 2017-11-28T06:11:32Z <------- not in Monograph
-DSII - RX-FRAMEWORK 2016-01-05T11:35:21Z
-DSIB Caribou CLC Suite 2017-10-11T14:40:45Z <---- key as NOT in Monograph as Caribou. It has DSIHH
-
-Mistake as DSIHH is DATABRIDGE?
-"""
-def reduce9_7(stationNo, redResults):
-
-    resourceIter = FilteredResultIterator(DATA_LOCN_TEMPL.format(stationNo), "9_7")
-
-    # reducer = Reducer()
-    reductions = []
-    dsigs = []
-    dateLastLoadedPerPackage = {}
-    print "Reducing 9_7 for {}".format(stationNo)
-    for i, resource in enumerate(resourceIter, 1):
-        if (i % 1000) == 0:
-            print "\tprocessing another 1000 9_6's"
-        if "package_file_link" not in resource:
-            continue
-        if "date_loaded" not in resource:
-            continue
-        dateLastLoadedPerPackage[resource["package_file_link"]["label"]] = resource["date_loaded"]["value"]
-    for pkgLabel in dateLastLoadedPerPackage:
-        if re.search(r'DSI', pkgLabel):
-            print pkgLabel, dateLastLoadedPerPackage[pkgLabel]
-    print t
+    json.dump(reductions, open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_9_4Reduction.json", "w"), indent=4)
+        
+    if "9_4" not in redResults:
+        redResults["9_4"] = {}
+    redResults["9_4"][stationNo] = {"total": i, "reduced": i}
+    
+    return reductions
     
 """
 {'fileName': u'OE/RR REPORT', 'fileId': u'101.24', 'prop': u'rpc'}
