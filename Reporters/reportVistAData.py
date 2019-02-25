@@ -72,7 +72,7 @@ def reportBuildsNInstalls(stationNo):
     dateDistributeds = sorted(dateDistributeds)
     rpcWithMost = sorted(buildsByRPC, key=lambda x: len(buildsByRPC[x]), reverse=True)[0]
     typeNameWithMost = sorted(rpcsByTypeName, key=lambda x: len(rpcsByTypeName[x]), reverse=True)[0]
-    deletedRPCs = set(rpc for rpc in buildsByRPC if buildsByRPC[rpc][-1]["action"] == "DELETE AT SITE")
+    deletedRPCs = set(rpc for rpc in buildsByRPC if buildsByRPC[rpc][-1]["action"] == "DELETE AT SITE") # this will include those never even installed!
     deletedRPCsIn8994 = [rpc for rpc in deletedRPCs if rpc in _8994Labels]
     activeRPCs = set(buildsByRPC) - deletedRPCs
     greaterThanOneTypeActiveRPCs = [rpc for rpc in activeRPCs if len(set(bi["typeName"] for bi in buildsByRPC[rpc])) > 1]
@@ -174,7 +174,8 @@ There are {:,} builds defining {:,} RPCs starting in {} and going to {}. There a
     tbl = MarkdownTable(["RPC", "(Last) Deleting Build", "When (Dist/Install)"])
     for i, rpc in enumerate(sorted(deletedRPCs), 1):
         lastDelBuildInfo = buildsByRPC[rpc][-1]
-        whenMU = "{} / {}".format(lastDelBuildInfo["distributed"], lastDelBuildInfo["installed"].split("T")[0])
+        # a/cs for when no install info
+        whenMU = "{} / {}".format(lastDelBuildInfo["distributed"], lastDelBuildInfo["installed"].split("T")[0] if "installed" in lastDelBuildInfo else "-")
         tbl.addRow([rpc, lastDelBuildInfo["build"], whenMU])
     mu += "{:,} Deleted/Uninstalled RPCs ...\n\n".format(len(deletedRPCs))
     mu += tbl.md() + "\n\n"
@@ -199,8 +200,11 @@ There are {:,} builds defining {:,} RPCs starting in {} and going to {}. There a
             problem = "SHOULD BE DELETED"
         problem = "MISSING" if rpc in missingRPCs else "EXTRA"
         tbl.addRow([rpc, problem])
-    mu += "__Rogue RPCs__ are [1] in 8994 but are not active according to Builds (\"EXTRA\" {:,}) or active by builds but not in 8994 (\"MISSING\" {:,}) or deleted by builds but in 8994 (\"SHOULD BE DELETED\" {:,}). These {:,} \"Rogue RPCs\" should be isolated and tested. For instance, do _EXTRAs_ even have code implementing them or is 8994 wrong? ...\n\n".format(len(extraRPCs), len(missingRPCs), len(deletedRPCsIn8994), len(rogueRPCs))
+    mu += "__Rogue RPCs__ are [1] in 8994 but are not active according to Builds (\"EXTRA\" {:,}) or active by builds but not in 8994 (\"MISSING\" {:,}) or deleted by builds but in 8994 (\"SHOULD BE DELETED\" {:,}) ...\n\n".format(len(extraRPCs), len(missingRPCs), len(deletedRPCsIn8994), len(rogueRPCs))
     mu += tbl.md() + "\n\n"
+    
+    if stationNo == "999":
+        mu += "__Note__: FOIA (999) has MANY _Rogues_. It seems that redaction is partial for non Open Source RPCs. It seems that the code is removed but the RPC remains.\n\n"
     
     open(VISTA_REP_LOCN_TEMPL.format(stationNo) + "rpcBuilds.md", "w").write(mu)
     
