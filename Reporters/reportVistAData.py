@@ -18,27 +18,10 @@ VISTA_REP_LOCN_TEMPL = "../Reports/PerVistA/{}/"
 Reports for Per VistA Reductions, the initial sources of an integrated
 RPC Interface Definition.
 
-TODO first:
-- date installed in report too (or just show time gap to most recent install)
-  ... show range of gaps?
-- highlight those NOT in 8994 but should: 3 ...
-  - set([u'MAGQB PURNUL', u'ORQQPXRM MHDLLDMS', u'ROR LIST ICD-9'])
-    ... note that 8994 has RPC ROR LIST ICD
-    ... misbuilt build more than likely ... ie/ part of "Build loose ends"
-- highlight the deleted (and shouldn't be in 8994) ... separate them
-- highlight those in 8994 and no build ... ie/ to make build clear
-<----- after this nail down package etc.
-- ... first distrib of an RPC ie/ per year ie/ take out subsequent distribs
-  <---- tighten when there
-  ... then first_install (post last de-install) per year
-
 TODO: 
 - may combine with package: reportBuildInstallPackages ie/ of RPCs
   ... will take similar approach from reduction to assembly
 - tie to pkgs not types ie/ conical app 
-- report more per year: NEW RPCs per year vs builds with RPCs (can be redundant)
-- report more on deletes
-- report more on 8994 alignment
 """
 def reportBuildsNInstalls(stationNo):
 
@@ -54,6 +37,7 @@ def reportBuildsNInstalls(stationNo):
     dateDistributeds = []
     dateInstalleds = []
     countBuildsByYr = Counter()
+    countNewRPCBuildsByYr = Counter()
     for buildInfo in buildsReduction:
         if "rpcs" not in buildInfo:
             continue
@@ -66,14 +50,17 @@ def reportBuildsNInstalls(stationNo):
             raise Exception("Expect to find version in Build Name: {}".format(buildInfo["label"]))
         for actionType in buildInfo["rpcs"]:
             for rpc in buildInfo["rpcs"][actionType]:
-                if rpc not in buildsByRPC:
-                    buildsByRPC[rpc] = []
                 info = {"build": buildInfo["label"], "typeName": typeName, "version": version, "action": actionType}
                 if "dateDistributed" in buildInfo:
                     info["distributed"] = buildInfo["dateDistributed"]
                     if not re.search(r'FMQL', typeName):
                         dateDistributeds.append(buildInfo["dateDistributed"])
                         countBuildsByYr[buildInfo["dateDistributed"].split("-")[0]] += 1
+                        if rpc not in buildsByRPC: # ie/ new
+                            countNewRPCBuildsByYr[
+                            buildInfo["dateDistributed"].split("-")[0]] += 1
+                if rpc not in buildsByRPC:
+                    buildsByRPC[rpc] = []
                 if "dateInstalledFirst" in buildInfo:
                     info["installed"] = buildInfo["dateInstalledFirst"]
                     if not re.search(r'FMQL', typeName):
@@ -86,12 +73,15 @@ def reportBuildsNInstalls(stationNo):
     rpcWithMost = sorted(buildsByRPC, key=lambda x: len(buildsByRPC[x]), reverse=True)[0]
     typeNameWithMost = sorted(rpcsByTypeName, key=lambda x: len(rpcsByTypeName[x]), reverse=True)[0]
     deletedRPCs = set(rpc for rpc in buildsByRPC if buildsByRPC[rpc][-1]["action"] == "DELETE AT SITE")
+    deletedRPCsIn8994 = [rpc for rpc in deletedRPCs if rpc in _8994Labels]
     activeRPCs = set(buildsByRPC) - deletedRPCs
-    in8994RPCsNotActive = set(_8994Labels) - activeRPCs
+    greaterThanOneTypeActiveRPCs = [rpc for rpc in activeRPCs if len(set(bi["typeName"] for bi in buildsByRPC[rpc])) > 1]
+    extraRPCs = set(_8994Labels) - activeRPCs # beyond active/still there
+    missingRPCs = activeRPCs - set(_8994Labels) # should be there but not
           
     mu = """## RPC Builds of {}
     
-There are {:,} builds defining {:,} RPCs starting in {} and going to {}. There are {:,} types, the most popular of which is __{}__ with {:,} RPCs. The RPC __{}__ appears in the most builds, {:,}. Note that Builds can delete as well as add RPCs - {:,} of the RPCs were deleted by the final Build they appeared in, leaving {:,} RPCs active and installed. 
+There are {:,} builds defining {:,} RPCs starting in {} and going to {}. There are {:,} types, the most popular of which is __{}__ with {:,} RPCs. The RPC __{}__ appears in the most builds, {:,}. Builds can delete as well as add RPCs - {:,} of the RPCs were deleted by the final Build they appeared in, leaving {:,} RPCs active and installed ...
     
 """.format(
         stationNo, 
@@ -107,12 +97,17 @@ There are {:,} builds defining {:,} RPCs starting in {} and going to {}. There a
         len(deletedRPCs),
         len(activeRPCs)
     )
-            
-    tbl = MarkdownTable(["Year", "Builds"])
+    
+    """        
+    Builds by Year - may be restated subsequently so distinguish builds introducing
+    fresh RPCs from those just restating. Note that the total of "new RPCs" is roughly
+    the total of RPCs (some builds lack a date which accounts for the discrepency)
+    """
+    tbl = MarkdownTable(["Year", "All RPC Builds", "New RPC Builds"])
     total = sum(countBuildsByYr[yr] for yr in countBuildsByYr)
     for yr in sorted(countBuildsByYr, key=lambda x: int(x), reverse=True):
-        tbl.addRow([yr, reportAbsAndPercent(countBuildsByYr[yr], total)])
-    mu += """RPC Builds by year ...
+        tbl.addRow([yr, reportAbsAndPercent(countBuildsByYr[yr], total), reportAbsAndPercent(countNewRPCBuildsByYr[yr], total)])
+    mu += """RPC Builds by year. Note that as builds often restate pre-existing RPCs, the following distinguishes all builds with RPCs from those that introduce new RPCs ...
      
 """
     mu += tbl.md() + "\n\n"
@@ -136,7 +131,7 @@ There are {:,} builds defining {:,} RPCs starting in {} and going to {}. There a
     tbl = MarkdownTable(["RPC", "Builds", "Type(s)", "Distributed", "[First] Install Gap", "Version(s)"])
     lastTypeNameMU = ""
     gaps = []
-    in8994Count = 0
+    noGapRPCs = []
     for i, rpc in enumerate(sorted(activeRPCs, key=lambda x: x), 1):
             
         firstD, lastD = muDate(buildsByRPC[rpc], "distributed")
@@ -155,6 +150,7 @@ There are {:,} builds defining {:,} RPCs starting in {} and going to {}. There a
             gaps.append(0)
         else:
             installGapMU = "__BAD: D > I__: {} > {}".format(firstD, firstI)
+            noGapRPCs.append(rpc)
         
         typeNames = list(set(bi["typeName"] for bi in buildsByRPC[rpc]))
         if len(typeNames) > 1:
@@ -164,31 +160,46 @@ There are {:,} builds defining {:,} RPCs starting in {} and going to {}. There a
         typeNameMU = ", ".join(sorted(typeNames)) if len(typeNames) > 1 else typeNames[0]
                                 
         tbl.addRow(["__{}__".format(rpc), len(buildsByRPC[rpc]), typeNameMU, distribMU, installGapMU, versionMU])
-        
-        if rpc in _8994Labels:
-            in8994Count += 1
                 
-    mu += "{:,} Active/Installed RPCs, {:,} in 8994 too, for whom the maximum gap in days between distribution and install is {:,}, the median is {:,}, while {:,} have no gap at all. Note {:,} are in 8994 and not active ...\n\n".format(len(activeRPCs), in8994Count, max(gaps), numpy.percentile(gaps, 50), sum(1 for g in gaps if g == 0), len(in8994RPCsNotActive))
+    mu += "{:,} Active/Installed RPCs. The maximum gap in days between distribution and install is {:,}, the median is {:,}, {:,} have no gap at all and the gap for {:,} isn't available because necessary dates are missing. Note that greater than 1 type for {:,} RPCs probably reflects a change in the type's name over the years ...\n\n".format(len(activeRPCs), max(gaps), numpy.percentile(gaps, 50), sum(1 for g in gaps if g == 0), len(noGapRPCs), len(greaterThanOneTypeActiveRPCs))
     mu += tbl.md() + "\n\n"
-    
-    mu += """__Notes:__
-    
-  * the list here (active and deleted) need to be compared to the 8994 list of the same system (preliminary check shows few 8994 for deleted or non build-defined RPCs and nearly all deleted RPCs don't appear in 8994)
-  * greater than 1 type for an RPC (based on builds they appear in) seems to reflect mistakes or a change in a package/build designation name ('TEXT INTEGRATION UTILITIES' became 'TIU')
-  * the "type" needs to be aligned with Package (9_4) prefixes to tie RPCs to VistA 'applications'. 
-  * NEW RPCs per year vs just new build with RPCs per year
-   
-"""
 
-    in8994Count = 0
+    """
+    Deleted RPCs - note that there are probably more? or should be more (retired 
+    packages). Note that only 'SHOULD BE DELETED' RPCs (see below) need concern
+    the integrated RPC Interface definition.
+    
+    TODO: work out retirement better to enforce more retireds
+    """
     tbl = MarkdownTable(["RPC", "(Last) Deleting Build", "When (Dist/Install)"])
     for i, rpc in enumerate(sorted(deletedRPCs), 1):
         lastDelBuildInfo = buildsByRPC[rpc][-1]
         whenMU = "{} / {}".format(lastDelBuildInfo["distributed"], lastDelBuildInfo["installed"].split("T")[0])
         tbl.addRow([rpc, lastDelBuildInfo["build"], whenMU])
-        if rpc in _8994Labels:
-            in8994Count += 1
-    mu += "{:,} Deleted/Uninstalled RPCs, {:,} are in 8994 ...\n\n".format(len(deletedRPCs), in8994Count)
+    mu += "{:,} Deleted/Uninstalled RPCs ...\n\n".format(len(deletedRPCs))
+    mu += tbl.md() + "\n\n"
+        
+    """
+    8994 tie: Rogue RPCs 
+    
+    those [1] builds says SHOULD be there but aren't ("MISSING") and [2] builds don't 
+    account for them or should be deleted ("EXTRA") and [3] builds delete but are 
+    still in 8994 ("SHOULD BE DELETED")
+    
+    Note: possible build logic wrong OR builds badly built (remote of RPC not done but
+    code removed?) etc
+    """
+    rogueRPCs = (missingRPCs.union(extraRPCs)).union(deletedRPCsIn8994)
+    tbl = MarkdownTable(["RPC", "Problem"])
+    for rpc in sorted(list(rogueRPCs)):
+        problem = "EXTRA"
+        if rpc in missingRPCs:
+            problem = "MISSING"
+        elif rpc in deletedRPCsIn8994:
+            problem = "SHOULD BE DELETED"
+        problem = "MISSING" if rpc in missingRPCs else "EXTRA"
+        tbl.addRow([rpc, problem])
+    mu += "__Rogue RPCs__ are [1] in 8994 but are not active according to Builds (\"EXTRA\" {:,}) or active by builds but not in 8994 (\"MISSING\" {:,}) or deleted by builds but in 8994 (\"SHOULD BE DELETED\" {:,}). These {:,} \"Rogue RPCs\" should be isolated and tested. For instance, do _EXTRAs_ even have code implementing them or is 8994 wrong? ...\n\n".format(len(extraRPCs), len(missingRPCs), len(deletedRPCsIn8994), len(rogueRPCs))
     mu += tbl.md() + "\n\n"
     
     open(VISTA_REP_LOCN_TEMPL.format(stationNo) + "rpcBuilds.md", "w").write(mu)

@@ -1,36 +1,36 @@
 ## RPC Builds of 442
     
-There are 692 builds defining 5,393 RPCs starting in 1996-05-24 and going to 2017-12-13. There are 103 types, the most popular of which is __OR__ with 1,037 RPCs. The RPC __VEJDPTF VALIDATE RECORD__ appears in the most builds, 45. Note that Builds can delete as well as add RPCs - 162 of the RPCs were deleted by the final Build they appeared in, leaving 5,231 RPCs active and installed. 
+There are 692 builds defining 5,393 RPCs starting in 1996-05-24 and going to 2017-12-13. There are 103 types, the most popular of which is __OR__ with 1,037 RPCs. The RPC __VEJDPTF VALIDATE RECORD__ appears in the most builds, 45. Builds can delete as well as add RPCs - 162 of the RPCs were deleted by the final Build they appeared in, leaving 5,231 RPCs active and installed ...
     
-RPC Builds by year ...
+RPC Builds by year. Note that as builds often restate pre-existing RPCs, the following distinguishes all builds with RPCs from those that introduce new RPCs ...
      
-\# | Year | Builds
---- | --- | ---
-1 | 2017 | 898 (4.04%)
-2 | 2016 | 2,379 (10.69%)
-3 | 2015 | 1,204 (5.41%)
-4 | 2014 | 1,394 (6.27%)
-5 | 2013 | 1,460 (6.56%)
-6 | 2012 | 1,482 (6.66%)
-7 | 2011 | 1,558 (7.0%)
-8 | 2010 | 1,357 (6.1%)
-9 | 2009 | 1,392 (6.26%)
-10 | 2008 | 1,571 (7.06%)
-11 | 2007 | 1,619 (7.28%)
-12 | 2006 | 1,618 (7.27%)
-13 | 2005 | 1,120 (5.03%)
-14 | 2004 | 577 (2.59%)
-15 | 2003 | 762 (3.42%)
-16 | 2002 | 467 (2.1%)
-17 | 2001 | 391 (1.76%)
-18 | 2000 | 559 (2.51%)
-19 | 1999 | 59 (0.27%)
-20 | 1998 | 31 (0.14%)
-21 | 1997 | 281 (1.26%)
-22 | 1996 | 70 (0.31%)
+\# | Year | All RPC Builds | New RPC Builds
+--- | --- | --- | ---
+1 | 2017 | 898 (4.04%) | 178 (0.8%)
+2 | 2016 | 2,379 (10.69%) | 856 (3.85%)
+3 | 2015 | 1,204 (5.41%) | 176 (0.79%)
+4 | 2014 | 1,394 (6.27%) | 78 (0.35%)
+5 | 2013 | 1,460 (6.56%) | 275 (1.24%)
+6 | 2012 | 1,482 (6.66%) | 198 (0.89%)
+7 | 2011 | 1,558 (7.0%) | 145 (0.65%)
+8 | 2010 | 1,357 (6.1%) | 247 (1.11%)
+9 | 2009 | 1,392 (6.26%) | 146 (0.66%)
+10 | 2008 | 1,571 (7.06%) | 173 (0.78%)
+11 | 2007 | 1,619 (7.28%) | 189 (0.85%)
+12 | 2006 | 1,618 (7.27%) | 164 (0.74%)
+13 | 2005 | 1,120 (5.03%) | 342 (1.54%)
+14 | 2004 | 577 (2.59%) | 314 (1.41%)
+15 | 2003 | 762 (3.42%) | 422 (1.9%)
+16 | 2002 | 467 (2.1%) | 401 (1.8%)
+17 | 2001 | 391 (1.76%) | 332 (1.49%)
+18 | 2000 | 559 (2.51%) | 360 (1.62%)
+19 | 1999 | 59 (0.27%) | 45 (0.2%)
+20 | 1998 | 31 (0.14%) | 22 (0.1%)
+21 | 1997 | 281 (1.26%) | 252 (1.13%)
+22 | 1996 | 70 (0.31%) | 69 (0.31%)
 
 
-5,231 Active/Installed RPCs, 5,228 in 8994 too, for whom the maximum gap in days between distribution and install is 3,629, the median is 84.0, while 28 have no gap at all. Note 11 are in 8994 and not active ...
+5,231 Active/Installed RPCs. The maximum gap in days between distribution and install is 3,629, the median is 84.0, 28 have no gap at all and the gap for 383 isn't available because necessary dates are missing. Note that greater than 1 type for 470 RPCs probably reflects a change in the type's name over the years ...
 
 \# | RPC | Builds | Type(s) | Distributed | [First] Install Gap | Version(s)
 --- | --- | --- | --- | --- | --- | ---
@@ -5267,14 +5267,7 @@ RPC Builds by year ...
 5231 | __YTRP INSTRUMENT REPORT__ | 1 | YS | 2002-06-10 | 15 days | 5.01*71
 
 
-__Notes:__
-    
-  * the list here (active and deleted) need to be compared to the 8994 list of the same system (preliminary check shows few 8994 for deleted or non build-defined RPCs and nearly all deleted RPCs don't appear in 8994)
-  * greater than 1 type for an RPC (based on builds they appear in) seems to reflect mistakes or a change in a package/build designation name ('TEXT INTEGRATION UTILITIES' became 'TIU')
-  * the "type" needs to be aligned with Package (9_4) prefixes to tie RPCs to VistA 'applications'. 
-  * NEW RPCs per year vs just new build with RPCs per year
-   
-162 Deleted/Uninstalled RPCs, 0 are in 8994 ...
+162 Deleted/Uninstalled RPCs ...
 
 \# | RPC | (Last) Deleting Build | When (Dist/Install)
 --- | --- | --- | ---
@@ -5440,5 +5433,25 @@ __Notes:__
 160 | XOBV TEST JUNIT SWITCH GLB2SV | XOBV 1.6 | 2009-05-08 / 2011-02-13
 161 | XOBV TEST JUNIT SWITCH SV2ARR | XOBV 1.6 | 2009-05-08 / 2011-02-13
 162 | XOBV TEST JUNIT SWITCH SV2GLB | XOBV 1.6 | 2009-05-08 / 2011-02-13
+
+
+__Rogue RPCs__ are [1] in 8994 but are not active according to Builds ("EXTRA" 11) or active by builds but not in 8994 ("MISSING" 3) or deleted by builds but in 8994 ("SHOULD BE DELETED" 0). These 14 "Rogue RPCs" should be isolated and tested. For instance, do _EXTRAs_ even have code implementing them or is 8994 wrong? ...
+
+\# | RPC | Problem
+--- | --- | ---
+1 | MAG GET SOP CLASS METHOD | EXTRA
+2 | MAGQB PURNUL | MISSING
+3 | ORQQPX OTHERS REMINDERS | EXTRA
+4 | ORQQPXRM MHDLLDMS | MISSING
+5 | ORQQVI2 VITALS STORE | EXTRA
+6 | ORQTL ALL USER TEAMS PATIENTS | EXTRA
+7 | ORQTL EXISTING TEAM AUTOLINKS | EXTRA
+8 | ORQTL TEAM LIST INFO | EXTRA
+9 | ORQTL TEAM LIST PATIENTS | EXTRA
+10 | ORQTL TEAM LIST USERS | EXTRA
+11 | ORQTL USER TEAMS | EXTRA
+12 | PSA UPLOAD | EXTRA
+13 | ROR LIST ICD-9 | MISSING
+14 | WWW WEBTOP | EXTRA
 
 
