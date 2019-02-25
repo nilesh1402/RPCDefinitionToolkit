@@ -52,7 +52,7 @@ def reduceVistAData(stationNo):
     tbl = MarkdownTable(["Type", "Station No (Total/Reduction)"])
     for typeId in sorted(redResults):
         typeInfo = redResults[typeId]
-        mu = ", ".join(["{} ({:,}/{:,})".format(sNo if sNo != "999" else "FOIA", typeInfo[sNo]["total"], typeInfo[sNo]["reduced"]) for sNo in sorted(typeInfo)])
+        mu = ", ".join(["{} ({})".format(sNo if sNo != "999" else "FOIA", "{:,} / {:,}".format(typeInfo[sNo]["total"], typeInfo[sNo]["reduced"]) if typeInfo[sNo]["total"] > typeInfo[sNo]["reduced"] else typeInfo[sNo]["reduced"]) for sNo in sorted(typeInfo)])
         tbl.addRow([typeId, mu])
     print tbl.md() + "\n"
 
