@@ -1,6 +1,8 @@
 ## RPC Builds of 999
     
-There are 432 builds defining 3,456 RPCs starting in 1996-05-24 and going to 2017-11-07. There are 113 types, the most popular of which is __OR__ with 1,037 RPCs. The RPC __PSB USERLOAD__ appears in the most builds, 10. Builds can delete as well as add RPCs - 116 of the RPCs were deleted by the final Build they appeared in, leaving 3,340 RPCs active and installed ...
+There are 432 builds defining 3,456 RPCs starting in 1996-05-24 and going to 2017-11-07. There are 113 types, the most popular of which is __OR__ with 1,037 RPCs. The RPC __PSB USERLOAD__ appears in the most builds, 3.0. The median number of RPCs per RPC Build is 10.
+
+Builds can delete as well as add RPCs - 116 of the RPCs were deleted by the final Build they appeared in, leaving 3,340 RPCs active and installed.
     
 RPC Builds by year. Note that as builds often restate pre-existing RPCs, the following distinguishes all builds with RPCs from those that introduce new RPCs ...
      
