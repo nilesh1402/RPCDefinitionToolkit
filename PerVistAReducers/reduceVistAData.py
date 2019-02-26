@@ -34,8 +34,11 @@ From 442 Follow on: in builds but not 8994
 
 def reduceVistAData(stationNo):
 
-    redResults = json.load(open("redResults.json"))
-
+    try:
+        redResults = json.load(open("redResults.json"))
+    except:
+        redResults = {}
+        
     reduce8994(stationNo, redResults)
     
     reduce19(stationNo, redResults)
@@ -50,7 +53,7 @@ def reduceVistAData(stationNo):
     
     print "\n# VistA Reductions (so far)\n"
     tbl = MarkdownTable(["Type", "Station No (Total/Reduction)"])
-    for typeId in sorted(redResults):
+    for typeId in sorted(redResults, key=lambda x: float(re.sub(r'\_', '.', x))):
         typeInfo = redResults[typeId]
         mu = ", ".join(["{} ({})".format(sNo if sNo != "999" else "FOIA", "{:,} / {:,}".format(typeInfo[sNo]["total"], typeInfo[sNo]["reduced"]) if typeInfo[sNo]["total"] > typeInfo[sNo]["reduced"] else typeInfo[sNo]["reduced"]) for sNo in sorted(typeInfo)])
         tbl.addRow([typeId, mu])
@@ -79,10 +82,14 @@ def reduce8994(stationNo, redResults):
     
         def __init__(self):
             self.__noReduced = 0
+            self.__hasCSTOPs = []
     
         def reduce(self, resource):
             self.__reduction = OrderedDict()
             for prop in resource:
+                if prop == "fmqlHasStops":
+                    self.__hasCSTOPs.append(resource["_id"])
+                    continue
                 if prop in ["label", "type"]:
                     continue
                 if not hasattr(self, prop):
@@ -93,6 +100,9 @@ def reduce8994(stationNo, redResults):
             
         def totalReduced(self):
             return self.__noReduced
+            
+        def cstopped(self):
+            return self.__hasCSTOPs
 
         # ################## Mandatory or Close to It ###############
       
@@ -219,6 +229,9 @@ def reduce8994(stationNo, redResults):
         reduction = reducer.reduce(resource)
         reductions.append(reduction)
     print "\t... done after {:,}".format(reducer.totalReduced())
+    cstopped = reducer.cstopped()
+    if len(cstopped):
+        print "\t** Warning: {:,} were CSTOPPED".format(len(cstopped))
         
     json.dump(reductions, open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_8994Reduction.json", "w"), indent=4)
         
@@ -244,6 +257,7 @@ def reduce19(stationNo, redResults):
         def __init__(self):
             self.__noSeen = 0
             self.__noReduced = 0
+            self.__hasCSTOPs = []
     
         def reduce(self, resource):
             self.__noSeen += 1
@@ -253,6 +267,7 @@ def reduce19(stationNo, redResults):
             SUPPRESS_PROPS = ["menu_text", "timestamp_of_primary_menu", "timestamp", "display_option", "delegable", "short_menu_text", "entry_action", "e_action_present", "xquit_message", "keep_from_deleting"]
             for prop in resource:
                 if prop == "fmqlHasStops":
+                    self.__hasCSTOPs.append(resource["_id"])
                     continue
                 if prop in SUPPRESS_PROPS:
                     continue
@@ -271,6 +286,9 @@ def reduce19(stationNo, redResults):
             
         def totalReduced(self):
             return self.__noReduced
+            
+        def cstopped(self):
+            return self.__hasCSTOPs
 
         # ################## Mandatory or Close to It ###############
       
@@ -354,6 +372,9 @@ def reduce19(stationNo, redResults):
         if reduction:
             reductions.append(reduction)
     print "\t... done after {:,}, {:,} reduced".format(reducer.totalSeen(), reducer.totalReduced())
+    cstopped = reducer.cstopped()
+    if len(cstopped):
+        print "\t** Warning: {:,} were CSTOPPED".format(len(cstopped))
         
     json.dump(reductions, open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_19Reduction.json", "w"), indent=4)
         
@@ -383,6 +404,7 @@ def reduce9_6(stationNo, redResults):
             self.__installInfoByName = installInfoByName
             self.__noSeen = 0
             self.__noReduced = 0
+            self.__hasCSTOPs = []
     
         def reduce(self, resource):
             self.__noSeen += 1
@@ -393,6 +415,7 @@ def reduce9_6(stationNo, redResults):
             SUPPRESS_PROPS = ["alpha_beta_testing", "transport_build_number", "postinstall_routine", "delete_postinit_routine", "xpz1", "xpi1", "environment_check_routine", "xpo1", "preinstall_routine", "delete_env_routine", "delete_preinit_routine", "installation_message", "pretransportation_routine", "install_questions", "test", "global"] 
             for prop in resource:
                 if prop == "fmqlHasStops":
+                    self.__hasCSTOPs.append(resource["_id"])
                     continue
                 if prop in SUPPRESS_PROPS:
                     continue
@@ -411,6 +434,9 @@ def reduce9_6(stationNo, redResults):
             
         def totalReduced(self):
             return self.__noReduced
+            
+        def cstopped(self):
+            return self.__hasCSTOPs
 
         # ################## Mandatory or Close to It ###############
       
@@ -444,6 +470,7 @@ def reduce9_6(stationNo, redResults):
                 return
                 
             installInfos = self.__installInfoByName[name]
+            
             self.__reduction["installs"] = installInfos
             deInstallIndexes = [i for i, iinfo in enumerate(installInfos) if iinfo["status"] == "4:De-Installed"]
             frmIndex = 0
@@ -552,7 +579,7 @@ def reduce9_6(stationNo, redResults):
     def reduce9_7(stationNo, redResults):
         resourceIter = FilteredResultIterator(DATA_LOCN_TEMPL.format(stationNo), "9_7")
         reductions = []
-        redByName = defaultdict(list)
+        cstopped = []
         print "Reducing 9_7 for {} - inside 9_6 reduction".format(stationNo)
         for i, resource in enumerate(resourceIter, 1):
             if (i % 1000) == 0:
@@ -561,6 +588,8 @@ def reduce9_6(stationNo, redResults):
                 "name": resource["name"],
                 "status": resource["status"]
             }
+            if "fmqlHasStops" in resource:
+                cstopped.append(resource["_id"])
             for prop in ["install_start_time", "install_complete_time"]:
                 if prop in resource:
                     red[prop] = resource[prop]["value"]
@@ -572,6 +601,9 @@ def reduce9_6(stationNo, redResults):
         if "9_7" not in redResults:
             redResults["9_7"] = {}
         redResults["9_7"][stationNo] = {"total": i, "reduced": i}
+        print "\t... done after {:,}".format(i)
+        if len(cstopped):
+            print "\t** Warning: {:,} were CSTOPPED".format(len(cstopped))
         return reductions
 
     installInfoByName = defaultdict(list)
@@ -587,6 +619,9 @@ def reduce9_6(stationNo, redResults):
         if reduction:
             reductions.append(reduction)
     print "\t... done after {:,}, {:,} reduced".format(reducer.totalSeen(), reducer.totalReduced())
+    cstopped = reducer.cstopped()
+    if len(cstopped):
+        print "\t** Warning {:,} were CSTOPPED - {}".format(len(cstopped), cstopped)
         
     json.dump(reductions, open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_9_6Reduction.json", "w"), indent=4)
         
