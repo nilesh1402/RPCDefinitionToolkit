@@ -14,7 +14,7 @@ There are 10,774 builds, distributed between 1993-04-27 and 2018-01-16. 181 pack
 6 | AKV CT ENHANCED | 1 | 2001 | &nbsp; | &nbsp;
 7 | ALJH | 1 | 2008 | &nbsp; | &nbsp;
 8 | __ANU HS DOWNLOAD__ | 1 | 2000 | 1 | &nbsp;
-9 | AQKN | 2 | 1997 - 1997 | &nbsp; | &nbsp;
+9 | AQKN | 2 | 1997 | &nbsp; | &nbsp;
 10 | __ASISTS__ | 37 | 1998 - 2017 | 5 | &nbsp;
 11 | AUTHORIZATION/SUBSCRIPTION | 32 | 1997 - 2016 | &nbsp; | &nbsp;
 12 | AUTO REPLENISHMENT/WARD STOCK | 11 | 1996 - 2017 | &nbsp; | &nbsp;
@@ -43,21 +43,21 @@ There are 10,774 builds, distributed between 1993-04-27 and 2018-01-16. 181 pack
 35 | DIETETICS | 80 | 1996 - 2017 | &nbsp; | &nbsp;
 36 | DRG GROUPER | 69 | 1996 - 2017 | &nbsp; | &nbsp;
 37 | DRUG ACCOUNTABILITY | 58 | 1997 - 2013 | &nbsp; | &nbsp;
-38 | __DSIB CARIBOU CLC SUITE__ | 3 | 2017 - 2017 | 2 | &nbsp;
+38 | __DSIB CARIBOU CLC SUITE__ | 3 | 2017 | 2 | &nbsp;
 39 | __DSIG__ | 7 | 2011 - 2017 | 7 | 5
 40 | DSII - RX-FRAMEWORK | 1 | 2015 | &nbsp; | &nbsp;
 41 | __DSIQ - VCM__ | 3 | 2011 - 2016 | 3 | &nbsp;
 42 | __DSIT TELECARE RECORD MANAGER__ | 28 | 2009 - 2017 | 27 | 2
-43 | __DSIY APAR__ | 2 | 2016 - 2016 | 2 | &nbsp;
+43 | __DSIY APAR__ | 2 | 2016 | 2 | &nbsp;
 44 | DSS EXTRACTS | 156 | 1996 - 2017 | &nbsp; | &nbsp;
 45 | E CLAIMS MGMT ENGINE | 33 | 2004 - 2017 | &nbsp; | &nbsp;
-46 | EEO COMPLAINT TRACKING | 4 | 1996 - 1996 | &nbsp; | &nbsp;
+46 | EEO COMPLAINT TRACKING | 4 | 1996 | &nbsp; | &nbsp;
 47 | __ELECTRONIC SIGNATURE__ | 1 | 2006 | 1 | &nbsp;
 48 | __EMERGENCY DEPARTMENT__ | 6 | 2010 - 2014 | 3 | &nbsp;
 49 | __ENCODER PRODUCT SUITE (EPS)__ | 65 | 2005 - 2017 | 45 | &nbsp;
 50 | ENGINEERING | 61 | 1996 - 2016 | &nbsp; | &nbsp;
 51 | __ENROLLMENT APPLICATION SYSTEM__ | 100 | 2001 - 2017 | 1 | &nbsp;
-52 | ENTERPRISE TERMINOLOGY SERVICE | 2 | 2017 - 2017 | &nbsp; | &nbsp;
+52 | ENTERPRISE TERMINOLOGY SERVICE | 2 | 2017 | &nbsp; | &nbsp;
 53 | EQUIPMENT/TURN-IN REQUIEST | 16 | 2000 - 2016 | &nbsp; | &nbsp;
 54 | __EVENT CAPTURE__ | 120 | 1996 - 2017 | 14 | &nbsp;
 55 | EXTERNAL PEER REVIEW | 1 | &nbsp; | &nbsp; | &nbsp;
@@ -75,7 +75,7 @@ There are 10,774 builds, distributed between 1993-04-27 and 2018-01-16. 181 pack
 67 | HEALTH LEVEL SEVEN | 123 | 1996 - 2017 | &nbsp; | &nbsp;
 68 | __HEALTH MANAGEMENT PLATFORM__ | 8 | 2016 - 2017 | 4 | 2
 69 | HEALTH SUMMARY | 107 | 1996 - 2017 | &nbsp; | &nbsp;
-70 | __HEALTHEVET DESKTOP__ | 2 | 2004 - 2004 | 1 | &nbsp;
+70 | __HEALTHEVET DESKTOP__ | 2 | 2004 | 1 | &nbsp;
 71 | HINQ | 35 | 1996 - 2014 | &nbsp; | &nbsp;
 72 | HOSPITAL BASED HOME CARE | 21 | 1998 - 2017 | &nbsp; | &nbsp;
 73 | HVV PHI DE-IDENTIFICATION | 1 | 2008 | &nbsp; | &nbsp;
@@ -143,7 +143,7 @@ There are 10,774 builds, distributed between 1993-04-27 and 2018-01-16. 181 pack
 135 | __R1 SURGERY SCHEDULE VIEWER__ | 2 | 2012 - 2016 | 2 | &nbsp;
 136 | __R5 VBA IMPORT TOOL__ | 4 | 2012 - 2013 | 1 | &nbsp;
 137 | __RADIOLOGY/NUCLEAR MEDICINE__ | 135 | 1995 - 2017 | 2 | &nbsp;
-138 | __REAL TIME LOCATION SYSTEM__ | 3 | 2016 - 2016 | 2 | &nbsp;
+138 | __REAL TIME LOCATION SYSTEM__ | 3 | 2016 | 2 | &nbsp;
 139 | RECORD TRACKING | 18 | 1996 - 2010 | &nbsp; | &nbsp;
 140 | __REGISTRATION__ | 734 | 1996 - 2017 | 23 | 1
 141 | __RELEASE OF INFORMATION - DSSI__ | 29 | 2003 - 2017 | 22 | 1
@@ -157,7 +157,7 @@ There are 10,774 builds, distributed between 1993-04-27 and 2018-01-16. 181 pack
 149 | SOCIAL WORK | 22 | 1993 - 2007 | &nbsp; | &nbsp;
 150 | __SPINAL CORD DYSFUNCTION__ | 27 | 1996 - 2010 | 1 | &nbsp;
 151 | SURGERY | 133 | 1993 - 2016 | &nbsp; | &nbsp;
-152 | SURVEY GENERATOR | 2 | 1996 - 1996 | &nbsp; | &nbsp;
+152 | SURVEY GENERATOR | 2 | 1996 | &nbsp; | &nbsp;
 153 | __TEXT INTEGRATION UTILITIES__ | 276 | 1997 - 2017 | 30 | &nbsp;
 154 | __TOOLKIT__ | 99 | 1995 - 2014 | 2 | &nbsp;
 155 | UTILIZATION MANAGEMENT ROLLUP | 1 | 2005 | &nbsp; | &nbsp;

@@ -14,7 +14,7 @@ There are 11,559 builds, distributed between 1993-04-27 and 2018-05-22. 194 pack
 6 | ADVERSE REACTION TRACKING | 47 | 1996 - 2017 | &nbsp; | &nbsp;
 7 | AEGV | 5 | 2002 - 2007 | &nbsp; | &nbsp;
 8 | ANU HS DOWNLOAD | 1 | 2001 | &nbsp; | &nbsp;
-9 | AQKN | 4 | 1997 - 1997 | &nbsp; | &nbsp;
+9 | AQKN | 4 | 1997 | &nbsp; | &nbsp;
 10 | __ASISTS__ | 37 | 1998 - 2017 | 5 | &nbsp;
 11 | ATSO ON CALL | 1 | 2002 | &nbsp; | &nbsp;
 12 | ATT BRSI THIRD PARTY | 1 | 2002 | &nbsp; | &nbsp;
@@ -46,20 +46,20 @@ There are 11,559 builds, distributed between 1993-04-27 and 2018-05-22. 194 pack
 38 | DIETETICS | 82 | 1996 - 2018 | &nbsp; | &nbsp;
 39 | DRG GROUPER | 69 | 1996 - 2017 | &nbsp; | &nbsp;
 40 | DRUG ACCOUNTABILITY | 61 | 1997 - 2017 | &nbsp; | &nbsp;
-41 | __DSIB CARIBOU CLC SUITE__ | 3 | 2017 - 2017 | 2 | &nbsp;
+41 | __DSIB CARIBOU CLC SUITE__ | 3 | 2017 | 2 | &nbsp;
 42 | __DSIG__ | 1 | 2016 | 1 | 1
 43 | __DSIQ - VCM__ | 4 | 2011 - 2016 | 4 | &nbsp;
 44 | __DSIT TELECARE RECORD MANAGER__ | 28 | 2009 - 2017 | 27 | 2
-45 | __DSIY APAR__ | 2 | 2016 - 2016 | 2 | &nbsp;
+45 | __DSIY APAR__ | 2 | 2016 | 2 | &nbsp;
 46 | DSS EXTRACTS | 172 | 1996 - 2017 | &nbsp; | &nbsp;
 47 | E CLAIMS MGMT ENGINE | 33 | 2004 - 2017 | &nbsp; | &nbsp;
-48 | EEO COMPLAINT TRACKING | 4 | 1996 - 1996 | &nbsp; | &nbsp;
+48 | EEO COMPLAINT TRACKING | 4 | 1996 | &nbsp; | &nbsp;
 49 | __ELECTRONIC SIGNATURE__ | 1 | 2006 | 1 | &nbsp;
 50 | __EMERGENCY DEPARTMENT__ | 7 | 2010 - 2018 | 3 | &nbsp;
 51 | __ENCODER PRODUCT SUITE (EPS)__ | 65 | 2005 - 2017 | 45 | &nbsp;
 52 | ENGINEERING | 58 | 1998 - 2016 | &nbsp; | &nbsp;
 53 | __ENROLLMENT APPLICATION SYSTEM__ | 101 | 2001 - 2017 | 1 | &nbsp;
-54 | ENTERPRISE TERMINOLOGY SERVICE | 2 | 2017 - 2017 | &nbsp; | &nbsp;
+54 | ENTERPRISE TERMINOLOGY SERVICE | 2 | 2017 | &nbsp; | &nbsp;
 55 | EQUIPMENT/TURN-IN REQUIEST | 16 | 2000 - 2016 | &nbsp; | &nbsp;
 56 | __EVENT CAPTURE__ | 124 | 1996 - 2018 | 14 | &nbsp;
 57 | EXTENSIBLE EDITOR | 1 | 1999 | &nbsp; | &nbsp;
@@ -77,7 +77,7 @@ There are 11,559 builds, distributed between 1993-04-27 and 2018-05-22. 194 pack
 69 | HEALTH LEVEL SEVEN | 124 | 1996 - 2017 | &nbsp; | &nbsp;
 70 | __HEALTH MANAGEMENT PLATFORM__ | 8 | 2016 - 2017 | 4 | 2
 71 | HEALTH SUMMARY | 106 | 1996 - 2017 | &nbsp; | &nbsp;
-72 | __HEALTHEVET DESKTOP__ | 2 | 2004 - 2004 | 1 | &nbsp;
+72 | __HEALTHEVET DESKTOP__ | 2 | 2004 | 1 | &nbsp;
 73 | HINQ | 36 | 1996 - 2014 | &nbsp; | &nbsp;
 74 | HOSPITAL BASED HOME CARE | 21 | 1998 - 2017 | &nbsp; | &nbsp;
 75 | HOSPITAL INFORMATION MENU | 1 | 1997 | &nbsp; | &nbsp;
@@ -157,7 +157,7 @@ There are 11,559 builds, distributed between 1993-04-27 and 2018-05-22. 194 pack
 149 | __QUASAR__ | 33 | 1996 - 2014 | 3 | &nbsp;
 150 | __R1 SURGERY SCHEDULE VIEWER__ | 2 | 2012 - 2016 | 2 | &nbsp;
 151 | __RADIOLOGY/NUCLEAR MEDICINE__ | 138 | 1996 - 2018 | 2 | &nbsp;
-152 | __REAL TIME LOCATION SYSTEM__ | 3 | 2016 - 2016 | 2 | &nbsp;
+152 | __REAL TIME LOCATION SYSTEM__ | 3 | 2016 | 2 | &nbsp;
 153 | RECORD TRACKING | 19 | 1996 - 2017 | &nbsp; | &nbsp;
 154 | __REGISTRATION__ | 743 | 1996 - 2018 | 24 | 1
 155 | __RELEASE OF INFORMATION - DSSI__ | 30 | 2003 - 2018 | 23 | 1
@@ -165,13 +165,13 @@ There are 11,559 builds, distributed between 1993-04-27 and 2018-05-22. 194 pack
 157 | __RPC BROKER__ | 43 | 1996 - 2016 | 9 | &nbsp;
 158 | RUN TIME LIBRARY | 1 | 1999 | &nbsp; | &nbsp;
 159 | SAGG PROJECT | 6 | 1998 - 2016 | &nbsp; | &nbsp;
-160 | SCAM PACKAGE | 5 | 2005 - 2005 | &nbsp; | &nbsp;
+160 | SCAM PACKAGE | 5 | 2005 | &nbsp; | &nbsp;
 161 | __SCHEDULING__ | 514 | 1996 - 2018 | 22 | &nbsp;
 162 | __SHIFT CHANGE HANDOFF TOOL__ | 5 | 2008 - 2017 | 2 | &nbsp;
 163 | SOCIAL WORK | 21 | 1993 - 2007 | &nbsp; | &nbsp;
 164 | __SPINAL CORD DYSFUNCTION__ | 27 | 1996 - 2010 | 1 | &nbsp;
 165 | SURGERY | 134 | 1993 - 2017 | &nbsp; | &nbsp;
-166 | SURVEY GENERATOR | 2 | 1996 - 1996 | &nbsp; | &nbsp;
+166 | SURVEY GENERATOR | 2 | 1996 | &nbsp; | &nbsp;
 167 | __TEXT INTEGRATION UTILITIES__ | 278 | 1997 - 2018 | 30 | &nbsp;
 168 | __TOOLKIT__ | 98 | 1995 - 2014 | 2 | &nbsp;
 169 | TRAINING | 1 | 2000 | &nbsp; | &nbsp;

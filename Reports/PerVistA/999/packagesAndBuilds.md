@@ -39,7 +39,7 @@ There are 10,348 builds, distributed between 1993-04-27 and 2018-01-16. 133 pack
 31 | __EMERGENCY DEPARTMENT__ | 6 | 2010 - 2014 | 3 | &nbsp;
 32 | ENGINEERING | 63 | 1996 - 2016 | &nbsp; | &nbsp;
 33 | __ENROLLMENT APPLICATION SYSTEM__ | 101 | 2001 - 2017 | 1 | &nbsp;
-34 | ENTERPRISE TERMINOLOGY SERVICE | 2 | 2017 - 2017 | &nbsp; | &nbsp;
+34 | ENTERPRISE TERMINOLOGY SERVICE | 2 | 2017 | &nbsp; | &nbsp;
 35 | EQUIPMENT/TURN-IN REQUEST | 16 | 2000 - 2013 | &nbsp; | &nbsp;
 36 | __EVENT CAPTURE__ | 120 | 1996 - 2017 | 15 | &nbsp;
 37 | FEE BASIS | 145 | 1996 - 2017 | &nbsp; | &nbsp;
@@ -54,7 +54,7 @@ There are 10,348 builds, distributed between 1993-04-27 and 2018-01-16. 133 pack
 46 | HEALTH LEVEL SEVEN | 124 | 1996 - 2017 | &nbsp; | &nbsp;
 47 | __HEALTH MANAGEMENT PLATFORM__ | 7 | 2016 - 2017 | 4 | 2
 48 | HEALTH SUMMARY | 107 | 1996 - 2017 | &nbsp; | &nbsp;
-49 | __HEALTHEVET DESKTOP__ | 2 | 2004 - 2004 | 1 | &nbsp;
+49 | __HEALTHEVET DESKTOP__ | 2 | 2004 | 1 | &nbsp;
 50 | HINQ | 36 | 1996 - 2014 | &nbsp; | &nbsp;
 51 | HOSPITAL BASED HOME CARE | 22 | 1998 - 2017 | &nbsp; | &nbsp;
 52 | __IFCAP__ | 343 | 1995 - 2017 | 1 | &nbsp;
@@ -106,7 +106,7 @@ There are 10,348 builds, distributed between 1993-04-27 and 2018-01-16. 133 pack
 98 | QUALITY ASSURANCE INTEGRATION | 6 | 2000 - 2005 | &nbsp; | &nbsp;
 99 | __QUASAR__ | 29 | 1996 - 2014 | 4 | &nbsp;
 100 | __RADIOLOGY/NUCLEAR MEDICINE__ | 135 | 1995 - 2017 | 2 | &nbsp;
-101 | __REAL TIME LOCATION SYSTEM__ | 3 | 2016 - 2016 | 2 | &nbsp;
+101 | __REAL TIME LOCATION SYSTEM__ | 3 | 2016 | 2 | &nbsp;
 102 | RECORD TRACKING | 20 | 1996 - 2010 | &nbsp; | &nbsp;
 103 | __REGISTRATION__ | 741 | 1996 - 2017 | 24 | 1
 104 | __REMOTE ORDER/ENTRY SYSTEM__ | 23 | 2000 - 2011 | 3 | 1
@@ -121,7 +121,7 @@ There are 10,348 builds, distributed between 1993-04-27 and 2018-01-16. 133 pack
 113 | SURVEY GENERATOR | 3 | 1996 - 2005 | &nbsp; | &nbsp;
 114 | __TEXT INTEGRATION UTILITIES__ | 277 | 1997 - 2017 | 31 | &nbsp;
 115 | __TOOLKIT__ | 104 | 1995 - 2017 | 2 | &nbsp;
-116 | UTILIZATION MANAGEMENT ROLLUP | 2 | 2005 - 2005 | &nbsp; | &nbsp;
+116 | UTILIZATION MANAGEMENT ROLLUP | 2 | 2005 | &nbsp; | &nbsp;
 117 | __VA FILEMAN__ | 193 | 1996 - 2017 | 4 | &nbsp;
 118 | __VBECS__ | 9 | 2009 - 2016 | 2 | &nbsp;
 119 | VDEF | 8 | 2004 - 2016 | &nbsp; | &nbsp;

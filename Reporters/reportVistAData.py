@@ -374,7 +374,7 @@ There are {:,} builds, distributed between {} and {}. {:,} packages cover {} of 
     tbl = MarkdownTable(["Package", "Build \#", "Build Dates", "Build w/RPC \#", "Build w/RPC Delete \#"])
     for pkg in sorted(buildsByPackage):
         pkgMU = "__{}__".format(pkg) if sum(1 for bi in buildsByPackage[pkg] if "rpcs" in bi) else pkg
-        dateDistributeds = sorted([bi["dateDistributed"].split("-")[0] for bi in buildsByPackage[pkg] if "dateDistributed" in bi])
+        dateDistributeds = sorted(list(set(bi["dateDistributed"].split("-")[0] for bi in buildsByPackage[pkg] if "dateDistributed" in bi)))
         if len(dateDistributeds) == 0:
             ddMU = ""
         elif len(dateDistributeds) > 1:
