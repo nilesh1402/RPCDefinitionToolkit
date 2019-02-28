@@ -45,7 +45,7 @@ def reduceVistAData(stationNo):
     
     reduce101_24(stationNo, redResults)
     
-    reduce9_4(stationNo, redResults)
+    reduce9_4Plus(stationNo, redResults)
     
     reduce9_7(stationNo, redResults)
     
@@ -61,6 +61,17 @@ def reduceVistAData(stationNo):
         cstoppedMU = ", ".join(typeInfo["cstopped"]) if "cstopped" in typeInfo else ""
         tbl.addRow([typeId, mu])
     print tbl.md() + "\n"
+    
+"""
+Common package ref reduction to:
+- remove bad refs (label == IEN)
+- make match 9_4 reduction where upper case variations take over and which uses
+/ and not _
+"""
+def reducePackageRef(value):
+    if value["id"].split("-")[1] == value["label"]: # bad ref
+        return ""
+    return re.sub(r'\_', '/', value["label"]).upper()
 
 """
 REMOTE PROCEDURE (8994)
@@ -343,10 +354,13 @@ def reduce19(stationNo, redResults):
         def description(self, value):
             self.__reduction["description"] = value
 
-        # package - POINTER - 65 (43%) - 9_4
-        # ... note: may get from name itself (compare)
+        """
+        package - POINTER - 65 (43%) - 9_4
+        """ 
         def package(self, value):
-            self.__reduction["package"] = resource["package"]["label"]
+            rvalue = reducePackageRef(value)
+            if rvalue:
+                self.__reduction["package"] = rvalue
                         
         # routine - LITERAL - 8 (5%)
         def routine(self, value):
@@ -391,6 +405,13 @@ def reduce19(stationNo, redResults):
     redResults["19"][stationNo] = redResult
     
 """
+Goal: "Build-Backed" Package List 
+
+9_4 not a definitive package list as [1] builds or some other mechanism with bad package names (named for individual builds, dup existing package with case variants ...) introduce duplicate or invalid entries and [2] some builds, particularly COTS or Class III lack package references. This means __9_4 IS A STARTING POINT__ and that __9_6 ITSELF ALONG WITH OUTSIDE LISTS__ must deliver the definitive package list. Getting to A DEFINITIVE PACKAGE LIST WILL BE AN ITERATIVE, CROSS VISTA PROCESS.
+
+Hence plus in _reduce9_4Plus_ ... for one thing new packages are added from a built in
+definition.
+
 Dictionary does NOT enforce unique labels OR unique prefixes though that's
 what is intended. A reduction in instances happens because [1] the same label 
 is used > once or [2] the same prefix is used > once.
@@ -404,9 +425,9 @@ is used > once or [2] the same prefix is used > once.
     current_version - LITERAL - 269 (87%)
     ------------------------------
     developer_person_site - LITERAL - 199 (64%)
-    class - LITERAL - 197 (64%)
+    class - LITERAL - 197 (64%) <----------- NOT USABLE
         I:National - 147 (74.6%)
-        III:Local - 49 (24.9%)
+        III:Local - 49 (24.9%) <---------- some Locals are really National!
         II:Inactive - 1 (0.5%)
     ------------------------------
     file - LIST - 176 (57%)
@@ -435,9 +456,9 @@ and 640: 343 ...
     -------------------------------
     developer_person_site - LITERAL - 199 (58%)
     file - LIST - 181 (53%)
-    class - LITERAL - 156 (45%)
+    class - LITERAL - 156 (45%) <----------- NOT USABLE
         I:National - 112 (71.8%)
-        III:Local - 43 (27.6%)
+        III:Local - 43 (27.6%) <---------- some Locals are really National!
         II:Inactive - 1 (0.6%)
     --------------------------------
     lowest_file_number - LITERAL - 99 (29%)
@@ -447,10 +468,22 @@ and 640: 343 ...
     synonym - LIST - 1 (0%)
     
 and 90% Build (9_6's) have package file links as does install (9_7)
-
-On a report, compare to CSV of package
 """
-def reduce9_4(stationNo, redResults):
+# Fixed VistA Stuff and off OSEHRA packages as not covered in 9_4 
+# ... this will expand as we refine to a definitive, "Build-backed" Package list
+BEYOND_9_4_PACKAGE_INDEX = {
+    "AXVVA": "VISUAL AID FOR CLINIC APPOINTMENTS (VISN 20)",
+    "DSIP": "ENCODER PRODUCT SUITE (EPS)", # monograph
+    "DSIVA": "ADVANCED PROSTHETICS ACQUISITION TOOL (APAT)", # monograph
+    "VANOD": "VA NURSING OUTCOMES DATABASE PROJECT", # based in Puget Sound
+    "NVS": "NATIONAL VISTA SUPPORT", # OSEHRA Packages.csv
+    "APG": "PHOENIX VAMC", # OSEHRA Packages.csv
+    "ANU": "ANU HS DOWNLOAD", # Shawn Hardenbrook Nashville VA Medical Center - downloading health summaries
+    "R1ENINL": "R5 VBA IMPORT TOOL", # GUI application which validates the data against the AEMS/MERS database
+    "R1SRL": "R1 SURGERY SCHEDULE VIEWER" # Surgery App viewer (http://robertdurkin.com/projects/R1SRLORScheduleViewer/index.html)
+}
+
+def reduce9_4Plus(stationNo, redResults):
 
     resourceIter = FilteredResultIterator(DATA_LOCN_TEMPL.format(stationNo), "9_4")
 
@@ -463,39 +496,52 @@ def reduce9_4(stationNo, redResults):
     ... issue of two entries earlier matching (ie/ same name and separately same prefix)
     ... would need to merge them before continuing with override. Not doing as doesn't
     ... seem to arise.
+    
+    Note: upper cases name to match reducePackageRef
     """
     reductions = []
+    # assuming BOTH label and prefix are reserved for individual packages ie/ identifying
     redOfLabel = defaultdict(list)
     redOfPrefix = defaultdict(list)
     cstopped = []
     for i, resource in enumerate(resourceIter, 1):
         if (i % 200) == 0:
             print "\tprocessing another 200 9_4's"
+        # let's force dup names cause of case diffs to be merged
+        # ... fit's with reducePackageRef
+        uname = resource["name"].upper()
+        if uname != resource["name"]:
+            print "\tuppercasing name {} before matching".format(resource["name"])
         # same label, new or same prefix
-        if resource["name"] in redOfLabel:
-            info = redOfLabel[resource["name"]]
+        if uname in redOfLabel:
+            info = redOfLabel[uname]
             # is this an additional prefix
             if "prefix" in resource and resource["prefix"] not in info["prefixes"]:
-                if resource["prefix"] in redOfPrefix and redOfPrefix[resource["prefix"]]["label"] != resource["name"]:
+                if resource["prefix"] in redOfPrefix and redOfPrefix[resource["prefix"]]["label"] != uname:
                     # This would require some break. Assume doesn't happen
                     raise Exception("Clash of name/prefix - diff name earlier also has that prefix. Which previous entry to take? By same name or by same prefix")
                 redOfPrefix[resource["prefix"]] = info
                 info["prefixes"].append(resource["prefix"])
-            print "\toverride w/new definition of same name {} - prefixes now {}".format(resource["name"], ",".join(info["prefixes"]))
+            print "\toverride w/new definition of same name {} - prefixes now {}".format(uname, ",".join(info["prefixes"]))
         # else new label and existing prefix
         elif "prefix" in resource and resource["prefix"] in redOfPrefix:
             info = redOfPrefix[resource["prefix"]]
-            print "\toverride w/new definition of same prefix {} and different name {} from {}".format(resource["prefix"], resource["name"], info["label"])
+            print "\toverride w/new definition of same prefix {} and different name {} from {}".format(resource["prefix"], uname, info["label"])
             if "oldLabels" not in info:
                 info["oldLabels"] = []
             info["oldLabels"].append(info["label"])
-            info["label"] = resource["name"]
+            info["label"] = uname
             redOfLabel[info["label"]] = info
         else: # new label, new prefix
-            info = {"label": resource["name"], "prefixes": []}
+            if uname in BEYOND_9_4_PACKAGE_INDEX.values():
+                print json.dumps(resource, indent=4)
+                raise Exception("Didn't Expect 'BEYOND_9_4_PACKAGE_INDEX' name to have a built in 9_4 entry for any VistA - {}".format(uname))
+            info = {"label": uname, "prefixes": []}
             redOfLabel[info["label"]] = info
             reductions.append(info)
             if "prefix" in resource:
+                if resource["prefix"] in BEYOND_9_4_PACKAGE_INDEX:
+                    raise Exception("Didn't Expect 'BEYOND_9_4_PACKAGE_INDEX' prefix to have a built in 9_4 entry for any VistA - {}/{}".format(uname, resource["prefix"]))
                 info["prefixes"].append(resource["prefix"])
                 redOfPrefix[resource["prefix"]] = info
         for prop, nprop in {"class": "class", "current_version": "currentVersion", "lowest_file_number": "lowestFileNumber", "highest_file_number": "highestFileNumber"}.items():
@@ -511,16 +557,22 @@ def reduce9_4(stationNo, redResults):
         if len(reduction["prefixes"]) == 0:
             del reduction["prefixes"]
             
-    print "... done after {:,} producing {:,} distinct definitions with {:,} prefixes".format(i, len(reductions), len(redOfPrefix))
-    
-    json.dump(reductions, open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_9_4Reduction.json", "w"), indent=4)
+    print "\t... done after {:,} producing {:,} distinct definitions with {:,} prefixes".format(i, len(reductions), len(redOfPrefix))
         
     if "9_4" not in redResults:
         redResults["9_4"] = {}
-    redResult = {"total": i, "reduced": i}
+    redResult = {"total": i, "reduced": len(reductions)}
     if len(cstopped):
         redResult["cstopped"] = cstopped
     redResults["9_4"][stationNo] = redResult
+    
+    # Add manual enhancement of Packages (note: checked above that not in 9_4)
+    for prefix in BEYOND_9_4_PACKAGE_INDEX:
+        info = {"label": BEYOND_9_4_PACKAGE_INDEX[prefix], "prefixes": [prefix]}
+        reductions.append(info)
+    print "\t... added {:,} packages manually to the 9_4 list bringing total to {:,}".format(len(BEYOND_9_4_PACKAGE_INDEX), len(reductions))
+    
+    json.dump(reductions, open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_9_4PlusReduction.json", "w"), indent=4)
             
     return reductions
     
@@ -546,8 +598,11 @@ def reduce9_7(stationNo, redResults):
                 red[prop] = resource[prop]["value"]
         if "starting_package" in resource and resource["starting_package"]["id"] != resource["_id"]:
             red["isPartOf"] = True
+        # Ala others, to match 9_4 red, go upper case and ensure / for _
         if "package_file_link" in resource:
-            red["package"] = resource["package_file_link"]["label"]
+            rvalue = reducePackageRef(resource["package_file_link"])
+            if rvalue:
+                red["package"] = rvalue
         if "fmqlHasStops" in resource:
             cstopped.append(resource["_id"])
         reductions.append(red)
@@ -585,17 +640,23 @@ def reduce9_6(stationNo, redResults):
     
         BUILD_COMPONENTS_TO_REDUCE = {"REMOTE PROCEDURE": "rpcs", "OPTION": "options", "ROUTINE": "routines"}
     
-        def __init__(self, installInfoByName):
+        def __init__(self, packageByPrefix, installInfoByName):
+            self.__packageByPrefix = packageByPrefix
             self.__installInfoByName = installInfoByName
             self.__noSeen = 0
             self.__noReduced = 0
             self.__cstopped = []
+            self.__trackMNPackageLink = Counter()
     
         def reduce(self, resource):
             self.__noSeen += 1
+            self.__currentResource = resource # for checks below
+            """
+            DO ALL ...
             # only want if options, routines and remote procedures added
             if not ("build_components" in resource and sum(1 for entry in resource["build_components"] if entry["build_component"]["label"] in Reducer.BUILD_COMPONENTS_TO_REDUCE and "entries" in entry)):
                 return None
+            """
             self.__reduction = OrderedDict()
             SUPPRESS_PROPS = ["alpha_beta_testing", "transport_build_number", "postinstall_routine", "delete_postinit_routine", "xpz1", "xpi1", "environment_check_routine", "xpo1", "preinstall_routine", "delete_env_routine", "delete_preinit_routine", "installation_message", "pretransportation_routine", "install_questions", "test", "global"] 
             for prop in resource:
@@ -622,6 +683,9 @@ def reduce9_6(stationNo, redResults):
             
         def cstopped(self):
             return self.__cstopped
+            
+        def mnPackageLinked(self):
+            return self.__trackMNPackageLink
 
         # ################## Mandatory or Close to It ###############
       
@@ -639,27 +703,41 @@ def reduce9_6(stationNo, redResults):
                 raise Exception("Expected builds to be unique by name")
             self.__namesSeen.add(value)
             self.__reduction["label"] = value
-            self.__processNameForType(value)
+            self.__processNameForMN(value)
             self.__processInstallInfo(value)
             
         """
-        Split name into version and typeName
+        Split name into buildMNVersion and buildMN. Want to use this to match
+        to prefix in Package.
         
         Note: may see combo and label reused for different versions but would
         only know from installs AS build label is unique in 9_6. Reuse (and no
         rename) only lazily occurs for Class III's.
+        
+        KEY: using buildMN to link package if can when not otherwise available.
+        REM that package == packageLabel.
         """
-        def __processNameForType(self, value):
-            typeMatch = re.match(r'([^\*^\d]+)', value)
-            if not typeMatch:
-                print "\tNo type match for Build Name \"{}\"".format(value)
+        def __processNameForMN(self, value):
+            mnMatch = re.match(r'([^\*^ ^\_]+)', value)
+            if not mnMatch:
+                print "\tNo MN match for Build Name \"{}\"".format(value)
                 return # ex/ '442 Cheyenne ICD 10.0'
-            typeName = re.sub(r' +$', '', typeMatch.group(1)) # trailing out
-            self.__reduction["typeName"] = typeName
+            buildMN = re.sub(r' +$', '', mnMatch.group(1)) # trailing out
+            if re.match(r'VEJD', buildMN):
+                buildMN = "VEJD"
+            if len(buildMN) < 2 or re.match(r'\d+$', buildMN):
+                print "\tToo small or all number MN match for Build Name \"{}\"".format(value)
+                return
+            self.__reduction["buildMN"] = buildMN
             versionMatch = re.search(r'(\d.+)$', value)
             if not versionMatch:
                 raise Exception("Expect to find version in Build Name: {}".format(value))
-            self.__reduction["typeVersion"] = versionMatch.group(1)
+            self.__reduction["buildMNVersion"] = versionMatch.group(1)
+            # Extra - if NO package ref, then use mn to link
+            if "package_file_link" not in self.__currentResource:
+                if buildMN in self.__packageByPrefix:
+                    self.__reduction["package"] = self.__packageByPrefix[buildMN]
+                    self.__trackMNPackageLink[self.__reduction["package"]] += 1
             
         """
         Add 9_7 install info inside 9_6
@@ -702,8 +780,10 @@ def reduce9_6(stationNo, redResults):
                 return
             if value == "1:MULTI-PACKAGE":
                 self.__reduction["isMultiPackage"] = True
+                return
             elif value == "2:GLOBAL PACKAGE":
                 self.__reduction["isGlobalPackage"] = True
+                return
             raise Exception("Invalid value {} for type_2".format(value))
             
         # track_package_nationally - BOOLEAN - 10,769 (100%)
@@ -719,6 +799,11 @@ def reduce9_6(stationNo, redResults):
             for bcInfo in values:
                 if "entries" not in bcInfo: # empty
                     continue
+                # As there are EMPTY components in multi-builds, this check
+                # only applies when we find filled in components
+                if "type_2" in self.__currentResource: 
+                    if self.__currentResource["type_2"] != "0:SINGLE PACKAGE":
+                        raise Exception("Expect components ONLY in SINGLE PACKAGEs")
                 # ignoring 'file': REMOTE PROCEDURE, file = {"id": "1-8994" etc
                 # ... sometimes there for REMOTE PROCEDURE etc but sometimes not
                 componentType = bcInfo["build_component"]["label"]
@@ -739,9 +824,15 @@ def reduce9_6(stationNo, redResults):
         def date_distributed(self, value):
             self.__reduction["dateDistributed"] = value["value"]
             
-        # package_file_link - POINTER - 10,152 (94%) - 9_4
+        """
+        package_file_link - POINTER - 10,152 (94%) - 9_4
+        
+        Note: when missing, will try to match using buildMN above.
+        """ 
         def package_file_link(self, value):
-            self.__reduction["package"] = value["label"]
+            rvalue = reducePackageRef(value) # takes care of the invalid
+            if rvalue:
+                self.__reduction["package"] = rvalue
                         
         # description_of_enhancements - LITERAL - 9,224 (86%)
         def description_of_enhancements(self, value):
@@ -759,6 +850,9 @@ def reduce9_6(stationNo, redResults):
         # ... TODO: revisit and do more than just list files
         def file(self, values):
             fls = []
+            if len(values) and "type_2" in self.__currentResource:
+                if self.__currentResource["type_2"] != "0:SINGLE PACKAGE":
+                    raise Exception("Expect Files only in SINGLE PACKAGE BUILDs")
             for fInfo in values:
                 fls.append(fInfo["file"]["id"].split("-")[1])
             self.__reduction["files"] = fls
@@ -779,17 +873,29 @@ def reduce9_6(stationNo, redResults):
             return
 
     print "Reducing 9_6 for {}".format(stationNo)
+    
+    # Rely 9_4 done for adding links to packages where missing
+    try:
+        _9_4Reductions = json.load(open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_9_4PlusReduction.json"))
+    except:
+        raise Exception("9_6 reduction requires 9_4 reduction first")
+    packageByPrefix = {}
+    for packageInfo in _9_4Reductions:
+        if "prefixes" not in packageInfo:
+            continue
+        for prefix in packageInfo["prefixes"]:
+            packageByPrefix[prefix] = packageInfo["label"]
         
     # Rely 9_7 done first ie/ putting install inside builds 
     try:
         _9_7Reductions = json.load(open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_9_7Reduction.json"))
     except:
         raise Exception("9_6 reduction requires 9_7 reduction first")
-
     installInfoByName = defaultdict(list)
     for installInfo in _9_7Reductions:
         installInfoByName[installInfo["name"]].append(installInfo)
-    reducer = Reducer(installInfoByName)
+        
+    reducer = Reducer(packageByPrefix, installInfoByName)
     reductions = []
     for i, resource in enumerate(resourceIter, 1):
         if (i % 1000) == 0:
@@ -798,6 +904,9 @@ def reduce9_6(stationNo, redResults):
         if reduction:
             reductions.append(reduction)
     print "\t... done after {:,}, {:,} reduced".format(reducer.totalSeen(), reducer.totalReduced())
+    mnPackageLinked = reducer.mnPackageLinked()
+    if len(mnPackageLinked):
+        print "\t\t{:,} packages linked to {:,} builds using MN linking".format(len(mnPackageLinked), sum(mnPackageLinked[pkg] for pkg in mnPackageLinked))
         
     json.dump(reductions, open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_9_6Reduction.json", "w"), indent=4)
         
@@ -811,6 +920,12 @@ def reduce9_6(stationNo, redResults):
     redResults["9_6"][stationNo] = redResult
     
     return reductions    
+    
+"""
+9_8 Routine
+"""
+def reduce9_8(stationNo, redResults):
+    pass
 
 """
 {'fileName': u'OE/RR REPORT', 'fileId': u'101.24', 'prop': u'rpc'}
