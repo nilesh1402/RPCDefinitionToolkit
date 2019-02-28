@@ -19,12 +19,22 @@ Reports for Per VistA Reductions, the initial sources of an integrated
 RPC Interface Definition.
 
 TODO: 
-- may combine with package: reportBuildInstallPackages ie/ of RPCs
-  ... will take similar approach from reduction to assembly
-- do 
+- go to unused packages/moving to most recent ie/ pick the MOST RECENT package
+... and fix list below
+... WANT #RPCs along with #builds of package ... and delete vs add pkg (or both) 
+... PACKAGE FOIA vs 
+- do more on FOIA bad:
+  - ACKQAUD1 missing early one in FOIA
+  - and multiple distrib dates too (which shouldn't be)
+  ... may be a sorted dateDistributed
+- GO BACK TO REDUCTION and just report here
 
 Unmatched 442 Note: shows R1 etc ... need to do more
 =====================================================
+
+        "ANU": "ANU HS DOWNLOAD", # Shawn Hardenbrook Nashville VA Medical Center - downloading health summaries
+        "R1ENINL": "Region 5 VBA import tool", # GUI application which validates the data against the AEMS/MERS database
+        "[R1]SRLOR": "R1 SURGERY SCHEDULE VIEWER" # Surgery App viewer (http://robertdurkin.com/projects/R1SRLORScheduleViewer/index.html)
     
     ANU HS DOWNLOAD*2.0*0: Developed by Shawn Hardenbrook Nashville VA Medical Center, 
     for downloading health summaries (should be uninstalled - installed twice but
@@ -79,6 +89,8 @@ def reportBuildsNInstalls(stationNo):
     TODO MORE
         https://github.com/OSEHRA/VistA/blob/master/Packages.csv
         https://www.oit.va.gov/Services/TRM/ReportVACategoryMapping.aspx
+        
+    TODO: gotta replace use of newer label with older one
     """
     class PackageMatcher: # see how monograph can come in handy
         
@@ -88,8 +100,19 @@ def reportBuildsNInstalls(stationNo):
             self.__prefixByPkg = defaultdict(list)
             self.__unmatched = []
             for entry in _9_4Reduction:
+                if "prefix" in entry and entry["prefix"] in ["NTSI", "ASTR", "HIVO", "PSOC"]:
+                    print entry
+                if "prefix" not in entry:
+                    print x
                 self.__pkgByPrefix[entry["prefix"]].append(entry["label"])
                 self.__prefixByPkg[entry["label"]].append(entry["prefix"])
+            print "Loaded {:,} packages".format(len(_9_4Reduction))
+            print "{:,} prefixes".format(len(self.__pkgByPrefix))
+            print "{:,} package labels".format(len(self.__prefixByPkg))
+            for prefix in self.__pkgByPrefix:
+                if len(self.__pkgByPrefix[prefix]) == 1:
+                    continue
+                print prefix, self.__pkgByPrefix[prefix]
                 
         # Searching on Builds with no matches and see matches in Monograph or online
         # ... Note: if R1 starts build name, probably means Region 1 and it is local
@@ -98,11 +121,11 @@ def reportBuildsNInstalls(stationNo):
             "AXVVA": "Visual Aid for Clinic Appointments (VISN 20)",
             "DSIP": "Encoder Product Suite (EPS)", # monograph
             "DSIVA": "Advanced Prosthetics Acquisition Tool (APAT)", # monograph
-            "VANOD": "VA Nursing Outcomes Database (Project)"
+            "VANOD": "VA Nursing Outcomes Database (Project)" # based in Puget Sound
         }
         
         """
-        # Expects 'typeName' to be have added to buildInfo!
+        # Expects 'buildMN' to be have added to buildInfo!
         
         If package link exists, take that
         If type name is prefix of a package then take that
@@ -111,7 +134,7 @@ def reportBuildsNInstalls(stationNo):
         OR no match (usually R1 etc)
         
         TODO: figure out why the list of [] package to avoid problem below
-        TODO BIGGER: probably move BACK to reduction along with typeName
+        TODO BIGGER: probably move BACK to reduction along with buildMN
         """
         def match(self, buildInfo):
         
@@ -119,14 +142,14 @@ def reportBuildsNInstalls(stationNo):
             if "package" in buildInfo and re.sub(r'\_', '/', buildInfo["package"]) not in self.__prefixByPkg:
                 return [buildInfo["package"]]
                 
-            if buildInfo["typeName"] in self.__pkgByPrefix:
-                return self.__pkgByPrefix[buildInfo["typeName"]]
+            if buildInfo["buildMN"] in self.__pkgByPrefix:
+                return self.__pkgByPrefix[buildInfo["buildMN"]]
                 
-            if buildInfo["typeName"] in self.__prefixByPkg:
-                return [buildInfo["typeName"]]
+            if buildInfo["buildMN"] in self.__prefixByPkg:
+                return [buildInfo["buildMN"]]
                 
-            if buildInfo["typeName"] in PackageMatcher.BEYOND_PACKAGE_MATCHES:
-                return [PackageMatcher.BEYOND_PACKAGE_MATCHES[buildInfo["typeName"]]]
+            if buildInfo["buildMN"] in PackageMatcher.BEYOND_PACKAGE_MATCHES:
+                return [PackageMatcher.BEYOND_PACKAGE_MATCHES[buildInfo["buildMN"]]]
                 
             self.__unmatched.append(buildInfo["label"])
             
@@ -138,39 +161,36 @@ def reportBuildsNInstalls(stationNo):
     buildsByRPC = {}
     countRPCsOfBuilds = Counter()
     countBuildsWithRPCs = 0
-    rpcsByTypeName = defaultdict(set)
+    rpcsByBuildMN = defaultdict(set)
     dateDistributeds = []
     dateInstalleds = []
     countBuildsByYr = Counter()
     countNewRPCBuildsByYr = Counter()
     packagesCount = Counter()
-    packageMatcher = PackageMatcher(stationNo)
     for buildInfo in buildsReduction:
         if "rpcs" not in buildInfo:
             continue
         countBuildsWithRPCs += 1
-        versionMatch = re.search(r'(\d.+)$', buildInfo["label"])
-        if versionMatch:
-            version = versionMatch.group(1)
-            # TODO: issue with R1SDCI1.02 etc exception but no a/cing
-            typeName = re.sub(r' +$', '', re.match(r'([^\*^\d]+)', buildInfo["label"]).group(1)) # trailing out
-        else:
-            raise Exception("Expect to find version in Build Name: {}".format(buildInfo["label"]))
-        buildInfo["typeName"] = typeName
-        package = packageMatcher.match(buildInfo) # list now but fix this
+        """
         if package:
             buildInfo["package"] = package
             for pkg in package:
                 packagesCount[pkg] += 1 # some use one build for > 1 pkg
+        """
         for actionType in buildInfo["rpcs"]:
             for rpc in buildInfo["rpcs"][actionType]:
-                info = {"build": buildInfo["label"], "typeName": typeName, "version": version, "action": actionType}
+                info = {"build": buildInfo["label"], "action": actionType}
+                if "buildMN" in buildInfo:
+                    info["buildMN"] = buildInfo["buildMN"]
+                    info["version"] = buildInfo["buildMNVersion"]
+                """
                 if package:
                     info["package"] = package
+                """
                 countRPCsOfBuilds[buildInfo["label"]] += 1
                 if "dateDistributed" in buildInfo:
                     info["distributed"] = buildInfo["dateDistributed"]
-                    if not re.search(r'FMQL', typeName):
+                    if not re.search(r'FMQL', info["build"]):
                         dateDistributeds.append(buildInfo["dateDistributed"])
                         countBuildsByYr[buildInfo["dateDistributed"].split("-")[0]] += 1
                         if rpc not in buildsByRPC: # ie/ new
@@ -180,17 +200,18 @@ def reportBuildsNInstalls(stationNo):
                     buildsByRPC[rpc] = []
                 if "dateInstalledFirst" in buildInfo:
                     info["installed"] = buildInfo["dateInstalledFirst"]
-                    if not re.search(r'FMQL', typeName):
+                    if not re.search(r'FMQL', info["build"]):
                         dateInstalleds.append(buildInfo["dateInstalledFirst"])
                 buildsByRPC[rpc].append(info)
-                rpcsByTypeName[typeName].add(rpc)
+                if "buildMN" in info:
+                    rpcsByBuildMN[info["buildMN"]].add(rpc)
     dateDistributeds = sorted(dateDistributeds)
     rpcWithMost = sorted(buildsByRPC, key=lambda x: len(buildsByRPC[x]), reverse=True)[0]
-    typeNameWithMost = sorted(rpcsByTypeName, key=lambda x: len(rpcsByTypeName[x]), reverse=True)[0]
+    buildMNWithMost = sorted(rpcsByBuildMN, key=lambda x: len(rpcsByBuildMN[x]), reverse=True)[0]
     deletedRPCs = set(rpc for rpc in buildsByRPC if buildsByRPC[rpc][-1]["action"] == "DELETE AT SITE") # this will include those never even installed!
     deletedRPCsIn8994 = [rpc for rpc in deletedRPCs if rpc in _8994Labels]
     activeRPCs = set(buildsByRPC) - deletedRPCs
-    greaterThanOneTypeActiveRPCs = [rpc for rpc in activeRPCs if len(set(bi["typeName"] for bi in buildsByRPC[rpc])) > 1]
+    greaterThanOneTypeActiveRPCs = [rpc for rpc in activeRPCs if len(set(bi["buildMN"] for bi in buildsByRPC[rpc])) > 1]
     extraRPCs = set(_8994Labels) - activeRPCs # beyond active/still there
     missingRPCs = activeRPCs - set(_8994Labels) # should be there but not
     medianRPCCountOfBuilds = numpy.percentile(countRPCsOfBuilds.values(), 50)
@@ -208,9 +229,9 @@ Builds can delete as well as add RPCs - {:,} of the RPCs were deleted by the fin
         len(buildsByRPC),
         dateDistributeds[0], 
         dateDistributeds[-1],
-        len(rpcsByTypeName), 
-        typeNameWithMost,
-        len(rpcsByTypeName[typeNameWithMost]),
+        len(rpcsByBuildMN), 
+        buildMNWithMost,
+        len(rpcsByBuildMN[buildMNWithMost]),
         len(packagesCount), 
         rpcWithMost, 
         medianRPCCountOfBuilds,
@@ -221,7 +242,10 @@ Builds can delete as well as add RPCs - {:,} of the RPCs were deleted by the fin
     )
     
     """
-    Packages used
+    Packages used 
+    
+    TODO: move RPCs to latest package ie/ isolate latest package => can move off
+    unused.
     """
     tbl = MarkdownTable(["Package", "Build Count"])
     for pkg in sorted(packagesCount, key=lambda x: packagesCount[x], reverse=True):
@@ -260,7 +284,7 @@ Builds can delete as well as add RPCs - {:,} of the RPCs were deleted by the fin
         return first, last    
                     
     tbl = MarkdownTable(["RPC", "Builds", "Type(s)", "Package(s)", "Distributed", "[First] Install Gap", "Version(s)"])
-    lastTypeNameMU = ""
+    lastBuildMNMU = ""
     gaps = []
     noGapRPCs = []
     badGapRPCs = []
@@ -285,14 +309,14 @@ Builds can delete as well as add RPCs - {:,} of the RPCs were deleted by the fin
             installGapMU = "__RERELEASE: D > I__: {} > {}".format(firstD, firstI)
             badGapRPCs.append(rpc)
         
-        typeNames = list(set(bi["typeName"] for bi in buildsByRPC[rpc]))
-        if len(typeNames) > 1:
-            versionMU = ", ".join("{} ({})".format(bi["typeName"], bi["version"]) for bi in buildsByRPC[rpc])
+        buildMNs = list(set(bi["buildMN"] for bi in buildsByRPC[rpc]))
+        if len(buildMNs) > 1:
+            versionMU = ", ".join("{} ({})".format(bi["buildMN"], bi["version"]) for bi in buildsByRPC[rpc])
         else:
             versionMU = ", ".join(bi["version"] for bi in buildsByRPC[rpc])
-        typeNameMU = ", ".join(sorted(typeNames)) if len(typeNames) > 1 else typeNames[0]
+        buildMNMU = ", ".join(sorted(buildMNs)) if len(buildMNs) > 1 else buildMNs[0]
         
-        # may // typeNames or merge if moved the prefix along
+        # may // buildMNs or merge if moved the prefix along
         packages = set()
         for bi in buildsByRPC[rpc]:
             if "package" not in bi:
@@ -301,7 +325,7 @@ Builds can delete as well as add RPCs - {:,} of the RPCs were deleted by the fin
                 packages.add(package)
         packageMU = ", ".join(sorted(list(packages))) if len(packages) else ""
                                 
-        tbl.addRow(["__{}__".format(rpc), len(buildsByRPC[rpc]), typeNameMU, packageMU, distribMU, installGapMU, versionMU])
+        tbl.addRow(["__{}__".format(rpc), len(buildsByRPC[rpc]), buildMNMU, packageMU, distribMU, installGapMU, versionMU])
                 
     mu += "__{:,}__ Active/Installed RPCs. The maximum gap in days between distribution and install is {:,}, the median is {:,}, {:,} have no gap at all. The gap isn't available if necessary dates are missing ({:,}) or the first install date comes BEFORE the build distribution date (__{:,}__). Note that an install before a distribution probably reflects the re-release of a build and that greater than 1 type for {:,} RPCs probably reflects a change in the type's name over the years ...\n\n".format(len(activeRPCs), max(gaps), numpy.percentile(gaps, 50), sum(1 for g in gaps if g == 0), len(noGapRPCs), len(badGapRPCs), len(greaterThanOneTypeActiveRPCs))
     mu += tbl.md() + "\n\n"
@@ -350,6 +374,94 @@ Builds can delete as well as add RPCs - {:,} of the RPCs were deleted by the fin
     
     open(VISTA_REP_LOCN_TEMPL.format(stationNo) + "rpcBuilds.md", "w").write(mu)
         
+"""
+Want to gather builds by packages and focus in particular on packages
+with RPC builds
+"""
+def reportPackagesNBuilds(stationNo):
+
+    _9_4Reduction = json.load(open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_9_4Reduction.json"))    
+    pRedByPrefix = {} # for MN match
+    for i, pRed in enumerate(_9_4Reduction, 1):
+        if "prefixes" in pRed:
+            for prefix in pRed["prefixes"]:
+                if prefix in pRedByPrefix:
+                    raise Exception("Expected Prefix to be unique to package")
+                pRedByPrefix[prefix] = pRed
+
+    _9_6Reduction = json.load(open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_9_6Reduction.json"))
+    
+    # Fixed VistA Stuff and off OSEHRA packages as not covered in 9_4
+    BEYOND_PACKAGE_MATCHES = {
+            "AXVVA": "VISUAL AID FOR CLINIC APPOINTMENTS (VISN 20)",
+            "DSIP": "ENCODER PRODUCT SUITE (EPS)", # monograph
+            "DSIVA": "ADVANCED PROSTHETICS ACQUISITION TOOL (APAT)", # monograph
+            "VANOD": "VA NURSING OUTCOMES DATABASE PROJECT", # based in Puget Sound
+            "VEJD": "VENDOR - DOCUMENT STORAGE SYS", # OSEHRA Packages.csv (cache all DSS)
+            "NVS": "NATIONAL VISTA SUPPORT", # OSEHRA Packages.csv
+            "APG": "PHOENIX VAMC", # OSEHRA Packages.csv
+            "ANU": "ANU HS DOWNLOAD", # Shawn Hardenbrook Nashville VA Medical Center - downloading health summaries
+            "R1ENINL": "R5 VBA IMPORT TOOL", # GUI application which validates the data against the AEMS/MERS database
+            "R1SRL": "R1 SURGERY SCHEDULE VIEWER" # Surgery App viewer (http://robertdurkin.com/projects/R1SRLORScheduleViewer/index.html)
+    }
+    
+    buildsByPackage = defaultdict(list)
+    noPackageBuilds = []
+    for buildInfo in _9_6Reduction:
+        if "package" in buildInfo:
+            buildsByPackage[buildInfo["package"]].append(buildInfo)
+            continue
+        if "buildMN" in buildInfo:
+            if buildInfo["buildMN"] in pRedByPrefix:
+                package = pRedByPrefix[buildInfo["buildMN"]]["label"]
+                buildsByPackage[package].append(buildInfo)
+            elif buildInfo["buildMN"] in BEYOND_PACKAGE_MATCHES:
+                buildsByPackage[BEYOND_PACKAGE_MATCHES[
+                buildInfo["buildMN"]]].append(buildInfo)
+            else:
+                noPackageBuilds.append(buildInfo)
+            continue
+        noPackageBuilds.append(buildInfo)
+    countBuildsPerPackage = dict((pkg, len(buildsByPackage[pkg])) for pkg in buildsByPackage)
+    medianBuildsPerPackage = numpy.percentile(countBuildsPerPackage.values(), 50)
+    maxBuildsPerPackage = max(countBuildsPerPackage.values())
+    pkgsOrdered = [pkg for pkg in sorted(countBuildsPerPackage, key=lambda x: countBuildsPerPackage[x], reverse=True)]
+    pkgWithMostBuilds = pkgsOrdered[0]
+    
+    mu = """## Packages and Builds
+    
+There are {:,} builds, {} have RPCs. {:,} packages cover {} of the builds, median number of builds per package is {:,}, maximum is {:,} in _{}_. The remaining {} builds have no package.
+    
+""".format(
+        len(_9_6Reduction), 
+        reportAbsAndPercent(sum(1 for bi in _9_6Reduction if "rpcs" in bi), len(_9_6Reduction)),
+        len(buildsByPackage),
+        reportAbsAndPercent(len([bi for pkg in buildsByPackage for bi in buildsByPackage[pkg]]), len(_9_6Reduction)),
+        medianBuildsPerPackage,
+        maxBuildsPerPackage,
+        pkgWithMostBuilds,
+        reportAbsAndPercent(len(noPackageBuilds), len(_9_6Reduction))
+    )
+    
+    mu += "{:,} Packages and their builds, highlight for the {:,} packages with at least one RPC build ...\n\n".format(len(buildsByPackage), sum(1 for pkg in buildsByPackage if sum(1 for bi in buildsByPackage[pkg] if "rpcs" in bi)))
+    tbl = MarkdownTable(["Package", "Build \#", "Build w/RPC \#", "Build w/RPC Delete \#"])
+    for pkg in sorted(buildsByPackage):
+        pkgMU = "__{}__".format(pkg) if sum(1 for bi in buildsByPackage[pkg] if "rpcs" in bi) else pkg
+        rpcBuildInfos = [bi for bi in buildsByPackage[pkg] if "rpcs" in bi]
+        rpcBuildInfosDelete = [bi for bi in rpcBuildInfos if "DELETE AT SITE" in bi["rpcs"]]
+        tbl.addRow([pkgMU, len(buildsByPackage[pkg]), len(rpcBuildInfos) if len(rpcBuildInfos) > 0 else "", len(rpcBuildInfosDelete) if len(rpcBuildInfosDelete) > 0 else ""])
+        
+    mu += tbl.md() + "\n\n"
+    
+    noPackageBuildsWRPCs = [bi for bi in noPackageBuilds if "rpcs" in bi]
+    mu += "{:,} Builds without a Package but with RPCs ...\n\n".format(len(noPackageBuildsWRPCs))
+    tbl = MarkdownTable(["Build", "RPC \#s"])
+    for bi in sorted(noPackageBuildsWRPCs, key=lambda x: x["label"]):
+        tbl.addRow([bi["label"], sum(len(bi["rpcs"][x]) for x in bi["rpcs"])])
+    mu += tbl.md() + "\n\n"
+    
+    open(VISTA_REP_LOCN_TEMPL.format(stationNo) + "packagesAndBuilds.md", "w").write(mu)
+        
 # ################################# DRIVER #######################
                
 def main():
@@ -361,6 +473,8 @@ def main():
         return
         
     stationNo = sys.argv[1]
+    
+    reportPackagesNBuilds(stationNo)
     
     reportBuildsNInstalls(stationNo)
 
