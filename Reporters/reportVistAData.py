@@ -19,61 +19,8 @@ Reports for Per VistA Reductions, the initial sources of an integrated
 RPC Interface Definition.
 
 TODO: 
-- go to unused packages/moving to most recent ie/ pick the MOST RECENT package
-... and fix list below
-... WANT #RPCs along with #builds of package ... and delete vs add pkg (or both) 
-... PACKAGE FOIA vs 
-- do more on FOIA bad:
-  - ACKQAUD1 missing early one in FOIA
-  - and multiple distrib dates too (which shouldn't be)
-  ... may be a sorted dateDistributed
-- GO BACK TO REDUCTION and just report here
-
-Unmatched 442 Note: shows R1 etc ... need to do more
-=====================================================
-
-        "ANU": "ANU HS DOWNLOAD", # Shawn Hardenbrook Nashville VA Medical Center - downloading health summaries
-        "R1ENINL": "Region 5 VBA import tool", # GUI application which validates the data against the AEMS/MERS database
-        "[R1]SRLOR": "R1 SURGERY SCHEDULE VIEWER" # Surgery App viewer (http://robertdurkin.com/projects/R1SRLORScheduleViewer/index.html)
-    
-    ANU HS DOWNLOAD*2.0*0: Developed by Shawn Hardenbrook Nashville VA Medical Center, 
-    for downloading health summaries (should be uninstalled - installed twice but
-    both after distrib date)
-    
-    APGKCLC0*3.0*1: No match but also a file in 644 range (local?) 
-    APGKNU 2.0: No Match but has files with comments about GUIs
-            
-    AXVVA*1.0*6: VISN-20's "Visual Aid for Clinic Appointments"
-            
-    NVS[S]: maybe National Vital Statistics System (NVSS) but RPCs don't match this
-    intent.
-    
-    DSIP...: Monograph has Encoder Product Suite (EPS) ie/ TODO is link in Monograph
-    DSIVA 1.6: Monograph has DSIVA as Advanced Prosthetics Acquisition Tool (APAT). ie/ TODO is link in Monograph
-    
-    R1ENING 2.0: No Match but context and RPCs about bed changes
-    
-    R1ENINL 1.0: Region 5 VBA import tool ... GUI application which validates the data against the AEMS/MERS database (and has its own option) ... Note: why not Region 5? ie/ R5
-    
-    R1ENINU*1.0*1: Can't Match (Note: another one with its own context)
-    R1OREPI 1.0: Can't Match (Note: another one with its own context)
-    R1SDCI*1.0*[23]: Can't Match
-    
-    [R1]SRLOR
-        R1SRL OR SCHEDULE VIEWER 1.0
-        R1SRL OR SCHEDULE VIEWER 2.0
-    Surgery App viewer (http://robertdurkin.com/projects/R1SRLORScheduleViewer/index.html)
-    
-    R1UTTFU 1.0: Can't Match
-    R1XUM*1.0*1: Can't Match (but does update VDL file)
-    
-    VANOD: VA Nursing Outcomes Database (Project)
-    ... based in Puget Sound
-    https://www.hsrd.research.va.gov/research/abstracts.cfm?Project_ID=2141692554 
-    ... from 2005 and crude as responsible for many of the "RERELEASE" RPCs ... seems
-    to release a new update with new RPCs!
-    
-    <---- double check if responsible for install order issue too
+- fix up so NO matching for package or any custom reduction here i/e ONLY
+do pull in's of pre reds
 """
 def reportBuildsNInstalls(stationNo):
 
@@ -95,7 +42,7 @@ def reportBuildsNInstalls(stationNo):
     class PackageMatcher: # see how monograph can come in handy
         
         def __init__(self, stationNo):
-            _9_4Reduction = json.load(open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_9_4Reduction.json"))
+            _9_4Reduction = json.load(open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_9_4PlusReduction.json"))
             self.__pkgByPrefix = defaultdict(list)
             self.__prefixByPkg = defaultdict(list)
             self.__unmatched = []
@@ -380,48 +327,22 @@ with RPC builds
 """
 def reportPackagesNBuilds(stationNo):
 
-    _9_4Reduction = json.load(open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_9_4Reduction.json"))    
-    pRedByPrefix = {} # for MN match
-    for i, pRed in enumerate(_9_4Reduction, 1):
-        if "prefixes" in pRed:
-            for prefix in pRed["prefixes"]:
-                if prefix in pRedByPrefix:
-                    raise Exception("Expected Prefix to be unique to package")
-                pRedByPrefix[prefix] = pRed
-
     _9_6Reduction = json.load(open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_9_6Reduction.json"))
-    
-    # Fixed VistA Stuff and off OSEHRA packages as not covered in 9_4
-    BEYOND_PACKAGE_MATCHES = {
-            "AXVVA": "VISUAL AID FOR CLINIC APPOINTMENTS (VISN 20)",
-            "DSIP": "ENCODER PRODUCT SUITE (EPS)", # monograph
-            "DSIVA": "ADVANCED PROSTHETICS ACQUISITION TOOL (APAT)", # monograph
-            "VANOD": "VA NURSING OUTCOMES DATABASE PROJECT", # based in Puget Sound
-            "VEJD": "VENDOR - DOCUMENT STORAGE SYS", # OSEHRA Packages.csv (cache all DSS)
-            "NVS": "NATIONAL VISTA SUPPORT", # OSEHRA Packages.csv
-            "APG": "PHOENIX VAMC", # OSEHRA Packages.csv
-            "ANU": "ANU HS DOWNLOAD", # Shawn Hardenbrook Nashville VA Medical Center - downloading health summaries
-            "R1ENINL": "R5 VBA IMPORT TOOL", # GUI application which validates the data against the AEMS/MERS database
-            "R1SRL": "R1 SURGERY SCHEDULE VIEWER" # Surgery App viewer (http://robertdurkin.com/projects/R1SRLORScheduleViewer/index.html)
-    }
     
     buildsByPackage = defaultdict(list)
     noPackageBuilds = []
+    allDatesDistributeds = set()
     for buildInfo in _9_6Reduction:
+        if "dateDistributed" in buildInfo and not re.search(r'FMQL', buildInfo["label"]):
+            allDatesDistributeds.add(buildInfo["dateDistributed"])
         if "package" in buildInfo:
             buildsByPackage[buildInfo["package"]].append(buildInfo)
             continue
-        if "buildMN" in buildInfo:
-            if buildInfo["buildMN"] in pRedByPrefix:
-                package = pRedByPrefix[buildInfo["buildMN"]]["label"]
-                buildsByPackage[package].append(buildInfo)
-            elif buildInfo["buildMN"] in BEYOND_PACKAGE_MATCHES:
-                buildsByPackage[BEYOND_PACKAGE_MATCHES[
-                buildInfo["buildMN"]]].append(buildInfo)
-            else:
-                noPackageBuilds.append(buildInfo)
-            continue
         noPackageBuilds.append(buildInfo)
+    packagesWith2013OnBuilds = [pkg for pkg in buildsByPackage if sum(1 for bi in buildsByPackage[pkg] if "dateDistributed" in bi and int(bi["dateDistributed"].split("-")[0]) >= 2013)]
+    allDatesDistributeds = sorted(list(allDatesDistributeds))
+    firstDateDistributed = allDatesDistributeds[0]
+    lastDateDistributed = allDatesDistributeds[-1]
     countBuildsPerPackage = dict((pkg, len(buildsByPackage[pkg])) for pkg in buildsByPackage)
     medianBuildsPerPackage = numpy.percentile(countBuildsPerPackage.values(), 50)
     maxBuildsPerPackage = max(countBuildsPerPackage.values())
@@ -430,26 +351,39 @@ def reportPackagesNBuilds(stationNo):
     
     mu = """## Packages and Builds
     
-There are {:,} builds, {} have RPCs. {:,} packages cover {} of the builds, median number of builds per package is {:,}, maximum is {:,} in _{}_. The remaining {} builds have no package.
+There are {:,} builds, distributed between {} and {}. {:,} packages cover {} of the builds, median number of builds per package is {:,}, maximum is {:,} in __{}__. Only {} packages have builds distributed from 2013 on (_should the balance be retired?_). {} builds have no package and only {} builds have RPCs.
     
 """.format(
         len(_9_6Reduction), 
-        reportAbsAndPercent(sum(1 for bi in _9_6Reduction if "rpcs" in bi), len(_9_6Reduction)),
+        firstDateDistributed,
+        lastDateDistributed,
+        
         len(buildsByPackage),
         reportAbsAndPercent(len([bi for pkg in buildsByPackage for bi in buildsByPackage[pkg]]), len(_9_6Reduction)),
         medianBuildsPerPackage,
         maxBuildsPerPackage,
         pkgWithMostBuilds,
-        reportAbsAndPercent(len(noPackageBuilds), len(_9_6Reduction))
+        
+        reportAbsAndPercent(len(packagesWith2013OnBuilds), len(buildsByPackage)),
+        
+        reportAbsAndPercent(len(noPackageBuilds), len(_9_6Reduction)),
+        reportAbsAndPercent(sum(1 for bi in _9_6Reduction if "rpcs" in bi), len(_9_6Reduction))
     )
     
     mu += "{:,} Packages and their builds, highlight for the {:,} packages with at least one RPC build ...\n\n".format(len(buildsByPackage), sum(1 for pkg in buildsByPackage if sum(1 for bi in buildsByPackage[pkg] if "rpcs" in bi)))
-    tbl = MarkdownTable(["Package", "Build \#", "Build w/RPC \#", "Build w/RPC Delete \#"])
+    tbl = MarkdownTable(["Package", "Build \#", "Build Dates", "Build w/RPC \#", "Build w/RPC Delete \#"])
     for pkg in sorted(buildsByPackage):
         pkgMU = "__{}__".format(pkg) if sum(1 for bi in buildsByPackage[pkg] if "rpcs" in bi) else pkg
+        dateDistributeds = sorted([bi["dateDistributed"].split("-")[0] for bi in buildsByPackage[pkg] if "dateDistributed" in bi])
+        if len(dateDistributeds) == 0:
+            ddMU = ""
+        elif len(dateDistributeds) > 1:
+            ddMU = "{} - {}".format(dateDistributeds[0], dateDistributeds[-1])
+        else:
+            ddMU = dateDistributeds[0]
         rpcBuildInfos = [bi for bi in buildsByPackage[pkg] if "rpcs" in bi]
         rpcBuildInfosDelete = [bi for bi in rpcBuildInfos if "DELETE AT SITE" in bi["rpcs"]]
-        tbl.addRow([pkgMU, len(buildsByPackage[pkg]), len(rpcBuildInfos) if len(rpcBuildInfos) > 0 else "", len(rpcBuildInfosDelete) if len(rpcBuildInfosDelete) > 0 else ""])
+        tbl.addRow([pkgMU, len(buildsByPackage[pkg]), ddMU, len(rpcBuildInfos) if len(rpcBuildInfos) > 0 else "", len(rpcBuildInfosDelete) if len(rpcBuildInfosDelete) > 0 else ""])
         
     mu += tbl.md() + "\n\n"
     
