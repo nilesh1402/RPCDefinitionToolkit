@@ -1,12 +1,12 @@
 ## RPCs According to Builds and Installs of 640
     
-There are 823 (7.12%) builds defining 5,519 RPCs distributed from 1996-04-14 to 2018-05-22, 547 (66.46%) of which introduce new RPCs. RPC __VEJD IB REPORT AUDIT__ appears in the most builds, 69. The median number of RPCs per Build is 1.0. 
+There are __823 (7.12%)__ builds defining __5,519__ RPCs distributed from _1996-04-14_ to _2018-05-22_, __547 (66.46%)__ of which introduce new RPCs. RPC _VEJD IB REPORT AUDIT_ appears in the most builds, __69__. The median number of RPCs per Build is __1.0__. 
 
-RPCs are spread across 77 packages. Package _ORDER ENTRY/RESULTS REPORTING_ has the most RPCs, 1,023. 31 RPCs have more than one Package usually because of re-organization and splitting of Packages over the years. 211 RPCs have no package because their builds weren't assigned a package (yet).
+RPCs are spread across __77__ packages. Package _ORDER ENTRY/RESULTS REPORTING_ has the most RPCs, __1,023__. __31__ RPCs have more than one Package usually because of re-organization and splitting of Packages over the years. __211__ RPCs have no package because their builds weren't assigned a package (yet).
 
-Builds can delete as well as add RPCs - 169 of the RPCs were deleted by the final Build they appeared in, leaving 5,350 RPCs active and installed.
+Builds can delete as well as add RPCs - __169__ of the RPCs were deleted by the final Build they appeared in, leaving __5,350__ RPCs active and installed.
 
-File _8994_ is suppossed to define the active RPCs in a VistA. However the 8994 of this system has 0 deleted RPCs, is missing 4 active RPCs and has 35 extra RPCs that never appear in a Build.
+File _8994_ is suppossed to define the active RPCs in a VistA. However the 8994 of this system has __0__ deleted RPCs, is missing __4__ active RPCs and has __35__ extra RPCs that never appear in a Build.
     
 RPC Builds by distribution year. Note that as builds often restate pre-existing RPCs, the following distinguishes all builds with RPCs from those that introduce new RPCs ...
      
