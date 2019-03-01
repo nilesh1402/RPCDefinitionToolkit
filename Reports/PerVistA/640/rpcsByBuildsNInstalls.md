@@ -5613,7 +5613,7 @@ __8994 Rogue RPCs__ are [1] in 8994 but are not active according to Builds ("EXT
 39 | TIUERR ERR | EXTRA
 
 
-77 Packages have RPCs ...
+77 Packages have RPCs, while 211 RPCs have no Package ...
 
 \# | Package | \# RPCs | Example RPC
 --- | --- | --- | ---
