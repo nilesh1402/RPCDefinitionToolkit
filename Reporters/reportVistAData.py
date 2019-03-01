@@ -15,190 +15,115 @@ VISTA_RED_LOCN_TEMPL = "/data/vista/{}/RPCDefinitions/"
 VISTA_REP_LOCN_TEMPL = "../Reports/PerVistA/{}/"
 
 """
-Reports for Per VistA Reductions, the initial sources of an integrated
-RPC Interface Definition.
+RPC i/f according to builds and installs - still installed? (active) or 
+never installed? or deleted? ie/ what if there was no 8994? And correct it too
 
-TODO: 
-- fix up so NO matching for package or any custom reduction here i/e ONLY
-do pull in's of pre reds
+Note: bug in OR/Package for RPC ...
+1 | __ORDER ENTRY/RESULTS REPORTING__ | 1,038 | GMRC LIST CONSULT REQUESTS
 """
 def reportBuildsNInstalls(stationNo):
 
     buildsReduction = json.load(open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_9_6Reduction.json"))
+    buildsRPCReduction = [bi for bi in buildsReduction if "rpcs" in bi]
     
-    # For report
+    # For report - will OVERRIDE based on ACTIVE from Builds or Not (soon options too)
     _8994Reduction = json.load(open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_8994Reduction.json"))
-    _8994Labels = [red["label"] for red in _8994Reduction]
-    
-    """
-    NOTE: will probably move into reduce step when embed packages in builds
-    
-    TODO MORE
-        https://github.com/OSEHRA/VistA/blob/master/Packages.csv
-        https://www.oit.va.gov/Services/TRM/ReportVACategoryMapping.aspx
-        
-    TODO: gotta replace use of newer label with older one
-    """
-    class PackageMatcher: # see how monograph can come in handy
-        
-        def __init__(self, stationNo):
-            _9_4Reduction = json.load(open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_9_4PlusReduction.json"))
-            self.__pkgByPrefix = defaultdict(list)
-            self.__prefixByPkg = defaultdict(list)
-            self.__unmatched = []
-            for entry in _9_4Reduction:
-                if "prefix" in entry and entry["prefix"] in ["NTSI", "ASTR", "HIVO", "PSOC"]:
-                    print entry
-                if "prefix" not in entry:
-                    print x
-                self.__pkgByPrefix[entry["prefix"]].append(entry["label"])
-                self.__prefixByPkg[entry["label"]].append(entry["prefix"])
-            print "Loaded {:,} packages".format(len(_9_4Reduction))
-            print "{:,} prefixes".format(len(self.__pkgByPrefix))
-            print "{:,} package labels".format(len(self.__prefixByPkg))
-            for prefix in self.__pkgByPrefix:
-                if len(self.__pkgByPrefix[prefix]) == 1:
-                    continue
-                print prefix, self.__pkgByPrefix[prefix]
-                
-        # Searching on Builds with no matches and see matches in Monograph or online
-        # ... Note: if R1 starts build name, probably means Region 1 and it is local
-        # and prone to reuse across versions 
-        BEYOND_PACKAGE_MATCHES = {
-            "AXVVA": "Visual Aid for Clinic Appointments (VISN 20)",
-            "DSIP": "Encoder Product Suite (EPS)", # monograph
-            "DSIVA": "Advanced Prosthetics Acquisition Tool (APAT)", # monograph
-            "VANOD": "VA Nursing Outcomes Database (Project)" # based in Puget Sound
-        }
-        
-        """
-        # Expects 'buildMN' to be have added to buildInfo!
-        
-        If package link exists, take that
-        If type name is prefix of a package then take that
-        if type name is package name then use it
-        See manual matches of type name
-        OR no match (usually R1 etc)
-        
-        TODO: figure out why the list of [] package to avoid problem below
-        TODO BIGGER: probably move BACK to reduction along with buildMN
-        """
-        def match(self, buildInfo):
-        
-            # the check of __prefixByPkg ensures package ref is valid ... invalid in FOIA
-            if "package" in buildInfo and re.sub(r'\_', '/', buildInfo["package"]) not in self.__prefixByPkg:
-                return [buildInfo["package"]]
-                
-            if buildInfo["buildMN"] in self.__pkgByPrefix:
-                return self.__pkgByPrefix[buildInfo["buildMN"]]
-                
-            if buildInfo["buildMN"] in self.__prefixByPkg:
-                return [buildInfo["buildMN"]]
-                
-            if buildInfo["buildMN"] in PackageMatcher.BEYOND_PACKAGE_MATCHES:
-                return [PackageMatcher.BEYOND_PACKAGE_MATCHES[buildInfo["buildMN"]]]
-                
-            self.__unmatched.append(buildInfo["label"])
-            
-            return None
-            
-        def unmatched(self):
-            return self.__unmatched         
-        
-    buildsByRPC = {}
-    countRPCsOfBuilds = Counter()
-    countBuildsWithRPCs = 0
-    rpcsByBuildMN = defaultdict(set)
+    _8994Labels = set(red["label"] for red in _8994Reduction)
+
+    buildsWNewRPCReduction = [] 
+    buildsByRPC = defaultdict(list)
+    buildsByPackage = defaultdict(list)
+    rpcsByPackage = defaultdict(set)
+    packagesByRPC = defaultdict(list) # want latest to come out
     dateDistributeds = []
-    dateInstalleds = []
     countBuildsByYr = Counter()
     countNewRPCBuildsByYr = Counter()
-    packagesCount = Counter()
-    for buildInfo in buildsReduction:
-        if "rpcs" not in buildInfo:
-            continue
-        countBuildsWithRPCs += 1
-        """
-        if package:
-            buildInfo["package"] = package
-            for pkg in package:
-                packagesCount[pkg] += 1 # some use one build for > 1 pkg
-        """
+
+    # Builds per RPC form an "audit" trail of RPC introduction, change and deletion
+    rpcsSeen = set()
+    for buildInfo in buildsRPCReduction:
+        newRPCSeen = False
+        if "package" in buildInfo:
+            buildsByPackage[buildInfo["package"]].append(buildInfo)
+        if "dateInstalledFirst" in buildInfo:
+            installed = buildInfo["dateInstalledFirst"]
         for actionType in buildInfo["rpcs"]:
             for rpc in buildInfo["rpcs"][actionType]:
                 info = {"build": buildInfo["label"], "action": actionType}
-                if "buildMN" in buildInfo:
-                    info["buildMN"] = buildInfo["buildMN"]
-                    info["version"] = buildInfo["buildMNVersion"]
-                """
-                if package:
-                    info["package"] = package
-                """
-                countRPCsOfBuilds[buildInfo["label"]] += 1
+                if "package" in buildInfo:
+                    rpcsByPackage[buildInfo["package"]].add(rpc)
+                    if not (rpc in packagesByRPC and buildInfo["package"] in packagesByRPC[rpc]):
+                        packagesByRPC[rpc].append(buildInfo["package"])
+                    if "packages" not in info:
+                        info["packages"] = []
+                    if buildInfo["package"] not in info["packages"]:
+                        info["packages"].append(buildInfo["package"])
                 if "dateDistributed" in buildInfo:
                     info["distributed"] = buildInfo["dateDistributed"]
-                    if not re.search(r'FMQL', info["build"]):
-                        dateDistributeds.append(buildInfo["dateDistributed"])
-                        countBuildsByYr[buildInfo["dateDistributed"].split("-")[0]] += 1
-                        if rpc not in buildsByRPC: # ie/ new
-                            countNewRPCBuildsByYr[
-                            buildInfo["dateDistributed"].split("-")[0]] += 1
-                if rpc not in buildsByRPC:
-                    buildsByRPC[rpc] = []
+                    if rpc not in rpcsSeen: 
+                        newRPCSeen = True
+                        rpcsSeen.add(rpc) 
                 if "dateInstalledFirst" in buildInfo:
-                    info["installed"] = buildInfo["dateInstalledFirst"]
-                    if not re.search(r'FMQL', info["build"]):
-                        dateInstalleds.append(buildInfo["dateInstalledFirst"])
+                    info["installed"] = installed
                 buildsByRPC[rpc].append(info)
-                if "buildMN" in info:
-                    rpcsByBuildMN[info["buildMN"]].add(rpc)
+        if newRPCSeen:
+            buildsWNewRPCReduction.append(buildInfo)
+        if "dateDistributed" in buildInfo:
+            distributed = buildInfo["dateDistributed"]
+            if not re.search(r'FMQL', buildInfo["label"]):
+                dateDistributeds.append(distributed)
+                countBuildsByYr[distributed.split("-")[0]] += 1
+                if newRPCSeen:
+                    countNewRPCBuildsByYr[distributed.split("-")[0]] += 1
+
     dateDistributeds = sorted(dateDistributeds)
-    rpcWithMost = sorted(buildsByRPC, key=lambda x: len(buildsByRPC[x]), reverse=True)[0]
-    buildMNWithMost = sorted(rpcsByBuildMN, key=lambda x: len(rpcsByBuildMN[x]), reverse=True)[0]
+    rpcWithMostBuilds = sorted(buildsByRPC, key=lambda x: len(buildsByRPC[x]), reverse=True)[0]
+    packageWithTheMostRPCs = sorted(rpcsByPackage, key=lambda x: len(rpcsByPackage[x]), reverse=True)[0]
+
     deletedRPCs = set(rpc for rpc in buildsByRPC if buildsByRPC[rpc][-1]["action"] == "DELETE AT SITE") # this will include those never even installed!
-    deletedRPCsIn8994 = [rpc for rpc in deletedRPCs if rpc in _8994Labels]
     activeRPCs = set(buildsByRPC) - deletedRPCs
-    greaterThanOneTypeActiveRPCs = [rpc for rpc in activeRPCs if len(set(bi["buildMN"] for bi in buildsByRPC[rpc])) > 1]
-    extraRPCs = set(_8994Labels) - activeRPCs # beyond active/still there
-    missingRPCs = activeRPCs - set(_8994Labels) # should be there but not
-    medianRPCCountOfBuilds = numpy.percentile(countRPCsOfBuilds.values(), 50)
+
+    _8994MissingActiveRPCs = activeRPCs - _8994Labels # should be there but not   
+    _8994DeletedRPCs = _8994Labels.intersection(deletedRPCs)
+    _8994NoBuildRPCs = _8994Labels - activeRPCs # beyond active/still there
           
-    mu = """## RPC Builds of {}
+    mu = """## RPCs According to Builds and Installs of {}
     
-There are {:,} builds defining {:,} RPCs starting in {} and going to {}. There are {:,} types, the most popular of which is __{}__ with {:,} RPCs. RPCs are in {:,} packages. The RPC __{}__ appears in the most builds, {:,}. The median number of RPCs per RPC Build is {:,}.
+There are {} builds defining {:,} RPCs distributed from {} to {}, {} of which introduce new RPCs. RPC __{}__ appears in the most builds, {:,}. The median number of RPCs per Build is {:,}. 
+
+RPCs are spread across {:,} packages. Package _{}_ has the most RPCs, {:,}. {:,} RPCs have more than one Package usually because of re-organization and splitting of Packages over the years. {:,} RPCs have no package because their builds weren't assigned a package (yet).
 
 Builds can delete as well as add RPCs - {:,} of the RPCs were deleted by the final Build they appeared in, leaving {:,} RPCs active and installed.
+
+File _8994_ is suppossed to define the active RPCs in a VistA. However the 8994 of this system has {:,} deleted RPCs, is missing {:,} active RPCs and has {:,} extra RPCs that never appear in a Build.
     
 """.format(
+
         stationNo, 
         
-        countBuildsWithRPCs, 
+        reportAbsAndPercent(len(buildsRPCReduction), len(buildsReduction)), 
         len(buildsByRPC),
         dateDistributeds[0], 
         dateDistributeds[-1],
-        len(rpcsByBuildMN), 
-        buildMNWithMost,
-        len(rpcsByBuildMN[buildMNWithMost]),
-        len(packagesCount), 
-        rpcWithMost, 
-        medianRPCCountOfBuilds,
+        reportAbsAndPercent(len(buildsWNewRPCReduction), len(buildsRPCReduction)),
+        rpcWithMostBuilds, 
+        len(buildsByRPC[rpcWithMostBuilds]),
+        numpy.percentile([len(buildsByRPC[rpc]) for rpc in buildsByRPC], 50),
         
-        len(buildsByRPC[rpcWithMost]),
+        len(buildsByPackage), 
+        packageWithTheMostRPCs,
+        len(rpcsByPackage[packageWithTheMostRPCs]),
+        sum(1 for rpc in packagesByRPC if len(packagesByRPC[rpc]) > 1),
+        sum(1 for rpc in buildsByRPC if rpc not in packagesByRPC),
+        
         len(deletedRPCs),
-        len(activeRPCs)
+        len(activeRPCs),
+        
+        len(_8994DeletedRPCs),
+        len(_8994MissingActiveRPCs),
+        len(_8994NoBuildRPCs)
+    
     )
-    
-    """
-    Packages used 
-    
-    TODO: move RPCs to latest package ie/ isolate latest package => can move off
-    unused.
-    """
-    tbl = MarkdownTable(["Package", "Build Count"])
-    for pkg in sorted(packagesCount, key=lambda x: packagesCount[x], reverse=True):
-        tbl.addRow([pkg, packagesCount[pkg]])
-    mu += "Packages used ...\n\n"
-    mu += tbl.md() + "\n\n"
         
     """        
     Builds by Year - may be restated subsequently so distinguish builds introducing
@@ -206,10 +131,9 @@ Builds can delete as well as add RPCs - {:,} of the RPCs were deleted by the fin
     the total of RPCs (some builds lack a date which accounts for the discrepency)
     """
     tbl = MarkdownTable(["Year", "All RPC Builds", "New RPC Builds"])
-    total = sum(countBuildsByYr[yr] for yr in countBuildsByYr)
     for yr in sorted(countBuildsByYr, key=lambda x: int(x), reverse=True):
-        tbl.addRow([yr, reportAbsAndPercent(countBuildsByYr[yr], total), reportAbsAndPercent(countNewRPCBuildsByYr[yr], total)])
-    mu += """RPC Builds by year. Note that as builds often restate pre-existing RPCs, the following distinguishes all builds with RPCs from those that introduce new RPCs ...
+        tbl.addRow([yr, reportAbsAndPercent(countBuildsByYr[yr], len(buildsRPCReduction)), reportAbsAndPercent(countNewRPCBuildsByYr[yr], len(buildsWNewRPCReduction))])
+    mu += """RPC Builds by distribution year. Note that as builds often restate pre-existing RPCs, the following distinguishes all builds with RPCs from those that introduce new RPCs ...
      
 """
     mu += tbl.md() + "\n\n"
@@ -230,7 +154,7 @@ Builds can delete as well as add RPCs - {:,} of the RPCs were deleted by the fin
         first = calcDate(buildsByRPC[rpc], dtProp, True)
         return first, last    
                     
-    tbl = MarkdownTable(["RPC", "Builds", "Type(s)", "Package(s)", "Distributed", "[First] Install Gap", "Version(s)"])
+    tbl = MarkdownTable(["RPC", "Builds", "(Latest) Package", "Distributed", "[First] Install Gap"])
     lastBuildMNMU = ""
     gaps = []
     noGapRPCs = []
@@ -255,26 +179,12 @@ Builds can delete as well as add RPCs - {:,} of the RPCs were deleted by the fin
         else:
             installGapMU = "__RERELEASE: D > I__: {} > {}".format(firstD, firstI)
             badGapRPCs.append(rpc)
-        
-        buildMNs = list(set(bi["buildMN"] for bi in buildsByRPC[rpc]))
-        if len(buildMNs) > 1:
-            versionMU = ", ".join("{} ({})".format(bi["buildMN"], bi["version"]) for bi in buildsByRPC[rpc])
-        else:
-            versionMU = ", ".join(bi["version"] for bi in buildsByRPC[rpc])
-        buildMNMU = ", ".join(sorted(buildMNs)) if len(buildMNs) > 1 else buildMNs[0]
-        
-        # may // buildMNs or merge if moved the prefix along
-        packages = set()
-        for bi in buildsByRPC[rpc]:
-            if "package" not in bi:
-                continue
-            for package in bi["package"]:
-                packages.add(package)
-        packageMU = ", ".join(sorted(list(packages))) if len(packages) else ""
+            
+        packageMU = packagesByRPC[rpc][-1] if rpc in packagesByRPC else ""
                                 
-        tbl.addRow(["__{}__".format(rpc), len(buildsByRPC[rpc]), buildMNMU, packageMU, distribMU, installGapMU, versionMU])
+        tbl.addRow(["__{}__".format(rpc), len(buildsByRPC[rpc]), packageMU, distribMU, installGapMU])
                 
-    mu += "__{:,}__ Active/Installed RPCs. The maximum gap in days between distribution and install is {:,}, the median is {:,}, {:,} have no gap at all. The gap isn't available if necessary dates are missing ({:,}) or the first install date comes BEFORE the build distribution date (__{:,}__). Note that an install before a distribution probably reflects the re-release of a build and that greater than 1 type for {:,} RPCs probably reflects a change in the type's name over the years ...\n\n".format(len(activeRPCs), max(gaps), numpy.percentile(gaps, 50), sum(1 for g in gaps if g == 0), len(noGapRPCs), len(badGapRPCs), len(greaterThanOneTypeActiveRPCs))
+    mu += "__{:,}__ Active/Installed RPCs. The maximum gap in days between distribution and install is {:,}, the median is {:,}, {:,} have no gap at all. The gap isn't available if necessary dates are missing ({:,}) or the first install date comes BEFORE the build distribution date (__{:,}__) ...\n\n".format(len(activeRPCs), max(gaps), numpy.percentile(gaps, 50), sum(1 for g in gaps if g == 0), len(noGapRPCs), len(badGapRPCs))
     mu += tbl.md() + "\n\n"
 
     """
@@ -303,23 +213,30 @@ Builds can delete as well as add RPCs - {:,} of the RPCs were deleted by the fin
     Note: possible build logic wrong OR builds badly built (remote of RPC not done but
     code removed?) etc
     """
-    rogueRPCs = (missingRPCs.union(extraRPCs)).union(deletedRPCsIn8994)
+    rogueRPCs = (_8994MissingActiveRPCs.union(_8994NoBuildRPCs)).union(_8994DeletedRPCs)
     tbl = MarkdownTable(["RPC", "Problem"])
     for rpc in sorted(list(rogueRPCs)):
         problem = "EXTRA"
-        if rpc in missingRPCs:
+        if rpc in _8994MissingActiveRPCs:
             problem = "MISSING"
-        elif rpc in deletedRPCsIn8994:
+        elif rpc in _8994DeletedRPCs:
             problem = "SHOULD BE DELETED"
-        problem = "MISSING" if rpc in missingRPCs else "EXTRA"
+        problem = "MISSING" if rpc in _8994MissingActiveRPCs else "EXTRA"
         tbl.addRow([rpc, problem])
-    mu += "__Rogue RPCs__ are [1] in 8994 but are not active according to Builds (\"EXTRA\" {:,}) or active by builds but not in 8994 (\"MISSING\" {:,}) or deleted by builds but in 8994 (\"SHOULD BE DELETED\" {:,}) ...\n\n".format(len(extraRPCs), len(missingRPCs), len(deletedRPCsIn8994), len(rogueRPCs))
+    mu += "__8994 Rogue RPCs__ are [1] in 8994 but are not active according to Builds (\"EXTRA\" {:,}) or active by builds but not in 8994 (\"MISSING\" {:,}) or deleted by builds but in 8994 (\"SHOULD BE DELETED\" {:,}) ...\n\n".format(len(_8994NoBuildRPCs), len(_8994MissingActiveRPCs), len(_8994DeletedRPCs), len(rogueRPCs))
     mu += tbl.md() + "\n\n"
     
     if stationNo == "999":
         mu += "__Note__: FOIA (999) has MANY _Rogues_. It seems that redaction is partial for non Open Source RPCs. It seems that the code is removed but the RPC remains.\n\n"
+        
+    # ADD TABLE PER PACKAGE and then end
+    tbl = MarkdownTable(["Package", "\# RPCs", "Example RPC"])
+    for pkg in sorted(rpcsByPackage, key=lambda x: len(rpcsByPackage[x]), reverse=True):
+        tbl.addRow(["__{}__".format(pkg), len(rpcsByPackage[pkg]), sorted(list(rpcsByPackage[pkg]))[0]])
+    mu += "{:,} Packages have RPCs ...\n\n".format(len(rpcsByPackage))
+    mu += tbl.md() + "\n\n"
     
-    open(VISTA_REP_LOCN_TEMPL.format(stationNo) + "rpcBuilds.md", "w").write(mu)
+    open(VISTA_REP_LOCN_TEMPL.format(stationNo) + "rpcsByBuildsNInstalls.md", "w").write(mu)
         
 """
 Want to gather builds by packages and focus in particular on packages
@@ -408,7 +325,7 @@ def main():
         
     stationNo = sys.argv[1]
     
-    reportPackagesNBuilds(stationNo)
+    # reportPackagesNBuilds(stationNo)
     
     reportBuildsNInstalls(stationNo)
 
