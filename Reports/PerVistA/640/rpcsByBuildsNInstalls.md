@@ -5568,7 +5568,7 @@ __5,350__ Active/Installed RPCs. The maximum gap in days between distribution an
 169 | XOBV TEST JUNIT SWITCH SV2GLB | XOBV 1.6 | 2009-05-08 / 2011-02-13
 
 
-__8994 Rogue RPCs__ are [1] in 8994 but are not active according to Builds ("EXTRA" 35) or active by builds but not in 8994 ("MISSING" 4) or deleted by builds but in 8994 ("SHOULD BE DELETED" 0) ...
+__8994 Rogue RPCs__ are [1] in 8994 but are not active according to Builds ("EXTRA" 35) or active by builds but not in 8994 ("MISSING" 4) or deleted by builds but in 8994 ("SHOULD BE DELETED" 0). __IMPORTANT__: must __test__ if the extra are still active (have code etc) and if so, why ...
 
 \# | RPC | Problem
 --- | --- | ---
@@ -5613,7 +5613,7 @@ __8994 Rogue RPCs__ are [1] in 8994 but are not active according to Builds ("EXT
 39 | TIUERR ERR | EXTRA
 
 
-77 Packages have RPCs, while 211 RPCs have no Package ...
+77 Packages have RPCs, while 211 RPCs have no Package. Clearly the top Packages (ORDERS, IMAGES and some COTS packages) need to be examined first ...
 
 \# | Package | \# RPCs | Example RPC
 --- | --- | --- | ---

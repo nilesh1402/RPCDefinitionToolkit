@@ -1,12 +1,12 @@
 ## RPCs According to Builds and Installs of 999
     
-There are 432 (4.17%) builds defining 3,456 RPCs distributed from 1996-05-24 to 2017-11-07, 248 (57.41%) of which introduce new RPCs. RPC __PSB USERLOAD__ appears in the most builds, 10. The median number of RPCs per Build is 2.0. 
+There are __432 (4.17%)__ builds defining __3,456__ RPCs distributed from _1996-05-24_ to _2017-11-07_, __248 (57.41%)__ of which introduce new RPCs. RPC _PSB USERLOAD_ appears in the most builds, __10__. The median number of RPCs per Build is __2.0__. 
 
-RPCs are spread across 62 packages. Package _ORDER ENTRY/RESULTS REPORTING_ has the most RPCs, 1,023. 17 RPCs have more than one Package usually because of re-organization and splitting of Packages over the years. 133 RPCs have no package because their builds weren't assigned a package (yet).
+RPCs are spread across __62__ packages. Package _ORDER ENTRY/RESULTS REPORTING_ has the most RPCs, __1,023__. __17__ RPCs have more than one Package usually because of re-organization and splitting of Packages over the years. __133__ RPCs have no package because their builds weren't assigned a package (yet).
 
-Builds can delete as well as add RPCs - 116 of the RPCs were deleted by the final Build they appeared in, leaving 3,340 RPCs active and installed.
+Builds can delete as well as add RPCs - __116__ of the RPCs were deleted by the final Build they appeared in, leaving __3,340__ RPCs active and installed.
 
-File _8994_ is suppossed to define the active RPCs in a VistA. However the 8994 of this system has 0 deleted RPCs, is missing 14 active RPCs and has 350 extra RPCs that never appear in a Build.
+File _8994_ is suppossed to define the active RPCs in a VistA. However the 8994 of this system has __0__ deleted RPCs, is missing __14__ active RPCs and has __350__ extra RPCs that never appear in a Build.
     
 RPC Builds by distribution year. Note that as builds often restate pre-existing RPCs, the following distinguishes all builds with RPCs from those that introduce new RPCs ...
      
@@ -3504,7 +3504,7 @@ __3,340__ Active/Installed RPCs. The maximum gap in days between distribution an
 116 | XOBV TEST JUNIT SWITCH SV2GLB | XOBV 1.6 | 2009-05-08 / 2011-01-20
 
 
-__8994 Rogue RPCs__ are [1] in 8994 but are not active according to Builds ("EXTRA" 350) or active by builds but not in 8994 ("MISSING" 14) or deleted by builds but in 8994 ("SHOULD BE DELETED" 0) ...
+__8994 Rogue RPCs__ are [1] in 8994 but are not active according to Builds ("EXTRA" 350) or active by builds but not in 8994 ("MISSING" 14) or deleted by builds but in 8994 ("SHOULD BE DELETED" 0). __IMPORTANT__: must __test__ if the extra are still active (have code etc) and if so, why ...
 
 \# | RPC | Problem
 --- | --- | ---
@@ -3876,7 +3876,7 @@ __8994 Rogue RPCs__ are [1] in 8994 but are not active according to Builds ("EXT
 
 __Note__: FOIA (999) has MANY _Rogues_. It seems that redaction is partial for non Open Source RPCs. It seems that the code is removed but the RPC remains.
 
-62 Packages have RPCs ...
+62 Packages have RPCs, while 133 RPCs have no Package. Clearly the top Packages (ORDERS, IMAGES and some COTS packages) need to be examined first ...
 
 \# | Package | \# RPCs | Example RPC
 --- | --- | --- | ---
