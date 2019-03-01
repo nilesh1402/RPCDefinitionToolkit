@@ -18,8 +18,11 @@ VISTA_REP_LOCN_TEMPL = "../Reports/PerVistA/{}/"
 RPC i/f according to builds and installs - still installed? (active) or 
 never installed? or deleted? ie/ what if there was no 8994? And correct it too
 
-Note: bug in OR/Package for RPC ...
-1 | __ORDER ENTRY/RESULTS REPORTING__ | 1,038 | GMRC LIST CONSULT REQUESTS
+Note: must migrate some heuristics from here and into RED step.
+1. __ORDER ENTRY/RESULTS REPORTING__ too well liked. Removed as package if
+another available ... play with that ie/ PRIMARY PACKAGE ASSERTION in REDUCTION
+2. MAY do buildsByRPC as a reduction ie/ a second level reduction BEFORE doing
+this report OR doing assembly
 """
 def reportBuildsNInstalls(stationNo):
 
@@ -33,8 +36,7 @@ def reportBuildsNInstalls(stationNo):
     buildsWNewRPCReduction = [] 
     buildsByRPC = defaultdict(list)
     buildsByPackage = defaultdict(list)
-    rpcsByPackage = defaultdict(set)
-    packagesByRPC = defaultdict(list) # want latest to come out
+    packagesByRPC = defaultdict(lambda: Counter()) # want latest to come out
     dateDistributeds = []
     countBuildsByYr = Counter()
     countNewRPCBuildsByYr = Counter()
@@ -51,9 +53,7 @@ def reportBuildsNInstalls(stationNo):
             for rpc in buildInfo["rpcs"][actionType]:
                 info = {"build": buildInfo["label"], "action": actionType}
                 if "package" in buildInfo:
-                    rpcsByPackage[buildInfo["package"]].add(rpc)
-                    if not (rpc in packagesByRPC and buildInfo["package"] in packagesByRPC[rpc]):
-                        packagesByRPC[rpc].append(buildInfo["package"])
+                    packagesByRPC[rpc][buildInfo["package"]] += 1
                     if "packages" not in info:
                         info["packages"] = []
                     if buildInfo["package"] not in info["packages"]:
@@ -75,6 +75,14 @@ def reportBuildsNInstalls(stationNo):
                 countBuildsByYr[distributed.split("-")[0]] += 1
                 if newRPCSeen:
                     countNewRPCBuildsByYr[distributed.split("-")[0]] += 1
+                    
+    # PICK ANYTHING BUT 'ORDER ENTRY/RESULTS REPORTING' if another there
+    rpcsByPackage = defaultdict(list)
+    for rpc in packagesByRPC:
+        if len(packagesByRPC[rpc]) > 1 and "ORDER ENTRY/RESULTS REPORTING" in packagesByRPC[rpc]:
+            del packagesByRPC[rpc]["ORDER ENTRY/RESULTS REPORTING"]
+        for pkg in packagesByRPC[rpc]:
+            rpcsByPackage[pkg].append(rpc)
 
     dateDistributeds = sorted(dateDistributeds)
     rpcWithMostBuilds = sorted(buildsByRPC, key=lambda x: len(buildsByRPC[x]), reverse=True)[0]
@@ -180,8 +188,9 @@ File _8994_ is suppossed to define the active RPCs in a VistA. However the 8994 
             installGapMU = "__RERELEASE: D > I__: {} > {}".format(firstD, firstI)
             badGapRPCs.append(rpc)
             
-        packageMU = packagesByRPC[rpc][-1] if rpc in packagesByRPC else ""
-                                
+        # Alt: move out of 'ORDER ENTRY/RESULTS REPORTING' if another as more precise too
+        packageMU = sorted(packagesByRPC[rpc], key=lambda x: packagesByRPC[rpc][x], reverse=True)[0] if rpc in packagesByRPC else ""
+                                        
         tbl.addRow(["__{}__".format(rpc), len(buildsByRPC[rpc]), packageMU, distribMU, installGapMU])
                 
     mu += "__{:,}__ Active/Installed RPCs. The maximum gap in days between distribution and install is {:,}, the median is {:,}, {:,} have no gap at all. The gap isn't available if necessary dates are missing ({:,}) or the first install date comes BEFORE the build distribution date (__{:,}__) ...\n\n".format(len(activeRPCs), max(gaps), numpy.percentile(gaps, 50), sum(1 for g in gaps if g == 0), len(noGapRPCs), len(badGapRPCs))
