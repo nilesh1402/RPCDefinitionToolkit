@@ -63,8 +63,7 @@ def assembleBase():
     for sno in activesBySNO:
         print "Flushing {:,} actives of {}".format(len(activesBySNO[sno]), sno)
         # preparing to add overrides beyond 'label'
-        perSNoDefns = [{"label": label} for label in activesBySNO[sno]]
-        json.dump(perSNoDefns, open("../Definitions/rpcInterfaceDefinition{}.bjsn".format(sno), "w"), indent=4)   
+        json.dump(activesBySNO[sno], open("../Definitions/rpcInterfaceDefinition{}.bjsn".format(sno), "w"), indent=4)   
 
 """
 Using builds across VistAs and NOT 8994 to defined RPCs
@@ -188,8 +187,8 @@ def assembleActiveRPCsPerStationNumber():
         bpiBySNo = json.load(open(VISTA_RPCD_LOCN_TEMPL.format(stationNo) + "_rpcBPIs.json"))    
         for bpi in bpiBySNo:
             if "isDeleted" not in bpi:
-                activeRPCs.append(bpi["label"])
-        bySNO[stationNo] = sorted(activeRPCs)
+                activeRPCs.append({"label": bpi["label"], "installed": bpi["installed"]})
+        bySNO[stationNo] = sorted(activeRPCs, key=lambda x: x["label"])
     return bySNO
         
 # ################################# DRIVER #######################
