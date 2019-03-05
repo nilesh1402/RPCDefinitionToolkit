@@ -629,9 +629,12 @@ Key is that nearly all RPCs need to be in Options or else they can't be invoked.
     _inOptionsButNot8994 = set(rpc for rpc in optionsOfRPCs if rpc not in _8994Labels)
     _in8994ButNotOptions = set(rpc for rpc in _8994Labels if rpc not in optionsOfRPCs)
     
+    if stationNo != "999" and len(_inOptionsButNot8994):
+        raise Exception("Expect all in Option to be in 8994 - not showing exceptions below")
+    
     _in8994nBuildsButNotOptions = _inBuildsButNotOptions.intersection(_in8994ButNotOptions)
             
-    mu += "Of {:,} RPC Broker Options, {:,} are removed and {:,} have no RPCs defined, leaving {:,} active covering {:,} RPCs. But {:,} of these are NOT in the list of Active RPCs according to the build system (see table below for where they appear). More importantly, the build system declares {:,} active RPCs which don't appear in any option - requiring an option would further subset the active RPC list. {:,} of the active RPCs are NOT in 8994 and {:,} of 8994 are not active RPCs. There are {:,} RPCs NOT in options but in both 8994 and Builds - broadly builds and 8994 agree but options exclude.\n\n".format(
+    mu += "Of {:,} RPC Broker Options, {:,} are removed and {:,} have no RPCs defined, leaving {:,} active covering {:,} RPCs. But {:,} of these are NOT in the list of Active RPCs according to the build system (see table below for where they appear). More importantly, the build system declares {:,} active RPCs which don't appear in any option - requiring an option would further subset the active RPC list. {:,} of the active RPCs are NOT in 8994 and {:,} of 8994 are not active RPCs. There are {:,} RPCs NOT in options but in both 8994 and Builds - broadly builds and 8994 agree but options exclude (this last statement applies to all but FOIA which has a messed up 8994).\n\n".format(
         len(_19Reductions),
         len(removedBrokerOptions),
         len(rpcLessBrokerOptions),
@@ -659,7 +662,9 @@ Key is that nearly all RPCs need to be in Options or else they can't be invoked.
             label = "__{}__ [NOT ACTIVE]".format(label)
         tbl.addRow([label, len(_19Reduction["rpcs"]), len(exclusiveRPCs), keyRequiredMU, rpcsInOptionButNotInBuildListMU])
     mu += tbl.md() + "\n\n"
-    mu += "TODO: add if in User / UserSO and # 8994 missing"
+    mu += "__Note__: must examine Key's effect on options if present.\n\n"
+    
+    mu += "TODO: add if in User / UserSO"
     
     print mu
     

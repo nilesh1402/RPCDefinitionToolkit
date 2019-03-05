@@ -2,7 +2,7 @@
     
 Key is that nearly all RPCs need to be in Options or else they can't be invoked. But there's more - they need to have code behind them (from builds); they need to be in 8994; and a (recent) user must have an option they belong to. The following examines RPCs in terms of options and then the overlap of that set with the other ways an RPC can be active.
 
-Of 151 RPC Broker Options, 3 are removed and 7 have no RPCs defined, leaving 141 active covering 4,799 RPCs. But 3 of these are NOT in the list of Active RPCs according to the build system (see table below for where they appear). More importantly, the build system declares 435 active RPCs which don't appear in any option - requiring an option would further subset the active RPC list. 0 of the active RPCs are NOT in 8994 and 440 of 8994 are not active RPCs. There are 432 RPCs NOT in options but in both 8994 and Builds.
+Of 151 RPC Broker Options, 3 are removed and 7 have no RPCs defined, leaving 141 active covering 4,799 RPCs. But 3 of these are NOT in the list of Active RPCs according to the build system (see table below for where they appear). More importantly, the build system declares 435 active RPCs which don't appear in any option - requiring an option would further subset the active RPC list. 0 of the active RPCs are NOT in 8994 and 440 of 8994 are not active RPCs. There are 432 RPCs NOT in options but in both 8994 and Builds - broadly builds and 8994 agree but options exclude (this last statement applies to all but FOIA which has a messed up 8994).
 
 \# | Option | Count RPCs | Exclusive RPCs | Key Required | RPCs not in Builds
 --- | --- | --- | --- | --- | ---
@@ -149,4 +149,6 @@ Of 151 RPC Broker Options, 3 are removed and 7 have no RPCs defined, leaving 141
 141 | CG FMQL QP USER | 1 | 1 | &nbsp; | &nbsp;
 
 
-TODO: add if in User / UserSO and # 8994 missing
+__Note__: must examine Key's effect on options if present.
+
+TODO: add if in User / UserSO
