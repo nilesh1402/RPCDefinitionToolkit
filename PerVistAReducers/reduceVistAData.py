@@ -34,6 +34,7 @@ From 442 Follow on: in builds but not 8994
 
 def reduceVistAData(stationNo):
 
+    # Phase 1
     try:
         redResults = json.load(open("redResults.json"))
     except:
@@ -50,7 +51,11 @@ def reduceVistAData(stationNo):
     reduce9_7(stationNo, redResults)
     
     reduce9_6(stationNo, redResults)
-        
+    
+    reduce3_081(stationNo, redResults)
+    
+    reduce200(stationNo, redResults)
+            
     json.dump(redResults, open("redResults.json", "w"), indent=4)
     
     print "\n# VistA Reductions (so far)\n"
@@ -61,6 +66,12 @@ def reduceVistAData(stationNo):
         cstoppedMU = ", ".join(typeInfo["cstopped"]) if "cstopped" in typeInfo else ""
         tbl.addRow([typeId, mu])
     print tbl.md() + "\n"
+    print
+    
+    # RPC centric reduction (builds on cleanups above)
+    reduceRPCBPIs(stationNo)
+    
+# ################ Clean Sources to enable RPC-centric Reduction ########
     
 """
 Common package ref reduction to:
@@ -259,6 +270,8 @@ def reduce8994(stationNo, redResults):
 
 Just for RPC options ie/ type_4 == B:Broker (Client/Server)
 
+Note: may be missing rpcs none the less ie if deleted?
+
 TODO: may extend to
 - A:action
 - X:extended action <------- here's the extended actions that trigger protocols
@@ -407,12 +420,14 @@ def reduce19(stationNo, redResults):
 """
 Goal: "Build-Backed" Package List 
 
-9_4 not a definitive package list as [1] builds or some other mechanism with bad package names (named for individual builds, dup existing package with case variants ...) introduce duplicate or invalid entries and [2] some builds, particularly COTS or Class III lack package references. This means __9_4 IS A STARTING POINT__ and that __9_6 ITSELF ALONG WITH OUTSIDE LISTS__ must deliver the definitive package list. Getting to A DEFINITIVE PACKAGE LIST WILL BE AN ITERATIVE, CROSS VISTA PROCESS.
+Specifically 9_4 not a definitive package list as [1] builds or some other mechanism with bad package names (named for individual builds, dup existing package with case variants ...) introduce duplicate or invalid entries and [2] some builds, particularly COTS or Class III lack package references. 
 
-Hence plus in _reduce9_4Plus_ ... for one thing new packages are added from a built in
+This means __9_4 IS A STARTING POINT__ and that __9_6 ITSELF ALONG WITH OUTSIDE LISTS__ must deliver the definitive package list. Getting to A DEFINITIVE PACKAGE LIST WILL BE AN ITERATIVE, CROSS VISTA PROCESS.
+
+Hence plus in _reduce9_4Plus_ ... for one thing new packages are added from an "in code"
 definition.
 
-Dictionary does NOT enforce unique labels OR unique prefixes though that's
+Note: the 9_4 DD does NOT enforce unique labels OR unique prefixes though that's
 what is intended. A reduction in instances happens because [1] the same label 
 is used > once or [2] the same prefix is used > once.
 
@@ -471,6 +486,11 @@ and 90% Build (9_6's) have package file links as does install (9_7)
 """
 # Fixed VistA Stuff and off OSEHRA packages as not covered in 9_4 
 # ... this will expand as we refine to a definitive, "Build-backed" Package list
+#
+# - https://github.com/OSEHRA/VistA/blob/master/Packages.csv
+# - https://www.oit.va.gov/Services/TRM/ReportVACategoryMapping.aspx
+# - Monograph (in git)
+#        
 BEYOND_9_4_PACKAGE_INDEX = {
     "AXVVA": "VISUAL AID FOR CLINIC APPOINTMENTS (VISN 20)",
     "DSIP": "ENCODER PRODUCT SUITE (EPS)", # monograph
@@ -625,7 +645,7 @@ Initially only doing if REMOTE PROCEDURE BUILD COMPONENT there but will expand .
 
 Has HL7, Protocols etc etc too but of less interest for now
 
-Note: gives date of distribution. 9_7 gives installed or not and when.
+Note: gives date of distribution. 9_7 gives install or not and when.
 
 Note: "track_package_nationally": false seems to be always the case
 
@@ -963,6 +983,223 @@ http://localhost:9050/schema#100100_003
 def reduce100100_003(stationNo, redResults):
     pass
     
+"""
+Sign on - for signon period users - will be used to reduce users
+... more a user information reduction ie/ count signons per user
+"""
+def reduce3_081(stationNo, redResults, forceRedo=False):
+
+    if not forceRedo: # as big
+        try:
+            json.load(open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_3_081UserReduction.json"))
+        except:
+            pass
+        else:
+            return # as done already
+
+    print "Reducing 3_081 to pick out Active Users"
+    _3_081ResourceIter = FilteredResultIterator(DATA_LOCN_TEMPL.format(stationNo), "3_081")
+    userSignOnCount = Counter()
+    for i, _3_081Resource in enumerate(_3_081ResourceIter, 1):    
+        if (i % 10000) == 0:
+            print "\tprocessed another {} sign ons, now {} users seen".format(i, len(userSignOnCount))
+        userSignOnCount[_3_081Resource["user"]["id"]] += 1
+    print "... {} users signed on".format(len(userSignOnCount))
+    reductions = [{"userId": userId, "signOnCount": userSignOnCount[userId]} for userId in userSignOnCount]
+    
+    if "3_081" not in redResults:
+        redResults["3_081"] = {}
+    redResult = {"total": i, "reduced": len(reductions)}
+    redResults["3_081"][stationNo] = redResult
+    
+    json.dump(reductions, open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_3_081UserReduction.json", "w"), indent=4)
+    
+    return reductions
+    
+"""
+User - for secondary_menu_options, primary_menu_option and keys
+"""
+def reduce200(stationNo, redResults, forceRedo=False):
+
+    if not forceRedo: # as big
+        try:
+            json.load(open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_200Reduction.json"))
+        except:
+            pass
+        else:
+            return # as done already
+    
+    try:
+        _3_081Reductions = json.load(open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_3_081UserReduction.json"))
+    except:
+        raise Exception("200 reduction requires 3_081 reduction first")
+    signedOnUserIds = set(red["userId"] for red in _3_081Reductions)
+
+    print "Reducing Users to bags of Options and whether has signon or not ..."
+    _200ResourceIter = FilteredResultIterator(DATA_LOCN_TEMPL.format(stationNo), "200")
+    reductions = []
+    for i, _200Resource in enumerate(_200ResourceIter, 1):
+        user = {"userId": _200Resource["_id"]}
+        if (i % 1000) == 0:
+            print "\tprocessed another {} users"
+        if _200Resource["_id"] in signedOnUserIds:
+            user["hasSignOn"] = True
+        if "primary_menu_option" in _200Resource:
+            user["primaryMenuOption"] = _200Resource["primary_menu_option"]["label"]
+        if "secondary_menu_options" in _200Resource:
+            smoLabels = set()
+            for entry in _200Resource["secondary_menu_options"]:
+                smoLabel = entry["secondary_menu_options"]["label"]
+                smoLabels.add(smoLabels)
+            user["secondaryMenuOptions"] = sorted(list(smoLabels))
+        if "primaryMenuOption" in user or "secondaryMenuOptions" in user:
+            reductions.append(user)
+    print "Processed {:,} users, reduced to {:,}".format(i, len(reductions))
+    
+    if "200" not in redResults:
+        redResults["200"] = {}
+    redResult = {"total": i, "reduced": len(reductions)}
+    redResults["200"][stationNo] = redResult
+    
+    json.dump(reductions, open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_200Reduction.json", "w"), indent=4)
+    
+    return reductions
+    
+# ######################### Specific RPC or RPC centric views ####
+#
+# Overall: by RPC, 8994, Builds, Options ... an RPC must be [a] in 8994
+# and [b] be active according to the Builds (proxy for is code there)
+# and [c] be in an active (used recently) option (may also note if in
+# any option too)
+# 
+
+"""
+RPC "BPIs", Build-Package-Installs ie/ builds with install and package info
+"""
+def reduceRPCBPIs(stationNo):
+
+    buildsReduction = json.load(open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_9_6Reduction.json"))
+    buildsRPCReduction = [bi for bi in buildsReduction if "rpcs" in bi]
+    
+    _200Reduction = json.load(open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_200Reduction.json"))
+
+    """
+    Flips from Builds to view from RPC side: only considers Builds that are installed and 
+    if the first build seen for an RPC, it must be a SEND TO SITE (create) build.
+    """
+    rpcBPIByRPC = {}  
+    nixBuildAsNotInstalled = 0
+    nixBuildForRPCAsFirstButNotSend = 0
+    for buildInfo in buildsRPCReduction:
+        if buildInfo["isInstalled"] == False: # let's not count it!
+            nixBuildAsNotInstalled += 1
+            continue
+        for actionType in buildInfo["rpcs"]:
+            for rpc in buildInfo["rpcs"][actionType]:
+                if rpc not in rpcBPIByRPC:
+                    if actionType != "SEND TO SITE": # let's not count until get a SEND
+                        nixBuildForRPCAsFirstButNotSend += 1
+                        continue 
+                    rpcBPIByRPC[rpc] = {"label": rpc, "installed": buildInfo["dateInstalledFirst"], "builds": []}   
+                    if "dateDistributed" in buildInfo:
+                        rpcBPIByRPC[rpc]["distributed"] = buildInfo["dateDistributed"]
+                bir = {"label": buildInfo["label"], "action": actionType, "installed": buildInfo["dateInstalledFirst"]}
+                rpcBPIByRPC[rpc]["builds"].append(bir) 
+                if "package" in buildInfo:
+                    bir["package"] = buildInfo["package"]
+                if "dateDistributed" in buildInfo:
+                    bir["distributed"] = buildInfo["dateDistributed"]
+    for rpc in rpcBPIByRPC:
+        bpi = rpcBPIByRPC[rpc]       
+        if bpi["builds"][-1]["action"] == "DELETE AT SITE":
+            bpi["isDeleted"] = True
+            bpi["deleteInstalled"] = bpi["builds"][-1]["installed"]
+            if "distributed" in bpi["builds"][-1]:
+                bpi["deleteDistributed"] = bpi["builds"][-1]["distributed"]
+        packages = [bi["package"] for bi in bpi["builds"] if "package" in bi]
+        if len(set(packages)) == 1:
+            bpi["package"] = packages[0]
+        elif len(packages): # can be none! 
+            packages.reverse()
+            # ex override: [u'ORDER ENTRY/RESULTS REPORTING', u'GEN. MED. REC. - VITALS']
+            bpi["package"] = [pkg for pkg in packages if pkg != "ORDER ENTRY/RESULTS REPORTING"][0] # last which isn't the overused OE
+    rpcBPIs = sorted(rpcBPIByRPC.values(), key=lambda x: x)
+    json.dump(rpcBPIs, open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_rpcBPIs.json", "w"), indent=4)
+    
+    print "Phase 2 {}: flushed BPIs of {:,} RPCs".format(stationNo, len(rpcBPIs))
+    
+"""
+Add usage for RPC options using User (200) and Active User (user with signon).
+
+Background: just having options isn't enough - are they used?
+
+NOTE: may flip properly --- SEE REPORT ie/ per RPC, show its options and only 
+have RPCs that have an option ie/ RPC centric ala BPI
+"""
+def reduceRPCOptionByUse(stationNo):
+    
+    print "Reducing RPC Options using all users and active users"
+    rpcOptionsReduction = json.load(open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_19Reduction.json"))
+    rpcOptions = set(red["label"] for red in rpcOptionsReduction)
+    print "... start with {} RPC Options".format(len(rpcOptions))
+    
+    signedOnUsersReduction = json.load(open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_3_081UserReduction.json"))
+    signedOnUserIds = set(red["userId"] for red in signedOnUsersReduction)
+    
+    # See if user has a recent login (3.081)
+    _3_081ResourceIter = FilteredResultIterator(DATA_LOCN_TEMPL.format(stationNo), "3_081")
+    userSignOnCount = Counter()
+    for i, _3_081Resource in enumerate(_3_081ResourceIter, 1):    
+        if (i % 10000) == 0:
+            print "\tprocessed another {} sign ons, now {} users seen".format(i, len(userSignOnCount))
+        userSignOnCount[_3_081Resource["user"]["id"]] += 1
+    print "... {} users signed on".format(len(userSignOnCount))
+    
+    primariesCount = Counter()
+    primariesActiveCount = Counter()
+    secondariesCount = Counter()
+    secondariesActiveCount = Counter()
+    print "Walking all Users looking for Options ..."
+    _200ResourceIter = FilteredResultIterator(DATA_LOCN_TEMPL.format(stationNo), "200")
+    for i, _200Resource in enumerate(_200ResourceIter, 1):
+        if (i % 1000) == 0:
+            print "\tprocessed another {} users, now {} secondaries seen".format(i, len(secondariesCount))
+        if "primary_menu_option" in _200Resource:
+            pmoLabel = _200Resource["primary_menu_option"]["label"]
+            if pmoLabel in rpcOptions:
+                primariesCount[pmoLabel] += 1
+                if _200Resource["_id"] in userSignOnCount:
+                    primariesActiveCount[pmoLabel] += 1
+        if "secondary_menu_options" in _200Resource:
+            for entry in _200Resource["secondary_menu_options"]:
+                smoLabel = entry["secondary_menu_options"]["label"]
+                if smoLabel in rpcOptions:
+                    secondariesCount[smoLabel] += 1
+                    if _200Resource["_id"] in userSignOnCount:
+                        secondariesActiveCount[smoLabel] += 1
+    print "Saw {} primaries, {} active".format(len(primariesCount.keys()), len(primariesActiveCount))
+    print "Saw {} secondaries, {} active".format(len(secondariesCount.keys()), len(secondariesActiveCount))
+    
+    # Add in information
+    optionsUsed = set()
+    optionsUsedRecently = set()
+    for red in rpcOptionsReduction:
+        if red["label"] in primariesCount:
+            red["isPrimaryOfUser"] = True
+            optionsUsed.add(red["label"])
+        if red["label"] in primariesActiveCount:
+            red["isPrimaryOfActiveUser"] = True
+            optionsUsedRecently.add(red["label"])
+        if red["label"] in secondariesCount:
+            red["isSecondaryOfUser"] = True
+            optionsUsed.add(red["label"])
+        if red["label"] in secondariesActiveCount:
+            red["isSecondaryOfActiveUser"] = True
+            optionsUsedRecently.add(red["label"])
+    
+    print "Flushing Option Reduction with usage - out of {}, {} are marked as used and {} are marked as used recently (\"Active\")".format(len(optionsUsed), len(optionsUsedRecently))
+    json.dump(rpcOptionsReduction, open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_rpcOptionsWithUsage.json", "w"), indent=4)
+    
 # ################################# DRIVER #######################
                
 def main():
@@ -974,6 +1211,15 @@ def main():
         return
         
     stationNo = sys.argv[1]
+    
+    """
+    redResults = {}
+    reduce3_081(stationNo, redResults)
+    reduce200(stationNo, redResults)
+    print redResults
+    # reduceRPCOptionByUse(stationNo)
+    return
+    """
     
     reduceVistAData(stationNo)
 
