@@ -596,6 +596,8 @@ Options subset RPCs named in 8994 and/or Builds:
 - options may not be defined for any user or more particularly any recent/sign on user
 ... expect 15% reduction of build-named, active RPCs using "active, used option" inclusion
 as a criteria.
+
+KEY for REDUCING RPC LIST TO 'EFFECTIVE NUMBER OF ACTIVE RPCs'
 """
 def reportRPCOptions(stationNo):
 
