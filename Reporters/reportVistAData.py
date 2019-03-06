@@ -590,83 +590,108 @@ File _8994_ is suppossed to define the active RPCs in a VistA. However the 8994 
     
     open(VISTA_REP_LOCN_TEMPL.format(stationNo) + "rpcsByBuildsNInstalls.md", "w").write(mu)
     
+"""
+Options subset RPCs named in 8994 and/or Builds:
+- you can't invoke all but built-in RPCs without an option (broker option with RPC list)
+- options may not be defined for any user or more particularly any recent/sign on user
+... expect 15% reduction of build-named, active RPCs using "active, used option" inclusion
+as a criteria.
+"""
 def reportRPCOptions(stationNo):
 
-    # RPC Broker Options (checked in reduction that only they have RPCs)
-    _19Reductions = json.load(open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_19Reduction.json"))
-    
-    # Decision to use Build Definitions of RPCs ie/ active RPCs according to builds and not 8994    
-    bpis = json.load(open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_rpcBPIs.json"))
-    _buildActiveRPCs = set(re.sub(r'\_', '/', bpi["label"]) for bpi in bpis if "isDeleted" not in bpi)
-    
     mu = """## RPC Options of {} 
     
-Key is that nearly all RPCs need to be in Options or else they can't be invoked. But there's more - they need to have code behind them (from builds); they need to be in 8994; and a (recent) user must have an option they belong to. The following examines RPCs in terms of options and then the overlap of that set with the other ways an RPC can be active.
-
-""".format(stationNo)
-
-    removedBrokerOptions = []
-    rpcLessBrokerOptions = []
-    _19ReductionsWRPCs = []
-    optionsOfRPCs = defaultdict(list)
-    for _19Reduction in _19Reductions:
-        if "isRemoved" in _19Reduction:
-            removedBrokerOptions.append(_19Reduction)
-            continue
-        if "rpcs" not in _19Reduction:
-            rpcLessBrokerOptions.append(_19Reduction)
-            continue
-        _19ReductionsWRPCs.append(_19Reduction)
-        for rpc in _19Reduction["rpcs"]:
-            optionsOfRPCs[rpc].append(_19Reduction["label"])
-                    
-    # REM: both active - possibility of further subset of ACTIVE RPCs
-    _inOptionsButNotInBuilds = set(rpc for rpc in optionsOfRPCs if rpc not in _buildActiveRPCs) # few
-    _inBuildsButNotOptions = set(rpc for rpc in _buildActiveRPCs if rpc not in optionsOfRPCs)
+Using _Active, Used RPC Options_ to subset 8994 and Build named RPCs. Expect a __15% reduction__ if we add a requirement that an RPC needs to belong to [1] an active option [2] belonging to a recently signed on user.
     
+""".format(stationNo)
+    
+    # To count all RPC Broker options including those without RPCs
+    _19Reductions = json.load(open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_19Reduction.json"))
+    """
+    Form: {"label": rpc, "options": [{"label" "isRemoved", hasSUsers, hasUsers}]
+    ... note: not ALL broker options as some have no RPCs (must get from raw 19)
+    """
+    _rpcOptionsWithUse = json.load(open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_rpcOptionsWithUse.json")) 
+    rpcOptions = set()
+    removedRPCOptions = set()
+    rpcWithActiveOptions = set()
+    rpcsByActiveUsedOptions = defaultdict(list)
+    activeUnusedRPCOptions = set()
+    activeUsedOptionsByRPC = defaultdict(list) # THE KEY SUBSET
+    activeUsedOptionsWithKeys = set() 
+    for roi in _rpcOptionsWithUse:
+        rpc = roi["label"]
+        for oi in roi["options"]:
+            rpcOptions.add(oi["label"])
+            if "isRemoved" in oi:
+                removedRPCOptions.add(oi["label"])
+                continue
+            rpcWithActiveOptions.add(rpc)
+            if "hasSUser" not in oi:
+                activeUnusedRPCOptions.add(oi["label"])
+            else:
+                rpcsByActiveUsedOptions[oi["label"]].append(rpc)
+                activeUsedOptionsByRPC[rpc].append(oi["label"])
+                if "keyRequired" in oi:
+                    activeUsedOptionsWithKeys.add(oi["label"])
+        
+    mu += """There are {:,} RPC Broker options, {:,} of which name __{:,}__ RPCs. {:,} of these options are marked 'deleted', leaving __{:,}__ of such option-backed RPCs. A further {:,} options are not assigned to an active, recently signed on user. When these too are removed, we're left with __{}__ RPCs backed by {:,} active options with users who recently signed on.
+    
+__Note__: options _{}_ require keys - this needs testing.
+    
+""".format(
+        len(_19Reductions),
+        len(rpcOptions),
+        len(_rpcOptionsWithUse),
+        len(removedRPCOptions),
+        len(rpcWithActiveOptions),
+        len(activeUnusedRPCOptions),
+        reportAbsAndPercent(len(activeUsedOptionsByRPC), len(_rpcOptionsWithUse)),
+        len(rpcsByActiveUsedOptions),
+        
+        ", ".join(["\"{}\"".format(key) for key in sorted(list(activeUsedOptionsWithKeys))])
+    ) 
+    
+    """
+    Let's see how many of these option RPCs are 
+    """
+    bpis = json.load(open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_rpcBPIs.json"))
+    _buildActiveRPCs = set(re.sub(r'\_', '/', bpi["label"]) for bpi in bpis if "isDeleted" not in bpi)
+    _inOptionsButNotInBuilds = set(rpc for rpc in activeUsedOptionsByRPC if rpc not in _buildActiveRPCs) # few
+    _inBuildsButNotOptions = set(rpc for rpc in _buildActiveRPCs if rpc not in activeUsedOptionsByRPC)
     _8994Reduction = json.load(open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_8994Reduction.json"))
     _8994Labels = set(re.sub(r'\_', '/', red["label"]) for red in _8994Reduction) 
-    _inOptionsButNot8994 = set(rpc for rpc in optionsOfRPCs if rpc not in _8994Labels)
-    _in8994ButNotOptions = set(rpc for rpc in _8994Labels if rpc not in optionsOfRPCs)
+    _allBuildActiveAnd8994RPCs = _buildActiveRPCs.union(_8994Labels)
+    _inOptionsButNot8994 = set(rpc for rpc in activeUsedOptionsByRPC if rpc not in _8994Labels)
+    _in8994ButNotOptions = set(rpc for rpc in _8994Labels if rpc not in activeUsedOptionsByRPC)
     
-    if stationNo != "999" and len(_inOptionsButNot8994):
-        raise Exception("Expect all in Option to be in 8994 - not showing exceptions below")
+    mu += """When compared to _Build RPCs_ and _8994 RPCs_:
     
-    _in8994nBuildsButNotOptions = _inBuildsButNotOptions.intersection(_in8994ButNotOptions)
-            
-    mu += "Of {:,} RPC Broker Options, {:,} are removed and {:,} have no RPCs defined, leaving {:,} active covering {:,} RPCs. But {:,} of these are NOT in the list of Active RPCs according to the build system (see table below for where they appear). More importantly, the build system declares {:,} active RPCs which don't appear in any option - requiring an option would further subset the active RPC list. {:,} of the active RPCs are NOT in 8994 and {:,} of 8994 are not active RPCs. There are {:,} RPCs NOT in options but in both 8994 and Builds - broadly builds and 8994 agree but options exclude (this last statement applies to all but FOIA which has a messed up 8994).\n\n".format(
-        len(_19Reductions),
-        len(removedBrokerOptions),
-        len(rpcLessBrokerOptions),
-        len(_19ReductionsWRPCs),
-        len(optionsOfRPCs),
-        len(_inOptionsButNotInBuilds),
-        len(_inBuildsButNotOptions),
+  * Installed Builds name __{}__ RPCs not in used options while those options name __{:,}__ RPCs not in these Builds ({}).
+  * 8994 defines __{}__ RPCs not in user options while those options name __{:,}__ RPCs not in 8994.
+  
+__Conclusion:__ _Used Options_ reduce the __{:,}__ RPCs named by both Builds and 8994s to __{}__.
+
+""".format(
+        reportAbsAndPercent(len(_inBuildsButNotOptions), len(_buildActiveRPCs)),
+        len(_inOptionsButNotInBuilds), 
+        ", ".join(["\"{}\"".format(rpc) for rpc in _inOptionsButNotInBuilds]),
+    
+        reportAbsAndPercent(len(_in8994ButNotOptions), len(_8994Labels)),
         len(_inOptionsButNot8994),
-        len(_in8994ButNotOptions),
-        len(_in8994nBuildsButNotOptions)
         
-    )      
-    
-    """
-    Note: may subset options further - no active RPCs in Builds
-    """
-    tbl = MarkdownTable(["Option", "Count RPCs", "Exclusive RPCs", "Key Required", "RPCs not in Builds"])
-    for _19Reduction in sorted(_19ReductionsWRPCs, key=lambda x: len(x["rpcs"]), reverse=True):
-        label = _19Reduction["label"]
-        exclusiveRPCs = [rpc for rpc in _19Reduction["rpcs"] if len(optionsOfRPCs[rpc]) == 1]
-        keyRequiredMU = "__{}__".format(_19Reduction["keyRequired"]) if "keyRequired" in _19Reduction else ""
-        rpcsInOptionButNotInBuildList = [rpc for rpc in _19Reduction["rpcs"] if rpc not in _buildActiveRPCs]
-        rpcsInOptionButNotInBuildListMU = "" if len(rpcsInOptionButNotInBuildList) == 0 else len(rpcsInOptionButNotInBuildList)
-        if len(rpcsInOptionButNotInBuildList) == len(_19Reduction["rpcs"]):
-            label = "__{}__ [NOT ACTIVE]".format(label)
-        tbl.addRow([label, len(_19Reduction["rpcs"]), len(exclusiveRPCs), keyRequiredMU, rpcsInOptionButNotInBuildListMU])
+        len(_allBuildActiveAnd8994RPCs),
+        reportAbsAndPercent(len(activeUsedOptionsByRPC), len(_allBuildActiveAnd8994RPCs))
+    )
+
+    # Show Active RPC Option details
+    tbl = MarkdownTable(["Option", "RPC \#", "Exclusive RPC \#"])
+    for option in sorted(rpcsByActiveUsedOptions, key=lambda x: len(rpcsByActiveUsedOptions[x]), reverse=True):
+        # exclusiveRPCCount = sum(1 for rpc in rpcsByActiveUsedOptions[option]
+        exclusiveRPCCount = sum(1 for rpc in rpcsByActiveUsedOptions[option] if len(activeUsedOptionsByRPC[rpc]) == 1) 
+        tbl.addRow(["__{}__".format(option), len(rpcsByActiveUsedOptions[option]), exclusiveRPCCount])
+    mu += "Active Options ...\n\n"
     mu += tbl.md() + "\n\n"
-    mu += "__Note__: must examine Key's effect on options if present.\n\n"
-    
-    mu += "TODO: add if in User / UserSO"
-    
-    print mu
     
     open(VISTA_REP_LOCN_TEMPL.format(stationNo) + "rpcsByOptions.md", "w").write(mu)
         
