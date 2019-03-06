@@ -629,7 +629,7 @@ Using _Active, Used RPC Options_ to subset 8994 and Build named RPCs. Expect a _
                 removedRPCOptions.add(oi["label"])
                 continue
             rpcWithActiveOptions.add(rpc)
-            if "hasSUser" not in oi:
+            if "hasSUser" not in oi and stationNo != "999":
                 activeUnusedRPCOptions.add(oi["label"])
             else:
                 rpcsByActiveUsedOptions[oi["label"]].append(rpc)
