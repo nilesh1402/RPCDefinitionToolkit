@@ -1,110 +1,118 @@
 ## RPC Options of 999 
     
-Key is that nearly all RPCs need to be in Options or else they can't be invoked. But there's more - they need to have code behind them (from builds); they need to be in 8994; and a (recent) user must have an option they belong to. The following examines RPCs in terms of options and then the overlap of that set with the other ways an RPC can be active.
+Using _Active, Used RPC Options_ to subset 8994 and Build named RPCs. Expect a __15% reduction__ if we add a requirement that an RPC needs to belong to [1] an active option [2] belonging to a recently signed on user.
+    
+There are 108 RPC Broker options, 99 of which name __2,899__ RPCs. 2 of these options are marked 'deleted', leaving __2,808__ of such option-backed RPCs. A further 0 options are not assigned to an active, recently signed on user. When these too are removed, we're left with __2,808 (96.86%)__ RPCs backed by 97 active options with users who recently signed on.
+    
+__Note__: options _"PSA GUI UPLOAD", "XU EPCS EDIT DATA"_ require keys - this needs testing.
+    
+When compared to _Build RPCs_ and _8994 RPCs_:
+    
+  * Installed Builds name __404 (12.59%)__ RPCs not in used options while those options name __4__ RPCs not in these Builds ("2199", "PSA UPLOAD", "MAG GET SOP CLASS METHOD", "2197").
+  * 8994 defines __870 (23.67%)__ RPCs not in user options while those options name __2__ RPCs not in 8994.
+  
+__Conclusion:__ _Used Options_ reduce the __3,679__ RPCs named by both Builds and 8994s to __2,808 (76.33%)__.
 
-Of 108 RPC Broker Options, 3 are removed and 8 have no RPCs defined, leaving 97 active covering 2,808 RPCs. But 4 of these are NOT in the list of Active RPCs according to the build system (see table below for where they appear). More importantly, the build system declares 404 active RPCs which don't appear in any option - requiring an option would further subset the active RPC list. 2 of the active RPCs are NOT in 8994 and 870 of 8994 are not active RPCs. There are 401 RPCs NOT in options but in both 8994 and Builds - broadly builds and 8994 agree but options exclude (this last statement applies to all but FOIA which has a messed up 8994).
+Active Options ...
 
-\# | Option | Count RPCs | Exclusive RPCs | Key Required | RPCs not in Builds
---- | --- | --- | --- | --- | ---
-1 | OR CPRS GUI CHART | 1,051 | 734 | &nbsp; | &nbsp;
-2 | MAG WINDOWS | 241 | 163 | &nbsp; | &nbsp;
-3 | SDECRPC | 203 | 183 | &nbsp; | &nbsp;
-4 | VIAB WEB SERVICES OPTION | 178 | 44 | &nbsp; | &nbsp;
-5 | MAG DICOM VISA | 146 | 130 | &nbsp; | &nbsp;
-6 | DVBA CAPRI GUI | 144 | 80 | &nbsp; | &nbsp;
-7 | OR BCMA ORDER COM | 133 | 18 | &nbsp; | &nbsp;
-8 | HMP UI CONTEXT | 119 | 38 | &nbsp; | &nbsp;
-9 | YS BROKER1 | 93 | 77 | &nbsp; | &nbsp;
-10 | MAG DICOM GATEWAY FULL | 87 | 24 | &nbsp; | 3
-11 | CRHD SHIFT CHANGE HANDOFF | 77 | 57 | &nbsp; | &nbsp;
-12 | SPN GENERAL USER RPC | 68 | 66 | &nbsp; | &nbsp;
-13 | OOPS GUI EMPLOYEE | 65 | 64 | &nbsp; | &nbsp;
-14 | ROR GUI | 65 | 57 | &nbsp; | &nbsp;
-15 | NUPA ASSESSMENT GUI | 62 | 34 | &nbsp; | &nbsp;
-16 | EC GUI CONTEXT | 59 | 44 | &nbsp; | &nbsp;
-17 | RMPR PURCHASE ORDER GUI | 58 | 30 | &nbsp; | &nbsp;
-18 | MAG DICOM GATEWAY VIEW | 56 | 0 | &nbsp; | 3
-19 | ORRCM REPORTING | 50 | 8 | &nbsp; | &nbsp;
-20 | ORAM ANTICOAGULATION CONTEXT | 50 | 35 | &nbsp; | &nbsp;
-21 | PSB GUI CONTEXT - USER | 48 | 38 | &nbsp; | &nbsp;
-22 | MAGJ VISTARAD WINDOWS | 47 | 28 | &nbsp; | &nbsp;
-23 | ORRCMC QUERY TOOL | 44 | 8 | &nbsp; | &nbsp;
-24 | VPS KIOSK INTERFACE | 36 | 29 | &nbsp; | &nbsp;
-25 | GMV V/M GUI | 35 | 14 | &nbsp; | &nbsp;
-26 | RMIMFIM | 35 | 19 | &nbsp; | &nbsp;
-27 | ORRCMC DASHBOARD | 32 | 18 | &nbsp; | &nbsp;
-28 | KMPD CM DEVELOPER TOOLS | 32 | 27 | &nbsp; | &nbsp;
-29 | MAGTP WORKLIST MGR | 29 | 13 | &nbsp; | &nbsp;
-30 | RMPR GUI DOR | 27 | 3 | &nbsp; | &nbsp;
-31 | MD HEMODIALYSIS USER | 18 | 9 | &nbsp; | &nbsp;
-32 | SCMC PCMMR APP PROXY MENU | 17 | 11 | &nbsp; | &nbsp;
-33 | HMP SYNCHRONIZATION CONTEXT | 16 | 5 | &nbsp; | &nbsp;
-34 | ACKQROES3E | 15 | 3 | &nbsp; | &nbsp;
-35 | XHDXC DESKTOP | 15 | 11 | &nbsp; | &nbsp;
-36 | MAG UTILITY | 15 | 8 | &nbsp; | &nbsp;
-37 | XU EPCS EDIT DATA | 15 | 1 | __XUEPCSEDIT__ | &nbsp;
-38 | XUS SIGNON | 14 | 3 | &nbsp; | &nbsp;
-39 | ACKQROES3 | 14 | 0 | &nbsp; | &nbsp;
-40 | VBECS VISTALINK CONTEXT | 14 | 14 | &nbsp; | &nbsp;
-41 | RMPF ROES3 | 13 | 1 | &nbsp; | &nbsp;
-42 | XOBV VISTALINK TESTER | 13 | 10 | &nbsp; | &nbsp;
-43 | VIAA01 RTLS RPC MENU | 13 | 13 | &nbsp; | &nbsp;
-44 | XQAL GUI ALERTS | 12 | 1 | &nbsp; | &nbsp;
-45 | MBAA SCHEDULING CALENDAR VIEW | 12 | 0 | &nbsp; | &nbsp;
-46 | TIU MED GUI RPC V2 | 11 | 9 | &nbsp; | &nbsp;
-47 | MWVS MEDICAL DOMAIN WEB SVCS | 11 | 1 | &nbsp; | &nbsp;
-48 | DGRR GUI PATIENT LOOKUP | 10 | 7 | &nbsp; | &nbsp;
-49 | MAG DICOM QUERY RETRIEVE | 10 | 0 | &nbsp; | &nbsp;
-50 | MD GUI MANAGER | 9 | 0 | &nbsp; | &nbsp;
-51 | ANRVJ_BLINDREHAB | 9 | 4 | &nbsp; | &nbsp;
-52 | XWB BROKER EXAMPLE | 8 | 5 | &nbsp; | &nbsp;
-53 | MD GUI USER | 8 | 0 | &nbsp; | &nbsp;
-54 | MHV CLIENT | 8 | 8 | &nbsp; | &nbsp;
-55 | MAGKAT | 8 | 1 | &nbsp; | &nbsp;
-56 | SCMC PCMMR WEB USER MENU | 7 | 0 | &nbsp; | &nbsp;
-57 | XWB EGCHO | 6 | 3 | &nbsp; | &nbsp;
-58 | SD WAIT LIST GUI | 6 | 6 | &nbsp; | &nbsp;
-59 | ORRCMC PATIENT TASK | 5 | 4 | &nbsp; | &nbsp;
-60 | ORRCMC GENERAL | 5 | 2 | &nbsp; | &nbsp;
-61 | XOBE ESIG USER | 5 | 5 | &nbsp; | &nbsp;
-62 | MDCP GATEWAY CONTEXT | 5 | 4 | &nbsp; | &nbsp;
-63 | VAFCTF RPC CALLS | 4 | 0 | &nbsp; | &nbsp;
-64 | XUS KAAJEE WEB LOGON | 4 | 4 | &nbsp; | &nbsp;
-65 | QACI PATS RPC ACCESS | 4 | 4 | &nbsp; | &nbsp;
-66 | XUS IAM USER PROVISIONING | 4 | 4 | &nbsp; | &nbsp;
-67 | RMPR PFFS GUI | 3 | 3 | &nbsp; | &nbsp;
-68 | PRCHL GUI | 3 | 3 | &nbsp; | &nbsp;
-69 | EDPF TRACKING SYSTEM | 3 | 2 | &nbsp; | &nbsp;
-70 | utMUNIT | 3 | 3 | &nbsp; | &nbsp;
-71 | HMP APPLICATION PROXY | 3 | 0 | &nbsp; | &nbsp;
-72 | PSO WEB SERVICES OPTION | 3 | 3 | &nbsp; | &nbsp;
-73 | XWB RPC TEST | 2 | 0 | &nbsp; | &nbsp;
-74 | RMPR NPPD GUI | 2 | 1 | &nbsp; | &nbsp;
-75 | ORRCMC SIGN LIST | 2 | 0 | &nbsp; | &nbsp;
-76 | PRPF RPC UTILS | 2 | 2 | &nbsp; | &nbsp;
-77 | QACV PATS RPC ACCESS | 2 | 2 | &nbsp; | &nbsp;
-78 | NHIN APPLICATION PROXY | 2 | 0 | &nbsp; | &nbsp;
-79 | VPR APPLICATION PROXY | 2 | 1 | &nbsp; | &nbsp;
-80 | PRSN VANOD EXTRACT | 2 | 2 | &nbsp; | &nbsp;
-81 | XUSSPKI UPN SET | 2 | 0 | &nbsp; | &nbsp;
-82 | MAG SYS-WIN WRKS | 1 | 0 | &nbsp; | &nbsp;
-83 | OOPS GUI EMPLOYEE HEALTH MENU | 1 | 0 | &nbsp; | &nbsp;
-84 | __PSA GUI UPLOAD__ [NOT ACTIVE] | 1 | 1 | __PSA ORDERS__ | 1
-85 | PXRM REMINDER GUI | 1 | 1 | &nbsp; | &nbsp;
-86 | FSC RPC | 1 | 1 | &nbsp; | &nbsp;
-87 | XUPS VISTALINK | 1 | 1 | &nbsp; | &nbsp;
-88 | DGRR PATIENT SERVICE QUERY | 1 | 1 | &nbsp; | &nbsp;
-89 | WII RPCS | 1 | 1 | &nbsp; | &nbsp;
-90 | PSN VISTALINK CONTEXT | 1 | 1 | &nbsp; | &nbsp;
-91 | EDPS BOARD CONTEXT | 1 | 0 | &nbsp; | &nbsp;
-92 | XUS KAAJEE PROXY LOGON | 1 | 1 | &nbsp; | &nbsp;
-93 | MD CLIO | 1 | 0 | &nbsp; | &nbsp;
-94 | XUS IAM USER BINDING | 1 | 0 | &nbsp; | &nbsp;
-95 | HMP PATIENT ACTIVITY | 1 | 0 | &nbsp; | &nbsp;
-96 | HMP WB PTDEM | 1 | 1 | &nbsp; | &nbsp;
-97 | HMP WB DOMAINS | 1 | 0 | &nbsp; | &nbsp;
+\# | Option | RPC \# | Exclusive RPC \#
+--- | --- | --- | ---
+1 | __OR CPRS GUI CHART__ | 1,051 | 734
+2 | __MAG WINDOWS__ | 241 | 163
+3 | __SDECRPC__ | 203 | 183
+4 | __VIAB WEB SERVICES OPTION__ | 178 | 44
+5 | __MAG DICOM VISA__ | 146 | 130
+6 | __DVBA CAPRI GUI__ | 144 | 80
+7 | __OR BCMA ORDER COM__ | 133 | 18
+8 | __HMP UI CONTEXT__ | 119 | 38
+9 | __YS BROKER1__ | 93 | 77
+10 | __MAG DICOM GATEWAY FULL__ | 87 | 24
+11 | __CRHD SHIFT CHANGE HANDOFF__ | 77 | 57
+12 | __SPN GENERAL USER RPC__ | 68 | 66
+13 | __OOPS GUI EMPLOYEE__ | 65 | 64
+14 | __ROR GUI__ | 65 | 57
+15 | __NUPA ASSESSMENT GUI__ | 62 | 34
+16 | __EC GUI CONTEXT__ | 59 | 44
+17 | __RMPR PURCHASE ORDER GUI__ | 58 | 30
+18 | __MAG DICOM GATEWAY VIEW__ | 56 | 0
+19 | __ORRCM REPORTING__ | 50 | 8
+20 | __ORAM ANTICOAGULATION CONTEXT__ | 50 | 35
+21 | __PSB GUI CONTEXT - USER__ | 48 | 38
+22 | __MAGJ VISTARAD WINDOWS__ | 47 | 28
+23 | __ORRCMC QUERY TOOL__ | 44 | 8
+24 | __VPS KIOSK INTERFACE__ | 36 | 29
+25 | __GMV V/M GUI__ | 35 | 14
+26 | __RMIMFIM__ | 35 | 19
+27 | __KMPD CM DEVELOPER TOOLS__ | 32 | 27
+28 | __ORRCMC DASHBOARD__ | 32 | 18
+29 | __MAGTP WORKLIST MGR__ | 29 | 13
+30 | __RMPR GUI DOR__ | 27 | 3
+31 | __MD HEMODIALYSIS USER__ | 18 | 9
+32 | __SCMC PCMMR APP PROXY MENU__ | 17 | 11
+33 | __HMP SYNCHRONIZATION CONTEXT__ | 16 | 5
+34 | __ACKQROES3E__ | 15 | 3
+35 | __XHDXC DESKTOP__ | 15 | 11
+36 | __XU EPCS EDIT DATA__ | 15 | 1
+37 | __MAG UTILITY__ | 15 | 8
+38 | __XUS SIGNON__ | 14 | 3
+39 | __ACKQROES3__ | 14 | 0
+40 | __VBECS VISTALINK CONTEXT__ | 14 | 14
+41 | __VIAA01 RTLS RPC MENU__ | 13 | 13
+42 | __XOBV VISTALINK TESTER__ | 13 | 10
+43 | __RMPF ROES3__ | 13 | 1
+44 | __MBAA SCHEDULING CALENDAR VIEW__ | 12 | 0
+45 | __XQAL GUI ALERTS__ | 12 | 1
+46 | __MWVS MEDICAL DOMAIN WEB SVCS__ | 11 | 1
+47 | __TIU MED GUI RPC V2__ | 11 | 9
+48 | __MAG DICOM QUERY RETRIEVE__ | 10 | 0
+49 | __DGRR GUI PATIENT LOOKUP__ | 10 | 7
+50 | __MD GUI MANAGER__ | 9 | 0
+51 | __ANRVJ_BLINDREHAB__ | 9 | 4
+52 | __MD GUI USER__ | 8 | 0
+53 | __MAGKAT__ | 8 | 1
+54 | __XWB BROKER EXAMPLE__ | 8 | 5
+55 | __MHV CLIENT__ | 8 | 8
+56 | __SCMC PCMMR WEB USER MENU__ | 7 | 0
+57 | __XWB EGCHO__ | 6 | 3
+58 | __SD WAIT LIST GUI__ | 6 | 6
+59 | __MDCP GATEWAY CONTEXT__ | 5 | 4
+60 | __XOBE ESIG USER__ | 5 | 5
+61 | __ORRCMC PATIENT TASK__ | 5 | 4
+62 | __ORRCMC GENERAL__ | 5 | 2
+63 | __XUS KAAJEE WEB LOGON__ | 4 | 4
+64 | __VAFCTF RPC CALLS__ | 4 | 0
+65 | __XUS IAM USER PROVISIONING__ | 4 | 4
+66 | __QACI PATS RPC ACCESS__ | 4 | 4
+67 | __PRCHL GUI__ | 3 | 3
+68 | __EDPF TRACKING SYSTEM__ | 3 | 2
+69 | __utMUNIT__ | 3 | 3
+70 | __RMPR PFFS GUI__ | 3 | 3
+71 | __HMP APPLICATION PROXY__ | 3 | 0
+72 | __PSO WEB SERVICES OPTION__ | 3 | 3
+73 | __ORRCMC SIGN LIST__ | 2 | 0
+74 | __QACV PATS RPC ACCESS__ | 2 | 2
+75 | __XWB RPC TEST__ | 2 | 0
+76 | __NHIN APPLICATION PROXY__ | 2 | 0
+77 | __VPR APPLICATION PROXY__ | 2 | 1
+78 | __XUSSPKI UPN SET__ | 2 | 0
+79 | __RMPR NPPD GUI__ | 2 | 1
+80 | __PRPF RPC UTILS__ | 2 | 2
+81 | __PRSN VANOD EXTRACT__ | 2 | 2
+82 | __OOPS GUI EMPLOYEE HEALTH MENU__ | 1 | 0
+83 | __PXRM REMINDER GUI__ | 1 | 1
+84 | __XUS KAAJEE PROXY LOGON__ | 1 | 1
+85 | __FSC RPC__ | 1 | 1
+86 | __MD CLIO__ | 1 | 0
+87 | __PSN VISTALINK CONTEXT__ | 1 | 1
+88 | __WII RPCS__ | 1 | 1
+89 | __EDPS BOARD CONTEXT__ | 1 | 0
+90 | __HMP WB PTDEM__ | 1 | 1
+91 | __PSA GUI UPLOAD__ | 1 | 1
+92 | __HMP WB DOMAINS__ | 1 | 0
+93 | __XUPS VISTALINK__ | 1 | 1
+94 | __DGRR PATIENT SERVICE QUERY__ | 1 | 1
+95 | __XUS IAM USER BINDING__ | 1 | 0
+96 | __MAG SYS-WIN WRKS__ | 1 | 0
+97 | __HMP PATIENT ACTIVITY__ | 1 | 0
 
 
-__Note__: must examine Key's effect on options if present.
-
-TODO: add if in User / UserSO
