@@ -21,15 +21,10 @@ all available data per VistA before assembling into a basic, cross-VistA, data-b
   * references to 8994
   * build/install data about RPCs, Options, ...
 
-TODO: 
-- finish 9_4 (for vista app id with monograph), 9_7 for install dates per vista
-and report red file ... before doing assembly
-- finish others
-- split out to module with reduce8994 etc with one main caller
-- EXPECT on raw data in /data => force full cache
+Overall: no one file gives ACTIVE RPCs - must look at 8994 (permission to invoke an RPC),
+Builds (does it have source behind it or was it uninstalled - 8994 could just be in space), RPC Options (can a user invoke it?), Active Users (users with sign ons - do any have it?)
 
-From 442 Follow on: in builds but not 8994
-> 	set([u'ORQTL EXISTING TEAM AUTOLINKS', u'MAG GET SOP CLASS METHOD', u'WWW WEBTOP', u'ORQTL USER TEAMS', u'PSA UPLOAD', u'ORQTL TEAM LIST INFO', u'ORQTL TEAM LIST PATIENTS', u'ORQTL ALL USER TEAMS PATIENTS', u'ORQQPX OTHERS REMINDERS', u'ORQQVI2 VITALS STORE', u'ORQTL TEAM LIST USERS'])
+Goal is: ONE cross VistA RPC Interface Definition Master with [1] all RPCs ever known, [2] their current status and [3] build history COUPLED WITH a per VistA definition of active RPCs. The latter will be used by the VAM software while the former will enable a series of history and context reports.
 """
 
 def reduceVistAData(stationNo):
@@ -40,22 +35,15 @@ def reduceVistAData(stationNo):
     except:
         redResults = {}
         
+    # 1. Raw Data Cleanup, Prep for per RPC representations
     reduce8994(stationNo, redResults)
-    
     reduce19(stationNo, redResults)
-    
-    reduce101_24(stationNo, redResults)
-    
     reduce9_4Plus(stationNo, redResults)
-    
     reduce9_7(stationNo, redResults)
-    
     reduce9_6(stationNo, redResults)
-    
     reduce3_081(stationNo, redResults)
-    
     reduce200(stationNo, redResults)
-            
+          
     json.dump(redResults, open("redResults.json", "w"), indent=4)
     
     print "\n# VistA Reductions (so far)\n"
@@ -68,8 +56,9 @@ def reduceVistAData(stationNo):
     print tbl.md() + "\n"
     print
     
-    # RPC centric reduction (builds on cleanups above)
+    # 2. RPC centric reductions from cleanup/reduction above
     reduceRPCBPIs(stationNo)
+    reduceRPCOptionByUse(stationNo)
     
 # ################ Clean Sources to enable RPC-centric Reduction ########
     
@@ -86,6 +75,10 @@ def reducePackageRef(value):
 
 """
 REMOTE PROCEDURE (8994)
+
+This is the only 'raw' file used as is (after neaten) for RPC definitions.
+The other information (in used options, has active build) are flipped to
+be per RPC definitions before being imported in the RPC definition.
 
 Note missing 'is' properties for "session setup" (SIGNON SETUP etc) or basic
 comms (IM HERE) ie/ the "Broker RPCs" ie/ not particular to a package
@@ -995,14 +988,15 @@ def reduce3_081(stationNo, redResults, forceRedo=False):
         except:
             pass
         else:
+            print "No need to Reduce - 3_081 to pick out Active Users already reduced"
             return # as done already
 
     print "Reducing 3_081 to pick out Active Users"
     _3_081ResourceIter = FilteredResultIterator(DATA_LOCN_TEMPL.format(stationNo), "3_081")
     userSignOnCount = Counter()
     for i, _3_081Resource in enumerate(_3_081ResourceIter, 1):    
-        if (i % 10000) == 0:
-            print "\tprocessed another {} sign ons, now {} users seen".format(i, len(userSignOnCount))
+        if (i % 50000) == 0:
+            print "\tprocessed to {} sign ons, now {} users seen".format(i, len(userSignOnCount))
         userSignOnCount[_3_081Resource["user"]["id"]] += 1
     print "... {} users signed on".format(len(userSignOnCount))
     reductions = [{"userId": userId, "signOnCount": userSignOnCount[userId]} for userId in userSignOnCount]
@@ -1033,7 +1027,7 @@ def reduce200(stationNo, redResults, forceRedo=False):
         _3_081Reductions = json.load(open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_3_081UserReduction.json"))
     except:
         raise Exception("200 reduction requires 3_081 reduction first")
-    signedOnUserIds = set(red["userId"] for red in _3_081Reductions)
+    signedOnUserIds = dict((red["userId"], red["signOnCount"]) for red in _3_081Reductions)
 
     print "Reducing Users to bags of Options and whether has signon or not ..."
     _200ResourceIter = FilteredResultIterator(DATA_LOCN_TEMPL.format(stationNo), "200")
@@ -1041,20 +1035,21 @@ def reduce200(stationNo, redResults, forceRedo=False):
     for i, _200Resource in enumerate(_200ResourceIter, 1):
         user = {"userId": _200Resource["_id"]}
         if (i % 1000) == 0:
-            print "\tprocessed another {} users"
+            print "\tprocessed another to {} users, reduction now at {}".format(i, len(reductions))
+        if "creator" in _200Resource and _200Resource["creator"]["id"] == "200-0":
+            user["isCreatedBy0"] = True
         if _200Resource["_id"] in signedOnUserIds:
-            user["hasSignOn"] = True
+            user["signOnCount"] = signedOnUserIds[_200Resource["_id"]]
+        moLabels = set()
         if "primary_menu_option" in _200Resource:
-            user["primaryMenuOption"] = _200Resource["primary_menu_option"]["label"]
+            moLabels.add(_200Resource["primary_menu_option"]["label"])
         if "secondary_menu_options" in _200Resource:
-            smoLabels = set()
             for entry in _200Resource["secondary_menu_options"]:
-                smoLabel = entry["secondary_menu_options"]["label"]
-                smoLabels.add(smoLabels)
-            user["secondaryMenuOptions"] = sorted(list(smoLabels))
-        if "primaryMenuOption" in user or "secondaryMenuOptions" in user:
+                moLabels.add(entry["secondary_menu_options"]["label"])
+        if len(moLabels):
+            user["menuOptions"] = sorted(list(moLabels))
             reductions.append(user)
-    print "Processed {:,} users, reduced to {:,}".format(i, len(reductions))
+    print "Processed {:,} users, reduced to {:,} based on menu options and {:,} of these have signons".format(i, len(reductions), sum(1 for user in reductions if "signOnCount" in user))
     
     if "200" not in redResults:
         redResults["200"] = {}
@@ -1067,10 +1062,16 @@ def reduce200(stationNo, redResults, forceRedo=False):
     
 # ######################### Specific RPC or RPC centric views ####
 #
-# Overall: by RPC, 8994, Builds, Options ... an RPC must be [a] in 8994
-# and [b] be active according to the Builds (proxy for is code there)
-# and [c] be in an active (used recently) option (may also note if in
-# any option too)
+# Overall: by RPC, 8994, Builds, Options, Option Use ... an RPC must be:
+# [a] in 8994
+# [b] be active according to the Builds (proxy for is code there)
+# [c] be in an active option
+# [d] those options should be owned by [i] a user, [ii] recent user
+# ... all use labels for RPCs ie/ don't LINK to one master file. This
+# means assembling a superset file and subsetting from there based on
+# whether an RPC is in 8994, still built, in a recently used, active option
+#
+# TODO: document only labels in sources
 # 
 
 """
@@ -1126,79 +1127,50 @@ def reduceRPCBPIs(stationNo):
     rpcBPIs = sorted(rpcBPIByRPC.values(), key=lambda x: x)
     json.dump(rpcBPIs, open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_rpcBPIs.json", "w"), indent=4)
     
-    print "Phase 2 {}: flushed BPIs of {:,} RPCs".format(stationNo, len(rpcBPIs))
+    print "Per RPC {}: flushed BPIs of {:,} RPCs".format(stationNo, len(rpcBPIs))
     
 """
-Add usage for RPC options using User (200) and Active User (user with signon).
-
-Background: just having options isn't enough - are they used?
-
-NOTE: may flip properly --- SEE REPORT ie/ per RPC, show its options and only 
-have RPCs that have an option ie/ RPC centric ala BPI
+RPC Option information: gather the option information per RPC: must be one active and then
+note if it is used and used recently (SO)
 """
 def reduceRPCOptionByUse(stationNo):
     
     print "Reducing RPC Options using all users and active users"
     rpcOptionsReduction = json.load(open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_19Reduction.json"))
     rpcOptions = set(red["label"] for red in rpcOptionsReduction)
-    print "... start with {} RPC Options".format(len(rpcOptions))
+    print "\tstart with {} RPC Options".format(len(rpcOptions))
     
-    signedOnUsersReduction = json.load(open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_3_081UserReduction.json"))
-    signedOnUserIds = set(red["userId"] for red in signedOnUsersReduction)
+    userReduction = json.load(open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_200Reduction.json"))
+    userInfoById = dict((red["userId"], red) for red in userReduction)
+    print "\t{} users, {} with signons".format(len(userInfoById), sum(1 for userRed in userReduction if "signOnCount" in userRed))
     
-    # See if user has a recent login (3.081)
-    _3_081ResourceIter = FilteredResultIterator(DATA_LOCN_TEMPL.format(stationNo), "3_081")
-    userSignOnCount = Counter()
-    for i, _3_081Resource in enumerate(_3_081ResourceIter, 1):    
-        if (i % 10000) == 0:
-            print "\tprocessed another {} sign ons, now {} users seen".format(i, len(userSignOnCount))
-        userSignOnCount[_3_081Resource["user"]["id"]] += 1
-    print "... {} users signed on".format(len(userSignOnCount))
-    
-    primariesCount = Counter()
-    primariesActiveCount = Counter()
-    secondariesCount = Counter()
-    secondariesActiveCount = Counter()
-    print "Walking all Users looking for Options ..."
-    _200ResourceIter = FilteredResultIterator(DATA_LOCN_TEMPL.format(stationNo), "200")
-    for i, _200Resource in enumerate(_200ResourceIter, 1):
-        if (i % 1000) == 0:
-            print "\tprocessed another {} users, now {} secondaries seen".format(i, len(secondariesCount))
-        if "primary_menu_option" in _200Resource:
-            pmoLabel = _200Resource["primary_menu_option"]["label"]
-            if pmoLabel in rpcOptions:
-                primariesCount[pmoLabel] += 1
-                if _200Resource["_id"] in userSignOnCount:
-                    primariesActiveCount[pmoLabel] += 1
-        if "secondary_menu_options" in _200Resource:
-            for entry in _200Resource["secondary_menu_options"]:
-                smoLabel = entry["secondary_menu_options"]["label"]
-                if smoLabel in rpcOptions:
-                    secondariesCount[smoLabel] += 1
-                    if _200Resource["_id"] in userSignOnCount:
-                        secondariesActiveCount[smoLabel] += 1
-    print "Saw {} primaries, {} active".format(len(primariesCount.keys()), len(primariesActiveCount))
-    print "Saw {} secondaries, {} active".format(len(secondariesCount.keys()), len(secondariesActiveCount))
-    
-    # Add in information
-    optionsUsed = set()
-    optionsUsedRecently = set()
-    for red in rpcOptionsReduction:
-        if red["label"] in primariesCount:
-            red["isPrimaryOfUser"] = True
-            optionsUsed.add(red["label"])
-        if red["label"] in primariesActiveCount:
-            red["isPrimaryOfActiveUser"] = True
-            optionsUsedRecently.add(red["label"])
-        if red["label"] in secondariesCount:
-            red["isSecondaryOfUser"] = True
-            optionsUsed.add(red["label"])
-        if red["label"] in secondariesActiveCount:
-            red["isSecondaryOfActiveUser"] = True
-            optionsUsedRecently.add(red["label"])
-    
-    print "Flushing Option Reduction with usage - out of {}, {} are marked as used and {} are marked as used recently (\"Active\")".format(len(optionsUsed), len(optionsUsedRecently))
-    json.dump(rpcOptionsReduction, open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_rpcOptionsWithUsage.json", "w"), indent=4)
+    userMenuOptions = set()    
+    soUserMenuOptions = set()
+    for userInfo in userReduction:
+        if "menuOptions" in userInfo:
+            for mo in userInfo["menuOptions"]:
+                userMenuOptions.add(mo)
+                if "signOnCount" in userInfo:
+                    soUserMenuOptions.add(mo)
+    print "\t{} menu options of users, {} of signed on users".format(len(userMenuOptions), len(soUserMenuOptions))
+            
+    activeOptionsByRPC = defaultdict(list)
+    for rpcOptionInfo in rpcOptionsReduction:
+        if "rpcs" not in rpcOptionInfo:
+            continue
+        info = {"label": rpcOptionInfo["label"]}
+        if "isRemoved" in rpcOptionInfo:
+            info["isRemoved"] = True
+        if rpcOptionInfo["label"] in userMenuOptions:
+            info["hasUser"] = True
+        if rpcOptionInfo["label"] in soUserMenuOptions:
+            info["hasSUser"] = True
+        for rpc in rpcOptionInfo["rpcs"]:
+            activeOptionsByRPC[rpc].append(info)
+    rpcOptionsWithUse = [{"label": rpc, "options": activeOptionsByRPC[rpc]} for rpc in activeOptionsByRPC]
+        
+    json.dump(rpcOptionsWithUse, open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_rpcOptionsWithUse.json", "w"), indent=4)
+    print "Flushed {} RPCs of Active options, {} with only removed options, {} with at least one option with signed on users".format(len(rpcOptionsWithUse), sum(1 for rpcInfo in rpcOptionsWithUse if (sum(1 for oi in rpcInfo["options"] if "isRemoved" not in oi) == 0)), sum(1 for rpcInfo in rpcOptionsWithUse if sum(1 for oi in rpcInfo["options"] if "hasSUser" in oi)))
     
 # ################################# DRIVER #######################
                
@@ -1211,16 +1183,7 @@ def main():
         return
         
     stationNo = sys.argv[1]
-    
-    """
-    redResults = {}
-    reduce3_081(stationNo, redResults)
-    reduce200(stationNo, redResults)
-    print redResults
-    # reduceRPCOptionByUse(stationNo)
-    return
-    """
-    
+        
     reduceVistAData(stationNo)
 
 if __name__ == "__main__":
