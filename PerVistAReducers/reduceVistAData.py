@@ -22,7 +22,9 @@ all available data per VistA before assembling into a basic, cross-VistA, data-b
   * build/install data about RPCs, Options, ...
 
 Overall: no one file gives ACTIVE RPCs - must look at 8994 (permission to invoke an RPC),
-Builds (does it have source behind it or was it uninstalled - 8994 could just be in space), RPC Options (can a user invoke it?), Active Users (users with sign ons - do any have it?)
+Builds (does it have source behind it or was it uninstalled - 8994 could just be in space), RPC Options (can a user invoke it?), Active Users (users with sign ons - do any have it?). 
+
+Note: the other big variable for RPC definition is "equivalent meaning" - many RPCs doing essentially the same task. Such grouping will, like the use of Active Use and Builds, reduce the EFFECTIVE NUMBER OF ACTIVE RPCs.
 
 Goal is: ONE cross VistA RPC Interface Definition Master with [1] all RPCs ever known, [2] their current status and [3] build history COUPLED WITH a per VistA definition of active RPCs. The latter will be used by the VAM software while the former will enable a series of history and context reports.
 """
@@ -1036,6 +1038,11 @@ def reduce200(stationNo, redResults, forceRedo=False):
         user = {"userId": _200Resource["_id"]}
         if (i % 1000) == 0:
             print "\tprocessed another to {} users, reduction now at {}".format(i, len(reductions))
+        if "user_class" in _200Resource:
+            # Proxies etc for later
+            user["userClasses"] = [val["user_class"]["label"] for val in _200Resource["user_class"]]
+        if "date_entered" in _200Resource: # can see earliest entry of option
+            user["dateEntered"] = _200Resource["date_entered"]["value"]
         if "creator" in _200Resource and _200Resource["creator"]["id"] == "200-0":
             user["isCreatedBy0"] = True
         if _200Resource["_id"] in signedOnUserIds:
@@ -1144,14 +1151,22 @@ def reduceRPCOptionByUse(stationNo):
     userInfoById = dict((red["userId"], red) for red in userReduction)
     print "\t{} users, {} with signons".format(len(userInfoById), sum(1 for userRed in userReduction if "signOnCount" in userRed))
     
-    userMenuOptions = set()    
-    soUserMenuOptions = set()
+    # TODO: add in userClass - Proxy User sign on #'s
+    proxyUserMenuOptions = Counter()
+    userMenuOptions = Counter()
+    soUserMenuOptions = Counter()
+    _0SUserMenuOptions = Counter()
     for userInfo in userReduction:
+        isProxyUser = True if "userClasses" in userInfo and sum(1 for uc in userInfo["userClasses"] if re.search(r'PROXY', uc)) else False
         if "menuOptions" in userInfo:
             for mo in userInfo["menuOptions"]:
-                userMenuOptions.add(mo)
+                if isProxyUser:
+                    proxyUserMenuOptions[mo] += 1
+                userMenuOptions[mo] += 1
                 if "signOnCount" in userInfo:
-                    soUserMenuOptions.add(mo)
+                    soUserMenuOptions[mo] += 1
+                    if "isCreatedBy0" in userInfo:
+                        _0SUserMenuOptions[mo] += 1
     print "\t{} menu options of users, {} of signed on users".format(len(userMenuOptions), len(soUserMenuOptions))
             
     activeOptionsByRPC = defaultdict(list)
@@ -1162,16 +1177,88 @@ def reduceRPCOptionByUse(stationNo):
         if "isRemoved" in rpcOptionInfo:
             info["isRemoved"] = True
         if rpcOptionInfo["label"] in userMenuOptions:
-            info["hasUser"] = True
+            info["usersCount"] = userMenuOptions[rpcOptionInfo["label"]]
+        if rpcOptionInfo["label"] in proxyUserMenuOptions:
+            info["proxyUsersCount"] = proxyUserMenuOptions[rpcOptionInfo["label"]]
         if rpcOptionInfo["label"] in soUserMenuOptions:
-            info["hasSUser"] = True
+            info["sUsersCount"] = soUserMenuOptions[rpcOptionInfo["label"]]
+        if rpcOptionInfo["label"] in _0SUserMenuOptions: 
+            info["_0SUsersCount"] = _0SUserMenuOptions[rpcOptionInfo["label"]]
+        if "keyRequired" in rpcOptionInfo:
+            info["keyRequired"] = rpcOptionInfo["keyRequired"]
         for rpc in rpcOptionInfo["rpcs"]:
             activeOptionsByRPC[rpc].append(info)
     rpcOptionsWithUse = [{"label": rpc, "options": activeOptionsByRPC[rpc]} for rpc in activeOptionsByRPC]
         
     json.dump(rpcOptionsWithUse, open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_rpcOptionsWithUse.json", "w"), indent=4)
-    print "Flushed {} RPCs of Active options, {} with only removed options, {} with at least one option with signed on users".format(len(rpcOptionsWithUse), sum(1 for rpcInfo in rpcOptionsWithUse if (sum(1 for oi in rpcInfo["options"] if "isRemoved" not in oi) == 0)), sum(1 for rpcInfo in rpcOptionsWithUse if sum(1 for oi in rpcInfo["options"] if "hasSUser" in oi)))
+    print "Flushed {} RPCs of Active options, {} with only removed options, {} with at least one option with signed on users".format(len(rpcOptionsWithUse), sum(1 for rpcInfo in rpcOptionsWithUse if (sum(1 for oi in rpcInfo["options"] if "isRemoved" not in oi) == 0)), sum(1 for rpcInfo in rpcOptionsWithUse if sum(1 for oi in rpcInfo["options"] if "sUsersCount" in oi)))
     
+"""
+All three: 8994, Builds, Options and mark appropriately so can reduce to 
+isActive easily.
+"""
+def reduceAssembly(stationNo):
+
+    mergedByRPC = {}
+
+    _8994Reductions = json.load(open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_8994Reduction.json"))    
+    bpis = json.load(open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_rpcBPIs.json"))
+    rpcOptionsWithUse = json.load(open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_rpcOptionsWithUse.json")) 
+    
+    for _8994Reduction in _8994Reductions:
+        rpc = re.sub(r'\_', '/', _8994Reduction["label"])
+        mergedByRPC[rpc] = _8994Reduction
+        if "routine" not in _8994Reduction:
+            if _8994Reduction.keys()[0] != "label":
+                raise Exception("Expect routine-less 8995's to be empty")
+            mergedByRPC[rpc]["has8994LabelOnlyEntry"] = True
+        else: # redundant with "has routine!"
+            mergedByRPC[rpc]["has8994FullEntry"] = True
+        
+    for bpi in bpis:
+        rpc = re.sub(r'\_', '/', bpi["label"])
+        if rpc in mergedByRPC:
+            merged = mergedByRPC[rpc]
+        else:
+            merged = {"label": rpc}
+            mergedByRPC[rpc] = merged
+        if "isDeleted" not in bpi:
+            merged["hasInstalledBuild"] = True
+        for prop in bpi:
+            if prop in ["label", "isDeleted"]:
+                continue
+            merged[prop] = bpi[prop]
+            
+    for rpcOptionWithUse in rpcOptionsWithUse:
+        if len(rpcOptionWithUse.keys()) != 2:
+            raise Exception("Only expect 'options' property in rpcOptionWithUse")
+        rpc = re.sub(r'\_', '/', rpcOptionWithUse["label"])
+        if rpc in mergedByRPC:
+            merged = mergedByRPC[rpc]
+        else:
+            merged = {"label": rpc}
+            mergedByRPC[rpc] = merged
+        merged["options"] = rpcOptionWithUse["options"]
+        if sum(1 for optionInfo in merged["options"] if "isRemoved" not in optionInfo and "sUsersCount" in optionInfo):
+            merged["hasActiveSOUsedOptions"] = True
+        
+    mergeds = sorted([mergedByRPC[rpc] for rpc in mergedByRPC], key=lambda x: x["label"])
+    
+    # So can just pull out the ACTIVE!
+    for entry in mergeds:
+        if "isActive" in entry:
+            raise Exception("isActive kept for RPC active")
+        if stationNo != "999":
+            if "has8994FullEntry" in entry and "hasActiveSOUsedOptions" in entry and "hasInstalledBuild" in entry:
+                entry["isActive"] = True
+        # Don't force 999 to have SO Users - one non removed option is enough
+        elif "has8994FullEntry" in entry and "options" in entry and sum(1 for optionInfo in entry["options"] if "isRemoved" not in optionInfo) and "hasInstalledBuild" in entry:
+            entry["isActive"] = True 
+    
+    json.dump(mergeds, open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_rpcIntegratedDefinitions.json", "w"), indent=4)
+    
+    print "Flushed {:,} integrated RPC definitions for {} and ending up with {:,} active.".format(len(mergeds), stationNo, sum(1 for info in mergeds if "isActive" in info))
+
 # ################################# DRIVER #######################
                
 def main():
@@ -1183,7 +1270,10 @@ def main():
         return
         
     stationNo = sys.argv[1]
-        
+      
+    reduceAssembly(stationNo)
+    return
+    
     reduceVistAData(stationNo)
 
 if __name__ == "__main__":

@@ -621,9 +621,9 @@ Using _Active, Used RPC Options_ to subset 8994 and Build named RPCs. Expect a _
     
     and then two sets: activeNUsedOptions and the RPCs of those options
     """
-    _rpcOptionsWithUse = json.load(open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_rpcOptionsWithUse.json")) 
+    rpcOptionsWithUse = json.load(open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "rpcOptionsWithUse.json")) 
     rpcOptionInfoByLabel = {} # includes RPCs of options    
-    for roi in _rpcOptionsWithUse:
+    for roi in rpcOptionsWithUse:
         rpc = roi["label"]
         for oi in roi["options"]:
             if oi["label"] not in rpcOptionInfoByLabel:
@@ -640,7 +640,7 @@ __Note__: options _{}_ require keys and {:,} options have Proxy Users - both nee
 """.format(
         len(_19Reductions),
         len(rpcOptionInfoByLabel),
-        len(_rpcOptionsWithUse),
+        len(rpcOptionsWithUse),
         
         sum(1 for option in rpcOptionInfoByLabel if "isRemoved" in rpcOptionInfoByLabel[option]),
         len(set(rpc for option in rpcOptionInfoByLabel if "isRemoved" not in rpcOptionInfoByLabel[option] for rpc in rpcOptionInfoByLabel[option]["rpcs"])),
@@ -650,7 +650,7 @@ __Note__: options _{}_ require keys and {:,} options have Proxy Users - both nee
         
         reportAbsAndPercent(
             len(rpcsOfActiveUsedOptions), 
-            len(_rpcOptionsWithUse)
+            len(rpcOptionsWithUse)
         ),
         len(activeUsedOptions),
         
@@ -728,10 +728,10 @@ __Conclusion:__ _Used Options_ reduce the __{:,}__ RPCs named by both Builds and
     
     mu += """__TODO__:
 
-  * Add Build data for options using option info in builds => see first introduction etc
-  * PROXY users (see user class in user reduction): see the proxy users count. If close to all then very special option
+  * Enhance: Add Build data for options using option info in builds => see first introduction etc
   * Besides the CPRS option, pay attention to Active/SO options with a high proproportion of 0 users: MAG WINDOWS, CAPRI, MAGJ VISTARAD WINDOWS, KPA VRAM GUI, VPR APPLICATION PROXY
   * Focus on options with many 'Exclusive RPCs' like CAPRI, MAG DICOM VISA, YS BROKER1, R1SDCI and others which also have a highish number of users - unlike the OVERLAPPING options, these introduce whole new sets of RPCs
+  * PROXY users (see user class in user reduction): see the proxy users count. If close to all then very special option
   * Implication of DELETING Excluded Options and their exclusive RPCs - reducing VistA size
   
 """
@@ -740,9 +740,41 @@ __Conclusion:__ _Used Options_ reduce the __{:,}__ RPCs named by both Builds and
     
 """
 Use options of 200 to show option groups
+
+1. Singles (highish #) ie/ those with high # of SO users and usable on their own
+2. Exclusive of Singles
+3. Used with Singles
+4. Specials like KPA
 """
 def reportUserTypes(stationNo):
-    pass
+    
+    menuOptionCombosCount = Counter()
+    _200Reductions = json.load(open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_200Reduction.json"))
+    for _200Info in _200Reductions:
+        if not ("signOnCount" in _200Info and "menuOptions" in _200Info):
+            continue
+        mos = sorted(_200Info["menuOptions"])
+        menuOptionCombosCount["/".join(mos)] += 1
+        
+    THRES = 5
+    singles = set(moc for moc in menuOptionCombosCount if menuOptionCombosCount[moc] > THRES and len(moc.split("/")) == 1)
+    print "Singles", singles
+    mocsWithSinglesInside = set(moc for moc in menuOptionCombosCount if menuOptionCombosCount[moc] > THRES and re.search(r'\/', moc) and sum(1 for p in moc.split("/") if p in singles))
+    for moc in mocsWithSinglesInside:
+        print moc, menuOptionCombosCount[moc]
+    return
+    bigNonSingleCombos = set(moc for moc in menuOptionCombosCount if menuOptionCombosCount[moc] > THRES and "KPA VRAM GUI" in moc.split("/"))
+    kpaCombos = set(moc for moc in menuOptionCombosCount if menuOptionCombosCount[moc] > THRES and "KPA VRAM GUI" in moc.split("/"))
+    
+    print bigNonSingleCombos
+    return
+        
+    for moc in sorted(menuOptionCombosCount, key=lambda x: menuOptionCombosCount[x], reverse=True):
+        if menuOptionCombosCount[moc] < 5:
+            break
+        if re.search(r'\/', moc):
+            continue
+        print moc, menuOptionCombosCount[moc]
             
 # ################################# DRIVER #######################
                
@@ -756,11 +788,12 @@ def main():
         
     stationNo = sys.argv[1]
     
-    reportRPCOptions(stationNo)
+    reportUserTypes(stationNo)
     return
-    
+        
     reportPackagesNBuilds(stationNo)
     reportBuildsNInstalls(stationNo)
+    reportRPCOptions(stationNo)
     
 if __name__ == "__main__":
     main()
