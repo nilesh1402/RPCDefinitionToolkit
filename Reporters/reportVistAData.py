@@ -597,7 +597,7 @@ Options subset RPCs named in 8994 and/or Builds:
 ... expect 15% reduction of build-named, active RPCs using "active, used option" inclusion
 as a criteria.
 
-KEY for REDUCING RPC LIST TO 'EFFECTIVE NUMBER OF ACTIVE RPCs'
+KEY for REDUCING RPC LIST TO 'EFFECTIVE NUMBER OF ACTIVE, USED RPCs'
 """
 def reportRPCOptions(stationNo):
 
@@ -606,52 +606,56 @@ def reportRPCOptions(stationNo):
 Using _Active, Used RPC Options_ to subset 8994 and Build named RPCs. Expect a __15% reduction__ if we add a requirement that an RPC needs to belong to [1] an active option [2] belonging to a recently signed on user.
     
 """.format(stationNo)
+
+    if stationNo == "999":
+        mu += "__Exception: with its inconsisent builds and 8994 and its lack of user sign ons and types, FOIA (999) does not follow a regular VistA pattern so many observations below don't apply to it.__\n\n" 
     
-    # To count all RPC Broker options including those without RPCs
+    # Raw RPC Broker Options to give # that don't have "rpcs" (purely for reporting)
     _19Reductions = json.load(open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_19Reduction.json"))
     """
-    Form: {"label": rpc, "options": [{"label" "isRemoved", hasSUsers, hasUsers}]
+    Form: {"label": rpc, "options": [{"label" "isRemoved", sUsersCount, usersCount}]
     ... note: not ALL broker options as some have no RPCs (must get from raw 19)
+                    and will flip to
+          byOption: {"label" (option), ... "rpcs": []} 
+    ie/ so options under rpcs and rpcs under options
+    
+    and then two sets: activeNUsedOptions and the RPCs of those options
     """
     _rpcOptionsWithUse = json.load(open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_rpcOptionsWithUse.json")) 
-    rpcOptions = set()
-    removedRPCOptions = set()
-    rpcWithActiveOptions = set()
-    rpcsByActiveUsedOptions = defaultdict(list)
-    activeUnusedRPCOptions = set()
-    activeUsedOptionsByRPC = defaultdict(list) # THE KEY SUBSET
-    activeUsedOptionsWithKeys = set() 
+    rpcOptionInfoByLabel = {} # includes RPCs of options    
     for roi in _rpcOptionsWithUse:
         rpc = roi["label"]
         for oi in roi["options"]:
-            rpcOptions.add(oi["label"])
-            if "isRemoved" in oi:
-                removedRPCOptions.add(oi["label"])
-                continue
-            rpcWithActiveOptions.add(rpc)
-            if "hasSUser" not in oi and stationNo != "999":
-                activeUnusedRPCOptions.add(oi["label"])
-            else:
-                rpcsByActiveUsedOptions[oi["label"]].append(rpc)
-                activeUsedOptionsByRPC[rpc].append(oi["label"])
-                if "keyRequired" in oi:
-                    activeUsedOptionsWithKeys.add(oi["label"])
-        
-    mu += """There are {:,} RPC Broker options, {:,} of which name __{:,}__ RPCs. {:,} of these options are marked 'deleted', leaving __{:,}__ of such option-backed RPCs. A further {:,} options are not assigned to an active, recently signed on user. When these too are removed, we're left with __{}__ RPCs backed by {:,} active options with users who recently signed on.
+            if oi["label"] not in rpcOptionInfoByLabel:
+                rpcOptionInfoByLabel[oi["label"]] = oi # flip
+                oi["rpcs"] = []
+            rpcOptionInfoByLabel[oi["label"]]["rpcs"].append(roi["label"])
+    activeUsedOptions = set(option for option in rpcOptionInfoByLabel if "isRemoved" not in rpcOptionInfoByLabel[option] and "sUsersCount" in rpcOptionInfoByLabel[option])
+    rpcsOfActiveUsedOptions = set(rpc for option in activeUsedOptions for rpc in rpcOptionInfoByLabel[option]["rpcs"])
+                            
+    mu += """There are {:,} RPC Broker options, {:,} of which name __{:,}__ RPCs. {:,} of these options are marked 'deleted', leaving __{:,}__ of such option-backed RPCs. A further {:,} options are not assigned to an active, recently signed on user - of these, {:,} had older, no longer active users. When those without signed-on users are removed, we're left with __{}__ RPCs backed by __{:,}__ active options with users who recently signed on.
     
 __Note__: options _{}_ require keys - this needs testing.
     
 """.format(
         len(_19Reductions),
-        len(rpcOptions),
+        len(rpcOptionInfoByLabel),
         len(_rpcOptionsWithUse),
-        len(removedRPCOptions),
-        len(rpcWithActiveOptions),
-        len(activeUnusedRPCOptions),
-        reportAbsAndPercent(len(activeUsedOptionsByRPC), len(_rpcOptionsWithUse)),
-        len(rpcsByActiveUsedOptions),
         
-        ", ".join(["\"{}\"".format(key) for key in sorted(list(activeUsedOptionsWithKeys))])
+        sum(1 for option in rpcOptionInfoByLabel if "isRemoved" in rpcOptionInfoByLabel[option]),
+        len(set(rpc for option in rpcOptionInfoByLabel if "isRemoved" not in rpcOptionInfoByLabel[option] for rpc in rpcOptionInfoByLabel[option]["rpcs"])),
+        
+        sum(1 for option in rpcOptionInfoByLabel if not ("isRemoved" in rpcOptionInfoByLabel[option] or "sUsersCount" in rpcOptionInfoByLabel[option])), 
+        sum(1 for option in rpcOptionInfoByLabel if "usersCount" in rpcOptionInfoByLabel[option] and "sUsersCount" not in rpcOptionInfoByLabel[option]),
+        
+        reportAbsAndPercent(
+            len(rpcsOfActiveUsedOptions), 
+            len(_rpcOptionsWithUse)
+        ),
+        len(activeUsedOptions),
+        
+        ", ".join(sorted(["\"{}\"".format(option) for option in rpcOptionInfoByLabel if "keyRequired" in rpcOptionInfoByLabel[option] and "sUsersCount" in rpcOptionInfoByLabel[option]]))
+        
     ) 
     
     """
@@ -659,13 +663,13 @@ __Note__: options _{}_ require keys - this needs testing.
     """
     bpis = json.load(open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_rpcBPIs.json"))
     _buildActiveRPCs = set(re.sub(r'\_', '/', bpi["label"]) for bpi in bpis if "isDeleted" not in bpi)
-    _inOptionsButNotInBuilds = set(rpc for rpc in activeUsedOptionsByRPC if rpc not in _buildActiveRPCs) # few
-    _inBuildsButNotOptions = set(rpc for rpc in _buildActiveRPCs if rpc not in activeUsedOptionsByRPC)
+    _inOptionsButNotInBuilds = set(rpc for rpc in rpcsOfActiveUsedOptions if rpc not in _buildActiveRPCs) # few
+    _inBuildsButNotOptions = set(rpc for rpc in _buildActiveRPCs if rpc not in rpcsOfActiveUsedOptions)
     _8994Reduction = json.load(open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_8994Reduction.json"))
     _8994Labels = set(re.sub(r'\_', '/', red["label"]) for red in _8994Reduction) 
     _allBuildActiveAnd8994RPCs = _buildActiveRPCs.union(_8994Labels)
-    _inOptionsButNot8994 = set(rpc for rpc in activeUsedOptionsByRPC if rpc not in _8994Labels)
-    _in8994ButNotOptions = set(rpc for rpc in _8994Labels if rpc not in activeUsedOptionsByRPC)
+    _inOptionsButNot8994 = set(rpc for rpc in rpcsOfActiveUsedOptions if rpc not in _8994Labels)
+    _in8994ButNotOptions = set(rpc for rpc in _8994Labels if rpc not in rpcsOfActiveUsedOptions)
     
     mu += """When compared to _Build RPCs_ and _8994 RPCs_:
     
@@ -683,20 +687,59 @@ __Conclusion:__ _Used Options_ reduce the __{:,}__ RPCs named by both Builds and
         len(_inOptionsButNot8994),
         
         len(_allBuildActiveAnd8994RPCs),
-        reportAbsAndPercent(len(activeUsedOptionsByRPC), len(_allBuildActiveAnd8994RPCs))
+        reportAbsAndPercent(len(rpcsOfActiveUsedOptions), len(_allBuildActiveAnd8994RPCs))
     )
 
     # Show Active RPC Option details
-    tbl = MarkdownTable(["Option", "RPC \#", "Exclusive RPC \#"])
-    for option in sorted(rpcsByActiveUsedOptions, key=lambda x: len(rpcsByActiveUsedOptions[x]), reverse=True):
-        # exclusiveRPCCount = sum(1 for rpc in rpcsByActiveUsedOptions[option]
-        exclusiveRPCCount = sum(1 for rpc in rpcsByActiveUsedOptions[option] if len(activeUsedOptionsByRPC[rpc]) == 1) 
-        tbl.addRow(["__{}__".format(option), len(rpcsByActiveUsedOptions[option]), exclusiveRPCCount])
-    mu += "Active Options ...\n\n"
+    cols = ["Option", "RPC \#", "Exclusive RPC \#"]
+    if stationNo != "999":
+        cols.append("\# User / SO / SO0")
+    tbl = MarkdownTable(cols)
+    for option in sorted(activeUsedOptions, key=lambda x: len(rpcOptionInfoByLabel[x]["rpcs"]), reverse=True):
+        rpcsOfOtherOptions = set(rpc for ooption in activeUsedOptions if ooption != option for rpc in rpcOptionInfoByLabel[ooption]["rpcs"]) # of other ACTIVE/SO options!
+        exclusiveRPCCount = sum(1 for rpc in rpcOptionInfoByLabel[option]["rpcs"] if rpc not in rpcsOfOtherOptions)
+        row = ["__{}__".format(option), len(rpcOptionInfoByLabel[option]["rpcs"]), exclusiveRPCCount]
+        if stationNo != "999":
+            optionInfo = rpcOptionInfoByLabel[option]
+            if "usersCount" in optionInfo:
+                userCountMU = optionInfo["usersCount"]
+                if "sUsersCount" in optionInfo:
+                    _0SUsersCountMU = "{:,}".format(optionInfo["_0SUsersCount"]) if "_0SUsersCount" in optionInfo else "-"
+                    userCountMU = "{:,} / {:,} / {}".format(userCountMU, optionInfo["sUsersCount"], _0SUsersCountMU)
+            else:
+                userCountMU = ""
+            row.append(userCountMU)
+        tbl.addRow(row)
+    mu += "{:,} Active, SO User Options ...\n\n".format(len(activeUsedOptions))
     mu += tbl.md() + "\n\n"
+           
+    # Excluded Options, their RPCs, exclusive or otherwise 
+    excludedOptions = set(option for option in rpcOptionInfoByLabel if "isRemoved" in rpcOptionInfoByLabel[option] or "sUsersCount" not in rpcOptionInfoByLabel[option])
+    rpcsOfExcludedOptions = set(rpc for option in excludedOptions for rpc in rpcOptionInfoByLabel[option]["rpcs"])
+    rpcsExclusiveToExcludedOptions = rpcsOfExcludedOptions - rpcsOfActiveUsedOptions
+    tbl = MarkdownTable(["Option", "RPC \#", "E+E RPC \#", "(No SO) User \#", "Is Deleted"]) 
+    for option in sorted(excludedOptions, key=lambda x: len(rpcOptionInfoByLabel[x]["rpcs"]), reverse=True):
+        oInfo = rpcOptionInfoByLabel[option]
+        userCountMU = oInfo["usersCount"] if "usersCount" in oInfo else ""
+        isRemovedMU = "__YES__" if "isRemoved" in oInfo else ""
+        exclusiveExcludedRPCCount = sum(1 for rpc in oInfo["rpcs"] if rpc in rpcsExclusiveToExcludedOptions)
+        exclusiveExcludedRPCCountMU = exclusiveExcludedRPCCount if exclusiveExcludedRPCCount > 0 else ""
+        tbl.addRow([option, len(oInfo["rpcs"]), exclusiveExcludedRPCCountMU, userCountMU, isRemovedMU])
+    mu += "{:,} Excluded (removed or no SO User) Options with {:,} RPCs, {:,} of which don't appear in active options. Note that if any, only a small minority of these options are formally deleted ...\n\n".format(len(excludedOptions), len(rpcsOfExcludedOptions), len(rpcsExclusiveToExcludedOptions))
+    mu += tbl.md() + "\n\n"    
     
-    open(VISTA_REP_LOCN_TEMPL.format(stationNo) + "rpcsByOptions.md", "w").write(mu)
+    mu += """__TODO__:
+
+  * Add Build data for options using option info in builds => see first introduction etc
+  * Option Combinations for User Types (exclusive of CPRS and VPR options) - work out those that mark distinct client types    
+  * Besides the CPRS option, pay attention to Active/SO options with a high proproportion of 0 users: MAG WINDOWS, CAPRI, MAGJ VISTARAD WINDOWS, KPA VRAM GUI, VPR APPLICATION PROXY
+  * Focus on options with many 'Exclusive RPCs' like CAPRI, MAG DICOM VISA, YS BROKER1, R1SDCI and others which also have a highish number of users - unlike the OVERLAPPING options, these introduce whole new sets of RPCs
+  * Implication of DELETING Excluded Options and their exclusive RPCs - reducing VistA size
+  
+"""
         
+    open(VISTA_REP_LOCN_TEMPL.format(stationNo) + "rpcsByOptions.md", "w").write(mu)
+            
 # ################################# DRIVER #######################
                
 def main():
