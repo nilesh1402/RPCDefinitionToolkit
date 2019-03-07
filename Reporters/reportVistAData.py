@@ -635,7 +635,7 @@ Using _Active, Used RPC Options_ to subset 8994 and Build named RPCs. Expect a _
                             
     mu += """There are {:,} RPC Broker options, {:,} of which name __{:,}__ RPCs. {:,} of these options are marked 'deleted', leaving __{:,}__ of such option-backed RPCs. A further {:,} options are not assigned to an active, recently signed on user - of these, {:,} had older, no longer active users. When those without signed-on users are removed, we're left with __{}__ RPCs backed by __{:,}__ active options with users who recently signed on.
     
-__Note__: options _{}_ require keys - this needs testing.
+__Note__: options _{}_ require keys and {:,} options have Proxy Users - both need testing and analysis.
     
 """.format(
         len(_19Reductions),
@@ -654,7 +654,8 @@ __Note__: options _{}_ require keys - this needs testing.
         ),
         len(activeUsedOptions),
         
-        ", ".join(sorted(["\"{}\"".format(option) for option in rpcOptionInfoByLabel if "keyRequired" in rpcOptionInfoByLabel[option] and "sUsersCount" in rpcOptionInfoByLabel[option]]))
+        ", ".join(sorted(["\"{}\"".format(option) for option in rpcOptionInfoByLabel if "keyRequired" in rpcOptionInfoByLabel[option] and "sUsersCount" in rpcOptionInfoByLabel[option]])),
+        sum(1 for option in rpcOptionInfoByLabel if "proxyUsersCount" in rpcOptionInfoByLabel[option])
         
     ) 
     
@@ -693,21 +694,18 @@ __Conclusion:__ _Used Options_ reduce the __{:,}__ RPCs named by both Builds and
     # Show Active RPC Option details
     cols = ["Option", "RPC \#", "Exclusive RPC \#"]
     if stationNo != "999":
-        cols.append("\# User / SO / SO0")
+        cols.append("\# User / SO / SO0 / Proxy")
     tbl = MarkdownTable(cols)
-    for option in sorted(activeUsedOptions, key=lambda x: len(rpcOptionInfoByLabel[x]["rpcs"]), reverse=True):
+    for option in sorted(activeUsedOptions, key=lambda x: len(rpcOptionInfoByLabel[x]["rpcs"]) if stationNo == "999" else rpcOptionInfoByLabel[x]["sUsersCount"], reverse=True):
         rpcsOfOtherOptions = set(rpc for ooption in activeUsedOptions if ooption != option for rpc in rpcOptionInfoByLabel[ooption]["rpcs"]) # of other ACTIVE/SO options!
         exclusiveRPCCount = sum(1 for rpc in rpcOptionInfoByLabel[option]["rpcs"] if rpc not in rpcsOfOtherOptions)
-        row = ["__{}__".format(option), len(rpcOptionInfoByLabel[option]["rpcs"]), exclusiveRPCCount]
+        row = ["__{}__".format(option), len(rpcOptionInfoByLabel[option]["rpcs"]), exclusiveRPCCount] 
         if stationNo != "999":
             optionInfo = rpcOptionInfoByLabel[option]
-            if "usersCount" in optionInfo:
-                userCountMU = optionInfo["usersCount"]
-                if "sUsersCount" in optionInfo:
-                    _0SUsersCountMU = "{:,}".format(optionInfo["_0SUsersCount"]) if "_0SUsersCount" in optionInfo else "-"
-                    userCountMU = "{:,} / {:,} / {}".format(userCountMU, optionInfo["sUsersCount"], _0SUsersCountMU)
-            else:
-                userCountMU = ""
+            userCountMU = optionInfo["usersCount"]
+            _0SUsersCountMU = "{:,}".format(optionInfo["_0SUsersCount"]) if "_0SUsersCount" in optionInfo else "-"
+            proxyUserCountMU = "{:,}".format(rpcOptionInfoByLabel[option]["proxyUsersCount"]) if "proxyUsersCount" in rpcOptionInfoByLabel[option] else "-"
+            userCountMU = "{:,} / {:,} / {} / {}".format(userCountMU, optionInfo["sUsersCount"], _0SUsersCountMU, proxyUserCountMU)
             row.append(userCountMU)
         tbl.addRow(row)
     mu += "{:,} Active, SO User Options ...\n\n".format(len(activeUsedOptions))
@@ -725,13 +723,13 @@ __Conclusion:__ _Used Options_ reduce the __{:,}__ RPCs named by both Builds and
         exclusiveExcludedRPCCount = sum(1 for rpc in oInfo["rpcs"] if rpc in rpcsExclusiveToExcludedOptions)
         exclusiveExcludedRPCCountMU = exclusiveExcludedRPCCount if exclusiveExcludedRPCCount > 0 else ""
         tbl.addRow([option, len(oInfo["rpcs"]), exclusiveExcludedRPCCountMU, userCountMU, isRemovedMU])
-    mu += "{:,} Excluded (removed or no SO User) Options with {:,} RPCs, {:,} of which don't appear in active options. Note that if any, only a small minority of these options are formally deleted ...\n\n".format(len(excludedOptions), len(rpcsOfExcludedOptions), len(rpcsExclusiveToExcludedOptions))
+    mu += "{:,} Excluded (removed or no SO User) Options with {:,} RPCs, {:,} of which don't appear in active options. Note that only a small minority of these options are formally deleted ...\n\n".format(len(excludedOptions), len(rpcsOfExcludedOptions), len(rpcsExclusiveToExcludedOptions))
     mu += tbl.md() + "\n\n"    
     
     mu += """__TODO__:
 
   * Add Build data for options using option info in builds => see first introduction etc
-  * Option Combinations for User Types (exclusive of CPRS and VPR options) - work out those that mark distinct client types    
+  * PROXY users (see user class in user reduction): see the proxy users count. If close to all then very special option
   * Besides the CPRS option, pay attention to Active/SO options with a high proproportion of 0 users: MAG WINDOWS, CAPRI, MAGJ VISTARAD WINDOWS, KPA VRAM GUI, VPR APPLICATION PROXY
   * Focus on options with many 'Exclusive RPCs' like CAPRI, MAG DICOM VISA, YS BROKER1, R1SDCI and others which also have a highish number of users - unlike the OVERLAPPING options, these introduce whole new sets of RPCs
   * Implication of DELETING Excluded Options and their exclusive RPCs - reducing VistA size
@@ -739,6 +737,12 @@ __Conclusion:__ _Used Options_ reduce the __{:,}__ RPCs named by both Builds and
 """
         
     open(VISTA_REP_LOCN_TEMPL.format(stationNo) + "rpcsByOptions.md", "w").write(mu)
+    
+"""
+Use options of 200 to show option groups
+"""
+def reportUserTypes(stationNo):
+    pass
             
 # ################################# DRIVER #######################
                

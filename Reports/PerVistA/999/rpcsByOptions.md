@@ -6,7 +6,7 @@ __Exception: with its inconsisent builds and 8994 and its lack of user sign ons 
 
 There are 108 RPC Broker options, 99 of which name __2,899__ RPCs. 2 of these options are marked 'deleted', leaving __2,808__ of such option-backed RPCs. A further 96 options are not assigned to an active, recently signed on user - of these, 16 had older, no longer active users. When those without signed-on users are removed, we're left with __1,051 (36.25%)__ RPCs backed by __1__ active options with users who recently signed on.
     
-__Note__: options __ require keys - this needs testing.
+__Note__: options __ require keys and 15 options have Proxy Users - both need testing and analysis.
     
 When compared to _Build RPCs_ and _8994 RPCs_:
     
@@ -22,7 +22,7 @@ __Conclusion:__ _Used Options_ reduce the __3,679__ RPCs named by both Builds an
 1 | __OR CPRS GUI CHART__ | 1,051 | 1,051
 
 
-98 Excluded (removed or no SO User) Options with 2,165 RPCs, 1,848 of which don't appear in active options. Note that if any, only a small minority of these options are formally deleted ...
+98 Excluded (removed or no SO User) Options with 2,165 RPCs, 1,848 of which don't appear in active options. Note that only a small minority of these options are formally deleted ...
 
 \# | Option | RPC \# | E+E RPC \# | (No SO) User \# | Is Deleted
 --- | --- | --- | --- | --- | ---
@@ -129,7 +129,7 @@ __Conclusion:__ _Used Options_ reduce the __3,679__ RPCs named by both Builds an
 __TODO__:
 
   * Add Build data for options using option info in builds => see first introduction etc
-  * Option Combinations for User Types (exclusive of CPRS and VPR options) - work out those that mark distinct client types    
+  * PROXY users (see user class in user reduction): see the proxy users count. If close to all then very special option
   * Besides the CPRS option, pay attention to Active/SO options with a high proproportion of 0 users: MAG WINDOWS, CAPRI, MAGJ VISTARAD WINDOWS, KPA VRAM GUI, VPR APPLICATION PROXY
   * Focus on options with many 'Exclusive RPCs' like CAPRI, MAG DICOM VISA, YS BROKER1, R1SDCI and others which also have a highish number of users - unlike the OVERLAPPING options, these introduce whole new sets of RPCs
   * Implication of DELETING Excluded Options and their exclusive RPCs - reducing VistA size
