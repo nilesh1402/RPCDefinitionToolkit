@@ -48,7 +48,7 @@ def reduceVistAData(stationNo):
           
     json.dump(redResults, open("redResults.json", "w"), indent=4)
     
-    print "\n# VistA Reductions (so far)\n"
+    print "\n# VistA Raw Data Reduced (so far)\n"
     tbl = MarkdownTable(["Type", "Station No (Total/Reduction)"])
     for typeId in sorted(redResults, key=lambda x: float(re.sub(r'\_', '.', x))):
         typeInfo = redResults[typeId]
@@ -61,6 +61,9 @@ def reduceVistAData(stationNo):
     # 2. RPC centric reductions from cleanup/reduction above
     reduceRPCBPIs(stationNo)
     reduceRPCOptionByUse(stationNo)
+    
+    # 3. Finally Assemble
+    reduceAssembly(stationNo)
     
 # ################ Clean Sources to enable RPC-centric Reduction ########
     
@@ -941,6 +944,14 @@ def reduce9_6(stationNo, redResults):
 """
 def reduce9_8(stationNo, redResults):
     pass
+    
+"""
+8994_5 Remote Applications File (tied into 'deprecated' BSE) and 3_081
+
+TODO: add to 3_081 reduction too
+"""
+def reduce8994_5(stationNo, redResults):
+    pass
 
 """
 {'fileName': u'OE/RR REPORT', 'fileId': u'101.24', 'prop': u'rpc'}
@@ -1045,6 +1056,8 @@ def reduce200(stationNo, redResults, forceRedo=False):
             user["dateEntered"] = _200Resource["date_entered"]["value"]
         if "creator" in _200Resource and _200Resource["creator"]["id"] == "200-0":
             user["isCreatedBy0"] = True
+        if "title" in _200Resource:
+            user["title"] = _200Resource["title"]
         if _200Resource["_id"] in signedOnUserIds:
             user["signOnCount"] = signedOnUserIds[_200Resource["_id"]]
         moLabels = set()
@@ -1270,9 +1283,6 @@ def main():
         return
         
     stationNo = sys.argv[1]
-      
-    reduceAssembly(stationNo)
-    return
     
     reduceVistAData(stationNo)
 
