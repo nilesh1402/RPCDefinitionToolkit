@@ -1268,7 +1268,7 @@ def reduceAssembly(stationNo):
         elif "has8994FullEntry" in entry and "options" in entry and sum(1 for optionInfo in entry["options"] if "isRemoved" not in optionInfo) and "hasInstalledBuild" in entry:
             entry["isActive"] = True 
     
-    json.dump(mergeds, open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_rpcIntegratedDefinitions.json", "w"), indent=4)
+    json.dump(mergeds, open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_rpcInterfaceDefinition.json", "w"), indent=4)
     
     print "Flushed {:,} integrated RPC definitions for {} and ending up with {:,} active.".format(len(mergeds), stationNo, sum(1 for info in mergeds if "isActive" in info))
 
