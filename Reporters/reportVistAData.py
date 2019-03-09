@@ -67,6 +67,13 @@ RPCs are marked inactive in stages ...
     # Is in ActiveSO Option (999 just in active option)
     if isFOIA:
         tbl.addRow(["Has Current Option", sum(1 for defn in rpcInterfaceDefinition if "has8994FullEntry" in defn and "hasInstalledBuild" in defn and "options" in defn and sum(1 for optionInfo in defn["options"] if "isRemoved" not in optionInfo))])
+    elif "inVistAs" in rpcInterfaceDefinition[0]: # merged defns
+        # issue is that FOIA only RPCs are marked active JUST for having options
+        # and these needed to be added in
+        baseSet = set(defn["label"] for defn in rpcInterfaceDefinition if "has8994FullEntry" in defn and "hasInstalledBuild" in defn and "hasActiveSOUsedOptions" in defn)
+        foiaOnlySet = set(defn["label"] for defn in rpcInterfaceDefinition if len(defn["inVistAs"]) == 1 and defn["inVistAs"][0] == "999" and "has8994FullEntry" in defn and "hasInstalledBuild" in defn and "options" in defn and sum(1 for optionInfo in defn["options"] if "isRemoved" not in optionInfo))
+        cnt = len(baseSet) + len(foiaOnlySet - baseSet)
+        tbl.addRow(["Has currently used Active Option", cnt])
     else:
         tbl.addRow(["Has currently used Active Option", sum(1 for defn in rpcInterfaceDefinition if "has8994FullEntry" in defn and "hasInstalledBuild" in defn and "hasActiveSOUsedOptions" in defn)])
     mu += tbl.md() + "\n\n"

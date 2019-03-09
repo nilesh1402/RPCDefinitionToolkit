@@ -10,7 +10,7 @@ from datetime import datetime
 
 from fmqlutils.reporter.reportUtils import MarkdownTable, reportPercent, reportAbsAndPercent
 
-from reportSources import reduceMonograph
+from reportMonograph import reduceMonograph
 
 from reportVistAData import VISTA_RED_LOCN_TEMPL, muRPCInterfaceDefinition
 
