@@ -15,6 +15,87 @@ VISTA_RED_LOCN_TEMPL = "/data/vista/{}/RPCDefinitions/"
 VISTA_REP_LOCN_TEMPL = "../Reports/PerVistA/{}/"
 
 """
+Basic stats + Reduction information
+
+BIG: FILL IN 'sources' from reduction (move to /data/...ssn
+... and then others indicated below
+"""
+def reportRPCInterfaceDefinition(stationNo): # final per station definition
+    
+    mu = """## RPC Interface Definition for {}
+    
+""".format(stationNo)
+
+    rpcInterfaceDefinition = json.load(open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_rpcInterfaceDefinition.json"))
+    
+    mu += muRPCInterfaceDefinition(rpcInterfaceDefinition, stationNo == "999")
+    
+    open(VISTA_REP_LOCN_TEMPL.format(stationNo) + "rpcInterfaceDefinition.md", "w").write(mu)    
+    
+def muRPCInterfaceDefinition(rpcInterfaceDefinition, isFOIA=False): # allows global use
+
+    # First Install/Last Install; first distrib/ last distrib (not FMQL)
+    distributeds = sorted(list(set(rpcDefn["distributed"] for rpcDefn in rpcInterfaceDefinition if "distributed" in rpcDefn and not re.search(r'FMQL', rpcDefn["label"]))))
+    firstDistributed = distributeds[0]
+    lastDistributed = distributeds[-1]
+    installeds = sorted(list(set(rpcDefn["installed"] for rpcDefn in rpcInterfaceDefinition if "installed" in rpcDefn and not re.search(r'CG FMQL', rpcDefn["label"]))))
+    lastInstalled = installeds[-1].split("T")[0]
+ 
+    mu = ""
+    
+    # TODO: may add 'lastSignon' for user that may use RPC => can see last possible use
+    mu += "There are __{:,}__ RPCs, __{}__ of which are active. The first RPCs were distributed on _{}_, the last on _{}_. The last installation happened on _{}_.".format(
+        len(rpcInterfaceDefinition),
+        reportAbsAndPercent(sum(1 for rpcDefn in rpcInterfaceDefinition if "isActive" in rpcDefn), len(rpcInterfaceDefinition)),
+        firstDistributed,
+        lastDistributed,
+        lastInstalled
+    )
+        
+    # Walk the deletion/marking of inactive
+    mu += """
+    
+RPCs are marked inactive in stages ...
+
+""" 
+    tbl = MarkdownTable(["Stage", "\# At/After"])
+    tbl.addRow(["Total", len(rpcInterfaceDefinition)])
+    # has8994FullEntry
+    tbl.addRow(["8994 Full Entry", sum(1 for defn in rpcInterfaceDefinition if "has8994FullEntry" in defn)])
+    # Is in installed build 
+    tbl.addRow(["Installed Build", sum(1 for defn in rpcInterfaceDefinition if "has8994FullEntry" in defn and "hasInstalledBuild" in defn)])
+    # Is in ActiveSO Option (999 just in active option)
+    if isFOIA:
+        tbl.addRow(["Has Current Option", sum(1 for defn in rpcInterfaceDefinition if "has8994FullEntry" in defn and "hasInstalledBuild" in defn and "options" in defn and sum(1 for optionInfo in defn["options"] if "isRemoved" not in optionInfo))])
+    else:
+        tbl.addRow(["Has currently used Active Option", sum(1 for defn in rpcInterfaceDefinition if "has8994FullEntry" in defn and "hasInstalledBuild" in defn and "hasActiveSOUsedOptions" in defn)])
+    mu += tbl.md() + "\n\n"
+
+    # Summarize RPC introduction over the years ... 
+    """
+    Can add in 'for HMP for 2016?' etc + add in # removed each year too as extra col
+    """
+    byYrDistrib = Counter()
+    noDistrib = 0
+    withDistribYr = 0
+    for defn in rpcInterfaceDefinition:
+        if "distributed" not in defn:
+            noDistrib += 1
+            continue
+        withDistribYr += 1
+        byYrDistrib[int(defn["distributed"].split("-")[0])] += 1
+    mu += """
+{:,} RPCs have no 'first distributed' date as their first builds lacked a date. The others were first distributed year by year as follows ...
+
+""".format(noDistrib)
+    tbl = MarkdownTable(["Year", "\#"])
+    for yr in sorted(byYrDistrib, reverse=True):
+        tbl.addRow([str(yr), reportAbsAndPercent(byYrDistrib[yr], withDistribYr)])
+    mu += tbl.md() + "\n\n"
+    
+    return mu   
+
+"""
 From basic cleaned 9_* 
 
 Want to gather builds by packages and focus in particular on packages
@@ -737,7 +818,7 @@ __Conclusion:__ _Used Options_ reduce the __{:,}__ RPCs named by both Builds and
   
 """
         
-    open(VISTA_REP_LOCN_TEMPL.format(stationNo) + "rpcsByOptions.md", "w").write(mu)
+    open(VISTA_REP_LOCN_TEMPL.format(stationNo) + "rpcsByOptions.md", "w").write(mu) 
     
 """
 Use options of 200 to show option groups
@@ -746,29 +827,64 @@ Use options of 200 to show option groups
 2. Exclusive of Singles
 3. Used with Singles
 4. Specials like KPA
+
+KEY: 0 users -- see type combos
 """
 def reportUserTypes(stationNo):
     
     menuOptionCombosCount = Counter()
+    _0menuOptionCombosCount = Counter()
     _200Reductions = json.load(open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_200Reduction.json"))
     for _200Info in _200Reductions:
         if not ("signOnCount" in _200Info and "menuOptions" in _200Info):
             continue
         mos = sorted(_200Info["menuOptions"])
         menuOptionCombosCount["/".join(mos)] += 1
+        if "isCreatedBy0" in _200Info:
+            _0menuOptionCombosCount["/".join(mos)] += 1
         
     THRES = 5
     singles = set(moc for moc in menuOptionCombosCount if menuOptionCombosCount[moc] > THRES and len(moc.split("/")) == 1)
     print "Singles", singles
+    
+    print
+
+    """
+    0's matter as auto setup? - doesn't seem to be 
+    
+    DVBA CAPRI GUI/MAG WINDOWS/OR CPRS GUI CHART 14388
+	OR CPRS GUI CHART 11217
+	MAG WINDOWS 9448
+	DVBA CAPRI GUI/MAG WINDOWS 9334
+	MAG WINDOWS/OR CPRS GUI CHART 7659
+	DVBA CAPRI GUI/OR CPRS GUI CHART 7191
+	DVBA CAPRI GUI/MAG WINDOWS/OR CPRS GUI CHART/VPR APPLICATION PROXY 4248
+	DVBA CAPRI GUI/OR CPRS GUI CHART/VPR APPLICATION PROXY 3106
+	DVBA CAPRI GUI 646
+	AR3 NSD MAIN MENU/DVBA CAPRI GUI/KPA VRAM GUI 497
+	DVBA CAPRI GUI/DVBA HRC MENU EXTENDED SVCS/OR CPRS GUI CHART/XMUSER 303
+	DGPT CENSUS INQUIRE/DSIP ICD10 DRG REPORT/IBCR REPORTS FOR CHARGE MASTER/KPA BILLING CLERK MENU/KPA VRAM GUI 94
+	DVBA CAPRI GUI/MAGJ VISTARAD WINDOWS 74
+	KPA AR CLERK MENU/KPA VRAM GUI 70
+	MAGJ VISTARAD WINDOWS 65
+	KPA INSUR VERIF CLERK MENU/KPA VRAM GUI 63
+	KPA BILLING CLERK MENU/KPA VRAM GUI 61
+	MAG WINDOWS/OR CPRS GUI CHART/VPR APPLICATION PROXY 53
+	KPA CPAC UR NURSE/KPA VRAM GUI 50
+	"""    
+    for mo in sorted(_0menuOptionCombosCount, key=lambda x: _0menuOptionCombosCount[x], reverse=True):
+        if _0menuOptionCombosCount[mo] < THRES:
+            break
+        print "\t", mo, _0menuOptionCombosCount[mo]
+    
+    return
+    
     mocsWithSinglesInside = set(moc for moc in menuOptionCombosCount if menuOptionCombosCount[moc] > THRES and re.search(r'\/', moc) and sum(1 for p in moc.split("/") if p in singles))
     for moc in mocsWithSinglesInside:
         print moc, menuOptionCombosCount[moc]
     return
     bigNonSingleCombos = set(moc for moc in menuOptionCombosCount if menuOptionCombosCount[moc] > THRES and "KPA VRAM GUI" in moc.split("/"))
     kpaCombos = set(moc for moc in menuOptionCombosCount if menuOptionCombosCount[moc] > THRES and "KPA VRAM GUI" in moc.split("/"))
-    
-    print bigNonSingleCombos
-    return
         
     for moc in sorted(menuOptionCombosCount, key=lambda x: menuOptionCombosCount[x], reverse=True):
         if menuOptionCombosCount[moc] < 5:
@@ -789,12 +905,15 @@ def main():
         
     stationNo = sys.argv[1]
     
+    reportRPCInterfaceDefinition(stationNo)
+    return
     reportUserTypes(stationNo)
     return
-        
+
+    reportRPCInterfaceDefinition(stationNo)        
     reportPackagesNBuilds(stationNo)
     reportBuildsNInstalls(stationNo)
     reportRPCOptions(stationNo)
-    
+        
 if __name__ == "__main__":
     main()

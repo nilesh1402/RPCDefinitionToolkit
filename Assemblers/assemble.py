@@ -13,17 +13,19 @@ from fmqlutils.reporter.reportUtils import MarkdownTable, reportPercent, reportA
 VISTA_RPCD_LOCN_TEMPL = "/data/vista/{}/RPCDefinitions/"
 
 """
+__3/8/2019__:
+
 Integrated Definitions: __5,630__
 
-  * 442: 103 (1.83%) (Last: 2018-03-01)
-  * 640: 5,520 (98.05%) (Last: 2018-06-19)
-  * 999: 7 (0.12%) (Last: -)
+  * 442: 103 (1.83%) / Last: 2018-03-01 / 5,376 (95.49%)
+  * 640: 5,520 (98.05%) / Last: 2018-06-19 / 5,520 (98.05%)
+  * FOIA (999): 7 (0.12%) / Last: 2018-02-22 / 3,750 (66.61%)
 
 Active: __4,551 (80.83%)__
 
   * 442: 4,458 - not I 151
   * 640: 4,487 - not I 0
-  * 999: 2,803 - not I 279
+  * FOIA (999): 2,803 - not I 279
 """
 
 SNOS = ["442", "640", "999"] # SHOULD PUT DATE ON THESE in config
@@ -49,30 +51,31 @@ def assembleIntegrated():
     lastInstallBySNO = {}
     for sno in SNOS:
         rpcInterfaceDefinitionBySNO[sno] = json.load(open(VISTA_RPCD_LOCN_TEMPL.format(sno) + "_rpcInterfaceDefinition.json"))
-        if sno == "999":
-            lastInstallBySNO[sno] = "1900-01-01"
-        else:
-            installs = set(defn["installed"].split("T")[0] for defn in rpcInterfaceDefinitionBySNO[sno] if "installed" in defn and defn["label"] != "CG FMQL QP")
-            lastInstallBySNO[sno] = sorted(list(installs))[-1]
+        installs = set(defn["installed"].split("T")[0] for defn in rpcInterfaceDefinitionBySNO[sno] if "installed" in defn and defn["label"] != "CG FMQL QP")
+        lastInstallBySNO[sno] = sorted(list(installs))[-1]
                 
     rpcDefinitionsById = {}
-    for sno in sorted(SNOS, key=lambda x: lastInstallBySNO[x], reverse=True):
+    for sno in sorted(SNOS, key=lambda x: lastInstallBySNO[x] if x != "999" else "1900-01-01", reverse=True):
         for rpcDefinition in rpcInterfaceDefinitionBySNO[sno]:
             rpc = rpcDefinition["label"]
             if rpc in rpcDefinitionsById:
+                rpcDefinitionsById[rpc]["inVistAs"].append(sno)
                 continue
-            rpcDefinition["fromStation"] = sno
+            rpcDefinition["fromVistA"] = sno
+            rpcDefinition["inVistAs"] = [sno]
             rpcDefinitionsById[rpc] = rpcDefinition
            
     integratedRPCInterfaceDefinition = sorted([rpcDefinitionsById[rpc] for rpc in rpcDefinitionsById], key=lambda x: x["label"]) 
     
     print "Integrated Definitions: __{:,}__\n".format(len(integratedRPCInterfaceDefinition))
     for sno in sorted(SNOS):
-        print "  * {}: {} (Last: {})".format(
-            sno, 
-            reportAbsAndPercent(sum(1 for defn in integratedRPCInterfaceDefinition if defn["fromStation"] == sno), len(integratedRPCInterfaceDefinition)),
-            lastInstallBySNO[sno] if sno != "999" else "-"
+        print "  * {}: {} / Last: {} / {}".format(
+            sno if sno != "999" else "FOIA (999)",
+            reportAbsAndPercent(sum(1 for defn in integratedRPCInterfaceDefinition if defn["fromVistA"] == sno), len(integratedRPCInterfaceDefinition)),
+            lastInstallBySNO[sno],
+            reportAbsAndPercent(len(rpcInterfaceDefinitionBySNO[sno]), len(integratedRPCInterfaceDefinition)),            
         )
+    # Could add appearances ie/ in 1, 2 or 3
     iActives = set(defn["label"] for defn in integratedRPCInterfaceDefinition if "isActive" in defn)
     print "\nActive: __{}__\n".format(
         reportAbsAndPercent(len(iActives), len(integratedRPCInterfaceDefinition))
@@ -80,7 +83,7 @@ def assembleIntegrated():
     for sno in sorted(SNOS):
         sActives = set(defn["label"] for defn in rpcInterfaceDefinitionBySNO[sno] if "isActive" in defn)
         print "  * {}: {:,} - not I {:,}".format(
-            sno,
+            sno if sno != "999" else "FOIA (999)",
             len(sActives),
             len(sActives - iActives) # 0 if base!
         )
@@ -92,7 +95,7 @@ def assembleIntegrated():
 By SNO - what is active and last install
 """
 def makePerVistAQualifiers():
-    print "\nFlushing 'active qualifiers' per station number:\n"
+    print "Flushing 'active qualifiers' per station number:\n"
     for sno in SNOS:
         rpcInterfaceDefinition = json.load(open(VISTA_RPCD_LOCN_TEMPL.format(sno) + "_rpcInterfaceDefinition.json"))
         quals = []
