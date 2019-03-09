@@ -13,23 +13,17 @@ from fmqlutils.reporter.reportUtils import MarkdownTable, reportPercent, reportA
 VISTA_RPCD_LOCN_TEMPL = "/data/vista/{}/RPCDefinitions/"
 
 """
-Integrated Definitions: 5,630
-	From 442 - 103 (1.83%) (Last: 2018-03-01)
-	From 640 - 5,520 (98.05%) (Last: 2018-06-19)
-	From 999 - 7 (0.12%) (Last: -)
-Active: 4,551 (80.83%)
-442:
-	Active in Local: 4,458
-		Active in Local but not in I 151
-		... if > 0 then not the base VistA and base overrides
-640:
-	Active in Local: 4,487
-		Active in Local but not in I 0
-		... if > 0 then not the base VistA and base overrides
-999:
-	Active in Local: 2,803
-		Active in Local but not in I 279
-		... if > 0 then not the base VistA and base overrides
+Integrated Definitions: __5,630__
+
+  * 442: 103 (1.83%) (Last: 2018-03-01)
+  * 640: 5,520 (98.05%) (Last: 2018-06-19)
+  * 999: 7 (0.12%) (Last: -)
+
+Active: __4,551 (80.83%)__
+
+  * 442: 4,458 - not I 151
+  * 640: 4,487 - not I 0
+  * 999: 2,803 - not I 279
 """
 
 SNOS = ["442", "640", "999"] # SHOULD PUT DATE ON THESE in config
@@ -72,21 +66,24 @@ def assembleIntegrated():
            
     integratedRPCInterfaceDefinition = sorted([rpcDefinitionsById[rpc] for rpc in rpcDefinitionsById], key=lambda x: x["label"]) 
     
-    print "Integrated Definitions: {:,}".format(len(integratedRPCInterfaceDefinition))
+    print "Integrated Definitions: __{:,}__\n".format(len(integratedRPCInterfaceDefinition))
     for sno in sorted(SNOS):
-        print "\tFrom {} - {} (Last: {})".format(
+        print "  * {}: {} (Last: {})".format(
             sno, 
             reportAbsAndPercent(sum(1 for defn in integratedRPCInterfaceDefinition if defn["fromStation"] == sno), len(integratedRPCInterfaceDefinition)),
             lastInstallBySNO[sno] if sno != "999" else "-"
         )
     iActives = set(defn["label"] for defn in integratedRPCInterfaceDefinition if "isActive" in defn)
-    print "Active: {}".format(reportAbsAndPercent(len(iActives), len(integratedRPCInterfaceDefinition)))
+    print "\nActive: __{}__\n".format(
+        reportAbsAndPercent(len(iActives), len(integratedRPCInterfaceDefinition))
+    )
     for sno in sorted(SNOS):
-        print "{}:".format(sno)
         sActives = set(defn["label"] for defn in rpcInterfaceDefinitionBySNO[sno] if "isActive" in defn)
-        print "\tActive in Local: {:,}".format(len(sActives))
-        print "\t\tActive in Local but not in I {:,}".format(len(sActives - iActives))
-        print "\t\t... if > 0 then not the base VistA and base overrides"
+        print "  * {}: {:,} - not I {:,}".format(
+            sno,
+            len(sActives),
+            len(sActives - iActives) # 0 if base!
+        )
     print
     
     json.dump(integratedRPCInterfaceDefinition, open("../Definitions/rpcInterfaceDefinition.bjsn", "w"), indent=4)
@@ -95,7 +92,7 @@ def assembleIntegrated():
 By SNO - what is active and last install
 """
 def makePerVistAQualifiers():
-    print "Flushing 'active qualifiers' per station number:"
+    print "\nFlushing 'active qualifiers' per station number:\n"
     for sno in SNOS:
         rpcInterfaceDefinition = json.load(open(VISTA_RPCD_LOCN_TEMPL.format(sno) + "_rpcInterfaceDefinition.json"))
         quals = []
@@ -104,7 +101,7 @@ def makePerVistAQualifiers():
                 continue
             qual = {"label": defn["label"], "installed": defn["installed"]}
             quals.append(qual)
-        print "\tFlushing {} active 'qualifiers' for {}".format(len(quals), sno)
+        print "  * Flushing {} active 'qualifiers' for {}".format(len(quals), sno)
         json.dump(quals, open("../Definitions/rpcInterfaceDefinition{}.bjsn".format(sno), "w"), indent=4)
         
 # ################################# DRIVER #######################
