@@ -16,6 +16,8 @@ from reportVistAData import VISTA_RED_LOCN_TEMPL, muRPCInterfaceDefinition
 
 """
 fill in data sources + other stuff below (sources must move to /data and definitions
+
+NOTE: big focus is suggestion of "DELETION/REMOVAL" of RPCs and CODE ... get those routines (total too) WHICH are exclusive to inactive RPCs, mixed and otherwise.
 """
 def reportAssembly():
     
