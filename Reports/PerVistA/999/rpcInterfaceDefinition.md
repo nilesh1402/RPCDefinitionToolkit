@@ -13,31 +13,55 @@ RPCs are marked inactive in stages ...
 
 
 
-481 RPCs have no 'first distributed' date as their first builds lacked a date. The others were first distributed year by year as follows ...
+481 RPCs have no 'first distributed' date as their first builds lacked a date. Here is RPC distribution year by year, along with the small amount of deletion too. Note that only __69 (1.84%)__ RPCs are formally deleted though __947 (25.25%)__ should be.
 
-\# | Year | \#
+\# | Year | Added \# | Deleted \#
+--- | --- | --- | ---
+1 | 2017 | 70 (2.14%) | &nbsp;
+2 | 2016 | 277 (8.47%) | 13
+3 | 2015 | 71 (2.17%) | &nbsp;
+4 | 2014 | 11 (0.34%) | &nbsp;
+5 | 2013 | 201 (6.15%) | &nbsp;
+6 | 2012 | 75 (2.29%) | &nbsp;
+7 | 2011 | 44 (1.35%) | &nbsp;
+8 | 2010 | 168 (5.14%) | &nbsp;
+9 | 2009 | 64 (1.96%) | &nbsp;
+10 | 2008 | 110 (3.36%) | &nbsp;
+11 | 2007 | 98 (3.0%) | &nbsp;
+12 | 2006 | 121 (3.7%) | 2
+13 | 2005 | 113 (3.46%) | 13
+14 | 2004 | 276 (8.44%) | 4
+15 | 2003 | 161 (4.93%) | 2
+16 | 2002 | 310 (9.48%) | 22
+17 | 2001 | 365 (11.17%) | 8
+18 | 2000 | 346 (10.58%) | 1
+19 | 1999 | 45 (1.38%) | 4
+20 | 1998 | 22 (0.67%) | &nbsp;
+21 | 1997 | 252 (7.71%) | &nbsp;
+22 | 1996 | 69 (2.11%) | &nbsp;
+
+
+__3674__ RPCs are implemented in __1203__ separate MUMPS routines, while __76__ identified RPCs lack an implementation. The highest number of RPCs per routine is __128__ (_SDEC_), the median is __2.0__, the lowest is __1__. __884 (73.48%)__ routines implement only active RPCs, __286__ only inactive RPCs (candidates for deletion?), while __33__ implement a mix of active and inactive RPCs.
+
+The (outliers) that implement the most RPCs are ...
+
+\# | \# RPCs | Routine(s)
 --- | --- | ---
-1 | 2017 | 70 (2.14%)
-2 | 2016 | 277 (8.47%)
-3 | 2015 | 71 (2.17%)
-4 | 2014 | 11 (0.34%)
-5 | 2013 | 201 (6.15%)
-6 | 2012 | 75 (2.29%)
-7 | 2011 | 44 (1.35%)
-8 | 2010 | 168 (5.14%)
-9 | 2009 | 64 (1.96%)
-10 | 2008 | 110 (3.36%)
-11 | 2007 | 98 (3.0%)
-12 | 2006 | 121 (3.7%)
-13 | 2005 | 113 (3.46%)
-14 | 2004 | 276 (8.44%)
-15 | 2003 | 161 (4.93%)
-16 | 2002 | 310 (9.48%)
-17 | 2001 | 365 (11.17%)
-18 | 2000 | 346 (10.58%)
-19 | 1999 | 45 (1.38%)
-20 | 1998 | 22 (0.67%)
-21 | 1997 | 252 (7.71%)
-22 | 1996 | 69 (2.11%)
+1 | 128 | SDEC
+2 | 43 | ORWTPP
+3 | 39 | OREVNTX1
+4 | 27 | ORQQPXRM, ORWGRPC, ORWPCE2
+5 | 24 | ORWPCE
+6 | 23 | ORWPT, ORWU
+7 | 22 | ORQQCN2
+8 | 21 | ORWDX, VIABRPC
+9 | 20 | ORWLRR
+10 | 19 | __SDOERPC__ [INACTIVE]
+11 | 18 | __DSIFCNS1__ [INACTIVE]
+12 | 17 | __DSIROI6__ [INACTIVE]
+13 | 16 | __DSIROI1__ [INACTIVE], __ORWDXA__ [INACTIVE], RMIMRP
+14 | 15 | __NUPABCL2__ [INACTIVE]
+15 | 14 | DVBAB1, __MAGDRPC1__ [INACTIVE], ORWDFH
+16 | 13 | __DSICXPR__ [INACTIVE], ORAM1, ORQQCN1, ORQQPX, ORWDPS1, ORWDPS33, TIUSRVA
 
 

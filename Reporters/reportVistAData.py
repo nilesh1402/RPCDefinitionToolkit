@@ -83,24 +83,81 @@ RPCs are marked inactive in stages ...
     Can add in 'for HMP for 2016?' etc + add in # removed each year too as extra col
     """
     byYrDistrib = Counter()
+    byYrDeleted = Counter()
+    byYrDeleteDistrib = Counter()
     noDistrib = 0
     withDistribYr = 0
+    totalDeleted = 0
     for defn in rpcInterfaceDefinition:
+        # allow for edge case that delete distributed date but no distrib date
+        if "deleteDistributed" in defn:
+            byYrDeleteDistrib[int(defn["distributed"].split("-")[0])] += 1
+            totalDeleted += 1
         if "distributed" not in defn:
             noDistrib += 1
             continue
         withDistribYr += 1
         byYrDistrib[int(defn["distributed"].split("-")[0])] += 1
     mu += """
-{:,} RPCs have no 'first distributed' date as their first builds lacked a date. The others were first distributed year by year as follows ...
+{:,} RPCs have no 'first distributed' date as their first builds lacked a date. Here is RPC distribution year by year, along with the small amount of deletion too. Note that only __{}__ RPCs are formally deleted though __{}__ should be.
 
-""".format(noDistrib)
-    tbl = MarkdownTable(["Year", "\#"])
+""".format(
+        noDistrib, 
+        reportAbsAndPercent(totalDeleted, len(rpcInterfaceDefinition)),
+        reportAbsAndPercent(sum(1 for rpcDefn in rpcInterfaceDefinition if "isActive" not in rpcDefn), len(rpcInterfaceDefinition))
+    )
+    tbl = MarkdownTable(["Year", "Added \#", "Deleted \#"])
     for yr in sorted(byYrDistrib, reverse=True):
-        tbl.addRow([str(yr), reportAbsAndPercent(byYrDistrib[yr], withDistribYr)])
+        ddMU = "" if yr not in byYrDeleteDistrib else byYrDeleteDistrib[yr]
+        tbl.addRow([str(yr), reportAbsAndPercent(byYrDistrib[yr], withDistribYr), ddMU])
     mu += tbl.md() + "\n\n"
     
+    """
+    Want MUMPS entry pts for ALL
+    """
+    cntMUMPSEntry = Counter()
+    noMUMPSEntry = 0
+    activeRoutines = set()
+    inactiveRoutines = set() # overlap == MIX
+    for defn in rpcInterfaceDefinition:
+        if "routine" not in defn:
+            noMUMPSEntry += 1
+            continue
+        cntMUMPSEntry[defn["routine"]] += 1
+        if "isActive" in defn:
+            activeRoutines.add(defn["routine"])
+        else:
+            inactiveRoutines.add(defn["routine"]) 
+    mu += "__{}__ RPCs are implemented in __{}__ separate MUMPS routines, while __{}__ identified RPCs lack an implementation. The highest number of RPCs per routine is __{}__ (_{}_), the median is __{}__, the lowest is __{}__. __{}__ routines implement only active RPCs, __{:,}__ only inactive RPCs (candidates for deletion?), while __{:,}__ implement a mix of active and inactive RPCs.\n\n".format(
+    
+        sum(cntMUMPSEntry[routine] for routine in cntMUMPSEntry),
+        len(cntMUMPSEntry),
+        noMUMPSEntry,
+        
+        numpy.max(cntMUMPSEntry.values()),
+        [routine for routine in cntMUMPSEntry if cntMUMPSEntry[routine] == numpy.max(cntMUMPSEntry.values())][0],
+        numpy.percentile(cntMUMPSEntry.values(), 50), 
+        numpy.min(cntMUMPSEntry.values()),
+        
+        reportAbsAndPercent(len(activeRoutines - inactiveRoutines), len(cntMUMPSEntry)),
+        len(inactiveRoutines - activeRoutines),
+        len(activeRoutines.intersection(inactiveRoutines))
+    )
+    
+    mu += "The (outliers) that implement the most RPCs are ...\n\n"
+    routinesByRPCCnt = defaultdict(list)
+    for routine in cntMUMPSEntry:
+        routinesByRPCCnt[cntMUMPSEntry[routine]].append(routine)
+    tbl = MarkdownTable(["\# RPCs", "Routine(s)"])
+    ohto = numpy.percentile(cntMUMPSEntry.values(), 75) + (3 * (numpy.percentile(cntMUMPSEntry.values(), 75) - numpy.percentile(cntMUMPSEntry.values(), 25)))
+    for cnt in sorted(routinesByRPCCnt, reverse=True):
+        if cnt < ohto:
+            break
+        tbl.addRow([cnt, ", ".join(["__{}__ [INACTIVE]".format(routine) if routine in inactiveRoutines else routine for routine in sorted(routinesByRPCCnt[cnt])])])
+    mu += tbl.md() + "\n\n"
+                    
     return mu   
+
 
 """
 From basic cleaned 9_* 

@@ -28,33 +28,23 @@ def reportAssembly():
 """
 
     mu += muRPCInterfaceDefinition(rpcInterfaceDefinition)
-        
-    # ADD MORE ON DATA SOURCES (may do in generic mu above) ie/ ala 'by the numbers'
     
-    # FOIA: beyond - oldReportNonFOIARPCs ... break on those special packages too
-    if "inVistAs" in rpcInterfaceDefinition[0]:
-        inFOIACount = sum(1 for defn in rpcInterfaceDefinition if "999" in defn["inVistAs"])
-        if inFOIACount > 0:
-            mu += """  
-__{}__ of these RPCs are NOT in FOIA.
-
-""".format(reportAbsAndPercent(len(rpcInterfaceDefinition)-inFOIACount, len(rpcInterfaceDefinition)))
+    # Add in information on Sources
+    cntSSOs = Counter()
+    cntFromSSO = Counter()
+    for defn in rpcInterfaceDefinition:
+        for sso in defn["inVistAs"]:
+            cntSSOs[sso] += 1
+        cntFromSSO[defn["fromVistA"]] += 1
+    mu += """### Source Information for Integrated Definition
     
-    # ADD MUCH MORE on sources (ala dump at end of assembler)
-    # ... AND in all 3 or 2 or 1
-    """
-    Integrated Definitions: __5,630__
+The integrated interface definition combines RPC definitions from multiple real VistA and FOIA. Overall __{}__ RPCs are not in FOIA.
 
-    * 442: 103 (1.83%) / Last: 2018-03-01 / 5,376 (95.49%)
-    * 640: 5,520 (98.05%) / Last: 2018-06-19 / 5,520 (98.05%)
-    * FOIA (999): 7 (0.12%) / Last: 2018-02-22 / 3,750 (66.61%)
-
-    Active: __4,551 (80.83%)__
-
-    * 442: 4,458 - not I 151
-    * 640: 4,487 - not I 0
-    * FOIA (999): 2,803 - not I 279
-    """
+""".format(reportAbsAndPercent(len(rpcInterfaceDefinition) - cntSSOs["999"], len(rpcInterfaceDefinition)))
+    tbl = MarkdownTable(["Station", "RPCs", "Definition Contribution"])
+    for sso in sorted(cntSSOs):
+        tbl.addRow([sso, cntSSOs[sso], cntFromSSO[sso]])
+    mu += tbl.md() + "\n\n"
     
     print mu
     
