@@ -1,5 +1,20 @@
 ## RPC Interface Definition for 442
     
+### Source Data Details
+
+\# | File | Total | Count Processed
+--- | --- | --- | ---
+1 | 3.081 | 10,610,771 | 73,050
+2 | 9.4 | 310 | 301
+3 | 9.6 | 10,774 | 10,774
+4 | 9.7 | 11,462 | 11,462
+5 | 19 | 14,324 | 151
+6 | 200 | 256,024 | 232,661
+7 | 8994 | 5,239 | 5,239
+
+
+### Basic Summary
+
 There are __5,376__ RPCs, __4,458 (82.92%)__ of which are active. The first RPCs were distributed on _1996-05-24_, the last on _2017-12-13_. The last installation happened on _2018-03-01_.
     
 RPCs are marked inactive in stages ...
