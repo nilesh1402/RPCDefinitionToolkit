@@ -268,11 +268,25 @@ def reportRPCsOfKeyPackages(stationNo, packages=None):
         mu += "### {}\n\n".format(package)
         
         mu += "Actives ...\n\n"
-        tbl = MarkdownTable(["RPC", "Routine"])
+        tbl = MarkdownTable(["RPC", "Distributed", "Option(s)", "Parameter(s)", "Return Type"])
         for defn in defnsByPackage[package]:
             if "isActive" not in defn:
                 continue
-            tbl.addRow([defn["label"], defn["routine"]])
+            distributedMU = defn["distributed"] if "distributed" in defn else ""
+            optionsMU = ", ".join(oi["label"] for oi in defn["options"])
+            if "parameters" in defn:
+                parametersMU = ", ".join(["{} ({})".format(pi["label"], pi["parameter_type"].split(":")[1] if "parameter_type" in pi else "") for pi in defn["parameters"]])
+            else:
+                parametersMU = ""
+            returnTypeMU = defn["returnType"].split(":")[1] if "returnType" in defn else ""
+            tbl.addRow([
+                defn["label"], 
+                distributedMU, 
+                optionsMU, 
+                defn["routine"], 
+                parametersMU,
+                returnTypeMU
+            ])
         mu += tbl.md() + "\n\n"
         
         tbl = MarkdownTable(["RPC", "Routine"])
