@@ -1,5 +1,20 @@
 ## RPC Interface Definition for 640
     
+### Source Data Details
+
+\# | File | Total | Count Processed
+--- | --- | --- | ---
+1 | 3.081 | 17,896,654 | 133,262
+2 | 9.4 | 343 | 334
+3 | 9.6 | 11,559 | 11,559
+4 | 9.7 | 13,621 | 13,621
+5 | 19 | 16,097 | 161
+6 | 200 | 411,747 | 360,773
+7 | 8994 | 5,381 | 5,381
+
+
+### Basic Summary
+
 There are __5,520__ RPCs, __4,487 (81.29%)__ of which are active. The first RPCs were distributed on _1996-04-14_, the last on _2018-05-22_. The last installation happened on _2018-06-19_.
     
 RPCs are marked inactive in stages ...

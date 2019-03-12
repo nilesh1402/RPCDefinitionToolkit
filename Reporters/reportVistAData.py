@@ -26,8 +26,19 @@ def reportRPCInterfaceDefinition(stationNo): # final per station definition
     
 """.format(stationNo)
 
-    rpcInterfaceDefinition = json.load(open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_rpcInterfaceDefinition.json"))
+    # The red results
+    redResults = json.load(open("../Reducers/redResults.json"))
+    mu += "### Source Data Details\n\n"
+    tbl = MarkdownTable(["File", "Total", "Count Processed"])
+    for flId in sorted(redResults.keys(), key=lambda x: float(re.sub(r'\_', '.', x))):
+        red = redResults[flId]
+        if stationNo not in red:
+            continue
+        tbl.addRow([re.sub(r'\_', '.', flId), red[stationNo]["total"], red[stationNo]["reduced"]])
+    mu += tbl.md() + "\n\n"
     
+    mu += "### Basic Summary\n\n"
+    rpcInterfaceDefinition = json.load(open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_rpcInterfaceDefinition.json"))
     mu += muRPCInterfaceDefinition(rpcInterfaceDefinition, stationNo == "999")
     
     open(VISTA_REP_LOCN_TEMPL.format(stationNo) + "rpcInterfaceDefinition.md", "w").write(mu)    
@@ -85,6 +96,7 @@ RPCs are marked inactive in stages ...
     byYrDistrib = Counter()
     byYrDeleted = Counter()
     byYrDeleteDistrib = Counter()
+    byYrDistribInactive = Counter()
     noDistrib = 0
     withDistribYr = 0
     totalDeleted = 0
@@ -98,7 +110,11 @@ RPCs are marked inactive in stages ...
             continue
         withDistribYr += 1
         byYrDistrib[int(defn["distributed"].split("-")[0])] += 1
-    mu += """
+        if "isActive" not in defn:
+            byYrDistribInactive[int(defn["distributed"].split("-")[0])] += 1
+        
+    mu += """### RPC Distribution by Year
+    
 {:,} RPCs have no 'first distributed' date as their first builds lacked a date. Here is RPC distribution year by year, along with the small amount of deletion too. Note that only __{}__ RPCs are formally deleted though __{}__ should be.
 
 """.format(
@@ -106,10 +122,16 @@ RPCs are marked inactive in stages ...
         reportAbsAndPercent(totalDeleted, len(rpcInterfaceDefinition)),
         reportAbsAndPercent(sum(1 for rpcDefn in rpcInterfaceDefinition if "isActive" not in rpcDefn), len(rpcInterfaceDefinition))
     )
-    tbl = MarkdownTable(["Year", "Added \#", "Deleted \#"])
+    # Note: deleted = deleted in a year while Inactive == of the active
+    tbl = MarkdownTable(["Year", "Added \#", "Deleted \#", "Inactive \#"])
     for yr in sorted(byYrDistrib, reverse=True):
         ddMU = "" if yr not in byYrDeleteDistrib else byYrDeleteDistrib[yr]
-        tbl.addRow([str(yr), reportAbsAndPercent(byYrDistrib[yr], withDistribYr), ddMU])
+        tbl.addRow([
+            str(yr), 
+            reportAbsAndPercent(byYrDistrib[yr], withDistribYr), 
+            ddMU,
+            reportAbsAndPercent(byYrDistribInactive[yr], byYrDistrib[yr]) if yr in byYrDistribInactive else ""
+        ])
     mu += tbl.md() + "\n\n"
     
     """
@@ -128,7 +150,10 @@ RPCs are marked inactive in stages ...
             activeRoutines.add(defn["routine"])
         else:
             inactiveRoutines.add(defn["routine"]) 
-    mu += "__{}__ RPCs are implemented in __{}__ separate MUMPS routines, while __{}__ identified RPCs lack an implementation. The highest number of RPCs per routine is __{}__ (_{}_), the median is __{}__, the lowest is __{}__. __{}__ routines implement only active RPCs, __{:,}__ only inactive RPCs (candidates for deletion?), while __{:,}__ implement a mix of active and inactive RPCs.\n\n".format(
+            
+    mu += """### MUMPS Routine Implementation
+    
+__{}__ RPCs are implemented in __{}__ separate MUMPS routines, while __{}__ identified RPCs lack an implementation. The highest number of RPCs per routine is __{}__ (_{}_), the median is __{}__, the lowest is __{}__. __{}__ routines implement only active RPCs, __{:,}__ only inactive RPCs (candidates for deletion?), while __{:,}__ implement a mix of active and inactive RPCs.\n\n""".format(
     
         sum(cntMUMPSEntry[routine] for routine in cntMUMPSEntry),
         len(cntMUMPSEntry),
@@ -155,15 +180,121 @@ RPCs are marked inactive in stages ...
             break
         tbl.addRow([cnt, ", ".join(["__{}__ [INACTIVE]".format(routine) if routine in inactiveRoutines else routine for routine in sorted(routinesByRPCCnt[cnt])])])
     mu += tbl.md() + "\n\n"
+    
+    # Packages
+    noPackageRPCs = []
+    rpcByPackage = defaultdict(list)
+    firstRPCDistribByPackage = {}
+    activeRPCs = set()
+    for defn in rpcInterfaceDefinition:
+        if "isActive" in defn:
+            activeRPCs.add(defn["label"])
+        if "package" in defn:
+            package = defn["package"]
+            rpcByPackage[package].append(defn["label"])
+            if "distributed" in defn:
+                if package in firstRPCDistribByPackage:
+                    if defn["distributed"] < firstRPCDistribByPackage[package]:
+                        firstRPCDistribByPackage[package] = defn["distributed"]
+                else:
+                    firstRPCDistribByPackage[package] = defn["distributed"]
+        else:
+            noPackageRPCs.append(defn["label"])
+    inactiveOnlyPackages = set(package for package in rpcByPackage if sum(1 for rpc in rpcByPackage[package] if rpc in activeRPCs) == 0)
+    someInactivesPackages = set(package for package in rpcByPackage if package not in inactiveOnlyPackages and sum(1 for rpc in rpcByPackage[package] if rpc in activeRPCs) < len(rpcByPackage[package]))
+    
+    # Based on reduction alg - needs to evolve as see effectiveness
+    mu += """### Packages
+    
+_Package_ is a sometimes inconsistently used breakdown of VistA into a set of cooperating applications. All but __{}__ RPCs are assigned to __{}__ different packages, __{:,}__ of which only have _inactive_ RPCs and __{:,}__ more have a mix of active and inactive RPCs. 
+
+Those with at least one active RPC are - note ORDER ENTRY has a huge proportion which MAY be due to redundant/overlapping purposes of individual RPCs ...
+
+""".format(
+        reportAbsAndPercent(len(noPackageRPCs), len(rpcInterfaceDefinition)),
+        len(rpcByPackage),
+        len(inactiveOnlyPackages),
+        len(someInactivesPackages)
+    )
+    
+    tbl = MarkdownTable(["Package", "First Distributed RPC", "Active RPCs", "Inactive RPCs"])
+    for package in sorted(rpcByPackage, key=lambda x: len(rpcByPackage[x]), reverse=True):
+        if package in inactiveOnlyPackages:
+            continue
+        noActives = sum(1 for rpc in rpcByPackage[package] if rpc in activeRPCs)
+        noInactives = sum(1 for rpc in rpcByPackage[package] if rpc not in activeRPCs)
+        tbl.addRow([
+            package, 
+            firstRPCDistribByPackage[package] if package in firstRPCDistribByPackage else "", 
+            noActives if noActives > 0 else "", 
+            noInactives if noInactives > 0 else ""
+        ])
+    mu += tbl.md() + "\n\n"
+        
+    mu += "The 'inactive-only' Packages are ...\n\n"
+    tbl = MarkdownTable(["Package", "First Distributed RPC", "RPCs (Inactive)"])
+    for package in sorted(rpcByPackage, key=lambda x: len(rpcByPackage[x]), reverse=True):
+        if package not in inactiveOnlyPackages:
+            continue
+        noInactives = sum(1 for rpc in rpcByPackage[package] if rpc not in activeRPCs)
+        tbl.addRow([
+            package, 
+            firstRPCDistribByPackage[package] if package in firstRPCDistribByPackage else "",             
+            len(rpcByPackage[package])
+        ])
+    mu += tbl.md() + "\n\n"
                     
     return mu   
+    
+"""
+Add to this - will do for key packages ... helps work through defns
+"""
+KEY_PACKAGES = ["DENTAL", "PROSTHETICS", "ADVANCED PROSTHETICS ACQUISITION TOOL (APAT)"]
+def reportRPCsOfKeyPackages(stationNo, packages=None):
 
+    if not packages:
+        packages = KEY_PACKAGES
+
+    mu = """## RPCs of Packages {} of {}
+    
+""".format(", ".join(packages), stationNo)
+
+    rpcInterfaceDefinition = json.load(open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_rpcInterfaceDefinition.json"))
+    
+    defnsByPackage = dict((package, [defn for defn in rpcInterfaceDefinition if "package" in defn and defn["package"] == package]) for package in packages)
+    
+    for package in sorted(defnsByPackage):
+        
+        mu += "### {}\n\n".format(package)
+        
+        mu += "Actives ...\n\n"
+        tbl = MarkdownTable(["RPC", "Routine"])
+        for defn in defnsByPackage[package]:
+            if "isActive" not in defn:
+                continue
+            tbl.addRow([defn["label"], defn["routine"]])
+        mu += tbl.md() + "\n\n"
+        
+        tbl = MarkdownTable(["RPC", "Routine"])
+        inactiveDefns = [defn for defn in defnsByPackage[package] if "isActive" not in defn]
+        if len(inactiveDefns):
+            mu += "Inactives ...\n\n"
+            for defn in sorted(inactiveDefns, key=lambda x: x["label"]):
+                tbl.addRow([defn["label"], defn["routine"] if "routine" in defn else "__NO ROUTINE__"])
+            mu += tbl.md() + "\n\n"
+                
+    open(VISTA_REP_LOCN_TEMPL.format(stationNo) + "rpcsOfKeyPackages.md", "w").write(mu) 
 
 """
 From basic cleaned 9_* 
 
 Want to gather builds by packages and focus in particular on packages
 with RPC builds
+
+vs RPC Interface Defn: MORE build vs package context. May remove in time if clear
+from code and integrated definition.
+
+Note: based on reduction alg (see reduction) -- needs to evolve
 """
 def reportPackagesNBuilds(stationNo):
 
@@ -970,11 +1101,15 @@ def main():
     stationNo = sys.argv[1]
     
     reportRPCInterfaceDefinition(stationNo)
+    reportRPCsOfKeyPackages(stationNo)       
     return
+    
+    # TO DEVELOP
     reportUserTypes(stationNo)
     return
 
-    reportRPCInterfaceDefinition(stationNo)        
+    reportRPCInterfaceDefinition(stationNo) 
+    reportRPCsOfKeyPackages(stationNo)       
     reportPackagesNBuilds(stationNo)
     reportBuildsNInstalls(stationNo)
     reportRPCOptions(stationNo)
