@@ -43,6 +43,7 @@ def reduceVistAData(stationNo):
     reduce9_4Plus(stationNo, redResults)
     reduce9_7(stationNo, redResults)
     reduce9_6(stationNo, redResults)
+    reduce8994_5(stationNo, redResults)
     reduce3_081(stationNo, redResults)
     reduce200(stationNo, redResults)
           
@@ -955,8 +956,20 @@ def reduce9_8(stationNo, redResults):
 TODO: add to 3_081 reduction too
 """
 def reduce8994_5(stationNo, redResults):
-    pass
-
+    resourceIter = FilteredResultIterator(DATA_LOCN_TEMPL.format(stationNo), "8994_5")
+    reds = []
+    for resource in resourceIter:
+        if "contextoption" not in resource:
+            print "** Warning 8994_5: {} has no option. Skipping".format(resource["label"])
+            continue
+        red = {"label": resource["label"], "option": resource["contextoption"]["label"]}
+        reds.append(red)
+    if "8994_5" not in redResults:
+        redResults["8994_5"] = {}
+    redResults["8994_5"][stationNo] = {"total": len(reds), "reduced": len(reds)} 
+    json.dump(reds, open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_8994_5Reduction.json", "w"), indent=4)  
+    return reds 
+    
 """
 {'fileName': u'OE/RR REPORT', 'fileId': u'101.24', 'prop': u'rpc'}
 ... only have for 442 now (catch exception)
@@ -1305,8 +1318,11 @@ def main():
         
     stationNo = sys.argv[1]
     
+    """
+    reduce3_081(stationNo, {}, True)    
     reduce200(stationNo, {}, True)
     return
+    """
     
     reduceVistAData(stationNo)
 
