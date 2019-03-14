@@ -26,24 +26,24 @@ Despite there being __94__ employed RPC Options, only __5__ are used by more tha
 5 | KPA VRAM GUI | 1,125 | 1,111 (98.76%) | 14 (1.24%)
 
 
-Non zero users need separate consideration. The top non Zero user options - > 10% non Zeros have it - are ...
+The 1,808 active Non zero users need separate consideration. The top non Zero user options - > 10% non Zeros have it - are listed below. Note that other than the mainstream options, most are highlighted as they belong to the majority of non zero users
 
-\# | Option | Total Users | Non 0 Users
+\# | Option | Non 0 Users | Of Total
 --- | --- | --- | ---
-1 | OR CPRS GUI CHART | 50,362 | 1,609 (88.99%)
-2 | MAG WINDOWS | 47,033 | 1,404 (77.65%)
-3 | DVBA CAPRI GUI | 41,277 | 896 (49.56%)
-4 | DSIV DOCMANAGER | 655 | 533 (29.48%)
-5 | R1SDCI | 574 | 501 (27.71%)
-6 | VPR APPLICATION PROXY | 8,015 | 461 (25.5%)
-7 | DSIF FEEBASIS | 545 | 431 (23.84%)
-8 | AXVVA VISUAL AID CLIN APPS | 463 | 407 (22.51%)
-9 | DSIF FEEBASIS PAYMENT | 476 | 376 (20.8%)
-10 | DSIT TELECARE RECORD MANAGER | 290 | 259 (14.33%)
-11 | PSB GUI CONTEXT - USER | 263 | 230 (12.72%)
-12 | EC GUI CONTEXT | 237 | 206 (11.39%)
-13 | APGK ALL RPCS | 232 | 199 (11.01%)
-14 | DSIT CALL LOG REPORTER | 222 | 195 (10.79%)
+1 | OR CPRS GUI CHART | 1,609 (88.99%) | 1,609 (3.19%)
+2 | MAG WINDOWS | 1,404 (77.65%) | 1,404 (2.99%)
+3 | DVBA CAPRI GUI | 896 (49.56%) | 896 (2.17%)
+4 | DSIV DOCMANAGER | 533 (29.48%) | 533 (81.37%)
+5 | R1SDCI | 501 (27.71%) | 501 (87.28%)
+6 | VPR APPLICATION PROXY | 461 (25.5%) | 461 (5.75%)
+7 | DSIF FEEBASIS | 431 (23.84%) | 431 (79.08%)
+8 | AXVVA VISUAL AID CLIN APPS | 407 (22.51%) | 407 (87.9%)
+9 | DSIF FEEBASIS PAYMENT | 376 (20.8%) | 376 (78.99%)
+10 | DSIT TELECARE RECORD MANAGER | 259 (14.33%) | 259 (89.31%)
+11 | PSB GUI CONTEXT - USER | 230 (12.72%) | 230 (87.45%)
+12 | EC GUI CONTEXT | 206 (11.39%) | 206 (86.92%)
+13 | APGK ALL RPCS | 199 (11.01%) | 199 (85.78%)
+14 | DSIT CALL LOG REPORTER | 195 (10.79%) | 195 (87.84%)
 
 
 

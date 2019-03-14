@@ -27,18 +27,18 @@ Despite there being __93__ employed RPC Options, only __6__ are used by more tha
 6 | EC GUI CONTEXT | 1,367 | 146 (10.68%) | 1,221 (89.32%)
 
 
-Non zero users need separate consideration. The top non Zero user options - > 10% non Zeros have it - are ...
+The 6,945 active Non zero users need separate consideration. The top non Zero user options - > 10% non Zeros have it - are listed below. Note that other than the mainstream options, most are highlighted as they belong to the majority of non zero users
 
-\# | Option | Total Users | Non 0 Users
+\# | Option | Non 0 Users | Of Total
 --- | --- | --- | ---
-1 | OR CPRS GUI CHART | 97,449 | 5,388 (77.58%)
-2 | DVBA CAPRI GUI | 81,020 | 2,930 (42.19%)
-3 | PSB GUI CONTEXT - USER | 2,059 | 1,888 (27.19%)
-4 | MAG WINDOWS | 83,406 | 1,880 (27.07%)
-5 | EC GUI CONTEXT | 1,367 | 1,221 (17.58%)
-6 | VPR APPLICATION PROXY | 18,961 | 1,141 (16.43%)
-7 | DSIV DOCMANAGER | 1,109 | 873 (12.57%)
-8 | DSIU MENTAL HEALTH SUITE | 884 | 792 (11.4%)
+1 | __OR CPRS GUI CHART__ | 5,388 (77.58%) | 5,388 (5.53%)
+2 | __DVBA CAPRI GUI__ | 2,930 (42.19%) | 2,930 (3.62%)
+3 | __PSB GUI CONTEXT - USER__ | 1,888 (27.19%) | 1,888 (91.69%)
+4 | __MAG WINDOWS__ | 1,880 (27.07%) | 1,880 (2.25%)
+5 | __EC GUI CONTEXT__ | 1,221 (17.58%) | 1,221 (89.32%)
+6 | __VPR APPLICATION PROXY__ | 1,141 (16.43%) | 1,141 (6.02%)
+7 | __DSIV DOCMANAGER__ | 873 (12.57%) | 873 (78.72%)
+8 | __DSIU MENTAL HEALTH SUITE__ | 792 (11.4%) | 792 (89.59%)
 
 
 
