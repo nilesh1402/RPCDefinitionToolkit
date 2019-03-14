@@ -26,18 +26,38 @@ Despite there being __94__ employed RPC Options, only __5__ are used by more tha
 5 | KPA VRAM GUI | 1,125 | 1,111 (98.76%) | 14 (1.24%)
 
 
+Non zero users need separate consideration. The top non Zero user options - > 10% non Zeros have it - are ...
+
+\# | Option | Total Users | Non 0 Users
+--- | --- | --- | ---
+1 | OR CPRS GUI CHART | 50,362 | 1,609 (88.99%)
+2 | MAG WINDOWS | 47,033 | 1,404 (77.65%)
+3 | DVBA CAPRI GUI | 41,277 | 896 (49.56%)
+4 | DSIV DOCMANAGER | 655 | 533 (29.48%)
+5 | R1SDCI | 574 | 501 (27.71%)
+6 | VPR APPLICATION PROXY | 8,015 | 461 (25.5%)
+7 | DSIF FEEBASIS | 545 | 431 (23.84%)
+8 | AXVVA VISUAL AID CLIN APPS | 463 | 407 (22.51%)
+9 | DSIF FEEBASIS PAYMENT | 476 | 376 (20.8%)
+10 | DSIT TELECARE RECORD MANAGER | 290 | 259 (14.33%)
+11 | PSB GUI CONTEXT - USER | 263 | 230 (12.72%)
+12 | EC GUI CONTEXT | 237 | 206 (11.39%)
+13 | APGK ALL RPCS | 232 | 199 (11.01%)
+14 | DSIT CALL LOG REPORTER | 222 | 195 (10.79%)
+
+
 
 There are 7 _Pure Alones_, options that can exist on their own (> 15% of users with them have only them)
 
-\# | Option | Total Users | 0 Users | Non 0 Users | Alone Users | CPRS Combos | Other Combos | Quals | Alone Quals | Top Quals
---- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---
-1 | __OR CPRS GUI CHART__ | 50,362 | 48,753 (96.81%) | 1,609 (3.19%) | 11,276 (22.39%) | &nbsp; | &nbsp; | 93 | 6 (6.45%) | DVBA CAPRI GUI (30,577), MAG WINDOWS (28,144), VPR APPLICATION PROXY (8,009)
-2 | __MAG WINDOWS__ | 47,033 | 45,629 (97.01%) | 1,404 (2.99%) | 9,462 (20.12%) | 28,144 (59.84%) | 9,427 (20.04%) | 90 | 6 (6.67%) | DVBA CAPRI GUI (29,118), OR CPRS GUI CHART (28,144), VPR APPLICATION PROXY (4,868)
-3 | __KPA VRAM GUI__ | 1,125 | 1,111 (98.76%) | 14 (1.24%) | 590 (52.44%) | 17 (1.51%) | 518 (46.04%) | 6 | 2 (33.33%) | DVBA CAPRI GUI (523)
-4 | __MAGJ VISTARAD WINDOWS__ | 267 | 265 (99.25%) | 2 (0.75%) | 65 (24.34%) | 70 (26.22%) | 132 (49.44%) | 12 | 2 (16.67%) | DVBA CAPRI GUI (175), MAG WINDOWS (113), OR CPRS GUI CHART (70)
-5 | DSIY ABOVE PAR | 31 | 3 (9.68%) | 28 (90.32%) | 16 (51.61%) | 10 (32.26%) | 5 (16.13%) | 67 | 4 (5.97%) | &nbsp;
-6 | RMPR PURCHASE ORDER GUI | 18 | 2 (11.11%) | 16 (88.89%) | 4 (22.22%) | 13 (72.22%) | 1 (5.56%) | 63 | 4 (6.35%) | &nbsp;
-7 | OOPS GUI EMPLOYEE | 9 | &nbsp; | 9 (100.0%) | 2 (22.22%) | 7 (77.78%) | &nbsp; | 64 | 4 (6.25%) | &nbsp;
+\# | Option | Total Users | 0 Users | Alone Users | CPRS Combos | Other Combos | Quals | Alone Quals | Top Quals
+--- | --- | --- | --- | --- | --- | --- | --- | --- | ---
+1 | __OR CPRS GUI CHART__ | 50,362 | 48,753 (96.81%) | 11,276 (22.39%) | &nbsp; | &nbsp; | 93 | 6 (6.45%) | DVBA CAPRI GUI (30,577), MAG WINDOWS (28,144), VPR APPLICATION PROXY (8,009)
+2 | __MAG WINDOWS__ | 47,033 | 45,629 (97.01%) | 9,462 (20.12%) | 28,144 (59.84%) | 9,427 (20.04%) | 90 | 6 (6.67%) | DVBA CAPRI GUI (29,118), OR CPRS GUI CHART (28,144), VPR APPLICATION PROXY (4,868)
+3 | __KPA VRAM GUI__ | 1,125 | 1,111 (98.76%) | 590 (52.44%) | 17 (1.51%) | 518 (46.04%) | 6 | 2 (33.33%) | DVBA CAPRI GUI (523)
+4 | __MAGJ VISTARAD WINDOWS__ | 267 | 265 (99.25%) | 65 (24.34%) | 70 (26.22%) | 132 (49.44%) | 12 | 2 (16.67%) | DVBA CAPRI GUI (175), MAG WINDOWS (113), OR CPRS GUI CHART (70)
+5 | DSIY ABOVE PAR | 31 | 3 (9.68%) | 16 (51.61%) | 10 (32.26%) | 5 (16.13%) | 67 | 4 (5.97%) | &nbsp;
+6 | RMPR PURCHASE ORDER GUI | 18 | 2 (11.11%) | 4 (22.22%) | 13 (72.22%) | 1 (5.56%) | 63 | 4 (6.35%) | &nbsp;
+7 | OOPS GUI EMPLOYEE | 9 | &nbsp; | 2 (22.22%) | 7 (77.78%) | &nbsp; | 64 | 4 (6.25%) | &nbsp;
 
 
 __Note__:
