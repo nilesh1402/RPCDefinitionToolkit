@@ -7,27 +7,40 @@ Based on active (SO) users use.
 1 | Users | 360,773
 2 | SO Users with RPC Options | 129,791
 3 | SO Users with other than RPC Options | 1,630
-4 | RPC Options | 93
-5 | Pure Alone Options | 9
-6 | Singleton Alone Options (NEVER COMBINED) | 0
-7 | Pure Qualifier Options - NEVER on their own | 58
-8 | Other Qualifier Options - < 15% on their own (so not _Pure Alones_) | 26
+4 | RPC Options | 153
+5 | Used RPC Options | 93
+6 | Pure Alone Options | 9
+7 | Singleton Alone Options (NEVER COMBINED) | 0
+8 | Pure Qualifier Options - NEVER on their own | 58
+9 | Other Qualifier Options - < 15% on their own (so not _Pure Alones_) | 26
+
+
+Despite there being __93__ employed RPC Options, only __6__ are used by more than 1% of sign on users, that vast majority of which are remote/0 users.
+    
+\# | Option | Total Users | 0 Users | Non 0 Users
+--- | --- | --- | --- | ---
+1 | OR CPRS GUI CHART | 97,449 | 92,061 (94.47%) | 5,388 (5.53%)
+2 | MAG WINDOWS | 83,406 | 81,526 (97.75%) | 1,880 (2.25%)
+3 | DVBA CAPRI GUI | 81,020 | 78,090 (96.38%) | 2,930 (3.62%)
+4 | VPR APPLICATION PROXY | 18,961 | 17,820 (93.98%) | 1,141 (6.02%)
+5 | PSB GUI CONTEXT - USER | 2,059 | 171 (8.31%) | 1,888 (91.69%)
+6 | EC GUI CONTEXT | 1,367 | 146 (10.68%) | 1,221 (89.32%)
 
 
 
 There are 9 _Pure Alones_, options that can exist on their own (> 15% of users with them have only them)
 
-\# | Option | Total Users | By 0 Users | Alone Users | CPRS Combos | Other Combos | Quals | Alone Quals | Top Quals
---- | --- | --- | --- | --- | --- | --- | --- | --- | ---
-1 | OR CPRS GUI CHART | 97,449 | 92,061 (94.47%) | 19,320 (19.83%) | &nbsp; | &nbsp; | 88 | 8 (9.09%) | DVBA CAPRI GUI (63,534), MAG WINDOWS (56,139), VPR APPLICATION PROXY (18,924)
-2 | MAG WINDOWS | 83,406 | 81,526 (97.75%) | 12,756 (15.29%) | 56,139 (67.31%) | 14,511 (17.4%) | 80 | 6 (7.5%) | DVBA CAPRI GUI (57,352), OR CPRS GUI CHART (56,139), VPR APPLICATION PROXY (11,411)
-3 | PSB GUI CONTEXT - USER | 2,059 | 171 (8.31%) | 578 (28.07%) | 1,159 (56.29%) | 322 (15.64%) | 69 | 5 (7.25%) | OR CPRS GUI CHART (1,159), DVBA CAPRI GUI (632), EC GUI CONTEXT (307), MAG WINDOWS (306), VPR APPLICATION PROXY (248)
-4 | KPA VRAM GUI | 1,259 | 1,232 (97.86%) | 633 (50.28%) | 33 (2.62%) | 593 (47.1%) | 21 | 3 (14.29%) | DVBA CAPRI GUI (598)
-5 | MAGJ VISTARAD WINDOWS | 414 | 408 (98.55%) | 85 (20.53%) | 130 (31.4%) | 199 (48.07%) | 4 | 2 (50.0%) | DVBA CAPRI GUI (268), MAG WINDOWS (202), OR CPRS GUI CHART (130)
-6 | DSIY ABOVE PAR | 124 | 6 (4.84%) | 71 (57.26%) | 28 (22.58%) | 25 (20.16%) | 32 | 3 (9.38%) | DSIVA APAT (40), OR CPRS GUI CHART (28)
-7 | VBECS VISTALINK CONTEXT | 38 | 3 (7.89%) | 6 (15.79%) | 21 (55.26%) | 11 (28.95%) | 11 | 2 (18.18%) | &nbsp;
-8 | R2PBC GUI CONTEXT | 3 | 1 (33.33%) | 2 (66.67%) | 1 (33.33%) | &nbsp; | 2 | 1 (50.0%) | &nbsp;
-9 | XU EPCS EDIT DATA | 3 | &nbsp; | 1 (33.33%) | 2 (66.67%) | &nbsp; | 23 | 2 (8.7%) | &nbsp;
+\# | Option | Total Users | 0 Users | Non 0 Users | Alone Users | CPRS Combos | Other Combos | Quals | Alone Quals | Top Quals
+--- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---
+1 | __OR CPRS GUI CHART__ | 97,449 | 92,061 (94.47%) | 5,388 (5.53%) | 19,320 (19.83%) | &nbsp; | &nbsp; | 88 | 8 (9.09%) | DVBA CAPRI GUI (63,534), MAG WINDOWS (56,139), VPR APPLICATION PROXY (18,924)
+2 | __MAG WINDOWS__ | 83,406 | 81,526 (97.75%) | 1,880 (2.25%) | 12,756 (15.29%) | 56,139 (67.31%) | 14,511 (17.4%) | 80 | 6 (7.5%) | DVBA CAPRI GUI (57,352), OR CPRS GUI CHART (56,139), VPR APPLICATION PROXY (11,411)
+3 | PSB GUI CONTEXT - USER | 2,059 | 171 (8.31%) | 1,888 (91.69%) | 578 (28.07%) | 1,159 (56.29%) | 322 (15.64%) | 69 | 5 (7.25%) | OR CPRS GUI CHART (1,159), DVBA CAPRI GUI (632), EC GUI CONTEXT (307), MAG WINDOWS (306), VPR APPLICATION PROXY (248)
+4 | __KPA VRAM GUI__ | 1,259 | 1,232 (97.86%) | 27 (2.14%) | 633 (50.28%) | 33 (2.62%) | 593 (47.1%) | 21 | 3 (14.29%) | DVBA CAPRI GUI (598)
+5 | __MAGJ VISTARAD WINDOWS__ | 414 | 408 (98.55%) | 6 (1.45%) | 85 (20.53%) | 130 (31.4%) | 199 (48.07%) | 4 | 2 (50.0%) | DVBA CAPRI GUI (268), MAG WINDOWS (202), OR CPRS GUI CHART (130)
+6 | DSIY ABOVE PAR | 124 | 6 (4.84%) | 118 (95.16%) | 71 (57.26%) | 28 (22.58%) | 25 (20.16%) | 32 | 3 (9.38%) | DSIVA APAT (40), OR CPRS GUI CHART (28)
+7 | VBECS VISTALINK CONTEXT | 38 | 3 (7.89%) | 35 (92.11%) | 6 (15.79%) | 21 (55.26%) | 11 (28.95%) | 11 | 2 (18.18%) | &nbsp;
+8 | R2PBC GUI CONTEXT | 3 | 1 (33.33%) | 2 (66.67%) | 2 (66.67%) | 1 (33.33%) | &nbsp; | 2 | 1 (50.0%) | &nbsp;
+9 | XU EPCS EDIT DATA | 3 | &nbsp; | 3 (100.0%) | 1 (33.33%) | 2 (66.67%) | &nbsp; | 23 | 2 (8.7%) | &nbsp;
 
 
 __Note__:
