@@ -146,17 +146,39 @@ There are 20 users w/o Alones - ie/ their 'apps' are option combos.
 4 | DSIF FEEBASIS/DSIF FEEBASIS PAYMENT | 1
 
 
-What option best matches an app? The user/sign on logs names a subset of apps. Some apps SHARE overused options (MAG, CPRS) and only one seems to have its own ...
+File 8994_5 defines 'Remote Applications'. Each is given a (default) option. There are 29 applications using/sharing 12 options. Note that 2 of these options are NOT RPC options and 6 are not assigned to any active user. Note that _JLV_ (for now) lacks an entry here or its own option (it uses CPRS, CAPRI and VPR options). The following shows the applications by option ...
+    
+\# | Option | RPCs | Users | Applications
+--- | --- | --- | --- | ---
+1 | __DVBA CAPRI GUI__ | &nbsp; | 41,277 | CAPRI, CAPRIFHIE, CCR-CAPRI, VLER DAS-CAPRI
+2 | __KPA VRAM GUI__ | &nbsp; | 1,125 | VRAM
+3 | __MAG WINDOWS__ | &nbsp; | 47,033 | VISTA IMAGING AWIV, VISTA IMAGING DISPLAY, VISTA IMAGING TELEREADER, VISTA IMAGING VIX
+4 | __MAGJ VISTARAD WINDOWS__ | &nbsp; | 267 | VISTA IMAGING VISTARAD
+5 | MAGTP WORKLIST MGR | &nbsp; | &nbsp; | VISTA IMAGING TELEPATHOLOGY
+6 | MWVS MEDICAL DOMAIN WEB SVCS | &nbsp; | &nbsp; | MEDICAL DOMAIN WEB SERVICES, MOVE, MYHEALTHEVET, NATIONAL HOMELESS HOTLINE, NATIONAL SUICIDE HOTLINE, PCS ANALYTICS, TBI SCREENING
+7 | __OR CPRS GUI CHART__ | &nbsp; | 50,362 | VISTAWEB, VISTAWEB-FW, VISTAWEB-PROD, VISTAWEB-PROD2, VISTAWEB-UAT, VISTAWEB-UAT2
+8 | __SDECRPC__ | &nbsp; | 124 | VS SCHEDULING CALL CENTER
+9 | WEBB BED MGMT SOLUTION | NO | &nbsp; | BMS
+10 | WEBN NATL UTIL MGMT INTEG | NO | &nbsp; | NUMI
+11 | XUS IAM USER BINDING | &nbsp; | &nbsp; | IAM BINDING
+12 | XUS IAM USER PROVISIONING | &nbsp; | &nbsp; | IAM PROVISIONING
 
-\# | App | Option | App Users | App+MO | App !MO | !App MO
---- | --- | --- | --- | --- | --- | ---
-1 | VISTAWEB-PROD | OR CPRS GUI CHART | 35,568 | 35,524 (99.88%) | 14,838 [TOO BROAD] | 44
-2 | VISTA IMAGING DISPLAY | MAG WINDOWS | 30,710 | 30,663 (99.85%) | 16,370 [TOO BROAD] | 47
-3 | CAPRI | DVBA CAPRI GUI | 7,801 | 7,794 (99.91%) | 33,483 [TOO BROAD] | 7
-4 | VRAM | KPA VRAM GUI | 1,116 | 1,114 (99.82%) | 11 | 2
-5 | VISTA IMAGING AWIV | MAG WINDOWS | 293 | 249 (84.98%) | 46,784 [TOO BROAD] | 44
-6 | VISTA IMAGING VISTARAD | MAGJ VISTARAD WINDOWS | 192 | 192 (100.0%) | 75 [TOO BROAD] | 0
-7 | VISTA IMAGING TELEREADER | MAG WINDOWS | 19 | 19 (100.0%) | 47,014 [TOO BROAD] | 0
-8 | VISTA IMAGING VIX | MAG WINDOWS | 9 | 6 (66.67%) | 47,027 [TOO BROAD] | 3
+
+What 8994.5 applications are used? It's 8 out of the 29. What option best matches an app - does the __presence of an option predict the use of a (8994.5) application?__ Note that even 8994.5 shows option sharing and such sharing is borne out in the table of signon and user information below.
+    
+The low counts in the _App !MO_ column shows that the apps are good indicators that an option is present but in general _!App MO_ shows many cases where an option is too broadly given (CPRS, MAG WINDOWS ...) to predict app use. _VRAM_ is the only clear exception though VISTARAD and its singular option is probably an exception too.
+
+Note that _DVBA CAPRI GUI_ is the only _qualifier_ option here. It is actually a _stand alone_ but is always paired with _OR CPRS GUI CHART_ by the CAPRI-style setup code. It's high _!App MO_ count is because of this pairing which is used by JLV and other apps.
+    
+\# | App | Option | App Users | App 0 Users | App+MO | !App MO | App !MO
+--- | --- | --- | --- | --- | --- | --- | ---
+1 | VISTAWEB-PROD | OR CPRS GUI CHART | 35,568 | 34,694 (97.54%) | 35,524 (99.88%) | 14,838 | 44
+2 | VISTA IMAGING DISPLAY | MAG WINDOWS | 30,710 | 30,574 (99.56%) | 30,663 (99.85%) | 16,370 | 47
+3 | CAPRI | DVBA CAPRI GUI | 7,801 | 7,670 (98.32%) | 7,794 (99.91%) | 33,483 | 7
+4 | VRAM | KPA VRAM GUI | 1,116 | 1,106 (99.1%) | 1,114 (99.82%) | 11 [APP-OPTION MATCH] | 2
+5 | VISTA IMAGING AWIV | MAG WINDOWS | 293 | 196 (66.89%) | 249 [UNDER MATCH] | 46,784 | 44
+6 | VISTA IMAGING VISTARAD | MAGJ VISTARAD WINDOWS | 192 | 192 (100.0%) | 192 (100.0%) | 75 | 0
+7 | VISTA IMAGING TELEREADER | MAG WINDOWS | 19 | 18 (94.74%) | 19 (100.0%) | 47,014 | 0
+8 | VISTA IMAGING VIX | MAG WINDOWS | 9 | 8 (88.89%) | 6 [UNDER MATCH] | 47,027 | 3
 
 
