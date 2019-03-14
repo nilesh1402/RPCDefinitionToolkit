@@ -146,3 +146,17 @@ There are 20 users w/o Alones - ie/ their 'apps' are option combos.
 4 | DSIF FEEBASIS/DSIF FEEBASIS PAYMENT | 1
 
 
+What option best matches an app? The user/sign on logs names a subset of apps. Some apps SHARE overused options (MAG, CPRS) and only one seems to have its own ...
+
+\# | App | Option | App Users | App+MO | App !MO | !App MO
+--- | --- | --- | --- | --- | --- | ---
+1 | VISTAWEB-PROD | OR CPRS GUI CHART | 35,568 | 35,524 (99.88%) | 14,838 [TOO BROAD] | 44
+2 | VISTA IMAGING DISPLAY | MAG WINDOWS | 30,710 | 30,663 (99.85%) | 16,370 [TOO BROAD] | 47
+3 | CAPRI | DVBA CAPRI GUI | 7,801 | 7,794 (99.91%) | 33,483 [TOO BROAD] | 7
+4 | VRAM | KPA VRAM GUI | 1,116 | 1,114 (99.82%) | 11 | 2
+5 | VISTA IMAGING AWIV | MAG WINDOWS | 293 | 249 (84.98%) | 46,784 [TOO BROAD] | 44
+6 | VISTA IMAGING VISTARAD | MAGJ VISTARAD WINDOWS | 192 | 192 (100.0%) | 75 [TOO BROAD] | 0
+7 | VISTA IMAGING TELEREADER | MAG WINDOWS | 19 | 19 (100.0%) | 47,014 [TOO BROAD] | 0
+8 | VISTA IMAGING VIX | MAG WINDOWS | 9 | 6 (66.67%) | 47,027 [TOO BROAD] | 3
+
+

@@ -420,6 +420,10 @@ Goal: "Build-Backed" Package List
 
 Specifically 9_4 not a definitive package list as [1] builds or some other mechanism with bad package names (named for individual builds, dup existing package with case variants ...) introduce duplicate or invalid entries and [2] some builds, particularly COTS or Class III lack package references. 
 
+NOTE: ORDER ENTRY is most pop - OSEHRA list has OR and OCX in there and NO ORRC and
+ORRJ but no RPC uses the later 3 and OR causes the huge number of RPCs (need to examine
+more). Presumably much redundancy?
+
 This means __9_4 IS A STARTING POINT__ and that __9_6 ITSELF ALONG WITH OUTSIDE LISTS__ must deliver the definitive package list. Getting to A DEFINITIVE PACKAGE LIST WILL BE AN ITERATIVE, CROSS VISTA PROCESS.
 
 Hence plus in _reduce9_4Plus_ ... for one thing new packages are added from an "in code"
@@ -1006,13 +1010,23 @@ def reduce3_081(stationNo, redResults, forceRedo=False):
 
     print "Reducing 3_081 to pick out Active Users"
     _3_081ResourceIter = FilteredResultIterator(DATA_LOCN_TEMPL.format(stationNo), "3_081")
-    userSignOnCount = Counter()
+    userRedsById = {}
     for i, _3_081Resource in enumerate(_3_081ResourceIter, 1):    
         if (i % 50000) == 0:
-            print "\tprocessed to {} sign ons, now {} users seen".format(i, len(userSignOnCount))
-        userSignOnCount[_3_081Resource["user"]["id"]] += 1
-    print "... {} users signed on".format(len(userSignOnCount))
-    reductions = [{"userId": userId, "signOnCount": userSignOnCount[userId]} for userId in userSignOnCount]
+            print "\tprocessed to {} sign ons, now {} users seen".format(i, len(userRedsById))
+        userId = _3_081Resource["user"]["id"]
+        if userId not in userRedsById:
+            userRedsById[userId] = {"userId": userId, "signOnCount": 0, "signOnDates": Counter(), "remoteApps": Counter()}
+        userRedsById[userId]["signOnCount"] += 1
+        userRedsById[userId]["signOnDates"][
+        _3_081Resource["date_time"]["value"].split("T")[0]] += 1
+        if "remote_app" in _3_081Resource:
+            userRedsById[userId]["remoteApps"][_3_081Resource["remote_app"]["label"]] += 1
+    print "... {} users signed on".format(len(userRedsById))
+    for userId in userRedsById:
+        if len(userRedsById[userId]["remoteApps"]) == 0:
+            del userRedsById[userId]["remoteApps"]
+    reductions = [userRedsById[userId] for userId in userRedsById]
     
     if "3_081" not in redResults:
         redResults["3_081"] = {}
@@ -1040,15 +1054,18 @@ def reduce200(stationNo, redResults, forceRedo=False):
         _3_081Reductions = json.load(open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_3_081UserReduction.json"))
     except:
         raise Exception("200 reduction requires 3_081 reduction first")
-    signedOnUserIds = dict((red["userId"], red["signOnCount"]) for red in _3_081Reductions)
+    signOnInfoByUserId = dict((red["userId"], red) for red in _3_081Reductions)
 
     print "Reducing Users to bags of Options and whether has signon or not ..."
     _200ResourceIter = FilteredResultIterator(DATA_LOCN_TEMPL.format(stationNo), "200")
     reductions = []
     for i, _200Resource in enumerate(_200ResourceIter, 1):
+
         user = {"userId": _200Resource["_id"]}
+
         if (i % 1000) == 0:
             print "\tprocessed another to {} users, reduction now at {}".format(i, len(reductions))
+
         if "user_class" in _200Resource:
             # Proxies etc for later
             user["userClasses"] = [val["user_class"]["label"] for val in _200Resource["user_class"]]
@@ -1058,9 +1075,7 @@ def reduce200(stationNo, redResults, forceRedo=False):
             user["isCreatedBy0"] = True
         if "title" in _200Resource:
             user["title"] = _200Resource["title"]
-        if _200Resource["_id"] in signedOnUserIds:
-            user["signOnCount"] = signedOnUserIds[_200Resource["_id"]]
-        moLabels = set()
+        moLabels = set() # NOTE: will be more than 19Reductions Broker options
         if "primary_menu_option" in _200Resource:
             moLabels.add(_200Resource["primary_menu_option"]["label"])
         if "secondary_menu_options" in _200Resource:
@@ -1069,6 +1084,12 @@ def reduce200(stationNo, redResults, forceRedo=False):
         if len(moLabels):
             user["menuOptions"] = sorted(list(moLabels))
             reductions.append(user)
+
+        if _200Resource["_id"] in signOnInfoByUserId:
+            user["signOnCount"] = signOnInfoByUserId[_200Resource["_id"]]["signOnCount"]
+            user["signOnDetails"] = signOnInfoByUserId[_200Resource["_id"]]
+            del user["signOnDetails"]["userId"]
+            
     print "Processed {:,} users, reduced to {:,} based on menu options and {:,} of these have signons".format(i, len(reductions), sum(1 for user in reductions if "signOnCount" in user))
     
     if "200" not in redResults:
@@ -1233,7 +1254,7 @@ def reduceAssembly(stationNo):
         if rpc in mergedByRPC:
             merged = mergedByRPC[rpc]
         else:
-            merged = {"label": rpc}
+            merged = {"label": rpc} # no 8994
             mergedByRPC[rpc] = merged
         if "isDeleted" not in bpi:
             merged["hasInstalledBuild"] = True
@@ -1283,6 +1304,9 @@ def main():
         return
         
     stationNo = sys.argv[1]
+    
+    reduce200(stationNo, {}, True)
+    return
     
     reduceVistAData(stationNo)
 
