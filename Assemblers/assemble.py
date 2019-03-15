@@ -33,6 +33,7 @@ SNOS = ["442", "640", "999"] # SHOULD PUT DATE ON THESE in config
 def assemble(): # makes core and the per VistA qualifications
     assembleIntegrated()
     makePerVistAQualifiers()
+    assembleApplications()
 
 """
 Basic Assembly:
@@ -92,6 +93,26 @@ def assembleIntegrated():
     json.dump(integratedRPCInterfaceDefinition, open("../Definitions/rpcInterfaceDefinition.bjsn", "w"), indent=4)
     
 """
+Preliminary - JLV, CPRS and 8994_5
+
+TODO: nix inactives ie/ move to only those used 
+"""
+def assembleApplications():
+    appsById = {}
+    for sno in SNOS:
+        _8994_5Reductions = json.load(open(VISTA_RPCD_LOCN_TEMPL.format(sno) + "_8994_5Reduction.json"))
+        for red in _8994_5Reductions:
+            if red["label"] in appsById:
+                continue
+            info = {"label": red["label"], "options": [red["option"]]}
+            appsById[info["label"]] = info
+    apps = appsById.values()
+    apps.append({"label": "CPRS", "options": ["OR CPRS GUI CHART"]})
+    apps.append({"label": "JLV", "options": ["OR CPRS GUI CHART", "DVBA CAPRI GUI", "VPR APPLICATION PROXY"]})
+    apps = sorted(apps, key=lambda x: x["label"])
+    json.dump(apps, open("../Definitions/rpcInterfaceApplications.bjsn", "w"), indent=4)
+    
+"""
 By SNO - what is active and last install
 """
 def makePerVistAQualifiers():
@@ -113,6 +134,8 @@ def main():
 
     assert(sys.version_info >= (2,7))
 
+    assembleApplications()
+    return
     assemble()
 
 if __name__ == "__main__":

@@ -1305,7 +1305,7 @@ def reduceAssembly(stationNo):
     json.dump(mergeds, open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_rpcInterfaceDefinition.json", "w"), indent=4)
     
     print "Flushed {:,} integrated RPC definitions for {} and ending up with {:,} active.".format(len(mergeds), stationNo, sum(1 for info in mergeds if "isActive" in info))
-
+    
 # ################################# DRIVER #######################
                
 def main():
