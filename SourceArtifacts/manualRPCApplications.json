@@ -1,0 +1,74 @@
+[
+    {
+        "label": "Above PAR (APAR)",
+        "inMonograph": True,
+        "note": "The option _DSIY ABOVE PAR_ belongs to __Above PAR (APAR)__ by the [TRM](https://www.oit.va.gov/Services/TRM/ToolPage.aspx?tid=7725)"
+    },
+    
+    {
+        "label": "Automated Safety Incident Surveillance Tracking System (ASISTS)",
+        "inMonograph": True,
+        "note": "The option _OOP GUI EMPLOYEE_ is from __ASISTS__ which is being decommissioned in Jan 2019"
+    },
+    
+    {
+        "label": "Caribou Community Living Care (CLC) Suite (Caribou)",
+        "inMonograph": True
+    },
+    
+    {
+        "label": "Compensation and Pension Record Interchange (CAPRI)",
+        "inMonograph": True
+    },  
+    
+    { 
+        "label": "Computerized Patient Record System (CPRS)",
+        "inMonograph": True
+    }, 
+    
+    {
+        "label": "Dental Record Manager (DRM) Plus",
+        "inMonograph": True
+    },  
+    
+    { 
+        "label": "Joint Legacy Viewer (JLV)",
+        "inMonograph": True
+    },
+     
+    {
+        "label": "PROSTHETICS PURCHASE ORDER GUI",
+        "note": "_RMPR PURCHASE ORDER GUI_ is an option of this app - is this 'APAT' in the monograph?"
+    },
+    
+    { 
+        "label": "VISTA IMAGING AWIV"
+    },
+     
+    {
+        "label": "VISTA IMAGING DISPLAY",
+        "note": "in monograph (as are other imaging apps) as 'VistA Imaging System'"
+    }, 
+    
+    {
+        "label": "VISTA IMAGING TELEREADER"
+    }, 
+    
+    {
+        "label": "VISTA IMAGING VISTARAD"
+        "note": "See  [to](https://www.va.gov/vdl/documents/clinical/vista_imaging_sys/imginstallgd_f.pdf) with _MAGJ VISTARAD WINDOWS_ as its key option"
+    }, 
+    
+    {
+        "label": "VISTA IMAGING VIX"
+    }, 
+      
+    { 
+        "label": "VISTAWEB-PROD"
+    },
+     
+    {
+        "label": "VRAM",
+        "note": "__VistA Remote Access Management (VRAM) Graphical User Interface (GUI)__ according to this [patch](https://github.com/OSEHRA/VistA/blob/master/Packages/Kernel/Patches/XU_8.0_629/XU-8_SEQ-502_PAT-629.TXT). It has a 8995 application entry and seems to sync credentials from the VBA 'VistA' to a local VistA - check out the RPCs it allows. Note that half its users are stand alone while the rest use CAPRI and very few use CPRS."
+    }
+]
