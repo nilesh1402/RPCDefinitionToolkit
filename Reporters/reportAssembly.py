@@ -14,12 +14,14 @@ from reportMonograph import reduceMonograph
 
 from reportVistAData import VISTA_RED_LOCN_TEMPL, muRPCInterfaceDefinition
 
+# Assembly == unified and overlay definitions from VistA-specific equivalents.
+
 """
 fill in data sources + other stuff below (sources must move to /data and definitions
 
 NOTE: big focus is suggestion of "DELETION/REMOVAL" of RPCs and CODE ... get those routines (total too) WHICH are exclusive to inactive RPCs, mixed and otherwise.
 """
-def reportAssembly():
+def reportInterfaceAssembly():
     
     rpcInterfaceDefinition = json.load(open("../Definitions/rpcInterfaceDefinition.bjsn"), object_pairs_hook=OrderedDict)
     
@@ -50,6 +52,34 @@ The integrated interface definition combines RPC definitions from multiple real 
     
     open("../Reports/rpcInterfaceDefinition.md", "w").write(mu) 
 
+"""
+Application Assembly Report
+
+REM: app list from manual artifact + activity. Has inVistA assertion too
+"""
+def reportApplicationAssembly():
+    
+    rpcInterfaceApplications = json.load(open("../Definitions/rpcInterfaceApplications.bjsn"), object_pairs_hook=OrderedDict)
+    
+    mu = """## VA VistA RPC Interface Applications
+    
+The following is incomplete. Except for a small number of 'remote applications', VistA doesn't note the application logging in. The following was mainly built up by examining options and user patterns (IP sources etc) and marrying this information with static artifacts like the Monograph. 
+    
+"""
+    
+    tbl = MarkdownTable(["Application", "Used in", "Monograph?", "8994.5 Entry?", "Note"])
+    for appInfo in rpcInterfaceApplications:
+        tbl.addRow([
+            "__{}__".format(appInfo["label"]) if "inVistAs" in appInfo else appInfo["label"],
+            ", ".join(["{} ({:,})".format(vista, appInfo["inVistAs"][vista]) for vista in appInfo["inVistAs"]]) if "inVistAs" in appInfo else "",
+            "YES" if "inMonograph" in appInfo else "",
+            "YES" if "isRemoteApplication" in appInfo else "",
+            appInfo["note"] if "note" in appInfo else ""
+        ])
+    mu += tbl.md() + "\n\n"
+
+    open("../Reports/rpcInterfaceApplications.md", "w").write(mu) 
+    
 """
 
 definition of:
@@ -310,7 +340,8 @@ def main():
 
     assert(sys.version_info >= (2,7))
 
-    reportAssembly()
+    # reportInterfaceAssembly()
+    reportApplicationAssembly()
 
 if __name__ == "__main__":
     main()
