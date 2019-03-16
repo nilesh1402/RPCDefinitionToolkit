@@ -62,7 +62,6 @@ def reduceVistAData(stationNo):
     # 2. RPC centric reductions from cleanup/reduction above
     reduceRPCBPIs(stationNo)
     reduceRPCOptionByUse(stationNo)
-    reduceRemoteApplicationByUse(stationNo)
     reduceRemoteApplicationsByUse(stationNo)
     
     # 3. Finally Assemble
@@ -1269,7 +1268,7 @@ def reduceRemoteApplicationsByUse(stationNo):
     rapps = sorted(rappById.values(), key=lambda x: x["label"])
             
     json.dump(rapps, open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_rpcRemoteApplicationsWithUse.json", "w"), indent=4)
-    print "... {:,} users for {:,} remote apps".format(sum(len(rappInfo["users"]) for rappInfo in rapps if "users" in rappInfo), len(rapps))
+    print "{:,} remote apps have users".format(sum(1 for rapp in rapps if "users" in rapp))
     
 # ######################### Step 3 ############################
     
@@ -1350,9 +1349,6 @@ def main():
         return
         
     stationNo = sys.argv[1]
-    
-    reduceRemoteApplicationsByUse(stationNo)
-    return
     
     reduceVistAData(stationNo)
 
