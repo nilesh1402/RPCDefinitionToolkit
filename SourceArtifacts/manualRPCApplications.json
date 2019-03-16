@@ -1,39 +1,40 @@
 [
     {
         "label": "Above PAR (APAR)",
-        "inMonograph": True,
+        "inMonograph": true,
         "note": "The option _DSIY ABOVE PAR_ belongs to __Above PAR (APAR)__ by the [TRM](https://www.oit.va.gov/Services/TRM/ToolPage.aspx?tid=7725)"
     },
     
     {
         "label": "Automated Safety Incident Surveillance Tracking System (ASISTS)",
-        "inMonograph": True,
+        "inMonograph": true,
         "note": "The option _OOP GUI EMPLOYEE_ is from __ASISTS__ which is being decommissioned in Jan 2019"
     },
     
     {
         "label": "Caribou Community Living Care (CLC) Suite (Caribou)",
-        "inMonograph": True
+        "inMonograph": true
     },
     
     {
-        "label": "Compensation and Pension Record Interchange (CAPRI)",
-        "inMonograph": True
+        "label": "CAPRI",
+        "longLabel": "Compensation and Pension Record Interchange",
+        "inMonograph": true
     },  
     
     { 
         "label": "Computerized Patient Record System (CPRS)",
-        "inMonograph": True
+        "inMonograph": true
     }, 
     
     {
         "label": "Dental Record Manager (DRM) Plus",
-        "inMonograph": True
+        "inMonograph": true
     },  
     
     { 
         "label": "Joint Legacy Viewer (JLV)",
-        "inMonograph": True
+        "inMonograph": true
     },
      
     {
@@ -55,7 +56,7 @@
     }, 
     
     {
-        "label": "VISTA IMAGING VISTARAD"
+        "label": "VISTA IMAGING VISTARAD",
         "note": "See  [to](https://www.va.gov/vdl/documents/clinical/vista_imaging_sys/imginstallgd_f.pdf) with _MAGJ VISTARAD WINDOWS_ as its key option"
     }, 
     
