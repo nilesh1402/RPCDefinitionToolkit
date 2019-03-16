@@ -93,24 +93,46 @@ def assembleIntegrated():
     json.dump(integratedRPCInterfaceDefinition, open("../Definitions/rpcInterfaceDefinition.bjsn", "w"), indent=4)
     
 """
-Preliminary - JLV, CPRS and 8994_5
+Manual and 8994_5 Used
 
-TODO: nix inactives ie/ move to only those used 
+REM: (remote) application use information from VistA is a small subset. Need
+to expand with manual definitions. [1] most apps don't identify themselves and 
+[2] option to app link is rough and needs searching and (manual) work
 """
 def assembleApplications():
+
+    # Start off with information from used remote app of VistAs"
     appsById = {}
     for sno in SNOS:
-        _8994_5Reductions = json.load(open(VISTA_RPCD_LOCN_TEMPL.format(sno) + "_8994_5Reduction.json"))
-        for red in _8994_5Reductions:
-            if red["label"] in appsById:
+        if sno == "999":
+            continue # no good as no user data
+        rappsWithUse = json.load(open(VISTA_RPCD_LOCN_TEMPL.format(sno) + "_rpcRemoteApplicationsWithUse.json"))
+        for rappInfo in rappsWithUse:
+            if "users" not in rappInfo:
                 continue
-            info = {"label": red["label"], "options": [red["option"]]}
-            appsById[info["label"]] = info
-    apps = appsById.values()
-    apps.append({"label": "CPRS", "options": ["OR CPRS GUI CHART"]})
-    apps.append({"label": "JLV", "options": ["OR CPRS GUI CHART", "DVBA CAPRI GUI", "VPR APPLICATION PROXY"]})
-    apps = sorted(apps, key=lambda x: x["label"])
-    json.dump(apps, open("../Definitions/rpcInterfaceApplications.bjsn", "w"), indent=4)
+            rappUse = sum(rappInfo["users"][userId] for userId in rappInfo["users"])
+            if rappInfo["label"] in appsById:
+                appInfo = appsById[rappInfo["label"]]
+                appInfo["inVistAs"][sno] = rappUse
+                continue
+            appInfo = {"label": rappInfo["label"], "options": [rappInfo["option"]], "inVistAs": {sno: rappUse}, "isRemoteApplication": True}
+            appsById[appInfo["label"]] = appInfo
+    
+    appInfos = appsById.values()
+    mAppInfos = json.load(open("../SourceArtifacts/manualRPCApplications.json"))
+    for mAppInfo in mAppInfos:
+        if mAppInfo["label"] in appsById:
+            appInfo = appsById[mAppInfo["label"]]
+            if "note" in mAppInfo:
+                appInfo["note"] = mAppInfo["note"]
+            if "inMonograph" in mAppInfo:
+                appInfo["inMonograph"] = True
+            continue
+        appInfos.append(mAppInfo)
+    appInfos = sorted(appInfos, key=lambda x: x["label"])
+    
+    print "Assembled {:,} RPC App Definitions from {:,} in-use remote apps and {:,} manual definitions".format(len(appInfos), len(appsById), len(mAppInfos))
+    json.dump(appInfos, open("../Definitions/rpcInterfaceApplications.bjsn", "w"), indent=4)
     
 """
 By SNO - what is active and last install
