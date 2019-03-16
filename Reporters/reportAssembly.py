@@ -67,11 +67,12 @@ The following is incomplete. Except for a small number of 'remote applications',
     
 """
     
-    tbl = MarkdownTable(["Application", "Used in", "Monograph?", "8994.5 Entry?", "Note"])
+    tbl = MarkdownTable(["Application", "Used in", "Options", "Monograph?", "8994.5 Entry?", "Note"])
     for appInfo in rpcInterfaceApplications:
         tbl.addRow([
             "__{}__".format(appInfo["label"]) if "inVistAs" in appInfo else appInfo["label"],
             ", ".join(["{} ({:,})".format(vista, appInfo["inVistAs"][vista]) for vista in appInfo["inVistAs"]]) if "inVistAs" in appInfo else "",
+            ", ".join(sorted(appInfo["options"])) if "options" in appInfo else "",
             "YES" if "inMonograph" in appInfo else "",
             "YES" if "isRemoteApplication" in appInfo else "",
             appInfo["note"] if "note" in appInfo else ""
