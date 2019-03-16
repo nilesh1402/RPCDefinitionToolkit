@@ -20,6 +20,8 @@ all available data per VistA before assembling into a basic, cross-VistA, data-b
   * 8994
   * references to 8994
   * build/install data about RPCs, Options, ...
+  
+Note: we 'clean up' source information first - this pass will go away once it's clear just what source information rpc i/f definition requires and the final reductions will come directly from the system JSON.
 
 Overall: no one file gives ACTIVE RPCs - must look at 8994 (permission to invoke an RPC),
 Builds (does it have source behind it or was it uninstalled - 8994 could just be in space), RPC Options (can a user invoke it?), Active Users (users with sign ons - do any have it?). 
@@ -37,7 +39,7 @@ def reduceVistAData(stationNo):
     except:
         redResults = {}
         
-    # 1. Raw Data Cleanup, Prep for per RPC representations
+    # 1. Raw Data Cleanup, Prep for per RPC representations [TMP as work out sources]
     reduce8994(stationNo, redResults)
     reduce19(stationNo, redResults)
     reduce9_4Plus(stationNo, redResults)
@@ -46,9 +48,7 @@ def reduceVistAData(stationNo):
     reduce8994_5(stationNo, redResults)
     reduce3_081(stationNo, redResults)
     reduce200(stationNo, redResults)
-          
     json.dump(redResults, open("redResults.json", "w"), indent=4)
-    
     print "\n# VistA Raw Data Reduced (so far)\n"
     tbl = MarkdownTable(["Type", "Station No (Total/Reduction)"])
     for typeId in sorted(redResults, key=lambda x: float(re.sub(r'\_', '.', x))):
@@ -62,6 +62,8 @@ def reduceVistAData(stationNo):
     # 2. RPC centric reductions from cleanup/reduction above
     reduceRPCBPIs(stationNo)
     reduceRPCOptionByUse(stationNo)
+    reduceRemoteApplicationByUse(stationNo)
+    reduceRemoteApplicationsByUse(stationNo)
     
     # 3. Finally Assemble
     reduceAssembly(stationNo)
@@ -1114,7 +1116,7 @@ def reduce200(stationNo, redResults, forceRedo=False):
     
     return reductions
     
-# ######################### Specific RPC or RPC centric views ####
+# ##################### Step 2 Specific RPC or RPC centric views ###########
 #
 # Overall: by RPC, 8994, Builds, Options, Option Use ... an RPC must be:
 # [a] in 8994
@@ -1241,6 +1243,37 @@ def reduceRPCOptionByUse(stationNo):
     print "Flushed {} RPCs of Active options, {} with only removed options, {} with at least one option with signed on users".format(len(rpcOptionsWithUse), sum(1 for rpcInfo in rpcOptionsWithUse if (sum(1 for oi in rpcInfo["options"] if "isRemoved" not in oi) == 0)), sum(1 for rpcInfo in rpcOptionsWithUse if sum(1 for oi in rpcInfo["options"] if "sUsersCount" in oi)))
     
 """
+Remote Apps 8994_5 are the only ones identified in the system though they get little of the use.
+
+Note: will improve remote use with IP address/JLV going forward.
+"""
+def reduceRemoteApplicationsByUse(stationNo):
+
+    print "Reducing Remote Apps (8994_5) using user signon activity"
+
+    _8994_5Reductions = json.load(open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_8994_5Reduction.json"))
+    rappById = dict((red["label"], red) for red in _8994_5Reductions)
+    print "\t{} Remote Apps".format(len(rappById))
+    
+    userReductions = json.load(open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_3_081UserReduction.json"))
+    print "\t{} 3_081 User Reductions".format(len(userReductions))
+    
+    for userInfo in userReductions:
+        if "remoteApps" not in userInfo:
+            continue
+        for rapp in userInfo["remoteApps"]:
+            rappInfo = rappById[rapp]
+            if "users" not in rappInfo:
+                rappInfo["users"] = {}
+            rappInfo["users"][userInfo["userId"]] = userInfo["remoteApps"][rapp]
+    rapps = sorted(rappById.values(), key=lambda x: x["label"])
+            
+    json.dump(rapps, open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_rpcRemoteApplicationsWithUse.json", "w"), indent=4)
+    print "... {:,} users for {:,} remote apps".format(sum(len(rappInfo["users"]) for rappInfo in rapps if "users" in rappInfo), len(rapps))
+    
+# ######################### Step 3 ############################
+    
+"""
 All three: 8994, Builds, Options and mark appropriately so can reduce to 
 isActive easily.
 """
@@ -1305,7 +1338,7 @@ def reduceAssembly(stationNo):
     json.dump(mergeds, open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_rpcInterfaceDefinition.json", "w"), indent=4)
     
     print "Flushed {:,} integrated RPC definitions for {} and ending up with {:,} active.".format(len(mergeds), stationNo, sum(1 for info in mergeds if "isActive" in info))
-    
+        
 # ################################# DRIVER #######################
                
 def main():
@@ -1318,11 +1351,8 @@ def main():
         
     stationNo = sys.argv[1]
     
-    """
-    reduce3_081(stationNo, {}, True)    
-    reduce200(stationNo, {}, True)
+    reduceRemoteApplicationsByUse(stationNo)
     return
-    """
     
     reduceVistAData(stationNo)
 
