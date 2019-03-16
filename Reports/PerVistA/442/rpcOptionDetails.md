@@ -12,10 +12,12 @@ Based on active (SO) users use.
 6 | Non Zero SO Users w/RPC Options | 1,814
 7 | RPC Options | 143
 8 | Used RPC Options | 97
-9 | Pure Alone Options | 8
-10 | Singleton Alone Options (NEVER COMBINED) | 1
-11 | Pure Qualifier Options - NEVER on their own | 81
-12 | Other Qualifier Options - < 15% on their own (so not _Pure Alones_) | 8
+9 | Zero SO Users RPC Options | 60
+10 | Non Zero SO Users RPC Options | 96
+11 | Pure Alone Options | 8
+12 | Singleton Alone Options (NEVER COMBINED) | 1
+13 | Pure Qualifier Options - NEVER on their own | 81
+14 | Other Qualifier Options - < 15% on their own (so not _Pure Alones_) | 8
 
 
 Despite there being __97__ employed RPC Options, only __5__ are used by more than 1% of sign on users, the vast majority of which are remote/0 users.
@@ -64,7 +66,7 @@ There are 8 _Pure Alones_, options that can exist on their own (> 15% of users w
 8 | VPS KIOSK INTERFACE | 1 | &nbsp; | 1 (100.0%) | &nbsp; | &nbsp; | 0 | 0 | &nbsp; | 36
 
 
-__Note__:
+__Note__ (mostly put into the Source Artifact manualRPCApplications):
     
   * _KPA VRAM GUI_ belongs to __VistA Remote Access Management (VRAM) Graphical User Interface (GUI)__ according to this [patch](https://github.com/OSEHRA/VistA/blob/master/Packages/Kernel/Patches/XU_8.0_629/XU-8_SEQ-502_PAT-629.TXT). It has a 8995 application entry and seems to sync credentials from the VBA 'VistA' to a local VistA - check out the RPCs it allows. Note that half its users are stand alone while the rest use CAPRI and very few use CPRS. Note too that this option DOES NOT HAVE MANY QUALIFIERS (unlike other 'alones')
   * _MAGJ VISTARAD WINDOWS_ is a __VistARad__ option according [to](https://www.va.gov/vdl/documents/clinical/vista_imaging_sys/imginstallgd_f.pdf). Additionally, note that the _Rad/Nuc Med Personnel menu_ defines further user permissions (where stored?) and there are a series of security keys guarding actions. Note that this option DOES NOT HAVE MANY QUALIFIERS (unlike other 'alones')
@@ -73,6 +75,48 @@ __Note__:
   * _RMPR PURCHASE ORDER GUI_ is part of __PROSTHETICS PURCHASE ORDER GUI__
   * _OOP GUI EMPLOYEE_ is from __ASISTS__ which is being decommissioned in Jan 2019.
   
+The balance of the "Qualifier" Options are defined at the end of this report.
+
+### File 8994_5 Applications and their options
+
+File 8994_5 defines 'Remote Applications'. Each is given a (default) option. There are 29 applications using/sharing 12 options. Note that 2 of these options are NOT RPC options and 6 are not assigned to any active user. Note that _JLV_ (for now) lacks an entry here or its own option (it uses CPRS, CAPRI and VPR options). The following shows the applications by option ...
+    
+\# | Option | RPCs | Users | Applications
+--- | --- | --- | --- | ---
+1 | __DVBA CAPRI GUI__ | &nbsp; | 41,278 | CAPRI, CAPRIFHIE, CCR-CAPRI, VLER DAS-CAPRI
+2 | __KPA VRAM GUI__ | &nbsp; | 1,125 | VRAM
+3 | __MAG WINDOWS__ | &nbsp; | 47,033 | VISTA IMAGING AWIV, VISTA IMAGING DISPLAY, VISTA IMAGING TELEREADER, VISTA IMAGING VIX
+4 | __MAGJ VISTARAD WINDOWS__ | &nbsp; | 267 | VISTA IMAGING VISTARAD
+5 | MAGTP WORKLIST MGR | &nbsp; | &nbsp; | VISTA IMAGING TELEPATHOLOGY
+6 | MWVS MEDICAL DOMAIN WEB SVCS | &nbsp; | &nbsp; | MEDICAL DOMAIN WEB SERVICES, MOVE, MYHEALTHEVET, NATIONAL HOMELESS HOTLINE, NATIONAL SUICIDE HOTLINE, PCS ANALYTICS, TBI SCREENING
+7 | __OR CPRS GUI CHART__ | &nbsp; | 50,363 | VISTAWEB, VISTAWEB-FW, VISTAWEB-PROD, VISTAWEB-PROD2, VISTAWEB-UAT, VISTAWEB-UAT2
+8 | __SDECRPC__ | &nbsp; | 124 | VS SCHEDULING CALL CENTER
+9 | WEBB BED MGMT SOLUTION | NO | &nbsp; | BMS
+10 | WEBN NATL UTIL MGMT INTEG | NO | &nbsp; | NUMI
+11 | XUS IAM USER BINDING | &nbsp; | &nbsp; | IAM BINDING
+12 | XUS IAM USER PROVISIONING | &nbsp; | &nbsp; | IAM PROVISIONING
+
+
+What 8994.5 applications are used? It's 8 out of the 29. What option best matches an app - does the __presence of an option predict the use of a (8994.5) application?__ Note that even 8994.5 shows option sharing and such sharing is borne out in the table of signon and user information below.
+    
+The low counts in the _App !MO_ column shows that the apps are good indicators that an option is present but in general _!App MO_ shows many cases where an option is too broadly given (CPRS, MAG WINDOWS ...) to predict app use. _VRAM_ is the only clear exception though VISTARAD and its singular option is probably an exception too.
+
+Note that _DVBA CAPRI GUI_ is the only _qualifier_ option here. It is actually a _stand alone_ but is always paired with _OR CPRS GUI CHART_ by the CAPRI-style setup code. It's high _!App MO_ count is because of this pairing which is used by JLV and other apps.
+    
+\# | App | Option | App Users | App 0 Users | App+MO | !App MO | App !MO
+--- | --- | --- | --- | --- | --- | --- | ---
+1 | VISTAWEB-PROD | OR CPRS GUI CHART | 35,568 | 34,694 (97.54%) | 35,524 (99.88%) | 14,839 | 44
+2 | VISTA IMAGING DISPLAY | MAG WINDOWS | 30,710 | 30,574 (99.56%) | 30,663 (99.85%) | 16,370 | 47
+3 | CAPRI | DVBA CAPRI GUI | 7,801 | 7,670 (98.32%) | 7,794 (99.91%) | 33,484 | 7
+4 | VRAM | KPA VRAM GUI | 1,116 | 1,106 (99.1%) | 1,114 (99.82%) | 11 [APP-OPTION MATCH] | 2
+5 | VISTA IMAGING AWIV | MAG WINDOWS | 293 | 196 (66.89%) | 249 [UNDER MATCH] | 46,784 | 44
+6 | VISTA IMAGING VISTARAD | MAGJ VISTARAD WINDOWS | 192 | 192 (100.0%) | 192 (100.0%) | 75 | 0
+7 | VISTA IMAGING TELEREADER | MAG WINDOWS | 19 | 18 (94.74%) | 19 (100.0%) | 47,014 | 0
+8 | VISTA IMAGING VIX | MAG WINDOWS | 9 | 8 (88.89%) | 6 [UNDER MATCH] | 47,027 | 3
+
+
+### 89 Qualifier Option Details
+
 There are 32 more used (> 30 users) qualifiers. Those with more users than other qualifiers are highlighted as are combinations with primary/alone options ...
 
 \# | Option | Total Users | 0 Users | Others Quals | Alone Quals | Top Quals | RPCs
@@ -187,41 +231,5 @@ There are 22 users w/o Alones - ie/ their 'apps' are option combos.
 
 
 __Note__: the following Qualifiers (ie/ not alones) are NOT combined with Alones: HMP SYNCHRONIZATION CONTEXT, DSIP CR MENU
-
-
-File 8994_5 defines 'Remote Applications'. Each is given a (default) option. There are 29 applications using/sharing 12 options. Note that 2 of these options are NOT RPC options and 6 are not assigned to any active user. Note that _JLV_ (for now) lacks an entry here or its own option (it uses CPRS, CAPRI and VPR options). The following shows the applications by option ...
-    
-\# | Option | RPCs | Users | Applications
---- | --- | --- | --- | ---
-1 | __DVBA CAPRI GUI__ | &nbsp; | 41,278 | CAPRI, CAPRIFHIE, CCR-CAPRI, VLER DAS-CAPRI
-2 | __KPA VRAM GUI__ | &nbsp; | 1,125 | VRAM
-3 | __MAG WINDOWS__ | &nbsp; | 47,033 | VISTA IMAGING AWIV, VISTA IMAGING DISPLAY, VISTA IMAGING TELEREADER, VISTA IMAGING VIX
-4 | __MAGJ VISTARAD WINDOWS__ | &nbsp; | 267 | VISTA IMAGING VISTARAD
-5 | MAGTP WORKLIST MGR | &nbsp; | &nbsp; | VISTA IMAGING TELEPATHOLOGY
-6 | MWVS MEDICAL DOMAIN WEB SVCS | &nbsp; | &nbsp; | MEDICAL DOMAIN WEB SERVICES, MOVE, MYHEALTHEVET, NATIONAL HOMELESS HOTLINE, NATIONAL SUICIDE HOTLINE, PCS ANALYTICS, TBI SCREENING
-7 | __OR CPRS GUI CHART__ | &nbsp; | 50,363 | VISTAWEB, VISTAWEB-FW, VISTAWEB-PROD, VISTAWEB-PROD2, VISTAWEB-UAT, VISTAWEB-UAT2
-8 | __SDECRPC__ | &nbsp; | 124 | VS SCHEDULING CALL CENTER
-9 | WEBB BED MGMT SOLUTION | NO | &nbsp; | BMS
-10 | WEBN NATL UTIL MGMT INTEG | NO | &nbsp; | NUMI
-11 | XUS IAM USER BINDING | &nbsp; | &nbsp; | IAM BINDING
-12 | XUS IAM USER PROVISIONING | &nbsp; | &nbsp; | IAM PROVISIONING
-
-
-What 8994.5 applications are used? It's 8 out of the 29. What option best matches an app - does the __presence of an option predict the use of a (8994.5) application?__ Note that even 8994.5 shows option sharing and such sharing is borne out in the table of signon and user information below.
-    
-The low counts in the _App !MO_ column shows that the apps are good indicators that an option is present but in general _!App MO_ shows many cases where an option is too broadly given (CPRS, MAG WINDOWS ...) to predict app use. _VRAM_ is the only clear exception though VISTARAD and its singular option is probably an exception too.
-
-Note that _DVBA CAPRI GUI_ is the only _qualifier_ option here. It is actually a _stand alone_ but is always paired with _OR CPRS GUI CHART_ by the CAPRI-style setup code. It's high _!App MO_ count is because of this pairing which is used by JLV and other apps.
-    
-\# | App | Option | App Users | App 0 Users | App+MO | !App MO | App !MO
---- | --- | --- | --- | --- | --- | --- | ---
-1 | VISTAWEB-PROD | OR CPRS GUI CHART | 35,568 | 34,694 (97.54%) | 35,524 (99.88%) | 14,839 | 44
-2 | VISTA IMAGING DISPLAY | MAG WINDOWS | 30,710 | 30,574 (99.56%) | 30,663 (99.85%) | 16,370 | 47
-3 | CAPRI | DVBA CAPRI GUI | 7,801 | 7,670 (98.32%) | 7,794 (99.91%) | 33,484 | 7
-4 | VRAM | KPA VRAM GUI | 1,116 | 1,106 (99.1%) | 1,114 (99.82%) | 11 [APP-OPTION MATCH] | 2
-5 | VISTA IMAGING AWIV | MAG WINDOWS | 293 | 196 (66.89%) | 249 [UNDER MATCH] | 46,784 | 44
-6 | VISTA IMAGING VISTARAD | MAGJ VISTARAD WINDOWS | 192 | 192 (100.0%) | 192 (100.0%) | 75 | 0
-7 | VISTA IMAGING TELEREADER | MAG WINDOWS | 19 | 18 (94.74%) | 19 (100.0%) | 47,014 | 0
-8 | VISTA IMAGING VIX | MAG WINDOWS | 9 | 8 (88.89%) | 6 [UNDER MATCH] | 47,027 | 3
 
 

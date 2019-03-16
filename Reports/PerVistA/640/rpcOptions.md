@@ -180,9 +180,10 @@ __Conclusion:__ _Used Options_ reduce the __5,385__ RPCs named by both Builds an
 
 __TODO__:
 
-  * Add Build data for options using option info in builds => see first introduction etc
-  * PROXY users (see user class in user reduction): see the proxy users count. If close to all then very special option
+  * Enhance: Add Build data for options using option info in builds => see first introduction etc
   * Besides the CPRS option, pay attention to Active/SO options with a high proproportion of 0 users: MAG WINDOWS, CAPRI, MAGJ VISTARAD WINDOWS, KPA VRAM GUI, VPR APPLICATION PROXY
   * Focus on options with many 'Exclusive RPCs' like CAPRI, MAG DICOM VISA, YS BROKER1, R1SDCI and others which also have a highish number of users - unlike the OVERLAPPING options, these introduce whole new sets of RPCs
+  * SO0 is responsible for most of the logins for many of the most significant SO's (MAG, KPA etc)
+  * PROXY users (see user class in user reduction): see the proxy users count. If close to all then very special option
   * Implication of DELETING Excluded Options and their exclusive RPCs - reducing VistA size
   

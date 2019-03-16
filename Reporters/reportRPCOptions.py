@@ -22,6 +22,8 @@ Options subset RPCs named in 8994 and/or Builds:
 as a criteria.
 
 KEY for REDUCING RPC LIST TO 'EFFECTIVE NUMBER OF ACTIVE, USED RPCs'
+
+TODO: add in report on "JLV WEB SERVICES" as prep for restriction
 """
 def reportRPCOptions(stationNo):
 
@@ -45,7 +47,7 @@ Using _Active, Used RPC Options_ to subset 8994 and Build named RPCs. Expect a _
     
     and then two sets: activeNUsedOptions and the RPCs of those options
     """
-    rpcOptionsWithUse = json.load(open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "rpcOptionsWithUse.json")) 
+    rpcOptionsWithUse = json.load(open(VISTA_RED_LOCN_TEMPL.format(stationNo) + "_rpcOptionsWithUse.json")) 
     rpcOptionInfoByLabel = {} # includes RPCs of options    
     for roi in rpcOptionsWithUse:
         rpc = roi["label"]
@@ -324,7 +326,7 @@ Based on active (SO) users use.
         ])
     mu += tbl.md() + "\n\n"
     
-    mu += """__Note__:
+    mu += """__Note__ (mostly put into the Source Artifact manualRPCApplications):
     
   * _KPA VRAM GUI_ belongs to __VistA Remote Access Management (VRAM) Graphical User Interface (GUI)__ according to this [patch](https://github.com/OSEHRA/VistA/blob/master/Packages/Kernel/Patches/XU_8.0_629/XU-8_SEQ-502_PAT-629.TXT). It has a 8995 application entry and seems to sync credentials from the VBA 'VistA' to a local VistA - check out the RPCs it allows. Note that half its users are stand alone while the rest use CAPRI and very few use CPRS. Note too that this option DOES NOT HAVE MANY QUALIFIERS (unlike other 'alones')
   * _MAGJ VISTARAD WINDOWS_ is a __VistARad__ option according [to](https://www.va.gov/vdl/documents/clinical/vista_imaging_sys/imginstallgd_f.pdf). Additionally, note that the _Rad/Nuc Med Personnel menu_ defines further user permissions (where stored?) and there are a series of security keys guarding actions. Note that this option DOES NOT HAVE MANY QUALIFIERS (unlike other 'alones')
