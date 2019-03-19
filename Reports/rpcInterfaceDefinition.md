@@ -14,7 +14,7 @@ RPCs are marked inactive in stages ...
 
 ### RPC Distribution by Year
     
-57 RPCs have no 'first distributed' date as their first builds lacked a date. Here is RPC distribution year by year, along with the small amount of deletion too. Note that only __150 (2.66%)__ RPCs are formally deleted though __1,079 (19.17%)__ should be.
+57 RPCs have no 'first distributed' date as their first builds lacked a date - the other 5,573 all have dates. Here is RPC distribution year by year, along with the small amount of deletion too. Note that only __150 (2.66%)__ RPCs are formally deleted though __1,079 (19.17%)__ should be.
 
 \# | Year | Added \# | Deleted \# | Inactive \#
 --- | --- | --- | --- | ---

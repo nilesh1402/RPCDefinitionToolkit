@@ -115,10 +115,11 @@ RPCs are marked inactive in stages ...
         
     mu += """### RPC Distribution by Year
     
-{:,} RPCs have no 'first distributed' date as their first builds lacked a date. Here is RPC distribution year by year, along with the small amount of deletion too. Note that only __{}__ RPCs are formally deleted though __{}__ should be.
+{:,} RPCs have no 'first distributed' date as their first builds lacked a date - the other {:,} all have dates. Here is RPC distribution year by year, along with the small amount of deletion too. Note that only __{}__ RPCs are formally deleted though __{}__ should be.
 
 """.format(
         noDistrib, 
+        sum(byYrDistrib[yr] for yr in byYrDistrib),
         reportAbsAndPercent(totalDeleted, len(rpcInterfaceDefinition)),
         reportAbsAndPercent(sum(1 for rpcDefn in rpcInterfaceDefinition if "isActive" not in rpcDefn), len(rpcInterfaceDefinition))
     )
