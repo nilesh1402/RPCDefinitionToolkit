@@ -1,0 +1,49 @@
+{
+    "title": "RPCs used by CVIX",
+
+    "source": "https://www.va.gov/vdl/documents/Clinical/Vista_Imaging_Sys/mag_cvix_admin_prod_ops_guide_f.pdf",
+    
+    "cvixNotes": "No security keys associated with CVIX and CVIX only writes directly to VistA (mainly 2006.95) if there is no VIX on site.",
+    
+    "rpcNotes": "Note PHOTOS, FIND, INFO for PAT - see impls as key part of patient record. Note the 'raw' RPCs like MAGG SYS GLOBAL NODE to get 2005 global node and 'MAGG WRKS UPDATES' which starts a new session and 'MAGGACTION LOG' which updates log 2006.95 (so honor system!). 'MAGGUSER2' returns user info.",
+    
+    "magRPCs": [
+        
+        "MAG3 CPRS TIU NOTE",
+        "MAG4 GET IMAGE INFO",
+        "MAG4 PAT GET IMAGES",
+        "MAGG CPRS RAD EXAM",
+        "MAGG GROUP IMAGES",
+        "MAGG INSTALL",
+        "MAGG LOGOFF",
+        "MAGG OFFLINE IMAGE ACCESSED",
+        "MAGG PAT FIND",
+        "MAGG PAT INFO",
+        "MAGG PAT PHOTOS",
+        "MAGG SYS GLOBAL NODE",
+        "MAGG WRKS UPDATES",
+        "MAGGACTION LOG", 
+        "MAGGRPT",
+        "MAGGUSER2",
+        "MAG NEW SOP INSTANCE UID RPC"
+
+    ],
+    
+    "nonMagRPCs": [
+    
+        "DDR FILER",
+        "DG SENSITIVE RECORD ACCESS",
+        "DG SENSITIVE RECORD BULLETIN",
+        "VAFCTFU CONVERT ICN TO DFN",
+        "VAFCTFU GET TREATING LIST",
+        "XUS AV CODE",
+        "XUS DIVISION GET",
+        "XUS DIVISION SET",
+        "XUS SIGNON SETUP",
+        "XWB CREATE CONTEXT",
+        "XUS SET VISITOR",
+        "XWB GET VARIABLE VALUE"
+        
+    ]
+
+}

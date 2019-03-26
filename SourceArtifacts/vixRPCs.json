@@ -1,0 +1,63 @@
+{
+    "title": "RPCs used by VIX",
+
+    "source": "https://www.va.gov/vdl/documents/Clinical/Vista_Imaging_Sys/vix_admin_guide.pdf",
+        
+    "rpcNotes": "CPTMATCH 'Finds related radiology procedures based on the matching tables in the MAG RAD CPT MATCHING file (#2006.67); GET WORKITEM 'Returns all of the data elements for a single entry in the WORK ITEM file (#2006.941).'; CONFIRM RAD ORDER 'Returns a RAD/NUC MED ORDERS file (#75.1) IEN for a set of DICOM Unique Identifiers.'; #2006.94 work item file can have entries created",
+    
+    "magRPCs": [
+        
+        "MAGG GROUP IMAGES",
+        "MAGG INSTALL",
+        "MAGG LOGOFF", 
+        "MAGG OFFLINE IMAGE",
+        "MAGG PAT FIND",
+        "MAGG PAT INFO",
+        "MAGG PAT PHOTOS",
+        "MAGG SYS GLOBAL NODE", 
+        "MAGG WRKS UPDATES",
+        "MAGGACTION LOG",
+        "MAGGRPT",
+        "MAGGUSER2",
+        "MAGJ CACHELOCATION",
+        "MAGJ CPTMATCH",
+        "MAGJ EXAM REPORT",
+        "MAGJ PT ALL EXAMS",
+        "MAGJ RADACTIVEEXAMS",
+        "MAGJ RADCASEIMAGES",
+        "MAGJ RADORDERDISP",
+        "MAGJ STUDY DATA", 
+        "MAGJ USER2",
+        "MAGJ VIX LOG REMOTE IMG ACCESS",
+        "MAGN CPRS IMAGE LIST",
+        "MAGV ADD WORK ITEM TAGS",
+        "MAGV CONFIRM RAD ORDER",
+        "MAGV CREATE WORK ITEM",
+        "MAGV DELETE WORK ITEM",
+        "MAGV FIND WORK ITEM",
+        "MAGV GET NEXT WORK ITEM",
+        "MAGV GET PAT ORDERS",
+        "MAGV GET WORK ITEM",
+        "MAGV GET WORKLISTS"
+        
+
+    ],
+    
+    "nonMagRPCs": [
+    
+        "DDR FILER",
+        "DG SENSITIVE RECORD ACCESS",
+        "DG SENSITIVE RECORD BULLETIN",
+        "PSB GETPROVIDER",
+        "VAFCTFU CONVERT ICN TO DFN",
+        "VAFCTFU GET TREATING LIST",
+        "XUS AV CODE",
+        "XUS DIVISION GET",
+        "XUS DIVISION SET",
+        "XUS SIGNON SETUP",
+        "XWB CREATE CONTEXT",
+        "XWB GET VARIABLE VALUE"
+        
+    ]
+
+}
