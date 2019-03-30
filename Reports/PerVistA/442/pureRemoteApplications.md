@@ -28,48 +28,22 @@ __TODO__: see the one Workstation (2006_81) - what is it? Do all the Sessions (2
 
 Sign on details for CVIX, MHVUSER - main IP accounts for all 2001's and most 200's. Other IPs have workstation set and use 200. SSN 2001 doesn't set remote app, has LOA 1 - 200 always has 2. The device (TCP or NULL) doesn't seem to have a pattern but needs more work ...
 
-Number of Days
-:    302
-
-By Day Stats
-:    {'std': 57.08974122496646, 'max': 379, 'quartileOne': 120.25, 'oht': 351.5, 'total': 51961, 'count': 302, 'min': 53, 'median': 181.5, 'iqr': 92.5, 'hasOutliers': False, 'quartileThree': 212.75, 'gtoht': 2, 'ohto': 490.25, 'mean': 172.05629139072849}
-
-IPs
-:    {"10.208.151.136": 15, "10.152.80.125": 51862, "10.208.151.137": 32, "10.208.151.134": 22, "10.208.151.135": 30}
-
-Stations
-:    200 [33,186], 2001 [18,775]
-
-Count Props
-:    {"19": 18775, "20": 33087, "21": 99}
-
-With Remote App
-:    33186
-
-With 'workstation_name'
-:    99
-
-Devices
-:    {"NULL": 47534, "TCP": 4427}
-
-Level of Assurances
-:    {"1": 18775, "2": 33186}
-
-Groups
-:    20557
-
-Gap
-:    0:01:40
-
-Gap Stats
-:    {'std': 31.45726401681242, 'max': 989.0, 'quartileOne': 5.0, 'oht': 50.0, 'total': 424408.0, 'count': 20556, 'min': 0.0, 'median': 11.0, 'iqr': 18.0, 'hasOutliers': True, 'quartileThree': 23.0, 'gtoht': 1709, 'gtohto': 827, 'ohto': 77.0, 'mean': 20.646429266394239}
-
-Singletons
-:    9900
-
-MultiStation Groups
-:    23
-
+<dl>
+<dt>Number of Days</dt><dd>302</dd>
+<dt>By Day Stats</dt><dd>{'std': 57.08974122496646, 'max': 379, 'quartileOne': 120.25, 'oht': 351.5, 'total': 51961, 'count': 302, 'min': 53, 'median': 181.5, 'iqr': 92.5, 'hasOutliers': False, 'quartileThree': 212.75, 'gtoht': 2, 'ohto': 490.25, 'mean': 172.05629139072849}</dd>
+<dt>IPs</dt><dd>{"10.208.151.136": 15, "10.152.80.125": 51862, "10.208.151.137": 32, "10.208.151.134": 22, "10.208.151.135": 30}</dd>
+<dt>Stations</dt><dd>200 [33,186], 2001 [18,775]</dd>
+<dt>Count Props</dt><dd>{"19": 18775, "20": 33087, "21": 99}</dd>
+<dt>With Remote App</dt><dd>33186</dd>
+<dt>With 'workstation_name'</dt><dd>99</dd>
+<dt>Devices</dt><dd>{"NULL": 47534, "TCP": 4427}</dd>
+<dt>Level of Assurances</dt><dd>{"1": 18775, "2": 33186}</dd>
+<dt>Groups</dt><dd>20557</dd>
+<dt>Gap</dt><dd>0:01:40</dd>
+<dt>Gap Stats</dt><dd>{'std': 31.45726401681242, 'max': 989.0, 'quartileOne': 5.0, 'oht': 50.0, 'total': 424408.0, 'count': 20556, 'min': 0.0, 'median': 11.0, 'iqr': 18.0, 'hasOutliers': True, 'quartileThree': 23.0, 'gtoht': 1709, 'gtohto': 827, 'ohto': 77.0, 'mean': 20.646429266394239}</dd>
+<dt>Singletons</dt><dd>9900</dd>
+<dt>MultiStation Groups</dt><dd>23</dd>
+</dl>
 
 
 
