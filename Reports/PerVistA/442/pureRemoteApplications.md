@@ -49,43 +49,19 @@ Sign on details for CVIX, MHVUSER - main IP accounts for all 2001's and most 200
 
 CVIX,USER is smaller ...
 
-Number of Days
-:    115
-
-By Day Stats
-:    {'std': 7.3230815664916387, 'max': 29, 'quartileOne': 4.0, 'oht': 29.0, 'total': 1194, 'count': 115, 'min': 1, 'median': 9.0, 'iqr': 10.0, 'hasOutliers': False, 'quartileThree': 14.0, 'ohto': 44.0, 'mean': 10.382608695652173}
-
-IPs
-:    {"10.206.8.88": 1, "10.152.80.125": 1191, "10.206.8.77": 1, "10.206.8.86": 1}
-
-Stations
-:    200 [326], 2001 [868]
-
-Count Props
-:    {"19": 868, "20": 326}
-
-With Remote App
-:    326
-
-With 'workstation_name'
-:    0
-
-Devices
-:    {"NULL": 879, "TCP": 315}
-
-Level of Assurances
-:    {"1": 868, "2": 326}
-
-Groups
-:    996
-
-Gap
-:    0:01:40
-
-Gap Stats
-:    {'std': 286.68663853135223, 'max': 1421.0, 'quartileOne': 12.5, 'oht': 242.5, 'total': 150807.0, 'count': 995, 'min': 0.0, 'median': 39.0, 'iqr': 92.0, 'hasOutliers': True, 'quartileThree': 104.5, 'gtoht': 141, 'gtohto': 115, 'ohto': 380.5, 'mean': 151.56482412060302}
-
 <dl>
+<dt>Number of Days</dt><dd>115</dd>
+<dt>By Day Stats</dt><dd>{'std': 7.3230815664916387, 'max': 29, 'quartileOne': 4.0, 'oht': 29.0, 'total': 1194, 'count': 115, 'min': 1, 'median': 9.0, 'iqr': 10.0, 'hasOutliers': False, 'quartileThree': 14.0, 'ohto': 44.0, 'mean': 10.382608695652173}</dd>
+<dt>IPs</dt><dd>{"10.206.8.88": 1, "10.152.80.125": 1191, "10.206.8.77": 1, "10.206.8.86": 1}</dd>
+<dt>Stations</dt><dd>200 [326], 2001 [868]</dd>
+<dt>Count Props</dt><dd>{"19": 868, "20": 326}</dd>
+<dt>With Remote App</dt><dd>326</dd>
+<dt>With 'workstation_name'</dt><dd>0</dd>
+<dt>Devices</dt><dd>{"NULL": 879, "TCP": 315}</dd>
+<dt>Level of Assurances</dt><dd>{"1": 868, "2": 326}</dd>
+<dt>Groups</dt><dd>996</dd>
+<dt>Gap</dt><dd>0:01:40</dd>
+<dt>Gap Stats</dt><dd>{'std': 286.68663853135223, 'max': 1421.0, 'quartileOne': 12.5, 'oht': 242.5, 'total': 150807.0, 'count': 995, 'min': 0.0, 'median': 39.0, 'iqr': 92.0, 'hasOutliers': True, 'quartileThree': 104.5, 'gtoht': 141, 'gtohto': 115, 'ohto': 380.5, 'mean': 151.56482412060302}</dd>
 <dt>Singletons</dt><dd>843</dd>
 <dt>MultiStation Groups</dt><dd>0</dd>
 </dl>
