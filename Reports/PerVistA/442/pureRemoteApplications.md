@@ -110,10 +110,8 @@ Gap
 
 Gap Stats
 :    {'std': 286.68663853135223, 'max': 1421.0, 'quartileOne': 12.5, 'oht': 242.5, 'total': 150807.0, 'count': 995, 'min': 0.0, 'median': 39.0, 'iqr': 92.0, 'hasOutliers': True, 'quartileThree': 104.5, 'gtoht': 141, 'gtohto': 115, 'ohto': 380.5, 'mean': 151.56482412060302}
-
 Singletons
 :    843
-
 MultiStation Groups
 :    0
 
